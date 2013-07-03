@@ -1,4 +1,6 @@
-ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
+ACLOCAL_AMFLAGS = -I m4 -I libgd ${ACLOCAL_FLAGS}
+
+SUBDIRS = libgd
 
 bin_PROGRAMS = gnome-logs
 
@@ -9,7 +11,8 @@ gnome_logs_CFLAGS = \
 	$(LOGS_CFLAGS)
 
 gnome_logs_LDADD = \
-	$(LOGS_LIBS)
+	$(LOGS_LIBS) \
+	$(top_builddir)/libgd/libgd.la
 
 gnome_logs_SOURCES = \
 	src/gl-main.c
