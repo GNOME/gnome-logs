@@ -5,7 +5,8 @@ SUBDIRS = libgd
 bin_PROGRAMS = gnome-logs
 
 gnome_logs_CPPFLAGS = \
-	-I$(top_builddir)
+	-I$(top_builddir) \
+	-I$(top_srcdir)/libgd
 
 gnome_logs_CFLAGS = \
 	$(LOGS_CFLAGS)

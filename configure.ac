@@ -21,7 +21,7 @@ LT_INIT
 PKG_PROG_PKG_CONFIG([0.24])
 
 dnl Libraries
-PKG_CHECK_MODULES([LOGS], [gtk+-3.0])
+PKG_CHECK_MODULES([LOGS], [gtk+-3.0 >= 3.9.6])
 
 LIBGD_INIT([main-toolbar])
 

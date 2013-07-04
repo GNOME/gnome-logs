@@ -18,6 +18,8 @@
 
 #include "gl-window.h"
 
+#include "libgd/gd.h"
+
 G_DEFINE_TYPE (GlWindow, gl_window, GTK_TYPE_APPLICATION_WINDOW)
 
 static void
@@ -28,6 +30,49 @@ gl_window_class_init (GlWindowClass *klass)
 static void
 gl_window_init (GlWindow *window)
 {
+    GtkWidget *grid;
+    GtkWidget *toolbar;
+    GtkToolItem *item;
+    GtkWidget *button;
+    GtkWidget *image;
+    GtkWidget *scrolled;
+    GtkWidget *listbox;
+
+    grid = gtk_grid_new ();
+
+    toolbar = gd_main_toolbar_new ();
+    gtk_widget_set_vexpand (toolbar, FALSE);
+    gtk_grid_attach (GTK_GRID (grid), toolbar, 0, 0, 1, 1);
+
+    toolbar = gtk_toolbar_new ();
+    gtk_widget_set_vexpand (toolbar, FALSE);
+    gtk_grid_attach (GTK_GRID (grid), toolbar, 1, 0, 1, 1);
+
+    button = gtk_menu_button_new ();
+    image = gtk_image_new_from_icon_name ("emblem-system-symbolic",
+                                          GTK_ICON_SIZE_MENU);
+    gtk_button_set_image (GTK_BUTTON (button), image);
+    item = gtk_tool_item_new ();
+    gtk_container_add (GTK_CONTAINER (item), button);
+    gtk_container_add (GTK_CONTAINER (toolbar), GTK_WIDGET (item));
+
+    /* Category/group view. */
+    listbox = gtk_list_box_new ();
+    scrolled = gtk_scrolled_window_new (NULL, NULL);
+    gtk_container_add (GTK_CONTAINER (scrolled), listbox);
+    gtk_grid_attach (GTK_GRID (grid), scrolled, 0, 1, 1, 1);
+
+    /* Event view. */
+    listbox = gtk_list_box_new ();
+    scrolled = gtk_scrolled_window_new (NULL, NULL);
+    gtk_widget_set_hexpand (scrolled, TRUE);
+    gtk_widget_set_vexpand (scrolled, TRUE);
+    gtk_container_add (GTK_CONTAINER (scrolled), listbox);
+    gtk_grid_attach (GTK_GRID (grid), scrolled, 1, 1, 1, 1);
+
+    gtk_container_add (GTK_CONTAINER (window), grid);
+
+    gtk_widget_show_all (grid);
 }
 
 GtkWidget *
