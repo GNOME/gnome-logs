@@ -15,7 +15,14 @@ gnome_logs_LDADD = \
 	$(top_builddir)/libgd/libgd.la
 
 gnome_logs_SOURCES = \
-	src/gl-main.c
+	src/gl-main.c \
+	src/gl-window.c
+
+noinst_gnome_logs_headers = \
+	src/gl-window.h
+
+dist_noinst_DATA = \
+	$(noinst_gnome_logs_headers)
 
 dist_noinst_SCRIPTS = \
 	autogen.sh

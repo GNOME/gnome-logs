@@ -16,33 +16,31 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+#ifndef GL_WINDOW_H_
+#define GL_WINDOW_H_
+
 #include <gtk/gtk.h>
 
-#include "gl-window.h"
+G_BEGIN_DECLS
 
-static void
-on_application_activate (GApplication *app,
-                         gpointer user_data)
+typedef struct
 {
-    GtkWidget *widget;
+    /*< private >*/
+    GtkApplicationWindow parent_instance;
+} GlWindow;
 
-    widget = gl_window_new (GTK_APPLICATION (app));
-    gtk_widget_show (widget);
-}
-
-int
-main (int argc,
-      char **argv)
+typedef struct
 {
-    GtkApplication *application;
-    int status;
+    /*< private >*/
+    GtkApplicationWindowClass parent_class;
+} GlWindowClass;
 
-    application = gtk_application_new ("org.gnome.Logs",
-                                       G_APPLICATION_FLAGS_NONE);
-    g_signal_connect (application, "activate",
-                      G_CALLBACK (on_application_activate), NULL);
-    status = g_application_run (G_APPLICATION (application), argc, argv);
-    g_object_unref (application);
+#define GL_TYPE_WINDOW (gl_window_get_type ())
+#define GL_WINDOW(object) (G_TYPE_CHECK_INSTANCE_CAST ((object), GL_TYPE_WINDOW, GlWindow))
 
-    return status;
-}
+GType gl_window_get_type (void);
+GtkWidget * gl_window_new (GtkApplication *application);
+
+G_END_DECLS
+
+#endif /* GL_WINDOW_H_ */
