@@ -20,6 +20,11 @@ LT_INIT
 
 PKG_PROG_PKG_CONFIG([0.24])
 
+dnl Internationalization
+IT_PROG_INTLTOOL([0.50.0])
+AC_SUBST([GETTEXT_PACKAGE], [AC_PACKAGE_TARNAME])
+AC_DEFINE_UNQUOTED([GETTEXT_PACKAGE], ["$GETTEXT_PACKAGE"], [gettext package name])
+
 dnl Libraries
 PKG_CHECK_MODULES([LOGS], [gtk+-3.0 >= 3.9.6])
 
@@ -28,5 +33,6 @@ LIBGD_INIT([main-toolbar])
 AC_CONFIG_FILES([
 Makefile
 libgd/Makefile
+po/Makefile.in
 ])
 AC_OUTPUT

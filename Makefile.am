@@ -1,10 +1,11 @@
 ACLOCAL_AMFLAGS = -I m4 -I libgd ${ACLOCAL_FLAGS}
 
-SUBDIRS = libgd
+SUBDIRS = libgd po
 
 bin_PROGRAMS = gnome-logs
 
 gnome_logs_CPPFLAGS = \
+	-DLOCALEDIR=\""$(localedir)"\" \
 	-I$(top_builddir) \
 	-I$(top_srcdir)/libgd
 

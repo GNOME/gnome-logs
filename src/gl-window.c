@@ -18,6 +18,7 @@
 
 #include "gl-window.h"
 
+#include <glib/gi18n.h>
 #include "libgd/gd.h"
 
 G_DEFINE_TYPE (GlWindow, gl_window, GTK_TYPE_APPLICATION_WINDOW)
@@ -37,6 +38,7 @@ gl_window_init (GlWindow *window)
     GtkWidget *image;
     GtkWidget *scrolled;
     GtkWidget *listbox;
+    GtkWidget *label;
 
     grid = gtk_grid_new ();
 
@@ -58,9 +60,37 @@ gl_window_init (GlWindow *window)
 
     /* Category/group view. */
     listbox = gtk_list_box_new ();
-    scrolled = gtk_scrolled_window_new (NULL, NULL);
-    gtk_container_add (GTK_CONTAINER (scrolled), listbox);
-    gtk_grid_attach (GTK_GRID (grid), scrolled, 0, 1, 1, 1);
+    label = gtk_label_new (_("Important"));
+    gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
+    gtk_container_add (GTK_CONTAINER (listbox), label);
+    label = gtk_label_new (_("Alerts"));
+    gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
+    gtk_container_add (GTK_CONTAINER (listbox), label);
+    label = gtk_label_new (_("Starred"));
+    gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
+    gtk_container_add (GTK_CONTAINER (listbox), label);
+    label = gtk_label_new (_("All"));
+    gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
+    gtk_container_add (GTK_CONTAINER (listbox), label);
+    label = gtk_label_new (_("Applications"));
+    gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
+    gtk_container_add (GTK_CONTAINER (listbox), label);
+    label = gtk_label_new (_("System"));
+    gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
+    gtk_container_add (GTK_CONTAINER (listbox), label);
+    label = gtk_label_new (_("Security"));
+    gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
+    gtk_container_add (GTK_CONTAINER (listbox), label);
+    label = gtk_label_new (_("Hardware"));
+    gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
+    gtk_container_add (GTK_CONTAINER (listbox), label);
+    label = gtk_label_new (_("Updates"));
+    gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
+    gtk_container_add (GTK_CONTAINER (listbox), label);
+    label = gtk_label_new (_("Usage"));
+    gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
+    gtk_container_add (GTK_CONTAINER (listbox), label);
+    gtk_grid_attach (GTK_GRID (grid), listbox, 0, 1, 1, 1);
 
     /* Event view. */
     listbox = gtk_list_box_new ();

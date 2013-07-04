@@ -16,7 +16,10 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+#include "config.h"
+
 #include <gtk/gtk.h>
+#include <glib/gi18n.h>
 
 #include "gl-window.h"
 
@@ -36,6 +39,10 @@ main (int argc,
 {
     GtkApplication *application;
     int status;
+
+    bindtextdomain (GETTEXT_PACKAGE, LOCALEDIR);
+    bind_textdomain_codeset (PACKAGE_TARNAME, "UTF-8");
+    textdomain (GETTEXT_PACKAGE);
 
     application = gtk_application_new ("org.gnome.Logs",
                                        G_APPLICATION_FLAGS_NONE);
