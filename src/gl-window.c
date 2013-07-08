@@ -39,6 +39,7 @@ gl_window_init (GlWindow *window)
     GtkWidget *scrolled;
     GtkWidget *listbox;
     GtkWidget *label;
+    GtkWidget *row;
 
     grid = gtk_grid_new ();
 
@@ -77,7 +78,10 @@ gl_window_init (GlWindow *window)
     gtk_container_add (GTK_CONTAINER (listbox), label);
     label = gtk_label_new (_("All"));
     gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
-    gtk_container_add (GTK_CONTAINER (listbox), label);
+    row = gtk_list_box_row_new ();
+    gtk_container_add (GTK_CONTAINER (row), label);
+    gtk_container_add (GTK_CONTAINER (listbox), row);
+    gtk_list_box_select_row (GTK_LIST_BOX (listbox), GTK_LIST_BOX_ROW (row));
     label = gtk_label_new (_("Applications"));
     gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
     gtk_container_add (GTK_CONTAINER (listbox), label);
