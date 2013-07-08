@@ -21,6 +21,7 @@
 #include <glib/gi18n.h>
 #include "libgd/gd.h"
 
+#include "gl-categorylist.h"
 #include "gl-eventview.h"
 
 G_DEFINE_TYPE (GlWindow, gl_window, GTK_TYPE_APPLICATION_WINDOW)
@@ -68,40 +69,7 @@ gl_window_init (GlWindow *window)
     gtk_container_add (GTK_CONTAINER (toolbar), GTK_WIDGET (item));
 
     /* Category/group view. */
-    listbox = gtk_list_box_new ();
-    label = gtk_label_new (_("Important"));
-    gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
-    gtk_container_add (GTK_CONTAINER (listbox), label);
-    label = gtk_label_new (_("Alerts"));
-    gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
-    gtk_container_add (GTK_CONTAINER (listbox), label);
-    label = gtk_label_new (_("Starred"));
-    gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
-    gtk_container_add (GTK_CONTAINER (listbox), label);
-    label = gtk_label_new (_("All"));
-    gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
-    row = gtk_list_box_row_new ();
-    gtk_container_add (GTK_CONTAINER (row), label);
-    gtk_container_add (GTK_CONTAINER (listbox), row);
-    gtk_list_box_select_row (GTK_LIST_BOX (listbox), GTK_LIST_BOX_ROW (row));
-    label = gtk_label_new (_("Applications"));
-    gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
-    gtk_container_add (GTK_CONTAINER (listbox), label);
-    label = gtk_label_new (_("System"));
-    gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
-    gtk_container_add (GTK_CONTAINER (listbox), label);
-    label = gtk_label_new (_("Security"));
-    gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
-    gtk_container_add (GTK_CONTAINER (listbox), label);
-    label = gtk_label_new (_("Hardware"));
-    gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
-    gtk_container_add (GTK_CONTAINER (listbox), label);
-    label = gtk_label_new (_("Updates"));
-    gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
-    gtk_container_add (GTK_CONTAINER (listbox), label);
-    label = gtk_label_new (_("Usage"));
-    gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
-    gtk_container_add (GTK_CONTAINER (listbox), label);
+    listbox = gl_category_list_new ();
     gtk_grid_attach (GTK_GRID (grid), listbox, 0, 1, 1, 1);
 
     /* Event view. */
