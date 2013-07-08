@@ -17,10 +17,12 @@ gnome_logs_LDADD = \
 	$(top_builddir)/libgd/libgd.la
 
 gnome_logs_SOURCES = \
+	src/gl-eventview.c \
 	src/gl-main.c \
 	src/gl-window.c
 
 noinst_gnome_logs_headers = \
+	src/gl-eventview.h \
 	src/gl-window.h
 
 dist_noinst_DATA = \
