@@ -50,6 +50,12 @@ gl_window_init (GlWindow *window)
     gtk_widget_set_vexpand (toolbar, FALSE);
     gtk_grid_attach (GTK_GRID (grid), toolbar, 1, 0, 1, 1);
 
+    item = gtk_separator_tool_item_new ();
+    gtk_separator_tool_item_set_draw (GTK_SEPARATOR_TOOL_ITEM (item), FALSE);
+    gtk_container_add (GTK_CONTAINER (toolbar), GTK_WIDGET (item));
+    gtk_container_child_set (GTK_CONTAINER (toolbar), GTK_WIDGET (item),
+                             "expand", TRUE, NULL);
+
     button = gtk_menu_button_new ();
     image = gtk_image_new_from_icon_name ("emblem-system-symbolic",
                                           GTK_ICON_SIZE_MENU);
