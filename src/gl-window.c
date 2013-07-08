@@ -20,6 +20,7 @@
 
 #include <glib/gi18n.h>
 #include "libgd/gd.h"
+#include <systemd/sd-journal.h>
 
 G_DEFINE_TYPE (GlWindow, gl_window, GTK_TYPE_APPLICATION_WINDOW)
 
@@ -36,6 +37,9 @@ gl_window_init (GlWindow *window)
     GtkToolItem *item;
     GtkWidget *button;
     GtkWidget *image;
+    sd_journal *journal;
+    gint ret;
+    gsize i;
     GtkWidget *scrolled;
     GtkWidget *listbox;
     GtkWidget *label;
@@ -104,12 +108,69 @@ gl_window_init (GlWindow *window)
 
     /* Event view. */
     listbox = gtk_list_box_new ();
+    ret = sd_journal_open (&journal, 0);
+
+    if (ret < 0)
+    {
+        g_warning ("Error opening systemd journal: %s", g_strerror (ret));
+    }
+
+    ret = sd_journal_seek_tail (journal);
+
+    if (ret < 0)
+    {
+        g_warning ("Error seeking to end of systemd journal: %s",
+                   g_strerror (-ret));
+    }
+
+    ret = sd_journal_next (journal);
+
+    if (ret < 0)
+    {
+        g_warning ("Error setting cursor to end of systemd journal: %s",
+                   g_strerror (-ret));
+    }
+
+    for (i = 0; i < 10; i++)
+    {
+        const gchar *data;
+        gsize length;
+        GtkWidget *label;
+
+        ret = sd_journal_get_data (journal, "MESSAGE", (const void **)&data,
+                                   &length);
+
+        if (ret < 0)
+        {
+            g_warning ("Error getting data from systemd journal: %s",
+                       g_strerror (-ret));
+            break;
+        }
+
+        label = gtk_label_new (strchr (data, '=') + 1);
+        gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
+        gtk_label_set_ellipsize (GTK_LABEL (label), PANGO_ELLIPSIZE_END);
+        gtk_container_add (GTK_CONTAINER (listbox), label);
+
+        ret = sd_journal_previous (journal);
+
+        if (ret < 0)
+        {
+            g_warning ("Error setting cursor to previous systemd journal entry %s",
+                       g_strerror (-ret));
+            break;
+        }
+    }
+
+    sd_journal_close (journal);
+
     scrolled = gtk_scrolled_window_new (NULL, NULL);
     gtk_widget_set_hexpand (scrolled, TRUE);
     gtk_widget_set_vexpand (scrolled, TRUE);
     gtk_container_add (GTK_CONTAINER (scrolled), listbox);
     gtk_grid_attach (GTK_GRID (grid), scrolled, 1, 1, 1, 1);
 
+    gtk_window_set_default_size (GTK_WINDOW (window), 640, 480);
     gtk_container_add (GTK_CONTAINER (window), grid);
 
     gtk_widget_show_all (grid);
