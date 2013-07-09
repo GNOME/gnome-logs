@@ -1,3 +1,4 @@
 data/gnome-logs.desktop.in
+src/gl-application.c
 src/gl-categorylist.c
 src/gl-window.c
