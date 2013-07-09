@@ -6,6 +6,7 @@ Makefile
 /data/gnome-logs.desktop
 /m4/
 /po/Makefile.in.in
+/src/gl-resource.*
 /aclocal.m4
 /config.*
 /configure

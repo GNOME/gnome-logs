@@ -1,3 +1,4 @@
+[type: gettext/glade]data/appmenu.ui
 data/gnome-logs.desktop.in
 src/gl-application.c
 src/gl-categorylist.c

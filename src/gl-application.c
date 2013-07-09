@@ -68,9 +68,31 @@ static GActionEntry actions[] = {
 static void
 gl_application_startup (GApplication *application)
 {
+    GtkBuilder *builder;
+    GError *error = NULL;
+    GMenuModel *appmenu;
+
     g_action_map_add_action_entries (G_ACTION_MAP (application), actions,
                                      G_N_ELEMENTS (actions), application);
+
+    /* Calls gtk_init() with no arguments. */
     G_APPLICATION_CLASS (gl_application_parent_class)->startup (application);
+
+    builder = gtk_builder_new ();
+    gtk_builder_set_translation_domain (builder, GETTEXT_PACKAGE);
+    gtk_builder_add_from_resource (builder, "/org/gnome/Logs/appmenu.ui",
+                                   &error);
+
+    if (error != NULL)
+    {
+        g_error ("Unable to get app menu from resource: %s", error->message);
+    }
+
+    appmenu = G_MENU_MODEL (gtk_builder_get_object (builder, "appmenu"));
+    gtk_application_set_app_menu (GTK_APPLICATION (application), appmenu);
+
+    g_object_unref (builder);
+
 }
 
 static void

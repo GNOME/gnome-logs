@@ -23,11 +23,17 @@ gnome_logs_SOURCES = \
 	src/gl-main.c \
 	src/gl-window.c
 
+nodist_gnome_logs_SOURCES = \
+	src/gl-resource.c
+
 noinst_gnome_logs_headers = \
 	src/gl-application.h \
 	src/gl-categorylist.h \
 	src/gl-eventview.h \
 	src/gl-window.h
+
+nodist_gnome_logs_headers = \
+	src/gl-resource.h
 
 %/.dstamp:
 	$(AM_V_at)$(MKDIR_P) $(@D)
@@ -39,9 +45,17 @@ desktop_in_files = data/gnome-logs.desktop.in
 $(desktop_in_files:.desktop.in=.desktop): data/.dstamp
 desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
 
+noinst_resource_files = \
+	data/appmenu.ui
+
+src/gl-resource.c src/gl-resource.h: data/gnome-logs.gresource.xml Makefile $(noinst_resource_files)
+	$(AM_V_GEN) $(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir)/data --generate --c-name gl $<
+
 dist_noinst_DATA = \
 	$(noinst_gnome_logs_headers) \
-	$(desktop_in_files)
+	$(noinst_resource_files) \
+	$(desktop_in_files) \
+	data/gnome-logs.gresource.xml
 
 dist_noinst_SCRIPTS = \
 	autogen.sh
@@ -61,7 +75,9 @@ git-changelog-hook:
 	else rm -f .ChangeLog.tmp; exit 1; fi
 
 CLEANFILES = \
-	$(desktop_DATA)
+	$(desktop_DATA) \
+	src/gl-resource.c \
+	src/gl-resource.h
 
 MAINTAINERCLEANFILES = \
 	build-aux/compile \

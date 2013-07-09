@@ -20,6 +20,8 @@ LT_INIT
 
 PKG_PROG_PKG_CONFIG([0.24])
 
+AC_SUBST([GLIB_COMPILE_RESOURCES], [`$PKG_CONFIG --variable glib_compile_resources gio-2.0`])
+
 dnl Internationalization
 IT_PROG_INTLTOOL([0.50.0])
 AC_SUBST([GETTEXT_PACKAGE], [AC_PACKAGE_TARNAME])
