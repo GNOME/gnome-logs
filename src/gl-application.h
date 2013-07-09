@@ -16,27 +16,31 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "config.h"
+#ifndef GL_APPLICATION_H_
+#define GL_APPLICATION_H_
 
 #include <gtk/gtk.h>
-#include <glib/gi18n.h>
 
-#include "gl-application.h"
+G_BEGIN_DECLS
 
-int
-main (int argc,
-      char **argv)
+typedef struct
 {
-    GtkApplication *application;
-    int status;
+    /*< private >*/
+    GtkApplication parent_instance;
+} GlApplication;
 
-    bindtextdomain (GETTEXT_PACKAGE, LOCALEDIR);
-    bind_textdomain_codeset (PACKAGE_TARNAME, "UTF-8");
-    textdomain (GETTEXT_PACKAGE);
+typedef struct
+{
+    /*< private >*/
+    GtkApplicationClass parent_class;
+} GlApplicationClass;
 
-    application = gl_application_new ();
-    status = g_application_run (G_APPLICATION (application), argc, argv);
-    g_object_unref (application);
+#define GL_TYPE_APPLICATION (gl_application_get_type ())
+#define GL_APPLICATION(object) (G_TYPE_CHECK_INSTANCE_CAST ((object), GL_TYPE_APPLICATION, GlApplication)
 
-    return status;
-}
+GType gl_application_get_type (void);
+GtkApplication * gl_application_new (void);
+
+G_END_DECLS
+
+#endif /* GL_APPLICATION_H_ */

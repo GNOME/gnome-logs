@@ -16,27 +16,37 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "config.h"
-
-#include <gtk/gtk.h>
-#include <glib/gi18n.h>
-
 #include "gl-application.h"
 
-int
-main (int argc,
-      char **argv)
+#include <glib/gi18n.h>
+
+#include "gl-window.h"
+
+G_DEFINE_TYPE (GlApplication, gl_application, GTK_TYPE_APPLICATION)
+
+static void
+gl_application_activate (GApplication *app)
 {
-    GtkApplication *application;
-    int status;
+    GtkWidget *widget;
 
-    bindtextdomain (GETTEXT_PACKAGE, LOCALEDIR);
-    bind_textdomain_codeset (PACKAGE_TARNAME, "UTF-8");
-    textdomain (GETTEXT_PACKAGE);
+    widget = gl_window_new (GTK_APPLICATION (app));
+    gtk_widget_show (widget);
+}
 
-    application = gl_application_new ();
-    status = g_application_run (G_APPLICATION (application), argc, argv);
-    g_object_unref (application);
+static void
+gl_application_init (GlApplication *application)
+{
+}
 
-    return status;
+static void
+gl_application_class_init (GlApplicationClass *klass)
+{
+    G_APPLICATION_CLASS (klass)->activate = gl_application_activate;
+}
+
+GtkApplication *
+gl_application_new (void)
+{
+    return g_object_new (GL_TYPE_APPLICATION, "application-id",
+                         "org.gnome.Logs", NULL);
 }
