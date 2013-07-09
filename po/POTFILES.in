@@ -1,2 +1,3 @@
+data/gnome-logs.desktop.in
 src/gl-categorylist.c
 src/gl-window.c

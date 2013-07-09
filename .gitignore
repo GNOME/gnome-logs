@@ -3,7 +3,9 @@ Makefile
 /Makefile.in
 /autom4te.cache/
 /build-aux/
+/data/gnome-logs.desktop
 /m4/
+/po/Makefile.in.in
 /aclocal.m4
 /config.*
 /configure

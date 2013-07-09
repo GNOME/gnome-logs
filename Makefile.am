@@ -27,13 +27,28 @@ noinst_gnome_logs_headers = \
 	src/gl-eventview.h \
 	src/gl-window.h
 
+%/.dstamp:
+	$(AM_V_at)$(MKDIR_P) $(@D)
+	$(AM_V_at)touch $@
+
+@INTLTOOL_DESKTOP_RULE@
+desktopdir = $(datadir)/applications
+desktop_in_files = data/gnome-logs.desktop.in
+$(desktop_in_files:.desktop.in=.desktop): data/.dstamp
+desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
+
 dist_noinst_DATA = \
-	$(noinst_gnome_logs_headers)
+	$(noinst_gnome_logs_headers) \
+	$(desktop_in_files)
 
 dist_noinst_SCRIPTS = \
 	autogen.sh
 
 dist-hook: git-changelog-hook
+
+clean-local: clean-local-dstamp
+clean-local-dstamp:
+	-rm -f data/.dstamp
 
 git-changelog-hook:
 	$(AM_V_at)if $(top_srcdir)/build-aux/missing --run git \
@@ -42,6 +57,9 @@ git-changelog-hook:
 		| fmt --split-only >.ChangeLog.tmp; \
 	then mv -f .ChangeLog.tmp "$(top_distdir)/ChangeLog"; \
 	else rm -f .ChangeLog.tmp; exit 1; fi
+
+CLEANFILES = \
+	$(desktop_DATA)
 
 MAINTAINERCLEANFILES = \
 	build-aux/compile \
@@ -54,4 +72,4 @@ MAINTAINERCLEANFILES = \
 	config.h.in \
 	mkinstalldirs
 
-.PHONY: git-changelog-hook
+.PHONY: clean-local-dstamp git-changelog-hook
