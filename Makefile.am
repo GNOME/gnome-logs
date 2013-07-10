@@ -46,7 +46,8 @@ $(desktop_in_files:.desktop.in=.desktop): data/.dstamp
 desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
 
 noinst_resource_files = \
-	data/appmenu.ui
+	data/appmenu.ui \
+	data/gl-window.ui
 
 src/gl-resource.c src/gl-resource.h: data/gnome-logs.gresource.xml Makefile $(noinst_resource_files)
 	$(AM_V_GEN) $(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir)/data --generate --c-name gl $<

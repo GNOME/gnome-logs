@@ -93,15 +93,33 @@ gl_application_startup (GApplication *application)
 
     g_object_unref (builder);
 
+    /* Must register custom types before using them from GtkBuilder. */
+    gl_window_get_type ();
 }
 
 static void
-gl_application_activate (GApplication *app)
+gl_application_activate (GApplication *application)
 {
-    GtkWidget *widget;
+    GtkBuilder *builder;
+    GError *error = NULL;
+    GtkWidget *appwindow;
 
-    widget = gl_window_new (GTK_APPLICATION (app));
-    gtk_widget_show (widget);
+    builder = gtk_builder_new ();
+    gtk_builder_set_translation_domain (builder, GETTEXT_PACKAGE);
+    gtk_builder_add_from_resource (builder, "/org/gnome/Logs/gl-window.ui",
+                                   &error);
+
+    if (error != NULL)
+    {
+        g_error ("Unable to get app window from resource: %s", error->message);
+    }
+
+    appwindow = GTK_WIDGET (gtk_builder_get_object (builder, "appwindow"));
+    gtk_window_set_application (GTK_WINDOW (appwindow),
+                                GTK_APPLICATION (application));
+    gtk_widget_show (appwindow);
+
+    g_object_unref (builder);
 }
 
 static void
