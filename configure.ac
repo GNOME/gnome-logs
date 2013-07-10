@@ -1,4 +1,4 @@
-AC_INIT([GNOME Logs],
+AC_INIT([Logs],
         [0.1],
         [davidk@gnome.org],
         [gnome-logs],

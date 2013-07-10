@@ -1,5 +1,5 @@
 [type: gettext/glade]data/appmenu.ui
+[type: gettext/glade]data/gl-window.ui
 data/gnome-logs.desktop.in
 src/gl-application.c
 src/gl-categorylist.c
-src/gl-window.c

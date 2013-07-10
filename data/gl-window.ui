@@ -1,4 +1,5 @@
-<interface>
+<interface domain="gnome-logs">
     <object class="GlWindow" id="appwindow">
+        <property name="title" translatable="yes">Logs</property>
     </object>
 </interface>
