@@ -21,6 +21,8 @@
 
 #include <glib/gi18n.h>
 
+#include "gl-categorylist.h"
+#include "gl-eventview.h"
 #include "gl-window.h"
 
 G_DEFINE_TYPE (GlApplication, gl_application, GTK_TYPE_APPLICATION)
@@ -95,6 +97,8 @@ gl_application_startup (GApplication *application)
 
     /* Must register custom types before using them from GtkBuilder. */
     gl_window_get_type ();
+    gl_category_list_get_type ();
+    gl_event_view_get_type ();
 }
 
 static void
@@ -117,7 +121,7 @@ gl_application_activate (GApplication *application)
     appwindow = GTK_WIDGET (gtk_builder_get_object (builder, "appwindow"));
     gtk_window_set_application (GTK_WINDOW (appwindow),
                                 GTK_APPLICATION (application));
-    gtk_widget_show (appwindow);
+    gtk_widget_show_all (appwindow);
 
     g_object_unref (builder);
 }
