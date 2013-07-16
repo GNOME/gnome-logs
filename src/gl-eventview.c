@@ -65,7 +65,11 @@ gl_event_view_init (GlEventView *view)
     {
         const gchar *data;
         gsize length;
+        GtkWidget *row;
+        GtkWidget *box;
         GtkWidget *label;
+        gboolean rtl;
+        GtkWidget *image;
 
         ret = sd_journal_get_data (journal, "MESSAGE", (const void **)&data,
                                    &length);
@@ -77,10 +81,24 @@ gl_event_view_init (GlEventView *view)
             break;
         }
 
+        row = gtk_list_box_row_new ();
+        box = gtk_grid_new ();
+        gtk_grid_set_column_spacing (GTK_GRID (box), 6);
+        gtk_container_add (GTK_CONTAINER (row), box);
+
         label = gtk_label_new (strchr (data, '=') + 1);
+        gtk_widget_set_hexpand (label, TRUE);
         gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
         gtk_label_set_ellipsize (GTK_LABEL (label), PANGO_ELLIPSIZE_END);
-        gtk_container_add (GTK_CONTAINER (listbox), label);
+
+        gtk_container_add (GTK_CONTAINER (box), label);
+
+        rtl = (gtk_widget_get_default_direction () == GTK_TEXT_DIR_RTL);
+        image = gtk_image_new_from_icon_name (rtl ? "go-next-rtl-symbolic"
+                                                  : "go-next-symbolic",
+                                              GTK_ICON_SIZE_MENU);
+        gtk_container_add (GTK_CONTAINER (box), image);
+        gtk_container_add (GTK_CONTAINER (listbox), row);
 
         ret = sd_journal_previous (journal);
 
