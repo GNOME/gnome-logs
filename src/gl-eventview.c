@@ -63,15 +63,27 @@ gl_event_view_init (GlEventView *view)
 
     for (i = 0; i < 10; i++)
     {
-        const gchar *data;
+        const gchar *message;
+        const gchar *comm;
         gsize length;
         GtkWidget *row;
-        GtkWidget *box;
+        GtkWidget *grid;
         GtkWidget *label;
+        gchar *markup;
         gboolean rtl;
         GtkWidget *image;
 
-        ret = sd_journal_get_data (journal, "MESSAGE", (const void **)&data,
+        ret = sd_journal_get_data (journal, "_COMM", (const void **)&comm,
+                                   &length);
+
+        if (ret < 0)
+        {
+            g_warning ("Error getting data from systemd journal: %s",
+                       g_strerror (-ret));
+            break;
+        }
+
+        ret = sd_journal_get_data (journal, "MESSAGE", (const void **)&message,
                                    &length);
 
         if (ret < 0)
@@ -82,22 +94,30 @@ gl_event_view_init (GlEventView *view)
         }
 
         row = gtk_list_box_row_new ();
-        box = gtk_grid_new ();
-        gtk_grid_set_column_spacing (GTK_GRID (box), 6);
-        gtk_container_add (GTK_CONTAINER (row), box);
+        grid = gtk_grid_new ();
+        gtk_grid_set_column_spacing (GTK_GRID (grid), 6);
+        gtk_container_add (GTK_CONTAINER (row), grid);
 
-        label = gtk_label_new (strchr (data, '=') + 1);
+        markup = g_markup_printf_escaped ("<b>%s</b>", strchr (comm, '=') + 1);
+        label = gtk_label_new (NULL);
         gtk_widget_set_hexpand (label, TRUE);
         gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
         gtk_label_set_ellipsize (GTK_LABEL (label), PANGO_ELLIPSIZE_END);
+        gtk_label_set_markup (GTK_LABEL (label), markup);
+        g_free (markup);
+        gtk_grid_attach (GTK_GRID (grid), label, 0, 0, 1, 1);
 
-        gtk_container_add (GTK_CONTAINER (box), label);
+        label = gtk_label_new (strchr (message, '=') + 1);
+        gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
+        gtk_label_set_ellipsize (GTK_LABEL (label), PANGO_ELLIPSIZE_END);
+        gtk_grid_attach (GTK_GRID (grid), label, 0, 1, 1, 1);
 
         rtl = (gtk_widget_get_default_direction () == GTK_TEXT_DIR_RTL);
         image = gtk_image_new_from_icon_name (rtl ? "go-next-rtl-symbolic"
                                                   : "go-next-symbolic",
                                               GTK_ICON_SIZE_MENU);
-        gtk_container_add (GTK_CONTAINER (box), image);
+        gtk_grid_attach (GTK_GRID (grid), image, 1, 0, 1, 2);
+
         gtk_container_add (GTK_CONTAINER (listbox), row);
 
         ret = sd_journal_previous (journal);
