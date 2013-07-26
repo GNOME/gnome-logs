@@ -19,6 +19,7 @@
 #include "gl-eventview.h"
 
 #include <glib/gi18n.h>
+#include <stdlib.h>
 #include <systemd/sd-journal.h>
 
 G_DEFINE_TYPE (GlEventView, gl_event_view, GTK_TYPE_LIST_BOX)
@@ -65,6 +66,7 @@ gl_event_view_init (GlEventView *view)
     {
         const gchar *message;
         const gchar *comm;
+        gchar *cursor;
         gsize length;
         GtkWidget *row;
         GtkWidget *grid;
@@ -93,7 +95,33 @@ gl_event_view_init (GlEventView *view)
             break;
         }
 
+        ret = sd_journal_get_cursor (journal, &cursor);
+
+        if (ret < 0)
+        {
+            g_warning ("Error getting cursor for current journal entry: %s",
+                       g_strerror (-ret));
+            break;
+        }
+
+        ret = sd_journal_test_cursor (journal, cursor);
+
+        if (ret < 0)
+        {
+            g_warning ("Error testing cursor string: %s", g_strerror (-ret));
+            free (cursor);
+            break;
+        }
+        else if (ret == 0)
+        {
+            g_warning ("Cursor string does not match journal entry");
+            /* Not a problem at this point, but would be when seeking to the
+             * cursor later on. */
+        }
+
         row = gtk_list_box_row_new ();
+        /* sd_journal_get_cursor allocates the cursor with libc malloc. */
+        g_object_set_data_full (G_OBJECT (row), "cursor", cursor, free);
         grid = gtk_grid_new ();
         gtk_grid_set_column_spacing (GTK_GRID (grid), 6);
         gtk_container_add (GTK_CONTAINER (row), grid);
