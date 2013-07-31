@@ -22,12 +22,12 @@
 #include <stdlib.h>
 #include <systemd/sd-journal.h>
 
-G_DEFINE_TYPE (GlEventView, gl_event_view, GTK_TYPE_LIST_BOX)
+G_DEFINE_TYPE (GlEventView, gl_event_view, GTK_TYPE_STACK)
 
 static void
-on_row_activated (GtkListBox *listbox,
-                  GtkListBoxRow *row,
-                  gpointer user_data)
+on_listbox_row_activated (GtkListBox *listbox,
+                          GtkListBoxRow *row,
+                          gpointer user_data)
 {
     sd_journal *journal;
     gint ret;
@@ -92,13 +92,16 @@ gl_event_view_class_init (GlEventViewClass *klass)
 static void
 gl_event_view_init (GlEventView *view)
 {
+    GtkWidget *stack;
     GtkWidget *listbox;
     sd_journal *journal;
     gint ret;
     gsize i;
     GtkWidget *scrolled;
 
-    listbox = GTK_WIDGET (view);
+    stack = GTK_WIDGET (view);
+
+    listbox = gtk_list_box_new ();
     ret = sd_journal_open (&journal, 0);
 
     if (ret < 0)
@@ -219,9 +222,11 @@ gl_event_view_init (GlEventView *view)
     }
 
     g_signal_connect (listbox, "row-activated",
-                      G_CALLBACK (on_row_activated), NULL);
+                      G_CALLBACK (on_listbox_row_activated), NULL);
 
     sd_journal_close (journal);
+
+    gtk_container_add (GTK_CONTAINER (stack), listbox);
 }
 
 GtkWidget *
