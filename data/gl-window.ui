@@ -18,12 +18,40 @@
                 <child>
                     <object class="GtkToolbar" id="right_toolbar">
                         <child>
+                            <object class="GtkToolItem" id="go_back_container">
+                                <child>
+                                    <object class="GtkButton" id="go_back">
+                                        <property name="sensitive">False</property>
+                                        <child>
+                                            <object class="GtkImage" id="go_back_icon">
+                                                <property name="icon-name">go-previous-symbolic</property>
+                                            </object>
+                                        </child>
+                                    </object>
+                                </child>
+                            </object>
+                        </child>
+                        <child>
                             <object class="GtkSeparatorToolItem" id="spacer">
                                 <property name="draw">False</property>
                             </object>
                             <packing>
                                 <property name="expand">True</property>
                             </packing>
+                        </child>
+                        <child>
+                            <object class="GtkToolItem" id="search_container">
+                                <child>
+                                    <object class="GtkButton" id="search">
+                                        <property name="sensitive">False</property>
+                                        <child>
+                                            <object class="GtkImage" id="search_icon">
+                                                <property name="icon-name">edit-find-symbolic</property>
+                                            </object>
+                                        </child>
+                                    </object>
+                                </child>
+                            </object>
                         </child>
                         <child>
                             <object class="GtkToolItem" id="gear_item">
