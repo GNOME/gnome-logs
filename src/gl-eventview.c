@@ -25,6 +25,18 @@
 G_DEFINE_TYPE (GlEventView, gl_event_view, GTK_TYPE_STACK)
 
 static void
+on_detailed_button_clicked (GtkButton *button,
+                            GlEventView *view)
+{
+    GtkWidget *detailed;
+    GtkStack *stack = GTK_STACK (view);
+
+    detailed = gtk_stack_get_visible_child (stack);
+    gtk_stack_set_visible_child_name (stack, "listbox");
+    gtk_container_remove (GTK_CONTAINER (stack), detailed);
+}
+
+static void
 on_listbox_row_activated (GtkListBox *listbox,
                           GtkListBoxRow *row,
                           GtkWidget *view)
@@ -34,7 +46,11 @@ on_listbox_row_activated (GtkListBox *listbox,
     gchar *cursor;
     gchar *comm;
     gsize length;
-    GtkWidget *detailed;
+    GtkWidget *grid;
+    GtkWidget *label;
+    GtkWidget *button;
+    GtkWidget *image;
+    gboolean rtl;
     GtkStack *stack;
 
     ret = sd_journal_open (&journal, 0);
@@ -92,10 +108,23 @@ on_listbox_row_activated (GtkListBox *listbox,
         goto out;
     }
 
-    detailed = gtk_label_new (strchr (comm, '=') + 1);
-    gtk_widget_show (detailed);
+    grid = gtk_grid_new ();
+    label = gtk_label_new (strchr (comm, '=') + 1);
+    gtk_grid_attach (GTK_GRID (grid), label, 0, 0, 1, 1);
+
+    button = gtk_button_new ();
+    g_signal_connect (button, "clicked",
+                      G_CALLBACK (on_detailed_button_clicked), view);
+    rtl = (gtk_widget_get_default_direction () == GTK_TEXT_DIR_RTL);
+    image = gtk_image_new_from_icon_name (rtl ? "go-previous-rtl-symbolic"
+                                              : "go-previous-symbolic",
+                                          GTK_ICON_SIZE_MENU);
+    gtk_container_add (GTK_CONTAINER (button), image);
+    gtk_grid_attach (GTK_GRID (grid), button, 0, 1, 1, 1);
+
+    gtk_widget_show_all (grid);
     stack = GTK_STACK (view);
-    gtk_stack_add_named (stack, detailed, "detailed");
+    gtk_stack_add_named (stack, grid, "detailed");
     gtk_stack_set_visible_child_name (stack, "detailed");
 
 out:
