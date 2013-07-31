@@ -24,16 +24,52 @@
 #include "gl-categorylist.h"
 #include "gl-eventview.h"
 
-G_DEFINE_TYPE (GlWindow, gl_window, GTK_TYPE_APPLICATION_WINDOW)
+typedef struct
+{
+    GtkWidget *right_toolbar;
+} GlWindowPrivate;
+
+G_DEFINE_TYPE_WITH_PRIVATE (GlWindow, gl_window, GTK_TYPE_APPLICATION_WINDOW)
+
+static void
+on_action_radio (GSimpleAction *action,
+                 GVariant *variant,
+                 gpointer user_data)
+{
+    g_action_change_state (G_ACTION (action), variant);
+}
+
+static void
+on_mode (GSimpleAction *action,
+         GVariant *variant,
+         gpointer user_data)
+{
+    /* TODO: Switch toolbar mode. */
+    g_simple_action_set_state (action, variant);
+}
+
+static GActionEntry actions[] = {
+    { "mode", on_action_radio, "s", "'list'", on_mode }
+};
 
 static void
 gl_window_class_init (GlWindowClass *klass)
 {
+    GtkWidgetClass *widget_class = GTK_WIDGET_CLASS (klass);
+
+    gtk_widget_class_set_template_from_resource (widget_class,
+                                                 "/org/gnome/Logs/gl-window.ui");
+    gtk_widget_class_bind_template_child_private (widget_class, GlWindow,
+                                                  right_toolbar);
 }
 
 static void
 gl_window_init (GlWindow *window)
 {
+    gtk_widget_init_template (GTK_WIDGET (window));
+
+    g_action_map_add_action_entries (G_ACTION_MAP (window), actions,
+                                     G_N_ELEMENTS (actions), window);
 }
 
 GtkWidget *

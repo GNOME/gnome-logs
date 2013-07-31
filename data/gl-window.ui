@@ -1,5 +1,5 @@
 <interface domain="gnome-logs">
-    <object class="GlWindow" id="appwindow">
+    <template class="GlWindow" parent="GtkApplicationWindow">
         <property name="title" translatable="yes">Logs</property>
         <property name="default-width">640</property>
         <property name="default-height">480</property>
@@ -101,5 +101,5 @@
                </child>
             </object>
         </child>
-    </object>
+    </template>
 </interface>

@@ -104,26 +104,10 @@ gl_application_startup (GApplication *application)
 static void
 gl_application_activate (GApplication *application)
 {
-    GtkBuilder *builder;
-    GError *error = NULL;
-    GtkWidget *appwindow;
+    GtkWidget *window;
 
-    builder = gtk_builder_new ();
-    gtk_builder_set_translation_domain (builder, GETTEXT_PACKAGE);
-    gtk_builder_add_from_resource (builder, "/org/gnome/Logs/gl-window.ui",
-                                   &error);
-
-    if (error != NULL)
-    {
-        g_error ("Unable to get app window from resource: %s", error->message);
-    }
-
-    appwindow = GTK_WIDGET (gtk_builder_get_object (builder, "appwindow"));
-    gtk_window_set_application (GTK_WINDOW (appwindow),
-                                GTK_APPLICATION (application));
-    gtk_widget_show_all (appwindow);
-
-    g_object_unref (builder);
+    window = gl_window_new (GTK_APPLICATION (application));
+    gtk_widget_show_all (window);
 }
 
 static void
