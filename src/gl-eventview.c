@@ -27,11 +27,15 @@ G_DEFINE_TYPE (GlEventView, gl_event_view, GTK_TYPE_STACK)
 static void
 on_listbox_row_activated (GtkListBox *listbox,
                           GtkListBoxRow *row,
-                          gpointer user_data)
+                          GtkWidget *view)
 {
     sd_journal *journal;
     gint ret;
     gchar *cursor;
+    gchar *comm;
+    gsize length;
+    GtkWidget *detailed;
+    GtkStack *stack;
 
     ret = sd_journal_open (&journal, 0);
 
@@ -78,7 +82,21 @@ on_listbox_row_activated (GtkListBox *listbox,
         goto out;
     }
 
-    /* TODO: Switch to detailed event view. */
+    ret = sd_journal_get_data (journal, "_COMM", (const void **)&comm,
+                               &length);
+
+    if (ret < 0)
+    {
+        g_warning ("Error getting data from systemd journal: %s",
+                   g_strerror (-ret));
+        goto out;
+    }
+
+    detailed = gtk_label_new (strchr (comm, '=') + 1);
+    gtk_widget_show (detailed);
+    stack = GTK_STACK (view);
+    gtk_stack_add_named (stack, detailed, "detailed");
+    gtk_stack_set_visible_child_name (stack, "detailed");
 
 out:
     sd_journal_close (journal);
@@ -222,11 +240,11 @@ gl_event_view_init (GlEventView *view)
     }
 
     g_signal_connect (listbox, "row-activated",
-                      G_CALLBACK (on_listbox_row_activated), NULL);
+                      G_CALLBACK (on_listbox_row_activated), stack);
 
     sd_journal_close (journal);
 
-    gtk_container_add (GTK_CONTAINER (stack), listbox);
+    gtk_stack_add_named (GTK_STACK (stack), listbox, "listbox");
 }
 
 GtkWidget *
