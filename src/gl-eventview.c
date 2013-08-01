@@ -25,6 +25,66 @@
 G_DEFINE_TYPE (GlEventView, gl_event_view, GTK_TYPE_LIST_BOX)
 
 static void
+on_row_activated (GtkListBox *listbox,
+                  GtkListBoxRow *row,
+                  gpointer user_data)
+{
+    sd_journal *journal;
+    gint ret;
+    gchar *cursor;
+
+    ret = sd_journal_open (&journal, 0);
+
+    if (ret < 0)
+    {
+        g_warning ("Error opening systemd journal: %s", g_strerror (-ret));
+        return;
+    }
+
+    cursor = g_object_get_data (G_OBJECT (row), "cursor");
+
+    if (cursor == NULL)
+    {
+        g_warning ("Error getting cursor from row");
+        goto out;
+    }
+
+    ret = sd_journal_seek_cursor (journal, cursor);
+
+    if (ret < 0)
+    {
+        g_warning ("Error seeking to cursor position: %s", g_strerror (-ret));
+        goto out;
+    }
+
+    ret = sd_journal_next (journal);
+
+    if (ret < 0)
+    {
+        g_warning ("Error positioning cursor in systemd journal: %s",
+                   g_strerror (-ret));
+    }
+
+    ret = sd_journal_test_cursor (journal, cursor);
+
+    if (ret < 0)
+    {
+        g_warning ("Error testing cursor string: %s", g_strerror (-ret));
+        goto out;
+    }
+    else if (ret == 0)
+    {
+        g_warning ("Cursor string does not match journal entry");
+        goto out;
+    }
+
+    /* TODO: Switch to detailed event view. */
+
+out:
+    sd_journal_close (journal);
+}
+
+static void
 gl_event_view_class_init (GlEventViewClass *klass)
 {
 }
@@ -157,6 +217,9 @@ gl_event_view_init (GlEventView *view)
             break;
         }
     }
+
+    g_signal_connect (listbox, "row-activated",
+                      G_CALLBACK (on_row_activated), NULL);
 
     sd_journal_close (journal);
 }
