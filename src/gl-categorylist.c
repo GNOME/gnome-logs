@@ -20,55 +20,61 @@
 
 #include <glib/gi18n.h>
 
-G_DEFINE_TYPE (GlCategoryList, gl_category_list, GTK_TYPE_LIST_BOX)
+typedef struct
+{
+    GtkWidget *important;
+    GtkWidget *alerts;
+    GtkWidget *starred;
+    GtkWidget *all;
+    GtkWidget *applications;
+    GtkWidget *system;
+    GtkWidget *security;
+    GtkWidget *hardware;
+    GtkWidget *updates;
+    GtkWidget *usage;
+} GlCategoryListPrivate;
+
+G_DEFINE_TYPE_WITH_PRIVATE (GlCategoryList, gl_category_list, GTK_TYPE_LIST_BOX)
 
 static void
 gl_category_list_class_init (GlCategoryListClass *klass)
 {
+    GtkWidgetClass *widget_class = GTK_WIDGET_CLASS (klass);
+
+    gtk_widget_class_set_template_from_resource (widget_class,
+                                                 "/org/gnome/Logs/gl-categorylist.ui");
+    gtk_widget_class_bind_template_child_private (widget_class, GlCategoryList,
+                                                  important);
+    gtk_widget_class_bind_template_child_private (widget_class, GlCategoryList,
+                                                  alerts);
+    gtk_widget_class_bind_template_child_private (widget_class, GlCategoryList,
+                                                  starred);
+    gtk_widget_class_bind_template_child_private (widget_class, GlCategoryList,
+                                                  all);
+    gtk_widget_class_bind_template_child_private (widget_class, GlCategoryList,
+                                                  applications);
+    gtk_widget_class_bind_template_child_private (widget_class, GlCategoryList,
+                                                  system);
+    gtk_widget_class_bind_template_child_private (widget_class, GlCategoryList,
+                                                  security);
+    gtk_widget_class_bind_template_child_private (widget_class, GlCategoryList,
+                                                  hardware);
+    gtk_widget_class_bind_template_child_private (widget_class, GlCategoryList,
+                                                  updates);
+    gtk_widget_class_bind_template_child_private (widget_class, GlCategoryList,
+                                                  usage);
 }
 
 static void
 gl_category_list_init (GlCategoryList *list)
 {
-    GtkWidget *listbox;
-    GtkWidget *label;
-    GtkWidget *row;
+    GlCategoryListPrivate *priv;
 
-    /* Category/group view. */
-    listbox = GTK_WIDGET (list);
-    label = gtk_label_new (_("Important"));
-    gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
-    gtk_container_add (GTK_CONTAINER (listbox), label);
-    label = gtk_label_new (_("Alerts"));
-    gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
-    gtk_container_add (GTK_CONTAINER (listbox), label);
-    label = gtk_label_new (_("Starred"));
-    gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
-    gtk_container_add (GTK_CONTAINER (listbox), label);
-    label = gtk_label_new (_("All"));
-    gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
-    row = gtk_list_box_row_new ();
-    gtk_container_add (GTK_CONTAINER (row), label);
-    gtk_container_add (GTK_CONTAINER (listbox), row);
-    gtk_list_box_select_row (GTK_LIST_BOX (listbox), GTK_LIST_BOX_ROW (row));
-    label = gtk_label_new (_("Applications"));
-    gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
-    gtk_container_add (GTK_CONTAINER (listbox), label);
-    label = gtk_label_new (_("System"));
-    gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
-    gtk_container_add (GTK_CONTAINER (listbox), label);
-    label = gtk_label_new (_("Security"));
-    gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
-    gtk_container_add (GTK_CONTAINER (listbox), label);
-    label = gtk_label_new (_("Hardware"));
-    gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
-    gtk_container_add (GTK_CONTAINER (listbox), label);
-    label = gtk_label_new (_("Updates"));
-    gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
-    gtk_container_add (GTK_CONTAINER (listbox), label);
-    label = gtk_label_new (_("Usage"));
-    gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
-    gtk_container_add (GTK_CONTAINER (listbox), label);
+    gtk_widget_init_template (GTK_WIDGET (list));
+    priv = gl_category_list_get_instance_private (list);
+
+    gtk_list_box_select_row (GTK_LIST_BOX (list),
+                             GTK_LIST_BOX_ROW (priv->all));
 }
 
 GtkWidget *

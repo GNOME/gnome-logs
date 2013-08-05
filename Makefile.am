@@ -47,6 +47,7 @@ desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
 
 noinst_resource_files = \
 	data/appmenu.ui \
+	data/gl-categorylist.ui \
 	data/gl-window.ui
 
 src/gl-resource.c src/gl-resource.h: data/gnome-logs.gresource.xml Makefile $(noinst_resource_files)
