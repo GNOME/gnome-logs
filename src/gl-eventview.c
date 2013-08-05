@@ -19,12 +19,15 @@
 #include "gl-eventview.h"
 
 #include <glib/gi18n.h>
+#include <glib-unix.h>
 #include <stdlib.h>
 #include <systemd/sd-journal.h>
 
 typedef struct
 {
     sd_journal *journal;
+    gint fd;
+    guint source_id;
 } GlEventViewPrivate;
 
 G_DEFINE_TYPE_WITH_PRIVATE (GlEventView, gl_event_view, GTK_TYPE_STACK)
@@ -165,13 +168,48 @@ out:
     return;
 }
 
+static gboolean
+on_journal_changed (gint fd,
+                    GIOCondition condition,
+                    GlEventView *view)
+{
+    gint ret;
+    GlEventViewPrivate *priv = gl_event_view_get_instance_private (view);
+
+    ret = sd_journal_process (priv->journal);
+
+    switch (ret)
+    {
+        case SD_JOURNAL_NOP:
+            g_debug ("Journal change was a no-op");
+            break;
+        case SD_JOURNAL_APPEND:
+            g_debug ("New journal entries added");
+            break;
+        case SD_JOURNAL_INVALIDATE:
+            g_debug ("Journal files added or removed");
+            break;
+        default:
+            g_warning ("Error processing events from systemd journal: %s",
+                       g_strerror (-ret));
+            break;
+    }
+
+    return G_SOURCE_CONTINUE;
+}
+
 static void
 gl_event_view_finalize (GObject *object)
 {
     GlEventView *view = GL_EVENT_VIEW (object);
     GlEventViewPrivate *priv = gl_event_view_get_instance_private (view);
 
-    sd_journal_close (priv->journal);
+    g_source_remove (priv->source_id);
+
+    if (priv->journal)
+    {
+        sd_journal_close (priv->journal);
+    }
 }
 
 static void
@@ -188,7 +226,7 @@ gl_event_view_init (GlEventView *view)
     GlEventViewPrivate *priv;
     GtkWidget *stack;
     GtkWidget *listbox;
-    sd_journal *journal;
+    sd_journal *journal = NULL;
     gint ret;
     gsize i;
     GtkWidget *scrolled;
@@ -203,6 +241,42 @@ gl_event_view_init (GlEventView *view)
     if (ret < 0)
     {
         g_warning ("Error opening systemd journal: %s", g_strerror (-ret));
+    }
+
+    ret = sd_journal_get_fd (journal);
+
+    if (ret < 0)
+    {
+        g_warning ("Error getting polling fd from systemd journal: %s",
+                   g_strerror (-ret));
+    }
+
+    priv->fd = ret;
+    ret = sd_journal_get_events (journal);
+
+    if (ret < 0)
+    {
+        g_warning ("Error getting poll events from systemd journal: %s",
+                   g_strerror (-ret));
+    }
+
+    priv->source_id = g_unix_fd_add (priv->fd, ret,
+                                     (GUnixFDSourceFunc) on_journal_changed,
+                                     view);
+    ret = sd_journal_reliable_fd (journal);
+
+    if (ret < 0)
+    {
+        g_warning ("Error checking reliability of systemd journal poll fd: %s",
+                   g_strerror (-ret));
+    }
+    else if (ret == 0)
+    {
+        g_debug ("Latency expected while polling for systemd journal activity");
+    }
+    else
+    {
+        g_debug ("Immediate wakeups expected for systemd journal activity");
     }
 
     ret = sd_journal_seek_tail (journal);
