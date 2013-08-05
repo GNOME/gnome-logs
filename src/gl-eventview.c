@@ -273,6 +273,7 @@ gl_event_view_init (GlEventView *view)
 
     sd_journal_close (journal);
 
+    gtk_widget_show_all (listbox);
     gtk_stack_add_named (GTK_STACK (stack), listbox, "listbox");
 }
 

@@ -107,7 +107,7 @@ gl_application_activate (GApplication *application)
     GtkWidget *window;
 
     window = gl_window_new (GTK_APPLICATION (application));
-    gtk_widget_show_all (window);
+    gtk_widget_show (window);
 }
 
 static void
