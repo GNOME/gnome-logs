@@ -22,7 +22,12 @@
 #include <stdlib.h>
 #include <systemd/sd-journal.h>
 
-G_DEFINE_TYPE (GlEventView, gl_event_view, GTK_TYPE_STACK)
+typedef struct
+{
+    sd_journal *journal;
+} GlEventViewPrivate;
+
+G_DEFINE_TYPE_WITH_PRIVATE (GlEventView, gl_event_view, GTK_TYPE_STACK)
 
 static void
 on_detailed_button_clicked (GtkButton *button,
@@ -39,8 +44,9 @@ on_detailed_button_clicked (GtkButton *button,
 static void
 on_listbox_row_activated (GtkListBox *listbox,
                           GtkListBoxRow *row,
-                          GtkWidget *view)
+                          GlEventView *view)
 {
+    GlEventViewPrivate *priv;
     sd_journal *journal;
     gint ret;
     gchar *cursor;
@@ -56,14 +62,8 @@ on_listbox_row_activated (GtkListBox *listbox,
     gboolean rtl;
     GtkStack *stack;
 
-    ret = sd_journal_open (&journal, 0);
-
-    if (ret < 0)
-    {
-        g_warning ("Error opening systemd journal: %s", g_strerror (-ret));
-        return;
-    }
-
+    priv = gl_event_view_get_instance_private (view);
+    journal = priv->journal;
     cursor = g_object_get_data (G_OBJECT (row), "cursor");
 
     if (cursor == NULL)
@@ -162,17 +162,30 @@ on_listbox_row_activated (GtkListBox *listbox,
     gtk_stack_set_visible_child_name (stack, "detailed");
 
 out:
-    sd_journal_close (journal);
+    return;
+}
+
+static void
+gl_event_view_finalize (GObject *object)
+{
+    GlEventView *view = GL_EVENT_VIEW (object);
+    GlEventViewPrivate *priv = gl_event_view_get_instance_private (view);
+
+    sd_journal_close (priv->journal);
 }
 
 static void
 gl_event_view_class_init (GlEventViewClass *klass)
 {
+    GObjectClass *gobject_class = G_OBJECT_CLASS (klass);
+
+    gobject_class->finalize = gl_event_view_finalize;
 }
 
 static void
 gl_event_view_init (GlEventView *view)
 {
+    GlEventViewPrivate *priv;
     GtkWidget *stack;
     GtkWidget *listbox;
     sd_journal *journal;
@@ -180,10 +193,12 @@ gl_event_view_init (GlEventView *view)
     gsize i;
     GtkWidget *scrolled;
 
+    priv = gl_event_view_get_instance_private (view);
     stack = GTK_WIDGET (view);
 
     listbox = gtk_list_box_new ();
     ret = sd_journal_open (&journal, 0);
+    priv->journal = journal;
 
     if (ret < 0)
     {
@@ -312,8 +327,6 @@ gl_event_view_init (GlEventView *view)
 
     g_signal_connect (listbox, "row-activated",
                       G_CALLBACK (on_listbox_row_activated), stack);
-
-    sd_journal_close (journal);
 
     gtk_widget_show_all (listbox);
     gtk_stack_add_named (GTK_STACK (stack), listbox, "listbox");
