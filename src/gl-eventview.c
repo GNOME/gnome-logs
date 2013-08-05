@@ -45,7 +45,10 @@ on_listbox_row_activated (GtkListBox *listbox,
     gint ret;
     gchar *cursor;
     gchar *comm;
+    gchar *time;
     gsize length;
+    guint64 microsec;
+    GDateTime *datetime;
     GtkWidget *grid;
     GtkWidget *label;
     GtkWidget *button;
@@ -112,6 +115,37 @@ on_listbox_row_activated (GtkListBox *listbox,
     label = gtk_label_new (strchr (comm, '=') + 1);
     gtk_grid_attach (GTK_GRID (grid), label, 0, 0, 1, 1);
 
+    ret = sd_journal_get_realtime_usec (journal, &microsec);
+
+    if (ret < 0)
+    {
+        g_warning ("Error getting timestamp from systemd journal: %s",
+                   g_strerror (-ret));
+        goto out;
+    }
+
+    datetime = g_date_time_new_from_unix_utc (microsec / G_TIME_SPAN_SECOND);
+
+    if (datetime == NULL)
+    {
+        g_warning ("Error converting timestamp to time value");
+        goto out;
+    }
+
+    /* TODO: Localize? */
+    time = g_date_time_format (datetime, "%F %T");
+    g_date_time_unref (datetime);
+
+    if (time == NULL)
+    {
+        g_warning ("Error converting datetime to string");
+        goto out;
+    }
+
+    label = gtk_label_new (time);
+    gtk_grid_attach (GTK_GRID (grid), label, 0, 1, 1, 1);
+    g_free (time);
+
     button = gtk_button_new ();
     g_signal_connect (button, "clicked",
                       G_CALLBACK (on_detailed_button_clicked), view);
@@ -120,7 +154,7 @@ on_listbox_row_activated (GtkListBox *listbox,
                                               : "go-previous-symbolic",
                                           GTK_ICON_SIZE_MENU);
     gtk_container_add (GTK_CONTAINER (button), image);
-    gtk_grid_attach (GTK_GRID (grid), button, 0, 1, 1, 1);
+    gtk_grid_attach (GTK_GRID (grid), button, 0, 2, 1, 1);
 
     gtk_widget_show_all (grid);
     stack = GTK_STACK (view);
