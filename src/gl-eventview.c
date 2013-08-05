@@ -205,6 +205,10 @@ gl_event_view_init (GlEventView *view)
         g_warning ("Error setting cursor to end of systemd journal: %s",
                    g_strerror (-ret));
     }
+    else if (ret == 0)
+    {
+        g_warning ("End of systemd journal reached");
+    }
 
     for (i = 0; i < 10; i++)
     {
@@ -299,6 +303,10 @@ gl_event_view_init (GlEventView *view)
             g_warning ("Error setting cursor to previous systemd journal entry %s",
                        g_strerror (-ret));
             break;
+        }
+        else if (ret == 0)
+        {
+            g_warning ("End of systemd journal reached");
         }
     }
 
