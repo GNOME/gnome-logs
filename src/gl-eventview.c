@@ -106,9 +106,9 @@ on_listbox_row_activated (GtkListBox *listbox,
 
     if (ret < 0)
     {
-        g_warning ("Error getting data from systemd journal: %s",
+        g_warning ("Error getting command line from systemd journal: %s",
                    g_strerror (-ret));
-        goto out;
+        comm = "_COMM=";
     }
 
     grid = gtk_grid_new ();
@@ -224,9 +224,9 @@ gl_event_view_init (GlEventView *view)
 
         if (ret < 0)
         {
-            g_warning ("Error getting data from systemd journal: %s",
+            g_warning ("Error getting commandline from systemd journal: %s",
                        g_strerror (-ret));
-            break;
+            comm = "_COMM=";
         }
 
         ret = sd_journal_get_data (journal, "MESSAGE", (const void **)&message,
@@ -234,7 +234,7 @@ gl_event_view_init (GlEventView *view)
 
         if (ret < 0)
         {
-            g_warning ("Error getting data from systemd journal: %s",
+            g_warning ("Error getting message from systemd journal: %s",
                        g_strerror (-ret));
             break;
         }
