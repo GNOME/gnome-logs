@@ -198,7 +198,7 @@ gl_event_view_init (GlEventView *view)
                    g_strerror (-ret));
     }
 
-    ret = sd_journal_next (journal);
+    ret = sd_journal_previous (journal);
 
     if (ret < 0)
     {
