@@ -99,14 +99,9 @@
                     </packing>
                 </child>
                 <child>
-                    <object class="GtkScrolledWindow" id="events_scroll">
+                    <object class="GlEventView" id="events">
                         <property name="expand">True</property>
                         <property name="visible">True</property>
-                        <child>
-                            <object class="GlEventView" id="events">
-                                <property name="visible">True</property>
-                            </object>
-                        </child>
                     </object>
                     <packing>
                         <property name="left_attach">1</property>

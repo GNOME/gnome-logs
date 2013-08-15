@@ -402,8 +402,10 @@ gl_event_view_init (GlEventView *view)
     g_signal_connect (listbox, "row-activated",
                       G_CALLBACK (on_listbox_row_activated), stack);
 
-    gtk_widget_show_all (listbox);
-    gtk_stack_add_named (GTK_STACK (stack), listbox, "listbox");
+    scrolled = gtk_scrolled_window_new (NULL, NULL);
+    gtk_container_add (GTK_CONTAINER (scrolled), listbox);
+    gtk_widget_show_all (scrolled);
+    gtk_stack_add_named (GTK_STACK (stack), scrolled, "listbox");
 }
 
 GtkWidget *
