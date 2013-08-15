@@ -7,7 +7,8 @@ bin_PROGRAMS = gnome-logs
 gnome_logs_CPPFLAGS = \
 	-DLOCALEDIR=\""$(localedir)"\" \
 	-I$(top_builddir) \
-	-I$(top_srcdir)/libgd
+	-I$(top_srcdir)/libgd \
+	$(WARN_CFLAGS)
 
 gnome_logs_CFLAGS = \
 	$(LOGS_CFLAGS)

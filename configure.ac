@@ -18,6 +18,8 @@ AM_PROG_CC_C_O
 
 LT_INIT
 
+GNOME_COMPILE_WARNINGS([maximum])
+
 PKG_PROG_PKG_CONFIG([0.24])
 
 AC_SUBST([GLIB_COMPILE_RESOURCES], [`$PKG_CONFIG --variable glib_compile_resources gio-2.0`])
