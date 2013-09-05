@@ -23,14 +23,26 @@
 #include <stdlib.h>
 #include <systemd/sd-journal.h>
 
+#include "gl-enums.h"
+
+enum
+{
+    PROP_0,
+    PROP_FILTER,
+    N_PROPERTIES
+};
+
 typedef struct
 {
     sd_journal *journal;
     gint fd;
     guint source_id;
+    GlEventViewFilter filter;
 } GlEventViewPrivate;
 
 G_DEFINE_TYPE_WITH_PRIVATE (GlEventView, gl_event_view, GTK_TYPE_STACK)
+
+static GParamSpec *obj_properties[N_PROPERTIES] = { NULL, };
 
 static void
 on_detailed_button_clicked (GtkButton *button,
@@ -213,11 +225,63 @@ gl_event_view_finalize (GObject *object)
 }
 
 static void
+gl_event_view_get_property (GObject *object,
+                            guint prop_id,
+                            GValue *value,
+                            GParamSpec *pspec)
+{
+    GlEventView *view = GL_EVENT_VIEW (object);
+    GlEventViewPrivate *priv = gl_event_view_get_instance_private (view);
+
+    switch (prop_id)
+    {
+        case PROP_FILTER:
+            g_value_set_enum (value, priv->filter);
+            break;
+        default:
+            G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
+            break;
+    }
+}
+
+static void
+gl_event_view_set_property (GObject *object,
+                            guint prop_id,
+                            const GValue *value,
+                            GParamSpec *pspec)
+{
+    GlEventView *view = GL_EVENT_VIEW (object);
+    GlEventViewPrivate *priv = gl_event_view_get_instance_private (view);
+
+    switch (prop_id)
+    {
+        case PROP_FILTER:
+            priv->filter = g_value_get_enum (value);
+            break;
+        default:
+            G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
+            break;
+    }
+}
+
+static void
 gl_event_view_class_init (GlEventViewClass *klass)
 {
     GObjectClass *gobject_class = G_OBJECT_CLASS (klass);
 
     gobject_class->finalize = gl_event_view_finalize;
+    gobject_class->get_property = gl_event_view_get_property;
+    gobject_class->set_property = gl_event_view_set_property;
+
+    obj_properties[PROP_FILTER] = g_param_spec_enum ("filter", "Filter",
+                                                     "Filter events by",
+                                                     GL_TYPE_EVENT_VIEW_FILTER,
+                                                     GL_EVENT_VIEW_FILTER_ALL,
+                                                     G_PARAM_READWRITE |
+                                                     G_PARAM_STATIC_STRINGS);
+
+    g_object_class_install_properties (gobject_class, N_PROPERTIES,
+                                       obj_properties);
 }
 
 static void

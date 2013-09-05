@@ -4,9 +4,13 @@ SUBDIRS = libgd po
 
 bin_PROGRAMS = gnome-logs
 
+BUILT_SOURCES = \
+	$(nodist_gnome_logs_SOURCES)
+
 gnome_logs_CPPFLAGS = \
 	-DLOCALEDIR=\""$(localedir)"\" \
 	-I$(top_builddir) \
+	-I$(top_builddir)/src \
 	-I$(top_srcdir)/libgd \
 	$(WARN_CFLAGS)
 
@@ -25,7 +29,15 @@ gnome_logs_SOURCES = \
 	src/gl-window.c
 
 nodist_gnome_logs_SOURCES = \
+	src/gl-enums.c \
 	src/gl-resource.c
+
+enum_data = \
+	src/gl-enums.c \
+	src/gl-enums.h
+
+gnome_logs_enum_headers = \
+	$(srcdir)/src/gl-eventview.h
 
 noinst_gnome_logs_headers = \
 	src/gl-application.h \
@@ -34,6 +46,7 @@ noinst_gnome_logs_headers = \
 	src/gl-window.h
 
 nodist_gnome_logs_headers = \
+	src/gl-enums.h \
 	src/gl-resource.h
 
 %/.dstamp:
@@ -45,6 +58,34 @@ desktopdir = $(datadir)/applications
 desktop_in_files = data/gnome-logs.desktop.in
 $(desktop_in_files:.desktop.in=.desktop): data/.dstamp
 desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
+
+src/gl-enums.c: $(gnome_logs_enum_headers) src/gl-enums.h Makefile
+	$(AM_V_GEN)$(GLIB_MKENUMS) \
+		--fhead "#include \"gl-enums.h\"\n\n" \
+		--fprod "/* enumerations from \"@filename@\" */\n" \
+		--fprod "#include \"@filename@\"\n" \
+		--vhead "GType\n@enum_name@_get_type (void)\n{\n" \
+		--vhead "    static GType type = 0;\n\n" \
+		--vhead "    if (!type)\n    {\n" \
+		--vhead "        static const G@Type@Value _@enum_name@_values[] = {" \
+		--vprod "            { @VALUENAME@, \"@VALUENAME@\", \"@valuenick@\" }," \
+		--vtail "            { 0, NULL, NULL }\n        };\n\n" \
+		--vtail "        type = g_@type@_register_static (\"@EnumName@\", _@enum_name@_values);\n    }\n\n" \
+		--vtail "  return type;\n}\n\n" \
+		$(gnome_logs_enum_headers) > $@
+
+src/gl-enums.h: $(gnome_logs_enum_headers) Makefile
+	$(AM_V_GEN)$(GLIB_MKENUMS) \
+		--fhead "#ifndef GL_ENUMS_H_\n" \
+		--fhead "#define GL_ENUMS_H_\n\n" \
+		--fhead "#include <glib-object.h>\n\n" \
+		--fhead "G_BEGIN_DECLS\n\n" \
+		--fprod "/* enumerations from @filename@ */\n" \
+		--vhead "GType @enum_name@_get_type (void);\n" \
+		--vhead "#define GL_TYPE_@ENUMSHORT@ (@enum_name@_get_type())\n" \
+		--ftail "G_END_DECLS\n\n" \
+		--ftail "#endif /* GL_ENUMS_H_ */" \
+		$(gnome_logs_enum_headers) > $@
 
 noinst_resource_files = \
 	data/appmenu.ui \
@@ -79,6 +120,7 @@ git-changelog-hook:
 
 CLEANFILES = \
 	$(desktop_DATA) \
+	$(enum_data) \
 	src/gl-resource.c \
 	src/gl-resource.h
 

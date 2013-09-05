@@ -22,6 +22,13 @@ GNOME_COMPILE_WARNINGS([maximum])
 
 PKG_PROG_PKG_CONFIG([0.24])
 
+AC_MSG_CHECKING([for glib-mkenums script])
+GLIB_MKENUMS=`$PKG_CONFIG --variable=glib_mkenums glib-2.0`
+AS_IF([test "x$GLIB_MKENUMS" = "x"],
+      [AC_MSG_ERROR([glib-mkenums not listed in glib-2.0 pkg-config file])],
+      [AC_SUBST([GLIB_MKENUMS])
+       AC_MSG_RESULT([$GLIB_MKENUMS])])
+
 AC_SUBST([GLIB_COMPILE_RESOURCES], [`$PKG_CONFIG --variable glib_compile_resources gio-2.0`])
 
 dnl Internationalization
