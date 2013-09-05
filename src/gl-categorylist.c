@@ -42,48 +42,62 @@ on_gl_category_list_row_activated (GlCategoryList *listbox,
                                    gpointer user_data)
 {
     GlCategoryListPrivate *priv;
+    GtkWidget *toplevel;
+    GActionMap *appwindow;
+    GAction *category;
 
     priv = gl_category_list_get_instance_private (listbox);
+    toplevel = gtk_widget_get_toplevel (GTK_WIDGET (listbox));
+    if (gtk_widget_is_toplevel (toplevel))
+    {
+        appwindow = G_ACTION_MAP (toplevel);
+        category = g_action_map_lookup_action (appwindow, "category");
+    }
+    else
+    {
+        g_return_if_reached ();
+    }
 
+    /* TODO: Fetch strings from an enum generated with glib-mkenums. */
     if (row == GTK_LIST_BOX_ROW (priv->important))
     {
-        g_message ("Important clicked");
+        g_action_activate (category, g_variant_new_string ("important"));
     }
     else if (row == GTK_LIST_BOX_ROW (priv->alerts))
     {
-        g_message ("Alerts clicked");
+        g_action_activate (category, g_variant_new_string ("alerts"));
     }
     else if (row == GTK_LIST_BOX_ROW (priv->starred))
     {
-        g_message ("Starred clicked");
+        g_action_activate (category, g_variant_new_string ("starred"));
     }
     else if (row == GTK_LIST_BOX_ROW (priv->all))
     {
-        g_message ("All clicked");
+        g_action_activate (category, g_variant_new_string ("all"));
     }
     else if (row == GTK_LIST_BOX_ROW (priv->applications))
     {
-        g_message ("Applications clicked");
+        g_action_activate (category, g_variant_new_string ("applications"));
     }
     else if (row == GTK_LIST_BOX_ROW (priv->system))
     {
-        g_message ("System clicked");
+        g_action_activate (category, g_variant_new_string ("system"));
     }
     else if (row == GTK_LIST_BOX_ROW (priv->security))
     {
-        g_message ("Security clicked");
+        g_action_activate (category, g_variant_new_string ("security"));
     }
     else if (row == GTK_LIST_BOX_ROW (priv->hardware))
     {
-        g_message ("Hardware clicked");
+        g_action_activate (category, g_variant_new_string ("hardware"));
     }
     else if (row == GTK_LIST_BOX_ROW (priv->updates))
     {
-        g_message ("Updates clicked");
+        g_action_activate (category, g_variant_new_string ("updates"));
     }
     else if (row == GTK_LIST_BOX_ROW (priv->usage))
     {
-        g_message ("Usage clicked");
+        g_action_activate (category, g_variant_new_string ("usage"));
     }
 }
 
