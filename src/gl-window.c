@@ -27,6 +27,7 @@
 typedef struct
 {
     GtkWidget *right_toolbar;
+    GtkWidget *events;
 } GlWindowPrivate;
 
 G_DEFINE_TYPE_WITH_PRIVATE (GlWindow, gl_window, GTK_TYPE_APPLICATION_WINDOW)
@@ -117,6 +118,8 @@ gl_window_class_init (GlWindowClass *klass)
                                                  "/org/gnome/Logs/gl-window.ui");
     gtk_widget_class_bind_template_child_private (widget_class, GlWindow,
                                                   right_toolbar);
+    gtk_widget_class_bind_template_child_private (widget_class, GlWindow,
+                                                  events);
 }
 
 static void
