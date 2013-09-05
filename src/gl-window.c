@@ -44,7 +44,53 @@ on_category (GSimpleAction *action,
              GVariant *variant,
              gpointer user_data)
 {
+    const gchar *category;
+
+    category = g_variant_get_string (variant, NULL);
+
+    /* TODO: Fetch strings from an enum generated with glib-mkenums. */
     /* TODO: Switch event view mode. */
+    if (g_strcmp0 (category, "important") == 0)
+    {
+        g_message ("Switch to important category");
+    }
+    else if (g_strcmp0 (category, "alerts") == 0)
+    {
+        g_message ("Switch to alerts category");
+    }
+    else if (g_strcmp0 (category, "starred") == 0)
+    {
+        g_message ("Switch to starred category");
+    }
+    else if (g_strcmp0 (category, "all") == 0)
+    {
+        g_message ("Switch to all category");
+    }
+    else if (g_strcmp0 (category, "applications") == 0)
+    {
+        g_message ("Switch to applications category");
+    }
+    else if (g_strcmp0 (category, "system") == 0)
+    {
+        g_message ("Switch to system category");
+    }
+    else if (g_strcmp0 (category, "security") == 0)
+    {
+        g_message ("Switch to security category");
+    }
+    else if (g_strcmp0 (category, "hardware") == 0)
+    {
+        g_message ("Switch to hardware category");
+    }
+    else if (g_strcmp0 (category, "updates") == 0)
+    {
+        g_message ("Switch to updates category");
+    }
+    else if (g_strcmp0 (category, "usage") == 0)
+    {
+        g_message ("Switch to usage category");
+    }
+
     g_simple_action_set_state (action, variant);
 }
 
