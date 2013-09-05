@@ -52,7 +52,7 @@ on_detailed_button_clicked (GtkButton *button,
     GtkStack *stack = GTK_STACK (view);
 
     detailed = gtk_stack_get_visible_child (stack);
-    gtk_stack_set_visible_child_name (stack, "listbox");
+    gtk_stack_set_visible_child_name (stack, "listbox-all");
     gtk_container_remove (GTK_CONTAINER (stack), detailed);
 }
 
@@ -180,6 +180,30 @@ out:
     return;
 }
 
+static void
+on_notify_filter (GlEventView *view,
+                  GParamSpec *pspec,
+                  gpointer user_data)
+{
+    GlEventViewPrivate *priv;
+    GtkStack *stack;
+
+    priv = gl_event_view_get_instance_private (view);
+    stack = GTK_STACK (view);
+
+    switch (priv->filter)
+    {
+        case GL_EVENT_VIEW_FILTER_ALL:
+            gtk_stack_set_visible_child_name (stack, "listbox-all");
+            break;
+        case GL_EVENT_VIEW_FILTER_SYSTEM:
+            gtk_stack_set_visible_child_name (stack, "listbox-system");
+            break;
+        default:
+            break;
+    }
+}
+
 static gboolean
 on_journal_changed (gint fd,
                     GIOCondition condition,
@@ -282,6 +306,132 @@ gl_event_view_class_init (GlEventViewClass *klass)
 
     g_object_class_install_properties (gobject_class, N_PROPERTIES,
                                        obj_properties);
+}
+
+static void
+gl_event_view_add_listbox_system (GlEventView *view)
+{
+    gint ret;
+    gsize i;
+    sd_journal *journal = NULL;
+    GtkWidget *listbox;
+    GtkWidget *scrolled;
+
+    ret = sd_journal_open (&journal, SD_JOURNAL_SYSTEM_ONLY);
+
+    if (ret < 0)
+    {
+        g_warning ("Error opening systemd journal: %s", g_strerror (-ret));
+    }
+
+    ret = sd_journal_seek_tail (journal);
+
+    if (ret < 0)
+    {
+        g_warning ("Error seeking to end of systemd journal: %s",
+                   g_strerror (-ret));
+    }
+
+    ret = sd_journal_previous (journal);
+
+    if (ret < 0)
+    {
+        g_warning ("Error setting cursor to end of systemd journal: %s",
+                   g_strerror (-ret));
+    }
+    else if (ret == 0)
+    {
+        g_warning ("End of systemd journal reached");
+    }
+
+    listbox = gtk_list_box_new ();
+
+    for (i = 0; i < 10; i++)
+    {
+        const gchar *message;
+        gchar *cursor;
+        gsize length;
+        GtkWidget *row;
+        GtkWidget *grid;
+        GtkWidget *label;
+        gboolean rtl;
+        GtkWidget *image;
+
+        ret = sd_journal_get_data (journal, "MESSAGE", (const void **)&message,
+                                   &length);
+
+        if (ret < 0)
+        {
+            g_warning ("Error getting message from systemd journal: %s",
+                       g_strerror (-ret));
+            break;
+        }
+
+        ret = sd_journal_get_cursor (journal, &cursor);
+
+        if (ret < 0)
+        {
+            g_warning ("Error getting cursor for current journal entry: %s",
+                       g_strerror (-ret));
+            break;
+        }
+
+        ret = sd_journal_test_cursor (journal, cursor);
+
+        if (ret < 0)
+        {
+            g_warning ("Error testing cursor string: %s", g_strerror (-ret));
+            free (cursor);
+            break;
+        }
+        else if (ret == 0)
+        {
+            g_warning ("Cursor string does not match journal entry");
+            /* Not a problem at this point, but would be when seeking to the
+             * cursor later on. */
+        }
+
+        row = gtk_list_box_row_new ();
+        /* sd_journal_get_cursor allocates the cursor with libc malloc. */
+        g_object_set_data_full (G_OBJECT (row), "cursor", cursor, free);
+        grid = gtk_grid_new ();
+        gtk_grid_set_column_spacing (GTK_GRID (grid), 6);
+        gtk_container_add (GTK_CONTAINER (row), grid);
+
+        label = gtk_label_new (strchr (message, '=') + 1);
+        gtk_widget_set_hexpand (label, TRUE);
+        gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
+        gtk_label_set_ellipsize (GTK_LABEL (label), PANGO_ELLIPSIZE_END);
+        gtk_grid_attach (GTK_GRID (grid), label, 0, 0, 1, 1);
+
+        rtl = (gtk_widget_get_default_direction () == GTK_TEXT_DIR_RTL);
+        image = gtk_image_new_from_icon_name (rtl ? "go-next-rtl-symbolic"
+                                                  : "go-next-symbolic",
+                                              GTK_ICON_SIZE_MENU);
+        gtk_grid_attach (GTK_GRID (grid), image, 1, 0, 1, 1);
+
+        gtk_container_add (GTK_CONTAINER (listbox), row);
+
+        ret = sd_journal_previous (journal);
+
+        if (ret < 0)
+        {
+            g_warning ("Error setting cursor to previous systemd journal entry %s",
+                       g_strerror (-ret));
+            break;
+        }
+        else if (ret == 0)
+        {
+            g_warning ("End of systemd journal reached");
+        }
+    }
+
+    sd_journal_close (journal);
+
+    scrolled = gtk_scrolled_window_new (NULL, NULL);
+    gtk_container_add (GTK_CONTAINER (scrolled), listbox);
+    gtk_widget_show_all (scrolled);
+    gtk_stack_add_named (GTK_STACK (view), scrolled, "listbox-system");
 }
 
 static void
@@ -469,7 +619,12 @@ gl_event_view_init (GlEventView *view)
     scrolled = gtk_scrolled_window_new (NULL, NULL);
     gtk_container_add (GTK_CONTAINER (scrolled), listbox);
     gtk_widget_show_all (scrolled);
-    gtk_stack_add_named (GTK_STACK (stack), scrolled, "listbox");
+    gtk_stack_add_named (GTK_STACK (stack), scrolled, "listbox-all");
+
+    gl_event_view_add_listbox_system (view);
+
+    g_signal_connect (view, "notify::filter", G_CALLBACK (on_notify_filter),
+                      NULL);
 }
 
 void
