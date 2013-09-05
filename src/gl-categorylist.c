@@ -37,6 +37,57 @@ typedef struct
 G_DEFINE_TYPE_WITH_PRIVATE (GlCategoryList, gl_category_list, GTK_TYPE_LIST_BOX)
 
 static void
+on_gl_category_list_row_activated (GlCategoryList *listbox,
+                                   GtkListBoxRow *row,
+                                   gpointer user_data)
+{
+    GlCategoryListPrivate *priv;
+
+    priv = gl_category_list_get_instance_private (listbox);
+
+    if (row == GTK_LIST_BOX_ROW (priv->important))
+    {
+        g_message ("Important clicked");
+    }
+    else if (row == GTK_LIST_BOX_ROW (priv->alerts))
+    {
+        g_message ("Alerts clicked");
+    }
+    else if (row == GTK_LIST_BOX_ROW (priv->starred))
+    {
+        g_message ("Starred clicked");
+    }
+    else if (row == GTK_LIST_BOX_ROW (priv->all))
+    {
+        g_message ("All clicked");
+    }
+    else if (row == GTK_LIST_BOX_ROW (priv->applications))
+    {
+        g_message ("Applications clicked");
+    }
+    else if (row == GTK_LIST_BOX_ROW (priv->system))
+    {
+        g_message ("System clicked");
+    }
+    else if (row == GTK_LIST_BOX_ROW (priv->security))
+    {
+        g_message ("Security clicked");
+    }
+    else if (row == GTK_LIST_BOX_ROW (priv->hardware))
+    {
+        g_message ("Hardware clicked");
+    }
+    else if (row == GTK_LIST_BOX_ROW (priv->updates))
+    {
+        g_message ("Updates clicked");
+    }
+    else if (row == GTK_LIST_BOX_ROW (priv->usage))
+    {
+        g_message ("Usage clicked");
+    }
+}
+
+static void
 gl_category_list_class_init (GlCategoryListClass *klass)
 {
     GtkWidgetClass *widget_class = GTK_WIDGET_CLASS (klass);
@@ -63,6 +114,9 @@ gl_category_list_class_init (GlCategoryListClass *klass)
                                                   updates);
     gtk_widget_class_bind_template_child_private (widget_class, GlCategoryList,
                                                   usage);
+
+    gtk_widget_class_bind_template_callback (widget_class,
+                                             on_gl_category_list_row_activated);
 }
 
 static void

@@ -1,6 +1,7 @@
 <interface domain="gnome-logs">
     <template class="GlCategoryList" parent="GtkListBox">
         <property name="visible">True</property>
+        <signal name="row-activated" handler="on_gl_category_list_row_activated" />
         <child>
             <object class="GtkListBoxRow" id="important">
                 <property name="visible">True</property>
