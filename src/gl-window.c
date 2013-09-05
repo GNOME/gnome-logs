@@ -45,51 +45,54 @@ on_category (GSimpleAction *action,
              GVariant *variant,
              gpointer user_data)
 {
+    GlWindowPrivate *priv;
     const gchar *category;
+    GlEventView *events;
 
+    priv = gl_window_get_instance_private (GL_WINDOW (user_data));
     category = g_variant_get_string (variant, NULL);
+    events = GL_EVENT_VIEW (priv->events);
 
     /* TODO: Fetch strings from an enum generated with glib-mkenums. */
-    /* TODO: Switch event view mode. */
     if (g_strcmp0 (category, "important") == 0)
     {
-        g_message ("Switch to important category");
+        gl_event_view_set_filter (events, GL_EVENT_VIEW_FILTER_IMPORTANT);
     }
     else if (g_strcmp0 (category, "alerts") == 0)
     {
-        g_message ("Switch to alerts category");
+        gl_event_view_set_filter (events, GL_EVENT_VIEW_FILTER_ALERTS);
     }
     else if (g_strcmp0 (category, "starred") == 0)
     {
-        g_message ("Switch to starred category");
+        gl_event_view_set_filter (events, GL_EVENT_VIEW_FILTER_STARRED);
     }
     else if (g_strcmp0 (category, "all") == 0)
     {
-        g_message ("Switch to all category");
+        gl_event_view_set_filter (events, GL_EVENT_VIEW_FILTER_ALL);
     }
     else if (g_strcmp0 (category, "applications") == 0)
     {
-        g_message ("Switch to applications category");
+        gl_event_view_set_filter (events, GL_EVENT_VIEW_FILTER_APPLICATIONS);
     }
     else if (g_strcmp0 (category, "system") == 0)
     {
-        g_message ("Switch to system category");
+        gl_event_view_set_filter (events, GL_EVENT_VIEW_FILTER_SYSTEM);
     }
     else if (g_strcmp0 (category, "security") == 0)
     {
-        g_message ("Switch to security category");
+        gl_event_view_set_filter (events, GL_EVENT_VIEW_FILTER_SECURITY);
     }
     else if (g_strcmp0 (category, "hardware") == 0)
     {
-        g_message ("Switch to hardware category");
+        gl_event_view_set_filter (events, GL_EVENT_VIEW_FILTER_HARDWARE);
     }
     else if (g_strcmp0 (category, "updates") == 0)
     {
-        g_message ("Switch to updates category");
+        gl_event_view_set_filter (events, GL_EVENT_VIEW_FILTER_UPDATES);
     }
     else if (g_strcmp0 (category, "usage") == 0)
     {
-        g_message ("Switch to usage category");
+        gl_event_view_set_filter (events, GL_EVENT_VIEW_FILTER_USAGE);
     }
 
     g_simple_action_set_state (action, variant);

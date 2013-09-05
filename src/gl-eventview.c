@@ -472,6 +472,23 @@ gl_event_view_init (GlEventView *view)
     gtk_stack_add_named (GTK_STACK (stack), scrolled, "listbox");
 }
 
+void
+gl_event_view_set_filter (GlEventView *view, GlEventViewFilter filter)
+{
+    GlEventViewPrivate *priv;
+
+    g_return_if_fail (GL_EVENT_VIEW (view));
+
+    priv = gl_event_view_get_instance_private (view);
+
+    if (priv->filter != filter)
+    {
+        priv->filter = filter;
+        g_object_notify_by_pspec (G_OBJECT (view),
+                                  obj_properties[PROP_FILTER]);
+    }
+}
+
 GtkWidget *
 gl_event_view_new (void)
 {

@@ -69,6 +69,7 @@ typedef enum
 
 GType gl_event_view_get_type (void);
 GtkWidget * gl_event_view_new (void);
+void gl_event_view_set_filter (GlEventView *view, GlEventViewFilter filter);
 
 G_END_DECLS
 
