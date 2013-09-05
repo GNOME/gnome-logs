@@ -40,6 +40,15 @@ on_action_radio (GSimpleAction *action,
 }
 
 static void
+on_category (GSimpleAction *action,
+             GVariant *variant,
+             gpointer user_data)
+{
+    /* TODO: Switch event view mode. */
+    g_simple_action_set_state (action, variant);
+}
+
+static void
 on_mode (GSimpleAction *action,
          GVariant *variant,
          gpointer user_data)
@@ -49,6 +58,7 @@ on_mode (GSimpleAction *action,
 }
 
 static GActionEntry actions[] = {
+    { "category", on_action_radio, "s", "'all'", on_category },
     { "mode", on_action_radio, "s", "'list'", on_mode }
 };
 
