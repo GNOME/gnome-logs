@@ -311,17 +311,22 @@ gl_event_view_class_init (GlEventViewClass *klass)
 static void
 gl_event_view_add_listbox_system (GlEventView *view)
 {
+    GlEventViewPrivate *priv;
     gint ret;
     gsize i;
-    sd_journal *journal = NULL;
+    sd_journal *journal;
     GtkWidget *listbox;
     GtkWidget *scrolled;
 
-    ret = sd_journal_open (&journal, SD_JOURNAL_SYSTEM_ONLY);
+    priv = gl_event_view_get_instance_private (view);
+    journal = priv->journal;
+
+    ret = sd_journal_add_match (journal, "_TRANSPORT=kernel", 0);
 
     if (ret < 0)
     {
-        g_warning ("Error opening systemd journal: %s", g_strerror (-ret));
+        g_warning ("Error adding match for kernel transport: %s",
+                   g_strerror (-ret));
     }
 
     ret = sd_journal_seek_tail (journal);
@@ -426,7 +431,7 @@ gl_event_view_add_listbox_system (GlEventView *view)
         }
     }
 
-    sd_journal_close (journal);
+    sd_journal_flush_matches (journal);
 
     scrolled = gtk_scrolled_window_new (NULL, NULL);
     gtk_container_add (GTK_CONTAINER (scrolled), listbox);
