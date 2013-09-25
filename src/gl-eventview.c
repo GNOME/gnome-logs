@@ -309,50 +309,13 @@ gl_event_view_class_init (GlEventViewClass *klass)
 }
 
 static void
-gl_event_view_add_listbox_system (GlEventView *view)
+insert_journal_items_simple (sd_journal *journal, GtkListBox *listbox)
 {
-    GlEventViewPrivate *priv;
-    gint ret;
     gsize i;
-    sd_journal *journal;
-    GtkWidget *listbox;
-    GtkWidget *scrolled;
-
-    priv = gl_event_view_get_instance_private (view);
-    journal = priv->journal;
-
-    ret = sd_journal_add_match (journal, "_TRANSPORT=kernel", 0);
-
-    if (ret < 0)
-    {
-        g_warning ("Error adding match for kernel transport: %s",
-                   g_strerror (-ret));
-    }
-
-    ret = sd_journal_seek_tail (journal);
-
-    if (ret < 0)
-    {
-        g_warning ("Error seeking to end of systemd journal: %s",
-                   g_strerror (-ret));
-    }
-
-    ret = sd_journal_previous (journal);
-
-    if (ret < 0)
-    {
-        g_warning ("Error setting cursor to end of systemd journal: %s",
-                   g_strerror (-ret));
-    }
-    else if (ret == 0)
-    {
-        g_warning ("End of systemd journal reached");
-    }
-
-    listbox = gtk_list_box_new ();
 
     for (i = 0; i < 10; i++)
     {
+        gint ret;
         const gchar *message;
         gchar *cursor;
         gsize length;
@@ -430,96 +393,16 @@ gl_event_view_add_listbox_system (GlEventView *view)
             g_warning ("End of systemd journal reached");
         }
     }
-
-    sd_journal_flush_matches (journal);
-
-    scrolled = gtk_scrolled_window_new (NULL, NULL);
-    gtk_container_add (GTK_CONTAINER (scrolled), listbox);
-    gtk_widget_show_all (scrolled);
-    gtk_stack_add_named (GTK_STACK (view), scrolled, "listbox-system");
 }
 
 static void
-gl_event_view_init (GlEventView *view)
+insert_journal_items_cmdline (sd_journal *journal, GtkListBox *listbox)
 {
-    GlEventViewPrivate *priv;
-    GtkWidget *stack;
-    GtkWidget *listbox;
-    sd_journal *journal = NULL;
-    gint ret;
     gsize i;
-    GtkWidget *scrolled;
-
-    priv = gl_event_view_get_instance_private (view);
-    stack = GTK_WIDGET (view);
-
-    listbox = gtk_list_box_new ();
-    ret = sd_journal_open (&journal, 0);
-    priv->journal = journal;
-
-    if (ret < 0)
-    {
-        g_warning ("Error opening systemd journal: %s", g_strerror (-ret));
-    }
-
-    ret = sd_journal_get_fd (journal);
-
-    if (ret < 0)
-    {
-        g_warning ("Error getting polling fd from systemd journal: %s",
-                   g_strerror (-ret));
-    }
-
-    priv->fd = ret;
-    ret = sd_journal_get_events (journal);
-
-    if (ret < 0)
-    {
-        g_warning ("Error getting poll events from systemd journal: %s",
-                   g_strerror (-ret));
-    }
-
-    priv->source_id = g_unix_fd_add (priv->fd, ret,
-                                     (GUnixFDSourceFunc) on_journal_changed,
-                                     view);
-    ret = sd_journal_reliable_fd (journal);
-
-    if (ret < 0)
-    {
-        g_warning ("Error checking reliability of systemd journal poll fd: %s",
-                   g_strerror (-ret));
-    }
-    else if (ret == 0)
-    {
-        g_debug ("Latency expected while polling for systemd journal activity");
-    }
-    else
-    {
-        g_debug ("Immediate wakeups expected for systemd journal activity");
-    }
-
-    ret = sd_journal_seek_tail (journal);
-
-    if (ret < 0)
-    {
-        g_warning ("Error seeking to end of systemd journal: %s",
-                   g_strerror (-ret));
-    }
-
-    ret = sd_journal_previous (journal);
-
-    if (ret < 0)
-    {
-        g_warning ("Error setting cursor to end of systemd journal: %s",
-                   g_strerror (-ret));
-    }
-    else if (ret == 0)
-    {
-        g_warning ("End of systemd journal reached");
-    }
 
     for (i = 0; i < 10; i++)
     {
+        gint ret;
         const gchar *message;
         const gchar *comm;
         gchar *cursor;
@@ -617,6 +500,139 @@ gl_event_view_init (GlEventView *view)
             g_warning ("End of systemd journal reached");
         }
     }
+}
+
+static void
+gl_event_view_add_listbox_system (GlEventView *view)
+{
+    GlEventViewPrivate *priv;
+    gint ret;
+    sd_journal *journal;
+    GtkWidget *listbox;
+    GtkWidget *scrolled;
+
+    priv = gl_event_view_get_instance_private (view);
+    journal = priv->journal;
+
+    ret = sd_journal_add_match (journal, "_TRANSPORT=kernel", 0);
+
+    if (ret < 0)
+    {
+        g_warning ("Error adding match for kernel transport: %s",
+                   g_strerror (-ret));
+    }
+
+    ret = sd_journal_seek_tail (journal);
+
+    if (ret < 0)
+    {
+        g_warning ("Error seeking to end of systemd journal: %s",
+                   g_strerror (-ret));
+    }
+
+    ret = sd_journal_previous (journal);
+
+    if (ret < 0)
+    {
+        g_warning ("Error setting cursor to end of systemd journal: %s",
+                   g_strerror (-ret));
+    }
+    else if (ret == 0)
+    {
+        g_warning ("End of systemd journal reached");
+    }
+
+    listbox = gtk_list_box_new ();
+
+    insert_journal_items_simple (journal, GTK_LIST_BOX (listbox));
+
+    sd_journal_flush_matches (journal);
+
+    scrolled = gtk_scrolled_window_new (NULL, NULL);
+    gtk_container_add (GTK_CONTAINER (scrolled), listbox);
+    gtk_widget_show_all (scrolled);
+    gtk_stack_add_named (GTK_STACK (view), scrolled, "listbox-system");
+}
+
+static void
+gl_event_view_init (GlEventView *view)
+{
+    GlEventViewPrivate *priv;
+    GtkWidget *stack;
+    GtkWidget *listbox;
+    sd_journal *journal = NULL;
+    gint ret;
+    GtkWidget *scrolled;
+
+    priv = gl_event_view_get_instance_private (view);
+    stack = GTK_WIDGET (view);
+
+    listbox = gtk_list_box_new ();
+    ret = sd_journal_open (&journal, 0);
+    priv->journal = journal;
+
+    if (ret < 0)
+    {
+        g_warning ("Error opening systemd journal: %s", g_strerror (-ret));
+    }
+
+    ret = sd_journal_get_fd (journal);
+
+    if (ret < 0)
+    {
+        g_warning ("Error getting polling fd from systemd journal: %s",
+                   g_strerror (-ret));
+    }
+
+    priv->fd = ret;
+    ret = sd_journal_get_events (journal);
+
+    if (ret < 0)
+    {
+        g_warning ("Error getting poll events from systemd journal: %s",
+                   g_strerror (-ret));
+    }
+
+    priv->source_id = g_unix_fd_add (priv->fd, ret,
+                                     (GUnixFDSourceFunc) on_journal_changed,
+                                     view);
+    ret = sd_journal_reliable_fd (journal);
+
+    if (ret < 0)
+    {
+        g_warning ("Error checking reliability of systemd journal poll fd: %s",
+                   g_strerror (-ret));
+    }
+    else if (ret == 0)
+    {
+        g_debug ("Latency expected while polling for systemd journal activity");
+    }
+    else
+    {
+        g_debug ("Immediate wakeups expected for systemd journal activity");
+    }
+
+    ret = sd_journal_seek_tail (journal);
+
+    if (ret < 0)
+    {
+        g_warning ("Error seeking to end of systemd journal: %s",
+                   g_strerror (-ret));
+    }
+
+    ret = sd_journal_previous (journal);
+
+    if (ret < 0)
+    {
+        g_warning ("Error setting cursor to end of systemd journal: %s",
+                   g_strerror (-ret));
+    }
+    else if (ret == 0)
+    {
+        g_warning ("End of systemd journal reached");
+    }
+
+    insert_journal_items_cmdline (journal, GTK_LIST_BOX (listbox));
 
     g_signal_connect (listbox, "row-activated",
                       G_CALLBACK (on_listbox_row_activated), stack);
