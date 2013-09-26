@@ -208,6 +208,12 @@ on_notify_filter (GlEventView *view,
         case GL_EVENT_VIEW_FILTER_SECURITY:
             gtk_stack_set_visible_child_name (stack, "listbox-security");
             break;
+        case GL_EVENT_VIEW_FILTER_UPDATES:
+            gtk_stack_set_visible_child_name (stack, "listbox-updates");
+            break;
+        case GL_EVENT_VIEW_FILTER_USAGE:
+            gtk_stack_set_visible_child_name (stack, "listbox-usage");
+            break;
         default:
             break;
     }
@@ -957,6 +963,26 @@ gl_event_view_add_listbox_security (GlEventView *view)
 }
 
 static void
+gl_event_view_add_listbox_updates (GlEventView *view)
+{
+    GtkWidget *label;
+
+    label = gtk_label_new (_("Not implemented"));
+    gtk_widget_show_all (label);
+    gtk_stack_add_named (GTK_STACK (view), label, "listbox-updates");
+}
+
+static void
+gl_event_view_add_listbox_usage (GlEventView *view)
+{
+    GtkWidget *label;
+
+    label = gtk_label_new (_("Not implemented"));
+    gtk_widget_show_all (label);
+    gtk_stack_add_named (GTK_STACK (view), label, "listbox-usage");
+}
+
+static void
 gl_event_view_init (GlEventView *view)
 {
     GlEventViewPrivate *priv;
@@ -1048,6 +1074,8 @@ gl_event_view_init (GlEventView *view)
     gl_event_view_add_listbox_system (view);
     gl_event_view_add_listbox_hardware (view);
     gl_event_view_add_listbox_security (view);
+    gl_event_view_add_listbox_updates (view);
+    gl_event_view_add_listbox_usage (view);
 
     g_signal_connect (view, "notify::filter", G_CALLBACK (on_notify_filter),
                       NULL);
