@@ -3,137 +3,105 @@
         <property name="default-width">640</property>
         <property name="default-height">480</property>
         <child type="titlebar">
-            <object class="GtkHeaderBar" id="header">
-                <property name="show-close-button">True</property>
+            <object class="GtkBox" id="titlebar">
+                <property name="orientation">horizontal</property>
                 <property name="visible">True</property>
-                <child type="title">
-                    <object class="GtkLabel" id="title">
-                        <property name="label" translatable="yes">Logs</property>
+                <child>
+                    <object class="GtkHeaderBar" id="left_toolbar">
                         <property name="visible">True</property>
-                        <style>
-                            <class name="title"/>
-                        </style>
+                    </object>
+                </child>
+                <child>
+                    <object class="GtkHeaderBar" id="right_toolbar">
+                        <property name="show-close-button">True</property>
+                        <property name="visible">True</property>
+                        <child>
+                            <object class="GtkButton" id="go_back">
+                                <property name="sensitive">False</property>
+                                <property name="visible">True</property>
+                                <style>
+                                    <class name="image-button"/>
+                                </style>
+                                <child>
+                                    <object class="GtkImage" id="go_back_icon">
+                                        <property name="icon-name">go-previous-symbolic</property>
+                                        <property name="visible">True</property>
+                                    </object>
+                                </child>
+                            </object>
+                        </child>
+                        <child type="title">
+                            <object class="GtkLabel" id="title">
+                                <property name="expand">True</property>
+                                <property name="label" translatable="yes">Logs</property>
+                                <property name="visible">True</property>
+                                <style>
+                                    <class name="title"/>
+                                </style>
+                            </object>
+                        </child>
+                        <child>
+                            <object class="GtkButton" id="search">
+                                <property name="sensitive">False</property>
+                                <property name="visible">True</property>
+                                <style>
+                                    <class name="image-button"/>
+                                </style>
+                                <child>
+                                    <object class="GtkImage" id="search_icon">
+                                        <property name="icon-name">edit-find-symbolic</property>
+                                        <property name="visible">True</property>
+                                    </object>
+                                </child>
+                            </object>
+                            <packing>
+                                <property name="pack-type">end</property>
+                            </packing>
+                        </child>
+                        <child>
+                            <object class="GtkMenuButton" id="gear_menu">
+                                <property name="visible">True</property>
+                                <style>
+                                    <class name="image-button"/>
+                                </style>
+                                <child>
+                                    <object class="GtkImage" id="gear_image">
+                                        <property name="icon-name">emblem-system-symbolic</property>
+                                        <property name="visible">True</property>
+                                    </object>
+                                </child>
+                            </object>
+                            <packing>
+                                <property name="pack-type">end</property>
+                            </packing>
+                        </child>
                     </object>
                 </child>
             </object>
         </child>
         <child>
-            <object class="GtkGrid" id="grid">
+            <object class="GtkBox" id="content">
+                <property name="orientation">horizontal</property>
                 <property name="visible">True</property>
-                <child>
-                    <object class="GdMainToolbar" id="left_toolbar">
-                        <property name="visible">True</property>
-                    </object>
-                    <packing>
-                        <property name="left_attach">0</property>
-                        <property name="top_attach">1</property>
-                        <property name="width">1</property>
-                        <property name="height">1</property>
-                    </packing>
-                </child>
-                <child>
-                    <object class="GtkToolbar" id="right_toolbar">
-                        <property name="visible">True</property>
-                        <child>
-                            <object class="GtkToolItem" id="go_back_container">
-                                <property name="visible">True</property>
-                                <child>
-                                    <object class="GtkButton" id="go_back">
-                                        <property name="sensitive">False</property>
-                                        <property name="visible">True</property>
-                                        <style>
-                                            <class name="image-button"/>
-                                        </style>
-                                        <child>
-                                            <object class="GtkImage" id="go_back_icon">
-                                                <property name="icon-name">go-previous-symbolic</property>
-                                                <property name="visible">True</property>
-                                            </object>
-                                        </child>
-                                    </object>
-                                </child>
-                            </object>
-                        </child>
-                        <child>
-                            <object class="GtkSeparatorToolItem" id="spacer">
-                                <property name="draw">False</property>
-                                <property name="visible">True</property>
-                            </object>
-                            <packing>
-                                <property name="expand">True</property>
-                            </packing>
-                        </child>
-                        <child>
-                            <object class="GtkToolItem" id="search_container">
-                                <property name="visible">True</property>
-                                <child>
-                                    <object class="GtkButton" id="search">
-                                        <property name="sensitive">False</property>
-                                        <property name="visible">True</property>
-                                        <style>
-                                            <class name="image-button"/>
-                                        </style>
-                                        <child>
-                                            <object class="GtkImage" id="search_icon">
-                                                <property name="icon-name">edit-find-symbolic</property>
-                                                <property name="visible">True</property>
-                                            </object>
-                                        </child>
-                                    </object>
-                                </child>
-                            </object>
-                        </child>
-                        <child>
-                            <object class="GtkToolItem" id="gear_item">
-                                <property name="visible">True</property>
-                                <child>
-                                    <object class="GtkMenuButton" id="gear_menu">
-                                        <property name="visible">True</property>
-                                        <style>
-                                            <class name="image-button"/>
-                                        </style>
-                                        <child>
-                                            <object class="GtkImage" id="gear_image">
-                                                <property name="icon-name">emblem-system-symbolic</property>
-                                                <property name="visible">True</property>
-                                            </object>
-                                        </child>
-                                    </object>
-                                </child>
-                            </object>
-                        </child>
-                    </object>
-                    <packing>
-                        <property name="left_attach">1</property>
-                        <property name="top_attach">1</property>
-                        <property name="width">1</property>
-                        <property name="height">1</property>
-                    </packing>
-                </child>
                 <child>
                     <object class="GlCategoryList" id="categories">
                         <property name="visible">True</property>
                     </object>
-                    <packing>
-                        <property name="left_attach">0</property>
-                        <property name="top_attach">2</property>
-                        <property name="width">1</property>
-                        <property name="height">1</property>
-                    </packing>
                 </child>
                 <child>
                     <object class="GlEventView" id="events">
                         <property name="expand">True</property>
                         <property name="visible">True</property>
                     </object>
-                    <packing>
-                        <property name="left_attach">1</property>
-                        <property name="top_attach">2</property>
-                        <property name="width">1</property>
-                        <property name="height">1</property>
-                    </packing>
                </child>
             </object>
         </child>
     </template>
+        <object class="GtkSizeGroup" id="left_column">
+            <property name="mode">GTK_SIZE_GROUP_HORIZONTAL</property>
+            <widgets>
+                <widget name="left_toolbar"/>
+                <widget name="categories"/>
+            </widgets>
+        </object>
 </interface>
