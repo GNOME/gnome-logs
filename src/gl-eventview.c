@@ -196,6 +196,9 @@ on_notify_filter (GlEventView *view,
         case GL_EVENT_VIEW_FILTER_ALL:
             gtk_stack_set_visible_child_name (stack, "listbox-all");
             break;
+        case GL_EVENT_VIEW_FILTER_APPLICATIONS:
+            gtk_stack_set_visible_child_name (stack, "listbox-applications");
+            break;
         case GL_EVENT_VIEW_FILTER_SYSTEM:
             gtk_stack_set_visible_child_name (stack, "listbox-system");
             break;
@@ -503,6 +506,75 @@ insert_journal_items_cmdline (sd_journal *journal, GtkListBox *listbox)
 }
 
 static void
+gl_event_view_add_listbox_applications (GlEventView *view)
+{
+    GlEventViewPrivate *priv;
+    gint ret;
+    sd_journal *journal;
+    GtkWidget *listbox;
+    GtkWidget *scrolled;
+
+    priv = gl_event_view_get_instance_private (view);
+    journal = priv->journal;
+
+    /* Allow all _TRANSPORT != kernel. */
+    ret = sd_journal_add_match (journal, "_TRANSPORT=journal", 0);
+
+    if (ret < 0)
+    {
+        g_warning ("Error adding match for journal transport: %s",
+                   g_strerror (-ret));
+    }
+
+    ret = sd_journal_add_match (journal, "_TRANSPORT=stdout", 0);
+
+    if (ret < 0)
+    {
+        g_warning ("Error adding match for stdout transport: %s",
+                   g_strerror (-ret));
+    }
+
+    ret = sd_journal_add_match (journal, "_TRANSPORT=syslog", 0);
+
+    if (ret < 0)
+    {
+        g_warning ("Error adding match for syslog transport: %s",
+                   g_strerror (-ret));
+    }
+
+    ret = sd_journal_seek_tail (journal);
+
+    if (ret < 0)
+    {
+        g_warning ("Error seeking to end of systemd journal: %s",
+                   g_strerror (-ret));
+    }
+
+    ret = sd_journal_previous (journal);
+
+    if (ret < 0)
+    {
+        g_warning ("Error setting cursor to end of systemd journal: %s",
+                   g_strerror (-ret));
+    }
+    else if (ret == 0)
+    {
+        g_warning ("End of systemd journal reached");
+    }
+
+    listbox = gtk_list_box_new ();
+
+    insert_journal_items_cmdline (journal, GTK_LIST_BOX (listbox));
+
+    sd_journal_flush_matches (journal);
+
+    scrolled = gtk_scrolled_window_new (NULL, NULL);
+    gtk_container_add (GTK_CONTAINER (scrolled), listbox);
+    gtk_widget_show_all (scrolled);
+    gtk_stack_add_named (GTK_STACK (view), scrolled, "listbox-applications");
+}
+
+static void
 gl_event_view_add_listbox_system (GlEventView *view)
 {
     GlEventViewPrivate *priv;
@@ -642,6 +714,7 @@ gl_event_view_init (GlEventView *view)
     gtk_widget_show_all (scrolled);
     gtk_stack_add_named (GTK_STACK (stack), scrolled, "listbox-all");
 
+    gl_event_view_add_listbox_applications (view);
     gl_event_view_add_listbox_system (view);
 
     g_signal_connect (view, "notify::filter", G_CALLBACK (on_notify_filter),
