@@ -1,18 +1,32 @@
 <interface domain="gnome-logs">
     <template class="GlWindow" parent="GtkApplicationWindow">
-        <property name="title" translatable="yes">Logs</property>
         <property name="default-width">640</property>
         <property name="default-height">480</property>
+        <child type="titlebar">
+            <object class="GtkHeaderBar" id="header">
+                <property name="show-close-button">True</property>
+                <property name="visible">True</property>
+                <child type="title">
+                    <object class="GtkLabel" id="title">
+                        <property name="label" translatable="yes">Logs</property>
+                        <property name="visible">True</property>
+                        <style>
+                            <class name="title"/>
+                        </style>
+                    </object>
+                </child>
+            </object>
+        </child>
         <child>
             <object class="GtkGrid" id="grid">
                 <property name="visible">True</property>
                 <child>
                     <object class="GdMainToolbar" id="left_toolbar">
-                    <property name="visible">True</property>
+                        <property name="visible">True</property>
                     </object>
                     <packing>
                         <property name="left_attach">0</property>
-                        <property name="top_attach">0</property>
+                        <property name="top_attach">1</property>
                         <property name="width">1</property>
                         <property name="height">1</property>
                     </packing>
@@ -82,7 +96,7 @@
                     </object>
                     <packing>
                         <property name="left_attach">1</property>
-                        <property name="top_attach">0</property>
+                        <property name="top_attach">1</property>
                         <property name="width">1</property>
                         <property name="height">1</property>
                     </packing>
@@ -93,7 +107,7 @@
                     </object>
                     <packing>
                         <property name="left_attach">0</property>
-                        <property name="top_attach">1</property>
+                        <property name="top_attach">2</property>
                         <property name="width">1</property>
                         <property name="height">1</property>
                     </packing>
@@ -105,7 +119,7 @@
                     </object>
                     <packing>
                         <property name="left_attach">1</property>
-                        <property name="top_attach">1</property>
+                        <property name="top_attach">2</property>
                         <property name="width">1</property>
                         <property name="height">1</property>
                     </packing>
