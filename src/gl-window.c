@@ -19,7 +19,6 @@
 #include "gl-window.h"
 
 #include <glib/gi18n.h>
-#include "libgd/gd.h"
 
 #include "gl-categorylist.h"
 #include "gl-eventview.h"

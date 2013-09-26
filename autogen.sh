@@ -19,8 +19,4 @@ which gnome-autogen.sh || {
     exit 1
 }
 
-cd $srcdir
-git submodule update --init --recursive
-cd -
-
-ACLOCAL_FLAGS="$ACLOCAL_FLAGS -I libgd" USE_GNOME2_MACROS=1 . gnome-autogen.sh
+USE_GNOME2_MACROS=1 . gnome-autogen.sh

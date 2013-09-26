@@ -41,11 +41,8 @@ GTK_REQUIRED="gtk+-3.0 >= 3.9.6"
 SYSTEMD_JOURNAL_REQUIRED="libsystemd-journal"
 PKG_CHECK_MODULES([LOGS], [$GTK_REQUIRED $SYSTEMD_JOURNAL_REQUIRED])
 
-LIBGD_INIT([main-toolbar])
-
 AC_CONFIG_FILES([
 Makefile
-libgd/Makefile
 po/Makefile.in
 ])
 AC_OUTPUT

@@ -1,6 +1,6 @@
-ACLOCAL_AMFLAGS = -I m4 -I libgd ${ACLOCAL_FLAGS}
+ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
 
-SUBDIRS = libgd po
+SUBDIRS = po
 
 bin_PROGRAMS = gnome-logs
 
@@ -11,15 +11,13 @@ gnome_logs_CPPFLAGS = \
 	-DLOCALEDIR=\""$(localedir)"\" \
 	-I$(top_builddir) \
 	-I$(top_builddir)/src \
-	-I$(top_srcdir)/libgd \
 	$(WARN_CFLAGS)
 
 gnome_logs_CFLAGS = \
 	$(LOGS_CFLAGS)
 
 gnome_logs_LDADD = \
-	$(LOGS_LIBS) \
-	$(top_builddir)/libgd/libgd.la
+	$(LOGS_LIBS)
 
 gnome_logs_SOURCES = \
 	src/gl-application.c \
