@@ -73,6 +73,18 @@ on_mode (GSimpleAction *action,
     g_simple_action_set_state (action, variant);
 }
 
+static void
+on_provider_parsing_error (GtkCssProvider *provider,
+                           GtkCssSection *section,
+                           GError *error,
+                           gpointer user_data)
+{
+    g_critical ("Error while parsing CSS style (line: %u, character: %u): %s",
+                gtk_css_section_get_end_line (section) + 1,
+                gtk_css_section_get_end_position (section) + 1,
+                error->message);
+}
+
 static GActionEntry actions[] = {
     { "category", on_action_radio, "s", "'all'", on_category },
     { "mode", on_action_radio, "s", "'list'", on_mode }
@@ -94,10 +106,44 @@ gl_window_class_init (GlWindowClass *klass)
 static void
 gl_window_init (GlWindow *window)
 {
+    GBytes *data;
+    GError *err = NULL;
+    GtkCssProvider *provider;
+    GdkScreen *screen;
+
     gtk_widget_init_template (GTK_WIDGET (window));
 
     g_action_map_add_action_entries (G_ACTION_MAP (window), actions,
                                      G_N_ELEMENTS (actions), window);
+
+    data = g_resources_lookup_data ("/org/gnome/Logs/gl-style.css",
+                                    G_RESOURCE_LOOKUP_FLAGS_NONE, &err);
+
+    if (err != NULL)
+    {
+        g_critical ("Error loading CSS styling data: %s", err->message);
+        g_error_free (err);
+        return;
+    }
+
+    provider = gtk_css_provider_get_default ();
+    g_signal_connect (provider, "parsing-error",
+                      G_CALLBACK (on_provider_parsing_error), NULL);
+    gtk_css_provider_load_from_data (provider, g_bytes_get_data (data, NULL),
+                                     g_bytes_get_size (data), &err);
+
+    if (err != NULL)
+    {
+        g_critical ("Error parsing CSS styling data: %s", err->message);
+        g_error_free (err);
+        g_object_unref (provider);
+        return;
+    }
+
+    screen = gdk_screen_get_default ();
+    gtk_style_context_add_provider_for_screen (screen,
+                                               GTK_STYLE_PROVIDER (provider),
+                                               GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
 }
 
 GtkWidget *

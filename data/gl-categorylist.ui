@@ -5,6 +5,9 @@
         <child>
             <object class="GtkListBoxRow" id="important">
                 <property name="visible">True</property>
+                <style>
+                    <class name="category"/>
+                </style>
                 <child>
                     <object class="GtkLabel" id="important_label">
                         <property name="halign">start</property>
@@ -17,6 +20,9 @@
         <child>
             <object class="GtkListBoxRow" id="alerts">
                 <property name="visible">True</property>
+                <style>
+                    <class name="category"/>
+                </style>
                 <child>
                     <object class="GtkLabel" id="alerts_label">
                         <property name="halign">start</property>
@@ -29,6 +35,9 @@
         <child>
             <object class="GtkListBoxRow" id="starred">
                 <property name="visible">True</property>
+                <style>
+                    <class name="category"/>
+                </style>
                 <child>
                     <object class="GtkLabel" id="starred_label">
                         <property name="halign">start</property>
@@ -41,6 +50,9 @@
         <child>
             <object class="GtkListBoxRow" id="all">
                 <property name="visible">True</property>
+                <style>
+                    <class name="category"/>
+                </style>
                 <child>
                     <object class="GtkLabel" id="all_label">
                         <property name="halign">start</property>
@@ -53,6 +65,9 @@
         <child>
             <object class="GtkListBoxRow" id="applications">
                 <property name="visible">True</property>
+                <style>
+                    <class name="category"/>
+                </style>
                 <child>
                     <object class="GtkLabel" id="applications_label">
                         <property name="halign">start</property>
@@ -65,6 +80,9 @@
         <child>
             <object class="GtkListBoxRow" id="system">
                 <property name="visible">True</property>
+                <style>
+                    <class name="category"/>
+                </style>
                 <child>
                     <object class="GtkLabel" id="system_label">
                         <property name="halign">start</property>
@@ -77,6 +95,9 @@
         <child>
             <object class="GtkListBoxRow" id="security">
                 <property name="visible">True</property>
+                <style>
+                    <class name="category"/>
+                </style>
                 <child>
                     <object class="GtkLabel" id="security_label">
                         <property name="halign">start</property>
@@ -89,6 +110,9 @@
         <child>
             <object class="GtkListBoxRow" id="hardware">
                 <property name="visible">True</property>
+                <style>
+                    <class name="category"/>
+                </style>
                 <child>
                     <object class="GtkLabel" id="hardware_label">
                         <property name="halign">start</property>
@@ -101,6 +125,9 @@
         <child>
             <object class="GtkListBoxRow" id="updates">
                 <property name="visible">True</property>
+                <style>
+                    <class name="category"/>
+                </style>
                 <child>
                     <object class="GtkLabel" id="updates_label">
                         <property name="halign">start</property>
@@ -113,6 +140,9 @@
         <child>
             <object class="GtkListBoxRow" id="usage">
                 <property name="visible">True</property>
+                <style>
+                    <class name="category"/>
+                </style>
                 <child>
                     <object class="GtkLabel" id="usage_label">
                         <property name="halign">start</property>
