@@ -20,6 +20,9 @@
 
 #include <glib/gi18n.h>
 
+#include "gl-enums.h"
+#include "gl-eventview.h"
+
 typedef struct
 {
     GtkWidget *important;
@@ -45,9 +48,12 @@ on_gl_category_list_row_activated (GlCategoryList *listbox,
     GtkWidget *toplevel;
     GActionMap *appwindow;
     GAction *category;
+    GEnumClass *eclass;
+    GEnumValue *evalue;
 
     priv = gl_category_list_get_instance_private (listbox);
     toplevel = gtk_widget_get_toplevel (GTK_WIDGET (listbox));
+
     if (gtk_widget_is_toplevel (toplevel))
     {
         appwindow = G_ACTION_MAP (toplevel);
@@ -58,47 +64,56 @@ on_gl_category_list_row_activated (GlCategoryList *listbox,
         g_return_if_reached ();
     }
 
-    /* TODO: Fetch strings from an enum generated with glib-mkenums. */
+    eclass = g_type_class_ref (GL_TYPE_EVENT_VIEW_FILTER);
+
     if (row == GTK_LIST_BOX_ROW (priv->important))
     {
-        g_action_activate (category, g_variant_new_string ("important"));
+        evalue = g_enum_get_value (eclass, GL_EVENT_VIEW_FILTER_IMPORTANT);
     }
     else if (row == GTK_LIST_BOX_ROW (priv->alerts))
     {
-        g_action_activate (category, g_variant_new_string ("alerts"));
+        evalue = g_enum_get_value (eclass, GL_EVENT_VIEW_FILTER_ALERTS);
     }
     else if (row == GTK_LIST_BOX_ROW (priv->starred))
     {
-        g_action_activate (category, g_variant_new_string ("starred"));
+        evalue = g_enum_get_value (eclass, GL_EVENT_VIEW_FILTER_STARRED);
     }
     else if (row == GTK_LIST_BOX_ROW (priv->all))
     {
-        g_action_activate (category, g_variant_new_string ("all"));
+        evalue = g_enum_get_value (eclass, GL_EVENT_VIEW_FILTER_ALL);
     }
     else if (row == GTK_LIST_BOX_ROW (priv->applications))
     {
-        g_action_activate (category, g_variant_new_string ("applications"));
+        evalue = g_enum_get_value (eclass, GL_EVENT_VIEW_FILTER_APPLICATIONS);
     }
     else if (row == GTK_LIST_BOX_ROW (priv->system))
     {
-        g_action_activate (category, g_variant_new_string ("system"));
+        evalue = g_enum_get_value (eclass, GL_EVENT_VIEW_FILTER_SYSTEM);
     }
     else if (row == GTK_LIST_BOX_ROW (priv->security))
     {
-        g_action_activate (category, g_variant_new_string ("security"));
+        evalue = g_enum_get_value (eclass, GL_EVENT_VIEW_FILTER_SECURITY);
     }
     else if (row == GTK_LIST_BOX_ROW (priv->hardware))
     {
-        g_action_activate (category, g_variant_new_string ("hardware"));
+        evalue = g_enum_get_value (eclass, GL_EVENT_VIEW_FILTER_HARDWARE);
     }
     else if (row == GTK_LIST_BOX_ROW (priv->updates))
     {
-        g_action_activate (category, g_variant_new_string ("updates"));
+        evalue = g_enum_get_value (eclass, GL_EVENT_VIEW_FILTER_UPDATES);
     }
     else if (row == GTK_LIST_BOX_ROW (priv->usage))
     {
-        g_action_activate (category, g_variant_new_string ("usage"));
+        evalue = g_enum_get_value (eclass, GL_EVENT_VIEW_FILTER_USAGE);
     }
+    else
+    {
+        g_assert_not_reached ();
+    }
+
+    g_action_activate (category, g_variant_new_string (evalue->value_nick));
+
+    g_type_class_unref (eclass);
 }
 
 static void

@@ -22,6 +22,7 @@
 
 #include "gl-categorylist.h"
 #include "gl-eventview.h"
+#include "gl-enums.h"
 
 typedef struct
 {
@@ -47,54 +48,20 @@ on_category (GSimpleAction *action,
     GlWindowPrivate *priv;
     const gchar *category;
     GlEventView *events;
+    GEnumClass *eclass;
+    GEnumValue *evalue;
 
     priv = gl_window_get_instance_private (GL_WINDOW (user_data));
     category = g_variant_get_string (variant, NULL);
     events = GL_EVENT_VIEW (priv->events);
+    eclass = g_type_class_ref (GL_TYPE_EVENT_VIEW_FILTER);
+    evalue = g_enum_get_value_by_nick (eclass, category);
 
-    /* TODO: Fetch strings from an enum generated with glib-mkenums. */
-    if (g_strcmp0 (category, "important") == 0)
-    {
-        gl_event_view_set_filter (events, GL_EVENT_VIEW_FILTER_IMPORTANT);
-    }
-    else if (g_strcmp0 (category, "alerts") == 0)
-    {
-        gl_event_view_set_filter (events, GL_EVENT_VIEW_FILTER_ALERTS);
-    }
-    else if (g_strcmp0 (category, "starred") == 0)
-    {
-        gl_event_view_set_filter (events, GL_EVENT_VIEW_FILTER_STARRED);
-    }
-    else if (g_strcmp0 (category, "all") == 0)
-    {
-        gl_event_view_set_filter (events, GL_EVENT_VIEW_FILTER_ALL);
-    }
-    else if (g_strcmp0 (category, "applications") == 0)
-    {
-        gl_event_view_set_filter (events, GL_EVENT_VIEW_FILTER_APPLICATIONS);
-    }
-    else if (g_strcmp0 (category, "system") == 0)
-    {
-        gl_event_view_set_filter (events, GL_EVENT_VIEW_FILTER_SYSTEM);
-    }
-    else if (g_strcmp0 (category, "security") == 0)
-    {
-        gl_event_view_set_filter (events, GL_EVENT_VIEW_FILTER_SECURITY);
-    }
-    else if (g_strcmp0 (category, "hardware") == 0)
-    {
-        gl_event_view_set_filter (events, GL_EVENT_VIEW_FILTER_HARDWARE);
-    }
-    else if (g_strcmp0 (category, "updates") == 0)
-    {
-        gl_event_view_set_filter (events, GL_EVENT_VIEW_FILTER_UPDATES);
-    }
-    else if (g_strcmp0 (category, "usage") == 0)
-    {
-        gl_event_view_set_filter (events, GL_EVENT_VIEW_FILTER_USAGE);
-    }
+    gl_event_view_set_filter (events, evalue->value);
 
     g_simple_action_set_state (action, variant);
+
+    g_type_class_unref (eclass);
 }
 
 static void
