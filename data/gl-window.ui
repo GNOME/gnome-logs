@@ -12,6 +12,12 @@
                     </object>
                 </child>
                 <child>
+                    <object class="GtkSeparator" id="titlebar_separator">
+                        <property name="orientation">vertical</property>
+                        <property name="visible">True</property>
+                    </object>
+                </child>
+                <child>
                     <object class="GtkHeaderBar" id="right_toolbar">
                         <property name="show-close-button">True</property>
                         <property name="visible">True</property>
@@ -85,6 +91,12 @@
                 <property name="visible">True</property>
                 <child>
                     <object class="GlCategoryList" id="categories">
+                        <property name="visible">True</property>
+                    </object>
+                </child>
+                <child>
+                    <object class="GtkSeparator" id="content_separator">
+                        <property name="orientation">vertical</property>
                         <property name="visible">True</property>
                     </object>
                 </child>
