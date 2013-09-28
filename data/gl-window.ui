@@ -27,69 +27,8 @@
                     </object>
                 </child>
                 <child>
-                    <object class="GtkHeaderBar" id="right_toolbar">
-                        <property name="show-close-button">True</property>
+                    <object class="GlEventToolbar" id="right_toolbar">
                         <property name="visible">True</property>
-                        <child>
-                            <object class="GtkButton" id="go_back">
-                                <property name="sensitive">False</property>
-                                <property name="visible">True</property>
-                                <style>
-                                    <class name="image-button"/>
-                                </style>
-                                <child>
-                                    <object class="GtkImage" id="go_back_icon">
-                                        <property name="icon-name">go-previous-symbolic</property>
-                                        <property name="visible">True</property>
-                                    </object>
-                                </child>
-                            </object>
-                        </child>
-                        <child type="title">
-                            <object class="GtkLabel" id="title">
-                                <property name="expand">True</property>
-                                <property name="label" translatable="yes">Logs</property>
-                                <property name="visible">True</property>
-                                <style>
-                                    <class name="title"/>
-                                </style>
-                            </object>
-                        </child>
-                        <child>
-                            <object class="GtkButton" id="search">
-                                <property name="sensitive">False</property>
-                                <property name="visible">True</property>
-                                <style>
-                                    <class name="image-button"/>
-                                </style>
-                                <child>
-                                    <object class="GtkImage" id="search_icon">
-                                        <property name="icon-name">edit-find-symbolic</property>
-                                        <property name="visible">True</property>
-                                    </object>
-                                </child>
-                            </object>
-                            <packing>
-                                <property name="pack-type">end</property>
-                            </packing>
-                        </child>
-                        <child>
-                            <object class="GtkMenuButton" id="gear_menu">
-                                <property name="visible">True</property>
-                                <style>
-                                    <class name="image-button"/>
-                                </style>
-                                <child>
-                                    <object class="GtkImage" id="gear_image">
-                                        <property name="icon-name">emblem-system-symbolic</property>
-                                        <property name="visible">True</property>
-                                    </object>
-                                </child>
-                            </object>
-                            <packing>
-                                <property name="pack-type">end</property>
-                            </packing>
-                        </child>
                     </object>
                 </child>
             </object>

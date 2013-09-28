@@ -22,6 +22,7 @@
 #include <glib/gi18n.h>
 
 #include "gl-categorylist.h"
+#include "gl-eventtoolbar.h"
 #include "gl-eventview.h"
 #include "gl-window.h"
 
@@ -98,6 +99,7 @@ gl_application_startup (GApplication *application)
     /* Must register custom types before using them from GtkBuilder. */
     gl_window_get_type ();
     gl_category_list_get_type ();
+    gl_event_toolbar_get_type ();
     gl_event_view_get_type ();
 }
 

@@ -22,6 +22,7 @@ gnome_logs_LDADD = \
 gnome_logs_SOURCES = \
 	src/gl-application.c \
 	src/gl-categorylist.c \
+	src/gl-eventtoolbar.c \
 	src/gl-eventview.c \
 	src/gl-main.c \
 	src/gl-window.c
@@ -35,11 +36,13 @@ enum_data = \
 	src/gl-enums.h
 
 gnome_logs_enum_headers = \
+	$(srcdir)/src/gl-eventtoolbar.h \
 	$(srcdir)/src/gl-eventview.h
 
 noinst_gnome_logs_headers = \
 	src/gl-application.h \
 	src/gl-categorylist.h \
+	src/gl-eventtoolbar.h \
 	src/gl-eventview.h \
 	src/gl-window.h
 
@@ -88,6 +91,7 @@ src/gl-enums.h: $(gnome_logs_enum_headers) Makefile
 noinst_resource_files = \
 	data/appmenu.ui \
 	data/gl-categorylist.ui \
+	data/gl-eventtoolbar.ui \
 	data/gl-style.css \
 	data/gl-window.ui
 

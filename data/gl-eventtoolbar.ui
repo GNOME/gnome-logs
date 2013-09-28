@@ -1,0 +1,43 @@
+<interface domain="gnome-logs">
+    <template class="GlEventToolbar" parent="GtkHeaderBar">
+        <property name="expand">True</property>
+        <property name="show-close-button">True</property>
+        <property name="title" translatable="yes">Logs</property>
+        <property name="visible">True</property>
+        <child>
+            <object class="GtkButton" id="go_back">
+                <property name="sensitive">False</property>
+                <property name="tooltip-text" translatable="yes">Go back to the event view</property>
+                <property name="visible">True</property>
+                <style>
+                    <class name="image-button"/>
+                </style>
+                <child>
+                    <object class="GtkImage" id="go_back_icon">
+                        <property name="icon-name">go-previous-symbolic</property>
+                        <property name="visible">True</property>
+                    </object>
+                </child>
+            </object>
+        </child>
+        <child>
+            <object class="GtkButton" id="search">
+                <property name="sensitive">False</property>
+                <property name="tooltip-text" translatable="yes">Search the displayed logs</property>
+                <property name="visible">True</property>
+                <style>
+                    <class name="image-button"/>
+                </style>
+                <child>
+                    <object class="GtkImage" id="search_icon">
+                        <property name="icon-name">edit-find-symbolic</property>
+                        <property name="visible">True</property>
+                    </object>
+                </child>
+            </object>
+            <packing>
+                <property name="pack-type">end</property>
+            </packing>
+        </child>
+    </template>
+</interface>
