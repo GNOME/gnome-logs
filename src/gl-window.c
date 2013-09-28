@@ -106,9 +106,9 @@ gl_window_class_init (GlWindowClass *klass)
 static void
 gl_window_init (GlWindow *window)
 {
-    GBytes *data;
-    GError *err = NULL;
+    GFile *file;
     GtkCssProvider *provider;
+    GError *err = NULL;
     GdkScreen *screen;
 
     gtk_widget_init_template (GTK_WIDGET (window));
@@ -116,21 +116,11 @@ gl_window_init (GlWindow *window)
     g_action_map_add_action_entries (G_ACTION_MAP (window), actions,
                                      G_N_ELEMENTS (actions), window);
 
-    data = g_resources_lookup_data ("/org/gnome/Logs/gl-style.css",
-                                    G_RESOURCE_LOOKUP_FLAGS_NONE, &err);
-
-    if (err != NULL)
-    {
-        g_critical ("Error loading CSS styling data: %s", err->message);
-        g_error_free (err);
-        return;
-    }
-
+    file = g_file_new_for_uri ("resource:///org/gnome/Logs/gl-style.css");
     provider = gtk_css_provider_get_default ();
     g_signal_connect (provider, "parsing-error",
                       G_CALLBACK (on_provider_parsing_error), NULL);
-    gtk_css_provider_load_from_data (provider, g_bytes_get_data (data, NULL),
-                                     g_bytes_get_size (data), &err);
+    gtk_css_provider_load_from_file (provider, file, &err);
 
     if (err != NULL)
     {
