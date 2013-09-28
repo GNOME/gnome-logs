@@ -149,11 +149,25 @@ gl_category_list_class_init (GlCategoryListClass *klass)
 }
 
 static void
+gl_category_list_header_func (GtkListBoxRow *row,
+                              GtkListBoxRow *before,
+                              gpointer user_data)
+{
+    if (before != NULL && (gtk_list_box_row_get_header (row) == NULL))
+    {
+        gtk_list_box_row_set_header (row,
+                                     gtk_separator_new (GTK_ORIENTATION_HORIZONTAL));
+    }
+}
+
+static void
 gl_category_list_init (GlCategoryList *list)
 {
     GlCategoryListPrivate *priv;
 
     gtk_widget_init_template (GTK_WIDGET (list));
+    gtk_list_box_set_header_func (GTK_LIST_BOX (list),
+                                  gl_category_list_header_func, NULL, NULL);
     priv = gl_category_list_get_instance_private (list);
 
     gtk_list_box_select_row (GTK_LIST_BOX (list),
