@@ -92,6 +92,9 @@
                 <child>
                     <object class="GlCategoryList" id="categories">
                         <property name="visible">True</property>
+                        <style>
+                            <class name="categories"/>
+                        </style>
                     </object>
                 </child>
                 <child>
