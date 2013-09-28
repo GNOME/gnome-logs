@@ -9,6 +9,15 @@
                 <child>
                     <object class="GtkHeaderBar" id="left_toolbar">
                         <property name="visible">True</property>
+                        <child type="title">
+                            <object class="GtkLabel" id="categories_title">
+                                <property name="label" translatable="yes">Categories</property>
+                                <property name="visible">True</property>
+                                <style>
+                                    <class name="title"/>
+                                </style>
+                            </object>
+                        </child>
                     </object>
                 </child>
                 <child>
