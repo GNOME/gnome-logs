@@ -345,6 +345,7 @@ insert_journal_items_devices (sd_journal *journal, GtkListBox *listbox)
         gchar *cursor;
         gsize length;
         GtkWidget *row;
+        GtkStyleContext *context;
         GtkWidget *grid;
         GtkWidget *label;
         gboolean rtl;
@@ -401,6 +402,8 @@ insert_journal_items_devices (sd_journal *journal, GtkListBox *listbox)
         }
 
         row = gtk_list_box_row_new ();
+        context = gtk_widget_get_style_context (GTK_WIDGET (row));
+        gtk_style_context_add_class (context, "event");
         /* sd_journal_get_cursor allocates the cursor with libc malloc. */
         g_object_set_data_full (G_OBJECT (row), "cursor", cursor, free);
         grid = gtk_grid_new ();
@@ -451,6 +454,7 @@ insert_journal_items_security (sd_journal *journal, GtkListBox *listbox)
         gchar *cursor;
         gsize length;
         GtkWidget *row;
+        GtkStyleContext *context;
         GtkWidget *grid;
         GtkWidget *label;
         gchar *markup;
@@ -518,6 +522,8 @@ insert_journal_items_security (sd_journal *journal, GtkListBox *listbox)
         }
 
         row = gtk_list_box_row_new ();
+        context = gtk_widget_get_style_context (GTK_WIDGET (row));
+        gtk_style_context_add_class (context, "event");
         /* sd_journal_get_cursor allocates the cursor with libc malloc. */
         g_object_set_data_full (G_OBJECT (row), "cursor", cursor, free);
         grid = gtk_grid_new ();
@@ -574,6 +580,7 @@ insert_journal_items_simple (sd_journal *journal, GtkListBox *listbox)
         gchar *cursor;
         gsize length;
         GtkWidget *row;
+        GtkStyleContext *context;
         GtkWidget *grid;
         GtkWidget *label;
         gboolean rtl;
@@ -614,6 +621,8 @@ insert_journal_items_simple (sd_journal *journal, GtkListBox *listbox)
         }
 
         row = gtk_list_box_row_new ();
+        context = gtk_widget_get_style_context (GTK_WIDGET (row));
+        gtk_style_context_add_class (context, "event");
         /* sd_journal_get_cursor allocates the cursor with libc malloc. */
         g_object_set_data_full (G_OBJECT (row), "cursor", cursor, free);
         grid = gtk_grid_new ();
@@ -662,6 +671,7 @@ insert_journal_items_cmdline (sd_journal *journal, GtkListBox *listbox)
         gchar *cursor;
         gsize length;
         GtkWidget *row;
+        GtkStyleContext *context;
         GtkWidget *grid;
         GtkWidget *label;
         gchar *markup;
@@ -713,6 +723,8 @@ insert_journal_items_cmdline (sd_journal *journal, GtkListBox *listbox)
         }
 
         row = gtk_list_box_row_new ();
+        context = gtk_widget_get_style_context (GTK_WIDGET (row));
+        gtk_style_context_add_class (context, "event");
         /* sd_journal_get_cursor allocates the cursor with libc malloc. */
         g_object_set_data_full (G_OBJECT (row), "cursor", cursor, free);
         grid = gtk_grid_new ();
