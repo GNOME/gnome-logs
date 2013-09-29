@@ -52,9 +52,26 @@
                     </object>
                 </child>
                 <child>
-                    <object class="GlEventView" id="events">
-                        <property name="expand">True</property>
+                    <object class="GtkBox" id="event_view">
+                        <property name="orientation">vertical</property>
                         <property name="visible">True</property>
+                        <child>
+                            <object class="GtkSearchBar" id="event_search">
+                                <property name="visible">True</property>
+                                <child>
+                                    <object class="GtkSearchEntry" id="search_entry">
+                                        <property name="visible">True</property>
+                                        <signal name="search-changed" handler="on_gl_window_search_entry_changed" />
+                                    </object>
+                                </child>
+                            </object>
+                        </child>
+                        <child>
+                            <object class="GlEventView" id="events">
+                                <property name="expand">True</property>
+                                <property name="visible">True</property>
+                            </object>
+                        </child>
                     </object>
                </child>
             </object>

@@ -40,12 +40,105 @@ typedef struct
     gint fd;
     guint source_id;
     GlEventViewFilter filter;
+    GtkListBox *active_listbox;
     GlEventViewMode mode;
+    gchar *search_text;
 } GlEventViewPrivate;
 
 G_DEFINE_TYPE_WITH_PRIVATE (GlEventView, gl_event_view, GTK_TYPE_STACK)
 
 static GParamSpec *obj_properties[N_PROPERTIES] = { NULL, };
+
+static gboolean
+listbox_search_filter_func (GtkListBoxRow *row,
+                            GlEventView *view)
+{
+    GlEventViewPrivate *priv;
+
+    priv = gl_event_view_get_instance_private (view);
+
+    if (!priv->search_text || !*(priv->search_text))
+    {
+        return TRUE;
+    }
+    else
+    {
+        gchar *cursor;
+        sd_journal *journal;
+        gint ret;
+        gsize length;
+        gchar *comm;
+        gchar *message;
+
+        cursor = g_object_get_data (G_OBJECT (row), "cursor");
+
+        if (cursor == NULL)
+        {
+            g_warning ("Error getting cursor from row");
+            goto out;
+        }
+
+        journal = priv->journal;
+
+        ret = sd_journal_seek_cursor (journal, cursor);
+
+        if (ret < 0)
+        {
+            g_warning ("Error seeking to cursor position: %s", g_strerror (-ret));
+            goto out;
+        }
+
+        ret = sd_journal_next (journal);
+
+        if (ret < 0)
+        {
+            g_warning ("Error positioning cursor in systemd journal: %s",
+                       g_strerror (-ret));
+        }
+
+        ret = sd_journal_test_cursor (journal, cursor);
+
+        if (ret < 0)
+        {
+            g_warning ("Error testing cursor string: %s", g_strerror (-ret));
+            goto out;
+        }
+        else if (ret == 0)
+        {
+            g_warning ("Cursor string does not match journal entry");
+            goto out;
+        }
+
+        ret = sd_journal_get_data (journal, "_COMM", (const void **)&comm,
+                                   &length);
+
+        if (ret < 0)
+        {
+            g_warning ("Error getting command line from systemd journal: %s",
+                       g_strerror (-ret));
+            comm = "_COMM=";
+        }
+
+        ret = sd_journal_get_data (journal, "MESSAGE", (const void **)&message,
+                                   &length);
+
+        if (ret < 0)
+        {
+            g_warning ("Error getting message from systemd journal: %s",
+                       g_strerror (-ret));
+            goto out;
+        }
+
+        if (strstr (comm, priv->search_text)
+            || strstr (message, priv->search_text))
+        {
+            return TRUE;
+        }
+    }
+
+out:
+    return FALSE;
+}
 
 static void
 on_listbox_row_activated (GtkListBox *listbox,
@@ -227,6 +320,8 @@ on_notify_filter (GlEventView *view,
         default:
             break;
     }
+
+    priv->active_listbox = GTK_LIST_BOX (gtk_stack_get_visible_child (stack));
 }
 
 static void
@@ -302,6 +397,8 @@ gl_event_view_finalize (GObject *object)
     {
         sd_journal_close (priv->journal);
     }
+
+    g_clear_pointer (&priv->search_text, g_free);
 }
 
 static void
@@ -863,6 +960,9 @@ gl_event_view_add_listbox_important (GlEventView *view)
 
     listbox = gtk_list_box_new ();
 
+    gtk_list_box_set_filter_func (GTK_LIST_BOX (listbox),
+                                  (GtkListBoxFilterFunc)listbox_search_filter_func,
+                                  view, NULL);
     insert_journal_items_cmdline (journal, GTK_LIST_BOX (listbox));
 
     sd_journal_flush_matches (journal);
@@ -952,6 +1052,9 @@ gl_event_view_add_listbox_applications (GlEventView *view)
 
     listbox = gtk_list_box_new ();
 
+    gtk_list_box_set_filter_func (GTK_LIST_BOX (listbox),
+                                  (GtkListBoxFilterFunc)listbox_search_filter_func,
+                                  view, NULL);
     insert_journal_items_cmdline (journal, GTK_LIST_BOX (listbox));
 
     sd_journal_flush_matches (journal);
@@ -1004,6 +1107,9 @@ gl_event_view_add_listbox_system (GlEventView *view)
 
     listbox = gtk_list_box_new ();
 
+    gtk_list_box_set_filter_func (GTK_LIST_BOX (listbox),
+                                  (GtkListBoxFilterFunc)listbox_search_filter_func,
+                                  view, NULL);
     insert_journal_items_simple (journal, GTK_LIST_BOX (listbox));
 
     sd_journal_flush_matches (journal);
@@ -1056,6 +1162,9 @@ gl_event_view_add_listbox_hardware (GlEventView *view)
 
     listbox = gtk_list_box_new ();
 
+    gtk_list_box_set_filter_func (GTK_LIST_BOX (listbox),
+                                  (GtkListBoxFilterFunc)listbox_search_filter_func,
+                                  view, NULL);
     insert_journal_items_devices (journal, GTK_LIST_BOX (listbox));
 
     sd_journal_flush_matches (journal);
@@ -1100,6 +1209,9 @@ gl_event_view_add_listbox_security (GlEventView *view)
 
     listbox = gtk_list_box_new ();
 
+    gtk_list_box_set_filter_func (GTK_LIST_BOX (listbox),
+                                  (GtkListBoxFilterFunc)listbox_search_filter_func,
+                                  view, NULL);
     insert_journal_items_security (journal, GTK_LIST_BOX (listbox));
 
     scrolled = gtk_scrolled_window_new (NULL, NULL);
@@ -1139,9 +1251,13 @@ gl_event_view_init (GlEventView *view)
     GtkWidget *scrolled;
 
     priv = gl_event_view_get_instance_private (view);
+    priv->search_text = NULL;
     stack = GTK_WIDGET (view);
 
     listbox = gtk_list_box_new ();
+    gtk_list_box_set_filter_func (GTK_LIST_BOX (listbox),
+                                  (GtkListBoxFilterFunc)listbox_search_filter_func,
+                                  view, NULL);
     ret = sd_journal_open (&journal, 0);
     priv->journal = journal;
 
@@ -1215,6 +1331,7 @@ gl_event_view_init (GlEventView *view)
     gtk_container_add (GTK_CONTAINER (scrolled), listbox);
     gtk_widget_show_all (scrolled);
     gtk_stack_add_named (GTK_STACK (stack), scrolled, "listbox-all");
+    priv->active_listbox = GTK_LIST_BOX (listbox);
 
     gl_event_view_add_listbox_important (view);
     gl_event_view_add_listbox_alerts (view);
@@ -1230,6 +1347,22 @@ gl_event_view_init (GlEventView *view)
                       NULL);
     g_signal_connect (view, "notify::mode", G_CALLBACK (on_notify_mode),
                       NULL);
+}
+
+void
+gl_event_view_search (GlEventView *view,
+                      const gchar *needle)
+{
+    GlEventViewPrivate *priv;
+
+    g_return_if_fail (GL_EVENT_VIEW (view));
+
+    priv = gl_event_view_get_instance_private (view);
+
+    g_free (priv->search_text);
+    priv->search_text = g_strdup (needle);
+
+    gtk_list_box_invalidate_filter (priv->active_listbox);
 }
 
 void

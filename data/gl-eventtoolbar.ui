@@ -20,8 +20,8 @@
             </object>
         </child>
         <child>
-            <object class="GtkButton" id="search_button">
-                <property name="sensitive">False</property>
+            <object class="GtkToggleButton" id="search_button">
+                <property name="action-name">win.search</property>
                 <property name="tooltip-text" translatable="yes">Search the displayed logs</property>
                 <property name="visible">True</property>
                 <style>

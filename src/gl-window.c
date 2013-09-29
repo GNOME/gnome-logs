@@ -28,6 +28,8 @@
 typedef struct
 {
     GtkWidget *right_toolbar;
+    GtkWidget *event_search;
+    GtkWidget *search_entry;
     GtkWidget *events;
 } GlWindowPrivate;
 
@@ -39,6 +41,20 @@ on_action_radio (GSimpleAction *action,
                  gpointer user_data)
 {
     g_action_change_state (G_ACTION (action), variant);
+}
+
+static void
+on_action_toggle (GSimpleAction *action,
+                  GVariant *variant,
+                  gpointer user_data)
+{
+    GVariant *variant_state;
+    gboolean state;
+
+    variant_state = g_action_get_state (G_ACTION (action));
+    state = g_variant_get_boolean (variant_state);
+
+    g_action_change_state (G_ACTION (action), g_variant_new_boolean (!state));
 }
 
 static void
@@ -101,6 +117,43 @@ on_mode (GSimpleAction *action,
 }
 
 static void
+on_search (GSimpleAction *action,
+           GVariant *variant,
+           gpointer user_data)
+{
+    gboolean state;
+    GlWindowPrivate *priv;
+
+    state = g_variant_get_boolean (variant);
+    priv = gl_window_get_instance_private (GL_WINDOW (user_data));
+
+    gtk_search_bar_set_search_mode (GTK_SEARCH_BAR (priv->event_search), state);
+
+    if (state)
+    {
+        gtk_widget_grab_focus (priv->search_entry);
+    }
+    else
+    {
+        gtk_entry_set_text (GTK_ENTRY (priv->search_entry), "");
+    }
+
+    g_simple_action_set_state (action, variant);
+}
+
+static void
+on_gl_window_search_entry_changed (GtkSearchEntry *entry,
+                                   gpointer user_data)
+{
+    GlWindowPrivate *priv;
+
+    priv = gl_window_get_instance_private (GL_WINDOW (user_data));
+
+    gl_event_view_search (GL_EVENT_VIEW (priv->events),
+                          gtk_entry_get_text (GTK_ENTRY (priv->search_entry)));
+}
+
+static void
 on_provider_parsing_error (GtkCssProvider *provider,
                            GtkCssSection *section,
                            GError *error,
@@ -114,7 +167,8 @@ on_provider_parsing_error (GtkCssProvider *provider,
 
 static GActionEntry actions[] = {
     { "category", on_action_radio, "s", "'all'", on_category },
-    { "mode", on_action_radio, "s", "'list'", on_mode }
+    { "mode", on_action_radio, "s", "'list'", on_mode },
+    { "search", on_action_toggle, NULL, "false", on_search }
 };
 
 static void
@@ -127,7 +181,14 @@ gl_window_class_init (GlWindowClass *klass)
     gtk_widget_class_bind_template_child_private (widget_class, GlWindow,
                                                   right_toolbar);
     gtk_widget_class_bind_template_child_private (widget_class, GlWindow,
+                                                  event_search);
+    gtk_widget_class_bind_template_child_private (widget_class, GlWindow,
+                                                  search_entry);
+    gtk_widget_class_bind_template_child_private (widget_class, GlWindow,
                                                   events);
+
+    gtk_widget_class_bind_template_callback (widget_class,
+                                             on_gl_window_search_entry_changed);
 }
 
 static void
