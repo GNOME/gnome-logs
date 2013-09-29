@@ -29,6 +29,20 @@
 G_DEFINE_TYPE (GlApplication, gl_application, GTK_TYPE_APPLICATION)
 
 static void
+on_new_window (GSimpleAction *action,
+               GVariant *parameter,
+               gpointer user_data)
+{
+    GtkApplication *application;
+    GtkWidget *window;
+
+    application = GTK_APPLICATION (user_data);
+
+    window = gl_window_new (GTK_APPLICATION (application));
+    gtk_widget_show (window);
+}
+
+static void
 on_about (GSimpleAction *action,
           GVariant *parameter,
           gpointer user_data)
@@ -64,6 +78,7 @@ on_quit (GSimpleAction *action,
 }
 
 static GActionEntry actions[] = {
+    { "new-window", on_new_window },
     { "about", on_about },
     { "quit", on_quit }
 };
