@@ -64,12 +64,26 @@ typedef enum
     GL_EVENT_VIEW_FILTER_USAGE
 } GlEventViewFilter;
 
+/*
+ * GlEventViewMode:
+ * @GL_EVENT_VIEW_MODE_LIST:
+ * @GL_EVENT_VIEW_MODE_DETAIL:
+ *
+ * The mode, mirroring the GlEventToolbar mode, used to show events.
+ */
+typedef enum
+{
+    GL_EVENT_VIEW_MODE_LIST,
+    GL_EVENT_VIEW_MODE_DETAIL
+} GlEventViewMode;
+
 #define GL_TYPE_EVENT_VIEW (gl_event_view_get_type ())
 #define GL_EVENT_VIEW(object) (G_TYPE_CHECK_INSTANCE_CAST ((object), GL_TYPE_EVENT_VIEW, GlEventView))
 
 GType gl_event_view_get_type (void);
 GtkWidget * gl_event_view_new (void);
 void gl_event_view_set_filter (GlEventView *view, GlEventViewFilter filter);
+void gl_event_view_set_mode (GlEventView *view, GlEventViewMode mode);
 
 G_END_DECLS
 

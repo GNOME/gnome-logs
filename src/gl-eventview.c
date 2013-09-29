@@ -24,11 +24,13 @@
 #include <systemd/sd-journal.h>
 
 #include "gl-enums.h"
+#include "gl-eventtoolbar.h"
 
 enum
 {
     PROP_0,
     PROP_FILTER,
+    PROP_MODE,
     N_PROPERTIES
 };
 
@@ -38,23 +40,12 @@ typedef struct
     gint fd;
     guint source_id;
     GlEventViewFilter filter;
+    GlEventViewMode mode;
 } GlEventViewPrivate;
 
 G_DEFINE_TYPE_WITH_PRIVATE (GlEventView, gl_event_view, GTK_TYPE_STACK)
 
 static GParamSpec *obj_properties[N_PROPERTIES] = { NULL, };
-
-static void
-on_detailed_button_clicked (GtkButton *button,
-                            GlEventView *view)
-{
-    GtkWidget *detailed;
-    GtkStack *stack = GTK_STACK (view);
-
-    detailed = gtk_stack_get_visible_child (stack);
-    gtk_stack_set_visible_child_name (stack, "listbox-all");
-    gtk_container_remove (GTK_CONTAINER (stack), detailed);
-}
 
 static void
 on_listbox_row_activated (GtkListBox *listbox,
@@ -72,10 +63,8 @@ on_listbox_row_activated (GtkListBox *listbox,
     GDateTime *datetime;
     GtkWidget *grid;
     GtkWidget *label;
-    GtkWidget *button;
-    GtkWidget *image;
-    gboolean rtl;
     GtkStack *stack;
+    GtkWidget *toplevel;
 
     priv = gl_event_view_get_instance_private (view);
     journal = priv->journal;
@@ -161,20 +150,32 @@ on_listbox_row_activated (GtkListBox *listbox,
     gtk_grid_attach (GTK_GRID (grid), label, 0, 1, 1, 1);
     g_free (time);
 
-    button = gtk_button_new ();
-    g_signal_connect (button, "clicked",
-                      G_CALLBACK (on_detailed_button_clicked), view);
-    rtl = (gtk_widget_get_default_direction () == GTK_TEXT_DIR_RTL);
-    image = gtk_image_new_from_icon_name (rtl ? "go-previous-rtl-symbolic"
-                                              : "go-previous-symbolic",
-                                          GTK_ICON_SIZE_MENU);
-    gtk_container_add (GTK_CONTAINER (button), image);
-    gtk_grid_attach (GTK_GRID (grid), button, 0, 2, 1, 1);
-
     gtk_widget_show_all (grid);
     stack = GTK_STACK (view);
     gtk_stack_add_named (stack, grid, "detailed");
     gtk_stack_set_visible_child_name (stack, "detailed");
+    gl_event_view_set_mode (view, GL_EVENT_VIEW_MODE_DETAIL);
+
+    toplevel = gtk_widget_get_toplevel (GTK_WIDGET (view));
+
+    if (gtk_widget_is_toplevel (toplevel))
+    {
+        GAction *mode;
+        GEnumClass *eclass;
+        GEnumValue *evalue;
+
+        mode = g_action_map_lookup_action (G_ACTION_MAP (toplevel), "mode");
+        eclass = g_type_class_ref (GL_TYPE_EVENT_TOOLBAR_MODE);
+        evalue = g_enum_get_value (eclass, GL_EVENT_TOOLBAR_MODE_DETAIL);
+
+        g_action_activate (mode, g_variant_new_string (evalue->value_nick));
+
+        g_type_class_unref (eclass);
+    }
+    else
+    {
+        g_error ("Widget not in toplevel window, not switching toolbar mode");
+    }
 
 out:
     return;
@@ -224,6 +225,37 @@ on_notify_filter (GlEventView *view,
             gtk_stack_set_visible_child_name (stack, "listbox-usage");
             break;
         default:
+            break;
+    }
+}
+
+static void
+on_notify_mode (GlEventView *view,
+                GParamSpec *pspec,
+                gpointer user_data)
+{
+    GlEventViewPrivate *priv;
+
+    priv = gl_event_view_get_instance_private (view);
+
+    switch (priv->mode)
+    {
+
+        case GL_EVENT_VIEW_MODE_LIST:
+            {
+                GtkStack *stack;
+                GtkWidget *visible_child;
+
+                stack = GTK_STACK (view);
+                visible_child = gtk_stack_get_visible_child (stack);
+                gtk_container_remove (GTK_CONTAINER (stack), visible_child);
+            }
+            break;
+        case GL_EVENT_VIEW_MODE_DETAIL:
+            /* Ignore. */
+            break;
+        default:
+            g_assert_not_reached ();
             break;
     }
 }
@@ -286,6 +318,8 @@ gl_event_view_get_property (GObject *object,
         case PROP_FILTER:
             g_value_set_enum (value, priv->filter);
             break;
+        case PROP_MODE:
+            g_value_set_enum (value, priv->mode);
         default:
             G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
             break;
@@ -305,6 +339,9 @@ gl_event_view_set_property (GObject *object,
     {
         case PROP_FILTER:
             priv->filter = g_value_get_enum (value);
+            break;
+        case PROP_MODE:
+            priv->mode = g_value_get_enum (value);
             break;
         default:
             G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
@@ -327,6 +364,13 @@ gl_event_view_class_init (GlEventViewClass *klass)
                                                      GL_EVENT_VIEW_FILTER_ALL,
                                                      G_PARAM_READWRITE |
                                                      G_PARAM_STATIC_STRINGS);
+
+    obj_properties[PROP_MODE] = g_param_spec_enum ("mode", "Mode",
+                                                   "Event display mode",
+                                                   GL_TYPE_EVENT_VIEW_MODE,
+                                                   GL_EVENT_VIEW_MODE_LIST,
+                                                   G_PARAM_READWRITE |
+                                                   G_PARAM_STATIC_STRINGS);
 
     g_object_class_install_properties (gobject_class, N_PROPERTIES,
                                        obj_properties);
@@ -1184,6 +1228,8 @@ gl_event_view_init (GlEventView *view)
 
     g_signal_connect (view, "notify::filter", G_CALLBACK (on_notify_filter),
                       NULL);
+    g_signal_connect (view, "notify::mode", G_CALLBACK (on_notify_mode),
+                      NULL);
 }
 
 void
@@ -1200,6 +1246,23 @@ gl_event_view_set_filter (GlEventView *view, GlEventViewFilter filter)
         priv->filter = filter;
         g_object_notify_by_pspec (G_OBJECT (view),
                                   obj_properties[PROP_FILTER]);
+    }
+}
+
+void
+gl_event_view_set_mode (GlEventView *view, GlEventViewMode mode)
+{
+    GlEventViewPrivate *priv;
+
+    g_return_if_fail (GL_EVENT_VIEW (view));
+
+    priv = gl_event_view_get_instance_private (view);
+
+    if (priv->mode != mode)
+    {
+        priv->mode = mode;
+        g_object_notify_by_pspec (G_OBJECT (view),
+                                  obj_properties[PROP_MODE]);
     }
 }
 

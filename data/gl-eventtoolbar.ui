@@ -5,10 +5,9 @@
         <property name="title" translatable="yes">Logs</property>
         <property name="visible">True</property>
         <child>
-            <object class="GtkButton" id="go_back">
-                <property name="sensitive">False</property>
+            <object class="GtkButton" id="back_button">
                 <property name="tooltip-text" translatable="yes">Go back to the event view</property>
-                <property name="visible">True</property>
+                <signal name="clicked" handler="on_gl_event_toolbar_back_button_clicked"/>
                 <style>
                     <class name="image-button"/>
                 </style>
@@ -21,7 +20,7 @@
             </object>
         </child>
         <child>
-            <object class="GtkButton" id="search">
+            <object class="GtkButton" id="search_button">
                 <property name="sensitive">False</property>
                 <property name="tooltip-text" translatable="yes">Search the displayed logs</property>
                 <property name="visible">True</property>

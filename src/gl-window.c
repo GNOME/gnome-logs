@@ -21,6 +21,7 @@
 #include <glib/gi18n.h>
 
 #include "gl-categorylist.h"
+#include "gl-eventtoolbar.h"
 #include "gl-eventview.h"
 #include "gl-enums.h"
 
@@ -69,8 +70,34 @@ on_mode (GSimpleAction *action,
          GVariant *variant,
          gpointer user_data)
 {
-    /* TODO: Switch toolbar mode. */
+    GlWindowPrivate *priv;
+    const gchar *mode;
+    GlEventToolbar *toolbar;
+    GEnumClass *eclass;
+    GEnumValue *evalue;
+
+    priv = gl_window_get_instance_private (GL_WINDOW (user_data));
+    mode = g_variant_get_string (variant, NULL);
+    toolbar = GL_EVENT_TOOLBAR (priv->right_toolbar);
+    eclass = g_type_class_ref (GL_TYPE_EVENT_TOOLBAR_MODE);
+    evalue = g_enum_get_value_by_nick (eclass, mode);
+
+    gl_event_toolbar_set_mode (toolbar, evalue->value);
+
+    if (evalue->value == GL_EVENT_TOOLBAR_MODE_LIST)
+    {
+        /* Switch the event view back to list mode if the back button is
+         * clicked. */
+        GlEventView *view;
+
+        view = GL_EVENT_VIEW (priv->events);
+
+        gl_event_view_set_mode (view, GL_EVENT_VIEW_MODE_LIST);
+    }
+
     g_simple_action_set_state (action, variant);
+
+    g_type_class_unref (eclass);
 }
 
 static void

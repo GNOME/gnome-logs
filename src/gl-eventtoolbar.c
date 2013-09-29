@@ -31,12 +31,42 @@ enum
 
 typedef struct
 {
+    GtkWidget *back_button;
+    GtkWidget *search_button;
     GlEventToolbarMode mode;
 } GlEventToolbarPrivate;
 
 G_DEFINE_TYPE_WITH_PRIVATE (GlEventToolbar, gl_event_toolbar, GTK_TYPE_HEADER_BAR)
 
 static GParamSpec *obj_properties[N_PROPERTIES] = { NULL, };
+
+static void
+on_gl_event_toolbar_back_button_clicked (GtkButton *button,
+                                         gpointer user_data)
+{
+    GtkWidget *toplevel;
+
+    toplevel = gtk_widget_get_toplevel (GTK_WIDGET (button));
+
+    if (gtk_widget_is_toplevel (toplevel))
+    {
+        GAction *mode;
+        GEnumClass *eclass;
+        GEnumValue *evalue;
+
+        mode = g_action_map_lookup_action (G_ACTION_MAP (toplevel), "mode");
+        eclass = g_type_class_ref (GL_TYPE_EVENT_TOOLBAR_MODE);
+        evalue = g_enum_get_value (eclass, GL_EVENT_TOOLBAR_MODE_LIST);
+
+        g_action_activate (mode, g_variant_new_string (evalue->value_nick));
+
+        g_type_class_unref (eclass);
+    }
+    else
+    {
+        g_error ("Widget not in toplevel window, not switching toolbar mode");
+    }
+}
 
 static void
 on_notify_mode (GlEventToolbar *toolbar,
@@ -50,8 +80,12 @@ on_notify_mode (GlEventToolbar *toolbar,
     switch (priv->mode)
     {
         case GL_EVENT_TOOLBAR_MODE_LIST:
+            gtk_widget_hide (priv->back_button);
+            gtk_widget_show (priv->search_button);
             break;
         case GL_EVENT_TOOLBAR_MODE_DETAIL:
+            gtk_widget_show (priv->back_button);
+            gtk_widget_hide (priv->search_button);
             break;
         default:
             g_assert_not_reached ();
@@ -120,6 +154,13 @@ gl_event_toolbar_class_init (GlEventToolbarClass *klass)
 
     gtk_widget_class_set_template_from_resource (widget_class,
                                                  "/org/gnome/Logs/gl-eventtoolbar.ui");
+    gtk_widget_class_bind_template_child_private (widget_class, GlEventToolbar,
+                                                  back_button);
+    gtk_widget_class_bind_template_child_private (widget_class, GlEventToolbar,
+                                                  search_button);
+
+    gtk_widget_class_bind_template_callback (widget_class,
+                                             on_gl_event_toolbar_back_button_clicked);
 }
 
 static void
