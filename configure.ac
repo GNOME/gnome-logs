@@ -2,7 +2,7 @@ AC_INIT([Logs],
         [0.1],
         [davidk@gnome.org],
         [gnome-logs],
-        [https://wiki.gnome.org/Design/Apps/SystemLog])
+        [https://wiki.gnome.org/Apps/Logs])
 AC_CONFIG_AUX_DIR([build-aux])
 AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_SRCDIR([src/gl-main.c])

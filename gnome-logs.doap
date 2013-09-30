@@ -9,7 +9,8 @@
   <description>Logs makes it easy to view and filter log messages and events.
   Filter logs by category and importance to get the information you want. Use
   the integrated search to get more relevant results.</description>
-  <homepage rdf:resource="https://wiki.gnome.org/Design/Apps/SystemLog" />
+  <homepage rdf:resource="https://wiki.gnome.org/Apps/Logs" />
+  <bug-database rdf:resource="https://bugzilla.gnome.org/browse.cgi?product=gnome-logs" />
   <category rdf:resource="http://api.gnome.org/doap-extensions#desktop" />
   <repository>
     <GitRepository>
