@@ -88,12 +88,14 @@ on_mode (GSimpleAction *action,
 {
     GlWindowPrivate *priv;
     const gchar *mode;
+    GAction *search;
     GlEventToolbar *toolbar;
     GEnumClass *eclass;
     GEnumValue *evalue;
 
     priv = gl_window_get_instance_private (GL_WINDOW (user_data));
     mode = g_variant_get_string (variant, NULL);
+    search = g_action_map_lookup_action (G_ACTION_MAP (user_data), "search");
     toolbar = GL_EVENT_TOOLBAR (priv->right_toolbar);
     eclass = g_type_class_ref (GL_TYPE_EVENT_TOOLBAR_MODE);
     evalue = g_enum_get_value_by_nick (eclass, mode);
@@ -109,6 +111,11 @@ on_mode (GSimpleAction *action,
         view = GL_EVENT_VIEW (priv->events);
 
         gl_event_view_set_mode (view, GL_EVENT_VIEW_MODE_LIST);
+        g_simple_action_set_enabled (G_SIMPLE_ACTION (search), TRUE);
+    }
+    else
+    {
+        g_simple_action_set_enabled (G_SIMPLE_ACTION (search), FALSE);
     }
 
     g_simple_action_set_state (action, variant);
@@ -141,6 +148,31 @@ on_search (GSimpleAction *action,
     g_simple_action_set_state (action, variant);
 }
 
+static gboolean
+on_gl_window_key_press_event (GlWindow *window,
+                              GdkEvent *event,
+                              gpointer user_data)
+{
+    GlWindowPrivate *priv;
+    GAction *search;
+
+    priv = gl_window_get_instance_private (window);
+    search = g_action_map_lookup_action (G_ACTION_MAP (window), "search");
+
+    if (g_action_get_enabled (search))
+    {
+        if (gtk_search_bar_handle_event (GTK_SEARCH_BAR (priv->event_search),
+                                         event) == GDK_EVENT_STOP)
+        {
+            g_action_change_state (search, g_variant_new_boolean (TRUE));
+
+            return GDK_EVENT_STOP;
+        }
+    }
+
+    return GDK_EVENT_PROPAGATE;
+}
+
 static void
 on_gl_window_search_entry_changed (GtkSearchEntry *entry,
                                    gpointer user_data)
@@ -151,6 +183,18 @@ on_gl_window_search_entry_changed (GtkSearchEntry *entry,
 
     gl_event_view_search (GL_EVENT_VIEW (priv->events),
                           gtk_entry_get_text (GTK_ENTRY (priv->search_entry)));
+}
+
+static void
+on_gl_window_search_bar_notify_search_mode_enabled (GtkSearchBar *search_bar,
+                                                    GParamSpec *pspec,
+                                                    gpointer user_data)
+{
+    GAction *search;
+
+    search = g_action_map_lookup_action (G_ACTION_MAP (user_data), "search");
+    g_action_change_state (search,
+                           g_variant_new_boolean (gtk_search_bar_get_search_mode (search_bar)));
 }
 
 static void
@@ -188,7 +232,11 @@ gl_window_class_init (GlWindowClass *klass)
                                                   events);
 
     gtk_widget_class_bind_template_callback (widget_class,
+                                             on_gl_window_key_press_event);
+    gtk_widget_class_bind_template_callback (widget_class,
                                              on_gl_window_search_entry_changed);
+    gtk_widget_class_bind_template_callback (widget_class,
+                                             on_gl_window_search_bar_notify_search_mode_enabled);
 }
 
 static void
