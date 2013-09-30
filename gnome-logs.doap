@@ -1,0 +1,29 @@
+<Project xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:foaf="http://xmlns.com/foaf/0.1/"
+         xmlns:gnome="http://api.gnome.org/doap-extensions#"
+         xmlns="http://usefulinc.com/ns/doap#">
+
+  <name xml:lang="en">Logs</name>
+  <shortdesc xml:lang="en">A log viewer for the systemd journal</shortdesc>
+  <description>Logs makes it easy to view and filter log messages and events.
+  Filter logs by category and importance to get the information you want. Use
+  the integrated search to get more relevant results.</description>
+  <homepage rdf:resource="https://wiki.gnome.org/Design/Apps/SystemLog" />
+  <category rdf:resource="http://api.gnome.org/doap-extensions#desktop" />
+  <repository>
+    <GitRepository>
+      <location rdf:resource="git://git.gnome.org/gnome-logs" />
+      <browse rdf:resource="https://git.gnome.org/browse/gnome-logs/" />
+    </GitRepository>
+  </repository>
+
+  <maintainer>
+    <foaf:Person>
+      <foaf:name>David King</foaf:name>
+      <foaf:mbox rdf:resource="mailto:davidk@gnome.org" />
+      <foaf:seeAlso rdf:resource="http://amigadave.com/foaf.rdf#david" />
+      <gnome:userid>davidk</gnome:userid>
+    </foaf:Person>
+  </maintainer>
+</Project>
