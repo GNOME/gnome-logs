@@ -281,6 +281,8 @@ on_notify_filter (GlEventView *view,
 {
     GlEventViewPrivate *priv;
     GtkStack *stack;
+    GtkWidget *scrolled;
+    GtkWidget *viewport;
 
     priv = gl_event_view_get_instance_private (view);
     stack = GTK_STACK (view);
@@ -321,7 +323,9 @@ on_notify_filter (GlEventView *view,
             break;
     }
 
-    priv->active_listbox = GTK_LIST_BOX (gtk_stack_get_visible_child (stack));
+    scrolled = gtk_stack_get_visible_child (stack);
+    viewport = gtk_bin_get_child (GTK_BIN (scrolled));
+    priv->active_listbox = GTK_LIST_BOX (gtk_bin_get_child (GTK_BIN (viewport)));
 }
 
 static void
