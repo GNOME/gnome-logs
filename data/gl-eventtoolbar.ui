@@ -14,7 +14,6 @@
                 </style>
                 <child>
                     <object class="GtkImage" id="go_back_icon">
-                        <property name="icon-name">go-previous-symbolic</property>
                         <property name="visible">True</property>
                     </object>
                 </child>
