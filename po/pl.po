@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: gnome-logs\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-10-01 03:34+0200\n"
-"PO-Revision-Date: 2013-10-01 03:35+0200\n"
+"PO-Revision-Date: 2013-10-01 03:38+0200\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <gnomepl@aviary.pl>\n"
 "Language: pl\n"
@@ -102,7 +102,7 @@ msgstr "Wyświetlanie szczegółowych dzienników zdarzeń w systemie"
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: ../data/gnome-logs.desktop.in.h:4
 msgid "log;journal;debug;error;"
-msgstr "dziennik;log;journal;debugowanie;błąd;error;"
+msgstr "dziennik;logi;journal;debugowanie;błąd;error;"
 
 #: ../src/gl-application.c:61
 msgid "translator-credits"
