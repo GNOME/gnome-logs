@@ -10,6 +10,10 @@
                 <child>
                     <object class="GtkHeaderBar" id="left_toolbar">
                         <property name="visible">True</property>
+                        <style>
+                            <class name="titlebar"/>
+                            <class name="left_toolbar"/>
+                        </style>
                         <child type="title">
                             <object class="GtkLabel" id="categories_title">
                                 <property name="label" translatable="yes">Categories</property>
@@ -30,6 +34,10 @@
                 <child>
                     <object class="GlEventToolbar" id="right_toolbar">
                         <property name="visible">True</property>
+                        <style>
+                            <class name="titlebar"/>
+                            <class name="right_toolbar"/>
+                        </style>
                     </object>
                 </child>
             </object>
