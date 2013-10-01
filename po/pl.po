@@ -1,0 +1,120 @@
+# -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+# Aviary.pl
+# Jeśli masz jakiekolwiek uwagi odnoszące się do tłumaczenia lub chcesz
+# pomóc w jego rozwijaniu i pielęgnowaniu, napisz do nas:
+# gnomepl@aviary.pl
+# -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+# Piotr Drąg <piotrdrag@gmail.com>, 2013.
+# Aviary.pl <gnomepl@aviary.pl>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-logs\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-10-01 03:34+0200\n"
+"PO-Revision-Date: 2013-10-01 03:35+0200\n"
+"Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
+"Language-Team: Polish <gnomepl@aviary.pl>\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+"X-Poedit-Language: Polish\n"
+"X-Poedit-Country: Poland\n"
+
+#: ../data/appmenu.ui.h:1
+msgid "_New Window"
+msgstr "_Nowe okno"
+
+#: ../data/appmenu.ui.h:2
+msgid "_About"
+msgstr "_O programie"
+
+#: ../data/appmenu.ui.h:3
+msgid "_Quit"
+msgstr "Za_kończ"
+
+#: ../data/gl-categorylist.ui.h:1
+msgid "Important"
+msgstr "Ważne"
+
+#: ../data/gl-categorylist.ui.h:2
+msgid "Alerts"
+msgstr "Alarmy"
+
+#: ../data/gl-categorylist.ui.h:3
+msgid "Starred"
+msgstr "Oznaczone gwiazdką"
+
+#: ../data/gl-categorylist.ui.h:4
+msgid "All"
+msgstr "Wszystkie"
+
+#: ../data/gl-categorylist.ui.h:5
+msgid "Applications"
+msgstr "Programy"
+
+#: ../data/gl-categorylist.ui.h:6
+msgid "System"
+msgstr "Systemowe"
+
+#: ../data/gl-categorylist.ui.h:7
+msgid "Security"
+msgstr "Bezpieczeństwo"
+
+#: ../data/gl-categorylist.ui.h:8
+msgid "Hardware"
+msgstr "Sprzęt"
+
+#: ../data/gl-categorylist.ui.h:9
+msgid "Updates"
+msgstr "Aktualizacje"
+
+#: ../data/gl-categorylist.ui.h:10
+msgid "Usage"
+msgstr "Wykorzystanie"
+
+#: ../data/gl-eventtoolbar.ui.h:1
+msgid "Logs"
+msgstr "Dzienniki"
+
+#: ../data/gl-eventtoolbar.ui.h:2
+msgid "Go back to the event view"
+msgstr "Przechodzi wstecz do widoku zdarzeń"
+
+#: ../data/gl-eventtoolbar.ui.h:3
+msgid "Search the displayed logs"
+msgstr "Przeszukuje wyświetlone dzienniki"
+
+#: ../data/gl-window.ui.h:1
+msgid "Categories"
+msgstr "Kategorie"
+
+#: ../data/gnome-logs.desktop.in.h:1
+msgid "Log Viewer"
+msgstr "Przeglądarka dzienników"
+
+#: ../data/gnome-logs.desktop.in.h:2
+msgid "View detailed event logs for the system"
+msgstr "Wyświetlanie szczegółowych dzienników zdarzeń w systemie"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: ../data/gnome-logs.desktop.in.h:4
+msgid "log;journal;debug;error;"
+msgstr "dziennik;log;journal;debugowanie;błąd;error;"
+
+#: ../src/gl-application.c:61
+msgid "translator-credits"
+msgstr ""
+"Piotr Drąg <piotrdrag@gmail.com>, 2013\n"
+"Aviary.pl <gnomepl@aviary.pl>, 2013"
+
+#: ../src/gl-application.c:62
+msgid "View and search logs"
+msgstr "Wyświetlanie i przeszukiwanie dzienników"
+
+#: ../src/gl-eventview.c:985 ../src/gl-eventview.c:995
+#: ../src/gl-eventview.c:1232 ../src/gl-eventview.c:1242
+msgid "Not implemented"
+msgstr "Niezaimplementowane"
