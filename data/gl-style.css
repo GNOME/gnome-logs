@@ -18,6 +18,15 @@
     padding: 10px;
 }
 
+.detail-comm {
+    font-weight: bold;
+    padding: 10px;
+}
+
+.detail-catalog, .detail-time {
+    padding: 10px;
+}
+
 .event {
     padding: 5px;
 }

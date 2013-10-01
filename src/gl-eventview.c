@@ -157,6 +157,7 @@ on_listbox_row_activated (GtkListBox *listbox,
     GDateTime *datetime;
     GtkWidget *grid;
     GtkWidget *label;
+    GtkStyleContext *style;
     GtkStack *stack;
     GtkWidget *toplevel;
 
@@ -225,6 +226,8 @@ on_listbox_row_activated (GtkListBox *listbox,
 
     grid = gtk_grid_new ();
     label = gtk_label_new (strchr (comm, '=') + 1);
+    style = gtk_widget_get_style_context (label);
+    gtk_style_context_add_class (style, "detail-comm");
     gtk_grid_attach (GTK_GRID (grid), label, 0, 0, 1, 1);
 
     ret = sd_journal_get_realtime_usec (journal, &microsec);
@@ -255,11 +258,16 @@ on_listbox_row_activated (GtkListBox *listbox,
     }
 
     label = gtk_label_new (time);
-    gtk_grid_attach (GTK_GRID (grid), label, 0, 1, 1, 1);
+    gtk_widget_set_hexpand (label, TRUE);
+    gtk_misc_set_alignment (GTK_MISC (label), 1.0, 0.5);
+    style = gtk_widget_get_style_context (label);
+    gtk_style_context_add_class (style, "detail-time");
+    gtk_grid_attach (GTK_GRID (grid), label, 1, 0, 1, 1);
     g_free (time);
 
     label = gtk_label_new (catalog);
-    gtk_grid_attach (GTK_GRID (grid), label, 0, 2, 1, 1);
+    gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
+    gtk_grid_attach (GTK_GRID (grid), label, 0, 1, 2, 1);
 
     gtk_widget_show_all (grid);
     stack = GTK_STACK (view);
