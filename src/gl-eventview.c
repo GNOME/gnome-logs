@@ -151,6 +151,7 @@ on_listbox_row_activated (GtkListBox *listbox,
     gchar *cursor;
     gchar *comm;
     gchar *time;
+    gchar *catalog;
     gsize length;
     guint64 microsec;
     GDateTime *datetime;
@@ -208,6 +209,20 @@ on_listbox_row_activated (GtkListBox *listbox,
         comm = "_COMM=";
     }
 
+    ret = sd_journal_get_catalog (journal, &catalog);
+
+    if (ret == -ENOENT)
+    {
+        g_debug ("No message for this log entry was found in the catalog");
+        catalog = NULL;
+    }
+    else if (ret < 0)
+    {
+        g_warning ("Error while getting message from catalog: %s",
+                   g_strerror (-ret));
+        goto out;
+    }
+
     grid = gtk_grid_new ();
     label = gtk_label_new (strchr (comm, '=') + 1);
     gtk_grid_attach (GTK_GRID (grid), label, 0, 0, 1, 1);
@@ -242,6 +257,9 @@ on_listbox_row_activated (GtkListBox *listbox,
     label = gtk_label_new (time);
     gtk_grid_attach (GTK_GRID (grid), label, 0, 1, 1, 1);
     g_free (time);
+
+    label = gtk_label_new (catalog);
+    gtk_grid_attach (GTK_GRID (grid), label, 0, 2, 1, 1);
 
     gtk_widget_show_all (grid);
     stack = GTK_STACK (view);
