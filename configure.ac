@@ -16,8 +16,6 @@ dnl Check for programs
 AC_PROG_CC
 AM_PROG_CC_C_O
 
-LT_INIT
-
 GNOME_COMPILE_WARNINGS([maximum])
 
 PKG_PROG_PKG_CONFIG([0.24])
