@@ -285,6 +285,8 @@ on_listbox_row_activated (GtkListBox *listbox,
 
     label = gtk_label_new (catalog);
     gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
+    style = gtk_widget_get_style_context (label);
+    gtk_style_context_add_class (style, "detail-catalog");
     gtk_grid_attach (GTK_GRID (grid), label, 0, 2, 2, 1);
 
     gtk_widget_show_all (grid);
