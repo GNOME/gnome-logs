@@ -114,8 +114,8 @@ listbox_search_filter_func (GtkListBoxRow *row,
 
         if (ret < 0)
         {
-            g_warning ("Error getting command line from systemd journal: %s",
-                       g_strerror (-ret));
+            g_debug ("Unable to get command line from systemd journal: %s",
+                     g_strerror (-ret));
             comm = "_COMM=";
         }
 
@@ -203,8 +203,8 @@ on_listbox_row_activated (GtkListBox *listbox,
 
     if (ret < 0)
     {
-        g_warning ("Error getting command line from systemd journal: %s",
-                   g_strerror (-ret));
+        g_debug ("Unable to get command line from systemd journal: %s",
+                 g_strerror (-ret));
         comm = "_COMM=";
     }
 
@@ -580,7 +580,7 @@ out:
         }
         else if (ret == 0)
         {
-            g_warning ("End of systemd journal reached");
+            g_debug ("End of systemd journal reached");
         }
     }
 }
@@ -617,9 +617,9 @@ insert_journal_items_security (sd_journal *journal, GtkListBox *listbox)
         }
         else if (ret < 0)
         {
-            g_warning ("Error getting commandline from systemd journal: %s",
+            g_warning ("Error getting message from systemd journal: %s",
                        g_strerror (-ret));
-            comm = "_COMM=";
+            break;
         }
 
         ret = sd_journal_get_data (journal, "_COMM", (const void **)&comm,
@@ -627,8 +627,8 @@ insert_journal_items_security (sd_journal *journal, GtkListBox *listbox)
 
         if (ret < 0)
         {
-            g_warning ("Error getting commandline from systemd journal: %s",
-                       g_strerror (-ret));
+            g_debug ("Unable to get commandline from systemd journal: %s",
+                     g_strerror (-ret));
             comm = "_COMM=";
         }
 
@@ -708,7 +708,7 @@ out:
         }
         else if (ret == 0)
         {
-            g_warning ("End of systemd journal reached");
+            g_debug ("End of systemd journal reached");
         }
     }
 }
@@ -798,7 +798,7 @@ insert_journal_items_simple (sd_journal *journal, GtkListBox *listbox)
         }
         else if (ret == 0)
         {
-            g_warning ("End of systemd journal reached");
+            g_debug ("End of systemd journal reached");
         }
     }
 }
@@ -828,8 +828,8 @@ insert_journal_items_cmdline (sd_journal *journal, GtkListBox *listbox)
 
         if (ret < 0)
         {
-            g_warning ("Error getting commandline from systemd journal: %s",
-                       g_strerror (-ret));
+            g_debug ("Unable to get commandline from systemd journal: %s",
+                     g_strerror (-ret));
             comm = "_COMM=";
         }
 
@@ -908,7 +908,7 @@ insert_journal_items_cmdline (sd_journal *journal, GtkListBox *listbox)
         }
         else if (ret == 0)
         {
-            g_warning ("End of systemd journal reached");
+            g_debug ("End of systemd journal reached");
         }
     }
 }
@@ -959,7 +959,7 @@ gl_event_view_add_listbox_important (GlEventView *view)
     }
     else if (ret == 0)
     {
-        g_warning ("End of systemd journal reached");
+        g_debug ("End of systemd journal reached");
     }
 
     listbox = gtk_list_box_new ();
@@ -1051,7 +1051,7 @@ gl_event_view_add_listbox_applications (GlEventView *view)
     }
     else if (ret == 0)
     {
-        g_warning ("End of systemd journal reached");
+        g_debug ("End of systemd journal reached");
     }
 
     listbox = gtk_list_box_new ();
@@ -1106,7 +1106,7 @@ gl_event_view_add_listbox_system (GlEventView *view)
     }
     else if (ret == 0)
     {
-        g_warning ("End of systemd journal reached");
+        g_debug ("End of systemd journal reached");
     }
 
     listbox = gtk_list_box_new ();
@@ -1161,7 +1161,7 @@ gl_event_view_add_listbox_hardware (GlEventView *view)
     }
     else if (ret == 0)
     {
-        g_warning ("End of systemd journal reached");
+        g_debug ("End of systemd journal reached");
     }
 
     listbox = gtk_list_box_new ();
@@ -1208,7 +1208,7 @@ gl_event_view_add_listbox_security (GlEventView *view)
     }
     else if (ret == 0)
     {
-        g_warning ("End of systemd journal reached");
+        g_debug ("End of systemd journal reached");
     }
 
     listbox = gtk_list_box_new ();
@@ -1267,7 +1267,7 @@ gl_event_view_init (GlEventView *view)
 
     if (ret < 0)
     {
-        g_warning ("Error opening systemd journal: %s", g_strerror (-ret));
+        g_critical ("Error opening systemd journal: %s", g_strerror (-ret));
     }
 
     ret = sd_journal_get_fd (journal);
@@ -1323,7 +1323,7 @@ gl_event_view_init (GlEventView *view)
     }
     else if (ret == 0)
     {
-        g_warning ("End of systemd journal reached");
+        g_debug ("End of systemd journal reached");
     }
 
     insert_journal_items_cmdline (journal, GTK_LIST_BOX (listbox));
