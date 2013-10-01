@@ -1,0 +1,117 @@
+# Slovenian translation for gnome-logs.
+# Copyright (C) 2013 gnome-logs's COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-logs package.
+#
+# Martin Srebotnjak <miles@filmsi.net>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-logs master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"logs&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2013-10-01 16:26+0000\n"
+"PO-Revision-Date: 2013-10-01 23:08+0100\n"
+"Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
+"Language-Team: Slovenian <gnome-si@googlegroups.com>\n"
+"Language: sl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 or n%100==4 ? 3 : 0) ;\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#: ../data/appmenu.ui.h:1
+msgid "_New Window"
+msgstr "_Novo okno"
+
+#: ../data/appmenu.ui.h:2
+msgid "_About"
+msgstr "_O programu"
+
+#: ../data/appmenu.ui.h:3
+msgid "_Quit"
+msgstr "_Končaj"
+
+#: ../data/gl-categorylist.ui.h:1
+msgid "Important"
+msgstr "Pomembno"
+
+#: ../data/gl-categorylist.ui.h:2
+msgid "Alerts"
+msgstr "Opozorila"
+
+#: ../data/gl-categorylist.ui.h:3
+msgid "Starred"
+msgstr "Zaznamovano"
+
+#: ../data/gl-categorylist.ui.h:4
+msgid "All"
+msgstr "Vse"
+
+#: ../data/gl-categorylist.ui.h:5
+msgid "Applications"
+msgstr "Programi"
+
+#: ../data/gl-categorylist.ui.h:6
+msgid "System"
+msgstr "Sistem"
+
+#: ../data/gl-categorylist.ui.h:7
+msgid "Security"
+msgstr "Varnost"
+
+#: ../data/gl-categorylist.ui.h:8
+msgid "Hardware"
+msgstr "Strojna oprema"
+
+#: ../data/gl-categorylist.ui.h:9
+msgid "Updates"
+msgstr "Posodobitve"
+
+#: ../data/gl-categorylist.ui.h:10
+msgid "Usage"
+msgstr "Uporaba"
+
+#: ../data/gl-eventtoolbar.ui.h:1
+msgid "Logs"
+msgstr "Dnevniki"
+
+#: ../data/gl-eventtoolbar.ui.h:2
+msgid "Go back to the event view"
+msgstr "Vrni se na pogled dogodkov"
+
+#: ../data/gl-eventtoolbar.ui.h:3
+msgid "Search the displayed logs"
+msgstr "Išči po prikazanih zapisih dnevnika"
+
+#: ../data/gl-window.ui.h:1
+msgid "Categories"
+msgstr "Kategorije"
+
+#: ../data/gnome-logs.desktop.in.h:1
+msgid "Log Viewer"
+msgstr "Pregledovalnik dnevnikov"
+
+#: ../data/gnome-logs.desktop.in.h:2
+msgid "View detailed event logs for the system"
+msgstr "Pokaži podrobne dnevniške zapise dogodkov sistema"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: ../data/gnome-logs.desktop.in.h:4
+msgid "log;journal;debug;error;"
+msgstr ""
+"dnevnik;razhroščevanje;hrošči;napaka;napake;težave;težava;problem;problemi;"
+
+#: ../src/gl-application.c:61
+msgid "translator-credits"
+msgstr "Martin Srebotnjak <miles@filmsi.net>"
+
+#: ../src/gl-application.c:62
+msgid "View and search logs"
+msgstr "Pokaži in preišči dnevnike"
+
+#: ../src/gl-eventview.c:1031 ../src/gl-eventview.c:1041
+#: ../src/gl-eventview.c:1278 ../src/gl-eventview.c:1288
+msgid "Not implemented"
+msgstr "Ni podprto"
