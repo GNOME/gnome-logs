@@ -47,6 +47,7 @@ typedef struct
 G_DEFINE_TYPE_WITH_PRIVATE (GlEventView, gl_event_view, GTK_TYPE_STACK)
 
 static GParamSpec *obj_properties[N_PROPERTIES] = { NULL, };
+static const guint N_RESULTS = 50;
 
 static gboolean
 listbox_search_filter_func (GtkListBoxRow *row,
@@ -812,6 +813,70 @@ insert_journal_items_simple (sd_journal *journal, GtkListBox *listbox)
 }
 
 static void
+insert_journal_query_cmdline (GlJournal *journal,
+                              const GlJournalQuery *query,
+                              GtkListBox *listbox)
+{
+    GList *results = NULL;
+    GList *l;
+    gsize n_results;
+
+    results = gl_journal_query (journal, query);
+
+    n_results = g_list_length (results);
+
+    if (n_results != N_RESULTS)
+    {
+        g_debug ("Number of results different than requested");
+    }
+
+    for (l = results; l != NULL; l = g_list_next (l))
+    {
+        GtkWidget *row;
+        GtkStyleContext *style;
+        GtkWidget *grid;
+        gchar *markup;
+        GtkWidget *label;
+        gboolean rtl;
+        GtkWidget *image;
+        GlJournalResult result = *(GlJournalResult *)(l->data);
+
+        row = gtk_list_box_row_new ();
+        style = gtk_widget_get_style_context (GTK_WIDGET (row));
+        gtk_style_context_add_class (style, "event");
+        g_object_set_data_full (G_OBJECT (row), "cursor",
+                                g_strdup (result.cursor), g_free);
+        grid = gtk_grid_new ();
+        gtk_grid_set_column_spacing (GTK_GRID (grid), 6);
+        gtk_container_add (GTK_CONTAINER (row), grid);
+
+        markup = g_markup_printf_escaped ("<b>%s</b>", result.comm);
+        label = gtk_label_new (NULL);
+        gtk_widget_set_hexpand (label, TRUE);
+        gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
+        gtk_label_set_ellipsize (GTK_LABEL (label), PANGO_ELLIPSIZE_END);
+        gtk_label_set_markup (GTK_LABEL (label), markup);
+        g_free (markup);
+        gtk_grid_attach (GTK_GRID (grid), label, 0, 0, 1, 1);
+
+        label = gtk_label_new (result.message);
+        gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
+        gtk_label_set_ellipsize (GTK_LABEL (label), PANGO_ELLIPSIZE_END);
+        gtk_grid_attach (GTK_GRID (grid), label, 0, 1, 1, 1);
+
+        rtl = (gtk_widget_get_default_direction () == GTK_TEXT_DIR_RTL);
+        image = gtk_image_new_from_icon_name (rtl ? "go-next-rtl-symbolic"
+                                                  : "go-next-symbolic",
+                                              GTK_ICON_SIZE_MENU);
+        gtk_grid_attach (GTK_GRID (grid), image, 1, 0, 1, 2);
+
+        gtk_container_add (GTK_CONTAINER (listbox), row);
+    }
+
+    gl_journal_results_free (journal, results);
+}
+
+static void
 insert_journal_items_cmdline (sd_journal *journal, GtkListBox *listbox)
 {
     gsize i;
@@ -1258,8 +1323,7 @@ gl_event_view_init (GlEventView *view)
     GlEventViewPrivate *priv;
     GtkWidget *stack;
     GtkWidget *listbox;
-    sd_journal *journal = NULL;
-    gint ret;
+    const GlJournalQuery query = { N_RESULTS, NULL };
     GtkWidget *scrolled;
 
     priv = gl_event_view_get_instance_private (view);
@@ -1272,29 +1336,9 @@ gl_event_view_init (GlEventView *view)
                                   view, NULL);
 
     priv->journal = gl_journal_new ();
-    journal = gl_journal_get_journal (priv->journal);
 
-    ret = sd_journal_seek_tail (journal);
-
-    if (ret < 0)
-    {
-        g_warning ("Error seeking to end of systemd journal: %s",
-                   g_strerror (-ret));
-    }
-
-    ret = sd_journal_previous (journal);
-
-    if (ret < 0)
-    {
-        g_warning ("Error setting cursor to end of systemd journal: %s",
-                   g_strerror (-ret));
-    }
-    else if (ret == 0)
-    {
-        g_debug ("End of systemd journal reached");
-    }
-
-    insert_journal_items_cmdline (journal, GTK_LIST_BOX (listbox));
+    insert_journal_query_cmdline (priv->journal, &query,
+                                  GTK_LIST_BOX (listbox));
 
     g_signal_connect (listbox, "row-activated",
                       G_CALLBACK (on_listbox_row_activated), stack);
