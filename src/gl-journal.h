@@ -26,6 +26,24 @@ G_BEGIN_DECLS
 
 typedef struct
 {
+    gsize n_results;
+    gchar **matches;
+} GlJournalQuery;
+
+typedef struct
+{
+    guint64 timestamp;
+    gchar *cursor;
+    const gchar *message;
+    const gchar *comm;
+    const gchar *kernel_device;
+    const gchar *audit_session;
+    gchar *catalog;
+    guint priority;
+} GlJournalResult;
+
+typedef struct
+{
     /*< private >*/
     GObject parent_instance;
 } GlJournal;
@@ -40,6 +58,7 @@ typedef struct
 #define GL_JOURNAL(object) (G_TYPE_CHECK_INSTANCE_CAST ((object), GL_TYPE_JOURNAL, GlJournal))
 
 GType gl_journal_get_type (void);
+GList * gl_journal_query (GlJournal *self, const GlJournalQuery *query);
 sd_journal * gl_journal_get_journal (GlJournal *self);
 GlJournal * gl_journal_new (void);
 
