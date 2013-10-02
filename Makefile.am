@@ -24,6 +24,7 @@ gnome_logs_SOURCES = \
 	src/gl-categorylist.c \
 	src/gl-eventtoolbar.c \
 	src/gl-eventview.c \
+	src/gl-journal.c \
 	src/gl-main.c \
 	src/gl-window.c
 
@@ -44,6 +45,7 @@ noinst_gnome_logs_headers = \
 	src/gl-categorylist.h \
 	src/gl-eventtoolbar.h \
 	src/gl-eventview.h \
+	src/gl-journal.h \
 	src/gl-window.h
 
 nodist_gnome_logs_headers = \

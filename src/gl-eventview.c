@@ -25,6 +25,7 @@
 
 #include "gl-enums.h"
 #include "gl-eventtoolbar.h"
+#include "gl-journal.h"
 
 enum
 {
@@ -36,9 +37,7 @@ enum
 
 typedef struct
 {
-    sd_journal *journal;
-    gint fd;
-    guint source_id;
+    GlJournal *journal;
     GlEventViewFilter filter;
     GtkListBox *active_listbox;
     GlEventViewMode mode;
@@ -78,7 +77,7 @@ listbox_search_filter_func (GtkListBoxRow *row,
             goto out;
         }
 
-        journal = priv->journal;
+        journal = gl_journal_get_journal (priv->journal);
 
         ret = sd_journal_seek_cursor (journal, cursor);
 
@@ -163,7 +162,7 @@ on_listbox_row_activated (GtkListBox *listbox,
     GtkWidget *toplevel;
 
     priv = gl_event_view_get_instance_private (view);
-    journal = priv->journal;
+    journal = gl_journal_get_journal (priv->journal);
     cursor = g_object_get_data (G_OBJECT (row), "cursor");
 
     if (cursor == NULL)
@@ -405,48 +404,11 @@ on_notify_mode (GlEventView *view,
     }
 }
 
-static gboolean
-on_journal_changed (gint fd,
-                    GIOCondition condition,
-                    GlEventView *view)
-{
-    gint ret;
-    GlEventViewPrivate *priv = gl_event_view_get_instance_private (view);
-
-    ret = sd_journal_process (priv->journal);
-
-    switch (ret)
-    {
-        case SD_JOURNAL_NOP:
-            g_debug ("Journal change was a no-op");
-            break;
-        case SD_JOURNAL_APPEND:
-            g_debug ("New journal entries added");
-            break;
-        case SD_JOURNAL_INVALIDATE:
-            g_debug ("Journal files added or removed");
-            break;
-        default:
-            g_warning ("Error processing events from systemd journal: %s",
-                       g_strerror (-ret));
-            break;
-    }
-
-    return G_SOURCE_CONTINUE;
-}
-
 static void
 gl_event_view_finalize (GObject *object)
 {
     GlEventView *view = GL_EVENT_VIEW (object);
     GlEventViewPrivate *priv = gl_event_view_get_instance_private (view);
-
-    g_source_remove (priv->source_id);
-
-    if (priv->journal)
-    {
-        sd_journal_close (priv->journal);
-    }
 
     g_clear_pointer (&priv->search_text, g_free);
 }
@@ -969,7 +931,7 @@ gl_event_view_add_listbox_important (GlEventView *view)
     GtkWidget *scrolled;
 
     priv = gl_event_view_get_instance_private (view);
-    journal = priv->journal;
+    journal = gl_journal_get_journal (priv->journal);
 
     /* Alert or emergency priority. */
     ret = sd_journal_add_match (journal, "PRIORITY=0", 0);
@@ -1053,7 +1015,7 @@ gl_event_view_add_listbox_applications (GlEventView *view)
     GtkWidget *scrolled;
 
     priv = gl_event_view_get_instance_private (view);
-    journal = priv->journal;
+    journal = gl_journal_get_journal (priv->journal);
 
     /* Allow all _TRANSPORT != kernel. */
     ret = sd_journal_add_match (journal, "_TRANSPORT=journal", 0);
@@ -1125,7 +1087,7 @@ gl_event_view_add_listbox_system (GlEventView *view)
     GtkWidget *scrolled;
 
     priv = gl_event_view_get_instance_private (view);
-    journal = priv->journal;
+    journal = gl_journal_get_journal (priv->journal);
 
     ret = sd_journal_add_match (journal, "_TRANSPORT=kernel", 0);
 
@@ -1180,7 +1142,7 @@ gl_event_view_add_listbox_hardware (GlEventView *view)
     GtkWidget *scrolled;
 
     priv = gl_event_view_get_instance_private (view);
-    journal = priv->journal;
+    journal = gl_journal_get_journal (priv->journal);
 
     ret = sd_journal_add_match (journal, "_TRANSPORT=kernel", 0);
 
@@ -1235,7 +1197,7 @@ gl_event_view_add_listbox_security (GlEventView *view)
     GtkWidget *scrolled;
 
     priv = gl_event_view_get_instance_private (view);
-    journal = priv->journal;
+    journal = gl_journal_get_journal (priv->journal);
 
     ret = sd_journal_seek_tail (journal);
 
@@ -1308,49 +1270,9 @@ gl_event_view_init (GlEventView *view)
     gtk_list_box_set_filter_func (GTK_LIST_BOX (listbox),
                                   (GtkListBoxFilterFunc)listbox_search_filter_func,
                                   view, NULL);
-    ret = sd_journal_open (&journal, 0);
-    priv->journal = journal;
 
-    if (ret < 0)
-    {
-        g_critical ("Error opening systemd journal: %s", g_strerror (-ret));
-    }
-
-    ret = sd_journal_get_fd (journal);
-
-    if (ret < 0)
-    {
-        g_warning ("Error getting polling fd from systemd journal: %s",
-                   g_strerror (-ret));
-    }
-
-    priv->fd = ret;
-    ret = sd_journal_get_events (journal);
-
-    if (ret < 0)
-    {
-        g_warning ("Error getting poll events from systemd journal: %s",
-                   g_strerror (-ret));
-    }
-
-    priv->source_id = g_unix_fd_add (priv->fd, ret,
-                                     (GUnixFDSourceFunc) on_journal_changed,
-                                     view);
-    ret = sd_journal_reliable_fd (journal);
-
-    if (ret < 0)
-    {
-        g_warning ("Error checking reliability of systemd journal poll fd: %s",
-                   g_strerror (-ret));
-    }
-    else if (ret == 0)
-    {
-        g_debug ("Latency expected while polling for systemd journal activity");
-    }
-    else
-    {
-        g_debug ("Immediate wakeups expected for systemd journal activity");
-    }
+    priv->journal = gl_journal_new ();
+    journal = gl_journal_get_journal (priv->journal);
 
     ret = sd_journal_seek_tail (journal);
 
