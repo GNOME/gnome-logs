@@ -990,59 +990,22 @@ static void
 gl_event_view_add_listbox_important (GlEventView *view)
 {
     GlEventViewPrivate *priv;
-    gint ret;
-    sd_journal *journal;
+    /* Alert or emergency priority. */
+    const GlJournalQuery query = { N_RESULTS,
+                                   (gchar*[3]){ "PRIORITY=0", "PRIORITY=1", NULL } };
     GtkWidget *listbox;
     GtkWidget *scrolled;
 
     priv = gl_event_view_get_instance_private (view);
-    journal = gl_journal_get_journal (priv->journal);
-
-    /* Alert or emergency priority. */
-    ret = sd_journal_add_match (journal, "PRIORITY=0", 0);
-
-    if (ret < 0)
-    {
-        g_warning ("Error adding match for emergency priority: %s",
-                   g_strerror (-ret));
-    }
-
-    ret = sd_journal_add_match (journal, "PRIORITY=1", 0);
-
-    if (ret < 0)
-    {
-        g_warning ("Error adding match for alert priority: %s",
-                   g_strerror (-ret));
-    }
-
-    ret = sd_journal_seek_tail (journal);
-
-    if (ret < 0)
-    {
-        g_warning ("Error seeking to end of systemd journal: %s",
-                   g_strerror (-ret));
-    }
-
-    ret = sd_journal_previous (journal);
-
-    if (ret < 0)
-    {
-        g_warning ("Error setting cursor to end of systemd journal: %s",
-                   g_strerror (-ret));
-    }
-    else if (ret == 0)
-    {
-        g_debug ("End of systemd journal reached");
-    }
 
     listbox = gtk_list_box_new ();
 
     gtk_list_box_set_filter_func (GTK_LIST_BOX (listbox),
                                   (GtkListBoxFilterFunc)listbox_search_filter_func,
                                   view, NULL);
-    insert_journal_items_cmdline (journal, GTK_LIST_BOX (listbox));
 
-    sd_journal_flush_matches (journal);
+    insert_journal_query_cmdline (priv->journal, &query,
+                                  GTK_LIST_BOX (listbox));
 
     scrolled = gtk_scrolled_window_new (NULL, NULL);
     gtk_container_add (GTK_CONTAINER (scrolled), listbox);
