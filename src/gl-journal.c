@@ -138,8 +138,8 @@ gl_journal_query (GlJournal *self, const GlJournalQuery *query)
 {
     GlJournalPrivate *priv;
     sd_journal *journal;
-    gint ret;
     gsize i;
+    gint ret;
     GList *results = NULL;
 
     g_return_val_if_fail (GL_JOURNAL (self), NULL);
@@ -147,6 +147,23 @@ gl_journal_query (GlJournal *self, const GlJournalQuery *query)
 
     priv = gl_journal_get_instance_private (self);
     journal = priv->journal;
+
+    if (query->matches)
+    {
+        const gchar *match;
+
+        for (i = 0, match = query->matches[i]; match;
+             match = query->matches[++i])
+        {
+            ret = sd_journal_add_match (journal, match, 0);
+
+            if (ret < 0)
+            {
+                g_warning ("Error adding match '%s': %s", match,
+                           g_strerror (-ret));
+            }
+        }
+    }
 
     ret = sd_journal_seek_tail (journal);
 
@@ -158,7 +175,6 @@ gl_journal_query (GlJournal *self, const GlJournalQuery *query)
 
     for (i = 0; i < query->n_results; i++)
     {
-        /* TODO: Handle matches. */
         GlJournalResult *result;
 
         const gchar *message;
