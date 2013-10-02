@@ -316,6 +316,22 @@ out:
     return g_list_reverse (results);
 }
 
+static void
+gl_journal_result_free (GlJournalResult *result,
+                        G_GNUC_UNUSED gpointer user_data)
+{
+    g_slice_free (GlJournalResult, result);
+}
+
+void
+gl_journal_results_free (G_GNUC_UNUSED GlJournal *self,
+                         GList *results)
+{
+    /* As self is unused, ignore it. */
+    g_list_foreach (results, (GFunc)gl_journal_result_free, NULL);
+    g_list_free (results);
+}
+
 sd_journal *
 gl_journal_get_journal (GlJournal *self)
 {
