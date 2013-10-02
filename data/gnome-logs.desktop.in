@@ -6,6 +6,6 @@ _Comment=View detailed event logs for the system
 _Keywords=log;journal;debug;error;
 Type=Application
 Categories=GTK;GNOME;System;Monitor;
-Exec=easytag %F
+Exec=gnome-logs
 Terminal=false
 StartupNotify=true
