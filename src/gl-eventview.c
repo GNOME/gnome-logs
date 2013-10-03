@@ -877,116 +877,6 @@ insert_journal_query_cmdline (GlJournal *journal,
 }
 
 static void
-insert_journal_items_cmdline (sd_journal *journal, GtkListBox *listbox)
-{
-    gsize i;
-
-    for (i = 0; i < 10; i++)
-    {
-        gint ret;
-        const gchar *message;
-        const gchar *comm;
-        gchar *cursor;
-        gsize length;
-        GtkWidget *row;
-        GtkStyleContext *context;
-        GtkWidget *grid;
-        GtkWidget *label;
-        gchar *markup;
-        gboolean rtl;
-        GtkWidget *image;
-
-        ret = sd_journal_get_data (journal, "_COMM", (const void **)&comm,
-                                   &length);
-
-        if (ret < 0)
-        {
-            g_debug ("Unable to get commandline from systemd journal: %s",
-                     g_strerror (-ret));
-            comm = "_COMM=";
-        }
-
-        ret = sd_journal_get_data (journal, "MESSAGE", (const void **)&message,
-                                   &length);
-
-        if (ret < 0)
-        {
-            g_warning ("Error getting message from systemd journal: %s",
-                       g_strerror (-ret));
-            break;
-        }
-
-        ret = sd_journal_get_cursor (journal, &cursor);
-
-        if (ret < 0)
-        {
-            g_warning ("Error getting cursor for current journal entry: %s",
-                       g_strerror (-ret));
-            break;
-        }
-
-        ret = sd_journal_test_cursor (journal, cursor);
-
-        if (ret < 0)
-        {
-            g_warning ("Error testing cursor string: %s", g_strerror (-ret));
-            free (cursor);
-            break;
-        }
-        else if (ret == 0)
-        {
-            g_warning ("Cursor string does not match journal entry");
-            /* Not a problem at this point, but would be when seeking to the
-             * cursor later on. */
-        }
-
-        row = gtk_list_box_row_new ();
-        context = gtk_widget_get_style_context (GTK_WIDGET (row));
-        gtk_style_context_add_class (context, "event");
-        /* sd_journal_get_cursor allocates the cursor with libc malloc. */
-        g_object_set_data_full (G_OBJECT (row), "cursor", cursor, free);
-        grid = gtk_grid_new ();
-        gtk_grid_set_column_spacing (GTK_GRID (grid), 6);
-        gtk_container_add (GTK_CONTAINER (row), grid);
-
-        markup = g_markup_printf_escaped ("<b>%s</b>", strchr (comm, '=') + 1);
-        label = gtk_label_new (NULL);
-        gtk_widget_set_hexpand (label, TRUE);
-        gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
-        gtk_label_set_ellipsize (GTK_LABEL (label), PANGO_ELLIPSIZE_END);
-        gtk_label_set_markup (GTK_LABEL (label), markup);
-        g_free (markup);
-        gtk_grid_attach (GTK_GRID (grid), label, 0, 0, 1, 1);
-
-        label = gtk_label_new (strchr (message, '=') + 1);
-        gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
-        gtk_label_set_ellipsize (GTK_LABEL (label), PANGO_ELLIPSIZE_END);
-        gtk_grid_attach (GTK_GRID (grid), label, 0, 1, 1, 1);
-
-        rtl = (gtk_widget_get_default_direction () == GTK_TEXT_DIR_RTL);
-        image = gtk_image_new_from_icon_name (rtl ? "go-next-rtl-symbolic"
-                                                  : "go-next-symbolic",
-                                              GTK_ICON_SIZE_MENU);
-        gtk_grid_attach (GTK_GRID (grid), image, 1, 0, 1, 2);
-
-        gtk_container_add (GTK_CONTAINER (listbox), row);
-
-        ret = sd_journal_previous (journal);
-
-        if (ret < 0)
-        {
-            g_warning ("Error setting cursor to previous systemd journal entry %s",
-                       g_strerror (-ret));
-            break;
-        }
-        else if (ret == 0)
-        {
-            g_debug ("End of systemd journal reached");
-        }
-    }
-}
-
-static void
 gl_event_view_add_listbox_important (GlEventView *view)
 {
     GlEventViewPrivate *priv;
@@ -1037,67 +927,23 @@ static void
 gl_event_view_add_listbox_applications (GlEventView *view)
 {
     GlEventViewPrivate *priv;
-    gint ret;
-    sd_journal *journal;
+    /* Allow all _TRANSPORT != kernel. */
+    const GlJournalQuery query = { N_RESULTS,
+                                   (gchar *[4]){ "_TRANSPORT=journal",
+                                                 "_TRANSPORT=stdout",
+                                                 "_TRANSPORT=syslog", NULL } };
     GtkWidget *listbox;
     GtkWidget *scrolled;
 
     priv = gl_event_view_get_instance_private (view);
-    journal = gl_journal_get_journal (priv->journal);
-
-    /* Allow all _TRANSPORT != kernel. */
-    ret = sd_journal_add_match (journal, "_TRANSPORT=journal", 0);
-
-    if (ret < 0)
-    {
-        g_warning ("Error adding match for journal transport: %s",
-                   g_strerror (-ret));
-    }
-
-    ret = sd_journal_add_match (journal, "_TRANSPORT=stdout", 0);
-
-    if (ret < 0)
-    {
-        g_warning ("Error adding match for stdout transport: %s",
-                   g_strerror (-ret));
-    }
-
-    ret = sd_journal_add_match (journal, "_TRANSPORT=syslog", 0);
-
-    if (ret < 0)
-    {
-        g_warning ("Error adding match for syslog transport: %s",
-                   g_strerror (-ret));
-    }
-
-    ret = sd_journal_seek_tail (journal);
-
-    if (ret < 0)
-    {
-        g_warning ("Error seeking to end of systemd journal: %s",
-                   g_strerror (-ret));
-    }
-
-    ret = sd_journal_previous (journal);
-
-    if (ret < 0)
-    {
-        g_warning ("Error setting cursor to end of systemd journal: %s",
-                   g_strerror (-ret));
-    }
-    else if (ret == 0)
-    {
-        g_debug ("End of systemd journal reached");
-    }
 
     listbox = gtk_list_box_new ();
 
     gtk_list_box_set_filter_func (GTK_LIST_BOX (listbox),
                                   (GtkListBoxFilterFunc)listbox_search_filter_func,
                                   view, NULL);
-    insert_journal_items_cmdline (journal, GTK_LIST_BOX (listbox));
-
-    sd_journal_flush_matches (journal);
+    insert_journal_query_cmdline (priv->journal, &query,
+                                  GTK_LIST_BOX (listbox));
 
     scrolled = gtk_scrolled_window_new (NULL, NULL);
     gtk_container_add (GTK_CONTAINER (scrolled), listbox);
