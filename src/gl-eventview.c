@@ -64,11 +64,7 @@ listbox_search_filter_func (GtkListBoxRow *row,
     else
     {
         gchar *cursor;
-        sd_journal *journal;
-        gint ret;
-        gsize length;
-        gchar *comm;
-        gchar *message;
+        GlJournalResult *result;
 
         cursor = g_object_get_data (G_OBJECT (row), "cursor");
 
@@ -78,62 +74,19 @@ listbox_search_filter_func (GtkListBoxRow *row,
             goto out;
         }
 
-        journal = gl_journal_get_journal (priv->journal);
+        result = gl_journal_query_cursor (priv->journal, cursor);
 
-        ret = sd_journal_seek_cursor (journal, cursor);
-
-        if (ret < 0)
+        if (strstr (result->comm, priv->search_text)
+            || strstr (result->message, priv->search_text)
+            || strstr (result->kernel_device, priv->search_text)
+            || strstr (result->audit_session, priv->search_text))
         {
-            g_warning ("Error seeking to cursor position: %s", g_strerror (-ret));
-            goto out;
-        }
+            gl_journal_result_free (priv->journal, result);
 
-        ret = sd_journal_next (journal);
-
-        if (ret < 0)
-        {
-            g_warning ("Error positioning cursor in systemd journal: %s",
-                       g_strerror (-ret));
-        }
-
-        ret = sd_journal_test_cursor (journal, cursor);
-
-        if (ret < 0)
-        {
-            g_warning ("Error testing cursor string: %s", g_strerror (-ret));
-            goto out;
-        }
-        else if (ret == 0)
-        {
-            g_warning ("Cursor string does not match journal entry");
-            goto out;
-        }
-
-        ret = sd_journal_get_data (journal, "_COMM", (const void **)&comm,
-                                   &length);
-
-        if (ret < 0)
-        {
-            g_debug ("Unable to get command line from systemd journal: %s",
-                     g_strerror (-ret));
-            comm = "_COMM=";
-        }
-
-        ret = sd_journal_get_data (journal, "MESSAGE", (const void **)&message,
-                                   &length);
-
-        if (ret < 0)
-        {
-            g_warning ("Error getting message from systemd journal: %s",
-                       g_strerror (-ret));
-            goto out;
-        }
-
-        if (strstr (comm, priv->search_text)
-            || strstr (message, priv->search_text))
-        {
             return TRUE;
         }
+
+        gl_journal_result_free (priv->journal, result);
     }
 
 out:
