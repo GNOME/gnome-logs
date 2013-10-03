@@ -133,6 +133,153 @@ gl_journal_init (GlJournal *self)
 
 }
 
+static GlJournalResult *
+_gl_journal_query_result (GlJournal *self)
+{
+    GlJournalPrivate *priv;
+    GlJournalResult *result;
+    gint ret;
+    sd_journal *journal;
+    const gchar *message;
+    const gchar *comm;
+    const gchar *kernel_device;
+    const gchar *audit_session;
+    const gchar *priority;
+    gsize length;
+
+    priv = gl_journal_get_instance_private (self);
+    journal = priv->journal;
+
+    result = g_slice_new (GlJournalResult);
+
+    ret = sd_journal_get_realtime_usec (journal, &result->timestamp);
+
+    if (ret < 0)
+    {
+        g_warning ("Error getting timestamp from systemd journal: %s",
+                   g_strerror (-ret));
+        goto out;
+    }
+
+    ret = sd_journal_get_cursor (journal, &result->cursor);
+
+    if (ret < 0)
+    {
+        g_warning ("Error getting cursor for current journal entry: %s",
+                   g_strerror (-ret));
+        goto out;
+    }
+
+    ret = sd_journal_test_cursor (journal, result->cursor);
+
+    if (ret < 0)
+    {
+        g_warning ("Error testing cursor string: %s", g_strerror (-ret));
+        free (result->cursor);
+        result->cursor = NULL;
+        goto out;
+    }
+    else if (ret == 0)
+    {
+        g_warning ("Cursor string does not match journal entry");
+        /* Not a problem at this point, but would be when seeking to the cursor
+         * later on. */
+    }
+
+    ret = sd_journal_get_catalog (journal, &result->catalog);
+
+    if (ret == -ENOENT)
+    {
+        g_debug ("No message for this log entry was found in the catalog");
+        result->catalog = NULL;
+    }
+    else if (ret < 0)
+    {
+        g_warning ("Error while getting message from catalog: %s",
+                   g_strerror (-ret));
+        free (result->cursor);
+        goto out;
+    }
+
+    ret = sd_journal_get_data (journal, "_COMM", (const void **)&comm,
+                               &length);
+
+    if (ret < 0)
+    {
+        g_debug ("Unable to get commandline from systemd journal: %s",
+                 g_strerror (-ret));
+        comm = "_COMM=";
+    }
+
+    result->comm = strchr (comm, '=') + 1;
+
+    ret = sd_journal_get_data (journal, "_KERNEL_DEVICE",
+                               (const void **)&kernel_device, &length);
+
+    if (ret < 0)
+    {
+        g_debug ("Unable to get kernel device from systemd journal: %s",
+                 g_strerror (-ret));
+        kernel_device = "_KERNEL_DEVICE=";
+    }
+
+    result->kernel_device = strchr (kernel_device, '=') + 1;
+
+    ret = sd_journal_get_data (journal, "_AUDIT_SESSION",
+                               (const void **)&audit_session, &length);
+
+    if (ret < 0)
+    {
+        g_debug ("Unable to get audit session from systemd journal: %s",
+                 g_strerror (-ret));
+        audit_session = "_AUDIT_SESSION=";
+    }
+
+    result->audit_session = strchr (audit_session, '=') + 1;
+
+    ret = sd_journal_get_data (journal, "MESSAGE", (const void **)&message,
+                               &length);
+
+    if (ret < 0)
+    {
+        g_warning ("Error getting message from systemd journal: %s",
+                   g_strerror (-ret));
+        free (result->cursor);
+        free (result->catalog);
+        goto out;
+    }
+
+    result->message = strchr (message, '=') + 1;
+
+    ret = sd_journal_get_data (journal, "PRIORITY",
+                               (const void **)&priority, &length);
+
+    if (ret == -ENOENT)
+    {
+        g_warning ("No priority was set for this message");
+        free (result->cursor);
+        free (result->catalog);
+        goto out;
+    }
+    else if (ret < 0)
+    {
+        g_warning ("Error getting priority from systemd journal: %s",
+                   g_strerror (-ret));
+        free (result->cursor);
+        free (result->catalog);
+        goto out;
+    }
+
+    result->priority = atoi (strchr (priority, '=') + 1);
+
+    return result;
+
+out:
+    g_slice_free (GlJournalResult, result);
+
+    return NULL;
+}
+
 GList *
 gl_journal_query (GlJournal *self, const GlJournalQuery *query)
 {
@@ -177,13 +324,6 @@ gl_journal_query (GlJournal *self, const GlJournalQuery *query)
     {
         GlJournalResult *result;
 
-        const gchar *message;
-        const gchar *comm;
-        const gchar *kernel_device;
-        const gchar *audit_session;
-        const gchar *priority;
-        gsize length;
-
         ret = sd_journal_previous (journal);
 
         if (ret < 0)
@@ -198,133 +338,10 @@ gl_journal_query (GlJournal *self, const GlJournalQuery *query)
             break;
         }
 
-        result = g_slice_new (GlJournalResult);
-
-        ret = sd_journal_get_realtime_usec (journal, &result->timestamp);
-
-        if (ret < 0)
-        {
-            g_warning ("Error getting timestamp from systemd journal: %s",
-                       g_strerror (-ret));
-            goto out;
-        }
-
-        ret = sd_journal_get_cursor (journal, &result->cursor);
-
-        if (ret < 0)
-        {
-            g_warning ("Error getting cursor for current journal entry: %s",
-                       g_strerror (-ret));
-            goto out;
-        }
-
-        ret = sd_journal_test_cursor (journal, result->cursor);
-
-        if (ret < 0)
-        {
-            g_warning ("Error testing cursor string: %s", g_strerror (-ret));
-            free (result->cursor);
-            result->cursor = NULL;
-            goto out;
-        }
-        else if (ret == 0)
-        {
-            g_warning ("Cursor string does not match journal entry");
-            /* Not a problem at this point, but would be when seeking to the
-             * cursor later on. */
-        }
-
-        ret = sd_journal_get_catalog (journal, &result->catalog);
-
-        if (ret == -ENOENT)
-        {
-            g_debug ("No message for this log entry was found in the catalog");
-            result->catalog = NULL;
-        }
-        else if (ret < 0)
-        {
-            g_warning ("Error while getting message from catalog: %s",
-                       g_strerror (-ret));
-            free (result->cursor);
-            goto out;
-        }
-
-        ret = sd_journal_get_data (journal, "_COMM", (const void **)&comm,
-                                   &length);
-
-        if (ret < 0)
-        {
-            g_debug ("Unable to get commandline from systemd journal: %s",
-                     g_strerror (-ret));
-            comm = "_COMM=";
-        }
-
-        result->comm = strchr (comm, '=') + 1;
-
-        ret = sd_journal_get_data (journal, "_KERNEL_DEVICE",
-                                   (const void **)&kernel_device, &length);
-
-        if (ret < 0)
-        {
-            g_debug ("Unable to get kernel device from systemd journal: %s",
-                     g_strerror (-ret));
-            kernel_device = "_KERNEL_DEVICE=";
-        }
-
-        result->kernel_device = strchr (kernel_device, '=') + 1;
-
-        ret = sd_journal_get_data (journal, "_AUDIT_SESSION",
-                                   (const void **)&audit_session, &length);
-
-        if (ret < 0)
-        {
-            g_debug ("Unable to get audit session from systemd journal: %s",
-                     g_strerror (-ret));
-            audit_session = "_AUDIT_SESSION=";
-        }
-
-        result->audit_session = strchr (audit_session, '=') + 1;
-
-        ret = sd_journal_get_data (journal, "MESSAGE", (const void **)&message,
-                                   &length);
-
-        if (ret < 0)
-        {
-            g_warning ("Error getting message from systemd journal: %s",
-                       g_strerror (-ret));
-            free (result->cursor);
-            free (result->catalog);
-            goto out;
-        }
-
-        result->message = strchr (message, '=') + 1;
-
-        ret = sd_journal_get_data (journal, "PRIORITY",
-                                   (const void **)&priority, &length);
-
-        if (ret == -ENOENT)
-        {
-            g_warning ("No priority was set for this message");
-            free (result->cursor);
-            free (result->catalog);
-            goto out;
-        }
-        else if (ret < 0)
-        {
-            g_warning ("Error getting priority from systemd journal: %s",
-                       g_strerror (-ret));
-            free (result->cursor);
-            free (result->catalog);
-            goto out;
-        }
-
-        result->priority = atoi (strchr (priority, '=') + 1);
+        result = _gl_journal_query_result (self);
 
         results = g_list_prepend (results, result);
         continue;
-
-out:
-        g_slice_free (GlJournalResult, result);
     }
 
     sd_journal_flush_matches (journal);
@@ -332,11 +349,70 @@ out:
     return g_list_reverse (results);
 }
 
-static void
-gl_journal_result_free (GlJournalResult *result,
-                        G_GNUC_UNUSED gpointer user_data)
+GlJournalResult *
+gl_journal_query_cursor (GlJournal *self,
+                         const gchar *cursor)
 {
+    GlJournalPrivate *priv;
+    sd_journal *journal;
+    gint ret;
+    GlJournalResult *result = NULL;
+
+    g_return_val_if_fail (GL_JOURNAL (self), NULL);
+    g_return_val_if_fail (cursor != NULL, NULL);
+
+    priv = gl_journal_get_instance_private (self);
+    journal = priv->journal;
+
+    ret = sd_journal_seek_cursor (journal, cursor);
+
+    if (ret < 0)
+    {
+        g_warning ("Error seeking to cursor position: %s", g_strerror (-ret));
+        goto out;
+    }
+
+    ret = sd_journal_next (journal);
+
+    if (ret < 0)
+    {
+        g_warning ("Error positioning cursor in systemd journal: %s",
+                   g_strerror (-ret));
+    }
+
+    ret = sd_journal_test_cursor (journal, cursor);
+
+    if (ret < 0)
+    {
+        g_warning ("Error testing cursor string: %s", g_strerror (-ret));
+        goto out;
+    }
+    else if (ret == 0)
+    {
+        g_warning ("Cursor string does not match journal entry");
+        goto out;
+    }
+
+    result = _gl_journal_query_result (self);
+
+out:
+    return result;
+}
+
+static void
+_gl_journal_result_free (GlJournalResult *result,
+                         G_GNUC_UNUSED gpointer user_data)
+{
+    free (result->cursor);
+    free (result->catalog);
     g_slice_free (GlJournalResult, result);
+}
+
+void
+gl_journal_result_free (G_GNUC_UNUSED GlJournal *self,
+                        GlJournalResult *result)
+{
+    _gl_journal_result_free (result, NULL);
 }
 
 void
@@ -344,7 +420,7 @@ gl_journal_results_free (G_GNUC_UNUSED GlJournal *self,
                          GList *results)
 {
     /* As self is unused, ignore it. */
-    g_list_foreach (results, (GFunc)gl_journal_result_free, NULL);
+    g_list_foreach (results, (GFunc)_gl_journal_result_free, NULL);
     g_list_free (results);
 }
 

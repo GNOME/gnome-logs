@@ -59,7 +59,9 @@ typedef struct
 
 GType gl_journal_get_type (void);
 GList * gl_journal_query (GlJournal *self, const GlJournalQuery *query);
+void gl_journal_result_free (G_GNUC_UNUSED GlJournal *self, GlJournalResult *result);
 void gl_journal_results_free (G_GNUC_UNUSED GlJournal *self, GList *results);
+GlJournalResult * gl_journal_query_cursor (GlJournal *self, const gchar *cursor);
 sd_journal * gl_journal_get_journal (GlJournal *self);
 GlJournal * gl_journal_new (void);
 
