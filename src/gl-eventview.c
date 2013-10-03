@@ -99,16 +99,10 @@ on_listbox_row_activated (GtkListBox *listbox,
                           GlEventView *view)
 {
     GlEventViewPrivate *priv;
-    sd_journal *journal;
-    gint ret;
     gchar *cursor;
-    gchar *comm;
-    gchar *message;
-    gchar *time;
-    gchar *catalog;
-    gsize length;
-    guint64 microsec;
+    GlJournalResult *result;
     GDateTime *datetime;
+    gchar *time;
     GtkWidget *grid;
     GtkWidget *label;
     GtkStyleContext *style;
@@ -116,94 +110,24 @@ on_listbox_row_activated (GtkListBox *listbox,
     GtkWidget *toplevel;
 
     priv = gl_event_view_get_instance_private (view);
-    journal = gl_journal_get_journal (priv->journal);
     cursor = g_object_get_data (G_OBJECT (row), "cursor");
 
     if (cursor == NULL)
     {
         g_warning ("Error getting cursor from row");
-        goto out;
+        return;
     }
 
-    ret = sd_journal_seek_cursor (journal, cursor);
-
-    if (ret < 0)
-    {
-        g_warning ("Error seeking to cursor position: %s", g_strerror (-ret));
-        goto out;
-    }
-
-    ret = sd_journal_next (journal);
-
-    if (ret < 0)
-    {
-        g_warning ("Error positioning cursor in systemd journal: %s",
-                   g_strerror (-ret));
-    }
-
-    ret = sd_journal_test_cursor (journal, cursor);
-
-    if (ret < 0)
-    {
-        g_warning ("Error testing cursor string: %s", g_strerror (-ret));
-        goto out;
-    }
-    else if (ret == 0)
-    {
-        g_warning ("Cursor string does not match journal entry");
-        goto out;
-    }
-
-    ret = sd_journal_get_data (journal, "_COMM", (const void **)&comm,
-                               &length);
-
-    if (ret < 0)
-    {
-        g_debug ("Unable to get command line from systemd journal: %s",
-                 g_strerror (-ret));
-        comm = "_COMM=";
-    }
-
-    ret = sd_journal_get_data (journal, "MESSAGE", (const void **)&message,
-                               &length);
-
-    if (ret < 0)
-    {
-        g_warning ("Unable to get message from systemd journal: %s",
-                   g_strerror (-ret));
-        goto out;
-    }
-
-    ret = sd_journal_get_catalog (journal, &catalog);
-
-    if (ret == -ENOENT)
-    {
-        g_debug ("No message for this log entry was found in the catalog");
-        catalog = NULL;
-    }
-    else if (ret < 0)
-    {
-        g_warning ("Error while getting message from catalog: %s",
-                   g_strerror (-ret));
-        goto out;
-    }
+    result = gl_journal_query_cursor (priv->journal, cursor);
 
     grid = gtk_grid_new ();
-    label = gtk_label_new (strchr (comm, '=') + 1);
+    label = gtk_label_new (result->comm);
     style = gtk_widget_get_style_context (label);
     gtk_style_context_add_class (style, "detail-comm");
     gtk_grid_attach (GTK_GRID (grid), label, 0, 0, 1, 1);
 
-    ret = sd_journal_get_realtime_usec (journal, &microsec);
-
-    if (ret < 0)
-    {
-        g_warning ("Error getting timestamp from systemd journal: %s",
-                   g_strerror (-ret));
-        goto out;
-    }
-
-    datetime = g_date_time_new_from_unix_utc (microsec / G_TIME_SPAN_SECOND);
+    datetime = g_date_time_new_from_unix_utc (result->timestamp
+                                              / G_TIME_SPAN_SECOND);
 
     if (datetime == NULL)
     {
@@ -229,14 +153,14 @@ on_listbox_row_activated (GtkListBox *listbox,
     gtk_grid_attach (GTK_GRID (grid), label, 1, 0, 1, 1);
     g_free (time);
 
-    label = gtk_label_new (strchr (message, '=') + 1);
+    label = gtk_label_new (result->message);
     gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
     gtk_label_set_line_wrap (GTK_LABEL (label), TRUE);
     style = gtk_widget_get_style_context (label);
     gtk_style_context_add_class (style, "detail-message");
     gtk_grid_attach (GTK_GRID (grid), label, 0, 1, 2, 1);
 
-    label = gtk_label_new (catalog);
+    label = gtk_label_new (result->catalog);
     gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
     style = gtk_widget_get_style_context (label);
     gtk_style_context_add_class (style, "detail-catalog");
@@ -270,6 +194,7 @@ on_listbox_row_activated (GtkListBox *listbox,
     }
 
 out:
+    gl_journal_result_free (priv->journal, result);
     return;
 }
 
