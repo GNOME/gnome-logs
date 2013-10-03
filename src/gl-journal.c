@@ -424,18 +424,6 @@ gl_journal_results_free (G_GNUC_UNUSED GlJournal *self,
     g_list_free (results);
 }
 
-sd_journal *
-gl_journal_get_journal (GlJournal *self)
-{
-    GlJournalPrivate *priv;
-
-    g_return_val_if_fail (GL_JOURNAL (self), NULL);
-
-    priv = gl_journal_get_instance_private (self);
-
-    return priv->journal;
-}
-
 GlJournal *
 gl_journal_new (void)
 {
