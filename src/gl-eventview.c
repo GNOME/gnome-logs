@@ -487,84 +487,49 @@ gl_event_view_class_init (GlEventViewClass *klass)
 }
 
 static void
-insert_journal_items_devices (sd_journal *journal, GtkListBox *listbox)
+insert_journal_query_devices (GlJournal *journal,
+                              const GlJournalQuery *query,
+                              GtkListBox *listbox)
 {
-    gsize i;
+    GList *results = NULL;
+    GList *l;
+    gsize n_results;
 
-    for (i = 0; i < 10; i++)
+    results = gl_journal_query (journal, query);
+
+    n_results = g_list_length (results);
+
+    if (n_results != N_RESULTS)
     {
-        gint ret;
-        const gchar *device;
-        const gchar *message;
-        gchar *cursor;
-        gsize length;
+        g_debug ("Number of results different than requested");
+    }
+
+    for (l = results; l != NULL; l = g_list_next (l))
+    {
         GtkWidget *row;
         GtkStyleContext *context;
         GtkWidget *grid;
         GtkWidget *label;
         gboolean rtl;
         GtkWidget *image;
+        GlJournalResult result = *(GlJournalResult *)(l->data);
 
-        ret = sd_journal_get_data (journal, "_KERNEL_DEVICE",
-                                   (const void **)&device, &length);
-
-        if (ret == -ENOENT)
+        /* Skip if the log entry does not refer to a hardware device. */
+        if (*result.kernel_device == '\0')
         {
-            g_debug ("Skipping non-device journal entry");
-            --i;
-            goto out;
-        }
-        else if (ret < 0)
-        {
-            g_warning ("Error getting message from systemd journal: %s",
-                       g_strerror (-ret));
-            break;
-        }
-
-        ret = sd_journal_get_data (journal, "MESSAGE", (const void **)&message,
-                                   &length);
-
-        if (ret < 0)
-        {
-            g_warning ("Error getting message from systemd journal: %s",
-                       g_strerror (-ret));
-            break;
-        }
-
-        ret = sd_journal_get_cursor (journal, &cursor);
-
-        if (ret < 0)
-        {
-            g_warning ("Error getting cursor for current journal entry: %s",
-                       g_strerror (-ret));
-            break;
-        }
-
-        ret = sd_journal_test_cursor (journal, cursor);
-
-        if (ret < 0)
-        {
-            g_warning ("Error testing cursor string: %s", g_strerror (-ret));
-            free (cursor);
-            break;
-        }
-        else if (ret == 0)
-        {
-            g_warning ("Cursor string does not match journal entry");
-            /* Not a problem at this point, but would be when seeking to the
-             * cursor later on. */
+            continue;
         }
 
         row = gtk_list_box_row_new ();
         context = gtk_widget_get_style_context (GTK_WIDGET (row));
         gtk_style_context_add_class (context, "event");
-        /* sd_journal_get_cursor allocates the cursor with libc malloc. */
-        g_object_set_data_full (G_OBJECT (row), "cursor", cursor, free);
+        g_object_set_data_full (G_OBJECT (row), "cursor",
+                                g_strdup (result.cursor), g_free);
         grid = gtk_grid_new ();
         gtk_grid_set_column_spacing (GTK_GRID (grid), 6);
         gtk_container_add (GTK_CONTAINER (row), grid);
 
-        label = gtk_label_new (strchr (message, '=') + 1);
+        label = gtk_label_new (result.message);
         gtk_widget_set_hexpand (label, TRUE);
         gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
         gtk_label_set_ellipsize (GTK_LABEL (label), PANGO_ELLIPSIZE_END);
@@ -577,21 +542,9 @@ insert_journal_items_devices (sd_journal *journal, GtkListBox *listbox)
         gtk_grid_attach (GTK_GRID (grid), image, 1, 0, 1, 1);
 
         gtk_container_add (GTK_CONTAINER (listbox), row);
-
-out:
-        ret = sd_journal_previous (journal);
-
-        if (ret < 0)
-        {
-            g_warning ("Error setting cursor to previous systemd journal entry %s",
-                       g_strerror (-ret));
-            break;
-        }
-        else if (ret == 0)
-        {
-            g_debug ("End of systemd journal reached");
-        }
     }
+
+    gl_journal_results_free (journal, results);
 }
 
 static void
@@ -944,50 +897,19 @@ static void
 gl_event_view_add_listbox_hardware (GlEventView *view)
 {
     GlEventViewPrivate *priv;
-    gint ret;
-    sd_journal *journal;
+    GlJournalQuery query = { N_RESULTS,
+                             (gchar *[2]){ "_TRANSPORT=kernel", NULL } };
     GtkWidget *listbox;
     GtkWidget *scrolled;
 
     priv = gl_event_view_get_instance_private (view);
-    journal = gl_journal_get_journal (priv->journal);
-
-    ret = sd_journal_add_match (journal, "_TRANSPORT=kernel", 0);
-
-    if (ret < 0)
-    {
-        g_warning ("Error adding match for kernel transport: %s",
-                   g_strerror (-ret));
-    }
-
-    ret = sd_journal_seek_tail (journal);
-
-    if (ret < 0)
-    {
-        g_warning ("Error seeking to end of systemd journal: %s",
-                   g_strerror (-ret));
-    }
-
-    ret = sd_journal_previous (journal);
-
-    if (ret < 0)
-    {
-        g_warning ("Error setting cursor to end of systemd journal: %s",
-                   g_strerror (-ret));
-    }
-    else if (ret == 0)
-    {
-        g_debug ("End of systemd journal reached");
-    }
-
     listbox = gtk_list_box_new ();
 
     gtk_list_box_set_filter_func (GTK_LIST_BOX (listbox),
                                   (GtkListBoxFilterFunc)listbox_search_filter_func,
                                   view, NULL);
-    insert_journal_items_devices (journal, GTK_LIST_BOX (listbox));
-
-    sd_journal_flush_matches (journal);
+    insert_journal_query_devices (priv->journal, &query,
+                                  GTK_LIST_BOX (listbox));
 
     scrolled = gtk_scrolled_window_new (NULL, NULL);
     gtk_container_add (GTK_CONTAINER (scrolled), listbox);
