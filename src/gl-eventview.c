@@ -615,6 +615,22 @@ insert_journal_query_cmdline (GlJournal *journal,
     gl_journal_results_free (journal, results);
 }
 
+static GtkWidget *
+gl_event_view_list_box_new (GlEventView *view)
+{
+    GtkWidget *listbox;
+
+    listbox = gtk_list_box_new ();
+
+    gtk_list_box_set_filter_func (GTK_LIST_BOX (listbox),
+                                  (GtkListBoxFilterFunc)listbox_search_filter_func,
+                                  view, NULL);
+    g_signal_connect (listbox, "row-activated",
+                      G_CALLBACK (on_listbox_row_activated), GTK_STACK (view));
+
+    return listbox;
+}
+
 static void
 gl_event_view_add_listbox_important (GlEventView *view)
 {
@@ -627,11 +643,7 @@ gl_event_view_add_listbox_important (GlEventView *view)
 
     priv = gl_event_view_get_instance_private (view);
 
-    listbox = gtk_list_box_new ();
-
-    gtk_list_box_set_filter_func (GTK_LIST_BOX (listbox),
-                                  (GtkListBoxFilterFunc)listbox_search_filter_func,
-                                  view, NULL);
+    listbox = gl_event_view_list_box_new (view);
 
     insert_journal_query_cmdline (priv->journal, &query,
                                   GTK_LIST_BOX (listbox));
@@ -676,11 +688,8 @@ gl_event_view_add_listbox_applications (GlEventView *view)
 
     priv = gl_event_view_get_instance_private (view);
 
-    listbox = gtk_list_box_new ();
+    listbox = gl_event_view_list_box_new (view);
 
-    gtk_list_box_set_filter_func (GTK_LIST_BOX (listbox),
-                                  (GtkListBoxFilterFunc)listbox_search_filter_func,
-                                  view, NULL);
     insert_journal_query_cmdline (priv->journal, &query,
                                   GTK_LIST_BOX (listbox));
 
@@ -700,11 +709,8 @@ gl_event_view_add_listbox_system (GlEventView *view)
     GtkWidget *scrolled;
 
     priv = gl_event_view_get_instance_private (view);
-    listbox = gtk_list_box_new ();
+    listbox = gl_event_view_list_box_new (view);
 
-    gtk_list_box_set_filter_func (GTK_LIST_BOX (listbox),
-                                  (GtkListBoxFilterFunc)listbox_search_filter_func,
-                                  view, NULL);
     insert_journal_query_simple (priv->journal, &query,
                                  GTK_LIST_BOX (listbox));
 
@@ -724,11 +730,8 @@ gl_event_view_add_listbox_hardware (GlEventView *view)
     GtkWidget *scrolled;
 
     priv = gl_event_view_get_instance_private (view);
-    listbox = gtk_list_box_new ();
+    listbox = gl_event_view_list_box_new (view);
 
-    gtk_list_box_set_filter_func (GTK_LIST_BOX (listbox),
-                                  (GtkListBoxFilterFunc)listbox_search_filter_func,
-                                  view, NULL);
     insert_journal_query_devices (priv->journal, &query,
                                   GTK_LIST_BOX (listbox));
 
@@ -748,11 +751,8 @@ gl_event_view_add_listbox_security (GlEventView *view)
 
     priv = gl_event_view_get_instance_private (view);
 
-    listbox = gtk_list_box_new ();
+    listbox = gl_event_view_list_box_new (view);
 
-    gtk_list_box_set_filter_func (GTK_LIST_BOX (listbox),
-                                  (GtkListBoxFilterFunc)listbox_search_filter_func,
-                                  view, NULL);
     insert_journal_query_security (priv->journal, &query,
                                    GTK_LIST_BOX (listbox));
 
@@ -795,18 +795,12 @@ gl_event_view_init (GlEventView *view)
     priv->search_text = NULL;
     stack = GTK_WIDGET (view);
 
-    listbox = gtk_list_box_new ();
-    gtk_list_box_set_filter_func (GTK_LIST_BOX (listbox),
-                                  (GtkListBoxFilterFunc)listbox_search_filter_func,
-                                  view, NULL);
+    listbox = gl_event_view_list_box_new (view);
 
     priv->journal = gl_journal_new ();
 
     insert_journal_query_cmdline (priv->journal, &query,
                                   GTK_LIST_BOX (listbox));
-
-    g_signal_connect (listbox, "row-activated",
-                      G_CALLBACK (on_listbox_row_activated), stack);
 
     scrolled = gtk_scrolled_window_new (NULL, NULL);
     gtk_container_add (GTK_CONTAINER (scrolled), listbox);
