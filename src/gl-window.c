@@ -82,25 +82,21 @@ on_category (GSimpleAction *action,
 }
 
 static void
-on_mode (GSimpleAction *action,
-         GVariant *variant,
-         gpointer user_data)
+on_toolbar_mode (GSimpleAction *action,
+                 GVariant *variant,
+                 gpointer user_data)
 {
     GlWindowPrivate *priv;
     const gchar *mode;
-    GAction *search;
-    GlEventToolbar *toolbar;
     GEnumClass *eclass;
     GEnumValue *evalue;
+    GAction *search;
 
     priv = gl_window_get_instance_private (GL_WINDOW (user_data));
     mode = g_variant_get_string (variant, NULL);
-    search = g_action_map_lookup_action (G_ACTION_MAP (user_data), "search");
-    toolbar = GL_EVENT_TOOLBAR (priv->right_toolbar);
     eclass = g_type_class_ref (GL_TYPE_EVENT_TOOLBAR_MODE);
     evalue = g_enum_get_value_by_nick (eclass, mode);
-
-    gl_event_toolbar_set_mode (toolbar, evalue->value);
+    search = g_action_map_lookup_action (G_ACTION_MAP (user_data), "search");
 
     if (evalue->value == GL_EVENT_TOOLBAR_MODE_LIST)
     {
@@ -111,11 +107,45 @@ on_mode (GSimpleAction *action,
         view = GL_EVENT_VIEW (priv->events);
 
         gl_event_view_set_mode (view, GL_EVENT_VIEW_MODE_LIST);
+
         g_simple_action_set_enabled (G_SIMPLE_ACTION (search), TRUE);
     }
     else
     {
         g_simple_action_set_enabled (G_SIMPLE_ACTION (search), FALSE);
+        g_action_change_state (search, g_variant_new_boolean (FALSE));
+    }
+
+    g_simple_action_set_state (action, variant);
+
+    g_type_class_unref (eclass);
+}
+
+static void
+on_view_mode (GSimpleAction *action,
+              GVariant *variant,
+              gpointer user_data)
+{
+    GlWindowPrivate *priv;
+    const gchar *mode;
+    GlEventToolbar *toolbar;
+    GEnumClass *eclass;
+    GEnumValue *evalue;
+
+    priv = gl_window_get_instance_private (GL_WINDOW (user_data));
+    mode = g_variant_get_string (variant, NULL);
+    toolbar = GL_EVENT_TOOLBAR (priv->right_toolbar);
+    eclass = g_type_class_ref (GL_TYPE_EVENT_VIEW_MODE);
+    evalue = g_enum_get_value_by_nick (eclass, mode);
+
+    switch (evalue->value)
+    {
+        case GL_EVENT_VIEW_MODE_LIST:
+            gl_event_toolbar_set_mode (toolbar, GL_EVENT_TOOLBAR_MODE_LIST);
+            break;
+        case GL_EVENT_VIEW_MODE_DETAIL:
+            gl_event_toolbar_set_mode (toolbar, GL_EVENT_TOOLBAR_MODE_DETAIL);
+            break;
     }
 
     g_simple_action_set_state (action, variant);
@@ -211,7 +241,8 @@ on_provider_parsing_error (GtkCssProvider *provider,
 
 static GActionEntry actions[] = {
     { "category", on_action_radio, "s", "'all'", on_category },
-    { "mode", on_action_radio, "s", "'list'", on_mode },
+    { "view-mode", on_action_radio, "s", "'list'", on_view_mode },
+    { "toolbar-mode", on_action_radio, "s", "'list'", on_toolbar_mode },
     { "search", on_action_toggle, NULL, "false", on_search }
 };
 

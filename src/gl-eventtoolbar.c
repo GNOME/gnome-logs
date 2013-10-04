@@ -21,6 +21,7 @@
 #include <glib/gi18n.h>
 
 #include "gl-enums.h"
+#include "gl-eventview.h"
 
 enum
 {
@@ -42,31 +43,10 @@ G_DEFINE_TYPE_WITH_PRIVATE (GlEventToolbar, gl_event_toolbar, GTK_TYPE_HEADER_BA
 static GParamSpec *obj_properties[N_PROPERTIES] = { NULL, };
 
 static void
-on_gl_event_toolbar_back_button_clicked (GtkButton *button,
-                                         gpointer user_data)
+on_gl_event_toolbar_back_button_clicked (GlEventToolbar *toolbar,
+                                         GtkButton *button)
 {
-    GtkWidget *toplevel;
-
-    toplevel = gtk_widget_get_toplevel (GTK_WIDGET (button));
-
-    if (gtk_widget_is_toplevel (toplevel))
-    {
-        GAction *mode;
-        GEnumClass *eclass;
-        GEnumValue *evalue;
-
-        mode = g_action_map_lookup_action (G_ACTION_MAP (toplevel), "mode");
-        eclass = g_type_class_ref (GL_TYPE_EVENT_TOOLBAR_MODE);
-        evalue = g_enum_get_value (eclass, GL_EVENT_TOOLBAR_MODE_LIST);
-
-        g_action_activate (mode, g_variant_new_string (evalue->value_nick));
-
-        g_type_class_unref (eclass);
-    }
-    else
-    {
-        g_error ("Widget not in toplevel window, not switching toolbar mode");
-    }
+    gl_event_toolbar_set_mode (toolbar, GL_EVENT_TOOLBAR_MODE_LIST);
 }
 
 static void
@@ -75,6 +55,7 @@ on_notify_mode (GlEventToolbar *toolbar,
                 gpointer user_data)
 {
     GlEventToolbarPrivate *priv;
+    GtkWidget *toplevel;
 
     priv = gl_event_toolbar_get_instance_private (toolbar);
 
@@ -91,6 +72,29 @@ on_notify_mode (GlEventToolbar *toolbar,
         default:
             g_assert_not_reached ();
             break;
+    }
+
+    /* Propagate change to GlWindow. */
+    toplevel = gtk_widget_get_toplevel (GTK_WIDGET (toolbar));
+
+    if (gtk_widget_is_toplevel (toplevel))
+    {
+        GAction *mode;
+        GEnumClass *eclass;
+        GEnumValue *evalue;
+
+        mode = g_action_map_lookup_action (G_ACTION_MAP (toplevel),
+                                           "toolbar-mode");
+        eclass = g_type_class_ref (GL_TYPE_EVENT_TOOLBAR_MODE);
+        evalue = g_enum_get_value (eclass, priv->mode);
+
+        g_action_activate (mode, g_variant_new_string (evalue->value_nick));
+
+        g_type_class_unref (eclass);
+    }
+    else
+    {
+        g_error ("Widget not in toplevel window, not switching toolbar mode");
     }
 }
 

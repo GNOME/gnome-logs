@@ -8,7 +8,7 @@
             <object class="GtkButton" id="back_button">
                 <property name="tooltip-text" translatable="yes">Go back to the event view</property>
                 <property name="valign">center</property>
-                <signal name="clicked" handler="on_gl_event_toolbar_back_button_clicked"/>
+                <signal name="clicked" handler="on_gl_event_toolbar_back_button_clicked" object="GlEventToolbar" swapped="yes"/>
                 <style>
                     <class name="image-button"/>
                 </style>

@@ -107,7 +107,6 @@ on_listbox_row_activated (GtkListBox *listbox,
     GtkWidget *label;
     GtkStyleContext *style;
     GtkStack *stack;
-    GtkWidget *toplevel;
 
     priv = gl_event_view_get_instance_private (view);
     cursor = g_object_get_data (G_OBJECT (row), "cursor");
@@ -168,30 +167,8 @@ on_listbox_row_activated (GtkListBox *listbox,
 
     gtk_widget_show_all (grid);
     stack = GTK_STACK (view);
-    gtk_stack_add_named (stack, grid, "detailed");
-    gtk_stack_set_visible_child_name (stack, "detailed");
+    gtk_stack_add_named (stack, grid, "detail");
     gl_event_view_set_mode (view, GL_EVENT_VIEW_MODE_DETAIL);
-
-    toplevel = gtk_widget_get_toplevel (GTK_WIDGET (view));
-
-    if (gtk_widget_is_toplevel (toplevel))
-    {
-        GAction *mode;
-        GEnumClass *eclass;
-        GEnumValue *evalue;
-
-        mode = g_action_map_lookup_action (G_ACTION_MAP (toplevel), "mode");
-        eclass = g_type_class_ref (GL_TYPE_EVENT_TOOLBAR_MODE);
-        evalue = g_enum_get_value (eclass, GL_EVENT_TOOLBAR_MODE_DETAIL);
-
-        g_action_activate (mode, g_variant_new_string (evalue->value_nick));
-
-        g_type_class_unref (eclass);
-    }
-    else
-    {
-        g_error ("Widget not in toplevel window, not switching toolbar mode");
-    }
 
 out:
     gl_journal_result_free (priv->journal, result);
@@ -258,28 +235,54 @@ on_notify_mode (GlEventView *view,
                 gpointer user_data)
 {
     GlEventViewPrivate *priv;
+    GtkStack *stack;
+    GtkWidget *toplevel;
 
     priv = gl_event_view_get_instance_private (view);
+    stack = GTK_STACK (view);
 
     switch (priv->mode)
     {
-
         case GL_EVENT_VIEW_MODE_LIST:
             {
-                GtkStack *stack;
                 GtkWidget *visible_child;
+                GtkWidget *viewport;
+                GtkWidget *scrolled_window;
 
-                stack = GTK_STACK (view);
                 visible_child = gtk_stack_get_visible_child (stack);
                 gtk_container_remove (GTK_CONTAINER (stack), visible_child);
+                viewport = gtk_widget_get_parent (GTK_WIDGET (priv->active_listbox));
+                scrolled_window = gtk_widget_get_parent (viewport);
+                gtk_stack_set_visible_child (stack, scrolled_window);
             }
             break;
         case GL_EVENT_VIEW_MODE_DETAIL:
-            /* Ignore. */
+            gtk_stack_set_visible_child_name (stack, "detail");
             break;
         default:
             g_assert_not_reached ();
             break;
+    }
+
+    toplevel = gtk_widget_get_toplevel (GTK_WIDGET (view));
+
+    if (gtk_widget_is_toplevel (toplevel))
+    {
+        GAction *mode;
+        GEnumClass *eclass;
+        GEnumValue *evalue;
+
+        mode = g_action_map_lookup_action (G_ACTION_MAP (toplevel), "view-mode");
+        eclass = g_type_class_ref (GL_TYPE_EVENT_VIEW_MODE);
+        evalue = g_enum_get_value (eclass, priv->mode);
+
+        g_action_activate (mode, g_variant_new_string (evalue->value_nick));
+
+        g_type_class_unref (eclass);
+    }
+    else
+    {
+        g_error ("Widget not in toplevel window, not switching toolbar mode");
     }
 }
 
