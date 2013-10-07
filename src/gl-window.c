@@ -293,6 +293,7 @@ gl_window_init (GlWindow *window)
     {
         g_critical ("Error parsing CSS styling data: %s", err->message);
         g_error_free (err);
+        g_object_unref (file);
         g_object_unref (provider);
         return;
     }
@@ -301,6 +302,9 @@ gl_window_init (GlWindow *window)
     gtk_style_context_add_provider_for_screen (screen,
                                                GTK_STYLE_PROVIDER (provider),
                                                GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
+
+    g_object_unref (file);
+    g_object_unref (provider);
 }
 
 GtkWidget *
