@@ -640,7 +640,11 @@ gl_event_view_add_listbox_important (GlEventView *view)
     GlEventViewPrivate *priv;
     /* Alert or emergency priority. */
     const GlJournalQuery query = { N_RESULTS,
-                                   (gchar*[3]){ "PRIORITY=0", "PRIORITY=1", NULL } };
+                                   (gchar*[5]){ "PRIORITY=0",
+                                                "PRIORITY=1",
+                                                "PRIORITY=2",
+                                                "PRIORITY=3",
+                                                NULL } };
     GtkWidget *listbox;
     GtkWidget *scrolled;
 
