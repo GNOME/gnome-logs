@@ -177,8 +177,8 @@ out:
 
 static void
 on_notify_filter (GlEventView *view,
-                  GParamSpec *pspec,
-                  gpointer user_data)
+                  G_GNUC_UNUSED GParamSpec *pspec,
+                  G_GNUC_UNUSED gpointer user_data)
 {
     GlEventViewPrivate *priv;
     GtkStack *stack;
@@ -352,7 +352,7 @@ gl_event_view_class_init (GlEventViewClass *klass)
     obj_properties[PROP_FILTER] = g_param_spec_enum ("filter", "Filter",
                                                      "Filter events by",
                                                      GL_TYPE_EVENT_VIEW_FILTER,
-                                                     GL_EVENT_VIEW_FILTER_ALL,
+                                                     GL_EVENT_VIEW_FILTER_IMPORTANT,
                                                      G_PARAM_READWRITE |
                                                      G_PARAM_STATIC_STRINGS);
 
@@ -682,6 +682,27 @@ gl_event_view_add_listbox_starred (GlEventView *view)
 }
 
 static void
+gl_event_view_add_listbox_all (GlEventView *view)
+{
+    GlEventViewPrivate *priv;
+    const GlJournalQuery query = { N_RESULTS, NULL };
+    GtkWidget *listbox;
+    GtkWidget *scrolled;
+
+    priv = gl_event_view_get_instance_private (view);
+
+    listbox = gl_event_view_list_box_new (view);
+
+    insert_journal_query_cmdline (priv->journal, &query,
+                                  GTK_LIST_BOX (listbox));
+
+    scrolled = gtk_scrolled_window_new (NULL, NULL);
+    gtk_container_add (GTK_CONTAINER (scrolled), listbox);
+    gtk_widget_show_all (scrolled);
+    gtk_stack_add_named (GTK_STACK (view), scrolled, "listbox-all");
+}
+
+static void
 gl_event_view_add_listbox_applications (GlEventView *view)
 {
     GlEventViewPrivate *priv;
@@ -793,31 +814,16 @@ static void
 gl_event_view_init (GlEventView *view)
 {
     GlEventViewPrivate *priv;
-    GtkWidget *stack;
-    GtkWidget *listbox;
-    const GlJournalQuery query = { N_RESULTS, NULL };
-    GtkWidget *scrolled;
 
     priv = gl_event_view_get_instance_private (view);
     priv->search_text = NULL;
-    stack = GTK_WIDGET (view);
-
-    listbox = gl_event_view_list_box_new (view);
-
+    priv->active_listbox = NULL;
     priv->journal = gl_journal_new ();
-
-    insert_journal_query_cmdline (priv->journal, &query,
-                                  GTK_LIST_BOX (listbox));
-
-    scrolled = gtk_scrolled_window_new (NULL, NULL);
-    gtk_container_add (GTK_CONTAINER (scrolled), listbox);
-    gtk_widget_show_all (scrolled);
-    gtk_stack_add_named (GTK_STACK (stack), scrolled, "listbox-all");
-    priv->active_listbox = GTK_LIST_BOX (listbox);
 
     gl_event_view_add_listbox_important (view);
     gl_event_view_add_listbox_alerts (view);
     gl_event_view_add_listbox_starred (view);
+    gl_event_view_add_listbox_all (view);
     gl_event_view_add_listbox_applications (view);
     gl_event_view_add_listbox_system (view);
     gl_event_view_add_listbox_hardware (view);
@@ -829,6 +835,9 @@ gl_event_view_init (GlEventView *view)
                       NULL);
     g_signal_connect (view, "notify::mode", G_CALLBACK (on_notify_mode),
                       NULL);
+
+    /* Force an update of the active filter. */
+    on_notify_filter (view, NULL, NULL);
 }
 
 void

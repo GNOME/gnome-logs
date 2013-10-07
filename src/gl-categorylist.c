@@ -171,9 +171,6 @@ gl_category_list_init (GlCategoryList *list)
     gtk_list_box_set_header_func (GTK_LIST_BOX (list),
                                   (GtkListBoxUpdateHeaderFunc)gl_category_list_header_func,
                                   priv->applications, NULL);
-
-    gtk_list_box_select_row (GTK_LIST_BOX (list),
-                             GTK_LIST_BOX_ROW (priv->all));
 }
 
 GtkWidget *

@@ -240,7 +240,7 @@ on_provider_parsing_error (GtkCssProvider *provider,
 }
 
 static GActionEntry actions[] = {
-    { "category", on_action_radio, "s", "'all'", on_category },
+    { "category", on_action_radio, "s", "'important'", on_category },
     { "view-mode", on_action_radio, "s", "'list'", on_view_mode },
     { "toolbar-mode", on_action_radio, "s", "'list'", on_toolbar_mode },
     { "search", on_action_toggle, NULL, "false", on_search }
