@@ -147,6 +147,7 @@ on_listbox_row_activated (GtkListBox *listbox,
     label = gtk_label_new (time);
     gtk_widget_set_hexpand (label, TRUE);
     gtk_misc_set_alignment (GTK_MISC (label), 1.0, 0.5);
+    gtk_label_set_selectable (GTK_LABEL (label), TRUE);
     style = gtk_widget_get_style_context (label);
     gtk_style_context_add_class (style, "detail-time");
     gtk_grid_attach (GTK_GRID (grid), label, 1, 0, 1, 1);
@@ -155,12 +156,14 @@ on_listbox_row_activated (GtkListBox *listbox,
     label = gtk_label_new (result->message);
     gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
     gtk_label_set_line_wrap (GTK_LABEL (label), TRUE);
+    gtk_label_set_selectable (GTK_LABEL (label), TRUE);
     style = gtk_widget_get_style_context (label);
     gtk_style_context_add_class (style, "detail-message");
     gtk_grid_attach (GTK_GRID (grid), label, 0, 1, 2, 1);
 
     label = gtk_label_new (result->catalog);
     gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
+    gtk_label_set_selectable (GTK_LABEL (label), TRUE);
     style = gtk_widget_get_style_context (label);
     gtk_style_context_add_class (style, "detail-catalog");
     gtk_grid_attach (GTK_GRID (grid), label, 0, 2, 2, 1);
