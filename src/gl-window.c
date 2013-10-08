@@ -284,7 +284,7 @@ gl_window_init (GlWindow *window)
                                      G_N_ELEMENTS (actions), window);
 
     file = g_file_new_for_uri ("resource:///org/gnome/Logs/gl-style.css");
-    provider = gtk_css_provider_get_default ();
+    provider = gtk_css_provider_new ();
     g_signal_connect (provider, "parsing-error",
                       G_CALLBACK (on_provider_parsing_error), NULL);
     gtk_css_provider_load_from_file (provider, file, &err);
