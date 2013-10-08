@@ -127,6 +127,8 @@ gl_application_activate (GApplication *application)
     window = gl_window_new (GTK_APPLICATION (application));
     gtk_widget_show (window);
     gtk_application_add_accelerator (GTK_APPLICATION (application),
+                                     "<Primary>w", "win.close", NULL);
+    gtk_application_add_accelerator (GTK_APPLICATION (application),
                                      "<Primary>f", "win.search", NULL);
 }
 

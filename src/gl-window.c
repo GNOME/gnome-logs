@@ -82,6 +82,18 @@ on_category (GSimpleAction *action,
 }
 
 static void
+on_close (GSimpleAction *action, 
+          GVariant *variant,
+          gpointer user_data)
+{
+    GtkWindow *window;
+
+    window = GTK_WINDOW (user_data);
+
+    gtk_window_close (window);
+}
+
+static void
 on_toolbar_mode (GSimpleAction *action,
                  GVariant *variant,
                  gpointer user_data)
@@ -243,7 +255,8 @@ static GActionEntry actions[] = {
     { "category", on_action_radio, "s", "'important'", on_category },
     { "view-mode", on_action_radio, "s", "'list'", on_view_mode },
     { "toolbar-mode", on_action_radio, "s", "'list'", on_toolbar_mode },
-    { "search", on_action_toggle, NULL, "false", on_search }
+    { "search", on_action_toggle, NULL, "false", on_search },
+    { "close", on_close }
 };
 
 static void
