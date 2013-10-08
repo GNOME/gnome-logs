@@ -27,7 +27,7 @@
 
 typedef struct
 {
-    GtkWidget *right_toolbar;
+    GtkWidget *event_toolbar;
     GtkWidget *event_search;
     GtkWidget *search_entry;
     GtkWidget *events;
@@ -134,7 +134,7 @@ on_view_mode (GSimpleAction *action,
 
     priv = gl_window_get_instance_private (GL_WINDOW (user_data));
     mode = g_variant_get_string (variant, NULL);
-    toolbar = GL_EVENT_TOOLBAR (priv->right_toolbar);
+    toolbar = GL_EVENT_TOOLBAR (priv->event_toolbar);
     eclass = g_type_class_ref (GL_TYPE_EVENT_VIEW_MODE);
     evalue = g_enum_get_value_by_nick (eclass, mode);
 
@@ -254,7 +254,7 @@ gl_window_class_init (GlWindowClass *klass)
     gtk_widget_class_set_template_from_resource (widget_class,
                                                  "/org/gnome/Logs/gl-window.ui");
     gtk_widget_class_bind_template_child_private (widget_class, GlWindow,
-                                                  right_toolbar);
+                                                  event_toolbar);
     gtk_widget_class_bind_template_child_private (widget_class, GlWindow,
                                                   event_search);
     gtk_widget_class_bind_template_child_private (widget_class, GlWindow,

@@ -4,42 +4,12 @@
         <property name="default-height">480</property>
         <signal name="key-press-event" handler="on_gl_window_key_press_event"/>
         <child type="titlebar">
-            <object class="GtkBox" id="titlebar">
-                <property name="orientation">horizontal</property>
+            <object class="GlEventToolbar" id="event_toolbar">
                 <property name="visible">True</property>
-                <child>
-                    <object class="GtkHeaderBar" id="left_toolbar">
-                        <property name="visible">True</property>
-                        <style>
-                            <class name="titlebar"/>
-                            <class name="left_toolbar"/>
-                        </style>
-                        <child type="title">
-                            <object class="GtkLabel" id="categories_title">
-                                <property name="label" translatable="yes">Categories</property>
-                                <property name="visible">True</property>
-                                <style>
-                                    <class name="title"/>
-                                </style>
-                            </object>
-                        </child>
-                    </object>
-                </child>
-                <child>
-                    <object class="GtkSeparator" id="titlebar_separator">
-                        <property name="orientation">vertical</property>
-                        <property name="visible">True</property>
-                    </object>
-                </child>
-                <child>
-                    <object class="GlEventToolbar" id="right_toolbar">
-                        <property name="visible">True</property>
-                        <style>
-                            <class name="titlebar"/>
-                            <class name="right_toolbar"/>
-                        </style>
-                    </object>
-                </child>
+                <style>
+                    <class name="titlebar"/>
+                    <class name="event_toolbar"/>
+                </style>
             </object>
         </child>
         <child>
@@ -87,11 +57,4 @@
             </object>
         </child>
     </template>
-        <object class="GtkSizeGroup" id="left_column">
-            <property name="mode">GTK_SIZE_GROUP_HORIZONTAL</property>
-            <widgets>
-                <widget name="left_toolbar"/>
-                <widget name="categories"/>
-            </widgets>
-        </object>
 </interface>
