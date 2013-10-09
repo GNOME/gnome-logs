@@ -24,9 +24,19 @@
 #include "gl-categorylist.h"
 #include "gl-eventtoolbar.h"
 #include "gl-eventview.h"
+#include "gl-util.h"
 #include "gl-window.h"
 
-G_DEFINE_TYPE (GlApplication, gl_application, GTK_TYPE_APPLICATION)
+typedef struct
+{
+    GSettings *desktop;
+    gchar *monospace_font;
+} GlApplicationPrivate;
+
+G_DEFINE_TYPE_WITH_PRIVATE (GlApplication, gl_application, GTK_TYPE_APPLICATION)
+
+static const gchar DESKTOP_SCHEMA[] = "org.gnome.desktop.interface";
+static const gchar DESKTOP_MONOSPACE_FONT_NAME[] = "monospace-font-name";
 
 static void
 on_new_window (GSimpleAction *action,
@@ -78,6 +88,44 @@ on_quit (GSimpleAction *action,
     g_application_quit (application);
 }
 
+static void
+on_monospace_font_name_changed (GSettings *settings,
+                                const gchar *key,
+                                GlApplicationPrivate *priv)
+{
+    gchar *font_name;
+
+    font_name = g_settings_get_string (settings, key);
+
+    if (g_strcmp0 (font_name, priv->monospace_font) != 0)
+    {
+        GtkCssProvider *provider;
+        gchar *css_fragment;
+
+        g_free (priv->monospace_font);
+        priv->monospace_font = font_name;
+
+        css_fragment = g_strconcat (".event-monospace { font: ", font_name,
+                                    "; }", NULL);
+        provider = gtk_css_provider_new ();
+        g_signal_connect (provider, "parsing-error",
+                          G_CALLBACK (gl_util_on_css_provider_parsing_error),
+                          NULL);
+        gtk_css_provider_load_from_data (provider, css_fragment, -1, NULL);
+
+        gtk_style_context_add_provider_for_screen (gdk_screen_get_default (),
+                                                   GTK_STYLE_PROVIDER (provider),
+                                                   GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
+
+        g_free (css_fragment);
+        g_object_unref (provider);
+    }
+    else
+    {
+        g_free (font_name);
+    }
+}
+
 static GActionEntry actions[] = {
     { "new-window", on_new_window },
     { "about", on_about },
@@ -123,6 +171,7 @@ static void
 gl_application_activate (GApplication *application)
 {
     GtkWidget *window;
+    GlApplicationPrivate *priv;
 
     window = gl_window_new (GTK_APPLICATION (application));
     gtk_widget_show (window);
@@ -130,17 +179,53 @@ gl_application_activate (GApplication *application)
                                      "<Primary>w", "win.close", NULL);
     gtk_application_add_accelerator (GTK_APPLICATION (application),
                                      "<Primary>f", "win.search", NULL);
+
+    priv = gl_application_get_instance_private (GL_APPLICATION (application));
+
+    on_monospace_font_name_changed (priv->desktop, DESKTOP_MONOSPACE_FONT_NAME,
+                                    priv);
+}
+
+static void
+gl_application_finalize (GObject *object)
+{
+    GlApplication *application;
+    GlApplicationPrivate *priv;
+
+    application = GL_APPLICATION (object);
+    priv = gl_application_get_instance_private (application);
+
+    g_clear_object (&priv->desktop);
+    g_clear_pointer (&priv->monospace_font, g_free);
 }
 
 static void
 gl_application_init (GlApplication *application)
 {
+    GlApplicationPrivate *priv;
+    gchar *changed_font;
+
+    priv = gl_application_get_instance_private (application);
+
+    priv->monospace_font = NULL;
+    priv->desktop = g_settings_new (DESKTOP_SCHEMA);
+
+    changed_font = g_strconcat ("changed::", DESKTOP_MONOSPACE_FONT_NAME, NULL);
+    g_signal_connect (priv->desktop, changed_font,
+                      G_CALLBACK (on_monospace_font_name_changed),
+                      priv);
+
+    g_free (changed_font);
 }
 
 static void
 gl_application_class_init (GlApplicationClass *klass)
 {
+    GObjectClass *gobject_class;
     GApplicationClass *app_class;
+
+    gobject_class = G_OBJECT_CLASS (klass);
+    gobject_class->finalize = gl_application_finalize;
 
     app_class = G_APPLICATION_CLASS (klass);
     app_class->activate = gl_application_activate;

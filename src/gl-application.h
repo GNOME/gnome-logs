@@ -36,7 +36,7 @@ typedef struct
 } GlApplicationClass;
 
 #define GL_TYPE_APPLICATION (gl_application_get_type ())
-#define GL_APPLICATION(object) (G_TYPE_CHECK_INSTANCE_CAST ((object), GL_TYPE_APPLICATION, GlApplication)
+#define GL_APPLICATION(object) (G_TYPE_CHECK_INSTANCE_CAST ((object), GL_TYPE_APPLICATION, GlApplication))
 
 GType gl_application_get_type (void);
 GtkApplication * gl_application_new (void);

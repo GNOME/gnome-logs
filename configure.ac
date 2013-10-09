@@ -34,6 +34,11 @@ IT_PROG_INTLTOOL([0.50.0])
 AC_SUBST([GETTEXT_PACKAGE], [AC_PACKAGE_TARNAME])
 AC_DEFINE_UNQUOTED([GETTEXT_PACKAGE], ["$GETTEXT_PACKAGE"], [gettext package name])
 
+dnl GSettings schemas
+PKG_CHECK_EXISTS([gsettings-desktop-schemas],
+                 [],
+                 [AC_MSG_WARN([gsettings-desktop-schemas is required at runtime])])
+
 dnl Libraries
 GTK_REQUIRED="gtk+-3.0 >= 3.9.6"
 SYSTEMD_JOURNAL_REQUIRED="libsystemd-journal"

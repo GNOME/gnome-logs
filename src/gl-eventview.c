@@ -105,7 +105,7 @@ on_listbox_row_activated (GtkListBox *listbox,
     gchar *time;
     GtkWidget *grid;
     GtkWidget *label;
-    GtkStyleContext *style;
+    GtkStyleContext *context;
     GtkStack *stack;
 
     priv = gl_event_view_get_instance_private (view);
@@ -121,8 +121,8 @@ on_listbox_row_activated (GtkListBox *listbox,
 
     grid = gtk_grid_new ();
     label = gtk_label_new (result->comm);
-    style = gtk_widget_get_style_context (label);
-    gtk_style_context_add_class (style, "detail-comm");
+    context = gtk_widget_get_style_context (label);
+    gtk_style_context_add_class (context, "detail-comm");
     gtk_grid_attach (GTK_GRID (grid), label, 0, 0, 1, 1);
 
     datetime = g_date_time_new_from_unix_utc (result->timestamp
@@ -148,8 +148,8 @@ on_listbox_row_activated (GtkListBox *listbox,
     gtk_widget_set_hexpand (label, TRUE);
     gtk_misc_set_alignment (GTK_MISC (label), 1.0, 0.5);
     gtk_label_set_selectable (GTK_LABEL (label), TRUE);
-    style = gtk_widget_get_style_context (label);
-    gtk_style_context_add_class (style, "detail-time");
+    context = gtk_widget_get_style_context (label);
+    gtk_style_context_add_class (context, "detail-time");
     gtk_grid_attach (GTK_GRID (grid), label, 1, 0, 1, 1);
     g_free (time);
 
@@ -157,15 +157,16 @@ on_listbox_row_activated (GtkListBox *listbox,
     gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
     gtk_label_set_line_wrap (GTK_LABEL (label), TRUE);
     gtk_label_set_selectable (GTK_LABEL (label), TRUE);
-    style = gtk_widget_get_style_context (label);
-    gtk_style_context_add_class (style, "detail-message");
+    context = gtk_widget_get_style_context (label);
+    gtk_style_context_add_class (context, "detail-message");
+    gtk_style_context_add_class (context, "event-monospace");
     gtk_grid_attach (GTK_GRID (grid), label, 0, 1, 2, 1);
 
     label = gtk_label_new (result->catalog);
     gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
     gtk_label_set_selectable (GTK_LABEL (label), TRUE);
-    style = gtk_widget_get_style_context (label);
-    gtk_style_context_add_class (style, "detail-catalog");
+    context = gtk_widget_get_style_context (label);
+    gtk_style_context_add_class (context, "detail-catalog");
     gtk_grid_attach (GTK_GRID (grid), label, 0, 2, 2, 1);
 
     gtk_widget_show_all (grid);
@@ -414,6 +415,8 @@ insert_journal_query_devices (GlJournal *journal,
         gtk_container_add (GTK_CONTAINER (row), grid);
 
         label = gtk_label_new (result.message);
+        context = gtk_widget_get_style_context (GTK_WIDGET (label));
+        gtk_style_context_add_class (context, "event-monospace");
         gtk_widget_set_hexpand (label, TRUE);
         gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
         gtk_label_set_ellipsize (GTK_LABEL (label), PANGO_ELLIPSIZE_END);
@@ -486,6 +489,8 @@ insert_journal_query_security (GlJournal *journal,
         gtk_grid_attach (GTK_GRID (grid), label, 0, 0, 1, 1);
 
         label = gtk_label_new (result.message);
+        context = gtk_widget_get_style_context (GTK_WIDGET (label));
+        gtk_style_context_add_class (context, "event-monospace");
         gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
         gtk_label_set_ellipsize (GTK_LABEL (label), PANGO_ELLIPSIZE_END);
         gtk_grid_attach (GTK_GRID (grid), label, 0, 1, 1, 1);
@@ -540,6 +545,8 @@ insert_journal_query_simple (GlJournal *journal,
         gtk_container_add (GTK_CONTAINER (row), grid);
 
         label = gtk_label_new (result.message);
+        context = gtk_widget_get_style_context (GTK_WIDGET (label));
+        gtk_style_context_add_class (context, "event-monospace");
         gtk_widget_set_hexpand (label, TRUE);
         gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
         gtk_label_set_ellipsize (GTK_LABEL (label), PANGO_ELLIPSIZE_END);
@@ -578,7 +585,7 @@ insert_journal_query_cmdline (GlJournal *journal,
     for (l = results; l != NULL; l = g_list_next (l))
     {
         GtkWidget *row;
-        GtkStyleContext *style;
+        GtkStyleContext *context;
         GtkWidget *grid;
         gchar *markup;
         GtkWidget *label;
@@ -587,8 +594,8 @@ insert_journal_query_cmdline (GlJournal *journal,
         GlJournalResult result = *(GlJournalResult *)(l->data);
 
         row = gtk_list_box_row_new ();
-        style = gtk_widget_get_style_context (GTK_WIDGET (row));
-        gtk_style_context_add_class (style, "event");
+        context = gtk_widget_get_style_context (GTK_WIDGET (row));
+        gtk_style_context_add_class (context, "event");
         g_object_set_data_full (G_OBJECT (row), "cursor",
                                 g_strdup (result.cursor), g_free);
         grid = gtk_grid_new ();
@@ -605,6 +612,8 @@ insert_journal_query_cmdline (GlJournal *journal,
         gtk_grid_attach (GTK_GRID (grid), label, 0, 0, 1, 1);
 
         label = gtk_label_new (result.message);
+        context = gtk_widget_get_style_context (GTK_WIDGET (label));
+        gtk_style_context_add_class (context, "event-monospace");
         gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
         gtk_label_set_ellipsize (GTK_LABEL (label), PANGO_ELLIPSIZE_END);
         gtk_grid_attach (GTK_GRID (grid), label, 0, 1, 1, 1);
