@@ -1,7 +1,7 @@
 <interface domain="gnome-logs">
     <template class="GlWindow" parent="GtkApplicationWindow">
-        <property name="default-width">640</property>
-        <property name="default-height">480</property>
+        <property name="height-request">480</property>
+        <property name="width-request">640</property>
         <signal name="key-press-event" handler="on_gl_window_key_press_event"/>
         <child type="titlebar">
             <object class="GlEventToolbar" id="event_toolbar">
@@ -41,6 +41,7 @@
                                 <child>
                                     <object class="GtkSearchEntry" id="search_entry">
                                         <property name="visible">True</property>
+                                        <property name="width-request">400</property>
                                         <signal name="search-changed" handler="on_gl_window_search_entry_changed" />
                                     </object>
                                 </child>
