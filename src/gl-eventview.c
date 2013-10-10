@@ -559,6 +559,7 @@ insert_journal_query_simple (GlJournal *journal,
         GtkStyleContext *context;
         GtkWidget *grid;
         GtkWidget *label;
+        gchar *time;
         gboolean rtl;
         GtkWidget *image;
         GlJournalResult result = *(GlJournalResult *)(l->data);
@@ -578,15 +579,24 @@ insert_journal_query_simple (GlJournal *journal,
         gtk_widget_set_hexpand (label, TRUE);
         gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
         gtk_label_set_ellipsize (GTK_LABEL (label), PANGO_ELLIPSIZE_END);
+        gtk_grid_attach (GTK_GRID (grid), label, 0, 1, 1, 1);
+
+        time = gl_util_timestamp_to_display (result.timestamp);
+        label = gtk_label_new (time);
+        context = gtk_widget_get_style_context (GTK_WIDGET (label));
+        gtk_style_context_add_class (context, "dim-label");
+        gtk_misc_set_alignment (GTK_MISC (label), 1.0, 0.5);
         gtk_grid_attach (GTK_GRID (grid), label, 0, 0, 1, 1);
 
         rtl = (gtk_widget_get_default_direction () == GTK_TEXT_DIR_RTL);
         image = gtk_image_new_from_icon_name (rtl ? "go-next-rtl-symbolic"
                                                   : "go-next-symbolic",
                                               GTK_ICON_SIZE_MENU);
-        gtk_grid_attach (GTK_GRID (grid), image, 1, 0, 1, 1);
+        gtk_grid_attach (GTK_GRID (grid), image, 1, 0, 1, 2);
 
         gtk_container_add (GTK_CONTAINER (listbox), row);
+
+        g_free (time);
     }
 
     gl_journal_results_free (journal, results);
