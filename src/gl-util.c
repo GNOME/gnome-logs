@@ -30,4 +30,29 @@ gl_util_on_css_provider_parsing_error (GtkCssProvider *provider,
                 error->message);
 }
 
+gchar *
+gl_util_timestamp_to_display (guint64 microsecs)
+{
+    GDateTime *datetime;
+    gchar *time = NULL;
 
+    datetime = g_date_time_new_from_unix_utc (microsecs / G_TIME_SPAN_SECOND);
+
+    if (datetime == NULL)
+    {
+        g_warning ("Error converting timestamp to time value");
+        goto out;
+    }
+
+    /* TODO: Localize? */
+    time = g_date_time_format (datetime, "%F %T");
+    g_date_time_unref (datetime);
+
+    if (time == NULL)
+    {
+        g_warning ("Error converting datetime to string");
+    }
+
+out:
+    return time;
+}

@@ -26,6 +26,7 @@
 #include "gl-enums.h"
 #include "gl-eventtoolbar.h"
 #include "gl-journal.h"
+#include "gl-util.h"
 
 enum
 {
@@ -101,7 +102,6 @@ on_listbox_row_activated (GtkListBox *listbox,
     GlEventViewPrivate *priv;
     gchar *cursor;
     GlJournalResult *result;
-    GDateTime *datetime;
     gchar *time;
     GtkWidget *grid;
     GtkWidget *label;
@@ -125,26 +125,8 @@ on_listbox_row_activated (GtkListBox *listbox,
     gtk_style_context_add_class (context, "detail-comm");
     gtk_grid_attach (GTK_GRID (grid), label, 0, 0, 1, 1);
 
-    datetime = g_date_time_new_from_unix_utc (result->timestamp
-                                              / G_TIME_SPAN_SECOND);
-
-    if (datetime == NULL)
-    {
-        g_warning ("Error converting timestamp to time value");
-        goto out;
-    }
-
-    /* TODO: Localize? */
-    time = g_date_time_format (datetime, "%F %T");
-    g_date_time_unref (datetime);
-
-    if (time == NULL)
-    {
-        g_warning ("Error converting datetime to string");
-        goto out;
-    }
-
-    label = gtk_label_new (time);
+    time = gl_util_timestamp_to_display (result->timestamp);
+    label = gtk_label_new (gl_util_timestamp_to_display (result->timestamp));
     gtk_widget_set_hexpand (label, TRUE);
     gtk_misc_set_alignment (GTK_MISC (label), 1.0, 0.5);
     gtk_label_set_selectable (GTK_LABEL (label), TRUE);
@@ -174,7 +156,6 @@ on_listbox_row_activated (GtkListBox *listbox,
     gtk_stack_add_named (stack, grid, "detail");
     gl_event_view_set_mode (view, GL_EVENT_VIEW_MODE_DETAIL);
 
-out:
     gl_journal_result_free (priv->journal, result);
     return;
 }
