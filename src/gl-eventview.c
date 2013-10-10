@@ -231,6 +231,8 @@ on_notify_filter (GlEventView *view,
     scrolled = gtk_stack_get_visible_child (stack);
     viewport = gtk_bin_get_child (GTK_BIN (scrolled));
     priv->active_listbox = GTK_LIST_BOX (gtk_bin_get_child (GTK_BIN (viewport)));
+
+    gl_event_view_set_mode (view, GL_EVENT_VIEW_MODE_LIST);
 }
 
 static void
@@ -249,12 +251,37 @@ on_notify_mode (GlEventView *view,
     {
         case GL_EVENT_VIEW_MODE_LIST:
             {
-                GtkWidget *visible_child;
+                GtkContainer *container;
+                GList *children;
+                GList *l;
                 GtkWidget *viewport;
                 GtkWidget *scrolled_window;
 
-                visible_child = gtk_stack_get_visible_child (stack);
-                gtk_container_remove (GTK_CONTAINER (stack), visible_child);
+                container = GTK_CONTAINER (stack);
+                children = gtk_container_get_children (container);
+
+                for (l = children; l != NULL; l = g_list_next (l))
+                {
+                    GtkWidget *child;
+                    gchar *name;
+
+                    child = (GtkWidget *)l->data;
+                    gtk_container_child_get (container, child, "name", &name,
+                                             NULL);
+
+                    if (g_strcmp0 (name, "detail") == 0)
+                    {
+                        gtk_container_remove (container, child);
+
+                        g_free (name);
+                        break;
+                    }
+
+                    g_free (name);
+                }
+
+                g_list_free (children);
+
                 viewport = gtk_widget_get_parent (GTK_WIDGET (priv->active_listbox));
                 scrolled_window = gtk_widget_get_parent (viewport);
                 gtk_stack_set_visible_child (stack, scrolled_window);
@@ -286,7 +313,7 @@ on_notify_mode (GlEventView *view,
     }
     else
     {
-        g_error ("Widget not in toplevel window, not switching toolbar mode");
+        g_debug ("Widget not in toplevel window, not switching toolbar mode");
     }
 }
 
