@@ -24,6 +24,7 @@
 #include "gl-eventtoolbar.h"
 #include "gl-eventview.h"
 #include "gl-enums.h"
+#include "gl-util.h"
 
 typedef struct
 {
@@ -239,18 +240,6 @@ on_gl_window_search_bar_notify_search_mode_enabled (GtkSearchBar *search_bar,
                            g_variant_new_boolean (gtk_search_bar_get_search_mode (search_bar)));
 }
 
-static void
-on_provider_parsing_error (GtkCssProvider *provider,
-                           GtkCssSection *section,
-                           GError *error,
-                           gpointer user_data)
-{
-    g_critical ("Error while parsing CSS style (line: %u, character: %u): %s",
-                gtk_css_section_get_end_line (section) + 1,
-                gtk_css_section_get_end_position (section) + 1,
-                error->message);
-}
-
 static GActionEntry actions[] = {
     { "category", on_action_radio, "s", "'important'", on_category },
     { "view-mode", on_action_radio, "s", "'list'", on_view_mode },
@@ -299,7 +288,8 @@ gl_window_init (GlWindow *window)
     file = g_file_new_for_uri ("resource:///org/gnome/Logs/gl-style.css");
     provider = gtk_css_provider_new ();
     g_signal_connect (provider, "parsing-error",
-                      G_CALLBACK (on_provider_parsing_error), NULL);
+                      G_CALLBACK (gl_util_on_css_provider_parsing_error),
+                      NULL);
     gtk_css_provider_load_from_file (provider, file, &err);
 
     if (err != NULL)
