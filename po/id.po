@@ -1,0 +1,109 @@
+# Indonesian translation for gnome-logs.
+# Copyright (C) 2013 gnome-logs's COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-logs package.
+# Andika Triwidada <andika@gmail.com>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-logs master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"logs&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2013-10-09 10:14+0000\n"
+"PO-Revision-Date: 2013-10-14 08:24+0700\n"
+"Last-Translator: Andika Triwidada <andika@gmail.com>\n"
+"Language-Team: Indonesian <gnome@i15n.org>\n"
+"Language: id\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.7\n"
+
+#: ../data/appmenu.ui.h:1
+msgid "_New Window"
+msgstr "Je_ndela Baru"
+
+#: ../data/appmenu.ui.h:2
+msgid "_About"
+msgstr "Tent_ang"
+
+#: ../data/appmenu.ui.h:3
+msgid "_Quit"
+msgstr "_Keluar"
+
+#: ../data/gl-categorylist.ui.h:1
+msgid "Important"
+msgstr "Penting"
+
+#: ../data/gl-categorylist.ui.h:2
+msgid "Alerts"
+msgstr "Tanda bahaya"
+
+#: ../data/gl-categorylist.ui.h:3
+msgid "Starred"
+msgstr "Dibintangi"
+
+#: ../data/gl-categorylist.ui.h:4
+msgid "All"
+msgstr "Semua"
+
+#: ../data/gl-categorylist.ui.h:5
+msgid "Applications"
+msgstr "Aplikasi"
+
+#: ../data/gl-categorylist.ui.h:6
+msgid "System"
+msgstr "Sistem"
+
+#: ../data/gl-categorylist.ui.h:7
+msgid "Security"
+msgstr "Keamanan"
+
+#: ../data/gl-categorylist.ui.h:8
+msgid "Hardware"
+msgstr "Perangkat Keras"
+
+#: ../data/gl-categorylist.ui.h:9
+msgid "Updates"
+msgstr "Pemutakhiran"
+
+#: ../data/gl-categorylist.ui.h:10
+msgid "Usage"
+msgstr "Cara Pakai"
+
+#: ../data/gl-eventtoolbar.ui.h:1
+msgid "Logs"
+msgstr "Log"
+
+#: ../data/gl-eventtoolbar.ui.h:2
+msgid "Go back to the event view"
+msgstr "Kembali ke tilikan kejadian"
+
+#: ../data/gl-eventtoolbar.ui.h:3
+msgid "Search the displayed logs"
+msgstr "Cari log yang ditampilkan"
+
+#: ../data/gnome-logs.desktop.in.h:1
+msgid "Log Viewer"
+msgstr "Penilik Log"
+
+#: ../data/gnome-logs.desktop.in.h:2
+msgid "View detailed event logs for the system"
+msgstr "Tilik log kejadian terinci bagi sistem"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: ../data/gnome-logs.desktop.in.h:4
+msgid "log;journal;debug;error;"
+msgstr "log;jurnal;awakutu;galat;"
+
+#: ../src/gl-application.c:61
+msgid "translator-credits"
+msgstr "Andika Triwidada <andika@gmail.com>, 2013"
+
+#: ../src/gl-application.c:62
+msgid "View and search logs"
+msgstr "Tilik dan cari log"
+
+#: ../src/gl-eventview.c:672 ../src/gl-eventview.c:682
+#: ../src/gl-eventview.c:801 ../src/gl-eventview.c:811
+msgid "Not implemented"
+msgstr "Tak diimplementasi"
