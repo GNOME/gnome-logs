@@ -174,6 +174,7 @@ _gl_journal_query_result (GlJournal *self)
     GlJournalResult *result;
     gint ret;
     sd_journal *journal;
+    GError *error = NULL;
     gchar *priority;
 
     priv = gl_journal_get_instance_private (self);
@@ -230,14 +231,49 @@ _gl_journal_query_result (GlJournal *self)
         goto out;
     }
 
-    /* FIXME: Pass in a GError and check the result. */
-    result->comm = gl_journal_get_data (self, "_COMM", NULL);
-    result->kernel_device = gl_journal_get_data (self, "_KERNEL_DEVICE", NULL);
-    result->audit_session = gl_journal_get_data (self, "_AUDIT_SESSION", NULL);
     result->message = gl_journal_get_data (self, "MESSAGE", NULL);
+
+    if (error != NULL)
+    {
+        g_warning ("%s", error->message);
+        g_clear_error (&error);
+        free (result->cursor);
+        free (result->catalog);
+        goto out;
+    }
+
     priority = gl_journal_get_data (self, "PRIORITY", NULL);
+
+    if (error != NULL)
+    {
+        g_warning ("%s", error->message);
+        g_clear_error (&error);
+        free (result->cursor);
+        free (result->catalog);
+        g_free (result->message);
+        goto out;
+    }
+
     result->priority = atoi (priority);
     g_free (priority);
+
+    result->comm = gl_journal_get_data (self, "_COMM", &error);
+
+    if (error != NULL)
+    {
+        g_debug ("%s", error->message);
+        g_clear_error (&error);
+    }
+
+    result->kernel_device = gl_journal_get_data (self, "_KERNEL_DEVICE", NULL);
+
+    if (error != NULL)
+    {
+        g_debug ("%s", error->message);
+        g_clear_error (&error);
+    }
+
+    result->audit_session = gl_journal_get_data (self, "_AUDIT_SESSION", NULL);
 
     return result;
 
