@@ -435,6 +435,7 @@ insert_journal_query_devices (GlJournal *journal,
         label = gtk_label_new (time);
         context = gtk_widget_get_style_context (GTK_WIDGET (label));
         gtk_style_context_add_class (context, "dim-label");
+        gtk_style_context_add_class (context, "event-time");
         gtk_misc_set_alignment (GTK_MISC (label), 1.0, 0.5);
         gtk_grid_attach (GTK_GRID (grid), label, 0, 0, 1, 1);
 
@@ -518,6 +519,7 @@ insert_journal_query_security (GlJournal *journal,
         label = gtk_label_new (time);
         context = gtk_widget_get_style_context (GTK_WIDGET (label));
         gtk_style_context_add_class (context, "dim-label");
+        gtk_style_context_add_class (context, "event-time");
         gtk_misc_set_alignment (GTK_MISC (label), 1.0, 0.5);
         gtk_grid_attach (GTK_GRID (grid), label, 1, 0, 1, 1);
 
@@ -585,6 +587,7 @@ insert_journal_query_simple (GlJournal *journal,
         label = gtk_label_new (time);
         context = gtk_widget_get_style_context (GTK_WIDGET (label));
         gtk_style_context_add_class (context, "dim-label");
+        gtk_style_context_add_class (context, "event-time");
         gtk_misc_set_alignment (GTK_MISC (label), 1.0, 0.5);
         gtk_grid_attach (GTK_GRID (grid), label, 0, 0, 1, 1);
 
@@ -661,6 +664,7 @@ insert_journal_query_cmdline (GlJournal *journal,
         label = gtk_label_new (time);
         context = gtk_widget_get_style_context (GTK_WIDGET (label));
         gtk_style_context_add_class (context, "dim-label");
+        gtk_style_context_add_class (context, "event-time");
         gtk_misc_set_alignment (GTK_MISC (label), 1.0, 0.5);
         gtk_grid_attach (GTK_GRID (grid), label, 1, 0, 1, 1);
 
