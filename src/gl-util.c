@@ -34,6 +34,7 @@ gchar *
 gl_util_timestamp_to_display (guint64 microsecs)
 {
     GDateTime *datetime;
+    GDateTime *local;
     gchar *time = NULL;
 
     datetime = g_date_time_new_from_unix_utc (microsecs / G_TIME_SPAN_SECOND);
@@ -44,9 +45,11 @@ gl_util_timestamp_to_display (guint64 microsecs)
         goto out;
     }
 
-    /* TODO: Localize? */
-    time = g_date_time_format (datetime, "%F %T");
+    local = g_date_time_to_local (datetime);
+    time = g_date_time_format (local, "%c");
+
     g_date_time_unref (datetime);
+    g_date_time_unref (local);
 
     if (time == NULL)
     {
