@@ -31,6 +31,12 @@ typedef struct
 
 G_DEFINE_TYPE_WITH_PRIVATE (GlJournal, gl_journal, G_TYPE_OBJECT)
 
+GQuark
+gl_journal_error_quark (void)
+{
+    return g_quark_from_static_string ("gl-journal-error-quark");
+}
+
 static gboolean
 on_journal_changed (gint fd,
                     GIOCondition condition,
@@ -153,10 +159,25 @@ gl_journal_get_data (GlJournal *self,
 
     if (ret < 0)
     {
-        /* TODO: Use custom GError enumeration. */
-        g_set_error (error, G_IO_ERROR, g_io_error_from_errno (-ret),
+        gint code;
+
+        switch (-ret)
+        {
+            case ENOENT:
+                code = GL_JOURNAL_ERROR_NO_FIELD;
+                break;
+            case EADDRNOTAVAIL:
+                code = GL_JOURNAL_ERROR_INVALID_POINTER;
+                break;
+            default:
+                code = GL_JOURNAL_ERROR_FAILED;
+                break;
+        }
+
+        g_set_error (error, GL_JOURNAL_ERROR, code,
                      "Unable to get field ‘%s’ from systemd journal: %s",
                      field, g_strerror (-ret));
+
         return NULL;
     }
 

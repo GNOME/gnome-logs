@@ -24,6 +24,25 @@
 
 G_BEGIN_DECLS
 
+/*
+ * GlJournalError:
+ * @GL_JOURNAL_ERROR_NO_FIELD: the requested field was not found in the current
+ * journal entry
+ * @GL_JOURNAL_ERROR_INVALID_POINTER: the pointer to the current journal entry
+ * is not valid
+ * @GL_JOURNAL_ERROR_FAILED: unknown failure
+ */
+typedef enum
+{
+    GL_JOURNAL_ERROR_NO_FIELD,
+    GL_JOURNAL_ERROR_INVALID_POINTER,
+    GL_JOURNAL_ERROR_FAILED
+} GlJournalError;
+
+#define GL_JOURNAL_ERROR gl_journal_error_quark ()
+
+GQuark gl_journal_error_quark (void);
+
 typedef struct
 {
     gsize n_results;
