@@ -34,10 +34,10 @@ typedef struct
 {
     guint64 timestamp;
     gchar *cursor;
-    const gchar *message;
-    const gchar *comm;
-    const gchar *kernel_device;
-    const gchar *audit_session;
+    gchar *message;
+    gchar *comm;
+    gchar *kernel_device;
+    gchar *audit_session;
     gchar *catalog;
     guint priority;
 } GlJournalResult;

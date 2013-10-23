@@ -19,6 +19,7 @@
 #include "gl-journal.h"
 
 #include <glib-unix.h>
+#include <gio/gio.h>
 #include <stdlib.h>
 
 typedef struct
@@ -133,6 +134,39 @@ gl_journal_init (GlJournal *self)
 
 }
 
+static gchar *
+gl_journal_get_data (GlJournal *self,
+                     const gchar *field,
+                     GError **error)
+{
+    GlJournalPrivate *priv;
+    gint ret;
+    gconstpointer data;
+    gsize length;
+    gsize prefix_len;
+
+    g_return_val_if_fail (error == NULL || *error == NULL, NULL);
+    g_return_val_if_fail (field != NULL, NULL);
+
+    priv = gl_journal_get_instance_private (self);
+    ret = sd_journal_get_data (priv->journal, field, &data, &length);
+
+    if (ret < 0)
+    {
+        /* TODO: Use custom GError enumeration. */
+        g_set_error (error, G_IO_ERROR, g_io_error_from_errno (-ret),
+                     "Unable to get field ‘%s’ from systemd journal: %s",
+                     field, g_strerror (-ret));
+        return NULL;
+    }
+
+    /* Field data proper starts after the first '='. */
+    prefix_len = strchr (data, '=') - (const gchar *)data + 1;
+
+    /* Trim the prefix off the beginning of the field. */
+    return g_strndup ((const gchar *)data + prefix_len, length - prefix_len);
+}
+
 static GlJournalResult *
 _gl_journal_query_result (GlJournal *self)
 {
@@ -140,12 +174,7 @@ _gl_journal_query_result (GlJournal *self)
     GlJournalResult *result;
     gint ret;
     sd_journal *journal;
-    const gchar *message;
-    const gchar *comm;
-    const gchar *kernel_device;
-    const gchar *audit_session;
-    const gchar *priority;
-    gsize length;
+    gchar *priority;
 
     priv = gl_journal_get_instance_private (self);
     journal = priv->journal;
@@ -201,76 +230,14 @@ _gl_journal_query_result (GlJournal *self)
         goto out;
     }
 
-    ret = sd_journal_get_data (journal, "_COMM", (const void **)&comm,
-                               &length);
-
-    if (ret < 0)
-    {
-        g_debug ("Unable to get commandline from systemd journal: %s",
-                 g_strerror (-ret));
-        comm = "_COMM=";
-    }
-
-    result->comm = strchr (comm, '=') + 1;
-
-    ret = sd_journal_get_data (journal, "_KERNEL_DEVICE",
-                               (const void **)&kernel_device, &length);
-
-    if (ret < 0)
-    {
-        g_debug ("Unable to get kernel device from systemd journal: %s",
-                 g_strerror (-ret));
-        kernel_device = "_KERNEL_DEVICE=";
-    }
-
-    result->kernel_device = strchr (kernel_device, '=') + 1;
-
-    ret = sd_journal_get_data (journal, "_AUDIT_SESSION",
-                               (const void **)&audit_session, &length);
-
-    if (ret < 0)
-    {
-        g_debug ("Unable to get audit session from systemd journal: %s",
-                 g_strerror (-ret));
-        audit_session = "_AUDIT_SESSION=";
-    }
-
-    result->audit_session = strchr (audit_session, '=') + 1;
-
-    ret = sd_journal_get_data (journal, "MESSAGE", (const void **)&message,
-                               &length);
-
-    if (ret < 0)
-    {
-        g_warning ("Error getting message from systemd journal: %s",
-                   g_strerror (-ret));
-        free (result->cursor);
-        free (result->catalog);
-        goto out;
-    }
-
-    result->message = strchr (message, '=') + 1;
-
-    ret = sd_journal_get_data (journal, "PRIORITY",
-                               (const void **)&priority, &length);
-
-    if (ret == -ENOENT)
-    {
-        g_warning ("No priority was set for this message");
-        free (result->cursor);
-        free (result->catalog);
-        goto out;
-    }
-    else if (ret < 0)
-    {
-        g_warning ("Error getting priority from systemd journal: %s",
-                   g_strerror (-ret));
-        free (result->cursor);
-        free (result->catalog);
-        goto out;
-    }
-
-    result->priority = atoi (strchr (priority, '=') + 1);
+    /* FIXME: Pass in a GError and check the result. */
+    result->comm = gl_journal_get_data (self, "_COMM", NULL);
+    result->kernel_device = gl_journal_get_data (self, "_KERNEL_DEVICE", NULL);
+    result->audit_session = gl_journal_get_data (self, "_AUDIT_SESSION", NULL);
+    result->message = gl_journal_get_data (self, "MESSAGE", NULL);
+    priority = gl_journal_get_data (self, "PRIORITY", NULL);
+    result->priority = atoi (priority);
+    g_free (priority);
 
     return result;
 
@@ -405,6 +372,10 @@ _gl_journal_result_free (GlJournalResult *result,
 {
     free (result->cursor);
     free (result->catalog);
+    g_free (result->message);
+    g_free (result->comm);
+    g_free (result->kernel_device);
+    g_free (result->audit_session);
     g_slice_free (GlJournalResult, result);
 }
 

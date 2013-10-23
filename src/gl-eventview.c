@@ -409,7 +409,7 @@ insert_journal_query_devices (GlJournal *journal,
         GlJournalResult result = *(GlJournalResult *)(l->data);
 
         /* Skip if the log entry does not refer to a hardware device. */
-        if (*result.kernel_device == '\0')
+        if (result.kernel_device == NULL)
         {
             continue;
         }
@@ -485,7 +485,7 @@ insert_journal_query_security (GlJournal *journal,
 
         /* Skip if the journal entry does not have an associated audit
          * session. */
-        if (*result.audit_session == '\0')
+        if (result.audit_session == NULL)
         {
             continue;
         }
@@ -499,7 +499,8 @@ insert_journal_query_security (GlJournal *journal,
         gtk_grid_set_column_spacing (GTK_GRID (grid), 6);
         gtk_container_add (GTK_CONTAINER (row), grid);
 
-        markup = g_markup_printf_escaped ("<b>%s</b>", result.comm);
+        markup = g_markup_printf_escaped ("<b>%s</b>",
+                                          result.comm ? result.comm : "");
         label = gtk_label_new (NULL);
         gtk_widget_set_hexpand (label, TRUE);
         gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
@@ -644,7 +645,8 @@ insert_journal_query_cmdline (GlJournal *journal,
         gtk_grid_set_column_spacing (GTK_GRID (grid), 6);
         gtk_container_add (GTK_CONTAINER (row), grid);
 
-        markup = g_markup_printf_escaped ("<b>%s</b>", result.comm);
+        markup = g_markup_printf_escaped ("<b>%s</b>",
+                                          result.comm ? result.comm : "");
         label = gtk_label_new (NULL);
         gtk_widget_set_hexpand (label, TRUE);
         gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
