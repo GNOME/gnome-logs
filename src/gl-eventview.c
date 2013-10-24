@@ -77,10 +77,13 @@ listbox_search_filter_func (GtkListBoxRow *row,
 
         result = gl_journal_query_cursor (priv->journal, cursor);
 
-        if (strstr (result->comm, priv->search_text)
-            || strstr (result->message, priv->search_text)
-            || strstr (result->kernel_device, priv->search_text)
-            || strstr (result->audit_session, priv->search_text))
+        if ((result->comm ? strstr (result->comm, priv->search_text) : NULL)
+            || (result->message ? strstr (result->message, priv->search_text)
+                                : NULL)
+            || (result->kernel_device ? strstr (result->kernel_device,
+                                                priv->search_text) : NULL)
+            || (result->audit_session ? strstr (result->audit_session,
+                                                priv->search_text) : NULL))
         {
             gl_journal_result_free (priv->journal, result);
 
