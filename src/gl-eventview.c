@@ -103,6 +103,7 @@ on_listbox_row_activated (GtkListBox *listbox,
     gchar *cursor;
     GlJournalResult *result;
     gchar *time;
+    gboolean rtl;
     GtkWidget *grid;
     GtkWidget *label;
     GtkStyleContext *context;
@@ -117,25 +118,30 @@ on_listbox_row_activated (GtkListBox *listbox,
         return;
     }
 
+    rtl = gtk_widget_get_default_direction () == GTK_TEXT_DIR_RTL;
+
     result = gl_journal_query_cursor (priv->journal, cursor);
 
     grid = gtk_grid_new ();
     label = gtk_label_new (result->comm);
+    gtk_widget_set_direction (label, GTK_TEXT_DIR_LTR);
+    gtk_widget_set_hexpand (label, TRUE);
+    gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
     context = gtk_widget_get_style_context (label);
     gtk_style_context_add_class (context, "detail-comm");
-    gtk_grid_attach (GTK_GRID (grid), label, 0, 0, 1, 1);
+    gtk_grid_attach (GTK_GRID (grid), label, rtl ? 1 : 0, 0, 1, 1);
 
     time = gl_util_timestamp_to_display (result->timestamp);
     label = gtk_label_new (gl_util_timestamp_to_display (result->timestamp));
-    gtk_widget_set_hexpand (label, TRUE);
-    gtk_misc_set_alignment (GTK_MISC (label), 1.0, 0.5);
+    gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
     gtk_label_set_selectable (GTK_LABEL (label), TRUE);
     context = gtk_widget_get_style_context (label);
     gtk_style_context_add_class (context, "detail-time");
-    gtk_grid_attach (GTK_GRID (grid), label, 1, 0, 1, 1);
+    gtk_grid_attach (GTK_GRID (grid), label, rtl ? 0 : 1, 0, 1, 1);
     g_free (time);
 
     label = gtk_label_new (result->message);
+    gtk_widget_set_direction (label, GTK_TEXT_DIR_LTR);
     gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
     gtk_label_set_line_wrap (GTK_LABEL (label), TRUE);
     gtk_label_set_selectable (GTK_LABEL (label), TRUE);
@@ -145,6 +151,7 @@ on_listbox_row_activated (GtkListBox *listbox,
     gtk_grid_attach (GTK_GRID (grid), label, 0, 1, 2, 1);
 
     label = gtk_label_new (result->catalog);
+    gtk_widget_set_direction (label, GTK_TEXT_DIR_LTR);
     gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
     gtk_label_set_selectable (GTK_LABEL (label), TRUE);
     context = gtk_widget_get_style_context (label);
@@ -414,6 +421,8 @@ insert_journal_query_devices (GlJournal *journal,
             continue;
         }
 
+        rtl = (gtk_widget_get_default_direction () == GTK_TEXT_DIR_RTL);
+
         row = gtk_list_box_row_new ();
         context = gtk_widget_get_style_context (GTK_WIDGET (row));
         gtk_style_context_add_class (context, "event");
@@ -424,6 +433,7 @@ insert_journal_query_devices (GlJournal *journal,
         gtk_container_add (GTK_CONTAINER (row), grid);
 
         label = gtk_label_new (result.message);
+        gtk_widget_set_direction (label, GTK_TEXT_DIR_LTR);
         context = gtk_widget_get_style_context (GTK_WIDGET (label));
         gtk_style_context_add_class (context, "event-monospace");
         gtk_widget_set_hexpand (label, TRUE);
@@ -437,9 +447,8 @@ insert_journal_query_devices (GlJournal *journal,
         gtk_style_context_add_class (context, "dim-label");
         gtk_style_context_add_class (context, "event-time");
         gtk_misc_set_alignment (GTK_MISC (label), 1.0, 0.5);
-        gtk_grid_attach (GTK_GRID (grid), label, 0, 0, 1, 1);
+        gtk_grid_attach (GTK_GRID (grid), label, rtl ? 1 : 0, 0, 1, 1);
 
-        rtl = (gtk_widget_get_default_direction () == GTK_TEXT_DIR_RTL);
         image = gtk_image_new_from_icon_name (rtl ? "go-next-rtl-symbolic"
                                                   : "go-next-symbolic",
                                               GTK_ICON_SIZE_MENU);
@@ -490,7 +499,10 @@ insert_journal_query_security (GlJournal *journal,
             continue;
         }
 
+        rtl = (gtk_widget_get_default_direction () == GTK_TEXT_DIR_RTL);
+
         row = gtk_list_box_row_new ();
+        gtk_widget_set_direction (row, GTK_TEXT_DIR_LTR);
         context = gtk_widget_get_style_context (GTK_WIDGET (row));
         gtk_style_context_add_class (context, "event");
         g_object_set_data_full (G_OBJECT (row), "cursor",
@@ -507,9 +519,10 @@ insert_journal_query_security (GlJournal *journal,
         gtk_label_set_ellipsize (GTK_LABEL (label), PANGO_ELLIPSIZE_END);
         gtk_label_set_markup (GTK_LABEL (label), markup);
         g_free (markup);
-        gtk_grid_attach (GTK_GRID (grid), label, 0, 0, 1, 1);
+        gtk_grid_attach (GTK_GRID (grid), label, rtl ? 1 : 0, 0, 1, 1);
 
         label = gtk_label_new (result.message);
+        gtk_widget_set_direction (label, GTK_TEXT_DIR_LTR);
         context = gtk_widget_get_style_context (GTK_WIDGET (label));
         gtk_style_context_add_class (context, "event-monospace");
         gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
@@ -522,9 +535,8 @@ insert_journal_query_security (GlJournal *journal,
         gtk_style_context_add_class (context, "dim-label");
         gtk_style_context_add_class (context, "event-time");
         gtk_misc_set_alignment (GTK_MISC (label), 1.0, 0.5);
-        gtk_grid_attach (GTK_GRID (grid), label, 1, 0, 1, 1);
+        gtk_grid_attach (GTK_GRID (grid), label, rtl ? 0 : 1, 0, 1, 1);
 
-        rtl = (gtk_widget_get_default_direction () == GTK_TEXT_DIR_RTL);
         image = gtk_image_new_from_icon_name (rtl ? "go-next-rtl-symbolic"
                                                   : "go-next-symbolic",
                                               GTK_ICON_SIZE_MENU);
@@ -567,6 +579,8 @@ insert_journal_query_simple (GlJournal *journal,
         GtkWidget *image;
         GlJournalResult result = *(GlJournalResult *)(l->data);
 
+        rtl = (gtk_widget_get_default_direction () == GTK_TEXT_DIR_RTL);
+
         row = gtk_list_box_row_new ();
         context = gtk_widget_get_style_context (GTK_WIDGET (row));
         gtk_style_context_add_class (context, "event");
@@ -577,6 +591,7 @@ insert_journal_query_simple (GlJournal *journal,
         gtk_container_add (GTK_CONTAINER (row), grid);
 
         label = gtk_label_new (result.message);
+        gtk_widget_set_direction (label, GTK_TEXT_DIR_LTR);
         context = gtk_widget_get_style_context (GTK_WIDGET (label));
         gtk_style_context_add_class (context, "event-monospace");
         gtk_widget_set_hexpand (label, TRUE);
@@ -590,9 +605,8 @@ insert_journal_query_simple (GlJournal *journal,
         gtk_style_context_add_class (context, "dim-label");
         gtk_style_context_add_class (context, "event-time");
         gtk_misc_set_alignment (GTK_MISC (label), 1.0, 0.5);
-        gtk_grid_attach (GTK_GRID (grid), label, 0, 0, 1, 1);
+        gtk_grid_attach (GTK_GRID (grid), label, rtl ? 1 : 0, 0, 1, 1);
 
-        rtl = (gtk_widget_get_default_direction () == GTK_TEXT_DIR_RTL);
         image = gtk_image_new_from_icon_name (rtl ? "go-next-rtl-symbolic"
                                                   : "go-next-symbolic",
                                               GTK_ICON_SIZE_MENU);
@@ -636,6 +650,8 @@ insert_journal_query_cmdline (GlJournal *journal,
         GtkWidget *image;
         GlJournalResult result = *(GlJournalResult *)(l->data);
 
+        rtl = (gtk_widget_get_default_direction () == GTK_TEXT_DIR_RTL);
+
         row = gtk_list_box_row_new ();
         context = gtk_widget_get_style_context (GTK_WIDGET (row));
         gtk_style_context_add_class (context, "event");
@@ -648,14 +664,16 @@ insert_journal_query_cmdline (GlJournal *journal,
         markup = g_markup_printf_escaped ("<b>%s</b>",
                                           result.comm ? result.comm : "");
         label = gtk_label_new (NULL);
+        gtk_widget_set_direction (label, GTK_TEXT_DIR_LTR);
         gtk_widget_set_hexpand (label, TRUE);
         gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
         gtk_label_set_ellipsize (GTK_LABEL (label), PANGO_ELLIPSIZE_END);
         gtk_label_set_markup (GTK_LABEL (label), markup);
         g_free (markup);
-        gtk_grid_attach (GTK_GRID (grid), label, 0, 0, 1, 1);
+        gtk_grid_attach (GTK_GRID (grid), label, rtl ? 1 : 0, 0, 1, 1);
 
         label = gtk_label_new (result.message);
+        gtk_widget_set_direction (label, GTK_TEXT_DIR_LTR);
         context = gtk_widget_get_style_context (GTK_WIDGET (label));
         gtk_style_context_add_class (context, "event-monospace");
         gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
@@ -668,9 +686,8 @@ insert_journal_query_cmdline (GlJournal *journal,
         gtk_style_context_add_class (context, "dim-label");
         gtk_style_context_add_class (context, "event-time");
         gtk_misc_set_alignment (GTK_MISC (label), 1.0, 0.5);
-        gtk_grid_attach (GTK_GRID (grid), label, 1, 0, 1, 1);
+        gtk_grid_attach (GTK_GRID (grid), label, rtl ? 0 : 1, 0, 1, 1);
 
-        rtl = (gtk_widget_get_default_direction () == GTK_TEXT_DIR_RTL);
         image = gtk_image_new_from_icon_name (rtl ? "go-next-rtl-symbolic"
                                                   : "go-next-symbolic",
                                               GTK_ICON_SIZE_MENU);
