@@ -705,6 +705,38 @@ insert_journal_query_cmdline (GlJournal *journal,
 }
 
 static GtkWidget *
+gl_event_view_create_empty (G_GNUC_UNUSED GlEventView *view)
+{
+    GtkWidget *box;
+    GtkStyleContext *context;
+    GtkWidget *image;
+    GtkWidget *label;
+    gchar *markup;
+
+    box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 12);
+    gtk_widget_set_halign (box, GTK_ALIGN_CENTER);
+    gtk_widget_set_valign (box, GTK_ALIGN_CENTER);
+    context = gtk_widget_get_style_context (box);
+    gtk_style_context_add_class (context, "dim-label");
+
+    image = gtk_image_new_from_icon_name ("action-unavailable-symbolic", 0);
+    gtk_image_set_pixel_size (GTK_IMAGE (image), 128);
+    gtk_container_add (GTK_CONTAINER (box), image);
+
+    label = gtk_label_new (NULL);
+    /* Translators: Shown when there are no (zero) results in the current
+     * view. */
+    markup = g_markup_printf_escaped ("<big>%s</big>", _("No results"));
+    gtk_label_set_markup (GTK_LABEL (label), markup);
+    gtk_container_add (GTK_CONTAINER (box), label);
+    g_free (markup);
+
+    gtk_widget_show_all (box);
+
+    return box;
+}
+
+static GtkWidget *
 gl_event_view_list_box_new (GlEventView *view)
 {
     GtkWidget *listbox;
@@ -714,6 +746,8 @@ gl_event_view_list_box_new (GlEventView *view)
     gtk_list_box_set_filter_func (GTK_LIST_BOX (listbox),
                                   (GtkListBoxFilterFunc)listbox_search_filter_func,
                                   view, NULL);
+    gtk_list_box_set_placeholder (GTK_LIST_BOX (listbox),
+                                  gl_event_view_create_empty (view));
     g_signal_connect (listbox, "row-activated",
                       G_CALLBACK (on_listbox_row_activated), GTK_STACK (view));
 
