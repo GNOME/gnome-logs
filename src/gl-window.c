@@ -182,6 +182,7 @@ on_search (GSimpleAction *action,
     if (state)
     {
         gtk_widget_grab_focus (priv->search_entry);
+        gtk_editable_set_position (GTK_EDITABLE (priv->search_entry), -1);
     }
     else
     {
