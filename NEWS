@@ -1,3 +1,20 @@
+GNOME Logs 3.11.1
+=================
+
+* support case-insensitive search
+* show timestamps against messages in the event view
+* use a monospace font for log messages
+* use a single header bar
+* switch the default category to "important" and match the mockups
+* refactor code to read messages from the journal
+* .desktop file fix from Colin Walters
+* show the message catalog entry for a message in the details view
+* RTL and style fixes from Yosef Or Boczko
+* category switching fix from Matthias Clasen
+* several translations, including Indonesian, Spanish, Brazilian Portugese,
+  Czech, Slovenian, Polish and Serbian
+* many other fixes
+
 GNOME Logs 0.1
 ==============
 
