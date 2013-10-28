@@ -4,3 +4,4 @@
 data/gnome-logs.desktop.in
 src/gl-application.c
 src/gl-eventview.c
+src/gl-util.c

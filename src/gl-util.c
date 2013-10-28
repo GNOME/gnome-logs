@@ -18,6 +18,8 @@
 
 #include "gl-util.h"
 
+#include <glib/gi18n.h>
+
 void
 gl_util_on_css_provider_parsing_error (GtkCssProvider *provider,
                                        GtkCssSection *section,
@@ -53,12 +55,15 @@ gl_util_timestamp_to_display (guint64 microsecs,
 
     switch (format)
     {
-        /* TODO: Make translatable? */
         case GL_UTIL_CLOCK_FORMAT_12HR:
-            time = g_date_time_format (local, "%l:%M:%S %p");
+            /* Translators: timestamp format for events on the current day,
+             * showing the time (including seconds) in 12-hour format. */
+            time = g_date_time_format (local, _("%l:%M:%S %p"));
             break;
         case GL_UTIL_CLOCK_FORMAT_24HR:
-            time = g_date_time_format (local, "%T");
+            /* Translators: timestamp format for events on the current day,
+             * showing the time (including seconds) in 24-hour format. */
+            time = g_date_time_format (local, _("%T"));
             break;
         default:
             g_assert_not_reached ();
