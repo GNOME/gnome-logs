@@ -51,6 +51,47 @@ static GParamSpec *obj_properties[N_PROPERTIES] = { NULL, };
 static const guint N_RESULTS = 50;
 
 static gboolean
+gl_event_view_search_is_case_sensitive (GlEventView *view)
+{
+    GlEventViewPrivate *priv;
+    const gchar *search_text;
+
+    priv = gl_event_view_get_instance_private (view);
+
+    for (search_text = priv->search_text; search_text && *search_text;
+         search_text = g_utf8_next_char (search_text))
+    {
+        gunichar c;
+
+        c = g_utf8_get_char (search_text);
+
+        if (g_unichar_isupper (c))
+        {
+            return TRUE;
+        }
+    }
+
+    return FALSE;
+}
+
+static gboolean
+search_in_result (GlJournalResult *result,
+                 const gchar *search_text)
+{
+    if ((result->comm ? strstr (result->comm, search_text) : NULL)
+        || (result->message ? strstr (result->message, search_text) : NULL)
+        || (result->kernel_device ? strstr (result->kernel_device, search_text)
+                                  : NULL)
+        || (result->audit_session ? strstr (result->audit_session, search_text)
+                                  : NULL))
+    {
+        return TRUE;
+    }
+
+    return FALSE;
+}
+
+static gboolean
 listbox_search_filter_func (GtkListBoxRow *row,
                             GlEventView *view)
 {
@@ -77,17 +118,48 @@ listbox_search_filter_func (GtkListBoxRow *row,
 
         result = gl_journal_query_cursor (priv->journal, cursor);
 
-        if ((result->comm ? strstr (result->comm, priv->search_text) : NULL)
-            || (result->message ? strstr (result->message, priv->search_text)
-                                : NULL)
-            || (result->kernel_device ? strstr (result->kernel_device,
-                                                priv->search_text) : NULL)
-            || (result->audit_session ? strstr (result->audit_session,
-                                                priv->search_text) : NULL))
+        if (gl_event_view_search_is_case_sensitive (view))
         {
-            gl_journal_result_free (priv->journal, result);
+            if (search_in_result (result, priv->search_text))
+            {
+                gl_journal_result_free (priv->journal, result);
 
-            return TRUE;
+                return TRUE;
+            }
+        }
+        else
+        {
+            gchar *casefolded_text;
+            GlJournalResult casefolded;
+
+            /* Case-insensitive search. */
+            casefolded_text = g_utf8_casefold (priv->search_text, -1);
+
+            casefolded.comm = result->comm ? g_utf8_casefold (result->comm, -1)
+                                           : NULL;
+            casefolded.message = result->message ? g_utf8_casefold (result->message, -1)
+                                                 : NULL;
+            casefolded.kernel_device = result->kernel_device ? g_utf8_casefold (result->kernel_device, -1)
+                                                             : NULL;
+            casefolded.audit_session = result->audit_session ? g_utf8_casefold (result->audit_session, -1)
+                                                             : NULL;
+
+            if (search_in_result (&casefolded, casefolded_text))
+            {
+                g_free (casefolded.comm);
+                g_free (casefolded.message);
+                g_free (casefolded.kernel_device);
+                g_free (casefolded.audit_session);
+                g_free (casefolded_text);
+
+                return TRUE;
+            }
+
+            g_free (casefolded.comm);
+            g_free (casefolded.message);
+            g_free (casefolded.kernel_device);
+            g_free (casefolded.audit_session);
+            g_free (casefolded_text);
         }
 
         gl_journal_result_free (priv->journal, result);
