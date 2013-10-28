@@ -898,25 +898,55 @@ static void
 gl_event_view_add_listbox_applications (GlEventView *view)
 {
     GlEventViewPrivate *priv;
-    /* Allow all _TRANSPORT != kernel. */
-    const GlJournalQuery query = { N_RESULTS,
-                                   (gchar *[4]){ "_TRANSPORT=journal",
-                                                 "_TRANSPORT=stdout",
-                                                 "_TRANSPORT=syslog", NULL } };
+    GCredentials *creds;
+    uid_t uid;
     GtkWidget *listbox;
     GtkWidget *scrolled;
 
     priv = gl_event_view_get_instance_private (view);
 
     listbox = gl_event_view_list_box_new (view);
+    creds = g_credentials_new ();
+    uid = g_credentials_get_unix_user (creds, NULL);
 
-    insert_journal_query_cmdline (priv->journal, &query,
-                                  GTK_LIST_BOX (listbox));
+    /* Allow all _TRANSPORT != kernel. Attempt to filter by only processes
+     * owned by the same UID. */
+    if (uid != -1)
+    {
+        gchar *uid_str;
+
+        uid_str = g_strdup_printf ("_UID=%d", uid);
+
+        {
+            GlJournalQuery query = { N_RESULTS,
+                                     (gchar *[5]){ "_TRANSPORT=journal",
+                                                   "_TRANSPORT=stdout",
+                                                   "_TRANSPORT=syslog",
+                                                   uid_str, NULL } };
+
+            insert_journal_query_cmdline (priv->journal, &query,
+                                          GTK_LIST_BOX (listbox));
+        }
+
+        g_free (uid_str);
+    }
+    else
+    {
+        GlJournalQuery query = { N_RESULTS,
+                                 (gchar *[4]){ "_TRANSPORT=journal",
+                                               "_TRANSPORT=stdout",
+                                               "_TRANSPORT=syslog", NULL } };
+
+        insert_journal_query_cmdline (priv->journal, &query,
+                                      GTK_LIST_BOX (listbox));
+    }
 
     scrolled = gtk_scrolled_window_new (NULL, NULL);
     gtk_container_add (GTK_CONTAINER (scrolled), listbox);
     gtk_widget_show_all (scrolled);
     gtk_stack_add_named (GTK_STACK (view), scrolled, "listbox-applications");
+
+    g_object_unref (creds);
 }
 
 static void
