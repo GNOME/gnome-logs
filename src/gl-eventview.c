@@ -39,6 +39,7 @@ enum
 typedef struct
 {
     GlJournal *journal;
+    GlUtilClockFormat clock_format;
     GlEventViewFilter filter;
     GtkListBox *active_listbox;
     GlEventViewMode mode;
@@ -49,6 +50,8 @@ G_DEFINE_TYPE_WITH_PRIVATE (GlEventView, gl_event_view, GTK_TYPE_STACK)
 
 static GParamSpec *obj_properties[N_PROPERTIES] = { NULL, };
 static const guint N_RESULTS = 50;
+static const gchar DESKTOP_SCHEMA[] = "org.gnome.desktop.interface";
+static const gchar CLOCK_FORMAT[] = "clock-format";
 
 static gboolean
 gl_event_view_search_is_case_sensitive (GlEventView *view)
@@ -206,8 +209,9 @@ on_listbox_row_activated (GtkListBox *listbox,
     gtk_style_context_add_class (context, "detail-comm");
     gtk_grid_attach (GTK_GRID (grid), label, rtl ? 1 : 0, 0, 1, 1);
 
-    time = gl_util_timestamp_to_display (result->timestamp);
-    label = gtk_label_new (gl_util_timestamp_to_display (result->timestamp));
+    time = gl_util_timestamp_to_display (result->timestamp,
+                                         priv->clock_format);
+    label = gtk_label_new (time);
     gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
     gtk_label_set_selectable (GTK_LABEL (label), TRUE);
     context = gtk_widget_get_style_context (label);
@@ -462,15 +466,17 @@ gl_event_view_class_init (GlEventViewClass *klass)
 }
 
 static void
-insert_journal_query_devices (GlJournal *journal,
+insert_journal_query_devices (GlEventView *view,
                               const GlJournalQuery *query,
                               GtkListBox *listbox)
 {
+    GlEventViewPrivate *priv;
     GList *results = NULL;
     GList *l;
     gsize n_results;
 
-    results = gl_journal_query (journal, query);
+    priv = gl_event_view_get_instance_private (view);
+    results = gl_journal_query (priv->journal, query);
 
     n_results = g_list_length (results);
 
@@ -516,7 +522,8 @@ insert_journal_query_devices (GlJournal *journal,
         gtk_label_set_ellipsize (GTK_LABEL (label), PANGO_ELLIPSIZE_END);
         gtk_grid_attach (GTK_GRID (grid), label, 0, 1, 1, 1);
 
-        time = gl_util_timestamp_to_display (result.timestamp);
+        time = gl_util_timestamp_to_display (result.timestamp,
+                                             priv->clock_format);
         label = gtk_label_new (time);
         context = gtk_widget_get_style_context (GTK_WIDGET (label));
         gtk_style_context_add_class (context, "dim-label");
@@ -534,19 +541,21 @@ insert_journal_query_devices (GlJournal *journal,
         g_free (time);
     }
 
-    gl_journal_results_free (journal, results);
+    gl_journal_results_free (priv->journal, results);
 }
 
 static void
-insert_journal_query_security (GlJournal *journal,
+insert_journal_query_security (GlEventView *view,
                                const GlJournalQuery *query,
                                GtkListBox *listbox)
 {
+    GlEventViewPrivate *priv;
     GList *results = NULL;
     GList *l;
     gsize n_results;
 
-    results = gl_journal_query (journal, query);
+    priv = gl_event_view_get_instance_private (view);
+    results = gl_journal_query (priv->journal, query);
 
     n_results = g_list_length (results);
 
@@ -604,7 +613,8 @@ insert_journal_query_security (GlJournal *journal,
         gtk_label_set_ellipsize (GTK_LABEL (label), PANGO_ELLIPSIZE_END);
         gtk_grid_attach (GTK_GRID (grid), label, 0, 1, 2, 1);
 
-        time = gl_util_timestamp_to_display (result.timestamp);
+        time = gl_util_timestamp_to_display (result.timestamp,
+                                             priv->clock_format);
         label = gtk_label_new (time);
         context = gtk_widget_get_style_context (GTK_WIDGET (label));
         gtk_style_context_add_class (context, "dim-label");
@@ -622,19 +632,21 @@ insert_journal_query_security (GlJournal *journal,
         g_free (time);
     }
 
-    gl_journal_results_free (journal, results);
+    gl_journal_results_free (priv->journal, results);
 }
 
 static void
-insert_journal_query_simple (GlJournal *journal,
+insert_journal_query_simple (GlEventView *view,
                              const GlJournalQuery *query,
                              GtkListBox *listbox)
 {
+    GlEventViewPrivate *priv;
     GList *results = NULL;
     GList *l;
     gsize n_results;
 
-    results = gl_journal_query (journal, query);
+    priv = gl_event_view_get_instance_private (view);
+    results = gl_journal_query (priv->journal, query);
 
     n_results = g_list_length (results);
 
@@ -674,7 +686,8 @@ insert_journal_query_simple (GlJournal *journal,
         gtk_label_set_ellipsize (GTK_LABEL (label), PANGO_ELLIPSIZE_END);
         gtk_grid_attach (GTK_GRID (grid), label, 0, 1, 1, 1);
 
-        time = gl_util_timestamp_to_display (result.timestamp);
+        time = gl_util_timestamp_to_display (result.timestamp,
+                                             priv->clock_format);
         label = gtk_label_new (time);
         context = gtk_widget_get_style_context (GTK_WIDGET (label));
         gtk_style_context_add_class (context, "dim-label");
@@ -692,19 +705,21 @@ insert_journal_query_simple (GlJournal *journal,
         g_free (time);
     }
 
-    gl_journal_results_free (journal, results);
+    gl_journal_results_free (priv->journal, results);
 }
 
 static void
-insert_journal_query_cmdline (GlJournal *journal,
+insert_journal_query_cmdline (GlEventView *view,
                               const GlJournalQuery *query,
                               GtkListBox *listbox)
 {
+    GlEventViewPrivate *priv;
     GList *results = NULL;
     GList *l;
     gsize n_results;
 
-    results = gl_journal_query (journal, query);
+    priv = gl_event_view_get_instance_private (view);
+    results = gl_journal_query (priv->journal, query);
 
     n_results = g_list_length (results);
 
@@ -755,7 +770,8 @@ insert_journal_query_cmdline (GlJournal *journal,
         gtk_label_set_ellipsize (GTK_LABEL (label), PANGO_ELLIPSIZE_END);
         gtk_grid_attach (GTK_GRID (grid), label, 0, 1, 2, 1);
 
-        time = gl_util_timestamp_to_display (result.timestamp);
+        time = gl_util_timestamp_to_display (result.timestamp,
+                                             priv->clock_format);
         label = gtk_label_new (time);
         context = gtk_widget_get_style_context (GTK_WIDGET (label));
         gtk_style_context_add_class (context, "dim-label");
@@ -773,7 +789,7 @@ insert_journal_query_cmdline (GlJournal *journal,
         g_free (time);
     }
 
-    gl_journal_results_free (journal, results);
+    gl_journal_results_free (priv->journal, results);
 }
 
 static GtkWidget *
@@ -829,7 +845,6 @@ gl_event_view_list_box_new (GlEventView *view)
 static void
 gl_event_view_add_listbox_important (GlEventView *view)
 {
-    GlEventViewPrivate *priv;
     /* Alert or emergency priority. */
     const GlJournalQuery query = { N_RESULTS,
                                    (gchar*[5]){ "PRIORITY=0",
@@ -840,11 +855,9 @@ gl_event_view_add_listbox_important (GlEventView *view)
     GtkWidget *listbox;
     GtkWidget *scrolled;
 
-    priv = gl_event_view_get_instance_private (view);
-
     listbox = gl_event_view_list_box_new (view);
 
-    insert_journal_query_cmdline (priv->journal, &query,
+    insert_journal_query_cmdline (view, &query,
                                   GTK_LIST_BOX (listbox));
 
     scrolled = gtk_scrolled_window_new (NULL, NULL);
@@ -876,17 +889,13 @@ gl_event_view_add_listbox_starred (GlEventView *view)
 static void
 gl_event_view_add_listbox_all (GlEventView *view)
 {
-    GlEventViewPrivate *priv;
     const GlJournalQuery query = { N_RESULTS, NULL };
     GtkWidget *listbox;
     GtkWidget *scrolled;
 
-    priv = gl_event_view_get_instance_private (view);
-
     listbox = gl_event_view_list_box_new (view);
 
-    insert_journal_query_cmdline (priv->journal, &query,
-                                  GTK_LIST_BOX (listbox));
+    insert_journal_query_cmdline (view, &query, GTK_LIST_BOX (listbox));
 
     scrolled = gtk_scrolled_window_new (NULL, NULL);
     gtk_container_add (GTK_CONTAINER (scrolled), listbox);
@@ -897,13 +906,10 @@ gl_event_view_add_listbox_all (GlEventView *view)
 static void
 gl_event_view_add_listbox_applications (GlEventView *view)
 {
-    GlEventViewPrivate *priv;
     GCredentials *creds;
     uid_t uid;
     GtkWidget *listbox;
     GtkWidget *scrolled;
-
-    priv = gl_event_view_get_instance_private (view);
 
     listbox = gl_event_view_list_box_new (view);
     creds = g_credentials_new ();
@@ -924,7 +930,7 @@ gl_event_view_add_listbox_applications (GlEventView *view)
                                                    "_TRANSPORT=syslog",
                                                    uid_str, NULL } };
 
-            insert_journal_query_cmdline (priv->journal, &query,
+            insert_journal_query_cmdline (view, &query,
                                           GTK_LIST_BOX (listbox));
         }
 
@@ -937,8 +943,7 @@ gl_event_view_add_listbox_applications (GlEventView *view)
                                                "_TRANSPORT=stdout",
                                                "_TRANSPORT=syslog", NULL } };
 
-        insert_journal_query_cmdline (priv->journal, &query,
-                                      GTK_LIST_BOX (listbox));
+        insert_journal_query_cmdline (view, &query, GTK_LIST_BOX (listbox));
     }
 
     scrolled = gtk_scrolled_window_new (NULL, NULL);
@@ -952,17 +957,14 @@ gl_event_view_add_listbox_applications (GlEventView *view)
 static void
 gl_event_view_add_listbox_system (GlEventView *view)
 {
-    GlEventViewPrivate *priv;
     GlJournalQuery query = { N_RESULTS,
                              (gchar *[2]){ "_TRANSPORT=kernel", NULL } };
     GtkWidget *listbox;
     GtkWidget *scrolled;
 
-    priv = gl_event_view_get_instance_private (view);
     listbox = gl_event_view_list_box_new (view);
 
-    insert_journal_query_simple (priv->journal, &query,
-                                 GTK_LIST_BOX (listbox));
+    insert_journal_query_simple (view, &query, GTK_LIST_BOX (listbox));
 
     scrolled = gtk_scrolled_window_new (NULL, NULL);
     gtk_container_add (GTK_CONTAINER (scrolled), listbox);
@@ -973,17 +975,14 @@ gl_event_view_add_listbox_system (GlEventView *view)
 static void
 gl_event_view_add_listbox_hardware (GlEventView *view)
 {
-    GlEventViewPrivate *priv;
     GlJournalQuery query = { N_RESULTS,
                              (gchar *[2]){ "_TRANSPORT=kernel", NULL } };
     GtkWidget *listbox;
     GtkWidget *scrolled;
 
-    priv = gl_event_view_get_instance_private (view);
     listbox = gl_event_view_list_box_new (view);
 
-    insert_journal_query_devices (priv->journal, &query,
-                                  GTK_LIST_BOX (listbox));
+    insert_journal_query_devices (view, &query, GTK_LIST_BOX (listbox));
 
     scrolled = gtk_scrolled_window_new (NULL, NULL);
     gtk_container_add (GTK_CONTAINER (scrolled), listbox);
@@ -994,17 +993,13 @@ gl_event_view_add_listbox_hardware (GlEventView *view)
 static void
 gl_event_view_add_listbox_security (GlEventView *view)
 {
-    GlEventViewPrivate *priv;
     const GlJournalQuery query = { N_RESULTS, NULL };
     GtkWidget *listbox;
     GtkWidget *scrolled;
 
-    priv = gl_event_view_get_instance_private (view);
-
     listbox = gl_event_view_list_box_new (view);
 
-    insert_journal_query_security (priv->journal, &query,
-                                   GTK_LIST_BOX (listbox));
+    insert_journal_query_security (view, &query, GTK_LIST_BOX (listbox));
 
     scrolled = gtk_scrolled_window_new (NULL, NULL);
     gtk_container_add (GTK_CONTAINER (scrolled), listbox);
@@ -1036,11 +1031,17 @@ static void
 gl_event_view_init (GlEventView *view)
 {
     GlEventViewPrivate *priv;
+    GSettings *settings;
 
     priv = gl_event_view_get_instance_private (view);
     priv->search_text = NULL;
     priv->active_listbox = NULL;
     priv->journal = gl_journal_new ();
+
+    /* TODO: Monitor and propagate any GSettings changes. */
+    settings = g_settings_new (DESKTOP_SCHEMA);
+    priv->clock_format = g_settings_get_enum (settings, CLOCK_FORMAT);
+    g_object_unref (settings);
 
     gl_event_view_add_listbox_important (view);
     gl_event_view_add_listbox_alerts (view);

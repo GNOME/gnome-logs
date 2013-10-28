@@ -31,7 +31,8 @@ gl_util_on_css_provider_parsing_error (GtkCssProvider *provider,
 }
 
 gchar *
-gl_util_timestamp_to_display (guint64 microsecs)
+gl_util_timestamp_to_display (guint64 microsecs,
+                              GlUtilClockFormat format)
 {
     GDateTime *datetime;
     GDateTime *local;
@@ -46,7 +47,22 @@ gl_util_timestamp_to_display (guint64 microsecs)
     }
 
     local = g_date_time_to_local (datetime);
-    time = g_date_time_format (local, "%c");
+
+    /* TODO: Add logic to show day/date on timestamps where the day is not
+     * today. */
+
+    switch (format)
+    {
+        /* TODO: Make translatable? */
+        case GL_UTIL_CLOCK_FORMAT_12HR:
+            time = g_date_time_format (local, "%l:%M:%S %p");
+            break;
+        case GL_UTIL_CLOCK_FORMAT_24HR:
+            time = g_date_time_format (local, "%T");
+            break;
+        default:
+            g_assert_not_reached ();
+    }
 
     g_date_time_unref (datetime);
     g_date_time_unref (local);

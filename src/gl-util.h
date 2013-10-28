@@ -23,11 +23,19 @@
 
 G_BEGIN_DECLS
 
+/* Keep in sync with the enum in the org.gnome.desktop.interface schema. */
+typedef enum
+{
+    GL_UTIL_CLOCK_FORMAT_24HR,
+    GL_UTIL_CLOCK_FORMAT_12HR
+} GlUtilClockFormat;
+
 void gl_util_on_css_provider_parsing_error (GtkCssProvider *provider,
                                             GtkCssSection *section,
                                             GError *error,
                                             G_GNUC_UNUSED gpointer user_data);
-gchar * gl_util_timestamp_to_display (guint64 microsecs);
+gchar * gl_util_timestamp_to_display (guint64 microsecs,
+                                      GlUtilClockFormat format);
 
 G_END_DECLS
 
