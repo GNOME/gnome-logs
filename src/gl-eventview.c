@@ -480,7 +480,7 @@ insert_journal_query_devices (GlEventView *view,
 
     n_results = g_list_length (results);
 
-    if (n_results != N_RESULTS)
+    if ((n_results != -1) && (n_results != N_RESULTS))
     {
         g_debug ("Number of results different than requested");
     }
@@ -559,7 +559,7 @@ insert_journal_query_security (GlEventView *view,
 
     n_results = g_list_length (results);
 
-    if (n_results != N_RESULTS)
+    if ((n_results != -1) && (n_results != N_RESULTS))
     {
         g_debug ("Number of results different than requested");
     }
@@ -650,7 +650,7 @@ insert_journal_query_simple (GlEventView *view,
 
     n_results = g_list_length (results);
 
-    if (n_results != N_RESULTS)
+    if ((n_results != -1) && (n_results != N_RESULTS))
     {
         g_debug ("Number of results different than requested");
     }
@@ -723,7 +723,7 @@ insert_journal_query_cmdline (GlEventView *view,
 
     n_results = g_list_length (results);
 
-    if (n_results != N_RESULTS)
+    if ((n_results != -1) && (n_results != N_RESULTS))
     {
         g_debug ("Number of results different than requested");
     }

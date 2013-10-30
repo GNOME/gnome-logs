@@ -336,41 +336,108 @@ gl_journal_query (GlJournal *self, const GlJournalQuery *query)
         }
     }
 
-    ret = sd_journal_seek_tail (journal);
-
-    if (ret < 0)
+    if (query->n_results == -1)
     {
-        g_warning ("Error seeking to end of systemd journal: %s",
-                   g_strerror (-ret));
-    }
+        /* Take events from this boot only. */
+        sd_id128_t boot_id;
+        gchar boot_string[33];
+        gchar *match_string;
 
-    for (i = 0; i < query->n_results; i++)
-    {
-        GlJournalResult *result;
-
-        ret = sd_journal_previous (journal);
+        ret = sd_id128_get_boot (&boot_id);
 
         if (ret < 0)
         {
-            g_warning ("Error setting cursor to end of systemd journal: %s",
+            g_warning ("Error getting boot ID of running kernel: %s",
                        g_strerror (-ret));
-            break;
         }
-        else if (ret == 0)
+
+        sd_id128_to_string (boot_id, boot_string);
+
+        match_string = g_strconcat ("_BOOT_ID=", boot_string, NULL);
+
+        ret = sd_journal_add_match (journal, match_string, 0);
+
+        if (ret < 0)
         {
-            g_debug ("End of systemd journal reached");
-            break;
+            g_warning ("Error adding match '%s': %s", match_string,
+                       g_strerror (-ret));
         }
 
-        result = _gl_journal_query_result (self);
+        g_free (match_string);
 
-        results = g_list_prepend (results, result);
-        continue;
+        ret = sd_journal_seek_head (journal);
+
+        if (ret < 0)
+        {
+            g_warning ("Error seeking to start of systemd journal: %s",
+                       g_strerror (-ret));
+        }
+
+        do
+        {
+            GlJournalResult *result;
+
+            ret = sd_journal_next (journal);
+
+            if (ret < 0)
+            {
+                g_warning ("Error setting cursor to next position in systemd journal: %s",
+                           g_strerror (-ret));
+                break;
+            }
+            else if (ret == 0)
+            {
+                g_debug ("End of systemd journal reached");
+                break;
+            }
+
+            result = _gl_journal_query_result (self);
+
+            results = g_list_prepend (results, result);
+        } while (TRUE);
+    }
+    else
+    {
+        /* Take the given number of events from the end of the journal
+         * backwards. */
+        ret = sd_journal_seek_tail (journal);
+
+        if (ret < 0)
+        {
+            g_warning ("Error seeking to end of systemd journal: %s",
+                       g_strerror (-ret));
+        }
+
+        for (i = 0; i < query->n_results; i++)
+        {
+            GlJournalResult *result;
+
+            ret = sd_journal_previous (journal);
+
+            if (ret < 0)
+            {
+                g_warning ("Error setting cursor to end of systemd journal: %s",
+                           g_strerror (-ret));
+                break;
+            }
+            else if (ret == 0)
+            {
+                g_debug ("End of systemd journal reached");
+                break;
+            }
+
+            result = _gl_journal_query_result (self);
+
+            results = g_list_prepend (results, result);
+            continue;
+        }
+
+        results = g_list_reverse (results);
     }
 
     sd_journal_flush_matches (journal);
 
-    return g_list_reverse (results);
+    return results;
 }
 
 GlJournalResult *
