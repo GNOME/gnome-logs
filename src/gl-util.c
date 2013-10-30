@@ -97,13 +97,13 @@ gl_util_timestamp_to_display (guint64 microsecs,
                 case GL_UTIL_TIMESTAMPS_SAME_YEAR:
                     /* Translators: timestamp format for events in the current
                      * year, showing the abbreviated month name, day of the
-                     * month and the time in 24-hour format. */
+                     * month and the time in 12-hour format. */
                     time = g_date_time_format (local, _("%b %e %l:%M %p"));
                     break;
                 case GL_UTIL_TIMESTAMPS_DIFFERENT_YEAR:
                     /* Translators: timestamp format for events in a different
                      * year, showing the abbreviated month name, day of the
-                     * month, year and the time in 24-hour format. */
+                     * month, year and the time in 12-hour format. */
                     time = g_date_time_format (local, _("%b %e %Y %l:%M %p"));
                     break;
                 default:
