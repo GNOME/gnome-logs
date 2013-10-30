@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-01 03:34+0200\n"
-"PO-Revision-Date: 2013-10-01 03:38+0200\n"
+"POT-Creation-Date: 2013-10-30 19:00+0100\n"
+"PO-Revision-Date: 2013-10-30 19:01+0100\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <gnomepl@aviary.pl>\n"
 "Language: pl\n"
@@ -87,10 +87,6 @@ msgstr "Przechodzi wstecz do widoku zdarzeń"
 msgid "Search the displayed logs"
 msgstr "Przeszukuje wyświetlone dzienniki"
 
-#: ../data/gl-window.ui.h:1
-msgid "Categories"
-msgstr "Kategorie"
-
 #: ../data/gnome-logs.desktop.in.h:1
 msgid "Log Viewer"
 msgstr "Przeglądarka dzienników"
@@ -104,17 +100,63 @@ msgstr "Wyświetlanie szczegółowych dzienników zdarzeń w systemie"
 msgid "log;journal;debug;error;"
 msgstr "dziennik;logi;journal;debugowanie;błąd;error;"
 
-#: ../src/gl-application.c:61
+#: ../src/gl-application.c:71
 msgid "translator-credits"
 msgstr ""
 "Piotr Drąg <piotrdrag@gmail.com>, 2013\n"
 "Aviary.pl <gnomepl@aviary.pl>, 2013"
 
-#: ../src/gl-application.c:62
+#: ../src/gl-application.c:72
 msgid "View and search logs"
 msgstr "Wyświetlanie i przeszukiwanie dzienników"
 
-#: ../src/gl-eventview.c:985 ../src/gl-eventview.c:995
-#: ../src/gl-eventview.c:1232 ../src/gl-eventview.c:1242
+#. Translators: Shown when there are no (zero) results in the current
+#. * view.
+#: ../src/gl-eventview.c:817
+msgid "No results"
+msgstr "Brak wyników"
+
+#: ../src/gl-eventview.c:874 ../src/gl-eventview.c:884
+#: ../src/gl-eventview.c:1015 ../src/gl-eventview.c:1025
 msgid "Not implemented"
 msgstr "Niezaimplementowane"
+
+#. Translators: timestamp format for events on the current
+#. * day, showing the time in 12-hour format.
+#: ../src/gl-util.c:95
+msgid "%l:%M %p"
+msgstr "%l∶%M %p"
+
+#. Translators: timestamp format for events in the current
+#. * year, showing the abbreviated month name, day of the
+#. * month and the time in 12-hour format.
+#: ../src/gl-util.c:101
+msgid "%b %e %l:%M %p"
+msgstr "%e %b, %l∶%M %p"
+
+#. Translators: timestamp format for events in a different
+#. * year, showing the abbreviated month name, day of the
+#. * month, year and the time in 12-hour format.
+#: ../src/gl-util.c:107
+msgid "%b %e %Y %l:%M %p"
+msgstr "%e %b %Y, %l∶%M %p"
+
+#. Translators: timestamp format for events on the current
+#. * day, showing the time in 24-hour format.
+#: ../src/gl-util.c:120
+msgid "%H:%M"
+msgstr "%H∶%M"
+
+#. Translators: timestamp format for events in the current
+#. * year, showing the abbreviated month name, day of the
+#. * month and the time in 24-hour format.
+#: ../src/gl-util.c:126
+msgid "%b %e %H:%M"
+msgstr "%e %b, %H∶%M"
+
+#. Translators: timestamp format for events in a different
+#. * year, showing the abbreviated month name, day of the
+#. * month, year and the time in 24-hour format.
+#: ../src/gl-util.c:132
+msgid "%b %e %Y %H:%M"
+msgstr "%e %b %Y, %H∶%M"
