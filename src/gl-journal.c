@@ -275,7 +275,7 @@ _gl_journal_query_result (GlJournal *self)
         goto out;
     }
 
-    result->priority = atoi (priority);
+    result->priority = priority ? atoi (priority) : LOG_INFO;
     g_free (priority);
 
     result->comm = gl_journal_get_data (self, "_COMM", &error);
