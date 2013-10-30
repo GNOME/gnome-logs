@@ -49,7 +49,7 @@ typedef struct
 G_DEFINE_TYPE_WITH_PRIVATE (GlEventView, gl_event_view, GTK_TYPE_STACK)
 
 static GParamSpec *obj_properties[N_PROPERTIES] = { NULL, };
-static const guint N_RESULTS = 50;
+static const gssize N_RESULTS = -1;
 static const gchar DESKTOP_SCHEMA[] = "org.gnome.desktop.interface";
 static const gchar CLOCK_FORMAT[] = "clock-format";
 
