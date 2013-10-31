@@ -808,6 +808,8 @@ gl_event_view_create_empty (G_GNUC_UNUSED GlEventView *view)
     gtk_style_context_add_class (context, "dim-label");
 
     image = gtk_image_new_from_icon_name ("action-unavailable-symbolic", 0);
+    context = gtk_widget_get_style_context (image);
+    gtk_style_context_add_class (context, "dim-label");
     gtk_image_set_pixel_size (GTK_IMAGE (image), 128);
     gtk_container_add (GTK_CONTAINER (box), image);
 
