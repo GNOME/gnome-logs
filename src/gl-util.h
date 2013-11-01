@@ -23,7 +23,12 @@
 
 G_BEGIN_DECLS
 
-/* Keep in sync with the enum in the org.gnome.desktop.interface schema. */
+/*
+ * GlUtilClockFormat:
+ * @GL_UTIL_CLOCK_FORMAT_24HR: 24-hour clock format
+ * @GL_UTIL_CLOCK_FORMAT_12HR: 12-hour clock format
+ *
+ * Keep in sync with the enum in the org.gnome.desktop.interface schema. */
 typedef enum
 {
     GL_UTIL_CLOCK_FORMAT_24HR,

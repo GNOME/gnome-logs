@@ -39,7 +39,8 @@ enum_data = \
 
 gnome_logs_enum_headers = \
 	$(srcdir)/src/gl-eventtoolbar.h \
-	$(srcdir)/src/gl-eventview.h
+	$(srcdir)/src/gl-eventview.h \
+	$(srcdir)/src/gl-util.h
 
 noinst_gnome_logs_headers = \
 	src/gl-application.h \
