@@ -282,6 +282,18 @@ gl_event_view_row_init (GlEventViewRow *row)
     /* See gl_event_view_row_constructed (). */
 }
 
+GlJournalResult *
+gl_event_view_row_get_result (GlEventViewRow *row)
+{
+    GlEventViewRowPrivate *priv;
+
+    g_return_val_if_fail (GL_EVENT_VIEW_ROW (row), NULL);
+
+    priv = gl_event_view_row_get_instance_private (row);
+
+    return priv->result;
+}
+
 GtkWidget *
 gl_event_view_row_new (GlJournalResult *result,
                        GlEventViewRowStyle style,

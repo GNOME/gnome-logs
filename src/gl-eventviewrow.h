@@ -57,6 +57,7 @@ typedef enum
 
 GType gl_event_view_row_get_type (void);
 GtkWidget * gl_event_view_row_new (GlJournalResult *result, GlEventViewRowStyle style, GlUtilClockFormat clock_format);
+GlJournalResult * gl_event_view_row_get_result (GlEventViewRow *row);
 
 G_END_DECLS
 
