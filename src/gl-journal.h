@@ -51,6 +51,10 @@ typedef struct
 
 typedef struct
 {
+    /*< private >*/
+    guint ref_count;
+
+    /*< public >*/
     guint64 timestamp;
     gchar *cursor;
     gchar *message;
@@ -73,13 +77,16 @@ typedef struct
     GObjectClass parent_class;
 } GlJournalClass;
 
+#define GL_TYPE_JOURNAL_RESULT (gl_journal_result_get_type ())
 #define GL_TYPE_JOURNAL (gl_journal_get_type ())
 #define GL_JOURNAL(object) (G_TYPE_CHECK_INSTANCE_CAST ((object), GL_TYPE_JOURNAL, GlJournal))
 
+GType gl_journal_result_get_type (void);
 GType gl_journal_get_type (void);
 GList * gl_journal_query (GlJournal *self, const GlJournalQuery *query);
-void gl_journal_result_free (G_GNUC_UNUSED GlJournal *self, GlJournalResult *result);
-void gl_journal_results_free (G_GNUC_UNUSED GlJournal *self, GList *results);
+GlJournalResult * gl_journal_result_ref (GlJournalResult *result);
+void gl_journal_result_unref (GlJournalResult *result);
+void gl_journal_results_free (GList *results);
 GlJournalResult * gl_journal_query_cursor (GlJournal *self, const gchar *cursor);
 GlJournal * gl_journal_new (void);
 

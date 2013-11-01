@@ -31,6 +31,9 @@ typedef struct
 
 G_DEFINE_TYPE_WITH_PRIVATE (GlJournal, gl_journal, G_TYPE_OBJECT)
 
+G_DEFINE_BOXED_TYPE (GlJournalResult, gl_journal_result, gl_journal_result_ref,
+                     gl_journal_result_unref)
+
 GQuark
 gl_journal_error_quark (void)
 {
@@ -202,6 +205,8 @@ _gl_journal_query_result (GlJournal *self)
     journal = priv->journal;
 
     result = g_slice_new (GlJournalResult);
+
+    result->ref_count = 1;
 
     ret = sd_journal_get_realtime_usec (journal, &result->timestamp);
 
@@ -491,32 +496,39 @@ out:
 }
 
 static void
-_gl_journal_result_free (GlJournalResult *result,
-                         G_GNUC_UNUSED gpointer user_data)
+gl_journal_result_free (GlJournalResult *result,
+                        G_GNUC_UNUSED gpointer user_data)
 {
-    free (result->cursor);
-    free (result->catalog);
-    g_free (result->message);
-    g_free (result->comm);
-    g_free (result->kernel_device);
-    g_free (result->audit_session);
-    g_slice_free (GlJournalResult, result);
+    gl_journal_result_unref (result);
 }
 
 void
-gl_journal_result_free (G_GNUC_UNUSED GlJournal *self,
-                        GlJournalResult *result)
+gl_journal_results_free (GList *results)
 {
-    _gl_journal_result_free (result, NULL);
-}
-
-void
-gl_journal_results_free (G_GNUC_UNUSED GlJournal *self,
-                         GList *results)
-{
-    /* As self is unused, ignore it. */
-    g_list_foreach (results, (GFunc)_gl_journal_result_free, NULL);
+    g_list_foreach (results, (GFunc)gl_journal_result_free, NULL);
     g_list_free (results);
+}
+
+GlJournalResult *
+gl_journal_result_ref (GlJournalResult *result)
+{
+    g_atomic_int_inc (&result->ref_count);
+    return result;
+}
+
+void
+gl_journal_result_unref (GlJournalResult *result)
+{
+    if (g_atomic_int_dec_and_test (&result->ref_count))
+    {
+        free (result->cursor);
+        free (result->catalog);
+        g_free (result->message);
+        g_free (result->comm);
+        g_free (result->kernel_device);
+        g_free (result->audit_session);
+        g_slice_free (GlJournalResult, result);
+    }
 }
 
 GlJournal *

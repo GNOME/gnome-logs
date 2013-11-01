@@ -125,7 +125,7 @@ listbox_search_filter_func (GtkListBoxRow *row,
         {
             if (search_in_result (result, priv->search_text))
             {
-                gl_journal_result_free (priv->journal, result);
+                gl_journal_result_unref (result);
 
                 return TRUE;
             }
@@ -165,7 +165,7 @@ listbox_search_filter_func (GtkListBoxRow *row,
             g_free (casefolded_text);
         }
 
-        gl_journal_result_free (priv->journal, result);
+        gl_journal_result_unref (result);
     }
 
 out:
@@ -242,7 +242,7 @@ on_listbox_row_activated (GtkListBox *listbox,
     gtk_stack_add_named (stack, grid, "detail");
     gl_event_view_set_mode (view, GL_EVENT_VIEW_MODE_DETAIL);
 
-    gl_journal_result_free (priv->journal, result);
+    gl_journal_result_unref (result);
     return;
 }
 
@@ -541,7 +541,7 @@ insert_journal_query_devices (GlEventView *view,
         g_free (time);
     }
 
-    gl_journal_results_free (priv->journal, results);
+    gl_journal_results_free (results);
 }
 
 static void
@@ -632,7 +632,7 @@ insert_journal_query_security (GlEventView *view,
         g_free (time);
     }
 
-    gl_journal_results_free (priv->journal, results);
+    gl_journal_results_free (results);
 }
 
 static void
@@ -705,7 +705,7 @@ insert_journal_query_simple (GlEventView *view,
         g_free (time);
     }
 
-    gl_journal_results_free (priv->journal, results);
+    gl_journal_results_free (results);
 }
 
 static void
@@ -789,7 +789,7 @@ insert_journal_query_cmdline (GlEventView *view,
         g_free (time);
     }
 
-    gl_journal_results_free (priv->journal, results);
+    gl_journal_results_free (results);
 }
 
 static GtkWidget *
