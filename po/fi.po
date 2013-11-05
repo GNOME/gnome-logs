@@ -1,0 +1,111 @@
+# Finnish translation for gnome-logs.
+# Copyright (C) 2013 gnome-logs's COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-logs package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Jiri Grönroos <jiri.gronroos+l10n@iki.fi>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-logs master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"logs&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2013-10-09 10:14+0000\n"
+"PO-Revision-Date: 2013-10-10 00:17+0300\n"
+"Last-Translator: Jiri Grönroos <jiri.gronroos+l10n@iki.fi>\n"
+"Language-Team: suomi <gnome-fi-laatu@lists.sourceforge.net>\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Gtranslator 2.91.6\n"
+
+#: ../data/appmenu.ui.h:1
+msgid "_New Window"
+msgstr "_Uusi ikkuna"
+
+#: ../data/appmenu.ui.h:2
+msgid "_About"
+msgstr "_Tietoja"
+
+#: ../data/appmenu.ui.h:3
+msgid "_Quit"
+msgstr "_Lopeta"
+
+#: ../data/gl-categorylist.ui.h:1
+msgid "Important"
+msgstr "Tärkeät"
+
+#: ../data/gl-categorylist.ui.h:2
+msgid "Alerts"
+msgstr "Hälytykset"
+
+#: ../data/gl-categorylist.ui.h:3
+msgid "Starred"
+msgstr "Tähdelliset"
+
+#: ../data/gl-categorylist.ui.h:4
+msgid "All"
+msgstr "Kaikki"
+
+#: ../data/gl-categorylist.ui.h:5
+msgid "Applications"
+msgstr "Sovellukset"
+
+#: ../data/gl-categorylist.ui.h:6
+msgid "System"
+msgstr "Järjestelmä"
+
+#: ../data/gl-categorylist.ui.h:7
+msgid "Security"
+msgstr "Tietoturva"
+
+#: ../data/gl-categorylist.ui.h:8
+msgid "Hardware"
+msgstr "Laitteisto"
+
+#: ../data/gl-categorylist.ui.h:9
+msgid "Updates"
+msgstr "Päivitykset"
+
+#: ../data/gl-categorylist.ui.h:10
+msgid "Usage"
+msgstr "Käyttö"
+
+#: ../data/gl-eventtoolbar.ui.h:1
+msgid "Logs"
+msgstr "Lokit"
+
+#: ../data/gl-eventtoolbar.ui.h:2
+msgid "Go back to the event view"
+msgstr "Siirry takaisin tapahtumanäkymään"
+
+#: ../data/gl-eventtoolbar.ui.h:3
+msgid "Search the displayed logs"
+msgstr "Etsi näytetyistä lokeista"
+
+#: ../data/gnome-logs.desktop.in.h:1
+msgid "Log Viewer"
+msgstr "Lokikatselin"
+
+#: ../data/gnome-logs.desktop.in.h:2
+msgid "View detailed event logs for the system"
+msgstr "Katsele järjestelmän yksityiskohtaisia tapahtumalokeja"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: ../data/gnome-logs.desktop.in.h:4
+msgid "log;journal;debug;error;"
+msgstr "log;journal;debug;error;loki;vianetsintä;virhe;"
+
+#: ../src/gl-application.c:61
+msgid "translator-credits"
+msgstr "Jiri Grönroos"
+
+#: ../src/gl-application.c:62
+msgid "View and search logs"
+msgstr "Katsele ja etsi lokeja"
+
+#: ../src/gl-eventview.c:672 ../src/gl-eventview.c:682
+#: ../src/gl-eventview.c:801 ../src/gl-eventview.c:811
+msgid "Not implemented"
+msgstr "Ei toteutettu"
