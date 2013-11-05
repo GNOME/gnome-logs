@@ -32,7 +32,7 @@ msgstr "_Esci"
 
 #: ../data/gl-categorylist.ui.h:1
 msgid "Important"
-msgstr "Importante"
+msgstr "Importanti"
 
 #: ../data/gl-categorylist.ui.h:2
 msgid "Alerts"
@@ -44,7 +44,7 @@ msgstr "Preferiti"
 
 #: ../data/gl-categorylist.ui.h:4
 msgid "All"
-msgstr "Tutto"
+msgstr "Tutti"
 
 #: ../data/gl-categorylist.ui.h:5
 msgid "Applications"
