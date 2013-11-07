@@ -62,6 +62,12 @@ nodist_gnome_logs_headers = \
 	$(AM_V_at)$(MKDIR_P) $(@D)
 	$(AM_V_at)touch $@
 
+@INTLTOOL_XML_RULE@
+appdatadir = $(datadir)/appdata
+appdata_in_files = data/gnome-logs.appdata.xml.in
+$(appdata_in_files:.appdata.xml.in=.appdata.xml): data/.dstamp
+appdata_DATA = $(appdata_in_files:.appdata.xml.in=.appdata.xml)
+
 @INTLTOOL_DESKTOP_RULE@
 desktopdir = $(datadir)/applications
 desktop_in_files = data/gnome-logs.desktop.in
@@ -109,6 +115,7 @@ src/gl-resource.c src/gl-resource.h: data/gnome-logs.gresource.xml Makefile $(no
 dist_noinst_DATA = \
 	$(noinst_gnome_logs_headers) \
 	$(noinst_resource_files) \
+	$(appdata_in_files) \
 	$(desktop_in_files) \
 	data/gnome-logs.gresource.xml
 
@@ -130,6 +137,7 @@ git-changelog-hook:
 	else rm -f .ChangeLog.tmp; exit 1; fi
 
 CLEANFILES = \
+	$(appdata_DATA) \
 	$(desktop_DATA) \
 	$(enum_data) \
 	src/gl-resource.c \
