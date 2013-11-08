@@ -39,6 +39,9 @@ PKG_CHECK_EXISTS([gsettings-desktop-schemas],
                  [],
                  [AC_MSG_WARN([gsettings-desktop-schemas is required at runtime])])
 
+dnl AppData XML
+APPDATA_XML
+
 dnl Libraries
 GTK_REQUIRED="gtk+-3.0 >= 3.9.6"
 SYSTEMD_JOURNAL_REQUIRED="libsystemd-journal"
