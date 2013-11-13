@@ -14,7 +14,7 @@
         view detailed information about each event by clicking on it.</_p>
     </description>
     <screenshots>
-        <_screenshot type="default" width="1000" height="575">http://amigadave.com/temp/gnome-logs-default.png</_screenshot>
+        <screenshot type="default" width="1000" height="575">http://amigadave.com/temp/gnome-logs-default.png</screenshot>
     </screenshots>
     <url type="homepage">https://wiki.gnome.org/Apps/Logs</url>
     <updatecontact>davidk@gnome.org</updatecontact>
