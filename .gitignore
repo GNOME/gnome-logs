@@ -4,6 +4,7 @@ Makefile
 /autom4te.cache/
 /build-aux/
 /data/.dstamp
+/data/gnome-logs.appdata.valid
 /data/gnome-logs.appdata.xml
 /data/gnome-logs.desktop
 /m4/

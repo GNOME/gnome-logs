@@ -1,3 +1,13 @@
+GNOME Logs 3.11.2
+=================
+
+* add and validate AppData
+* load log events for the current category only
+* show log events from the current boot only
+* pretty timestamp formats
+* Hungarian and Italian translation
+* updates to Brazilian Portuguese, Polish and Finnish translations
+
 GNOME Logs 3.11.1
 =================
 
