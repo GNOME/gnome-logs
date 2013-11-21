@@ -1,0 +1,207 @@
+/*
+ *  GNOME Logs - View and search logs
+ *  Copyright (C) 2013  Red Hat, Inc.
+ *
+ *  This program is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+#include "gl-eventviewdetail.h"
+
+#include "gl-enums.h"
+
+enum
+{
+    PROP_0,
+    PROP_CLOCK_FORMAT,
+    PROP_RESULT,
+    N_PROPERTIES
+};
+
+typedef struct
+{
+    GlJournalResult *result;
+    GlUtilClockFormat clock_format;
+} GlEventViewDetailPrivate;
+
+G_DEFINE_TYPE_WITH_PRIVATE (GlEventViewDetail, gl_event_view_detail, GTK_TYPE_BIN)
+
+static GParamSpec *obj_properties[N_PROPERTIES] = { NULL, };
+
+static void
+gl_event_view_detail_create_detail (GlEventViewDetail *detail)
+{
+    GlEventViewDetailPrivate *priv;
+    GlJournalResult *result;
+    gchar *time;
+    gboolean rtl;
+    GtkWidget *grid;
+    GtkWidget *label;
+    GtkStyleContext *context;
+
+    priv = gl_event_view_detail_get_instance_private (detail);
+
+    result = priv->result;
+
+    rtl = gtk_widget_get_default_direction () == GTK_TEXT_DIR_RTL;
+
+    grid = gtk_grid_new ();
+    label = gtk_label_new (result->comm);
+    gtk_widget_set_direction (label, GTK_TEXT_DIR_LTR);
+    gtk_widget_set_hexpand (label, TRUE);
+    gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
+    context = gtk_widget_get_style_context (label);
+    gtk_style_context_add_class (context, "detail-comm");
+    gtk_grid_attach (GTK_GRID (grid), label, rtl ? 1 : 0, 0, 1, 1);
+
+    time = gl_util_timestamp_to_display (result->timestamp,
+                                         priv->clock_format);
+    label = gtk_label_new (time);
+    gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
+    gtk_label_set_selectable (GTK_LABEL (label), TRUE);
+    context = gtk_widget_get_style_context (label);
+    gtk_style_context_add_class (context, "detail-time");
+    gtk_grid_attach (GTK_GRID (grid), label, rtl ? 0 : 1, 0, 1, 1);
+    g_free (time);
+
+    label = gtk_label_new (result->message);
+    gtk_widget_set_direction (label, GTK_TEXT_DIR_LTR);
+    gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
+    gtk_label_set_line_wrap (GTK_LABEL (label), TRUE);
+    gtk_label_set_selectable (GTK_LABEL (label), TRUE);
+    context = gtk_widget_get_style_context (label);
+    gtk_style_context_add_class (context, "detail-message");
+    gtk_style_context_add_class (context, "event-monospace");
+    gtk_grid_attach (GTK_GRID (grid), label, 0, 1, 2, 1);
+
+    label = gtk_label_new (result->catalog);
+    gtk_widget_set_direction (label, GTK_TEXT_DIR_LTR);
+    gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
+    gtk_label_set_selectable (GTK_LABEL (label), TRUE);
+    context = gtk_widget_get_style_context (label);
+    gtk_style_context_add_class (context, "detail-catalog");
+    gtk_grid_attach (GTK_GRID (grid), label, 0, 2, 2, 1);
+
+    gtk_widget_show_all (grid);
+
+    gtk_container_add (GTK_CONTAINER (detail), grid);
+}
+
+static void
+gl_event_view_detail_finalize (GObject *object)
+{
+    GlEventViewDetail *detail = GL_EVENT_VIEW_DETAIL (object);
+    GlEventViewDetailPrivate *priv = gl_event_view_detail_get_instance_private (detail);
+
+    g_clear_pointer (&priv->result, gl_journal_result_unref);
+}
+
+static void
+gl_event_view_detail_get_property (GObject *object,
+                                   guint prop_id,
+                                   GValue *value,
+                                   GParamSpec *pspec)
+{
+    GlEventViewDetail *detail = GL_EVENT_VIEW_DETAIL (object);
+    GlEventViewDetailPrivate *priv = gl_event_view_detail_get_instance_private (detail);
+
+    switch (prop_id)
+    {
+        case PROP_CLOCK_FORMAT:
+            g_value_set_enum (value, priv->clock_format);
+            break;
+        case PROP_RESULT:
+            g_value_set_boxed (value, priv->result);
+            break;
+        default:
+            G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
+            break;
+    }
+}
+
+static void
+gl_event_view_detail_set_property (GObject *object,
+                                   guint prop_id,
+                                   const GValue *value,
+                                   GParamSpec *pspec)
+{
+    GlEventViewDetail *detail = GL_EVENT_VIEW_DETAIL (object);
+    GlEventViewDetailPrivate *priv = gl_event_view_detail_get_instance_private (detail);
+
+    switch (prop_id)
+    {
+        case PROP_CLOCK_FORMAT:
+            priv->clock_format = g_value_get_enum (value);
+            break;
+        case PROP_RESULT:
+            priv->result = g_value_dup_boxed (value);
+            break;
+        default:
+            G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
+            break;
+    }
+}
+
+static void
+gl_event_view_detail_constructed (GObject *object)
+{
+    GlEventViewDetail *detail = GL_EVENT_VIEW_DETAIL (object);
+
+    /* contruct-only properties have already been set. */
+    gl_event_view_detail_create_detail (detail);
+
+    G_OBJECT_CLASS (gl_event_view_detail_parent_class)->constructed (object);
+}
+
+static void
+gl_event_view_detail_class_init (GlEventViewDetailClass *klass)
+{
+    GObjectClass *gobject_class = G_OBJECT_CLASS (klass);
+
+    gobject_class->constructed = gl_event_view_detail_constructed;
+    gobject_class->finalize = gl_event_view_detail_finalize;
+    gobject_class->get_property = gl_event_view_detail_get_property;
+    gobject_class->set_property = gl_event_view_detail_set_property;
+
+    obj_properties[PROP_CLOCK_FORMAT] = g_param_spec_enum ("clock-format", "Clock format",
+                                                           "Format of the clock in which to show timestamps",
+                                                           GL_TYPE_UTIL_CLOCK_FORMAT,
+                                                           GL_UTIL_CLOCK_FORMAT_24HR,
+                                                           G_PARAM_READWRITE |
+                                                           G_PARAM_CONSTRUCT_ONLY |
+                                                           G_PARAM_STATIC_STRINGS);
+
+    obj_properties[PROP_RESULT] = g_param_spec_boxed ("result", "Result",
+                                                      "Journal query result for this detailed view",
+                                                      GL_TYPE_JOURNAL_RESULT,
+                                                      G_PARAM_READWRITE |
+                                                      G_PARAM_CONSTRUCT_ONLY |
+                                                      G_PARAM_STATIC_STRINGS);
+
+    g_object_class_install_properties (gobject_class, N_PROPERTIES,
+                                       obj_properties);
+}
+
+static void
+gl_event_view_detail_init (GlEventViewDetail *detail)
+{
+    /* See gl_event_view_detail_constructed (). */
+}
+
+GtkWidget *
+gl_event_view_detail_new (GlJournalResult *result,
+                          GlUtilClockFormat clock_format)
+{
+    return g_object_new (GL_TYPE_EVENT_VIEW_DETAIL, "result", result,
+                         "clock-format", clock_format, NULL);
+}

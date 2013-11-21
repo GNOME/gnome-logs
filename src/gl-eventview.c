@@ -25,6 +25,7 @@
 
 #include "gl-enums.h"
 #include "gl-eventtoolbar.h"
+#include "gl-eventviewdetail.h"
 #include "gl-eventviewrow.h"
 #include "gl-journal.h"
 #include "gl-util.h"
@@ -166,62 +167,19 @@ on_listbox_row_activated (GtkListBox *listbox,
 {
     GlEventViewPrivate *priv;
     GlJournalResult *result;
-    gchar *time;
-    gboolean rtl;
-    GtkWidget *grid;
-    GtkWidget *label;
-    GtkStyleContext *context;
+    GtkWidget *detail;
     GtkStack *stack;
 
     priv = gl_event_view_get_instance_private (view);
-
     result = gl_event_view_row_get_result (GL_EVENT_VIEW_ROW (row));
 
-    rtl = gtk_widget_get_default_direction () == GTK_TEXT_DIR_RTL;
+    detail = gl_event_view_detail_new (result, priv->clock_format);
 
-    grid = gtk_grid_new ();
-    label = gtk_label_new (result->comm);
-    gtk_widget_set_direction (label, GTK_TEXT_DIR_LTR);
-    gtk_widget_set_hexpand (label, TRUE);
-    gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
-    context = gtk_widget_get_style_context (label);
-    gtk_style_context_add_class (context, "detail-comm");
-    gtk_grid_attach (GTK_GRID (grid), label, rtl ? 1 : 0, 0, 1, 1);
+    gtk_widget_show_all (detail);
 
-    time = gl_util_timestamp_to_display (result->timestamp,
-                                         priv->clock_format);
-    label = gtk_label_new (time);
-    gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
-    gtk_label_set_selectable (GTK_LABEL (label), TRUE);
-    context = gtk_widget_get_style_context (label);
-    gtk_style_context_add_class (context, "detail-time");
-    gtk_grid_attach (GTK_GRID (grid), label, rtl ? 0 : 1, 0, 1, 1);
-    g_free (time);
-
-    label = gtk_label_new (result->message);
-    gtk_widget_set_direction (label, GTK_TEXT_DIR_LTR);
-    gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
-    gtk_label_set_line_wrap (GTK_LABEL (label), TRUE);
-    gtk_label_set_selectable (GTK_LABEL (label), TRUE);
-    context = gtk_widget_get_style_context (label);
-    gtk_style_context_add_class (context, "detail-message");
-    gtk_style_context_add_class (context, "event-monospace");
-    gtk_grid_attach (GTK_GRID (grid), label, 0, 1, 2, 1);
-
-    label = gtk_label_new (result->catalog);
-    gtk_widget_set_direction (label, GTK_TEXT_DIR_LTR);
-    gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
-    gtk_label_set_selectable (GTK_LABEL (label), TRUE);
-    context = gtk_widget_get_style_context (label);
-    gtk_style_context_add_class (context, "detail-catalog");
-    gtk_grid_attach (GTK_GRID (grid), label, 0, 2, 2, 1);
-
-    gtk_widget_show_all (grid);
     stack = GTK_STACK (view);
-    gtk_stack_add_named (stack, grid, "detail");
+    gtk_stack_add_named (stack, detail, "detail");
     gl_event_view_set_mode (view, GL_EVENT_VIEW_MODE_DETAIL);
-
-    return;
 }
 
 static GtkWidget *
