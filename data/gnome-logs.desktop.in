@@ -7,5 +7,6 @@ _Keywords=log;journal;debug;error;
 Type=Application
 Categories=GTK;GNOME;System;Monitor;
 Exec=gnome-logs
+Icon=gnome-logs
 Terminal=false
 StartupNotify=true
