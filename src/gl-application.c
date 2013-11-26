@@ -59,6 +59,10 @@ on_about (GSimpleAction *action,
 {
     GtkApplication *application;
     GtkWindow *parent;
+    static const gchar* artists[] = {
+        "Jakub Steiner <jimmac@gmail.com>",
+        NULL
+    };
     static const gchar* authors[] = {
         "David King <davidk@gnome.org>",
         NULL
@@ -68,6 +72,7 @@ on_about (GSimpleAction *action,
     parent = gtk_application_get_active_window (GTK_APPLICATION (application));
     gtk_show_about_dialog (parent,
                            "authors", authors,
+                           "artists", artists,
                            "translator-credits", _("translator-credits"),
                            "comments", _("View and search logs"),
                            "copyright", "Copyright © 2013 Red Hat, Inc.",
