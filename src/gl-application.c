@@ -72,6 +72,7 @@ on_about (GSimpleAction *action,
                            "comments", _("View and search logs"),
                            "copyright", "Copyright © 2013 Red Hat, Inc.",
                            "license-type", GTK_LICENSE_GPL_3_0,
+                           "logo-icon-name", PACKAGE_TARNAME,
                            "program-name", PACKAGE_NAME,
                            "version", PACKAGE_VERSION,
                            "website", PACKAGE_URL, NULL);
