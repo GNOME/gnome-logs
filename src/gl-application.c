@@ -61,6 +61,7 @@ on_about (GSimpleAction *action,
     GtkWindow *parent;
     static const gchar* artists[] = {
         "Jakub Steiner <jimmac@gmail.com>",
+        "Lapo Calamandrei <calamandrei@gmail.com>",
         NULL
     };
     static const gchar* authors[] = {
