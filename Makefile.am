@@ -74,6 +74,37 @@ desktop_in_files = data/gnome-logs.desktop.in
 $(desktop_in_files:.desktop.in=.desktop): data/.dstamp
 desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
 
+iconthemedir = $(datadir)/icons/hicolor
+
+appicon16dir = $(iconthemedir)/16x16/apps
+appicon22dir = $(iconthemedir)/22x22/apps
+appicon24dir = $(iconthemedir)/24x24/apps
+appicon32dir = $(iconthemedir)/32x32/apps
+appicon48dir = $(iconthemedir)/48x48/apps
+appicon256dir = $(iconthemedir)/256x256/apps
+appicon512dir = $(iconthemedir)/512x512/apps
+
+dist_appicon16_DATA = data/icons/16x16/gnome-logs.png
+dist_appicon22_DATA = data/icons/22x22/gnome-logs.png
+dist_appicon24_DATA = data/icons/24x24/gnome-logs.png
+dist_appicon32_DATA = data/icons/32x32/gnome-logs.png
+dist_appicon48_DATA = data/icons/48x48/gnome-logs.png
+dist_appicon256_DATA = data/icons/256x256/gnome-logs.png
+dist_appicon512_DATA = data/icons/512x512/gnome-logs.png
+
+update_icon_cache = gtk-update-icon-cache --ignore-theme-index --force
+
+install-data-hook: install-update-icon-cache
+uninstall-hook: uninstall-update-icon-cache
+
+install-update-icon-cache:
+	$(AM_V_at)$(POST_INSTALL)
+	test -n "$(DESTDIR)" || $(update_icon_cache) "$(iconthemedir)"
+
+uninstall-update-icon-cache:
+	$(AM_V_at)$(POST_UNINSTALL)
+	test -n "$(DESTDIR)" || $(update_icon_cache) "$(iconthemedir)"
+
 src/gl-enums.c: $(gnome_logs_enum_headers) src/gl-enums.h Makefile
 	$(AM_V_GEN)$(GLIB_MKENUMS) \
 		--fhead "#include \"gl-enums.h\"\n\n" \
@@ -117,7 +148,8 @@ dist_noinst_DATA = \
 	$(noinst_resource_files) \
 	$(appdata_in_files) \
 	$(desktop_in_files) \
-	data/gnome-logs.gresource.xml
+	data/gnome-logs.gresource.xml \
+	data/icons/gnome-logs.svg
 
 dist_noinst_SCRIPTS = \
 	autogen.sh
@@ -155,3 +187,4 @@ MAINTAINERCLEANFILES = \
 	mkinstalldirs
 
 .PHONY: clean-local-dstamp git-changelog-hook
+.PHONY: install-update-icon-cache uninstall-update-icon-cache
