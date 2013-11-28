@@ -4,9 +4,11 @@ Makefile
 /autom4te.cache/
 /build-aux/
 /data/.dstamp
+/data/gnome-logs.1
 /data/gnome-logs.appdata.valid
 /data/gnome-logs.appdata.xml
 /data/gnome-logs.desktop
+/data/version.xml
 /m4/
 /po/.intltool-merge-cache
 /po/Makefile.in*

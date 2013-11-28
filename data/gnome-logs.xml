@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd"
+[<!ENTITY version SYSTEM "version.xml">]>
+<refentry id="gnome-logs">
+
+<refmeta>
+<refentrytitle>gnome-logs</refentrytitle>
+<manvolnum>1</manvolnum>
+<refmiscinfo class="manual">User Commands</refmiscinfo>
+<refmiscinfo class="source">GNOME Logs</refmiscinfo>
+<refmiscinfo class="version">&version;</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>gnome-logs</refname>
+<refpurpose>log viewer for the systemd journal</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv>
+<cmdsynopsis>
+<command>gnome-logs</command>
+</cmdsynopsis>
+</refsynopsisdiv>
+
+<refsect1><title>Description</title>
+<para>
+<command>gnome-logs</command> shows events from the systemd journal, and sorts
+them into categories, such as hardware and applications. Using
+<command>gnome-logs</command> you can search your logs by typing a search term,
+and view detailed information about each event by clicking on it.
+</para>
+</refsect1>
+
+<refsect1><title>Invocation</title>
+<para><command>gnome-logs</command> takes no arguments.</para>
+</refsect1>
+
+<refsect1><title>Author</title>
+<para>
+<command>gnome-logs</command> was written by David King
+<email>davidk@gnome.org</email>
+</para>
+
+<para>
+This manual page was written by David King <email>davidk@gnome.org</email>.
+</para>
+</refsect1>
+</refentry>

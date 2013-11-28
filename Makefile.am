@@ -74,6 +74,13 @@ desktop_in_files = data/gnome-logs.desktop.in
 $(desktop_in_files:.desktop.in=.desktop): data/.dstamp
 desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
 
+if ENABLE_MAN
+data/gnome-logs.1: data/gnome-logs.xml
+	$(AM_V_GEN)xsltproc --nonet --path $(builddir)/data --output $(builddir)/data/ http://docbook.sourceforge.net/release/xsl/current/manpages/docbook.xsl $<
+
+nodist_man_MANS = data/gnome-logs.1
+endif
+
 iconthemedir = $(datadir)/icons/hicolor
 
 appicon16dir = $(iconthemedir)/16x16/apps
@@ -149,6 +156,7 @@ dist_noinst_DATA = \
 	$(appdata_in_files) \
 	$(desktop_in_files) \
 	data/gnome-logs.gresource.xml \
+	data/gnome-logs.xml \
 	data/icons/gnome-logs.svg
 
 dist_noinst_SCRIPTS = \
@@ -172,6 +180,7 @@ CLEANFILES = \
 	$(appdata_XML) \
 	$(desktop_DATA) \
 	$(enum_data) \
+	$(nodist_man_MANS) \
 	src/gl-resource.c \
 	src/gl-resource.h
 
