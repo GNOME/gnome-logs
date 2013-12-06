@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-30 19:00+0100\n"
-"PO-Revision-Date: 2013-10-30 19:01+0100\n"
+"POT-Creation-Date: 2013-12-06 17:02+0100\n"
+"PO-Revision-Date: 2013-12-06 17:03+0100\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <gnomepl@aviary.pl>\n"
 "Language: pl\n"
@@ -87,6 +87,23 @@ msgstr "Przechodzi wstecz do widoku zdarzeń"
 msgid "Search the displayed logs"
 msgstr "Przeszukuje wyświetlone dzienniki"
 
+#: ../data/gnome-logs.appdata.xml.in.h:1
+msgid ""
+"Logs shows events from the systemd journal, and sorts them into categories, "
+"such as hardware and applications."
+msgstr ""
+"Przeglądarka dzienników wyświetla zdarzenia z dziennika systemd i porządkuje "
+"je według kategorii, takich jak sprzęt i programy."
+
+#: ../data/gnome-logs.appdata.xml.in.h:2
+msgid ""
+"Using Logs you can search your logs by typing a search term, and view "
+"detailed information about each event by clicking on it."
+msgstr ""
+"Używając przeglądarki dzienników można przeszukiwać dzienniki wpisując "
+"szukany termin oraz wyświetlać szczegółowe informacje o każdym zdarzenie po "
+"jego kliknięciu."
+
 #: ../data/gnome-logs.desktop.in.h:1
 msgid "Log Viewer"
 msgstr "Przeglądarka dzienników"
@@ -100,24 +117,24 @@ msgstr "Wyświetlanie szczegółowych dzienników zdarzeń w systemie"
 msgid "log;journal;debug;error;"
 msgstr "dziennik;logi;journal;debugowanie;błąd;error;"
 
-#: ../src/gl-application.c:71
+#: ../src/gl-application.c:77
 msgid "translator-credits"
 msgstr ""
 "Piotr Drąg <piotrdrag@gmail.com>, 2013\n"
 "Aviary.pl <gnomepl@aviary.pl>, 2013"
 
-#: ../src/gl-application.c:72
+#: ../src/gl-application.c:78
 msgid "View and search logs"
 msgstr "Wyświetlanie i przeszukiwanie dzienników"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventview.c:817
+#: ../src/gl-eventview.c:253
 msgid "No results"
 msgstr "Brak wyników"
 
-#: ../src/gl-eventview.c:874 ../src/gl-eventview.c:884
-#: ../src/gl-eventview.c:1015 ../src/gl-eventview.c:1025
+#: ../src/gl-eventview.c:455 ../src/gl-eventview.c:465
+#: ../src/gl-eventview.c:596 ../src/gl-eventview.c:606
 msgid "Not implemented"
 msgstr "Niezaimplementowane"
 
