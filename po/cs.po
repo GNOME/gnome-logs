@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-10-14 01:28+0000\n"
-"PO-Revision-Date: 2013-10-18 21:13+0200\n"
+"POT-Creation-Date: 2013-11-13 02:15+0000\n"
+"PO-Revision-Date: 2013-12-09 13:30+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -83,6 +83,22 @@ msgstr "Vrátit se na zobrazení události"
 msgid "Search the displayed logs"
 msgstr "Prohledat zobrazené záznamy"
 
+#: ../data/gnome-logs.appdata.xml.in.h:1
+msgid ""
+"Logs shows events from the systemd journal, and sorts them into categories, "
+"such as hardware and applications."
+msgstr ""
+"Aplikace Záznamy zobrazuje události ze žurnálu systemd a řadí je do "
+"kategorií, jako jsou třeba hardware nebo aplikace."
+
+#: ../data/gnome-logs.appdata.xml.in.h:2
+msgid ""
+"Using Logs you can search your logs by typing a search term, and view "
+"detailed information about each event by clicking on it."
+msgstr ""
+"Díky aplikaci Záznamy můžete ve svých záznamech vyhledávat jednoduše "
+"napsaním výrazu a ke každé události si pak kliknutím zobrazit podrobnosti."
+
 #: ../data/gnome-logs.desktop.in.h:1
 msgid "Log Viewer"
 msgstr "Prohlížeč záznamů o provozu"
@@ -96,15 +112,61 @@ msgstr "Zobrazit podrobné záznamy událostí v systému"
 msgid "log;journal;debug;error;"
 msgstr "log;záznam;protokol;evidence;žurnál;ladění;chyba;"
 
-#: ../src/gl-application.c:61
+#: ../src/gl-application.c:71
 msgid "translator-credits"
 msgstr "Marek Černocký <marek@manet.cz>"
 
-#: ../src/gl-application.c:62
+#: ../src/gl-application.c:72
 msgid "View and search logs"
 msgstr "Zobrazit a prohledat záznamy o provozu"
 
-#: ../src/gl-eventview.c:672 ../src/gl-eventview.c:682
-#: ../src/gl-eventview.c:801 ../src/gl-eventview.c:811
+#. Translators: Shown when there are no (zero) results in the current
+#. * view.
+#: ../src/gl-eventview.c:253
+msgid "No results"
+msgstr "Žádné výsledky"
+
+#: ../src/gl-eventview.c:455 ../src/gl-eventview.c:465
+#: ../src/gl-eventview.c:596 ../src/gl-eventview.c:606
 msgid "Not implemented"
 msgstr "Neimplementováno"
+
+#. Translators: timestamp format for events on the current
+#. * day, showing the time in 12-hour format.
+#: ../src/gl-util.c:95
+msgid "%l:%M %p"
+msgstr "%l:%M %p"
+
+#. Translators: timestamp format for events in the current
+#. * year, showing the abbreviated month name, day of the
+#. * month and the time in 12-hour format.
+#: ../src/gl-util.c:101
+msgid "%b %e %l:%M %p"
+msgstr "%e. %B %l:%M %p"
+
+#. Translators: timestamp format for events in a different
+#. * year, showing the abbreviated month name, day of the
+#. * month, year and the time in 12-hour format.
+#: ../src/gl-util.c:107
+msgid "%b %e %Y %l:%M %p"
+msgstr "%e. %B %Y %l:%M %p"
+
+#. Translators: timestamp format for events on the current
+#. * day, showing the time in 24-hour format.
+#: ../src/gl-util.c:120
+msgid "%H:%M"
+msgstr "%H:%M"
+
+#. Translators: timestamp format for events in the current
+#. * year, showing the abbreviated month name, day of the
+#. * month and the time in 24-hour format.
+#: ../src/gl-util.c:126
+msgid "%b %e %H:%M"
+msgstr "%e. %B %H:%M"
+
+#. Translators: timestamp format for events in a different
+#. * year, showing the abbreviated month name, day of the
+#. * month, year and the time in 24-hour format.
+#: ../src/gl-util.c:132
+msgid "%b %e %Y %H:%M"
+msgstr "%e. %B %Y %H:%M"
