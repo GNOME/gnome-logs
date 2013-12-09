@@ -6,9 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-10-01 12:59+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-12-09 13:30+0100\n"
 "PO-Revision-Date: 2013-10-01 18:18+0200\n"
 "Last-Translator: Daniele Medri <dmedri@gmail.com>\n"
 "Language-Team: Italian <gnome-it-list@gnome.org>\n"
@@ -32,7 +31,7 @@ msgstr "_Esci"
 
 #: ../data/gl-categorylist.ui.h:1
 msgid "Important"
-msgstr "Importante"
+msgstr "Importanti"
 
 #: ../data/gl-categorylist.ui.h:2
 msgid "Alerts"
@@ -44,7 +43,7 @@ msgstr "Preferiti"
 
 #: ../data/gl-categorylist.ui.h:4
 msgid "All"
-msgstr "Tutto"
+msgstr "Tutti"
 
 #: ../data/gl-categorylist.ui.h:5
 msgid "Applications"
@@ -82,9 +81,21 @@ msgstr "Torna alla visualizzazione evento"
 msgid "Search the displayed logs"
 msgstr "Cerca nei registri visualizzati"
 
-#: ../data/gl-window.ui.h:1
-msgid "Categories"
-msgstr "Categorie"
+#: ../data/gnome-logs.appdata.xml.in.h:1
+msgid ""
+"Logs shows events from the systemd journal, and sorts them into categories, "
+"such as hardware and applications."
+msgstr ""
+"Il registro mostra eventi dal giornale di systemd e li ordina per categorie, "
+"per hardware e applicazioni."
+
+#: ../data/gnome-logs.appdata.xml.in.h:2
+msgid ""
+"Using Logs you can search your logs by typing a search term, and view "
+"detailed information about each event by clicking on it."
+msgstr ""
+"Puoi cercare nei tuoi registri digitando termini di ricerca e visualizzare "
+"informazioni dettagliate sugli eventi facendo clic su di essi."
 
 #: ../data/gnome-logs.desktop.in.h:1
 msgid "Log Viewer"
@@ -99,15 +110,61 @@ msgstr "Visualizza il registro degli eventi di sistema"
 msgid "log;journal;debug;error;"
 msgstr "registro;diario;debug;errore;"
 
-#: ../src/gl-application.c:61
+#: ../src/gl-application.c:77
 msgid "translator-credits"
 msgstr "Daniele Medri <dmedri@gmail.com>, 2013"
 
-#: ../src/gl-application.c:62
+#: ../src/gl-application.c:78
 msgid "View and search logs"
 msgstr "Visualizza e cerca registri"
 
-#: ../src/gl-eventview.c:1031 ../src/gl-eventview.c:1041
-#: ../src/gl-eventview.c:1278 ../src/gl-eventview.c:1288
+#. Translators: Shown when there are no (zero) results in the current
+#. * view.
+#: ../src/gl-eventview.c:253
+msgid "No results"
+msgstr "Nessun risultato"
+
+#: ../src/gl-eventview.c:455 ../src/gl-eventview.c:465
+#: ../src/gl-eventview.c:596 ../src/gl-eventview.c:606
 msgid "Not implemented"
 msgstr "Non implementato"
+
+#. Translators: timestamp format for events on the current
+#. * day, showing the time in 12-hour format.
+#: ../src/gl-util.c:95
+msgid "%l:%M %p"
+msgstr "%l:%M %p"
+
+#. Translators: timestamp format for events in the current
+#. * year, showing the abbreviated month name, day of the
+#. * month and the time in 12-hour format.
+#: ../src/gl-util.c:101
+msgid "%b %e %l:%M %p"
+msgstr "%e %b %l:%M %p"
+
+#. Translators: timestamp format for events in a different
+#. * year, showing the abbreviated month name, day of the
+#. * month, year and the time in 12-hour format.
+#: ../src/gl-util.c:107
+msgid "%b %e %Y %l:%M %p"
+msgstr "%e %b %Y %l:%M %p"
+
+#. Translators: timestamp format for events on the current
+#. * day, showing the time in 24-hour format.
+#: ../src/gl-util.c:120
+msgid "%H:%M"
+msgstr "%H:%M"
+
+#. Translators: timestamp format for events in the current
+#. * year, showing the abbreviated month name, day of the
+#. * month and the time in 24-hour format.
+#: ../src/gl-util.c:126
+msgid "%b %e %H:%M"
+msgstr "%e %b %H:%M"
+
+#. Translators: timestamp format for events in a different
+#. * year, showing the abbreviated month name, day of the
+#. * month, year and the time in 24-hour format.
+#: ../src/gl-util.c:132
+msgid "%b %e %Y %H:%M"
+msgstr "%e %b %Y %H:%M"
