@@ -1,3 +1,12 @@
+GNOME Logs 3.11.3
+=================
+
+* validate AppData during distcheck
+* add man page
+* add icon
+* Simplified Chinese translation
+* updates to Spanish, Polish, Czech and Italian translations
+
 GNOME Logs 3.11.2
 =================
 
