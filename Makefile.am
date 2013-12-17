@@ -1,5 +1,8 @@
 ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
 
+DISTCHECK_CONFIGURE_FLAGS = \
+	--enable-appdata-validate
+
 SUBDIRS = po
 
 bin_PROGRAMS = gnome-logs
