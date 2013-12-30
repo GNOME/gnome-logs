@@ -1,0 +1,170 @@
+# English translations for PACKAGE package.
+# Copyright (C) 2013 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Fran Dieguez <frandieguez@gnome.org>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-12-30 02:31+0100\n"
+"PO-Revision-Date: 2013-12-30 02:37+0200\n"
+"Last-Translator: Fran Dieguez <frandieguez@gnome.org>\n"
+"Language-Team: gnome-l10n-gl@gnome.org\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Virtaal 0.7.1\n"
+
+#: ../data/appmenu.ui.h:1
+msgid "_New Window"
+msgstr "_Nova xanela"
+
+#: ../data/appmenu.ui.h:2
+msgid "_About"
+msgstr "_Sobre"
+
+#: ../data/appmenu.ui.h:3
+msgid "_Quit"
+msgstr "_Saír"
+
+#: ../data/gl-categorylist.ui.h:1
+msgid "Important"
+msgstr "Importante"
+
+#: ../data/gl-categorylist.ui.h:2
+msgid "Alerts"
+msgstr "Alertas"
+
+#: ../data/gl-categorylist.ui.h:3
+msgid "Starred"
+msgstr "Destacado"
+
+#: ../data/gl-categorylist.ui.h:4
+msgid "All"
+msgstr "Todo"
+
+#: ../data/gl-categorylist.ui.h:5
+msgid "Applications"
+msgstr "Aplicativos"
+
+#: ../data/gl-categorylist.ui.h:6
+msgid "System"
+msgstr "Sistema"
+
+#: ../data/gl-categorylist.ui.h:7
+msgid "Security"
+msgstr "Seguridade"
+
+#: ../data/gl-categorylist.ui.h:8
+msgid "Hardware"
+msgstr "Hardware"
+
+#: ../data/gl-categorylist.ui.h:9
+msgid "Updates"
+msgstr "Actualizacións"
+
+#: ../data/gl-categorylist.ui.h:10
+msgid "Usage"
+msgstr "Uso"
+
+#: ../data/gl-eventtoolbar.ui.h:1
+msgid "Logs"
+msgstr "Rexistros"
+
+#: ../data/gl-eventtoolbar.ui.h:2
+msgid "Go back to the event view"
+msgstr "Volver á vista de eventos"
+
+#: ../data/gl-eventtoolbar.ui.h:3
+msgid "Search the displayed logs"
+msgstr "Buscar nos rexistros mostrados"
+
+#: ../data/gnome-logs.appdata.xml.in.h:1
+msgid ""
+"Logs shows events from the systemd journal, and sorts them into categories, "
+"such as hardware and applications."
+msgstr ""
+"Rexistros mostra os eventos do diario de systemd e ordénaos en categorías, "
+"como por exemplo hardware e aplivativos."
+
+#: ../data/gnome-logs.appdata.xml.in.h:2
+msgid ""
+"Using Logs you can search your logs by typing a search term, and view "
+"detailed information about each event by clicking on it."
+msgstr ""
+"Ao usar Rexistros pode buscar nos seus rexistros escribindo na caixa de "
+"busca, e ver información detallada sobre cada evento premendo nel."
+
+#: ../data/gnome-logs.desktop.in.h:1
+msgid "Log Viewer"
+msgstr "Visor de rexistros"
+
+#: ../data/gnome-logs.desktop.in.h:2
+msgid "View detailed event logs for the system"
+msgstr "Ver rexistros de eventos detallados para o seu sistema"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: ../data/gnome-logs.desktop.in.h:4
+msgid "log;journal;debug;error;"
+msgstr "rexistro;diario;depuración;erro;"
+
+#: ../src/gl-application.c:77
+msgid "translator-credits"
+msgstr "Fran Dieguez <frandieguez@gnome.org>, 2013-2014."
+
+#: ../src/gl-application.c:78
+msgid "View and search logs"
+msgstr "Ver e buscar rexistros"
+
+#. Translators: Shown when there are no (zero) results in the current
+#. * view.
+#: ../src/gl-eventview.c:211
+msgid "No results"
+msgstr "Sen resultados"
+
+#: ../src/gl-eventview.c:413 ../src/gl-eventview.c:423
+#: ../src/gl-eventview.c:554 ../src/gl-eventview.c:564
+msgid "Not implemented"
+msgstr "Non implementado"
+
+#. Translators: timestamp format for events on the current
+#. * day, showing the time in 12-hour format.
+#: ../src/gl-util.c:95
+msgid "%l:%M %p"
+msgstr "%l:%M %p"
+
+#. Translators: timestamp format for events in the current
+#. * year, showing the abbreviated month name, day of the
+#. * month and the time in 12-hour format.
+#: ../src/gl-util.c:101
+msgid "%b %e %l:%M %p"
+msgstr "%b %e %l:%M %p"
+
+#. Translators: timestamp format for events in a different
+#. * year, showing the abbreviated month name, day of the
+#. * month, year and the time in 12-hour format.
+#: ../src/gl-util.c:107
+msgid "%b %e %Y %l:%M %p"
+msgstr "%b %e %Y %l:%M %p"
+
+#. Translators: timestamp format for events on the current
+#. * day, showing the time in 24-hour format.
+#: ../src/gl-util.c:120
+msgid "%H:%M"
+msgstr "%H:%M"
+
+#. Translators: timestamp format for events in the current
+#. * year, showing the abbreviated month name, day of the
+#. * month and the time in 24-hour format.
+#: ../src/gl-util.c:126
+msgid "%b %e %H:%M"
+msgstr "%b %e %H:%M"
+
+#. Translators: timestamp format for events in a different
+#. * year, showing the abbreviated month name, day of the
+#. * month, year and the time in 24-hour format.
+#: ../src/gl-util.c:132
+msgid "%b %e %Y %H:%M"
+msgstr "%b %e %Y %H:%M"
