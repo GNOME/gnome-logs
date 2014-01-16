@@ -18,6 +18,7 @@
 
 #include "gl-eventviewdetail.h"
 
+#include <gio/gdesktopappinfo.h>
 #include <glib/gi18n.h>
 
 #include "gl-enums.h"
@@ -40,6 +41,66 @@ G_DEFINE_TYPE_WITH_PRIVATE (GlEventViewDetail, gl_event_view_detail, GTK_TYPE_BI
 
 static GParamSpec *obj_properties[N_PROPERTIES] = { NULL, };
 
+static GtkWidget *
+create_widget_for_comm (const gchar *comm)
+{
+    if (comm && *comm)
+    {
+        /* Command-line, look for a desktop file. */
+        gchar *str;
+        GDesktopAppInfo *desktop;
+
+        /* TODO: Use g_desktop_app_info_search? */
+        str = g_strconcat (comm, ".desktop", NULL);
+        desktop = g_desktop_app_info_new (str);
+        g_free (str);
+
+        if (desktop)
+        {
+            GtkWidget *box;
+            GIcon *icon;
+            GtkWidget *image;
+            GtkWidget *label;
+            GtkStyleContext *context;
+
+            box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
+
+            icon = g_app_info_get_icon (G_APP_INFO (desktop));
+            image = gtk_image_new_from_gicon (icon, GTK_ICON_SIZE_DIALOG);
+            gtk_box_pack_end (GTK_BOX (box), image, TRUE, TRUE, 0);
+
+            label = gtk_label_new (g_app_info_get_name (G_APP_INFO (desktop)));
+            gtk_widget_set_direction (label, GTK_TEXT_DIR_LTR);
+            gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
+            context = gtk_widget_get_style_context (label);
+            gtk_style_context_add_class (context, "detail-comm");
+            gtk_box_pack_end (GTK_BOX (box), label, TRUE, TRUE, 0);
+
+            g_object_unref (desktop);
+
+            return box;
+        }
+        else
+        {
+            GtkWidget *label;
+            GtkStyleContext *context;
+
+            label = gtk_label_new (comm);
+            gtk_widget_set_direction (label, GTK_TEXT_DIR_LTR);
+            gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
+            context = gtk_widget_get_style_context (label);
+            gtk_style_context_add_class (context, "detail-comm");
+
+            return label;
+        }
+    }
+    else
+    {
+        /* No command-line. */
+        return gtk_label_new (NULL);
+    }
+}
+
 static void
 gl_event_view_detail_create_detail (GlEventViewDetail *detail)
 {
@@ -48,6 +109,7 @@ gl_event_view_detail_create_detail (GlEventViewDetail *detail)
     gchar *str;
     gboolean rtl;
     GtkWidget *box;
+    GtkWidget *description;
     GtkWidget *grid;
     GtkWidget *label;
     GtkStyleContext *context;
@@ -59,12 +121,8 @@ gl_event_view_detail_create_detail (GlEventViewDetail *detail)
     rtl = gtk_widget_get_default_direction () == GTK_TEXT_DIR_RTL;
 
     box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
-    label = gtk_label_new (result->comm);
-    gtk_widget_set_direction (label, GTK_TEXT_DIR_LTR);
-    gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
-    context = gtk_widget_get_style_context (label);
-    gtk_style_context_add_class (context, "detail-comm");
-    gtk_box_pack_start (GTK_BOX (box), label, TRUE, TRUE, 0);
+    description = create_widget_for_comm (result->comm);
+    gtk_box_pack_start (GTK_BOX (box), description, TRUE, TRUE, 0);
 
     str = gl_util_timestamp_to_display (result->timestamp, priv->clock_format);
     label = gtk_label_new (str);
