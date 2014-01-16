@@ -12,8 +12,12 @@
     padding: 10px;
 }
 
-.detail-catalog, .detail-message, .detail-time {
+.detail-audit_session, .detail-catalog, .detail-kernel_device, .detail-message, .detail-priority, .detail-time {
     padding: 10px;
+}
+
+.detail-field-label {
+    padding-left: 10px;
 }
 
 .event {

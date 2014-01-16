@@ -18,6 +18,8 @@
 
 #include "gl-eventviewdetail.h"
 
+#include <glib/gi18n.h>
+
 #include "gl-enums.h"
 
 enum
@@ -43,8 +45,9 @@ gl_event_view_detail_create_detail (GlEventViewDetail *detail)
 {
     GlEventViewDetailPrivate *priv;
     GlJournalResult *result;
-    gchar *time;
+    gchar *str;
     gboolean rtl;
+    GtkWidget *box;
     GtkWidget *grid;
     GtkWidget *label;
     GtkStyleContext *context;
@@ -55,34 +58,63 @@ gl_event_view_detail_create_detail (GlEventViewDetail *detail)
 
     rtl = gtk_widget_get_default_direction () == GTK_TEXT_DIR_RTL;
 
-    grid = gtk_grid_new ();
+    box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
     label = gtk_label_new (result->comm);
     gtk_widget_set_direction (label, GTK_TEXT_DIR_LTR);
-    gtk_widget_set_hexpand (label, TRUE);
     gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
     context = gtk_widget_get_style_context (label);
     gtk_style_context_add_class (context, "detail-comm");
-    gtk_grid_attach (GTK_GRID (grid), label, rtl ? 1 : 0, 0, 1, 1);
+    gtk_box_pack_start (GTK_BOX (box), label, TRUE, TRUE, 0);
 
-    time = gl_util_timestamp_to_display (result->timestamp,
-                                         priv->clock_format);
-    label = gtk_label_new (time);
-    gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
+    str = gl_util_timestamp_to_display (result->timestamp, priv->clock_format);
+    label = gtk_label_new (str);
+    gtk_widget_set_hexpand (label, TRUE);
+    gtk_misc_set_alignment (GTK_MISC (label), 1.0, 0.5);
     gtk_label_set_selectable (GTK_LABEL (label), TRUE);
     context = gtk_widget_get_style_context (label);
     gtk_style_context_add_class (context, "detail-time");
-    gtk_grid_attach (GTK_GRID (grid), label, rtl ? 0 : 1, 0, 1, 1);
-    g_free (time);
+    gtk_box_pack_start (GTK_BOX (box), label, TRUE, TRUE, 0);
+    g_free (str);
+
+    grid = gtk_grid_new ();
+    gtk_grid_attach (GTK_GRID (grid), box, 0, 0, 2, 1);
+
+    label = gtk_label_new (_("Message"));
+    gtk_misc_set_alignment (GTK_MISC (label), 1.0, 0.5);
+    context = gtk_widget_get_style_context (label);
+    gtk_style_context_add_class (context, "detail-field-label");
+    gtk_style_context_add_class (context, "dim-label");
+    gtk_grid_attach (GTK_GRID (grid), label, rtl ? 1 : 0, 1, 1, 1);
 
     label = gtk_label_new (result->message);
     gtk_widget_set_direction (label, GTK_TEXT_DIR_LTR);
+    /* The message label expands, so that the field label column is as narrow
+     * as possible. */
+    gtk_widget_set_hexpand (label, TRUE);
     gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
     gtk_label_set_line_wrap (GTK_LABEL (label), TRUE);
     gtk_label_set_selectable (GTK_LABEL (label), TRUE);
     context = gtk_widget_get_style_context (label);
     gtk_style_context_add_class (context, "detail-message");
     gtk_style_context_add_class (context, "event-monospace");
-    gtk_grid_attach (GTK_GRID (grid), label, 0, 1, 2, 1);
+    gtk_grid_attach (GTK_GRID (grid), label, rtl ? 0 : 1, 1, 1, 1);
+
+    /* TODO: Give a user-friendly representation of the priority. */
+    label = gtk_label_new (_("Priority"));
+    gtk_misc_set_alignment (GTK_MISC (label), 1.0, 0.5);
+    context = gtk_widget_get_style_context (label);
+    gtk_style_context_add_class (context, "detail-field-label");
+    gtk_style_context_add_class (context, "dim-label");
+    gtk_grid_attach (GTK_GRID (grid), label, rtl ? 1 : 0, 2, 1, 1);
+
+    str = g_strdup_printf ("%d", result->priority);
+    label = gtk_label_new (str);
+    gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
+    gtk_label_set_selectable (GTK_LABEL (label), TRUE);
+    context = gtk_widget_get_style_context (label);
+    gtk_style_context_add_class (context, "detail-priority");
+    gtk_grid_attach (GTK_GRID (grid), label, rtl ? 0 : 1, 2, 1, 1);
+    g_free (str);
 
     label = gtk_label_new (result->catalog);
     gtk_widget_set_direction (label, GTK_TEXT_DIR_LTR);
@@ -90,7 +122,47 @@ gl_event_view_detail_create_detail (GlEventViewDetail *detail)
     gtk_label_set_selectable (GTK_LABEL (label), TRUE);
     context = gtk_widget_get_style_context (label);
     gtk_style_context_add_class (context, "detail-catalog");
-    gtk_grid_attach (GTK_GRID (grid), label, 0, 2, 2, 1);
+    gtk_grid_attach (GTK_GRID (grid), label, 0, 3, 2, 1);
+
+    if (result->kernel_device && *result->kernel_device)
+    {
+        gtk_grid_insert_row (GTK_GRID (grid), 2);
+
+        label = gtk_label_new (_("Kernel Device"));
+        gtk_misc_set_alignment (GTK_MISC (label), 1.0, 0.5);
+        context = gtk_widget_get_style_context (label);
+        gtk_style_context_add_class (context, "detail-field-label");
+        gtk_style_context_add_class (context, "dim-label");
+        gtk_grid_attach (GTK_GRID (grid), label, rtl ? 1 : 0, 2, 1, 1);
+
+        label = gtk_label_new (result->kernel_device);
+        gtk_widget_set_direction (label, GTK_TEXT_DIR_LTR);
+        gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
+        gtk_label_set_selectable (GTK_LABEL (label), TRUE);
+        context = gtk_widget_get_style_context (label);
+        gtk_style_context_add_class (context, "detail-kernel_device");
+        gtk_grid_attach (GTK_GRID (grid), label, rtl ? 0 : 1, 2, 1, 1);
+    }
+
+    if (result->audit_session && *result->audit_session)
+    {
+        gtk_grid_insert_row (GTK_GRID (grid), 2);
+
+        label = gtk_label_new (_("Audit Session"));
+        gtk_misc_set_alignment (GTK_MISC (label), 1.0, 0.5);
+        context = gtk_widget_get_style_context (label);
+        gtk_style_context_add_class (context, "detail-field-label");
+        gtk_style_context_add_class (context, "dim-label");
+        gtk_grid_attach (GTK_GRID (grid), label, rtl ? 1 : 0, 2, 1, 1);
+
+        label = gtk_label_new (result->audit_session);
+        gtk_widget_set_direction (label, GTK_TEXT_DIR_LTR);
+        gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
+        gtk_label_set_selectable (GTK_LABEL (label), TRUE);
+        context = gtk_widget_get_style_context (label);
+        gtk_style_context_add_class (context, "detail-kernel_device");
+        gtk_grid_attach (GTK_GRID (grid), label, rtl ? 0 : 1, 2, 1, 1);
+    }
 
     gtk_widget_show_all (grid);
 
