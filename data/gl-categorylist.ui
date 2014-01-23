@@ -19,7 +19,7 @@
         </child>
         <child>
             <object class="GtkListBoxRow" id="alerts">
-                <property name="visible">True</property>
+                <property name="visible">False</property>
                 <style>
                     <class name="category"/>
                 </style>
@@ -34,7 +34,7 @@
         </child>
         <child>
             <object class="GtkListBoxRow" id="starred">
-                <property name="visible">True</property>
+                <property name="visible">False</property>
                 <style>
                     <class name="category"/>
                 </style>
@@ -124,7 +124,7 @@
         </child>
         <child>
             <object class="GtkListBoxRow" id="updates">
-                <property name="visible">True</property>
+                <property name="visible">False</property>
                 <style>
                     <class name="category"/>
                 </style>
@@ -139,7 +139,7 @@
         </child>
         <child>
             <object class="GtkListBoxRow" id="usage">
-                <property name="visible">True</property>
+                <property name="visible">False</property>
                 <style>
                     <class name="category"/>
                 </style>
