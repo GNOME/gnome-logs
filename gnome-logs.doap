@@ -18,6 +18,7 @@
       <browse rdf:resource="https://git.gnome.org/browse/gnome-logs/" />
     </GitRepository>
   </repository>
+  <programming-language>C</programming-language>
 
   <maintainer>
     <foaf:Person>
