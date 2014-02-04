@@ -111,7 +111,7 @@ msgstr "Προβολή λεπτομερών καταγραφών συμβάντ�
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: ../data/gnome-logs.desktop.in.h:4
 msgid "log;journal;debug;error;"
-msgstr "καταγραφή;ημερολόγιο;αποσφαλμάτωση;σφάλμα"
+msgstr "καταγραφή;ημερολόγιο;αποσφαλμάτωση;σφάλμα;"
 
 #: ../src/gl-application.c:77
 msgid "translator-credits"
