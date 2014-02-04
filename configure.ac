@@ -64,6 +64,25 @@ AM_CONDITIONAL([ENABLE_MAN], [test "x$have_manutils" = "xyes"])
 dnl AppData XML
 APPDATA_XML
 
+dnl Testing utilities.
+AC_ARG_ENABLE([tests],
+              [AS_HELP_STRING([--disable-tests], [Disable support for tests run during make check])])
+
+AS_IF([test "x$enable_tests" != "xno"],
+      [AC_PATH_PROG([DESKTOP_FILE_VALIDATE], [desktop-file-validate])
+       AS_IF([test "x$ac_cv_path_DESKTOP_FILE_VALIDATE" != "xyes"],
+             [have_desktop_file_validate=yes],
+             [have_desktop_file_validate=no])],
+      [have_desktop_file_validate=no])
+
+AS_IF([test "x$have_desktop_file_validate" = "xyes"],
+      [testing_utilities=yes],
+      [testing_utilities=no
+       AS_IF([test "x$enable_tests" = "xyes"],
+             [AC_MSG_ERROR([tests were requested but the required utilities were not found])])])
+
+AM_CONDITIONAL([LOGS_ENABLE_TESTS], [test "x$testing_utilities" = "xyes"])
+
 dnl Libraries
 GIO_REQUIRED="gio-unix-2.0"
 GTK_REQUIRED="gtk+-3.0 >= 3.9.6"

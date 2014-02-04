@@ -1,7 +1,8 @@
 ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
 
 DISTCHECK_CONFIGURE_FLAGS = \
-	--enable-appdata-validate
+	--enable-appdata-validate \
+	--enable-tests
 
 SUBDIRS = po
 
@@ -84,6 +85,19 @@ data/gnome-logs.1: data/gnome-logs.xml
 	$(AM_V_GEN)xsltproc --nonet --path $(builddir)/data --output $(builddir)/data/ http://docbook.sourceforge.net/release/xsl/current/manpages/docbook.xsl $<
 
 nodist_man_MANS = data/gnome-logs.1
+endif
+
+if LOGS_ENABLE_TESTS
+test-desktop-file-validate.sh: Makefile
+	$(AM_V_GEN)echo "#!/bin/sh -e" > $@; \
+		echo "$(DESKTOP_FILE_VALIDATE) $(top_builddir)/$(desktop_DATA) || exit 1" >> $@; \
+		chmod +x $@
+
+check_SCRIPTS = \
+	test-desktop-file-validate.sh
+
+TESTS = \
+	$(check_SCRIPTS)
 endif
 
 iconthemedir = $(datadir)/icons/hicolor
@@ -187,7 +201,8 @@ CLEANFILES = \
 	$(enum_data) \
 	$(nodist_man_MANS) \
 	src/gl-resource.c \
-	src/gl-resource.h
+	src/gl-resource.h \
+	test-desktop-file-validate.sh
 
 MAINTAINERCLEANFILES = \
 	build-aux/compile \
