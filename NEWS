@@ -1,3 +1,11 @@
+GNOME Logs 3.11.5
+=================
+
+* show application icon if a corresponding desktop file is found
+* show priority, kernel device and audit session in details view
+* hide unimplemented UI labels
+* updates to Serbian, Greek, Finnish and Galician translations
+
 GNOME Logs 3.11.3
 =================
 
