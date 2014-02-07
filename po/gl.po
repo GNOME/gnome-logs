@@ -1,13 +1,13 @@
 # English translations for PACKAGE package.
 # Copyright (C) 2013 THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# Fran Dieguez <frandieguez@gnome.org>, 2013.
+# Fran Dieguez <frandieguez@gnome.org>, 2013, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-30 02:31+0100\n"
-"PO-Revision-Date: 2013-12-30 02:37+0200\n"
+"POT-Creation-Date: 2014-02-07 02:01+0100\n"
+"PO-Revision-Date: 2014-02-07 02:02+0200\n"
 "Last-Translator: Fran Dieguez <frandieguez@gnome.org>\n"
 "Language-Team: gnome-l10n-gl@gnome.org\n"
 "Language: en\n"
@@ -128,6 +128,23 @@ msgstr "Sen resultados"
 #: ../src/gl-eventview.c:554 ../src/gl-eventview.c:564
 msgid "Not implemented"
 msgstr "Non implementado"
+
+#: ../src/gl-eventviewdetail.c:140
+msgid "Message"
+msgstr "Mensaxe"
+
+#. TODO: Give a user-friendly representation of the priority.
+#: ../src/gl-eventviewdetail.c:161
+msgid "Priority"
+msgstr "Prioridade"
+
+#: ../src/gl-eventviewdetail.c:189
+msgid "Kernel Device"
+msgstr "Dispositivo do kernel"
+
+#: ../src/gl-eventviewdetail.c:209
+msgid "Audit Session"
+msgstr "Sesión de auditoria"
 
 #. Translators: timestamp format for events on the current
 #. * day, showing the time in 12-hour format.
