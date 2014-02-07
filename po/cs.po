@@ -1,15 +1,15 @@
 # Czech translation for gnome-logs.
 # Copyright (C) 2013 gnome-logs's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-logs package.
-# Marek Černocký <marek@manet.cz>, 2013.
+# Marek Černocký <marek@manet.cz>, 2013, 2014.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-11-13 02:15+0000\n"
-"PO-Revision-Date: 2013-12-09 13:30+0100\n"
+"POT-Creation-Date: 2014-02-04 09:16+0000\n"
+"PO-Revision-Date: 2014-02-07 20:22+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -112,24 +112,42 @@ msgstr "Zobrazit podrobné záznamy událostí v systému"
 msgid "log;journal;debug;error;"
 msgstr "log;záznam;protokol;evidence;žurnál;ladění;chyba;"
 
-#: ../src/gl-application.c:71
+#: ../src/gl-application.c:77
 msgid "translator-credits"
 msgstr "Marek Černocký <marek@manet.cz>"
 
-#: ../src/gl-application.c:72
+#: ../src/gl-application.c:78
 msgid "View and search logs"
 msgstr "Zobrazit a prohledat záznamy o provozu"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventview.c:253
+#: ../src/gl-eventview.c:211
 msgid "No results"
 msgstr "Žádné výsledky"
 
-#: ../src/gl-eventview.c:455 ../src/gl-eventview.c:465
-#: ../src/gl-eventview.c:596 ../src/gl-eventview.c:606
+#: ../src/gl-eventview.c:413 ../src/gl-eventview.c:423
+#: ../src/gl-eventview.c:554 ../src/gl-eventview.c:564
 msgid "Not implemented"
 msgstr "Neimplementováno"
+
+#: ../src/gl-eventviewdetail.c:140
+#| msgid "Usage"
+msgid "Message"
+msgstr "Zpráva"
+
+#. TODO: Give a user-friendly representation of the priority.
+#: ../src/gl-eventviewdetail.c:161
+msgid "Priority"
+msgstr "Priorita"
+
+#: ../src/gl-eventviewdetail.c:189
+msgid "Kernel Device"
+msgstr "Jaderné zařízení"
+
+#: ../src/gl-eventviewdetail.c:209
+msgid "Audit Session"
+msgstr "Sezení auditu"
 
 #. Translators: timestamp format for events on the current
 #. * day, showing the time in 12-hour format.
