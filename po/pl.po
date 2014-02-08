@@ -4,14 +4,14 @@
 # pomóc w jego rozwijaniu i pielęgnowaniu, napisz do nas:
 # gnomepl@aviary.pl
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-# Piotr Drąg <piotrdrag@gmail.com>, 2013.
-# Aviary.pl <gnomepl@aviary.pl>, 2013.
+# Piotr Drąg <piotrdrag@gmail.com>, 2013-2014.
+# Aviary.pl <gnomepl@aviary.pl>, 2013-2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-06 17:02+0100\n"
-"PO-Revision-Date: 2013-12-06 17:03+0100\n"
+"POT-Creation-Date: 2014-02-08 03:04+0100\n"
+"PO-Revision-Date: 2014-02-08 03:05+0100\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <gnomepl@aviary.pl>\n"
 "Language: pl\n"
@@ -120,8 +120,8 @@ msgstr "dziennik;logi;journal;debugowanie;błąd;error;"
 #: ../src/gl-application.c:77
 msgid "translator-credits"
 msgstr ""
-"Piotr Drąg <piotrdrag@gmail.com>, 2013\n"
-"Aviary.pl <gnomepl@aviary.pl>, 2013"
+"Piotr Drąg <piotrdrag@gmail.com>, 2013-2014\n"
+"Aviary.pl <gnomepl@aviary.pl>, 2013-2014"
 
 #: ../src/gl-application.c:78
 msgid "View and search logs"
@@ -129,14 +129,31 @@ msgstr "Wyświetlanie i przeszukiwanie dzienników"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventview.c:253
+#: ../src/gl-eventview.c:211
 msgid "No results"
 msgstr "Brak wyników"
 
-#: ../src/gl-eventview.c:455 ../src/gl-eventview.c:465
-#: ../src/gl-eventview.c:596 ../src/gl-eventview.c:606
+#: ../src/gl-eventview.c:413 ../src/gl-eventview.c:423
+#: ../src/gl-eventview.c:554 ../src/gl-eventview.c:564
 msgid "Not implemented"
 msgstr "Niezaimplementowane"
+
+#: ../src/gl-eventviewdetail.c:140
+msgid "Message"
+msgstr "Komunikat"
+
+#. TODO: Give a user-friendly representation of the priority.
+#: ../src/gl-eventviewdetail.c:161
+msgid "Priority"
+msgstr "Priorytet"
+
+#: ../src/gl-eventviewdetail.c:189
+msgid "Kernel Device"
+msgstr "Urządzenie jądra"
+
+#: ../src/gl-eventviewdetail.c:209
+msgid "Audit Session"
+msgstr "Sesja audytu"
 
 #. Translators: timestamp format for events on the current
 #. * day, showing the time in 12-hour format.
