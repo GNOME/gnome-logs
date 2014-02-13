@@ -46,12 +46,17 @@ typedef struct
     GtkListBox *active_listbox;
     GlEventViewMode mode;
     gchar *search_text;
+
+    GtkListBox *results_listbox;
+    GQueue *pending_results;
+    GList *results;
 } GlEventViewPrivate;
 
 G_DEFINE_TYPE_WITH_PRIVATE (GlEventView, gl_event_view, GTK_TYPE_STACK)
 
 static GParamSpec *obj_properties[N_PROPERTIES] = { NULL, };
 static const gssize N_RESULTS = -1;
+static const gssize N_RESULTS_IDLE = 25;
 static const gchar DESKTOP_SCHEMA[] = "org.gnome.desktop.interface";
 static const gchar CLOCK_FORMAT[] = "clock-format";
 
@@ -348,37 +353,82 @@ insert_journal_query_simple (GlEventView *view,
     gl_journal_results_free (results);
 }
 
+static gboolean
+insert_cmdline_idle (GlEventView *view)
+{
+    GlEventViewPrivate *priv;
+
+    priv = gl_event_view_get_instance_private (view);
+
+    if (priv->pending_results)
+    {
+        gssize i;
+
+        for (i = 0; i < N_RESULTS_IDLE; i++)
+        {
+            GlJournalResult *result;
+            GtkWidget *row;
+
+            result = g_queue_pop_head (priv->pending_results);
+
+            if (result)
+            {
+                row = gl_event_view_row_new (result,
+                                             GL_EVENT_VIEW_ROW_STYLE_CMDLINE,
+                                             priv->clock_format);
+                gtk_container_add (GTK_CONTAINER (priv->results_listbox), row);
+                gtk_widget_show_all (row);
+            }
+            else
+            {
+                g_queue_free (priv->pending_results);
+                gl_journal_results_free (priv->results);
+                priv->pending_results = NULL;
+                priv->results_listbox = NULL;
+                priv->results = NULL;
+
+                return G_SOURCE_REMOVE;
+            }
+        }
+
+        return G_SOURCE_CONTINUE;
+    }
+    else
+    {
+        return G_SOURCE_REMOVE;
+    }
+}
+
 static void
 insert_journal_query_cmdline (GlEventView *view,
                               const GlJournalQuery *query,
                               GtkListBox *listbox)
 {
     GlEventViewPrivate *priv;
-    GList *results = NULL;
     GList *l;
     gsize n_results;
+    guint idle_id;
 
     priv = gl_event_view_get_instance_private (view);
-    results = gl_journal_query (priv->journal, query);
+    priv->results = gl_journal_query (priv->journal, query);
+    priv->results_listbox = listbox;
 
-    n_results = g_list_length (results);
+    n_results = g_list_length (priv->results);
 
     if ((n_results != -1) && (n_results != N_RESULTS))
     {
         g_debug ("Number of results different than requested");
     }
 
-    for (l = results; l != NULL; l = g_list_next (l))
-    {
-        GtkWidget *row;
+    priv->pending_results = g_queue_new ();
 
-        row = gl_event_view_row_new ((GlJournalResult *)l->data,
-                                     GL_EVENT_VIEW_ROW_STYLE_CMDLINE,
-                                     priv->clock_format);
-        gtk_container_add (GTK_CONTAINER (listbox), row);
+    for (l = priv->results; l != NULL; l = g_list_next (l))
+    {
+        g_queue_push_tail (priv->pending_results, l->data);
     }
 
-    gl_journal_results_free (results);
+    idle_id = g_idle_add ((GSourceFunc) insert_cmdline_idle, view);
+    g_source_set_name_by_id (idle_id, G_STRFUNC);
 }
 
 static void
@@ -729,6 +779,7 @@ gl_event_view_finalize (GObject *object)
     GlEventViewPrivate *priv = gl_event_view_get_instance_private (view);
 
     g_clear_pointer (&priv->search_text, g_free);
+    g_clear_pointer (&priv->pending_results, g_queue_free);
 }
 
 static void
