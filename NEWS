@@ -1,3 +1,12 @@
+GNOME Logs 3.11.90
+==================
+
+* batch loading of journal items so that the UI remains responsive
+* show a Help item in the application menu
+* validate the desktop file during make check
+* updates to Serbian, Brazilian Portuguese, Spanish, Galician, Czech, Polish
+  and Ukrainian translations
+
 GNOME Logs 3.11.5
 =================
 
