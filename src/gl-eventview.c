@@ -50,6 +50,7 @@ typedef struct
     GtkListBox *results_listbox;
     GQueue *pending_results;
     GList *results;
+    guint insert_idle_id;
 } GlEventViewPrivate;
 
 G_DEFINE_TYPE_WITH_PRIVATE (GlEventView, gl_event_view, GTK_TYPE_STACK)
@@ -302,7 +303,6 @@ insert_journal_query_devices (GlEventView *view,
     GlEventViewPrivate *priv;
     GList *l;
     gsize n_results;
-    guint idle_id;
 
     priv = gl_event_view_get_instance_private (view);
     priv->results = gl_journal_query (priv->journal, query);
@@ -322,8 +322,9 @@ insert_journal_query_devices (GlEventView *view,
         g_queue_push_tail (priv->pending_results, l->data);
     }
 
-    idle_id = g_idle_add ((GSourceFunc) insert_devices_idle, view);
-    g_source_set_name_by_id (idle_id, G_STRFUNC);
+    priv->insert_idle_id = g_idle_add ((GSourceFunc) insert_devices_idle,
+                                       view);
+    g_source_set_name_by_id (priv->insert_idle_id, G_STRFUNC);
 }
 
 static gboolean
@@ -385,7 +386,6 @@ insert_journal_query_security (GlEventView *view,
     GlEventViewPrivate *priv;
     GList *l;
     gsize n_results;
-    guint idle_id;
 
     priv = gl_event_view_get_instance_private (view);
     priv->results = gl_journal_query (priv->journal, query);
@@ -405,8 +405,9 @@ insert_journal_query_security (GlEventView *view,
         g_queue_push_tail (priv->pending_results, l->data);
     }
 
-    idle_id = g_idle_add ((GSourceFunc) insert_security_idle, view);
-    g_source_set_name_by_id (idle_id, G_STRFUNC);
+    priv->insert_idle_id = g_idle_add ((GSourceFunc) insert_security_idle,
+                                       view);
+    g_source_set_name_by_id (priv->insert_idle_id, G_STRFUNC);
 }
 
 static gboolean
@@ -463,7 +464,6 @@ insert_journal_query_simple (GlEventView *view,
     GlEventViewPrivate *priv;
     GList *l;
     gsize n_results;
-    guint idle_id;
 
     priv = gl_event_view_get_instance_private (view);
     priv->results = gl_journal_query (priv->journal, query);
@@ -482,8 +482,8 @@ insert_journal_query_simple (GlEventView *view,
         g_queue_push_tail (priv->pending_results, l->data);
     }
 
-    idle_id = g_idle_add ((GSourceFunc) insert_simple_idle, view);
-    g_source_set_name_by_id (idle_id, G_STRFUNC);
+    priv->insert_idle_id = g_idle_add ((GSourceFunc) insert_simple_idle, view);
+    g_source_set_name_by_id (priv->insert_idle_id, G_STRFUNC);
 }
 
 static gboolean
@@ -540,7 +540,6 @@ insert_journal_query_cmdline (GlEventView *view,
     GlEventViewPrivate *priv;
     GList *l;
     gsize n_results;
-    guint idle_id;
 
     priv = gl_event_view_get_instance_private (view);
     priv->results = gl_journal_query (priv->journal, query);
@@ -560,8 +559,9 @@ insert_journal_query_cmdline (GlEventView *view,
         g_queue_push_tail (priv->pending_results, l->data);
     }
 
-    idle_id = g_idle_add ((GSourceFunc) insert_cmdline_idle, view);
-    g_source_set_name_by_id (idle_id, G_STRFUNC);
+    priv->insert_idle_id = g_idle_add ((GSourceFunc) insert_cmdline_idle,
+                                       view);
+    g_source_set_name_by_id (priv->insert_idle_id, G_STRFUNC);
 }
 
 static void
@@ -996,6 +996,7 @@ gl_event_view_init (GlEventView *view)
     priv = gl_event_view_get_instance_private (view);
     priv->search_text = NULL;
     priv->active_listbox = NULL;
+    priv->insert_idle_id = 0;
     priv->journal = gl_journal_new ();
 
     /* TODO: Monitor and propagate any GSettings changes. */
