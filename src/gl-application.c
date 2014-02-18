@@ -53,6 +53,29 @@ on_new_window (GSimpleAction *action,
 }
 
 static void
+on_help (GSimpleAction *action,
+         GVariant *parameter,
+         gpointer user_data)
+{
+    GtkApplication *application;
+    GtkWindow *parent;
+    GError *error = NULL;
+
+    application = GTK_APPLICATION (user_data);
+    parent = gtk_application_get_active_window (application);
+
+    /* TODO: Add link to application help instead. */
+    gtk_show_uri (gtk_window_get_screen (parent), PACKAGE_URL,
+                  GDK_CURRENT_TIME, &error);
+
+    if (error)
+    {
+        g_debug ("Error while opening help: %s", error->message);
+        g_error_free (error);
+    }
+}
+
+static void
 on_about (GSimpleAction *action,
           GVariant *parameter,
           gpointer user_data)
@@ -135,6 +158,7 @@ on_monospace_font_name_changed (GSettings *settings,
 
 static GActionEntry actions[] = {
     { "new-window", on_new_window },
+    { "help", on_help },
     { "about", on_about },
     { "quit", on_quit }
 };
