@@ -283,6 +283,7 @@ insert_devices_idle (GlEventView *view)
                 priv->results_listbox = NULL;
                 priv->results = NULL;
 
+                priv->insert_idle_id = 0;
                 return G_SOURCE_REMOVE;
             }
         }
@@ -291,6 +292,7 @@ insert_devices_idle (GlEventView *view)
     }
     else
     {
+        priv->insert_idle_id = 0;
         return G_SOURCE_REMOVE;
     }
 }
@@ -366,6 +368,7 @@ insert_security_idle (GlEventView *view)
                 priv->results_listbox = NULL;
                 priv->results = NULL;
 
+                priv->insert_idle_id = 0;
                 return G_SOURCE_REMOVE;
             }
         }
@@ -374,6 +377,7 @@ insert_security_idle (GlEventView *view)
     }
     else
     {
+        priv->insert_idle_id = 0;
         return G_SOURCE_REMOVE;
     }
 }
@@ -444,6 +448,7 @@ insert_simple_idle (GlEventView *view)
                 priv->results_listbox = NULL;
                 priv->results = NULL;
 
+                priv->insert_idle_id = 0;
                 return G_SOURCE_REMOVE;
             }
         }
@@ -452,6 +457,7 @@ insert_simple_idle (GlEventView *view)
     }
     else
     {
+        priv->insert_idle_id = 0;
         return G_SOURCE_REMOVE;
     }
 }
@@ -520,6 +526,7 @@ insert_cmdline_idle (GlEventView *view)
                 priv->results_listbox = NULL;
                 priv->results = NULL;
 
+                priv->insert_idle_id = 0;
                 return G_SOURCE_REMOVE;
             }
         }
@@ -528,6 +535,7 @@ insert_cmdline_idle (GlEventView *view)
     }
     else
     {
+        priv->insert_idle_id = 0;
         return G_SOURCE_REMOVE;
     }
 }
@@ -910,6 +918,11 @@ gl_event_view_finalize (GObject *object)
 {
     GlEventView *view = GL_EVENT_VIEW (object);
     GlEventViewPrivate *priv = gl_event_view_get_instance_private (view);
+
+    if (priv->insert_idle_id)
+    {
+        g_source_remove (priv->insert_idle_id);
+    }
 
     g_clear_pointer (&priv->search_text, g_free);
     g_clear_pointer (&priv->pending_results, g_queue_free);
