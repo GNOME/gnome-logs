@@ -63,11 +63,11 @@ create_widget_for_comm (const gchar *comm)
             GtkWidget *label;
             GtkStyleContext *context;
 
-            box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
+            box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 12);
 
             icon = g_app_info_get_icon (G_APP_INFO (desktop));
             image = gtk_image_new_from_gicon (icon, GTK_ICON_SIZE_DIALOG);
-            gtk_box_pack_end (GTK_BOX (box), image, TRUE, TRUE, 0);
+            gtk_box_pack_start (GTK_BOX (box), image, FALSE, FALSE, 0);
 
             label = gtk_label_new (g_app_info_get_name (G_APP_INFO (desktop)));
             gtk_widget_set_direction (label, GTK_TEXT_DIR_LTR);
