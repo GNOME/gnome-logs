@@ -217,6 +217,26 @@ gl_application_activate (GApplication *application)
                                     priv);
 }
 
+static const GOptionEntry options[] =
+{
+    { "version", 'v', 0, G_OPTION_ARG_NONE, NULL,
+      N_("Print version information and exit"), NULL },
+    { NULL }
+};
+
+static gint
+gl_application_handle_local_options (GApplication *application,
+                                     GVariantDict *options)
+{
+    if (g_variant_dict_contains (options, "version"))
+    {
+        g_print ("%s - Version %s\n", g_get_application_name (), PACKAGE_VERSION);
+        return 0;
+    }
+
+    return -1;
+}
+
 static void
 gl_application_finalize (GObject *object)
 {
@@ -241,6 +261,8 @@ gl_application_init (GlApplication *application)
     priv->monospace_font = NULL;
     priv->desktop = g_settings_new (DESKTOP_SCHEMA);
 
+    g_application_add_main_option_entries (G_APPLICATION (application), options);
+
     changed_font = g_strconcat ("changed::", DESKTOP_MONOSPACE_FONT_NAME, NULL);
     g_signal_connect (priv->desktop, changed_font,
                       G_CALLBACK (on_monospace_font_name_changed),
@@ -261,6 +283,7 @@ gl_application_class_init (GlApplicationClass *klass)
     app_class = G_APPLICATION_CLASS (klass);
     app_class->activate = gl_application_activate;
     app_class->startup = gl_application_startup;
+    app_class->handle_local_options = gl_application_handle_local_options;
 }
 
 GtkApplication *
