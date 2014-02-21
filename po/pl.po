@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-08 03:04+0100\n"
-"PO-Revision-Date: 2014-02-08 03:05+0100\n"
+"POT-Creation-Date: 2014-02-21 15:34+0100\n"
+"PO-Revision-Date: 2014-02-21 15:35+0100\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <gnomepl@aviary.pl>\n"
 "Language: pl\n"
@@ -28,10 +28,14 @@ msgid "_New Window"
 msgstr "_Nowe okno"
 
 #: ../data/appmenu.ui.h:2
+msgid "_Help"
+msgstr "Pomo_c"
+
+#: ../data/appmenu.ui.h:3
 msgid "_About"
 msgstr "_O programie"
 
-#: ../data/appmenu.ui.h:3
+#: ../data/appmenu.ui.h:4
 msgid "_Quit"
 msgstr "Za_kończ"
 
@@ -117,24 +121,24 @@ msgstr "Wyświetlanie szczegółowych dzienników zdarzeń w systemie"
 msgid "log;journal;debug;error;"
 msgstr "dziennik;logi;journal;debugowanie;błąd;error;"
 
-#: ../src/gl-application.c:77
+#: ../src/gl-application.c:100
 msgid "translator-credits"
 msgstr ""
 "Piotr Drąg <piotrdrag@gmail.com>, 2013-2014\n"
 "Aviary.pl <gnomepl@aviary.pl>, 2013-2014"
 
-#: ../src/gl-application.c:78
+#: ../src/gl-application.c:101
 msgid "View and search logs"
 msgstr "Wyświetlanie i przeszukiwanie dzienników"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventview.c:211
+#: ../src/gl-eventview.c:216
 msgid "No results"
 msgstr "Brak wyników"
 
-#: ../src/gl-eventview.c:413 ../src/gl-eventview.c:423
-#: ../src/gl-eventview.c:554 ../src/gl-eventview.c:564
+#: ../src/gl-eventview.c:594 ../src/gl-eventview.c:604
+#: ../src/gl-eventview.c:735 ../src/gl-eventview.c:745
 msgid "Not implemented"
 msgstr "Niezaimplementowane"
 
