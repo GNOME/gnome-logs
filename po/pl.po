@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-21 15:34+0100\n"
-"PO-Revision-Date: 2014-02-21 15:35+0100\n"
+"POT-Creation-Date: 2014-02-22 01:04+0100\n"
+"PO-Revision-Date: 2014-02-22 01:05+0100\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <gnomepl@aviary.pl>\n"
 "Language: pl\n"
@@ -130,6 +130,10 @@ msgstr ""
 #: ../src/gl-application.c:101
 msgid "View and search logs"
 msgstr "Wyświetlanie i przeszukiwanie dzienników"
+
+#: ../src/gl-application.c:223
+msgid "Print version information and exit"
+msgstr "Wyświetla informację o wersji i kończy działanie"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
