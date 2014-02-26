@@ -235,6 +235,8 @@ gl_event_view_list_box_new (GlEventView *view)
                                   view, NULL);
     gtk_list_box_set_placeholder (GTK_LIST_BOX (listbox),
                                   gl_event_view_create_empty (view));
+    gtk_list_box_set_selection_mode (GTK_LIST_BOX (listbox),
+                                     GTK_SELECTION_NONE);
     g_signal_connect (listbox, "row-activated",
                       G_CALLBACK (on_listbox_row_activated), GTK_STACK (view));
 
