@@ -40,9 +40,9 @@ typedef struct
 G_DEFINE_TYPE_WITH_PRIVATE (GlCategoryList, gl_category_list, GTK_TYPE_LIST_BOX)
 
 static void
-on_gl_category_list_row_activated (GlCategoryList *listbox,
-                                   GtkListBoxRow *row,
-                                   gpointer user_data)
+on_gl_category_list_row_selected (GlCategoryList *listbox,
+                                  GtkListBoxRow *row,
+                                  gpointer user_data)
 {
     GlCategoryListPrivate *priv;
     GtkWidget *toplevel;
@@ -145,7 +145,7 @@ gl_category_list_class_init (GlCategoryListClass *klass)
                                                   usage);
 
     gtk_widget_class_bind_template_callback (widget_class,
-                                             on_gl_category_list_row_activated);
+                                             on_gl_category_list_row_selected);
 }
 
 static void
