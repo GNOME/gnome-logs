@@ -198,21 +198,55 @@ on_gl_window_key_press_event (GlWindow *window,
                               gpointer user_data)
 {
     GlWindowPrivate *priv;
-    GAction *search;
+    GAction *action;
+    GVariant *variant;
+    const gchar *mode;
+    GEnumClass *eclass;
+    GEnumValue *evalue;
 
     priv = gl_window_get_instance_private (window);
-    search = g_action_map_lookup_action (G_ACTION_MAP (window), "search");
+    action = g_action_map_lookup_action (G_ACTION_MAP (window), "search");
 
-    if (g_action_get_enabled (search))
+    if (g_action_get_enabled (action))
     {
         if (gtk_search_bar_handle_event (GTK_SEARCH_BAR (priv->event_search),
                                          event) == GDK_EVENT_STOP)
         {
-            g_action_change_state (search, g_variant_new_boolean (TRUE));
+            g_action_change_state (action, g_variant_new_boolean (TRUE));
 
             return GDK_EVENT_STOP;
         }
     }
+
+    action = g_action_map_lookup_action (G_ACTION_MAP (window), "view-mode");
+    variant = g_action_get_state (action);
+    mode = g_variant_get_string (variant, NULL);
+    eclass = g_type_class_ref (GL_TYPE_EVENT_VIEW_MODE);
+    evalue = g_enum_get_value_by_nick (eclass, mode);
+
+    g_variant_unref (variant);
+
+    switch (evalue->value)
+    {
+        case GL_EVENT_VIEW_MODE_LIST:
+            break; /* Ignored, as there is no back button. */
+        case GL_EVENT_VIEW_MODE_DETAIL:
+            if (gl_event_toolbar_handle_back_button_event (GL_EVENT_TOOLBAR (priv->event_toolbar),
+                                                           (GdkEventKey*)event)
+                == GDK_EVENT_STOP)
+            {
+                GlEventView *events;
+
+                events = GL_EVENT_VIEW (priv->events);
+                gl_event_view_set_mode (events, GL_EVENT_VIEW_MODE_LIST);
+                g_type_class_unref (eclass);
+
+                return GDK_EVENT_STOP;
+            }
+            break;
+    }
+
+    g_type_class_unref (eclass);
 
     return GDK_EVENT_PROPAGATE;
 }

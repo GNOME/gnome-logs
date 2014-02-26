@@ -53,6 +53,8 @@ typedef enum
 
 GType gl_event_toolbar_get_type (void);
 GtkWidget * gl_event_toolbar_new (void);
+gboolean gl_event_toolbar_handle_back_button_event (GlEventToolbar *toolbar,
+                                                    GdkEventKey *event);
 void gl_event_toolbar_set_mode (GlEventToolbar *toolbar,
                                 GlEventToolbarMode mode);
 

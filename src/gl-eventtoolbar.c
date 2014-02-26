@@ -194,6 +194,38 @@ gl_event_toolbar_init (GlEventToolbar *toolbar)
     }
 }
 
+gboolean
+gl_event_toolbar_handle_back_button_event (GlEventToolbar *toolbar,
+                                           GdkEventKey *event)
+{
+    GlEventToolbarPrivate *priv;
+    GdkModifierType state;
+    GdkKeymap *keymap;
+    gboolean is_rtl;
+
+    g_return_val_if_fail (toolbar != NULL && event != NULL,
+                          GDK_EVENT_PROPAGATE);
+
+    priv = gl_event_toolbar_get_instance_private (toolbar);
+
+    state = event->state;
+    keymap = gdk_keymap_get_default ();
+    gdk_keymap_add_virtual_modifiers (keymap, &state);
+    state = state & gtk_accelerator_get_default_mod_mask ();
+    is_rtl = gtk_widget_get_direction (priv->back_button) == GTK_TEXT_DIR_RTL;
+
+    if ((!is_rtl && state == GDK_MOD1_MASK && event->keyval == GDK_KEY_Left)
+        || (is_rtl && state == GDK_MOD1_MASK && event->keyval == GDK_KEY_Right)
+        || event->keyval == GDK_KEY_Back)
+    {
+        return GDK_EVENT_STOP;
+    }
+    else
+    {
+        return GDK_EVENT_PROPAGATE;
+    }
+}
+
 void
 gl_event_toolbar_set_mode (GlEventToolbar *toolbar, GlEventToolbarMode mode)
 {
