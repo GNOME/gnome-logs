@@ -39,6 +39,36 @@ typedef struct
 
 G_DEFINE_TYPE_WITH_PRIVATE (GlCategoryList, gl_category_list, GTK_TYPE_LIST_BOX)
 
+static gboolean
+gl_category_list_focus (GtkWidget *listbox, GtkDirectionType direction)
+{
+    switch (direction)
+    {
+        case GTK_DIR_TAB_BACKWARD:
+        case GTK_DIR_TAB_FORWARD:
+            if (gtk_container_get_focus_child (GTK_CONTAINER (listbox)))
+            {
+                /* Force tab events which jump to another child to jump out of
+                 * the category list. */
+                return FALSE;
+            }
+            else
+            {
+                /* Allow tab events to focus into the widget. */
+                GTK_WIDGET_CLASS (gl_category_list_parent_class)->focus (listbox,
+                                                                         direction);
+                return TRUE;
+            }
+            break;
+        /* Allow the widget to handle all other focus events. */
+        default:
+            GTK_WIDGET_CLASS (gl_category_list_parent_class)->focus (listbox,
+                                                                     direction);
+            return TRUE;
+            break;
+    }
+}
+
 static void
 on_gl_category_list_row_selected (GlCategoryList *listbox,
                                   GtkListBoxRow *row,
@@ -61,7 +91,9 @@ on_gl_category_list_row_selected (GlCategoryList *listbox,
     }
     else
     {
-        g_return_if_reached ();
+        /* TODO: Investigate whether this only happens during dispose. */
+        g_debug ("%s",
+                 "Category list row selected while not in a toplevel");
     }
 
     eclass = g_type_class_ref (GL_TYPE_EVENT_VIEW_FILTER);
@@ -121,6 +153,7 @@ gl_category_list_class_init (GlCategoryListClass *klass)
 {
     GtkWidgetClass *widget_class = GTK_WIDGET_CLASS (klass);
 
+    widget_class->focus = gl_category_list_focus;
     gtk_widget_class_set_template_from_resource (widget_class,
                                                  "/org/gnome/Logs/gl-categorylist.ui");
     gtk_widget_class_bind_template_child_private (widget_class, GlCategoryList,
