@@ -1,6 +1,7 @@
 # Czech translation for gnome-logs.
 # Copyright (C) 2013 gnome-logs's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-logs package.
+#
 # Marek Černocký <marek@manet.cz>, 2013, 2014.
 #
 msgid ""
@@ -8,8 +9,8 @@ msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-02-18 17:27+0000\n"
-"PO-Revision-Date: 2014-02-20 23:19+0100\n"
+"POT-Creation-Date: 2014-02-21 23:09+0000\n"
+"PO-Revision-Date: 2014-02-27 11:51+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -123,6 +124,10 @@ msgstr "Marek Černocký <marek@manet.cz>"
 #: ../src/gl-application.c:101
 msgid "View and search logs"
 msgstr "Zobrazit a prohledat záznamy o provozu"
+
+#: ../src/gl-application.c:223
+msgid "Print version information and exit"
+msgstr "Vypsat informace o verzi a skončit"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
