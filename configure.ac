@@ -64,6 +64,9 @@ AM_CONDITIONAL([ENABLE_MAN], [test "x$have_manutils" = "xyes"])
 dnl AppData XML
 APPDATA_XML
 
+dnl Mallard Help
+YELP_HELP_INIT
+
 dnl Testing utilities.
 AC_ARG_ENABLE([tests],
               [AS_HELP_STRING([--disable-tests], [Disable support for tests run during make check])])
@@ -91,6 +94,7 @@ PKG_CHECK_MODULES([LOGS], [$GIO_REQUIRED $GTK_REQUIRED $SYSTEMD_JOURNAL_REQUIRED
 
 AC_CONFIG_FILES([
 data/version.xml
+help/Makefile
 Makefile
 po/Makefile.in
 ])

@@ -4,7 +4,7 @@ DISTCHECK_CONFIGURE_FLAGS = \
 	--enable-appdata-validate \
 	--enable-tests
 
-SUBDIRS = po
+SUBDIRS = help po
 
 bin_PROGRAMS = gnome-logs
 

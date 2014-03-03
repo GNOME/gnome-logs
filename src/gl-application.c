@@ -64,8 +64,7 @@ on_help (GSimpleAction *action,
     application = GTK_APPLICATION (user_data);
     parent = gtk_application_get_active_window (application);
 
-    /* TODO: Add link to application help instead. */
-    gtk_show_uri (gtk_window_get_screen (parent), PACKAGE_URL,
+    gtk_show_uri (gtk_window_get_screen (parent), "help:gnome-logs",
                   GDK_CURRENT_TIME, &error);
 
     if (error)
