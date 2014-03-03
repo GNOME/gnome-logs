@@ -94,6 +94,7 @@ on_gl_category_list_row_selected (GlCategoryList *listbox,
         /* TODO: Investigate whether this only happens during dispose. */
         g_debug ("%s",
                  "Category list row selected while not in a toplevel");
+        return;
     }
 
     eclass = g_type_class_ref (GL_TYPE_EVENT_VIEW_FILTER);
