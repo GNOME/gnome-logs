@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the gnome-logs package.
 #
 # Balázs Úr <urbalazs@gmail.com>, 2013.
-# Balázs Úr <urbalazs at gmail dot com>, 2013.
+# Balázs Úr <urbalazs at gmail dot com>, 2013, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-11-13 02:15+0000\n"
-"PO-Revision-Date: 2013-11-18 17:35+0100\n"
+"POT-Creation-Date: 2014-02-21 23:09+0000\n"
+"PO-Revision-Date: 2014-03-04 19:20+0100\n"
 "Last-Translator: Balázs Úr <urbalazs at gmail dot com>\n"
 "Language-Team: Hungarian <gnome-hu-list@gnome.org>\n"
 "Language: hu\n"
@@ -25,10 +25,14 @@ msgid "_New Window"
 msgstr "Ú_j ablak"
 
 #: ../data/appmenu.ui.h:2
+msgid "_Help"
+msgstr "_Súgó"
+
+#: ../data/appmenu.ui.h:3
 msgid "_About"
 msgstr "_Névjegy"
 
-#: ../data/appmenu.ui.h:3
+#: ../data/appmenu.ui.h:4
 msgid "_Quit"
 msgstr "_Kilépés"
 
@@ -113,24 +117,46 @@ msgstr "A rendszer részletes eseménynaplóinak megtekintése"
 msgid "log;journal;debug;error;"
 msgstr "napló;naplózás;hibakeresés;hiba;"
 
-#: ../src/gl-application.c:71
+#: ../src/gl-application.c:100
 msgid "translator-credits"
 msgstr "Úr Balázs <urbalazs@gmail.com>"
 
-#: ../src/gl-application.c:72
+#: ../src/gl-application.c:101
 msgid "View and search logs"
 msgstr "Naplók megtekintése és keresése"
 
+#: ../src/gl-application.c:223
+msgid "Print version information and exit"
+msgstr "Verzióinformációk kiírása és kilépés"
+
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventview.c:253
+#: ../src/gl-eventview.c:216
 msgid "No results"
 msgstr "Nincs találat"
 
-#: ../src/gl-eventview.c:455 ../src/gl-eventview.c:465
-#: ../src/gl-eventview.c:596 ../src/gl-eventview.c:606
+#: ../src/gl-eventview.c:594 ../src/gl-eventview.c:604
+#: ../src/gl-eventview.c:735 ../src/gl-eventview.c:745
 msgid "Not implemented"
 msgstr "Nincs megvalósítva"
+
+#: ../src/gl-eventviewdetail.c:140
+#| msgid "Usage"
+msgid "Message"
+msgstr "Üzenet"
+
+#. TODO: Give a user-friendly representation of the priority.
+#: ../src/gl-eventviewdetail.c:161
+msgid "Priority"
+msgstr "Prioritás"
+
+#: ../src/gl-eventviewdetail.c:189
+msgid "Kernel Device"
+msgstr "Kernel eszköz"
+
+#: ../src/gl-eventviewdetail.c:209
+msgid "Audit Session"
+msgstr "Munkamenet ellenőrzése"
 
 #. Translators: timestamp format for events on the current
 #. * day, showing the time in 12-hour format.
