@@ -2,32 +2,37 @@
 # Copyright (C) 2014 gnome-logs's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-logs package.
 # Enrico Nicoletto <liverig@gmail.com>, 2013, 2014.
+# Rafael Ferreira <rafael.f.f1@gmail.com>, 2014.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-02-04 09:16+0000\n"
-"PO-Revision-Date: 2014-02-04 20:01-0300\n"
-"Last-Translator: Enrico Nicoletto <liverig@gmail.com>\n"
+"POT-Creation-Date: 2014-02-21 23:09+0000\n"
+"PO-Revision-Date: 2014-03-07 08:35-0300\n"
+"Last-Translator: Rafael Ferreira <rafael.f.f1@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 1.6.3\n"
+"X-Generator: Poedit 1.6.4\n"
 
 #: ../data/appmenu.ui.h:1
 msgid "_New Window"
 msgstr "_Nova janela"
 
 #: ../data/appmenu.ui.h:2
+msgid "_Help"
+msgstr "_Ajuda"
+
+#: ../data/appmenu.ui.h:3
 msgid "_About"
 msgstr "_Sobre"
 
-#: ../data/appmenu.ui.h:3
+#: ../data/appmenu.ui.h:4
 msgid "_Quit"
 msgstr "Sai_r"
 
@@ -114,27 +119,30 @@ msgstr "Veja registros detalhados de eventos do sistema"
 msgid "log;journal;debug;error;"
 msgstr "registro;registros;log;journal;depuração;debug;erro;"
 
-#: ../src/gl-application.c:77
+#: ../src/gl-application.c:100
 msgid "translator-credits"
 msgstr "Enrico Nicoletto <liverig@gmail.com>, 2013, 2014."
 
-#: ../src/gl-application.c:78
+#: ../src/gl-application.c:101
 msgid "View and search logs"
 msgstr "Veja e pesquise registros"
 
+#: ../src/gl-application.c:223
+msgid "Print version information and exit"
+msgstr "Exibe informação da versão e sai"
+
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventview.c:211
+#: ../src/gl-eventview.c:216
 msgid "No results"
 msgstr "Nenhum resultado"
 
-#: ../src/gl-eventview.c:413 ../src/gl-eventview.c:423
-#: ../src/gl-eventview.c:554 ../src/gl-eventview.c:564
+#: ../src/gl-eventview.c:594 ../src/gl-eventview.c:604
+#: ../src/gl-eventview.c:735 ../src/gl-eventview.c:745
 msgid "Not implemented"
 msgstr "Não implementado"
 
 #: ../src/gl-eventviewdetail.c:140
-#| msgid "Usage"
 msgid "Message"
 msgstr "Mensagem"
 
