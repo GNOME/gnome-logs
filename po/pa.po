@@ -1,0 +1,202 @@
+# Punjabi translation for gnome-logs.
+# Copyright (C) 2014 gnome-logs's COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-logs package.
+#
+# A S Alam <aalam@users.sf.net>, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-logs master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"logs&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2014-03-07 21:13+0000\n"
+"PO-Revision-Date: 2014-03-07 21:13-0600\n"
+"Last-Translator: A S Alam <aalam@users.sf.net>\n"
+"Language-Team: Punjabi/Panjabi <punjabi-users@lists.sf.net>\n"
+"Language: pa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 1.5\n"
+
+#: ../data/appmenu.ui.h:1
+msgid "_New Window"
+msgstr "ਨਵੀਂ ਵਿੰਡੋ(_N)"
+
+#: ../data/appmenu.ui.h:2
+msgid "_Help"
+msgstr "ਮੱਦਦ(_H)"
+
+#: ../data/appmenu.ui.h:3
+msgid "_About"
+msgstr "ਇਸ ਬਾਰੇ(_A)"
+
+#: ../data/appmenu.ui.h:4
+msgid "_Quit"
+msgstr "ਬੰਦ ਕਰੋ(_Q)"
+
+#: ../data/gl-categorylist.ui.h:1
+msgid "Important"
+msgstr "ਖਾਸ"
+
+#: ../data/gl-categorylist.ui.h:2
+msgid "Alerts"
+msgstr "ਚੇਤਾਵਨੀ"
+
+#: ../data/gl-categorylist.ui.h:3
+msgid "Starred"
+msgstr "ਤਾਰਾ ਲੱਗੇ"
+
+#: ../data/gl-categorylist.ui.h:4
+msgid "All"
+msgstr "ਸਭ"
+
+#: ../data/gl-categorylist.ui.h:5
+msgid "Applications"
+msgstr "ਐਪਲੀਕੇਸ਼ਨ"
+
+#: ../data/gl-categorylist.ui.h:6
+msgid "System"
+msgstr "ਸਿਸਟਮ"
+
+#: ../data/gl-categorylist.ui.h:7
+msgid "Security"
+msgstr "ਸੁਰੱਖਿਆ"
+
+#: ../data/gl-categorylist.ui.h:8
+msgid "Hardware"
+msgstr "ਹਾਰਡਵੇਅਰ"
+
+#: ../data/gl-categorylist.ui.h:9
+msgid "Updates"
+msgstr "ਅੱਪਡੇਟ"
+
+#: ../data/gl-categorylist.ui.h:10
+msgid "Usage"
+msgstr "ਵਰਤੋਂ"
+
+#: ../data/gl-eventtoolbar.ui.h:1
+msgid "Logs"
+msgstr "ਲਾਗ"
+
+#: ../data/gl-eventtoolbar.ui.h:2
+msgid "Go back to the event view"
+msgstr "ਈਵੈਟ ਝਲਕ ਵਿੱਚ ਵਾਪਿਸ ਜਾਓ"
+
+#: ../data/gl-eventtoolbar.ui.h:3
+msgid "Search the displayed logs"
+msgstr "ਵਿਖਾਏ ਲਾਗ ਵਿੱਚ ਲੱਭੋ"
+
+#: ../data/gnome-logs.appdata.xml.in.h:1
+msgid ""
+"Logs shows events from the systemd journal, and sorts them into categories, "
+"such as hardware and applications."
+msgstr ""
+"ਲਾਗਸ ਸਿਸਟਮ ਜਰਨਲ ਤੋਂ ਈਵੈਂਟ ਵਿਖਾਉਂਦਾ ਹੈ ਅਤੇ ਉਹਨਾਂ ਵਰਗਾਂ ਮੁਤਾਬਕ ਜਿਵੇਂ ਕਿ "
+"ਹਾਰਡਵੇਅਰ ਤੇ ਐਪਲੀਕੇਸ਼ਨ ਵਿੱਚ "
+"ਵੰਡਦਾ ਹੈ।"
+
+#: ../data/gnome-logs.appdata.xml.in.h:2
+msgid ""
+"Using Logs you can search your logs by typing a search term, and view "
+"detailed information about each event by clicking on it."
+msgstr ""
+"ਲਾਗਸ ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਤੁਸੀਂ ਖੋਜ ਸ਼ਬਦ ਲਿਖ ਕੇ ਆਪਣੇ ਲਾਗ ਵਿੱਚ ਲੱਭ ਸਕਦੇ ਹੋ ਅਤੇ ਹਰੇਕ "
+"ਈਵੈਂਟ "
+"ਉੱਤੇ ਕਲਿੱਕ ਕਰਕੇ ਉਸ ਬਾਰੇ ਵੇਰਵੇ ਸਮੇਤ ਜਾਣਕਾਰੀ ਵੇਖ ਸਕਦੇ ਹੋ।"
+
+#: ../data/gnome-logs.desktop.in.h:1
+msgid "Log Viewer"
+msgstr "ਲਾਗ ਦਰਸ਼ਕ"
+
+#: ../data/gnome-logs.desktop.in.h:2
+msgid "View detailed event logs for the system"
+msgstr "ਸਿਸਟਮ ਲਈ ਵੇਰਵੇ ਸਮੇਤ ਈਵੈਂਟ ਲਾਗ ਵੇਖੋ"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: ../data/gnome-logs.desktop.in.h:4
+msgid "log;journal;debug;error;"
+msgstr "log;journal;debug;error;"
+
+#: ../src/gl-application.c:99
+msgid "translator-credits"
+msgstr ""
+"ਅਮਨਪਰੀਤ ਸਿੰਘ ਆਲਮ\n"
+"ਪੰਜਾਬੀ ਓਪਨਸੋਰਸ ਟੀਮ (POST)"
+
+#: ../src/gl-application.c:100
+msgid "View and search logs"
+msgstr "ਲਾਗ ਵੇਖੋ ਅਤੇ ਲੱਭੋ"
+
+#: ../src/gl-application.c:222
+msgid "Print version information and exit"
+msgstr "ਵਰਜਨ ਜਾਣਕਾਰੀ ਛਾਪੋ ਅਤੇ ਬੰਦ ਕਰੋ"
+
+#. Translators: Shown when there are no (zero) results in the current
+#. * view.
+#: ../src/gl-eventview.c:217
+msgid "No results"
+msgstr "ਕੋਈ ਨਤੀਜਾ ਨਹੀਂ"
+
+#: ../src/gl-eventview.c:604 ../src/gl-eventview.c:614
+#: ../src/gl-eventview.c:745 ../src/gl-eventview.c:755
+msgid "Not implemented"
+msgstr "ਸਥਾਪਤ ਨਹੀਂ"
+
+#: ../src/gl-eventviewdetail.c:140
+msgid "Message"
+msgstr "ਸੁਨੇਹਾ"
+
+#. TODO: Give a user-friendly representation of the priority.
+#: ../src/gl-eventviewdetail.c:161
+msgid "Priority"
+msgstr "ਤਰਜੀਹ"
+
+#: ../src/gl-eventviewdetail.c:189
+msgid "Kernel Device"
+msgstr "ਕਰਨਲ ਜੰਤਰ"
+
+#: ../src/gl-eventviewdetail.c:209
+msgid "Audit Session"
+msgstr "ਆਡਿਟ ਸ਼ੈਸ਼ਨ"
+
+#. Translators: timestamp format for events on the current
+#. * day, showing the time in 12-hour format.
+#: ../src/gl-util.c:95
+msgid "%l:%M %p"
+msgstr "%l:%M %p"
+
+#. Translators: timestamp format for events in the current
+#. * year, showing the abbreviated month name, day of the
+#. * month and the time in 12-hour format.
+#: ../src/gl-util.c:101
+msgid "%b %e %l:%M %p"
+msgstr "%e %b %l:%M %p"
+
+#. Translators: timestamp format for events in a different
+#. * year, showing the abbreviated month name, day of the
+#. * month, year and the time in 12-hour format.
+#: ../src/gl-util.c:107
+msgid "%b %e %Y %l:%M %p"
+msgstr "%e %b %Y %l:%M %p"
+
+#. Translators: timestamp format for events on the current
+#. * day, showing the time in 24-hour format.
+#: ../src/gl-util.c:120
+msgid "%H:%M"
+msgstr "%H:%M"
+
+#. Translators: timestamp format for events in the current
+#. * year, showing the abbreviated month name, day of the
+#. * month and the time in 24-hour format.
+#: ../src/gl-util.c:126
+msgid "%b %e %H:%M"
+msgstr "%e %b %H:%M"
+
+#. Translators: timestamp format for events in a different
+#. * year, showing the abbreviated month name, day of the
+#. * month, year and the time in 24-hour format.
+#: ../src/gl-util.c:132
+msgid "%b %e %Y %H:%M"
+msgstr "%e %b %Y %H:%M"
+
