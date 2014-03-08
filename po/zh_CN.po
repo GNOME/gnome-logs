@@ -8,9 +8,9 @@ msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-11-28 18:08+0000\n"
-"PO-Revision-Date: 2013-12-05 22:35+0800\n"
-"Last-Translator: eternalhui <www.eternalhui@gmail.com>\n"
+"POT-Creation-Date: 2014-03-08 07:54+0000\n"
+"PO-Revision-Date: 2014-03-08 18:25+0800\n"
+"Last-Translator: Sphinx Jiang <yishanj@gmail.com>\n"
 "Language-Team: Chinese (China) <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
@@ -22,10 +22,14 @@ msgid "_New Window"
 msgstr "新窗口(_N)"
 
 #: ../data/appmenu.ui.h:2
+msgid "_Help"
+msgstr "帮助(_H)"
+
+#: ../data/appmenu.ui.h:3
 msgid "_About"
 msgstr "关于(_A)"
 
-#: ../data/appmenu.ui.h:3
+#: ../data/appmenu.ui.h:4
 msgid "_Quit"
 msgstr "退出(_Q)"
 
@@ -108,24 +112,45 @@ msgstr "查看系统详细的事件日志"
 msgid "log;journal;debug;error;"
 msgstr "log;journal;debug;error;日志;记录;调试;错误;故障;问题;"
 
-#: ../src/gl-application.c:77
+#: ../src/gl-application.c:99
 msgid "translator-credits"
 msgstr "eternalhui <www.eternalhui@gmail.com>, 2013"
 
-#: ../src/gl-application.c:78
+#: ../src/gl-application.c:100
 msgid "View and search logs"
 msgstr "查看和搜索日志"
 
+#: ../src/gl-application.c:222
+msgid "Print version information and exit"
+msgstr "打印版本信息并退出"
+
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventview.c:253
+#: ../src/gl-eventview.c:217
 msgid "No results"
 msgstr "无结果"
 
-#: ../src/gl-eventview.c:455 ../src/gl-eventview.c:465
-#: ../src/gl-eventview.c:596 ../src/gl-eventview.c:606
+#: ../src/gl-eventview.c:604 ../src/gl-eventview.c:614
+#: ../src/gl-eventview.c:745 ../src/gl-eventview.c:755
 msgid "Not implemented"
 msgstr "未实现"
+
+#: ../src/gl-eventviewdetail.c:140
+msgid "Message"
+msgstr "消息"
+
+#. TODO: Give a user-friendly representation of the priority.
+#: ../src/gl-eventviewdetail.c:161
+msgid "Priority"
+msgstr "优先级"
+
+#: ../src/gl-eventviewdetail.c:189
+msgid "Kernel Device"
+msgstr "内核设备"
+
+#: ../src/gl-eventviewdetail.c:209
+msgid "Audit Session"
+msgstr "审查会话"
 
 #. Translators: timestamp format for events on the current
 #. * day, showing the time in 12-hour format.
