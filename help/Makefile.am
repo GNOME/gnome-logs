@@ -11,3 +11,5 @@ HELP_FILES = \
 HELP_MEDIA = \
 	media/gnome-logs.png \
 	media/gnome-logs-3-12.png
+
+HELP_LINGUAS = es
