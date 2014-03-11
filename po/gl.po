@@ -5,9 +5,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-07 02:01+0100\n"
-"PO-Revision-Date: 2014-02-07 02:02+0200\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"logs&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2014-02-21 23:09+0000\n"
+"PO-Revision-Date: 2014-03-11 17:26+0200\n"
 "Last-Translator: Fran Dieguez <frandieguez@gnome.org>\n"
 "Language-Team: gnome-l10n-gl@gnome.org\n"
 "Language: en\n"
@@ -16,16 +17,21 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Virtaal 0.7.1\n"
+"X-Project-Style: gnome\n"
 
 #: ../data/appmenu.ui.h:1
 msgid "_New Window"
 msgstr "_Nova xanela"
 
 #: ../data/appmenu.ui.h:2
+msgid "_Help"
+msgstr "_Axuda"
+
+#: ../data/appmenu.ui.h:3
 msgid "_About"
 msgstr "_Sobre"
 
-#: ../data/appmenu.ui.h:3
+#: ../data/appmenu.ui.h:4
 msgid "_Quit"
 msgstr "_Saír"
 
@@ -110,22 +116,26 @@ msgstr "Ver rexistros de eventos detallados para o seu sistema"
 msgid "log;journal;debug;error;"
 msgstr "rexistro;diario;depuración;erro;"
 
-#: ../src/gl-application.c:77
+#: ../src/gl-application.c:100
 msgid "translator-credits"
 msgstr "Fran Dieguez <frandieguez@gnome.org>, 2013-2014."
 
-#: ../src/gl-application.c:78
+#: ../src/gl-application.c:101
 msgid "View and search logs"
 msgstr "Ver e buscar rexistros"
 
+#: ../src/gl-application.c:223
+msgid "Print version information and exit"
+msgstr "Imprimir información da versión e sair"
+
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventview.c:211
+#: ../src/gl-eventview.c:216
 msgid "No results"
 msgstr "Sen resultados"
 
-#: ../src/gl-eventview.c:413 ../src/gl-eventview.c:423
-#: ../src/gl-eventview.c:554 ../src/gl-eventview.c:564
+#: ../src/gl-eventview.c:594 ../src/gl-eventview.c:604
+#: ../src/gl-eventview.c:735 ../src/gl-eventview.c:745
 msgid "Not implemented"
 msgstr "Non implementado"
 
