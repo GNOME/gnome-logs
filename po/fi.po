@@ -2,15 +2,15 @@
 # Copyright (C) 2013 gnome-logs's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-logs package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# Jiri Grönroos <jiri.gronroos+l10n@iki.fi>, 2013.
+# Jiri Grönroos <jiri.gronroos+l10n@iki.fi>, 2013, 2014.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-11-13 02:15+0000\n"
-"PO-Revision-Date: 2013-12-11 20:07+0200\n"
+"POT-Creation-Date: 2014-02-21 23:09+0000\n"
+"PO-Revision-Date: 2014-03-05 21:59+0200\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos+l10n@iki.fi>\n"
 "Language-Team: suomi <gnome-fi-laatu@lists.sourceforge.net>\n"
 "Language: fi\n"
@@ -25,10 +25,14 @@ msgid "_New Window"
 msgstr "_Uusi ikkuna"
 
 #: ../data/appmenu.ui.h:2
+msgid "_Help"
+msgstr "_Ohje"
+
+#: ../data/appmenu.ui.h:3
 msgid "_About"
 msgstr "_Tietoja"
 
-#: ../data/appmenu.ui.h:3
+#: ../data/appmenu.ui.h:4
 msgid "_Quit"
 msgstr "_Lopeta"
 
@@ -113,24 +117,46 @@ msgstr "Katsele järjestelmän yksityiskohtaisia tapahtumalokeja"
 msgid "log;journal;debug;error;"
 msgstr "log;journal;debug;error;loki;vianetsintä;virhe;"
 
-#: ../src/gl-application.c:71
+#: ../src/gl-application.c:100
 msgid "translator-credits"
 msgstr "Jiri Grönroos"
 
-#: ../src/gl-application.c:72
+#: ../src/gl-application.c:101
 msgid "View and search logs"
 msgstr "Katsele lokeja ja etsi lokien sisällöstä"
 
+#: ../src/gl-application.c:223
+msgid "Print version information and exit"
+msgstr "Tulosta versiotiedot ja poistu"
+
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventview.c:253
+#: ../src/gl-eventview.c:216
 msgid "No results"
 msgstr "Ei tuloksia"
 
-#: ../src/gl-eventview.c:455 ../src/gl-eventview.c:465
-#: ../src/gl-eventview.c:596 ../src/gl-eventview.c:606
+#: ../src/gl-eventview.c:594 ../src/gl-eventview.c:604
+#: ../src/gl-eventview.c:735 ../src/gl-eventview.c:745
 msgid "Not implemented"
 msgstr "Ei toteutettu"
+
+#: ../src/gl-eventviewdetail.c:140
+#| msgid "Usage"
+msgid "Message"
+msgstr "Viesti"
+
+#. TODO: Give a user-friendly representation of the priority.
+#: ../src/gl-eventviewdetail.c:161
+msgid "Priority"
+msgstr "Prioriteetti"
+
+#: ../src/gl-eventviewdetail.c:189
+msgid "Kernel Device"
+msgstr "Kernel-laite"
+
+#: ../src/gl-eventviewdetail.c:209
+msgid "Audit Session"
+msgstr "Auditointi-istunto"
 
 #. Translators: timestamp format for events on the current
 #. * day, showing the time in 12-hour format.
