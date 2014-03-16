@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Logs 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-04 17:07+0300\n"
-"PO-Revision-Date: 2013-10-04 17:25+0300\n"
-"Last-Translator: Yosef Or Boczko <yoseforb@gmail.com>\n"
+"POT-Creation-Date: 2014-03-16 16:31+0200\n"
+"PO-Revision-Date: 2014-03-16 16:34+0200\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: עברית <>\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
@@ -24,12 +24,16 @@ msgid "_New Window"
 msgstr "_חלון חדש"
 
 #: ../data/appmenu.ui.h:2
-msgid "_About"
-msgstr "_על אודות"
+msgid "_Help"
+msgstr "ע_זרה"
 
 #: ../data/appmenu.ui.h:3
+msgid "_About"
+msgstr "על _אודות"
+
+#: ../data/appmenu.ui.h:4
 msgid "_Quit"
-msgstr "_יציאה"
+msgstr "י_ציאה"
 
 #: ../data/gl-categorylist.ui.h:1
 msgid "Important"
@@ -45,7 +49,7 @@ msgstr "סומן בכוכב"
 
 #: ../data/gl-categorylist.ui.h:4
 msgid "All"
-msgstr "הכל"
+msgstr "הכול"
 
 #: ../data/gl-categorylist.ui.h:5
 msgid "Applications"
@@ -83,9 +87,13 @@ msgstr "חזרה לצפייה באירוע"
 msgid "Search the displayed logs"
 msgstr "חיפוש ביומנים המוצגים"
 
-#: ../data/gl-window.ui.h:1
-msgid "Categories"
-msgstr "קטגוריות"
+#: ../data/gnome-logs.appdata.xml.in.h:1
+msgid "Logs shows events from the systemd journal, and sorts them into categories, such as hardware and applications."
+msgstr "יומנים מציגה אירועים מהיומן systemd ומסדרת אותם בקטגוריות כגון חומרה ויישומים."
+
+#: ../data/gnome-logs.appdata.xml.in.h:2
+msgid "Using Logs you can search your logs by typing a search term, and view detailed information about each event by clicking on it."
+msgstr "בעזרת יומנים ניתן לחפש בקובצי רישום המערכת שלך על ידי הקלדת מונח ואז לצפות בפרטים על כל אחד מהאירועים על ידי לחיצה עליו."
 
 #: ../data/gnome-logs.desktop.in.h:1
 msgid "Log Viewer"
@@ -98,17 +106,89 @@ msgstr "הצגת יומני אירועים מפורטים למערכת"
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: ../data/gnome-logs.desktop.in.h:4
 msgid "log;journal;debug;error;"
-msgstr "יומן;יומנים;לוגים;journal;ניפוי שגיאות;שגיאות;שגיאה;"
+msgstr "יומן;יומנים;לוגים;journal;ניפוי שגיאות;שגיאות;שגיאה;רישום;"
 
-#: ../src/gl-application.c:61
+#: ../src/gl-application.c:99
 msgid "translator-credits"
 msgstr "יוסף אור בוצ׳קו <yoseforb@gmail.com>"
 
-#: ../src/gl-application.c:62
+#: ../src/gl-application.c:100
 msgid "View and search logs"
-msgstr "הצגה וחיפוש יומנים"
+msgstr "הצגה וחיפוש בקובצי הרישום"
 
-#: ../src/gl-eventview.c:662 ../src/gl-eventview.c:672
-#: ../src/gl-eventview.c:770 ../src/gl-eventview.c:780
+#: ../src/gl-application.c:222
+msgid "Print version information and exit"
+msgstr "הצגת נתוני הגרסה ויציאה"
+
+#. Translators: Shown when there are no (zero) results in the current
+#. * view.
+#: ../src/gl-eventview.c:217
+msgid "No results"
+msgstr "אין תוצאות"
+
+#: ../src/gl-eventview.c:604
+#: ../src/gl-eventview.c:614
+#: ../src/gl-eventview.c:745
+#: ../src/gl-eventview.c:755
 msgid "Not implemented"
-msgstr "לא ייושם"
+msgstr "לא יושם"
+
+#: ../src/gl-eventviewdetail.c:140
+msgid "Message"
+msgstr "הודעה"
+
+#. TODO: Give a user-friendly representation of the priority.
+#: ../src/gl-eventviewdetail.c:161
+msgid "Priority"
+msgstr "עדיפות"
+
+#: ../src/gl-eventviewdetail.c:189
+msgid "Kernel Device"
+msgstr "התקן ליבה"
+
+#: ../src/gl-eventviewdetail.c:209
+msgid "Audit Session"
+msgstr ""
+
+#. Translators: timestamp format for events on the current
+#. * day, showing the time in 12-hour format.
+#: ../src/gl-util.c:95
+msgid "%l:%M %p"
+msgstr "%l:%M %p"
+
+#. Translators: timestamp format for events in the current
+#. * year, showing the abbreviated month name, day of the
+#. * month and the time in 12-hour format.
+#: ../src/gl-util.c:101
+msgid "%b %e %l:%M %p"
+msgstr ""
+
+#. Translators: timestamp format for events in a different
+#. * year, showing the abbreviated month name, day of the
+#. * month, year and the time in 12-hour format.
+#: ../src/gl-util.c:107
+msgid "%b %e %Y %l:%M %p"
+msgstr ""
+
+#. Translators: timestamp format for events on the current
+#. * day, showing the time in 24-hour format.
+#: ../src/gl-util.c:120
+msgid "%H:%M"
+msgstr "%H:%M"
+
+#. Translators: timestamp format for events in the current
+#. * year, showing the abbreviated month name, day of the
+#. * month and the time in 24-hour format.
+#: ../src/gl-util.c:126
+msgid "%b %e %H:%M"
+msgstr ""
+
+#. Translators: timestamp format for events in a different
+#. * year, showing the abbreviated month name, day of the
+#. * month, year and the time in 24-hour format.
+#: ../src/gl-util.c:132
+msgid "%b %e %Y %H:%M"
+msgstr ""
+
+#~ msgid "Categories"
+#~ msgstr "קטגוריות"
