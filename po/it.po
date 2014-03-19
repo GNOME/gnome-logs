@@ -1,31 +1,38 @@
 # Italian translation for gnome-logs.
-# Copyright (C) 2013 gnome-logs's COPYRIGHT HOLDER
+# Copyright (C) 2013, 2014 gnome-logs's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-logs package.
 # Daniele Medri <dmedri@gmail.com>, 2013.
+# Milo Casagrande <milo@milo.name>, 2014
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-09 13:30+0100\n"
-"PO-Revision-Date: 2013-10-01 18:18+0200\n"
-"Last-Translator: Daniele Medri <dmedri@gmail.com>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"logs&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2014-02-21 23:09+0000\n"
+"PO-Revision-Date: 2014-03-19 11:55+0100\n"
+"Last-Translator: Milo Casagrande <milo@milo.name>\n"
 "Language-Team: Italian <gnome-it-list@gnome.org>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"X-Generator: Poedit 1.6.4\n"
 
 #: ../data/appmenu.ui.h:1
 msgid "_New Window"
 msgstr "_Nuova finestra"
 
 #: ../data/appmenu.ui.h:2
+msgid "_Help"
+msgstr "A_iuto"
+
+#: ../data/appmenu.ui.h:3
 msgid "_About"
 msgstr "_Informazioni"
 
-#: ../data/appmenu.ui.h:3
+#: ../data/appmenu.ui.h:4
 msgid "_Quit"
 msgstr "_Esci"
 
@@ -110,61 +117,85 @@ msgstr "Visualizza il registro degli eventi di sistema"
 msgid "log;journal;debug;error;"
 msgstr "registro;diario;debug;errore;"
 
-#: ../src/gl-application.c:77
+#: ../src/gl-application.c:100
 msgid "translator-credits"
-msgstr "Daniele Medri <dmedri@gmail.com>, 2013"
+msgstr ""
+"Milo Casagrande <milo@milo.name>, 2014\n"
+"Daniele Medri <dmedri@gmail.com>, 2013"
 
-#: ../src/gl-application.c:78
+#: ../src/gl-application.c:101
 msgid "View and search logs"
 msgstr "Visualizza e cerca registri"
 
+#: ../src/gl-application.c:223
+msgid "Print version information and exit"
+msgstr "Stampa informazioni sulla versione ed esce"
+
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventview.c:253
+#: ../src/gl-eventview.c:216
 msgid "No results"
 msgstr "Nessun risultato"
 
-#: ../src/gl-eventview.c:455 ../src/gl-eventview.c:465
-#: ../src/gl-eventview.c:596 ../src/gl-eventview.c:606
+#: ../src/gl-eventview.c:594 ../src/gl-eventview.c:604
+#: ../src/gl-eventview.c:735 ../src/gl-eventview.c:745
 msgid "Not implemented"
 msgstr "Non implementato"
+
+#: ../src/gl-eventviewdetail.c:140
+#| msgid "Usage"
+msgid "Message"
+msgstr "Messaggio"
+
+#. TODO: Give a user-friendly representation of the priority.
+#: ../src/gl-eventviewdetail.c:161
+msgid "Priority"
+msgstr "Priorità"
+
+#: ../src/gl-eventviewdetail.c:189
+msgid "Kernel Device"
+msgstr "Device kernel"
+
+#: ../src/gl-eventviewdetail.c:209
+msgid "Audit Session"
+msgstr "Sessione audit"
 
 #. Translators: timestamp format for events on the current
 #. * day, showing the time in 12-hour format.
 #: ../src/gl-util.c:95
 msgid "%l:%M %p"
-msgstr "%l:%M %p"
+msgstr "%l.%M %p"
 
 #. Translators: timestamp format for events in the current
 #. * year, showing the abbreviated month name, day of the
 #. * month and the time in 12-hour format.
 #: ../src/gl-util.c:101
 msgid "%b %e %l:%M %p"
-msgstr "%e %b %l:%M %p"
+msgstr "%e %b %l.%M %p"
 
 #. Translators: timestamp format for events in a different
 #. * year, showing the abbreviated month name, day of the
 #. * month, year and the time in 12-hour format.
 #: ../src/gl-util.c:107
 msgid "%b %e %Y %l:%M %p"
-msgstr "%e %b %Y %l:%M %p"
+msgstr "%e %b %Y %l.%M %p"
 
 #. Translators: timestamp format for events on the current
 #. * day, showing the time in 24-hour format.
 #: ../src/gl-util.c:120
 msgid "%H:%M"
-msgstr "%H:%M"
+msgstr "%H.%M"
 
 #. Translators: timestamp format for events in the current
 #. * year, showing the abbreviated month name, day of the
 #. * month and the time in 24-hour format.
 #: ../src/gl-util.c:126
 msgid "%b %e %H:%M"
-msgstr "%e %b %H:%M"
+msgstr "%e %b %H.%M"
 
 #. Translators: timestamp format for events in a different
 #. * year, showing the abbreviated month name, day of the
 #. * month, year and the time in 24-hour format.
 #: ../src/gl-util.c:132
 msgid "%b %e %Y %H:%M"
-msgstr "%e %b %Y %H:%M"
+msgstr "%e %b %Y %H.%M"
