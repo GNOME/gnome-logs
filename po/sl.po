@@ -2,22 +2,23 @@
 # Copyright (C) 2013 gnome-logs's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-logs package.
 #
-# Martin Srebotnjak <miles@filmsi.net>, 2013.
+# Martin Srebotnjak <miles@filmsi.net>, 2013-2014.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-10-01 16:26+0000\n"
-"PO-Revision-Date: 2013-10-01 23:08+0100\n"
+"POT-Creation-Date: 2014-03-21 19:58+0000\n"
+"PO-Revision-Date: 2014-03-21 22:52+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian <gnome-si@googlegroups.com>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n%100==4 ? 3 : 0);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 or n"
+"%100==4 ? 3 : 0) ;\n"
 "X-Generator: Poedit 1.5.4\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
@@ -26,10 +27,14 @@ msgid "_New Window"
 msgstr "_Novo okno"
 
 #: ../data/appmenu.ui.h:2
+msgid "_Help"
+msgstr "Pomo_č"
+
+#: ../data/appmenu.ui.h:3
 msgid "_About"
 msgstr "_O programu"
 
-#: ../data/appmenu.ui.h:3
+#: ../data/appmenu.ui.h:4
 msgid "_Quit"
 msgstr "_Končaj"
 
@@ -85,9 +90,17 @@ msgstr "Vrni se na pogled dogodkov"
 msgid "Search the displayed logs"
 msgstr "Išči po prikazanih zapisih dnevnika"
 
-#: ../data/gl-window.ui.h:1
-msgid "Categories"
-msgstr "Kategorije"
+#: ../data/gnome-logs.appdata.xml.in.h:1
+msgid ""
+"Logs shows events from the systemd journal, and sorts them into categories, "
+"such as hardware and applications."
+msgstr ""
+
+#: ../data/gnome-logs.appdata.xml.in.h:2
+msgid ""
+"Using Logs you can search your logs by typing a search term, and view "
+"detailed information about each event by clicking on it."
+msgstr ""
 
 #: ../data/gnome-logs.desktop.in.h:1
 msgid "Log Viewer"
@@ -103,15 +116,88 @@ msgid "log;journal;debug;error;"
 msgstr ""
 "dnevnik;razhroščevanje;hrošči;napaka;napake;težave;težava;problem;problemi;"
 
-#: ../src/gl-application.c:61
+#: ../src/gl-application.c:99
 msgid "translator-credits"
 msgstr "Martin Srebotnjak <miles@filmsi.net>"
 
-#: ../src/gl-application.c:62
+#: ../src/gl-application.c:100
 msgid "View and search logs"
 msgstr "Pokaži in preišči dnevnike"
 
-#: ../src/gl-eventview.c:1031 ../src/gl-eventview.c:1041
-#: ../src/gl-eventview.c:1278 ../src/gl-eventview.c:1288
+#: ../src/gl-application.c:222
+#, fuzzy
+msgid "Print version information and exit"
+msgstr "Izpiši podatke o različici in končaj"
+
+#. Translators: Shown when there are no (zero) results in the current
+#. * view.
+#: ../src/gl-eventview.c:217
+msgid "No results"
+msgstr "Ni najdenih zadetkov"
+
+#: ../src/gl-eventview.c:604 ../src/gl-eventview.c:614
+#: ../src/gl-eventview.c:745 ../src/gl-eventview.c:755
 msgid "Not implemented"
 msgstr "Ni podprto"
+
+#: ../src/gl-eventviewdetail.c:140
+msgid "Message"
+msgstr "Sporočilo"
+
+#. TODO: Give a user-friendly representation of the priority.
+#: ../src/gl-eventviewdetail.c:161
+msgid "Priority"
+msgstr "Prednost"
+
+#: ../src/gl-eventviewdetail.c:189
+#, fuzzy
+msgid "Kernel Device"
+msgstr "Podpora napravam"
+
+#: ../src/gl-eventviewdetail.c:209
+#, fuzzy
+msgid "Audit Session"
+msgstr "_Uvozi sejo"
+
+#. Translators: timestamp format for events on the current
+#. * day, showing the time in 12-hour format.
+#: ../src/gl-util.c:95
+msgid "%l:%M %p"
+msgstr "%l:%M %p"
+
+#. Translators: timestamp format for events in the current
+#. * year, showing the abbreviated month name, day of the
+#. * month and the time in 12-hour format.
+#: ../src/gl-util.c:101
+msgid "%b %e %l:%M %p"
+msgstr "%b %e %l:%M %p"
+
+#. Translators: timestamp format for events in a different
+#. * year, showing the abbreviated month name, day of the
+#. * month, year and the time in 12-hour format.
+#: ../src/gl-util.c:107
+msgid "%b %e %Y %l:%M %p"
+msgstr "%b %e %Y %l:%M %p"
+
+#. Translators: timestamp format for events on the current
+#. * day, showing the time in 24-hour format.
+#: ../src/gl-util.c:120
+msgid "%H:%M"
+msgstr "%H:%M"
+
+#. Translators: timestamp format for events in the current
+#. * year, showing the abbreviated month name, day of the
+#. * month and the time in 24-hour format.
+#: ../src/gl-util.c:126
+msgid "%b %e %H:%M"
+msgstr "%b %e %H:%M"
+
+#. Translators: timestamp format for events in a different
+#. * year, showing the abbreviated month name, day of the
+#. * month, year and the time in 24-hour format.
+#: ../src/gl-util.c:132
+msgid "%b %e %Y %H:%M"
+msgstr "%b %e %Y %H:%M"
+
+#~ msgid "Categories"
+#~ msgstr "Kategorije"
