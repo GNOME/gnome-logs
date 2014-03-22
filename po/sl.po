@@ -10,14 +10,15 @@ msgstr ""
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
 "POT-Creation-Date: 2014-03-21 19:58+0000\n"
-"PO-Revision-Date: 2014-03-21 22:52+0100\n"
+"PO-Revision-Date: 2014-03-22 18:16+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian <gnome-si@googlegroups.com>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n%100==4 ? 3 : 0);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
+"%100==4 ? 3 : 0);\n"
 "X-Generator: Poedit 1.5.4\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
@@ -124,7 +125,6 @@ msgid "View and search logs"
 msgstr "Pokaži in preišči dnevnike"
 
 #: ../src/gl-application.c:222
-#, fuzzy
 msgid "Print version information and exit"
 msgstr "Izpiši podatke o različici in končaj"
 
@@ -149,14 +149,12 @@ msgid "Priority"
 msgstr "Prednost"
 
 #: ../src/gl-eventviewdetail.c:189
-#, fuzzy
 msgid "Kernel Device"
-msgstr "Podpora napravam"
+msgstr "Naprava jedra"
 
 #: ../src/gl-eventviewdetail.c:209
-#, fuzzy
 msgid "Audit Session"
-msgstr "_Uvozi sejo"
+msgstr "Seja prisluha"
 
 #. Translators: timestamp format for events on the current
 #. * day, showing the time in 12-hour format.
