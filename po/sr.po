@@ -1,15 +1,15 @@
 # Serbian translation of gnome-logs
-# Courtesy of Prevod.org team (http://prevod.org/) -- 2013.
+# Courtesy of Prevod.org team (http://prevod.org/) -- 2013—2014.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-logs package.
-# Мирослав Николић <miroslavnikolic@rocketmail.com>, 2013, 2014.
+# Мирослав Николић <miroslavnikolic@rocketmail.com>, 2013—2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-02-04 09:16+0000\n"
-"PO-Revision-Date: 2014-02-04 22:02+0200\n"
+"POT-Creation-Date: 2014-02-21 23:09+0000\n"
+"PO-Revision-Date: 2014-03-22 09:57+0200\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <gnom@prevod.org>\n"
 "Language: sr\n"
@@ -25,10 +25,14 @@ msgid "_New Window"
 msgstr "_Нови прозор"
 
 #: ../data/appmenu.ui.h:2
+msgid "_Help"
+msgstr "По_моћ"
+
+#: ../data/appmenu.ui.h:3
 msgid "_About"
 msgstr "_О програму"
 
-#: ../data/appmenu.ui.h:3
+#: ../data/appmenu.ui.h:4
 msgid "_Quit"
 msgstr "_Изађи"
 
@@ -113,30 +117,33 @@ msgstr "Прегледајте опширне дневнике догађаја 
 msgid "log;journal;debug;error;"
 msgstr "дневник;записник;запис;прочишћавање;грешка;"
 
-#: ../src/gl-application.c:77
+#: ../src/gl-application.c:100
 msgid "translator-credits"
 msgstr ""
 "  Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "\n"
 "http://prevod.org — превод на српски језик"
 
-#: ../src/gl-application.c:78
+#: ../src/gl-application.c:101
 msgid "View and search logs"
 msgstr "Прегледа и претражује дневнике"
 
+#: ../src/gl-application.c:223
+msgid "Print version information and exit"
+msgstr "Исписује податке о издању и излази"
+
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventview.c:211
+#: ../src/gl-eventview.c:216
 msgid "No results"
 msgstr "Нема резултата"
 
-#: ../src/gl-eventview.c:413 ../src/gl-eventview.c:423
-#: ../src/gl-eventview.c:554 ../src/gl-eventview.c:564
+#: ../src/gl-eventview.c:594 ../src/gl-eventview.c:604
+#: ../src/gl-eventview.c:735 ../src/gl-eventview.c:745
 msgid "Not implemented"
 msgstr "Није примењено"
 
 #: ../src/gl-eventviewdetail.c:140
-#| msgid "Usage"
 msgid "Message"
 msgstr "Порука"
 
