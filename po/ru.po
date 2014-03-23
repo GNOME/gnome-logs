@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
 "POT-Creation-Date: 2014-03-11 19:10+0000\n"
-"PO-Revision-Date: 2014-03-13 21:59+0400\n"
+"PO-Revision-Date: 2014-03-23 13:36+0400\n"
 "Last-Translator: Yuri Myasoedov <ymyasoedov@yandex.ru>\n"
 "Language-Team: русский <gnome-cyr@gnome.org>\n"
 "Language: ru\n"
@@ -18,8 +18,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
-"X-Generator: Gtranslator 2.91.6\n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Poedit 1.6.4\n"
 
 #: ../data/appmenu.ui.h:1
 msgid "_New Window"
@@ -67,7 +67,7 @@ msgstr "Безопасность"
 
 #: ../data/gl-categorylist.ui.h:8
 msgid "Hardware"
-msgstr "Аппаратура"
+msgstr "Оборудование"
 
 #: ../data/gl-categorylist.ui.h:9
 msgid "Updates"
@@ -87,7 +87,7 @@ msgstr "Вернуться к просмотру событий"
 
 #: ../data/gl-eventtoolbar.ui.h:3
 msgid "Search the displayed logs"
-msgstr "Искать по журналам"
+msgstr "Поиск по журналам"
 
 #: ../data/gnome-logs.appdata.xml.in.h:1
 msgid ""
@@ -120,7 +120,7 @@ msgstr "логи;журнал;debug;ошибка;отладка;"
 
 #: ../src/gl-application.c:99
 msgid "translator-credits"
-msgstr "Stas Solovey <whats_up@tut.by>, 2014."
+msgstr "Стас Соловей <whats_up@tut.by>, 2014."
 
 #: ../src/gl-application.c:100
 msgid "View and search logs"
@@ -134,7 +134,7 @@ msgstr "Показать информацию о версии и выйти"
 #. * view.
 #: ../src/gl-eventview.c:217
 msgid "No results"
-msgstr "Нет результатов"
+msgstr "Результаты отсутствуют"
 
 #: ../src/gl-eventview.c:604 ../src/gl-eventview.c:614
 #: ../src/gl-eventview.c:745 ../src/gl-eventview.c:755
@@ -152,11 +152,11 @@ msgstr "Приоритет"
 
 #: ../src/gl-eventviewdetail.c:189
 msgid "Kernel Device"
-msgstr ""
+msgstr "Устройство"
 
 #: ../src/gl-eventviewdetail.c:209
 msgid "Audit Session"
-msgstr ""
+msgstr "Сеанс аудита"
 
 #. Translators: timestamp format for events on the current
 #. * day, showing the time in 12-hour format.
