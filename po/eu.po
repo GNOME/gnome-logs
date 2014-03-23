@@ -1,0 +1,198 @@
+# Basque translation for gnome-logs.
+# Copyright (C) 2014 gnome-logs's COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-logs master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"logs&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2014-03-23 14:34+0100\n"
+"PO-Revision-Date: 2014-03-23 14:48+0100\n"
+"Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@zundan.com>\n"
+"Language-Team: Basque <librezale@librezale.org>\n"
+"Language: eu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 1.4\n"
+
+#: ../data/appmenu.ui.h:1
+msgid "_New Window"
+msgstr "Leiho _berria"
+
+#: ../data/appmenu.ui.h:2
+msgid "_Help"
+msgstr "_Laguntza"
+
+#: ../data/appmenu.ui.h:3
+msgid "_About"
+msgstr "Honi _buruz"
+
+#: ../data/appmenu.ui.h:4
+msgid "_Quit"
+msgstr "I_rten"
+
+#: ../data/gl-categorylist.ui.h:1
+msgid "Important"
+msgstr "Garrantzitsua"
+
+#: ../data/gl-categorylist.ui.h:2
+msgid "Alerts"
+msgstr "Abisuak"
+
+#: ../data/gl-categorylist.ui.h:3
+msgid "Starred"
+msgstr "Gogokoak"
+
+#: ../data/gl-categorylist.ui.h:4
+msgid "All"
+msgstr "Denak"
+
+#: ../data/gl-categorylist.ui.h:5
+msgid "Applications"
+msgstr "Aplikazioak"
+
+#: ../data/gl-categorylist.ui.h:6
+msgid "System"
+msgstr "Sistema"
+
+#: ../data/gl-categorylist.ui.h:7
+msgid "Security"
+msgstr "Segurtasuna"
+
+#: ../data/gl-categorylist.ui.h:8
+msgid "Hardware"
+msgstr "Hardwarea"
+
+#: ../data/gl-categorylist.ui.h:9
+msgid "Updates"
+msgstr "Eguneraketak"
+
+#: ../data/gl-categorylist.ui.h:10
+msgid "Usage"
+msgstr "Erabilera"
+
+#: ../data/gl-eventtoolbar.ui.h:1
+msgid "Logs"
+msgstr "Erregistroak"
+
+#: ../data/gl-eventtoolbar.ui.h:2
+msgid "Go back to the event view"
+msgstr "Itzuli gertaeren ikuspegira"
+
+#: ../data/gl-eventtoolbar.ui.h:3
+msgid "Search the displayed logs"
+msgstr "Bilatu bistaratutako erregistroak"
+
+#: ../data/gnome-logs.appdata.xml.in.h:1
+msgid ""
+"Logs shows events from the systemd journal, and sorts them into categories, "
+"such as hardware and applications."
+msgstr ""
+"Logs-ek systemd egunkariak sortutako gertaerak bistaratzeaz gain, "
+"haiek Hardwarea edo Aplikazioak bezalako kategorietan antolatzen ditu."
+
+#: ../data/gnome-logs.appdata.xml.in.h:2
+msgid ""
+"Using Logs you can search your logs by typing a search term, and view "
+"detailed information about each event by clicking on it."
+msgstr ""
+"Logs erabiltzean erregistroak bila ditzakezu, eta gertaera bakoitzaren "
+"informazio xehea ikus dezakezu haren gainean klik eginez gero."
+
+#: ../data/gnome-logs.desktop.in.h:1
+msgid "Log Viewer"
+msgstr "Erregistroen ikustailea"
+
+#: ../data/gnome-logs.desktop.in.h:2
+msgid "View detailed event logs for the system"
+msgstr "Ikusi sistemako erregistroen gertaera xeheak"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: ../data/gnome-logs.desktop.in.h:4
+msgid "log;journal;debug;error;"
+msgstr "erregistroa;egunkaria;arazketa;errorea;"
+
+#: ../src/gl-application.c:99
+msgid "translator-credits"
+msgstr "Iñaki Larrañaga Murgoitio <dooteo@zundan.com>"
+
+#: ../src/gl-application.c:100
+msgid "View and search logs"
+msgstr "Ikusi eta bilatu erregistroak"
+
+#: ../src/gl-application.c:222
+msgid "Print version information and exit"
+msgstr "Erakutsi bertsioaren informazioa eta irten"
+
+#. Translators: Shown when there are no (zero) results in the current
+#. * view.
+#: ../src/gl-eventview.c:217
+msgid "No results"
+msgstr "Ez dago emaitzarik"
+
+#: ../src/gl-eventview.c:604 ../src/gl-eventview.c:614
+#: ../src/gl-eventview.c:745 ../src/gl-eventview.c:755
+msgid "Not implemented"
+msgstr "Ez dago inplementatuta"
+
+#: ../src/gl-eventviewdetail.c:140
+msgid "Message"
+msgstr "Mezua"
+
+#. TODO: Give a user-friendly representation of the priority.
+#: ../src/gl-eventviewdetail.c:161
+msgid "Priority"
+msgstr "Lehentasuna"
+
+#: ../src/gl-eventviewdetail.c:189
+msgid "Kernel Device"
+msgstr "Nukleoaren gailua"
+
+#: ../src/gl-eventviewdetail.c:209
+msgid "Audit Session"
+msgstr "Ikuskatze-saioa"
+
+#. Translators: timestamp format for events on the current
+#. * day, showing the time in 12-hour format.
+#: ../src/gl-util.c:95
+msgid "%l:%M %p"
+msgstr "%l:%M %p"
+
+#. Translators: timestamp format for events in the current
+#. * year, showing the abbreviated month name, day of the
+#. * month and the time in 12-hour format.
+#: ../src/gl-util.c:101
+msgid "%b %e %l:%M %p"
+msgstr "%b(a)ren  %ean, %l:%M %p"
+
+#. Translators: timestamp format for events in a different
+#. * year, showing the abbreviated month name, day of the
+#. * month, year and the time in 12-hour format.
+#: ../src/gl-util.c:107
+msgid "%b %e %Y %l:%M %p"
+msgstr "%Y.eko %b(a)ren  %ean, %H:%M %p"
+
+#. Translators: timestamp format for events on the current
+#. * day, showing the time in 24-hour format.
+#: ../src/gl-util.c:120
+msgid "%H:%M"
+msgstr "%H:%M"
+
+#. Translators: timestamp format for events in the current
+#. * year, showing the abbreviated month name, day of the
+#. * month and the time in 24-hour format.
+#: ../src/gl-util.c:126
+msgid "%b %e %H:%M"
+msgstr "%b(a)ren  %ean, %H:%M"
+
+#. Translators: timestamp format for events in a different
+#. * year, showing the abbreviated month name, day of the
+#. * month, year and the time in 24-hour format.
+#: ../src/gl-util.c:132
+msgid "%b %e %Y %H:%M"
+msgstr "%Y.eko %b(a)ren  %ean, %H:%M"
+
