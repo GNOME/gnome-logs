@@ -113,7 +113,7 @@ msgstr "వ్యవస్థ కోసం వివరణాత్మకమై�
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: ../data/gnome-logs.desktop.in.h:4
 msgid "log;journal;debug;error;"
-msgstr "చిట్టా;జర్నల్;దోషశోధన;దోషంచ"
+msgstr "చిట్టా;జర్నల్;దోషశోధన;దోషంచ;"
 
 #: ../src/gl-application.c:99
 msgid "translator-credits"
