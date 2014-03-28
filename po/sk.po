@@ -1,0 +1,205 @@
+# Slovak translation for gnome-logs.
+# Copyright (C) 2014 gnome-logs's COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-logs package.
+# Peter Vágner <pvdeejay@gmail.com>, 2014.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-logs master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"logs&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2014-03-26 08:08+0000\n"
+"PO-Revision-Date: 2014-03-28 22:02+0100\n"
+"Last-Translator: Peter Mráz <etkinator@gmail.com>\n"
+"Language-Team: Slovak <gnome-sk-list@gnome.org>\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 1 : (n>=2 && n<=4) ? 2 : 0;\n"
+"X-Generator: Poedit 1.5.4\n"
+
+#: ../data/appmenu.ui.h:1
+msgid "_New Window"
+msgstr "_Nové okno"
+
+#: ../data/appmenu.ui.h:2
+msgid "_Help"
+msgstr "_Pomocník"
+
+#: ../data/appmenu.ui.h:3
+msgid "_About"
+msgstr "_O programe"
+
+#: ../data/appmenu.ui.h:4
+msgid "_Quit"
+msgstr "U_končiť"
+
+#: ../data/gl-categorylist.ui.h:1
+msgid "Important"
+msgstr "Dôležité"
+
+# DK: varovania, vid slovnik
+#: ../data/gl-categorylist.ui.h:2
+msgid "Alerts"
+msgstr "Upozornenia"
+
+# DK: mozno skor "Označené hviezdičkou" ?
+#: ../data/gl-categorylist.ui.h:3
+msgid "Starred"
+msgstr "Označené hviezdičkou"
+
+#: ../data/gl-categorylist.ui.h:4
+msgid "All"
+msgstr "Všetky"
+
+#: ../data/gl-categorylist.ui.h:5
+msgid "Applications"
+msgstr "Aplikácie"
+
+#: ../data/gl-categorylist.ui.h:6
+msgid "System"
+msgstr "Systém"
+
+#: ../data/gl-categorylist.ui.h:7
+msgid "Security"
+msgstr "Bezpečnosť"
+
+#: ../data/gl-categorylist.ui.h:8
+msgid "Hardware"
+msgstr "Hardvér"
+
+#: ../data/gl-categorylist.ui.h:9
+msgid "Updates"
+msgstr "Aktualizácie"
+
+#: ../data/gl-categorylist.ui.h:10
+msgid "Usage"
+msgstr "Použitie"
+
+#: ../data/gl-eventtoolbar.ui.h:1
+msgid "Logs"
+msgstr "Záznamy"
+
+#: ../data/gl-eventtoolbar.ui.h:2
+msgid "Go back to the event view"
+msgstr "Vráti sa do zobrazenia udalostí"
+
+#: ../data/gl-eventtoolbar.ui.h:3
+msgid "Search the displayed logs"
+msgstr "Prehľadá zobrazené záznamy"
+
+#: ../data/gnome-logs.appdata.xml.in.h:1
+msgid ""
+"Logs shows events from the systemd journal, and sorts them into categories, "
+"such as hardware and applications."
+msgstr ""
+"Aplikácia záznamy zobrazuje udalosti z denníka služby systemd a triedi ich "
+"do kategórií ako sú napríklad hardvér alebo aplikácie."
+
+#: ../data/gnome-logs.appdata.xml.in.h:2
+msgid ""
+"Using Logs you can search your logs by typing a search term, and view "
+"detailed information about each event by clicking on it."
+msgstr ""
+"Použitím aplikácie Záznamy môžete vyhľadať zadaný výraz a kliknutím na "
+"udalosť zobraziť podrobné informácie o každej udalosti."
+
+#: ../data/gnome-logs.desktop.in.h:1
+msgid "Log Viewer"
+msgstr "Prehliadač záznamov"
+
+# DK:nezda sa mi moc presny ten preklad aj ked znie dobre. dal by som: "Zobrazuje podrobné záznamy udalostí systému"
+#: ../data/gnome-logs.desktop.in.h:2
+msgid "View detailed event logs for the system"
+msgstr "Zobrazuje podrobné záznamy o udalostiach v systéme"
+
+# DK: co tak doplnit aj slovo "žurnál" ?
+# PV: no áno + som zabudol na bodkočiarku na konci
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: ../data/gnome-logs.desktop.in.h:4
+msgid "log;journal;debug;error;"
+msgstr "log;záznam;žurnál;denník;ladenie;chyba;"
+
+#: ../src/gl-application.c:99
+msgid "translator-credits"
+msgstr "Peter Vágner <pvdeejay@gmail.com>"
+
+#: ../src/gl-application.c:100
+msgid "View and search logs"
+msgstr "Zobrazuje a prehľadáva záznamy"
+
+#: ../src/gl-application.c:222
+msgid "Print version information and exit"
+msgstr "Vypíše informácie o verzii a skončí"
+
+#. Translators: Shown when there are no (zero) results in the current
+#. * view.
+#: ../src/gl-eventview.c:217
+msgid "No results"
+msgstr "Žiadne výsledky"
+
+# DK: sedi rod pre vsetky pripady? s tymto slovom mam tiez problem v Rygeli
+# PV: nedokážem určiť v akom je to kontexte, neprichádza mi na um univerzálnejší preklad
+#: ../src/gl-eventview.c:604 ../src/gl-eventview.c:614
+#: ../src/gl-eventview.c:745 ../src/gl-eventview.c:755
+msgid "Not implemented"
+msgstr "Neimplementované"
+
+#: ../src/gl-eventviewdetail.c:140
+msgid "Message"
+msgstr "Správa"
+
+#. TODO: Give a user-friendly representation of the priority.
+#: ../src/gl-eventviewdetail.c:161
+msgid "Priority"
+msgstr "Priorita"
+
+#: ../src/gl-eventviewdetail.c:189
+msgid "Kernel Device"
+msgstr "Zariadenie jadra"
+
+# DK: session prekladame ako reláciu
+#: ../src/gl-eventviewdetail.c:209
+msgid "Audit Session"
+msgstr "Audit relácie"
+
+#. Translators: timestamp format for events on the current
+#. * day, showing the time in 12-hour format.
+#: ../src/gl-util.c:95
+msgid "%l:%M %p"
+msgstr "%l:%M %p"
+
+#. Translators: timestamp format for events in the current
+#. * year, showing the abbreviated month name, day of the
+#. * month and the time in 12-hour format.
+#: ../src/gl-util.c:101
+msgid "%b %e %l:%M %p"
+msgstr "%e. %b %l:%M %p"
+
+#. Translators: timestamp format for events in a different
+#. * year, showing the abbreviated month name, day of the
+#. * month, year and the time in 12-hour format.
+#: ../src/gl-util.c:107
+msgid "%b %e %Y %l:%M %p"
+msgstr "%e. %b %Y %l:%M %p"
+
+#. Translators: timestamp format for events on the current
+#. * day, showing the time in 24-hour format.
+#: ../src/gl-util.c:120
+msgid "%H:%M"
+msgstr "%H:%M"
+
+#. Translators: timestamp format for events in the current
+#. * year, showing the abbreviated month name, day of the
+#. * month and the time in 24-hour format.
+#: ../src/gl-util.c:126
+msgid "%b %e %H:%M"
+msgstr "%e. %b %H:%M"
+
+#. Translators: timestamp format for events in a different
+#. * year, showing the abbreviated month name, day of the
+#. * month, year and the time in 24-hour format.
+#: ../src/gl-util.c:132
+msgid "%b %e %Y %H:%M"
+msgstr "%e. %b %Y %H:%M"
