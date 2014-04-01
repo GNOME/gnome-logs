@@ -5,9 +5,9 @@ Makefile.in
 /build-aux/
 /data/.dstamp
 /data/gnome-logs.1
-/data/gnome-logs.appdata.valid
-/data/gnome-logs.appdata.xml
-/data/gnome-logs.desktop
+/data/org.gnome.Logs.appdata.valid
+/data/org.gnome.Logs.appdata.xml
+/data/org.gnome.Logs.desktop
 /data/org.gnome.Logs.service
 /data/version.xml
 /help/*/*.mo

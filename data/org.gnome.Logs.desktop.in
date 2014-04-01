@@ -10,3 +10,4 @@ Exec=gnome-logs
 Icon=gnome-logs
 Terminal=false
 StartupNotify=true
+DBusActivatable=true

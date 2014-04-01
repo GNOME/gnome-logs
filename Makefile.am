@@ -70,13 +70,13 @@ nodist_gnome_logs_headers = \
 
 @APPDATA_XML_RULES@
 @INTLTOOL_XML_RULE@
-appdata_in_files = data/gnome-logs.appdata.xml.in
+appdata_in_files = data/org.gnome.Logs.appdata.xml.in
 $(appdata_in_files:.appdata.xml.in=.appdata.xml): data/.dstamp
 appdata_XML = $(appdata_in_files:.appdata.xml.in=.appdata.xml)
 
 @INTLTOOL_DESKTOP_RULE@
 desktopdir = $(datadir)/applications
-desktop_in_files = data/gnome-logs.desktop.in
+desktop_in_files = data/org.gnome.Logs.desktop.in
 $(desktop_in_files:.desktop.in=.desktop): data/.dstamp
 desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
 
@@ -169,7 +169,7 @@ noinst_resource_files = \
 	data/gl-style.css \
 	data/gl-window.ui
 
-src/gl-resource.c src/gl-resource.h: data/gnome-logs.gresource.xml Makefile $(noinst_resource_files)
+src/gl-resource.c src/gl-resource.h: data/org.gnome.Logs.gresource.xml Makefile $(noinst_resource_files)
 	$(AM_V_GEN) $(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir)/data --generate --c-name gl $<
 
 dist_noinst_DATA = \
@@ -177,7 +177,7 @@ dist_noinst_DATA = \
 	$(noinst_resource_files) \
 	$(appdata_in_files) \
 	$(desktop_in_files) \
-	data/gnome-logs.gresource.xml \
+	data/org.gnome.Logs.gresource.xml \
 	data/gnome-logs.xml \
 	data/icons/gnome-logs.svg
 
