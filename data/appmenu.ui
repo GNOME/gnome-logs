@@ -9,6 +9,7 @@
         </section>
         <section>
             <item>
+                <attribute name="accel">F1</attribute>
                 <attribute name="label" translatable="yes">_Help</attribute>
                 <attribute name="action">app.help</attribute>
             </item>
