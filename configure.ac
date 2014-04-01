@@ -93,6 +93,7 @@ SYSTEMD_JOURNAL_REQUIRED="libsystemd-journal"
 PKG_CHECK_MODULES([LOGS], [$GIO_REQUIRED $GTK_REQUIRED $SYSTEMD_JOURNAL_REQUIRED])
 
 AC_CONFIG_FILES([
+data/org.gnome.Logs.service
 data/version.xml
 help/Makefile
 Makefile

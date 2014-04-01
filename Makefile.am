@@ -80,6 +80,9 @@ desktop_in_files = data/gnome-logs.desktop.in
 $(desktop_in_files:.desktop.in=.desktop): data/.dstamp
 desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
 
+servicedir = $(datadir)/dbus-1/services
+service_DATA = data/org.gnome.Logs.service
+
 if ENABLE_MAN
 data/gnome-logs.1: data/gnome-logs.xml
 	$(AM_V_GEN)xsltproc --nonet --path $(builddir)/data --output $(builddir)/data/ http://docbook.sourceforge.net/release/xsl/current/manpages/docbook.xsl $<
