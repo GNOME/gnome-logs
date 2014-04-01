@@ -847,36 +847,16 @@ on_notify_mode (GlEventView *view,
     {
         case GL_EVENT_VIEW_MODE_LIST:
             {
-                GtkContainer *container;
-                GList *children;
-                GList *l;
+                GtkWidget *child;
                 GtkWidget *viewport;
                 GtkWidget *scrolled_window;
 
-                container = GTK_CONTAINER (stack);
-                children = gtk_container_get_children (container);
+                child = gtk_stack_get_child_by_name (stack, "detail");
 
-                for (l = children; l != NULL; l = g_list_next (l))
+                if (child)
                 {
-                    GtkWidget *child;
-                    gchar *name;
-
-                    child = (GtkWidget *)l->data;
-                    gtk_container_child_get (container, child, "name", &name,
-                                             NULL);
-
-                    if (g_strcmp0 (name, "detail") == 0)
-                    {
-                        gtk_container_remove (container, child);
-
-                        g_free (name);
-                        break;
-                    }
-
-                    g_free (name);
+                    gtk_container_remove (GTK_CONTAINER (stack), child);
                 }
-
-                g_list_free (children);
 
                 viewport = gtk_widget_get_parent (GTK_WIDGET (priv->active_listbox));
                 scrolled_window = gtk_widget_get_parent (viewport);
