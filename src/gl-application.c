@@ -202,13 +202,15 @@ gl_application_activate (GApplication *application)
 {
     GtkWidget *window;
     GlApplicationPrivate *priv;
+    const gchar * const close_accel[] = { "<Primary>w", NULL };
+    const gchar * const search_accel[] = { "<Primary>f", NULL };
 
     window = gl_window_new (GTK_APPLICATION (application));
     gtk_widget_show (window);
-    gtk_application_add_accelerator (GTK_APPLICATION (application),
-                                     "<Primary>w", "win.close", NULL);
-    gtk_application_add_accelerator (GTK_APPLICATION (application),
-                                     "<Primary>f", "win.search", NULL);
+    gtk_application_set_accels_for_action (GTK_APPLICATION (application),
+                                           "win.close", close_accel);
+    gtk_application_set_accels_for_action (GTK_APPLICATION (application),
+                                           "win.search", search_accel);
 
     priv = gl_application_get_instance_private (GL_APPLICATION (application));
 
