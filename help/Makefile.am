@@ -12,4 +12,4 @@ HELP_MEDIA = \
 	media/gnome-logs.png \
 	media/gnome-logs-3-12.png
 
-HELP_LINGUAS = cs de el es fr hu
+HELP_LINGUAS = cs de el es fr hu pt_BR
