@@ -1,3 +1,12 @@
+GNOME Logs 3.13.1
+=================
+
+* add a D-Bus service file and make the application D-Bus activatable
+* avoid some deprecated GTK+ API
+* Brazilian Portuguese translations of help
+* British English, Slovak and Dutch translations
+* updates to Slovenian and Greek translations
+
 GNOME Logs 3.12.0
 =================
 
