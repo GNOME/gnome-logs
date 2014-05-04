@@ -162,12 +162,7 @@ src/gl-enums.h: $(gnome_logs_enum_headers) Makefile
 		--ftail "#endif /* GL_ENUMS_H_ */" \
 		$(gnome_logs_enum_headers) > $@
 
-noinst_resource_files = \
-	data/appmenu.ui \
-	data/gl-categorylist.ui \
-	data/gl-eventtoolbar.ui \
-	data/gl-style.css \
-	data/gl-window.ui
+noinst_resource_files = $(shell $(GLIB_COMPILE_RESOURCES) --generate-dependencies --sourcedir=$(srcdir)/data $(srcdir)/data/org.gnome.Logs.gresource.xml)
 
 src/gl-resource.c src/gl-resource.h: data/org.gnome.Logs.gresource.xml Makefile $(noinst_resource_files)
 	$(AM_V_GEN) $(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir)/data --generate --c-name gl $<
