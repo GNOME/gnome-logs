@@ -1,6 +1,7 @@
 [type: gettext/glade]data/appmenu.ui
 [type: gettext/glade]data/gl-categorylist.ui
 [type: gettext/glade]data/gl-eventtoolbar.ui
+[type: gettext/glade]data/gl-eventviewdetail.ui
 data/org.gnome.Logs.appdata.xml.in
 data/org.gnome.Logs.desktop.in
 src/gl-application.c

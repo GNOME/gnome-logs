@@ -35,71 +35,22 @@ typedef struct
 {
     GlJournalResult *result;
     GlUtilClockFormat clock_format;
+    GtkWidget *grid;
+    GtkWidget *comm_image;
+    GtkWidget *comm_label;
+    GtkWidget *time_label;
+    GtkWidget *message_label;
+    GtkWidget *audit_field_label;
+    GtkWidget *audit_label;
+    GtkWidget *device_field_label;
+    GtkWidget *device_label;
+    GtkWidget *priority_label;
+    GtkWidget *catalog_label;
 } GlEventViewDetailPrivate;
 
 G_DEFINE_TYPE_WITH_PRIVATE (GlEventViewDetail, gl_event_view_detail, GTK_TYPE_BIN)
 
 static GParamSpec *obj_properties[N_PROPERTIES] = { NULL, };
-
-static GtkWidget *
-create_widget_for_comm (const gchar *comm)
-{
-    if (comm && *comm)
-    {
-        /* Command-line, look for a desktop file. */
-        gchar *str;
-        GDesktopAppInfo *desktop;
-
-        /* TODO: Use g_desktop_app_info_search? */
-        str = g_strconcat (comm, ".desktop", NULL);
-        desktop = g_desktop_app_info_new (str);
-        g_free (str);
-
-        if (desktop)
-        {
-            GtkWidget *box;
-            GIcon *icon;
-            GtkWidget *image;
-            GtkWidget *label;
-            GtkStyleContext *context;
-
-            box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 12);
-
-            icon = g_app_info_get_icon (G_APP_INFO (desktop));
-            image = gtk_image_new_from_gicon (icon, GTK_ICON_SIZE_DIALOG);
-            gtk_box_pack_start (GTK_BOX (box), image, FALSE, FALSE, 0);
-
-            label = gtk_label_new (g_app_info_get_name (G_APP_INFO (desktop)));
-            gtk_widget_set_direction (label, GTK_TEXT_DIR_LTR);
-            gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
-            context = gtk_widget_get_style_context (label);
-            gtk_style_context_add_class (context, "detail-comm");
-            gtk_box_pack_end (GTK_BOX (box), label, TRUE, TRUE, 0);
-
-            g_object_unref (desktop);
-
-            return box;
-        }
-        else
-        {
-            GtkWidget *label;
-            GtkStyleContext *context;
-
-            label = gtk_label_new (comm);
-            gtk_widget_set_direction (label, GTK_TEXT_DIR_LTR);
-            gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
-            context = gtk_widget_get_style_context (label);
-            gtk_style_context_add_class (context, "detail-comm");
-
-            return label;
-        }
-    }
-    else
-    {
-        /* No command-line. */
-        return gtk_label_new (NULL);
-    }
-}
 
 static void
 gl_event_view_detail_create_detail (GlEventViewDetail *detail)
@@ -107,124 +58,74 @@ gl_event_view_detail_create_detail (GlEventViewDetail *detail)
     GlEventViewDetailPrivate *priv;
     GlJournalResult *result;
     gchar *str;
-    gboolean rtl;
-    GtkWidget *box;
-    GtkWidget *description;
-    GtkWidget *grid;
-    GtkWidget *label;
-    GtkStyleContext *context;
 
     priv = gl_event_view_detail_get_instance_private (detail);
 
     result = priv->result;
 
-    rtl = gtk_widget_get_default_direction () == GTK_TEXT_DIR_RTL;
+    /* Force LTR direction also for RTL languages */
+    gtk_widget_set_direction (priv->grid, GTK_TEXT_DIR_LTR);
+    gtk_widget_set_direction (priv->comm_label, GTK_TEXT_DIR_LTR);
+    gtk_widget_set_direction (priv->message_label, GTK_TEXT_DIR_LTR);
+    gtk_widget_set_direction (priv->audit_label, GTK_TEXT_DIR_LTR);
+    gtk_widget_set_direction (priv->device_label, GTK_TEXT_DIR_LTR);
+    gtk_widget_set_direction (priv->catalog_label, GTK_TEXT_DIR_LTR);
 
-    box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
-    description = create_widget_for_comm (result->comm);
-    gtk_box_pack_start (GTK_BOX (box), description, TRUE, TRUE, 0);
+    if (result->comm && *result->comm)
+    {
+        /* Command-line, look for a desktop file. */
+        GDesktopAppInfo *desktop;
+
+        /* TODO: Use g_desktop_app_info_search? */
+        str = g_strconcat (result->comm, ".desktop", NULL);
+        desktop = g_desktop_app_info_new (str);
+        g_free (str);
+
+        if (desktop)
+        {
+            GIcon *icon;
+
+            icon = g_app_info_get_icon (G_APP_INFO (desktop));
+            gtk_image_set_from_gicon (GTK_IMAGE (priv->comm_image),
+                                      icon, GTK_ICON_SIZE_DIALOG);
+            gtk_widget_show (priv->comm_image);
+            gtk_label_set_text (GTK_LABEL (priv->comm_label),
+                                g_app_info_get_name (G_APP_INFO (desktop)));
+
+            g_object_unref (desktop);
+        }
+        else
+        {
+            gtk_label_set_text (GTK_LABEL (priv->comm_label), result->comm);
+        }
+    }
 
     str = gl_util_timestamp_to_display (result->timestamp, priv->clock_format);
-    label = gtk_label_new (str);
-    gtk_widget_set_hexpand (label, TRUE);
-    gtk_misc_set_alignment (GTK_MISC (label), 1.0, 0.5);
-    gtk_label_set_selectable (GTK_LABEL (label), TRUE);
-    context = gtk_widget_get_style_context (label);
-    gtk_style_context_add_class (context, "detail-time");
-    gtk_box_pack_start (GTK_BOX (box), label, TRUE, TRUE, 0);
+    gtk_label_set_text (GTK_LABEL (priv->time_label), str);
     g_free (str);
 
-    grid = gtk_grid_new ();
-    gtk_grid_attach (GTK_GRID (grid), box, 0, 0, 2, 1);
-
-    label = gtk_label_new (_("Message"));
-    gtk_misc_set_alignment (GTK_MISC (label), 1.0, 0.5);
-    context = gtk_widget_get_style_context (label);
-    gtk_style_context_add_class (context, "detail-field-label");
-    gtk_style_context_add_class (context, "dim-label");
-    gtk_grid_attach (GTK_GRID (grid), label, rtl ? 1 : 0, 1, 1, 1);
-
-    label = gtk_label_new (result->message);
-    gtk_widget_set_direction (label, GTK_TEXT_DIR_LTR);
-    /* The message label expands, so that the field label column is as narrow
-     * as possible. */
-    gtk_widget_set_hexpand (label, TRUE);
-    gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
-    gtk_label_set_line_wrap (GTK_LABEL (label), TRUE);
-    gtk_label_set_selectable (GTK_LABEL (label), TRUE);
-    context = gtk_widget_get_style_context (label);
-    gtk_style_context_add_class (context, "detail-message");
-    gtk_style_context_add_class (context, "event-monospace");
-    gtk_grid_attach (GTK_GRID (grid), label, rtl ? 0 : 1, 1, 1, 1);
-
-    /* TODO: Give a user-friendly representation of the priority. */
-    label = gtk_label_new (_("Priority"));
-    gtk_misc_set_alignment (GTK_MISC (label), 1.0, 0.5);
-    context = gtk_widget_get_style_context (label);
-    gtk_style_context_add_class (context, "detail-field-label");
-    gtk_style_context_add_class (context, "dim-label");
-    gtk_grid_attach (GTK_GRID (grid), label, rtl ? 1 : 0, 2, 1, 1);
-
-    str = g_strdup_printf ("%d", result->priority);
-    label = gtk_label_new (str);
-    gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
-    gtk_label_set_selectable (GTK_LABEL (label), TRUE);
-    context = gtk_widget_get_style_context (label);
-    gtk_style_context_add_class (context, "detail-priority");
-    gtk_grid_attach (GTK_GRID (grid), label, rtl ? 0 : 1, 2, 1, 1);
-    g_free (str);
-
-    label = gtk_label_new (result->catalog);
-    gtk_widget_set_direction (label, GTK_TEXT_DIR_LTR);
-    gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
-    gtk_label_set_selectable (GTK_LABEL (label), TRUE);
-    context = gtk_widget_get_style_context (label);
-    gtk_style_context_add_class (context, "detail-catalog");
-    gtk_grid_attach (GTK_GRID (grid), label, 0, 3, 2, 1);
-
-    if (result->kernel_device && *result->kernel_device)
-    {
-        gtk_grid_insert_row (GTK_GRID (grid), 2);
-
-        label = gtk_label_new (_("Kernel Device"));
-        gtk_misc_set_alignment (GTK_MISC (label), 1.0, 0.5);
-        context = gtk_widget_get_style_context (label);
-        gtk_style_context_add_class (context, "detail-field-label");
-        gtk_style_context_add_class (context, "dim-label");
-        gtk_grid_attach (GTK_GRID (grid), label, rtl ? 1 : 0, 2, 1, 1);
-
-        label = gtk_label_new (result->kernel_device);
-        gtk_widget_set_direction (label, GTK_TEXT_DIR_LTR);
-        gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
-        gtk_label_set_selectable (GTK_LABEL (label), TRUE);
-        context = gtk_widget_get_style_context (label);
-        gtk_style_context_add_class (context, "detail-kernel_device");
-        gtk_grid_attach (GTK_GRID (grid), label, rtl ? 0 : 1, 2, 1, 1);
-    }
+    gtk_label_set_text (GTK_LABEL (priv->message_label), result->message);
 
     if (result->audit_session && *result->audit_session)
     {
-        gtk_grid_insert_row (GTK_GRID (grid), 2);
-
-        label = gtk_label_new (_("Audit Session"));
-        gtk_misc_set_alignment (GTK_MISC (label), 1.0, 0.5);
-        context = gtk_widget_get_style_context (label);
-        gtk_style_context_add_class (context, "detail-field-label");
-        gtk_style_context_add_class (context, "dim-label");
-        gtk_grid_attach (GTK_GRID (grid), label, rtl ? 1 : 0, 2, 1, 1);
-
-        label = gtk_label_new (result->audit_session);
-        gtk_widget_set_direction (label, GTK_TEXT_DIR_LTR);
-        gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
-        gtk_label_set_selectable (GTK_LABEL (label), TRUE);
-        context = gtk_widget_get_style_context (label);
-        gtk_style_context_add_class (context, "detail-kernel_device");
-        gtk_grid_attach (GTK_GRID (grid), label, rtl ? 0 : 1, 2, 1, 1);
+        gtk_label_set_text (GTK_LABEL (priv->audit_label), result->audit_session);
+        gtk_widget_show (priv->audit_field_label);
+        gtk_widget_show (priv->audit_label);
     }
 
-    gtk_widget_show_all (grid);
+    if (result->kernel_device && *result->kernel_device)
+    {
+        gtk_label_set_text (GTK_LABEL (priv->device_label), result->kernel_device);
+        gtk_widget_show (priv->device_field_label);
+        gtk_widget_show (priv->device_label);
+    }
 
-    gtk_container_add (GTK_CONTAINER (detail), grid);
+    /* TODO: Give a user-friendly representation of the priority. */
+    str = g_strdup_printf ("%d", result->priority);
+    gtk_label_set_text (GTK_LABEL (priv->priority_label), str);
+    g_free (str);
+
+    gtk_label_set_text (GTK_LABEL (priv->catalog_label), result->catalog);
 }
 
 static void
@@ -297,6 +198,7 @@ static void
 gl_event_view_detail_class_init (GlEventViewDetailClass *klass)
 {
     GObjectClass *gobject_class = G_OBJECT_CLASS (klass);
+    GtkWidgetClass *widget_class = GTK_WIDGET_CLASS (klass);
 
     gobject_class->constructed = gl_event_view_detail_constructed;
     gobject_class->finalize = gl_event_view_detail_finalize;
@@ -320,12 +222,37 @@ gl_event_view_detail_class_init (GlEventViewDetailClass *klass)
 
     g_object_class_install_properties (gobject_class, N_PROPERTIES,
                                        obj_properties);
+
+    gtk_widget_class_set_template_from_resource (widget_class,
+                                                 "/org/gnome/Logs/gl-eventviewdetail.ui");
+    gtk_widget_class_bind_template_child_private (widget_class, GlEventViewDetail,
+                                                  grid);
+    gtk_widget_class_bind_template_child_private (widget_class, GlEventViewDetail,
+                                                  comm_image);
+    gtk_widget_class_bind_template_child_private (widget_class, GlEventViewDetail,
+                                                  comm_label);
+    gtk_widget_class_bind_template_child_private (widget_class, GlEventViewDetail,
+                                                  time_label);
+    gtk_widget_class_bind_template_child_private (widget_class, GlEventViewDetail,
+                                                  message_label);
+    gtk_widget_class_bind_template_child_private (widget_class, GlEventViewDetail,
+                                                  audit_field_label);
+    gtk_widget_class_bind_template_child_private (widget_class, GlEventViewDetail,
+                                                  audit_label);
+    gtk_widget_class_bind_template_child_private (widget_class, GlEventViewDetail,
+                                                  device_field_label);
+    gtk_widget_class_bind_template_child_private (widget_class, GlEventViewDetail,
+                                                  device_label);
+    gtk_widget_class_bind_template_child_private (widget_class, GlEventViewDetail,
+                                                  priority_label);
+    gtk_widget_class_bind_template_child_private (widget_class, GlEventViewDetail,
+                                                  catalog_label);
 }
 
 static void
 gl_event_view_detail_init (GlEventViewDetail *detail)
 {
-    /* See gl_event_view_detail_constructed (). */
+    gtk_widget_init_template (GTK_WIDGET (detail));
 }
 
 GtkWidget *

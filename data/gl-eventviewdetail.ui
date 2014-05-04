@@ -1,0 +1,205 @@
+<interface domain="gnome-logs">
+    <template class="GlEventViewDetail" parent="GtkBin">
+        <property name="visible">True</property>
+        <child>
+            <object class="GtkGrid" id="grid">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <child>
+                    <object class="GtkBox" id="top_box">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <child>
+                            <object class="GtkBox" id="comm_box">
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="spacing">12</property>
+                                <child>
+                                    <object class="GtkImage" id="comm_image">
+                                        <property name="visible">False</property>
+                                        <property name="no_show_all">True</property>
+                                        <property name="can_focus">False</property>
+                                    </object>
+                                </child>
+                                <child>
+                                    <object class="GtkLabel" id="comm_label">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">False</property>
+                                        <property name="xalign">0</property>
+                                        <style>
+                                            <class name="detail-comm"/>
+                                        </style>
+                                    </object>
+                                    <packing>
+                                        <property name="pack_type">end</property>
+                                    </packing>
+                                </child>
+                            </object>
+                        </child>
+                        <child>
+                            <object class="GtkLabel" id="time_label">
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="hexpand">True</property>
+                                <property name="xalign">1</property>
+                                <property name="selectable">True</property>
+                                <style>
+                                    <class name="detail-time"/>
+                                </style>
+                            </object>
+                        </child>
+                    </object>
+                    <packing>
+                        <property name="left_attach">0</property>
+                        <property name="top_attach">0</property>
+                        <property name="width">2</property>
+                    </packing>
+                </child>
+                <child>
+                    <object class="GtkLabel" id="message_field_label">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="xalign">1</property>
+                        <property name="label" translatable="yes">Message</property>
+                        <style>
+                            <class name="detail-filed-label"/>
+                            <class name="dim-label"/>
+                        </style>
+                    </object>
+                    <packing>
+                        <property name="left_attach">0</property>
+                        <property name="top_attach">1</property>
+                    </packing>
+                </child>
+                <child>
+                    <object class="GtkLabel" id="message_label">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="hexpand">True</property>
+                        <property name="xalign">0</property>
+                        <property name="wrap">True</property>
+                        <property name="selectable">True</property>
+                        <style>
+                            <class name="detail-message"/>
+                            <class name="event-monospace"/>
+                        </style>
+                    </object>
+                    <packing>
+                        <property name="left_attach">1</property>
+                        <property name="top_attach">1</property>
+                    </packing>
+                </child>
+                <child>
+                    <object class="GtkLabel" id="audit_field_label">
+                        <property name="visible">False</property>
+                        <property name="no_show_all">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="xalign">1</property>
+                        <property name="label" translatable="yes">Audit Session</property>
+                        <style>
+                            <class name="detail-filed-label"/>
+                            <class name="dim-label"/>
+                        </style>
+                    </object>
+                    <packing>
+                        <property name="left_attach">0</property>
+                        <property name="top_attach">2</property>
+                    </packing>
+                </child>
+                <child>
+                    <object class="GtkLabel" id="audit_label">
+                        <property name="visible">False</property>
+                        <property name="no_show_all">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="xalign">0</property>
+                        <property name="selectable">True</property>
+                        <style>
+                            <class name="detail-kernel_device"/>
+                        </style>
+                    </object>
+                    <packing>
+                        <property name="left_attach">1</property>
+                        <property name="top_attach">2</property>
+                    </packing>
+                </child>
+                <child>
+                    <object class="GtkLabel" id="device_field_label">
+                        <property name="visible">False</property>
+                        <property name="no_show_all">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="xalign">1</property>
+                        <property name="label" translatable="yes">Kernel Device</property>
+                        <style>
+                            <class name="detail-filed-label"/>
+                            <class name="dim-label"/>
+                        </style>
+                    </object>
+                    <packing>
+                        <property name="left_attach">0</property>
+                        <property name="top_attach">3</property>
+                    </packing>
+                </child>
+                <child>
+                    <object class="GtkLabel" id="device_label">
+                        <property name="visible">False</property>
+                        <property name="no_show_all">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="xalign">0</property>
+                        <property name="selectable">True</property>
+                        <style>
+                            <class name="detail-kernel_device"/>
+                        </style>
+                    </object>
+                    <packing>
+                        <property name="left_attach">1</property>
+                        <property name="top_attach">3</property>
+                    </packing>
+                </child>
+                <child>
+                    <object class="GtkLabel" id="priority_field_label">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="xalign">1</property>
+                        <property name="label" translatable="yes">Priority</property>
+                        <style>
+                            <class name="detail-filed-label"/>
+                            <class name="dim-label"/>
+                        </style>
+                    </object>
+                    <packing>
+                        <property name="left_attach">0</property>
+                        <property name="top_attach">4</property>
+                    </packing>
+                </child>
+                <child>
+                    <object class="GtkLabel" id="priority_label">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="xalign">0</property>
+                        <property name="selectable">True</property>
+                        <style>
+                            <class name="detail-priority"/>
+                        </style>
+                    </object>
+                    <packing>
+                        <property name="left_attach">1</property>
+                        <property name="top_attach">4</property>
+                    </packing>
+                </child>
+                <child>
+                    <object class="GtkLabel" id="catalog_label">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <style>
+                            <class name="detail-catalog"/>
+                        </style>
+                    </object>
+                    <packing>
+                        <property name="left_attach">0</property>
+                        <property name="top_attach">5</property>
+                    </packing>
+                </child>
+            </object>
+        </child>
+    </template>
+</interface>
