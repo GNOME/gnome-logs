@@ -1,3 +1,11 @@
+GNOME Logs 3.13.2
+=================
+
+* use widget GtkBuilder templates for the event detail view
+* avoid using deprecated GtkMisc
+* Turkish translation
+* update to Swedish and Catalan (Valencian) translation
+
 GNOME Logs 3.13.1
 =================
 
