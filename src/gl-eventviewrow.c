@@ -135,7 +135,7 @@ gl_event_view_row_create_cmdline (GlEventViewRow *row)
     label = gtk_label_new (NULL);
     gtk_widget_set_direction (label, GTK_TEXT_DIR_LTR);
     gtk_widget_set_hexpand (label, TRUE);
-    gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
+    gtk_widget_set_halign (label, GTK_ALIGN_START);
     gtk_label_set_ellipsize (GTK_LABEL (label), PANGO_ELLIPSIZE_END);
     gtk_label_set_markup (GTK_LABEL (label), markup);
     g_free (markup);
@@ -145,7 +145,7 @@ gl_event_view_row_create_cmdline (GlEventViewRow *row)
     gtk_widget_set_direction (label, GTK_TEXT_DIR_LTR);
     context = gtk_widget_get_style_context (GTK_WIDGET (label));
     gtk_style_context_add_class (context, "event-monospace");
-    gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
+    gtk_widget_set_halign (label, GTK_ALIGN_START);
     gtk_label_set_ellipsize (GTK_LABEL (label), PANGO_ELLIPSIZE_END);
     gtk_grid_attach (GTK_GRID (grid), label, 0, 1, 2, 1);
 
@@ -155,7 +155,7 @@ gl_event_view_row_create_cmdline (GlEventViewRow *row)
     context = gtk_widget_get_style_context (GTK_WIDGET (label));
     gtk_style_context_add_class (context, "dim-label");
     gtk_style_context_add_class (context, "event-time");
-    gtk_misc_set_alignment (GTK_MISC (label), 1.0, 0.5);
+    gtk_widget_set_halign (label, GTK_ALIGN_END);
     gtk_grid_attach (GTK_GRID (grid), label, rtl ? 0 : 1, 0, 1, 1);
 
     image = gtk_image_new_from_icon_name (rtl ? "go-next-rtl-symbolic"
@@ -194,7 +194,7 @@ gl_event_view_row_create_simple (GlEventViewRow *row)
     context = gtk_widget_get_style_context (GTK_WIDGET (label));
     gtk_style_context_add_class (context, "event-monospace");
     gtk_widget_set_hexpand (label, TRUE);
-    gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
+    gtk_widget_set_halign (label, GTK_ALIGN_START);
     gtk_label_set_ellipsize (GTK_LABEL (label), PANGO_ELLIPSIZE_END);
     gtk_grid_attach (GTK_GRID (grid), label, 0, 1, 1, 1);
 
@@ -204,7 +204,7 @@ gl_event_view_row_create_simple (GlEventViewRow *row)
     context = gtk_widget_get_style_context (GTK_WIDGET (label));
     gtk_style_context_add_class (context, "dim-label");
     gtk_style_context_add_class (context, "event-time");
-    gtk_misc_set_alignment (GTK_MISC (label), 1.0, 0.5);
+    gtk_widget_set_halign (label, GTK_ALIGN_END);
     gtk_grid_attach (GTK_GRID (grid), label, rtl ? 1 : 0, 0, 1, 1);
 
     image = gtk_image_new_from_icon_name (rtl ? "go-next-rtl-symbolic"
