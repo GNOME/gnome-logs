@@ -75,6 +75,9 @@ on_category (GSimpleAction *action,
     eclass = g_type_class_ref (GL_TYPE_EVENT_VIEW_FILTER);
     evalue = g_enum_get_value_by_nick (eclass, category);
 
+    /* First switch the event view back to list mode if the category
+       tab is clicked. */
+    gl_event_view_set_mode (events, GL_EVENT_VIEW_MODE_LIST);
     gl_event_view_set_filter (events, evalue->value);
 
     g_simple_action_set_state (action, variant);
