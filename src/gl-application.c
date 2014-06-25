@@ -101,7 +101,6 @@ on_about (GSimpleAction *action,
                            "copyright", "Copyright © 2013–2014 Red Hat, Inc.",
                            "license-type", GTK_LICENSE_GPL_3_0,
                            "logo-icon-name", PACKAGE_TARNAME,
-                           "program-name", PACKAGE_NAME,
                            "version", PACKAGE_VERSION,
                            "website", PACKAGE_URL, NULL);
 }
@@ -174,6 +173,9 @@ gl_application_startup (GApplication *application)
 
     /* Calls gtk_init() with no arguments. */
     G_APPLICATION_CLASS (gl_application_parent_class)->startup (application);
+
+    /* gtk_init() calls setlocale(), so gettext must be called after that. */
+    g_set_application_name (_(PACKAGE_NAME));
 
     builder = gtk_builder_new ();
     gtk_builder_set_translation_domain (builder, GETTEXT_PACKAGE);
