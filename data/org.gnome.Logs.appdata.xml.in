@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright 2013 David King <davidk@gnome.org> -->
+<!-- Copyright 2013, 2014 David King <davidk@gnome.org> -->
 <application>
-    <id type="desktop">gnome-logs.desktop</id>
+    <id type="desktop">org.gnome.Logs.desktop</id>
     <licence>CC0</licence>
 <!-- Both taken from desktop file.
     <name>Logs</name>
