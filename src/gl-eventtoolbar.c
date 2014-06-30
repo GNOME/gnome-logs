@@ -1,6 +1,6 @@
 /*
  *  GNOME Logs - View and search logs
- *  Copyright (C) 2013  Red Hat, Inc.
+ *  Copyright (C) 2013, 2014  Red Hat, Inc.
  *
  *  This program is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -33,7 +33,6 @@ enum
 typedef struct
 {
     GtkWidget *back_button;
-    GtkWidget *go_back_icon;
     GtkWidget *search_button;
     GlEventToolbarMode mode;
 } GlEventToolbarPrivate;
@@ -162,8 +161,6 @@ gl_event_toolbar_class_init (GlEventToolbarClass *klass)
     gtk_widget_class_bind_template_child_private (widget_class, GlEventToolbar,
                                                   back_button);
     gtk_widget_class_bind_template_child_private (widget_class, GlEventToolbar,
-                                                  go_back_icon);
-    gtk_widget_class_bind_template_child_private (widget_class, GlEventToolbar,
                                                   search_button);
 
     gtk_widget_class_bind_template_callback (widget_class,
@@ -173,25 +170,10 @@ gl_event_toolbar_class_init (GlEventToolbarClass *klass)
 static void
 gl_event_toolbar_init (GlEventToolbar *toolbar)
 {
-    GlEventToolbarPrivate *priv = gl_event_toolbar_get_instance_private (toolbar);
-
     gtk_widget_init_template (GTK_WIDGET (toolbar));
 
     g_signal_connect (toolbar, "notify::mode", G_CALLBACK (on_notify_mode),
                       NULL);
-
-    if (gtk_widget_get_direction (GTK_WIDGET (toolbar)) == GTK_TEXT_DIR_RTL)
-    {
-        gtk_image_set_from_icon_name (GTK_IMAGE (priv->go_back_icon),
-                                      "go-previous-rtl-symbolic",
-                                      GTK_ICON_SIZE_MENU);
-    }
-    else
-    {
-        gtk_image_set_from_icon_name (GTK_IMAGE (priv->go_back_icon),
-                                      "go-previous-symbolic",
-                                      GTK_ICON_SIZE_MENU);
-    }
 }
 
 gboolean

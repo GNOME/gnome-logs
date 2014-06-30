@@ -1,6 +1,6 @@
 /*
  *  GNOME Logs - View and search logs
- *  Copyright (C) 2013  Red Hat, Inc.
+ *  Copyright (C) 2013, 2014  Red Hat, Inc.
  *
  *  This program is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -158,8 +158,7 @@ gl_event_view_row_create_cmdline (GlEventViewRow *row)
     gtk_widget_set_halign (label, GTK_ALIGN_END);
     gtk_grid_attach (GTK_GRID (grid), label, rtl ? 0 : 1, 0, 1, 1);
 
-    image = gtk_image_new_from_icon_name (rtl ? "go-next-rtl-symbolic"
-                                              : "go-next-symbolic",
+    image = gtk_image_new_from_icon_name ("go-next-symbolic",
                                           GTK_ICON_SIZE_MENU);
     gtk_grid_attach (GTK_GRID (grid), image, 2, 0, 1, 2);
 
@@ -207,8 +206,7 @@ gl_event_view_row_create_simple (GlEventViewRow *row)
     gtk_widget_set_halign (label, GTK_ALIGN_END);
     gtk_grid_attach (GTK_GRID (grid), label, rtl ? 1 : 0, 0, 1, 1);
 
-    image = gtk_image_new_from_icon_name (rtl ? "go-next-rtl-symbolic"
-                                              : "go-next-symbolic",
+    image = gtk_image_new_from_icon_name ("go-next-symbolic",
                                           GTK_ICON_SIZE_MENU);
     gtk_grid_attach (GTK_GRID (grid), image, 1, 0, 1, 2);
 
