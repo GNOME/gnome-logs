@@ -25,7 +25,7 @@
                                     <object class="GtkLabel" id="comm_label">
                                         <property name="visible">True</property>
                                         <property name="can_focus">False</property>
-                                        <property name="xalign">0</property>
+                                        <property name="halign">start</property>
                                         <style>
                                             <class name="detail-comm"/>
                                         </style>
@@ -40,8 +40,8 @@
                             <object class="GtkLabel" id="time_label">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
+                                <property name="halign">end</property>
                                 <property name="hexpand">True</property>
-                                <property name="xalign">1</property>
                                 <property name="selectable">True</property>
                                 <style>
                                     <class name="detail-time"/>
@@ -59,7 +59,7 @@
                     <object class="GtkLabel" id="message_field_label">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="xalign">1</property>
+                        <property name="halign">end</property>
                         <property name="label" translatable="yes">Message</property>
                         <style>
                             <class name="detail-filed-label"/>
@@ -75,8 +75,8 @@
                     <object class="GtkLabel" id="message_label">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
+                        <property name="halign">start</property>
                         <property name="hexpand">True</property>
-                        <property name="xalign">0</property>
                         <property name="wrap">True</property>
                         <property name="selectable">True</property>
                         <style>
@@ -94,7 +94,7 @@
                         <property name="visible">False</property>
                         <property name="no_show_all">True</property>
                         <property name="can_focus">False</property>
-                        <property name="xalign">1</property>
+                        <property name="halign">end</property>
                         <property name="label" translatable="yes">Audit Session</property>
                         <style>
                             <class name="detail-filed-label"/>
@@ -111,7 +111,7 @@
                         <property name="visible">False</property>
                         <property name="no_show_all">True</property>
                         <property name="can_focus">False</property>
-                        <property name="xalign">0</property>
+                        <property name="halign">start</property>
                         <property name="selectable">True</property>
                         <style>
                             <class name="detail-kernel_device"/>
@@ -127,7 +127,7 @@
                         <property name="visible">False</property>
                         <property name="no_show_all">True</property>
                         <property name="can_focus">False</property>
-                        <property name="xalign">1</property>
+                        <property name="halign">end</property>
                         <property name="label" translatable="yes">Kernel Device</property>
                         <style>
                             <class name="detail-filed-label"/>
@@ -144,7 +144,7 @@
                         <property name="visible">False</property>
                         <property name="no_show_all">True</property>
                         <property name="can_focus">False</property>
-                        <property name="xalign">0</property>
+                        <property name="halign">start</property>
                         <property name="selectable">True</property>
                         <style>
                             <class name="detail-kernel_device"/>
@@ -159,7 +159,7 @@
                     <object class="GtkLabel" id="priority_field_label">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="xalign">1</property>
+                        <property name="halign">end</property>
                         <property name="label" translatable="yes">Priority</property>
                         <style>
                             <class name="detail-filed-label"/>
@@ -175,7 +175,7 @@
                     <object class="GtkLabel" id="priority_label">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="xalign">0</property>
+                        <property name="halign">start</property>
                         <property name="selectable">True</property>
                         <style>
                             <class name="detail-priority"/>
