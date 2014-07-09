@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-04-07 12:05+0000\n"
-"PO-Revision-Date: 2014-04-18 18:56+0200\n"
+"POT-Creation-Date: 2014-04-18 18:32+0000\n"
+"PO-Revision-Date: 2014-07-08 11:30+0200\n"
 "Last-Translator: Tom Tryfonidis <tomtryf@gmail.com>\n"
 "Language-Team: www.gnome.gr\n"
 "Language: el\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.6.4\n"
+"X-Generator: Poedit 1.6.5\n"
 "X-Project-Style: gnome\n"
 
 #: ../data/appmenu.ui.h:1
@@ -85,32 +85,32 @@ msgstr "Επιστροφή στην προβολή συμβάντων"
 
 #: ../data/gl-eventtoolbar.ui.h:3
 msgid "Search the displayed logs"
-msgstr "Αναζήτηση των εμφανιζόμενων αρχείων καταγραφής"
+msgstr "Αναζήτηση των εμφανιζόμενων καταγραφών"
 
 #: ../data/org.gnome.Logs.appdata.xml.in.h:1
 msgid ""
 "Logs shows events from the systemd journal, and sorts them into categories, "
 "such as hardware and applications."
 msgstr ""
-"Το αρχείο καταγραφής Logs εμφανίζει συμβάντα από το ημερολόγιο systemd και "
-"τα ταξινομεί σε κατηγορίες, όπως υλικό και εφαρμογές."
+"Η εφαρμογή Καταγραφές εμφανίζει συμβάντα από το systemd journal και τα "
+"ταξινομεί σε κατηγορίες, όπως υλικό και εφαρμογές."
 
 #: ../data/org.gnome.Logs.appdata.xml.in.h:2
 msgid ""
 "Using Logs you can search your logs by typing a search term, and view "
 "detailed information about each event by clicking on it."
 msgstr ""
-"Χρησιμοποιώντας το Logs μπορείτε να κάνετε αναζήτηση στα δικά σας αρχεία "
+"Χρησιμοποιώντας τις Καταγραφές μπορείτε να αναζητήσετε στα δικά σας αρχεία "
 "καταγραφών πληκτρολογώντας έναν όρο αναζήτησης και να προβάλετε λεπτομερείς "
 "πληροφορίες για κάθε συμβάν πατώντας πάνω του."
 
 #: ../data/org.gnome.Logs.desktop.in.h:1
 msgid "Log Viewer"
-msgstr "Προβολή αρχείου καταγραφής"
+msgstr "Εφαρμογή προβολής καταγραφών"
 
 #: ../data/org.gnome.Logs.desktop.in.h:2
 msgid "View detailed event logs for the system"
-msgstr "Προβολή λεπτομερούς αρχείου καταγραφής συμβάντων για το σύστημα"
+msgstr "Δείτε λεπτομερείς καταγραφές συμβάντων για το σύστημα σας"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: ../data/org.gnome.Logs.desktop.in.h:4
@@ -120,16 +120,18 @@ msgstr "καταγραφή;ημερολόγιο;αποσφαλμάτωση;σφ�
 #: ../src/gl-application.c:99
 msgid "translator-credits"
 msgstr ""
+"Ελληνική μεταφραστική ομάδα GNOME\n"
 "Δημήτρης Σπίγγος <dmtrs32@gmail.com>\n"
-"Μαρία Θουκυδίδου <marablack3@gmail.com>"
+"Μαρία Θουκυδίδου <marablack3@gmail.com>\n"
+"Για περισσότερα δείτε: http://gnome.gr"
 
 #: ../src/gl-application.c:100
 msgid "View and search logs"
-msgstr "Προβολή και αναζήτηση αρχείου καταγραφών"
+msgstr "Προβολή και αναζήτηση καταγραφών"
 
 #: ../src/gl-application.c:224
 msgid "Print version information and exit"
-msgstr "Εκτύπωση πληροφοριών έκδοσης και έξοδος"
+msgstr "Προβολή πληροφοριών έκδοσης και έξοδος"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
