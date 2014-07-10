@@ -1,5 +1,5 @@
-<interface>
-    <menu id='appmenu'>
+<interface domain='gnome-logs'>
+    <menu id='app-menu'>
         <section>
             <item>
                 <attribute name="accel">&lt;Primary&gt;n</attribute>
