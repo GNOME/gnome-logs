@@ -1,0 +1,194 @@
+# Arabic translation for gnome-logs.
+# Copyright (C) 2014 gnome-logs's COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-logs package.
+# Safa Alfulaij <safa1996alfulaij@gmail.com>, 2014.
+# Abderrahim Kitouni <a.kitouni@gmail.com>, 2014.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-logs master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"logs&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2014-07-10 11:47+0000\n"
+"PO-Revision-Date: 2014-07-13 11:25+0100\n"
+"Last-Translator: Abderrahim Kitouni <a.kitouni@gmail.com>\n"
+"Language-Team: Arabic <doc@arabeyes.org>\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../data/gl-categorylist.ui.h:1
+msgid "Important"
+msgstr "مهمّة"
+
+#: ../data/gl-categorylist.ui.h:2
+msgid "Alerts"
+msgstr "إنذارات"
+
+#: ../data/gl-categorylist.ui.h:3
+msgid "Starred"
+msgstr "معلّمة"
+
+#: ../data/gl-categorylist.ui.h:4
+msgid "All"
+msgstr "الكلّ"
+
+#: ../data/gl-categorylist.ui.h:5
+msgid "Applications"
+msgstr "التطبيقات"
+
+#: ../data/gl-categorylist.ui.h:6
+msgid "System"
+msgstr "النظام"
+
+#: ../data/gl-categorylist.ui.h:7
+msgid "Security"
+msgstr "الأمن"
+
+#: ../data/gl-categorylist.ui.h:8
+msgid "Hardware"
+msgstr "العتاد"
+
+#: ../data/gl-categorylist.ui.h:9
+msgid "Updates"
+msgstr "التحديثات"
+
+#: ../data/gl-categorylist.ui.h:10
+msgid "Usage"
+msgstr "الاستخدام"
+
+#: ../data/gl-eventtoolbar.ui.h:1
+msgid "Logs"
+msgstr "سجلّات"
+
+#: ../data/gl-eventtoolbar.ui.h:2
+msgid "Go back to the event view"
+msgstr "ارجع إلى عرض الأحداث"
+
+#: ../data/gl-eventtoolbar.ui.h:3
+msgid "Search the displayed logs"
+msgstr "ابحث في السجلّات المعروضة"
+
+#: ../data/gl-eventviewdetail.ui.h:1
+msgid "Message"
+msgstr "الرسالة"
+
+#: ../data/gl-eventviewdetail.ui.h:2
+msgid "Audit Session"
+msgstr ""
+
+#: ../data/gl-eventviewdetail.ui.h:3
+msgid "Kernel Device"
+msgstr "جهاز النواة"
+
+#: ../data/gl-eventviewdetail.ui.h:4
+msgid "Priority"
+msgstr "الأولويّة"
+
+#: ../data/menus.ui.h:1
+msgid "_New Window"
+msgstr "نافذة _جديدة"
+
+#: ../data/menus.ui.h:2
+msgid "_Help"
+msgstr "م_ساعدة"
+
+#: ../data/menus.ui.h:3
+msgid "_About"
+msgstr "_عنْ"
+
+#: ../data/menus.ui.h:4
+msgid "_Quit"
+msgstr "أ_نهِ"
+
+#: ../data/org.gnome.Logs.appdata.xml.in.h:1
+msgid ""
+"Logs shows events from the systemd journal, and sorts them into categories, "
+"such as hardware and applications."
+msgstr "يُظهر 'سجلّات' الاحداث من يوميّات عفريت النظام (systemd)، ويصنّفها إلى فئات، مثل فئتي العتاد والتطبيقات."
+
+#: ../data/org.gnome.Logs.appdata.xml.in.h:2
+msgid ""
+"Using Logs you can search your logs by typing a search term, and view "
+"detailed information about each event by clicking on it."
+msgstr "يمكنك باستخدام 'سجلّات' البحث في السجلّات بكتابة عبارة بحث، وعرض معلومات مفصّلة عن كلّ حدث بالنقر عليه."
+
+#: ../data/org.gnome.Logs.desktop.in.h:1
+msgid "Log Viewer"
+msgstr "عارض سجلّات"
+
+#: ../data/org.gnome.Logs.desktop.in.h:2
+msgid "View detailed event logs for the system"
+msgstr "يعرض سجلّات مفصّلة عن أحداث النظام"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: ../data/org.gnome.Logs.desktop.in.h:4
+msgid "log;journal;debug;error;"
+msgstr "log;سجلّ;سجل;journal;يوميات;يوميّات;debug;تنقيح;error;خطأ;"
+
+#: ../src/gl-application.c:99
+msgid "translator-credits"
+msgstr ""
+"فريق عربآيز للترجمة http://www.arabeyes.org :\n"
+"صفا الفليج\t<safa1996alfulaij@gmail.com>\n"
+"عبد الرحيم قيطوني\t<a.kitouni@gmail.com>"
+
+#: ../src/gl-application.c:100
+msgid "View and search logs"
+msgstr "اعرض السجلّات وابحث فيها"
+
+#: ../src/gl-application.c:207
+msgid "Print version information and exit"
+msgstr "اطبع معلومات الإصدار واخرج"
+
+#. Translators: Shown when there are no (zero) results in the current
+#. * view.
+#: ../src/gl-eventview.c:217
+msgid "No results"
+msgstr "لا نتائج"
+
+#: ../src/gl-eventview.c:604 ../src/gl-eventview.c:614
+#: ../src/gl-eventview.c:745 ../src/gl-eventview.c:755
+msgid "Not implemented"
+msgstr "غير مُنجزَة"
+
+#. Translators: timestamp format for events on the current
+#. * day, showing the time in 12-hour format.
+#: ../src/gl-util.c:95
+msgid "%l:%M %p"
+msgstr "%l:%M %p"
+
+#. Translators: timestamp format for events in the current
+#. * year, showing the abbreviated month name, day of the
+#. * month and the time in 12-hour format.
+#: ../src/gl-util.c:101
+msgid "%b %e %l:%M %p"
+msgstr "%e %B %l:%M %p"
+
+#. Translators: timestamp format for events in a different
+#. * year, showing the abbreviated month name, day of the
+#. * month, year and the time in 12-hour format.
+#: ../src/gl-util.c:107
+msgid "%b %e %Y %l:%M %p"
+msgstr "%e %B %Y %l:%M %p"
+
+#. Translators: timestamp format for events on the current
+#. * day, showing the time in 24-hour format.
+#: ../src/gl-util.c:120
+msgid "%H:%M"
+msgstr "%H:%M"
+
+#. Translators: timestamp format for events in the current
+#. * year, showing the abbreviated month name, day of the
+#. * month and the time in 24-hour format.
+#: ../src/gl-util.c:126
+msgid "%b %e %H:%M"
+msgstr "%e %B %H:%M"
+
+#. Translators: timestamp format for events in a different
+#. * year, showing the abbreviated month name, day of the
+#. * month, year and the time in 24-hour format.
+#: ../src/gl-util.c:132
+msgid "%b %e %Y %H:%M"
+msgstr "%e %B %Y %H:%M"
