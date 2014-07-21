@@ -16,7 +16,7 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "gl-eventview.h"
+#include "gl-eventviewlist.h"
 
 #include <glib/gi18n.h>
 #include <glib-unix.h>
@@ -42,7 +42,7 @@ typedef struct
 {
     GlJournal *journal;
     GlUtilClockFormat clock_format;
-    GlEventViewFilter filter;
+    GlEventViewListFilter filter;
     GtkListBox *active_listbox;
     GlEventViewMode mode;
     gchar *search_text;
@@ -51,9 +51,9 @@ typedef struct
     GQueue *pending_results;
     GList *results;
     guint insert_idle_id;
-} GlEventViewPrivate;
+} GlEventViewListPrivate;
 
-G_DEFINE_TYPE_WITH_PRIVATE (GlEventView, gl_event_view, GTK_TYPE_STACK)
+G_DEFINE_TYPE_WITH_PRIVATE (GlEventViewList, gl_event_view_list, GTK_TYPE_STACK)
 
 static GParamSpec *obj_properties[N_PROPERTIES] = { NULL, };
 static const gssize N_RESULTS = -1;
@@ -62,12 +62,12 @@ static const gchar DESKTOP_SCHEMA[] = "org.gnome.desktop.interface";
 static const gchar CLOCK_FORMAT[] = "clock-format";
 
 static gboolean
-gl_event_view_search_is_case_sensitive (GlEventView *view)
+gl_event_view_search_is_case_sensitive (GlEventViewList *view)
 {
-    GlEventViewPrivate *priv;
+    GlEventViewListPrivate *priv;
     const gchar *search_text;
 
-    priv = gl_event_view_get_instance_private (view);
+    priv = gl_event_view_list_get_instance_private (view);
 
     for (search_text = priv->search_text; search_text && *search_text;
          search_text = g_utf8_next_char (search_text))
@@ -87,7 +87,7 @@ gl_event_view_search_is_case_sensitive (GlEventView *view)
 
 static gboolean
 search_in_result (GlJournalResult *result,
-                 const gchar *search_text)
+                  const gchar *search_text)
 {
     if ((result->comm ? strstr (result->comm, search_text) : NULL)
         || (result->message ? strstr (result->message, search_text) : NULL)
@@ -104,11 +104,11 @@ search_in_result (GlJournalResult *result,
 
 static gboolean
 listbox_search_filter_func (GtkListBoxRow *row,
-                            GlEventView *view)
+                            GlEventViewList *view)
 {
-    GlEventViewPrivate *priv;
+    GlEventViewListPrivate *priv;
 
-    priv = gl_event_view_get_instance_private (view);
+    priv = gl_event_view_list_get_instance_private (view);
 
     if (!priv->search_text || !*(priv->search_text))
     {
@@ -169,14 +169,14 @@ listbox_search_filter_func (GtkListBoxRow *row,
 static void
 on_listbox_row_activated (GtkListBox *listbox,
                           GtkListBoxRow *row,
-                          GlEventView *view)
+                          GlEventViewList *view)
 {
-    GlEventViewPrivate *priv;
+    GlEventViewListPrivate *priv;
     GlJournalResult *result;
     GtkWidget *detail;
     GtkStack *stack;
 
-    priv = gl_event_view_get_instance_private (view);
+    priv = gl_event_view_list_get_instance_private (view);
     result = gl_event_view_row_get_result (GL_EVENT_VIEW_ROW (row));
 
     detail = gl_event_view_detail_new (result, priv->clock_format);
@@ -185,11 +185,11 @@ on_listbox_row_activated (GtkListBox *listbox,
 
     stack = GTK_STACK (view);
     gtk_stack_add_named (stack, detail, "detail");
-    gl_event_view_set_mode (view, GL_EVENT_VIEW_MODE_DETAIL);
+    gl_event_view_list_set_mode (view, GL_EVENT_VIEW_MODE_DETAIL);
 }
 
 static GtkWidget *
-gl_event_view_create_empty (G_GNUC_UNUSED GlEventView *view)
+gl_event_view_create_empty (G_GNUC_UNUSED GlEventViewList *view)
 {
     GtkWidget *box;
     GtkStyleContext *context;
@@ -225,7 +225,7 @@ gl_event_view_create_empty (G_GNUC_UNUSED GlEventView *view)
 }
 
 static GtkWidget *
-gl_event_view_list_box_new (GlEventView *view)
+gl_event_view_list_box_new (GlEventViewList *view)
 {
     GtkWidget *listbox;
 
@@ -245,11 +245,11 @@ gl_event_view_list_box_new (GlEventView *view)
 }
 
 static gboolean
-insert_devices_idle (GlEventView *view)
+insert_devices_idle (GlEventViewList *view)
 {
-    GlEventViewPrivate *priv;
+    GlEventViewListPrivate *priv;
 
-    priv = gl_event_view_get_instance_private (view);
+    priv = gl_event_view_list_get_instance_private (view);
 
     if (priv->pending_results)
     {
@@ -298,15 +298,15 @@ insert_devices_idle (GlEventView *view)
 }
 
 static void
-insert_journal_query_devices (GlEventView *view,
+insert_journal_query_devices (GlEventViewList *view,
                               const GlJournalQuery *query,
                               GtkListBox *listbox)
 {
-    GlEventViewPrivate *priv;
+    GlEventViewListPrivate *priv;
     GList *l;
     gsize n_results;
 
-    priv = gl_event_view_get_instance_private (view);
+    priv = gl_event_view_list_get_instance_private (view);
     priv->results = gl_journal_query (priv->journal, query);
     priv->results_listbox = listbox;
 
@@ -330,11 +330,11 @@ insert_journal_query_devices (GlEventView *view,
 }
 
 static gboolean
-insert_security_idle (GlEventView *view)
+insert_security_idle (GlEventViewList *view)
 {
-    GlEventViewPrivate *priv;
+    GlEventViewListPrivate *priv;
 
-    priv = gl_event_view_get_instance_private (view);
+    priv = gl_event_view_list_get_instance_private (view);
 
     if (priv->pending_results)
     {
@@ -383,15 +383,15 @@ insert_security_idle (GlEventView *view)
 }
 
 static void
-insert_journal_query_security (GlEventView *view,
+insert_journal_query_security (GlEventViewList *view,
                                const GlJournalQuery *query,
                                GtkListBox *listbox)
 {
-    GlEventViewPrivate *priv;
+    GlEventViewListPrivate *priv;
     GList *l;
     gsize n_results;
 
-    priv = gl_event_view_get_instance_private (view);
+    priv = gl_event_view_list_get_instance_private (view);
     priv->results = gl_journal_query (priv->journal, query);
     priv->results_listbox = listbox;
 
@@ -415,11 +415,11 @@ insert_journal_query_security (GlEventView *view,
 }
 
 static gboolean
-insert_simple_idle (GlEventView *view)
+insert_simple_idle (GlEventViewList *view)
 {
-    GlEventViewPrivate *priv;
+    GlEventViewListPrivate *priv;
 
-    priv = gl_event_view_get_instance_private (view);
+    priv = gl_event_view_list_get_instance_private (view);
 
     if (priv->pending_results)
     {
@@ -463,15 +463,15 @@ insert_simple_idle (GlEventView *view)
 }
 
 static void
-insert_journal_query_simple (GlEventView *view,
+insert_journal_query_simple (GlEventViewList *view,
                              const GlJournalQuery *query,
                              GtkListBox *listbox)
 {
-    GlEventViewPrivate *priv;
+    GlEventViewListPrivate *priv;
     GList *l;
     gsize n_results;
 
-    priv = gl_event_view_get_instance_private (view);
+    priv = gl_event_view_list_get_instance_private (view);
     priv->results = gl_journal_query (priv->journal, query);
     priv->results_listbox = listbox;
 
@@ -493,11 +493,11 @@ insert_journal_query_simple (GlEventView *view,
 }
 
 static gboolean
-insert_cmdline_idle (GlEventView *view)
+insert_cmdline_idle (GlEventViewList *view)
 {
-    GlEventViewPrivate *priv;
+    GlEventViewListPrivate *priv;
 
-    priv = gl_event_view_get_instance_private (view);
+    priv = gl_event_view_list_get_instance_private (view);
 
     if (priv->pending_results)
     {
@@ -541,15 +541,15 @@ insert_cmdline_idle (GlEventView *view)
 }
 
 static void
-insert_journal_query_cmdline (GlEventView *view,
+insert_journal_query_cmdline (GlEventViewList *view,
                               const GlJournalQuery *query,
                               GtkListBox *listbox)
 {
-    GlEventViewPrivate *priv;
+    GlEventViewListPrivate *priv;
     GList *l;
     gsize n_results;
 
-    priv = gl_event_view_get_instance_private (view);
+    priv = gl_event_view_list_get_instance_private (view);
     priv->results = gl_journal_query (priv->journal, query);
     priv->results_listbox = listbox;
 
@@ -573,7 +573,7 @@ insert_journal_query_cmdline (GlEventView *view,
 }
 
 static void
-gl_event_view_add_listbox_important (GlEventView *view)
+gl_event_view_list_add_listbox_important (GlEventViewList *view)
 {
     /* Alert or emergency priority. */
     const GlJournalQuery query = { N_RESULTS,
@@ -597,7 +597,7 @@ gl_event_view_add_listbox_important (GlEventView *view)
 }
 
 static void
-gl_event_view_add_listbox_alerts (GlEventView *view)
+gl_event_view_list_add_listbox_alerts (GlEventViewList *view)
 {
     GtkWidget *label;
 
@@ -607,7 +607,7 @@ gl_event_view_add_listbox_alerts (GlEventView *view)
 }
 
 static void
-gl_event_view_add_listbox_starred (GlEventView *view)
+gl_event_view_list_add_listbox_starred (GlEventViewList *view)
 {
     GtkWidget *label;
 
@@ -617,7 +617,7 @@ gl_event_view_add_listbox_starred (GlEventView *view)
 }
 
 static void
-gl_event_view_add_listbox_all (GlEventView *view)
+gl_event_view_list_add_listbox_all (GlEventViewList *view)
 {
     const GlJournalQuery query = { N_RESULTS, NULL };
     GtkWidget *listbox;
@@ -634,7 +634,7 @@ gl_event_view_add_listbox_all (GlEventView *view)
 }
 
 static void
-gl_event_view_add_listbox_applications (GlEventView *view)
+gl_event_view_list_add_listbox_applications (GlEventViewList *view)
 {
     GCredentials *creds;
     uid_t uid;
@@ -685,7 +685,7 @@ gl_event_view_add_listbox_applications (GlEventView *view)
 }
 
 static void
-gl_event_view_add_listbox_system (GlEventView *view)
+gl_event_view_list_add_listbox_system (GlEventViewList *view)
 {
     GlJournalQuery query = { N_RESULTS,
                              (gchar *[2]){ "_TRANSPORT=kernel", NULL } };
@@ -703,7 +703,7 @@ gl_event_view_add_listbox_system (GlEventView *view)
 }
 
 static void
-gl_event_view_add_listbox_hardware (GlEventView *view)
+gl_event_view_list_add_listbox_hardware (GlEventViewList *view)
 {
     GlJournalQuery query = { N_RESULTS,
                              (gchar *[2]){ "_TRANSPORT=kernel", NULL } };
@@ -721,7 +721,7 @@ gl_event_view_add_listbox_hardware (GlEventView *view)
 }
 
 static void
-gl_event_view_add_listbox_security (GlEventView *view)
+gl_event_view_list_add_listbox_security (GlEventViewList *view)
 {
     const GlJournalQuery query = { N_RESULTS, NULL };
     GtkWidget *listbox;
@@ -738,7 +738,7 @@ gl_event_view_add_listbox_security (GlEventView *view)
 }
 
 static void
-gl_event_view_add_listbox_updates (GlEventView *view)
+gl_event_view_list_add_listbox_updates (GlEventViewList *view)
 {
     GtkWidget *label;
 
@@ -748,7 +748,7 @@ gl_event_view_add_listbox_updates (GlEventView *view)
 }
 
 static void
-gl_event_view_add_listbox_usage (GlEventView *view)
+gl_event_view_list_add_listbox_usage (GlEventViewList *view)
 {
     GtkWidget *label;
 
@@ -758,16 +758,16 @@ gl_event_view_add_listbox_usage (GlEventView *view)
 }
 
 static void
-on_notify_filter (GlEventView *view,
+on_notify_filter (GlEventViewList *view,
                   G_GNUC_UNUSED GParamSpec *pspec,
                   G_GNUC_UNUSED gpointer user_data)
 {
-    GlEventViewPrivate *priv;
+    GlEventViewListPrivate *priv;
     GtkStack *stack;
     GtkWidget *scrolled;
     GtkWidget *viewport;
 
-    priv = gl_event_view_get_instance_private (view);
+    priv = gl_event_view_list_get_instance_private (view);
     stack = GTK_STACK (view);
 
     if (priv->active_listbox)
@@ -780,44 +780,44 @@ on_notify_filter (GlEventView *view,
 
     switch (priv->filter)
     {
-        case GL_EVENT_VIEW_FILTER_IMPORTANT:
-            gl_event_view_add_listbox_important (view);
+        case GL_EVENT_VIEW_LIST_FILTER_IMPORTANT:
+            gl_event_view_list_add_listbox_important (view);
             gtk_stack_set_visible_child_name (stack, "listbox-important");
             break;
-        case GL_EVENT_VIEW_FILTER_ALERTS:
-            gl_event_view_add_listbox_alerts (view);
+        case GL_EVENT_VIEW_LIST_FILTER_ALERTS:
+            gl_event_view_list_add_listbox_alerts (view);
             gtk_stack_set_visible_child_name (stack, "listbox-alerts");
             break;
-        case GL_EVENT_VIEW_FILTER_STARRED:
-            gl_event_view_add_listbox_starred (view);
+        case GL_EVENT_VIEW_LIST_FILTER_STARRED:
+            gl_event_view_list_add_listbox_starred (view);
             gtk_stack_set_visible_child_name (stack, "listbox-starred");
             break;
-        case GL_EVENT_VIEW_FILTER_ALL:
-            gl_event_view_add_listbox_all (view);
+        case GL_EVENT_VIEW_LIST_FILTER_ALL:
+            gl_event_view_list_add_listbox_all (view);
             gtk_stack_set_visible_child_name (stack, "listbox-all");
             break;
-        case GL_EVENT_VIEW_FILTER_APPLICATIONS:
-            gl_event_view_add_listbox_applications (view);
+        case GL_EVENT_VIEW_LIST_FILTER_APPLICATIONS:
+            gl_event_view_list_add_listbox_applications (view);
             gtk_stack_set_visible_child_name (stack, "listbox-applications");
             break;
-        case GL_EVENT_VIEW_FILTER_SYSTEM:
-            gl_event_view_add_listbox_system (view);
+        case GL_EVENT_VIEW_LIST_FILTER_SYSTEM:
+            gl_event_view_list_add_listbox_system (view);
             gtk_stack_set_visible_child_name (stack, "listbox-system");
             break;
-        case GL_EVENT_VIEW_FILTER_HARDWARE:
-            gl_event_view_add_listbox_hardware (view);
+        case GL_EVENT_VIEW_LIST_FILTER_HARDWARE:
+            gl_event_view_list_add_listbox_hardware (view);
             gtk_stack_set_visible_child_name (stack, "listbox-hardware");
             break;
-        case GL_EVENT_VIEW_FILTER_SECURITY:
-            gl_event_view_add_listbox_security (view);
+        case GL_EVENT_VIEW_LIST_FILTER_SECURITY:
+            gl_event_view_list_add_listbox_security (view);
             gtk_stack_set_visible_child_name (stack, "listbox-security");
             break;
-        case GL_EVENT_VIEW_FILTER_UPDATES:
-            gl_event_view_add_listbox_updates (view);
+        case GL_EVENT_VIEW_LIST_FILTER_UPDATES:
+            gl_event_view_list_add_listbox_updates (view);
             gtk_stack_set_visible_child_name (stack, "listbox-updates");
             break;
-        case GL_EVENT_VIEW_FILTER_USAGE:
-            gl_event_view_add_listbox_usage (view);
+        case GL_EVENT_VIEW_LIST_FILTER_USAGE:
+            gl_event_view_list_add_listbox_usage (view);
             gtk_stack_set_visible_child_name (stack, "listbox-usage");
             break;
         default:
@@ -828,19 +828,19 @@ on_notify_filter (GlEventView *view,
     viewport = gtk_bin_get_child (GTK_BIN (scrolled));
     priv->active_listbox = GTK_LIST_BOX (gtk_bin_get_child (GTK_BIN (viewport)));
 
-    gl_event_view_set_mode (view, GL_EVENT_VIEW_MODE_LIST);
+    gl_event_view_list_set_mode (view, GL_EVENT_VIEW_MODE_LIST);
 }
 
 static void
-on_notify_mode (GlEventView *view,
+on_notify_mode (GlEventViewList *view,
                 GParamSpec *pspec,
                 gpointer user_data)
 {
-    GlEventViewPrivate *priv;
+    GlEventViewListPrivate *priv;
     GtkStack *stack;
     GtkWidget *toplevel;
 
-    priv = gl_event_view_get_instance_private (view);
+    priv = gl_event_view_list_get_instance_private (view);
     stack = GTK_STACK (view);
 
     switch (priv->mode)
@@ -894,10 +894,10 @@ on_notify_mode (GlEventView *view,
 }
 
 static void
-gl_event_view_finalize (GObject *object)
+gl_event_view_list_finalize (GObject *object)
 {
-    GlEventView *view = GL_EVENT_VIEW (object);
-    GlEventViewPrivate *priv = gl_event_view_get_instance_private (view);
+    GlEventViewList *view = GL_EVENT_VIEW_LIST (object);
+    GlEventViewListPrivate *priv = gl_event_view_list_get_instance_private (view);
 
     if (priv->insert_idle_id)
     {
@@ -909,13 +909,13 @@ gl_event_view_finalize (GObject *object)
 }
 
 static void
-gl_event_view_get_property (GObject *object,
+gl_event_view_list_get_property (GObject *object,
                             guint prop_id,
                             GValue *value,
                             GParamSpec *pspec)
 {
-    GlEventView *view = GL_EVENT_VIEW (object);
-    GlEventViewPrivate *priv = gl_event_view_get_instance_private (view);
+    GlEventViewList *view = GL_EVENT_VIEW_LIST (object);
+    GlEventViewListPrivate *priv = gl_event_view_list_get_instance_private (view);
 
     switch (prop_id)
     {
@@ -931,13 +931,13 @@ gl_event_view_get_property (GObject *object,
 }
 
 static void
-gl_event_view_set_property (GObject *object,
-                            guint prop_id,
-                            const GValue *value,
-                            GParamSpec *pspec)
+gl_event_view_list_set_property (GObject *object,
+                                 guint prop_id,
+                                 const GValue *value,
+                                 GParamSpec *pspec)
 {
-    GlEventView *view = GL_EVENT_VIEW (object);
-    GlEventViewPrivate *priv = gl_event_view_get_instance_private (view);
+    GlEventViewList *view = GL_EVENT_VIEW_LIST (object);
+    GlEventViewListPrivate *priv = gl_event_view_list_get_instance_private (view);
 
     switch (prop_id)
     {
@@ -954,18 +954,18 @@ gl_event_view_set_property (GObject *object,
 }
 
 static void
-gl_event_view_class_init (GlEventViewClass *klass)
+gl_event_view_list_class_init (GlEventViewListClass *klass)
 {
     GObjectClass *gobject_class = G_OBJECT_CLASS (klass);
 
-    gobject_class->finalize = gl_event_view_finalize;
-    gobject_class->get_property = gl_event_view_get_property;
-    gobject_class->set_property = gl_event_view_set_property;
+    gobject_class->finalize = gl_event_view_list_finalize;
+    gobject_class->get_property = gl_event_view_list_get_property;
+    gobject_class->set_property = gl_event_view_list_set_property;
 
     obj_properties[PROP_FILTER] = g_param_spec_enum ("filter", "Filter",
                                                      "Filter events by",
-                                                     GL_TYPE_EVENT_VIEW_FILTER,
-                                                     GL_EVENT_VIEW_FILTER_IMPORTANT,
+                                                     GL_TYPE_EVENT_VIEW_LIST_FILTER,
+                                                     GL_EVENT_VIEW_LIST_FILTER_IMPORTANT,
                                                      G_PARAM_READWRITE |
                                                      G_PARAM_STATIC_STRINGS);
 
@@ -981,12 +981,12 @@ gl_event_view_class_init (GlEventViewClass *klass)
 }
 
 static void
-gl_event_view_init (GlEventView *view)
+gl_event_view_list_init (GlEventViewList *view)
 {
-    GlEventViewPrivate *priv;
+    GlEventViewListPrivate *priv;
     GSettings *settings;
 
-    priv = gl_event_view_get_instance_private (view);
+    priv = gl_event_view_list_get_instance_private (view);
     priv->search_text = NULL;
     priv->active_listbox = NULL;
     priv->insert_idle_id = 0;
@@ -1007,14 +1007,14 @@ gl_event_view_init (GlEventView *view)
 }
 
 void
-gl_event_view_search (GlEventView *view,
-                      const gchar *needle)
+gl_event_view_list_search (GlEventViewList *view,
+                           const gchar *needle)
 {
-    GlEventViewPrivate *priv;
+    GlEventViewListPrivate *priv;
 
-    g_return_if_fail (GL_EVENT_VIEW (view));
+    g_return_if_fail (GL_EVENT_VIEW_LIST (view));
 
-    priv = gl_event_view_get_instance_private (view);
+    priv = gl_event_view_list_get_instance_private (view);
 
     g_free (priv->search_text);
     priv->search_text = g_strdup (needle);
@@ -1023,13 +1023,14 @@ gl_event_view_search (GlEventView *view,
 }
 
 void
-gl_event_view_set_filter (GlEventView *view, GlEventViewFilter filter)
+gl_event_view_list_set_filter (GlEventViewList *view,
+                               GlEventViewListFilter filter)
 {
-    GlEventViewPrivate *priv;
+    GlEventViewListPrivate *priv;
 
-    g_return_if_fail (GL_EVENT_VIEW (view));
+    g_return_if_fail (GL_EVENT_VIEW_LIST (view));
 
-    priv = gl_event_view_get_instance_private (view);
+    priv = gl_event_view_list_get_instance_private (view);
 
     if (priv->filter != filter)
     {
@@ -1040,13 +1041,14 @@ gl_event_view_set_filter (GlEventView *view, GlEventViewFilter filter)
 }
 
 void
-gl_event_view_set_mode (GlEventView *view, GlEventViewMode mode)
+gl_event_view_list_set_mode (GlEventViewList *view,
+                             GlEventViewMode mode)
 {
-    GlEventViewPrivate *priv;
+    GlEventViewListPrivate *priv;
 
-    g_return_if_fail (GL_EVENT_VIEW (view));
+    g_return_if_fail (GL_EVENT_VIEW_LIST (view));
 
-    priv = gl_event_view_get_instance_private (view);
+    priv = gl_event_view_list_get_instance_private (view);
 
     if (priv->mode != mode)
     {
@@ -1057,7 +1059,7 @@ gl_event_view_set_mode (GlEventView *view, GlEventViewMode mode)
 }
 
 GtkWidget *
-gl_event_view_new (void)
+gl_event_view_list_new (void)
 {
-    return g_object_new (GL_TYPE_EVENT_VIEW, NULL);
+    return g_object_new (GL_TYPE_EVENT_VIEW_LIST, NULL);
 }

@@ -22,7 +22,7 @@
 
 #include "gl-categorylist.h"
 #include "gl-eventtoolbar.h"
-#include "gl-eventview.h"
+#include "gl-eventviewlist.h"
 #include "gl-enums.h"
 #include "gl-util.h"
 
@@ -65,20 +65,20 @@ on_category (GSimpleAction *action,
 {
     GlWindowPrivate *priv;
     const gchar *category;
-    GlEventView *events;
+    GlEventViewList *events;
     GEnumClass *eclass;
     GEnumValue *evalue;
 
     priv = gl_window_get_instance_private (GL_WINDOW (user_data));
     category = g_variant_get_string (variant, NULL);
-    events = GL_EVENT_VIEW (priv->events);
-    eclass = g_type_class_ref (GL_TYPE_EVENT_VIEW_FILTER);
+    events = GL_EVENT_VIEW_LIST (priv->events);
+    eclass = g_type_class_ref (GL_TYPE_EVENT_VIEW_LIST_FILTER);
     evalue = g_enum_get_value_by_nick (eclass, category);
 
     /* First switch the event view back to list mode if the category
        tab is clicked. */
-    gl_event_view_set_mode (events, GL_EVENT_VIEW_MODE_LIST);
-    gl_event_view_set_filter (events, evalue->value);
+    gl_event_view_list_set_mode (events, GL_EVENT_VIEW_MODE_LIST);
+    gl_event_view_list_set_filter (events, evalue->value);
 
     g_simple_action_set_state (action, variant);
 
@@ -118,11 +118,11 @@ on_toolbar_mode (GSimpleAction *action,
     {
         /* Switch the event view back to list mode if the back button is
          * clicked. */
-        GlEventView *view;
+        GlEventViewList *view;
 
-        view = GL_EVENT_VIEW (priv->events);
+        view = GL_EVENT_VIEW_LIST (priv->events);
 
-        gl_event_view_set_mode (view, GL_EVENT_VIEW_MODE_LIST);
+        gl_event_view_list_set_mode (view, GL_EVENT_VIEW_MODE_LIST);
 
         g_simple_action_set_enabled (G_SIMPLE_ACTION (search), TRUE);
     }
@@ -238,10 +238,10 @@ on_gl_window_key_press_event (GlWindow *window,
                                                            (GdkEventKey*)event)
                 == GDK_EVENT_STOP)
             {
-                GlEventView *events;
+                GlEventViewList *events;
 
-                events = GL_EVENT_VIEW (priv->events);
-                gl_event_view_set_mode (events, GL_EVENT_VIEW_MODE_LIST);
+                events = GL_EVENT_VIEW_LIST (priv->events);
+                gl_event_view_list_set_mode (events, GL_EVENT_VIEW_MODE_LIST);
                 g_type_class_unref (eclass);
 
                 return GDK_EVENT_STOP;
@@ -262,8 +262,8 @@ on_gl_window_search_entry_changed (GtkSearchEntry *entry,
 
     priv = gl_window_get_instance_private (GL_WINDOW (user_data));
 
-    gl_event_view_search (GL_EVENT_VIEW (priv->events),
-                          gtk_entry_get_text (GTK_ENTRY (priv->search_entry)));
+    gl_event_view_list_search (GL_EVENT_VIEW_LIST (priv->events),
+                               gtk_entry_get_text (GTK_ENTRY (priv->search_entry)));
 }
 
 static void

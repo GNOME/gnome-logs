@@ -5,6 +5,6 @@
 data/org.gnome.Logs.appdata.xml.in
 data/org.gnome.Logs.desktop.in
 src/gl-application.c
-src/gl-eventview.c
 src/gl-eventviewdetail.c
+src/gl-eventviewlist.c
 src/gl-util.c

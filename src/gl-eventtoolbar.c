@@ -21,7 +21,7 @@
 #include <glib/gi18n.h>
 
 #include "gl-enums.h"
-#include "gl-eventview.h"
+#include "gl-eventviewlist.h"
 
 enum
 {

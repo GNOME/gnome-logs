@@ -21,7 +21,7 @@
 #include <glib/gi18n.h>
 
 #include "gl-enums.h"
-#include "gl-eventview.h"
+#include "gl-eventviewlist.h"
 
 typedef struct
 {
@@ -97,47 +97,47 @@ on_gl_category_list_row_selected (GlCategoryList *listbox,
         return;
     }
 
-    eclass = g_type_class_ref (GL_TYPE_EVENT_VIEW_FILTER);
+    eclass = g_type_class_ref (GL_TYPE_EVENT_VIEW_LIST_FILTER);
 
     if (row == GTK_LIST_BOX_ROW (priv->important))
     {
-        evalue = g_enum_get_value (eclass, GL_EVENT_VIEW_FILTER_IMPORTANT);
+        evalue = g_enum_get_value (eclass, GL_EVENT_VIEW_LIST_FILTER_IMPORTANT);
     }
     else if (row == GTK_LIST_BOX_ROW (priv->alerts))
     {
-        evalue = g_enum_get_value (eclass, GL_EVENT_VIEW_FILTER_ALERTS);
+        evalue = g_enum_get_value (eclass, GL_EVENT_VIEW_LIST_FILTER_ALERTS);
     }
     else if (row == GTK_LIST_BOX_ROW (priv->starred))
     {
-        evalue = g_enum_get_value (eclass, GL_EVENT_VIEW_FILTER_STARRED);
+        evalue = g_enum_get_value (eclass, GL_EVENT_VIEW_LIST_FILTER_STARRED);
     }
     else if (row == GTK_LIST_BOX_ROW (priv->all))
     {
-        evalue = g_enum_get_value (eclass, GL_EVENT_VIEW_FILTER_ALL);
+        evalue = g_enum_get_value (eclass, GL_EVENT_VIEW_LIST_FILTER_ALL);
     }
     else if (row == GTK_LIST_BOX_ROW (priv->applications))
     {
-        evalue = g_enum_get_value (eclass, GL_EVENT_VIEW_FILTER_APPLICATIONS);
+        evalue = g_enum_get_value (eclass, GL_EVENT_VIEW_LIST_FILTER_APPLICATIONS);
     }
     else if (row == GTK_LIST_BOX_ROW (priv->system))
     {
-        evalue = g_enum_get_value (eclass, GL_EVENT_VIEW_FILTER_SYSTEM);
+        evalue = g_enum_get_value (eclass, GL_EVENT_VIEW_LIST_FILTER_SYSTEM);
     }
     else if (row == GTK_LIST_BOX_ROW (priv->security))
     {
-        evalue = g_enum_get_value (eclass, GL_EVENT_VIEW_FILTER_SECURITY);
+        evalue = g_enum_get_value (eclass, GL_EVENT_VIEW_LIST_FILTER_SECURITY);
     }
     else if (row == GTK_LIST_BOX_ROW (priv->hardware))
     {
-        evalue = g_enum_get_value (eclass, GL_EVENT_VIEW_FILTER_HARDWARE);
+        evalue = g_enum_get_value (eclass, GL_EVENT_VIEW_LIST_FILTER_HARDWARE);
     }
     else if (row == GTK_LIST_BOX_ROW (priv->updates))
     {
-        evalue = g_enum_get_value (eclass, GL_EVENT_VIEW_FILTER_UPDATES);
+        evalue = g_enum_get_value (eclass, GL_EVENT_VIEW_LIST_FILTER_UPDATES);
     }
     else if (row == GTK_LIST_BOX_ROW (priv->usage))
     {
-        evalue = g_enum_get_value (eclass, GL_EVENT_VIEW_FILTER_USAGE);
+        evalue = g_enum_get_value (eclass, GL_EVENT_VIEW_LIST_FILTER_USAGE);
     }
     else
     {
