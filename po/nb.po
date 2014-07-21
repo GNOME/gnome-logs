@@ -5,32 +5,16 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-logs 3.11.x\n"
+"Project-Id-Version: gnome-logs 3.13.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-03-21 18:00+0100\n"
-"PO-Revision-Date: 2014-03-21 18:04+0100\n"
+"POT-Creation-Date: 2014-07-21 15:28+0200\n"
+"PO-Revision-Date: 2014-07-21 15:29+0200\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-
-#: ../data/appmenu.ui.h:1
-msgid "_New Window"
-msgstr "_Nytt vindu"
-
-#: ../data/appmenu.ui.h:2
-msgid "_Help"
-msgstr "_Hjelp"
-
-#: ../data/appmenu.ui.h:3
-msgid "_About"
-msgstr "_Om"
-
-#: ../data/appmenu.ui.h:4
-msgid "_Quit"
-msgstr "A_vslutt"
 
 #: ../data/gl-categorylist.ui.h:1
 msgid "Important"
@@ -42,7 +26,7 @@ msgstr "Advarsel"
 
 #: ../data/gl-categorylist.ui.h:3
 msgid "Starred"
-msgstr ""
+msgstr "Stjernemerket"
 
 #: ../data/gl-categorylist.ui.h:4
 msgid "All"
@@ -84,28 +68,60 @@ msgstr "Gå tilbake til hendelsesvisning"
 msgid "Search the displayed logs"
 msgstr "Søk i viste logger"
 
-#: ../data/gnome-logs.appdata.xml.in.h:1
+#: ../data/gl-eventviewdetail.ui.h:1
+msgid "Message"
+msgstr "Melding"
+
+#: ../data/gl-eventviewdetail.ui.h:2
+msgid "Audit Session"
+msgstr ""
+
+#: ../data/gl-eventviewdetail.ui.h:3
+msgid "Kernel Device"
+msgstr "Kjerneenhet"
+
+#: ../data/gl-eventviewdetail.ui.h:4
+msgid "Priority"
+msgstr "Prioritet"
+
+#: ../data/menus.ui.h:1
+msgid "_New Window"
+msgstr "_Nytt vindu"
+
+#: ../data/menus.ui.h:2
+msgid "_Help"
+msgstr "_Hjelp"
+
+#: ../data/menus.ui.h:3
+msgid "_About"
+msgstr "_Om"
+
+#: ../data/menus.ui.h:4
+msgid "_Quit"
+msgstr "A_vslutt"
+
+#: ../data/org.gnome.Logs.appdata.xml.in.h:1
 msgid ""
 "Logs shows events from the systemd journal, and sorts them into categories, "
 "such as hardware and applications."
 msgstr ""
 
-#: ../data/gnome-logs.appdata.xml.in.h:2
+#: ../data/org.gnome.Logs.appdata.xml.in.h:2
 msgid ""
 "Using Logs you can search your logs by typing a search term, and view "
 "detailed information about each event by clicking on it."
 msgstr ""
 
-#: ../data/gnome-logs.desktop.in.h:1
+#: ../data/org.gnome.Logs.desktop.in.h:1
 msgid "Log Viewer"
 msgstr "Loggvisning"
 
-#: ../data/gnome-logs.desktop.in.h:2
+#: ../data/org.gnome.Logs.desktop.in.h:2
 msgid "View detailed event logs for the system"
 msgstr "Vis detaljerte hendelseslogger for systemet"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: ../data/gnome-logs.desktop.in.h:4
+#: ../data/org.gnome.Logs.desktop.in.h:4
 msgid "log;journal;debug;error;"
 msgstr "logg;journal;feilsøking;feil;"
 
@@ -117,9 +133,9 @@ msgstr "Kjartan Maraas <kmaraas@gnome.org>"
 msgid "View and search logs"
 msgstr "Vis og søk i logger"
 
-#: ../src/gl-application.c:222
+#: ../src/gl-application.c:207
 msgid "Print version information and exit"
-msgstr ""
+msgstr "Skriv ut versjonsinformasjon og avslutt"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
@@ -132,28 +148,11 @@ msgstr "Ingen resultater"
 msgid "Not implemented"
 msgstr "Ikke implementert"
 
-#: ../src/gl-eventviewdetail.c:140
-msgid "Message"
-msgstr "Melding"
-
-#. TODO: Give a user-friendly representation of the priority.
-#: ../src/gl-eventviewdetail.c:161
-msgid "Priority"
-msgstr "Prioritet"
-
-#: ../src/gl-eventviewdetail.c:189
-msgid "Kernel Device"
-msgstr ""
-
-#: ../src/gl-eventviewdetail.c:209
-msgid "Audit Session"
-msgstr ""
-
 #. Translators: timestamp format for events on the current
 #. * day, showing the time in 12-hour format.
 #: ../src/gl-util.c:95
 msgid "%l:%M %p"
-msgstr ""
+msgstr "%H.%M"
 
 #. Translators: timestamp format for events in the current
 #. * year, showing the abbreviated month name, day of the
@@ -173,7 +172,7 @@ msgstr ""
 #. * day, showing the time in 24-hour format.
 #: ../src/gl-util.c:120
 msgid "%H:%M"
-msgstr ""
+msgstr "%H.%M"
 
 #. Translators: timestamp format for events in the current
 #. * year, showing the abbreviated month name, day of the
