@@ -1,3 +1,16 @@
+GNOME Logs 3.13.4
+=================
+
+* increase category list padding
+* use new GtkApplication appmenu resource handling
+* match desktop file name in AppData
+* avoid deprecated xalign property
+* use GtkIconTheme RTL support
+* translated application name fixes from Aaron Hamilton
+* Arabic translation
+* updates to Greek and Norwegian bokmål translations
+* Russian translation of help
+
 GNOME Logs 3.13.3
 =================
 
