@@ -1,0 +1,199 @@
+# Romanian translation for gnome-logs.
+# Copyright (C) 2014 gnome-logs's COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-logs package.
+# Bogdan Mințoi <mintoi.bogdan@gmail.com>, 2014.
+# Daniel Șerbănescu <daniel [at] serbanescu [dot] dk>, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-logs master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"logs&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2014-07-27 06:56+0000\n"
+"PO-Revision-Date: 2014-08-02 21:56+0200\n"
+"Last-Translator: Daniel Șerbănescu <daniel [at] serbanescu [dot] dk>\n"
+"Language-Team: Gnome Romanian Translation Team\n"
+"Language: ro\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
+"20)) ? 1 : 2);;\n"
+"X-Generator: Virtaal 0.7.1\n"
+"X-Project-Style: gnome\n"
+
+#: ../data/gl-categorylist.ui.h:1
+msgid "Important"
+msgstr "Important"
+
+#: ../data/gl-categorylist.ui.h:2
+msgid "Alerts"
+msgstr "Alerte"
+
+#: ../data/gl-categorylist.ui.h:3
+msgid "Starred"
+msgstr "Marcate"
+
+#: ../data/gl-categorylist.ui.h:4
+msgid "All"
+msgstr "Toate"
+
+#: ../data/gl-categorylist.ui.h:5
+msgid "Applications"
+msgstr "Aplicații"
+
+#: ../data/gl-categorylist.ui.h:6
+msgid "System"
+msgstr "Sistem"
+
+#: ../data/gl-categorylist.ui.h:7
+msgid "Security"
+msgstr "Securitate"
+
+#: ../data/gl-categorylist.ui.h:8
+msgid "Hardware"
+msgstr "Hardware"
+
+#: ../data/gl-categorylist.ui.h:9
+msgid "Updates"
+msgstr "Actualizări"
+
+#: ../data/gl-categorylist.ui.h:10
+msgid "Usage"
+msgstr "În uz"
+
+#: ../data/gl-eventtoolbar.ui.h:1
+msgid "Logs"
+msgstr "Înregistrări"
+
+#: ../data/gl-eventtoolbar.ui.h:2
+msgid "Go back to the event view"
+msgstr "Înapoi la evenimente"
+
+#: ../data/gl-eventtoolbar.ui.h:3
+msgid "Search the displayed logs"
+msgstr "Caută în înregistrările afișate"
+
+#: ../data/gl-eventviewdetail.ui.h:1
+msgid "Message"
+msgstr "Mesaj"
+
+#: ../data/gl-eventviewdetail.ui.h:2
+msgid "Audit Session"
+msgstr "Sesiune de bilanț"
+
+#: ../data/gl-eventviewdetail.ui.h:3
+msgid "Kernel Device"
+msgstr "Dispozitiv de kernel"
+
+#: ../data/gl-eventviewdetail.ui.h:4
+msgid "Priority"
+msgstr "Prioritate"
+
+#: ../data/menus.ui.h:1
+msgid "_New Window"
+msgstr "_Fereastră nouă"
+
+#: ../data/menus.ui.h:2
+msgid "_Help"
+msgstr "_Ajutor"
+
+#: ../data/menus.ui.h:3
+msgid "_About"
+msgstr "_Despre"
+
+#: ../data/menus.ui.h:4
+msgid "_Quit"
+msgstr "_Ieșire"
+
+#: ../data/org.gnome.Logs.appdata.xml.in.h:1
+msgid ""
+"Logs shows events from the systemd journal, and sorts them into categories, "
+"such as hardware and applications."
+msgstr ""
+"Înregistrări afișează evenimente din jurnalul systemd, și le sortează pe "
+"categorii, precum hardware și aplicații."
+
+#: ../data/org.gnome.Logs.appdata.xml.in.h:2
+msgid ""
+"Using Logs you can search your logs by typing a search term, and view "
+"detailed information about each event by clicking on it."
+msgstr ""
+"Folosind Înregistrări puteți căuta prin înregistrările dumneavoastră "
+"folosind un termen de căutare, și aveți acces la informații detaliate "
+"referitoare la fiecare eveniment printr-un simplu clic."
+
+#: ../data/org.gnome.Logs.desktop.in.h:1
+msgid "Log Viewer"
+msgstr "Jurnal de înregistrări"
+
+#: ../data/org.gnome.Logs.desktop.in.h:2
+msgid "View detailed event logs for the system"
+msgstr "Vizualizați jurnale de evenimente detaliate ale sistemului"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: ../data/org.gnome.Logs.desktop.in.h:4
+msgid "log;journal;debug;error;"
+msgstr "log;journal;debug;error;jurnal;eroare;depanare;înregistrare;înregistrări;"
+
+#: ../src/gl-application.c:99
+msgid "translator-credits"
+msgstr "Bogdan Mințoi <mintoi.bogdan@gmail.com> 2014"
+
+#: ../src/gl-application.c:100
+msgid "View and search logs"
+msgstr "Vizualizare și căutare de înregistrări"
+
+#: ../src/gl-application.c:207
+msgid "Print version information and exit"
+msgstr "Afișează informații despre versiune și ieși"
+
+#. Translators: Shown when there are no (zero) results in the current
+#. * view.
+#: ../src/gl-eventviewlist.c:217
+msgid "No results"
+msgstr "Niciun rezultat"
+
+#: ../src/gl-eventviewlist.c:604 ../src/gl-eventviewlist.c:614
+#: ../src/gl-eventviewlist.c:745 ../src/gl-eventviewlist.c:755
+msgid "Not implemented"
+msgstr "Nu este implementat"
+
+#. Translators: timestamp format for events on the current
+#. * day, showing the time in 12-hour format.
+#: ../src/gl-util.c:95
+msgid "%l:%M %p"
+msgstr "%l:%M %p"
+
+#. Translators: timestamp format for events in the current
+#. * year, showing the abbreviated month name, day of the
+#. * month and the time in 12-hour format.
+#: ../src/gl-util.c:101
+msgid "%b %e %l:%M %p"
+msgstr "%b %e %l:%M %p"
+
+#. Translators: timestamp format for events in a different
+#. * year, showing the abbreviated month name, day of the
+#. * month, year and the time in 12-hour format.
+#: ../src/gl-util.c:107
+msgid "%b %e %Y %l:%M %p"
+msgstr "%b %e %Y %l:%M %p"
+
+#. Translators: timestamp format for events on the current
+#. * day, showing the time in 24-hour format.
+#: ../src/gl-util.c:120
+msgid "%H:%M"
+msgstr "%H:%M"
+
+#. Translators: timestamp format for events in the current
+#. * year, showing the abbreviated month name, day of the
+#. * month and the time in 24-hour format.
+#: ../src/gl-util.c:126
+msgid "%b %e %H:%M"
+msgstr "%b %e %H:%M"
+
+#. Translators: timestamp format for events in a different
+#. * year, showing the abbreviated month name, day of the
+#. * month, year and the time in 24-hour format.
+#: ../src/gl-util.c:132
+msgid "%b %e %Y %H:%M"
+msgstr "%b %e %Y %H:%M"
