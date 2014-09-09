@@ -45,7 +45,15 @@ typedef struct
     GtkWidget *device_field_label;
     GtkWidget *device_label;
     GtkWidget *priority_label;
-    GtkWidget *catalog_label;
+    GtkWidget *subject_field_label;
+    GtkWidget *subject_label;
+    GtkWidget *definedby_field_label;
+    GtkWidget *definedby_label;
+    GtkWidget *support_field_label;
+    GtkWidget *support_label;
+    GtkWidget *documentation_field_label;
+    GtkWidget *documentation_label;
+    GtkWidget *detailed_message_label;
 } GlEventViewDetailPrivate;
 
 G_DEFINE_TYPE_WITH_PRIVATE (GlEventViewDetail, gl_event_view_detail, GTK_TYPE_BIN)
@@ -58,6 +66,9 @@ gl_event_view_detail_create_detail (GlEventViewDetail *detail)
     GlEventViewDetailPrivate *priv;
     GlJournalResult *result;
     gchar *str;
+    gchar *str_field;
+    gchar *str_message;
+    gchar *str_copy;
 
     priv = gl_event_view_detail_get_instance_private (detail);
 
@@ -69,7 +80,11 @@ gl_event_view_detail_create_detail (GlEventViewDetail *detail)
     gtk_widget_set_direction (priv->message_label, GTK_TEXT_DIR_LTR);
     gtk_widget_set_direction (priv->audit_label, GTK_TEXT_DIR_LTR);
     gtk_widget_set_direction (priv->device_label, GTK_TEXT_DIR_LTR);
-    gtk_widget_set_direction (priv->catalog_label, GTK_TEXT_DIR_LTR);
+    gtk_widget_set_direction (priv->subject_label, GTK_TEXT_DIR_LTR);
+    gtk_widget_set_direction (priv->definedby_label, GTK_TEXT_DIR_LTR);
+    gtk_widget_set_direction (priv->support_label, GTK_TEXT_DIR_LTR);
+    gtk_widget_set_direction (priv->documentation_label, GTK_TEXT_DIR_LTR);
+    gtk_widget_set_direction (priv->detailed_message_label, GTK_TEXT_DIR_LTR);
 
     if (result->comm && *result->comm)
     {
@@ -125,7 +140,179 @@ gl_event_view_detail_create_detail (GlEventViewDetail *detail)
     gtk_label_set_text (GTK_LABEL (priv->priority_label), str);
     g_free (str);
 
-    gtk_label_set_text (GTK_LABEL (priv->catalog_label), result->catalog);
+    if (result->catalog != NULL)
+    {
+        gint subject_count = 0;
+        gint definedby_count = 0;
+        gint support_count = 0;
+        gint documentation_count = 0;
+
+        str_copy = g_strdup (result->catalog);
+
+        do
+        {
+            const gchar *label;
+
+            if (subject_count == 0 && definedby_count == 0
+                && support_count == 0 && documentation_count == 0)
+            {
+                str_field = strtok (str_copy, " ");
+            }
+            else
+            {
+                str_field = strtok (NULL, " ");
+            }
+
+            if (g_strcmp0 (str_field, "Subject:") == 0)
+            {
+                subject_count++;
+
+                if (subject_count == 1)
+                {
+                    str_message = strtok (NULL, "\n");
+
+                    if (str_message && *str_message)
+                    {
+                        gtk_label_set_text (GTK_LABEL (priv->subject_label),
+                                            str_message);
+                        gtk_widget_show (priv->subject_field_label);
+                        gtk_widget_show (priv->subject_label);
+                    }
+                }
+                else
+                {
+                    str_field = strtok (NULL, "\n");
+                    label = gtk_label_get_text (GTK_LABEL (priv->subject_label));
+                    str = g_strconcat (label, "\n", str_field, NULL);
+
+                    if (str && *str)
+                    {
+                        gtk_label_set_text (GTK_LABEL (priv->subject_label),
+                                            str);
+                        gtk_widget_show (priv->subject_field_label);
+                        gtk_widget_show (priv->subject_label);
+                    }
+
+                    g_free (str);
+                }
+            }
+            else if (g_strcmp0 (str_field, "Defined-By:") == 0)
+            {
+                definedby_count++;
+
+                if (subject_count == 1)
+                {
+                    str_message = strtok (NULL, "\n");
+
+                    if (str_message && *str_message)
+                    {
+                        gtk_label_set_text (GTK_LABEL (priv->definedby_label),
+                                            str_message);
+                        gtk_widget_show (priv->definedby_field_label);
+                        gtk_widget_show (priv->definedby_label);
+                    }
+                }
+                else
+                {
+                    str_field = strtok (NULL, "\n");
+                    label = gtk_label_get_text (GTK_LABEL (priv->subject_label));
+                    str = g_strconcat (label, "\n", str_field, NULL);
+
+                    if (str && *str)
+                    {
+                        gtk_label_set_text (GTK_LABEL (priv->definedby_label),
+                                            str);
+                        gtk_widget_show (priv->definedby_field_label);
+                        gtk_widget_show (priv->definedby_label);
+                    }
+
+                    g_free (str);
+                }
+            }
+            else if (g_strcmp0 (str_field, "Support:") == 0)
+            {
+                support_count++;
+
+                if (support_count == 1)
+                {
+                    str_message = strtok (NULL, "\n");
+
+                    if (str_message && *str_message)
+                    {
+                        gtk_label_set_text (GTK_LABEL (priv->support_label),
+                                            str_message);
+                        gtk_widget_show (priv->support_field_label);
+                        gtk_widget_show (priv->support_label);
+                    }
+                }
+                else
+                {
+                    str_field = strtok (NULL, "\n");
+                    label = gtk_label_get_text (GTK_LABEL (priv->subject_label));
+                    str = g_strconcat (label, "\n", str_field, NULL);
+
+                    if (str && *str)
+                    {
+                        gtk_label_set_text (GTK_LABEL (priv->support_label),
+                                            str);
+                        gtk_widget_show (priv->support_field_label);
+                        gtk_widget_show (priv->support_label);
+                    }
+
+                    g_free (str);
+                }
+            }
+            else if (g_strcmp0 (str_field, "Documentation:") == 0)
+            {
+                documentation_count++;
+
+                if (documentation_count == 1)
+                {
+                    str_message = strtok (NULL, "\n");
+
+                    if (str_message && *str_message)
+                    {
+                        gtk_label_set_text (GTK_LABEL (priv->documentation_label),
+                                            str_message);
+                        gtk_widget_show (priv->documentation_field_label);
+                        gtk_widget_show (priv->documentation_label);
+                    }
+                }
+                else
+                {
+                    str_field = strtok (NULL, "\n");
+                    label = gtk_label_get_text (GTK_LABEL (priv->subject_label));
+                    str = g_strconcat (label, "\n", str_field, NULL);
+
+                    if (str && *str)
+                    {
+                        gtk_label_set_text (GTK_LABEL (priv->documentation_label),
+                                            str);
+                        gtk_widget_show (priv->documentation_field_label);
+                        gtk_widget_show (priv->documentation_label);
+                    }
+
+                    g_free (str);
+                }
+            }
+        } while (g_strcmp0 (str_field, "Subject:") == 0
+                 || g_strcmp0 (str_field, "Defined-By:") == 0
+                 || g_strcmp0 (str_field, "Support:") == 0
+                 || g_strcmp0 (str_field, "Documentation:") == 0);
+
+        str = strtok (NULL, "\0");
+        str_field = g_strconcat (str_field, " ", str, NULL);
+
+        if (str_field && *str_field)
+        {
+            gtk_label_set_text (GTK_LABEL (priv->detailed_message_label),
+                                str_field);
+            gtk_widget_show (priv->detailed_message_label);
+        }
+
+        g_free (str_field);
+        g_free (str_copy);
+    }
 }
 
 static void
@@ -246,7 +433,23 @@ gl_event_view_detail_class_init (GlEventViewDetailClass *klass)
     gtk_widget_class_bind_template_child_private (widget_class, GlEventViewDetail,
                                                   priority_label);
     gtk_widget_class_bind_template_child_private (widget_class, GlEventViewDetail,
-                                                  catalog_label);
+                                                  subject_field_label);
+    gtk_widget_class_bind_template_child_private (widget_class, GlEventViewDetail,
+                                                  subject_label);
+    gtk_widget_class_bind_template_child_private (widget_class, GlEventViewDetail,
+                                                  definedby_field_label);
+    gtk_widget_class_bind_template_child_private (widget_class, GlEventViewDetail,
+                                                  definedby_label);
+    gtk_widget_class_bind_template_child_private (widget_class, GlEventViewDetail,
+                                                  support_field_label);
+    gtk_widget_class_bind_template_child_private (widget_class, GlEventViewDetail,
+                                                  support_label);
+    gtk_widget_class_bind_template_child_private (widget_class, GlEventViewDetail,
+                                                  documentation_field_label);
+    gtk_widget_class_bind_template_child_private (widget_class, GlEventViewDetail,
+                                                  documentation_label);
+    gtk_widget_class_bind_template_child_private (widget_class, GlEventViewDetail,
+                                                  detailed_message_label);
 }
 
 static void
