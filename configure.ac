@@ -62,7 +62,7 @@ AS_IF([test "x$enable_man" != "xno"],
 AM_CONDITIONAL([ENABLE_MAN], [test "x$have_manutils" = "xyes"])
 
 dnl AppData XML
-APPDATA_XML
+APPSTREAM_XML
 
 dnl Mallard Help
 YELP_HELP_INIT

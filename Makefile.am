@@ -1,7 +1,7 @@
 ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
 
 DISTCHECK_CONFIGURE_FLAGS = \
-	--enable-appdata-validate \
+	--enable-appstream-util \
 	--enable-tests
 
 SUBDIRS = help po
@@ -68,11 +68,11 @@ nodist_gnome_logs_headers = \
 	$(AM_V_at)$(MKDIR_P) $(@D)
 	$(AM_V_at)touch $@
 
-@APPDATA_XML_RULES@
+@APPSTREAM_XML_RULES@
 @INTLTOOL_XML_RULE@
-appdata_in_files = data/org.gnome.Logs.appdata.xml.in
-$(appdata_in_files:.appdata.xml.in=.appdata.xml): data/.dstamp
-appdata_XML = $(appdata_in_files:.appdata.xml.in=.appdata.xml)
+appstream_in_files = data/org.gnome.Logs.appdata.xml.in
+$(appstream_in_files:.appdata.xml.in=.appdata.xml): data/.dstamp
+appstream_XML = $(appstream_in_files:.appdata.xml.in=.appdata.xml)
 
 @INTLTOOL_DESKTOP_RULE@
 desktopdir = $(datadir)/applications
@@ -170,7 +170,7 @@ src/gl-resource.c src/gl-resource.h: data/org.gnome.Logs.gresource.xml Makefile 
 dist_noinst_DATA = \
 	$(noinst_gnome_logs_headers) \
 	$(noinst_resource_files) \
-	$(appdata_in_files) \
+	$(appstream_in_files) \
 	$(desktop_in_files) \
 	data/org.gnome.Logs.gresource.xml \
 	data/gnome-logs.xml \
@@ -194,7 +194,7 @@ git-changelog-hook:
 	else rm -f .ChangeLog.tmp; exit 1; fi
 
 CLEANFILES = \
-	$(appdata_XML) \
+	$(appstream_XML) \
 	$(desktop_DATA) \
 	$(enum_data) \
 	$(nodist_man_MANS) \
