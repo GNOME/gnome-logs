@@ -1,0 +1,184 @@
+# Galician translation for gnome-logs.
+# Copyright (C) 2014 gnome-logs's COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-logs package.
+# Fran Dieguez <frandieguez@gnome.org>, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-logs master\n"
+"POT-Creation-Date: 2014-09-11 06:55+0000\n"
+"PO-Revision-Date: 2014-09-12 10:26+0200\n"
+"Last-Translator: Fran Dieguez <frandieguez@gnome.org>\n"
+"Language-Team: gnome-l10n-gl@gnome.org\n"
+"Language: gl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Virtaal 0.7.1\n"
+"X-Project-Style: gnome\n"
+
+#. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
+msgctxt "_"
+msgid "translator-credits"
+msgstr "Fran Diéguez <frandieguez@gnome.org>, 2014."
+
+#. (itstool) path: info/title
+#: C/index.page:7
+msgctxt "text"
+msgid "Logs help"
+msgstr "Axuda de Rexistros"
+
+#. (itstool) path: info/title
+#: C/index.page:8
+msgctxt "link"
+msgid "Logs help"
+msgstr "Axuda de Rexistros"
+
+#. (itstool) path: info/desc
+#: C/index.page:13
+msgid "Browse and search through your systemd journal logs."
+msgstr "Explore e busque nos rexistros do diario de systemd."
+
+#. (itstool) path: page/title
+#: C/index.page:16
+msgid "<_:media-1/> Logs"
+msgstr "<_:media-1/> Rexistros"
+
+#. (itstool) path: media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/introduction.page:35
+msgctxt "_"
+msgid ""
+"external ref='media/gnome-logs-3-12.png' "
+"md5='56e83d7808cdfd80457691aff5ffc2d1'"
+msgstr ""
+"external ref='media/gnome-logs-3-12.png' "
+"md5='56e83d7808cdfd80457691aff5ffc2d1'"
+
+#. (itstool) path: credit/name
+#: C/introduction.page:11
+msgid "David King"
+msgstr "David King"
+
+#. (itstool) path: credit/years
+#: C/introduction.page:13 C/introduction.page:18
+msgid "2014"
+msgstr "2014"
+
+#. (itstool) path: credit/name
+#: C/introduction.page:16 C/permissions.page:11
+msgid "Ekaterina Gerasimova"
+msgstr "Ekaterina Gerasimova"
+
+#. (itstool) path: info/desc
+#: C/introduction.page:23
+msgid "<app>Logs</app> is a viewer for the <sys>systemd</sys> journal."
+msgstr "<app>Rexistros</app> é un visor do diario de <sys>systemd</sys>."
+
+#. (itstool) path: page/title
+#: C/introduction.page:27
+msgid "Introduction"
+msgstr "Introducción"
+
+#. (itstool) path: page/p
+#: C/introduction.page:29
+msgid ""
+"Logs shows events from the systemd journal, and sorts them into categories, "
+"such as hardware and applications."
+msgstr ""
+"Rexistros mostra eventos do diario de systemd, e ordénaos en categorías, "
+"como hardware e aplicativos."
+
+#. (itstool) path: page/p
+#: C/introduction.page:32
+msgid ""
+"Using Logs you can search your logs by typing a search term, and view "
+"detailed information about each event by clicking on it."
+msgstr ""
+"Se usa Rexistros pode buscar nos seus rexistros escribindo un termo de "
+"busca, e ver a información detallada sobre cada evento preméndoo."
+
+#. (itstool) path: media/p
+#: C/introduction.page:36
+msgid "Screenshot of Logs showing some journal entries."
+msgstr "Captura de pantalla de Rexistros mostrando algunhas entradas do diario."
+
+#. (itstool) path: p/link
+#: C/legal.xml:5
+msgid "Creative Commons Attribution-ShareAlike 3.0 Unported License"
+msgstr "Creative Commons Atribución-CompartirIgual 3.0 Licenza non portada"
+
+#. (itstool) path: license/p
+#: C/legal.xml:4
+msgid "This work is licensed under a <_:link-1/>."
+msgstr "Este traballa ten a licenza <_:link-1/>."
+
+#. (itstool) path: credit/years
+#: C/permissions.page:13
+msgid "2013"
+msgstr "2014"
+
+#. (itstool) path: info/desc
+#: C/permissions.page:18
+msgid ""
+"You can read some or all of the logs, depending on which permissions you "
+"have."
+msgstr "Pode ler algúns ou todos os rexistros, dependendo de que permisos teña."
+
+#. (itstool) path: page/title
+#: C/permissions.page:22
+msgid "Can I view all logs?"
+msgstr "Podo ver todos os rexistros?"
+
+#. (itstool) path: page/p
+#: C/permissions.page:24
+msgid ""
+"You will be able to browse some messages that have been logged since the "
+"last reboot, depending on which permissions you have. Some of your "
+"permissions are set by your distribution, but they can be changed by your "
+"system administrator."
+msgstr ""
+"Poderá navegar algúns mensaxes que foran rexistrados desde o último "
+"reinicio, dependendo de que permisos teña. Algúns dos seus permisos están "
+"estabelecidos"
+
+#. (itstool) path: page/p
+#. TRANSLATORS: 'Standard' is taken from the user account type in the
+#. control panel when used in <em> or <gui> tags.
+#: C/permissions.page:30
+msgid ""
+"By default, <em href=\"help:gnome-help/user-admin-explain\">Standard</em> "
+"users are shown a limited set of logs, such as application logs and their "
+"own session logs. If you are a <gui>Standard</gui> user and do not see any "
+"logs, it is possible that your system administrator has disabled your "
+"ability to view logs."
+msgstr ""
+"Por omisión, aos usuarios <em href=\"help:gnome-help/user-admin-explain\""
+">estándar</em> móstranselle un conxunto limitado de rexistros, como os "
+"rexistros de aplicativo e os seus propios rexistros de sesión. Se ten un "
+"usuario <gui>estándar</gui> non verá algún rexistro, é posíbel que o seu "
+"administrador de sistemas desactivara a súa habilidade para ver rexistros."
+
+#. (itstool) path: page/p
+#. TRANSLATORS: 'Administrator' is taken from the user account type in the
+#. control panel when used in <em> or <gui> tags.
+#: C/permissions.page:39
+msgid ""
+"<em>Administrator</em> users will normally be able to view more sensitive "
+"logs, such as kernel logs and the logs of other users. It is possible for "
+"administrators to have different levels of access to logs, so you may not be "
+"able to view all logs. If you are an <gui>Administrator</gui> user, then "
+"only other administrators can change which logs you can access. For more "
+"information about log access permissions, <link href=\"man:systemd-journald"
+"\">see the <_:cmd-1/> man page</link>."
+msgstr ""
+"Os usuarios <em>Administrador</em> normalmente poden ver rexistros máis "
+"sensíbeis . Os administradores poden ter distintos niveis de acceso aos "
+"rexistros, polo que pode ser que vostede non teña acceso a todos os "
+"rexistros. Se vostede é un usuario <gui>Administrador</gui>, só só outros "
+"administradores poden cambiar que rexistros pode ver vostede. Para máis "
+"información sobre os permisos de acceso a rexistros vexa <link href=\"man"
+":systemd-journald\">a páxina de man <_:cmd-1/></link>."
