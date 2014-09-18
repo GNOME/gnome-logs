@@ -1,40 +1,23 @@
 # Turkish translation for gnome-logs.
 # Copyright (C) 2014 gnome-logs's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-logs package.
+#
 # Hongis_3 <hongis1982@gmail.com>, 2014.
 # Muhammet Kara <muhammetk@gmail.com>, 2014.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-05-06 08:36+0000\n"
-"PO-Revision-Date: 2014-05-19 15:49+0300\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-logs&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2014-09-18 09:03+0000\n"
+"PO-Revision-Date: 2014-09-18 18:43+0000\n"
 "Last-Translator: Muhammet Kara <muhammetk@gmail.com>\n"
 "Language-Team: Türkçe <gnome-turk@gnome.org>\n"
-"Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: tr_TR\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Gtranslator 2.91.6\n"
-
-#: ../data/appmenu.ui.h:1
-msgid "_New Window"
-msgstr "_Yeni Pencere"
-
-#: ../data/appmenu.ui.h:2
-msgid "_Help"
-msgstr "Y_ardım"
-
-#: ../data/appmenu.ui.h:3
-msgid "_About"
-msgstr "_Hakkında"
-
-#: ../data/appmenu.ui.h:4
-msgid "_Quit"
-msgstr "_Çıkış"
 
 #: ../data/gl-categorylist.ui.h:1
 msgid "Important"
@@ -76,7 +59,7 @@ msgstr "Güncellemeler"
 msgid "Usage"
 msgstr "Kullanım"
 
-#: ../data/gl-eventtoolbar.ui.h:1
+#: ../data/gl-eventtoolbar.ui.h:1 ../data/org.gnome.Logs.desktop.in.h:1
 msgid "Logs"
 msgstr "Günlükler"
 
@@ -104,36 +87,45 @@ msgstr "Çekirdek (Kernel) Aygıtı"
 msgid "Priority"
 msgstr "Öncelik"
 
+#: ../data/menus.ui.h:1
+msgid "_New Window"
+msgstr "_Yeni Pencere"
+
+#: ../data/menus.ui.h:2
+msgid "_Help"
+msgstr "Y_ardım"
+
+#: ../data/menus.ui.h:3
+msgid "_About"
+msgstr "_Hakkında"
+
+#: ../data/menus.ui.h:4
+msgid "_Quit"
+msgstr "_Çıkış"
+
 #: ../data/org.gnome.Logs.appdata.xml.in.h:1
-#, fuzzy
 msgid ""
 "Logs shows events from the systemd journal, and sorts them into categories, "
 "such as hardware and applications."
-msgstr ""
-"Kayıtlardaki systemd (Protokol ve sıralama kriteri) günlüğünden olayları "
-"gösterir ve onları böyle donanım ve uygulamalar vb. kategoriler halinde "
-"sıralar."
+msgstr "Günlükler, systemd günlüğünden olayları gösterir ve bunları donanım ve uygulamalar gibi kategoriler halinde sıralar."
 
 #: ../data/org.gnome.Logs.appdata.xml.in.h:2
-#, fuzzy
 msgid ""
 "Using Logs you can search your logs by typing a search term, and view "
 "detailed information about each event by clicking on it."
-msgstr ""
-"Günlükleri kullanarak bir arama terimi yazarak günlükleri arayabilir, ve "
-"bunun üzerine tıklayarak her olay hakkında ayrıntılı bilgileri "
-"görüntüleyebilirsiniz."
+msgstr "Günlükleri kullanarak, bir arama terimi yazarak günlüklerde arama yapabilir ve her olayın üzerine tıklayarak hakkındaki ayrıntılı bilgileri görüntüleyebilirsiniz."
 
-#: ../data/org.gnome.Logs.desktop.in.h:1
+#: ../data/org.gnome.Logs.desktop.in.h:2
 msgid "Log Viewer"
 msgstr "Günlük Görüntüleyici"
 
-#: ../data/org.gnome.Logs.desktop.in.h:2
+#: ../data/org.gnome.Logs.desktop.in.h:3
 msgid "View detailed event logs for the system"
 msgstr "Sistem için ayrıntılı olay günlüklerini görüntüle"
 
-#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: ../data/org.gnome.Logs.desktop.in.h:4
+#. Translators: Search terms to find this application. Do NOT translate or
+#. localize the semicolons! The list MUST also end with a semicolon!
+#: ../data/org.gnome.Logs.desktop.in.h:5
 msgid "log;journal;debug;error;"
 msgstr "log;kayıt;journal;günlük;dergi;debug;hata ayıklama;error;hata;"
 
@@ -142,22 +134,21 @@ msgid "translator-credits"
 msgstr "Yusuf YILMAZ"
 
 #: ../src/gl-application.c:100
-#, fuzzy
 msgid "View and search logs"
-msgstr "Görünüm ve arama günlükleri"
+msgstr "Günlükleri görüntüleyin ve arayın"
 
-#: ../src/gl-application.c:224
+#: ../src/gl-application.c:207
 msgid "Print version information and exit"
 msgstr "Sürüm bilgilerini yazdır ve çık"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventview.c:217
+#: ../src/gl-eventviewlist.c:217
 msgid "No results"
 msgstr "Sonuç yok"
 
-#: ../src/gl-eventview.c:604 ../src/gl-eventview.c:614
-#: ../src/gl-eventview.c:745 ../src/gl-eventview.c:755
+#: ../src/gl-eventviewlist.c:604 ../src/gl-eventviewlist.c:614
+#: ../src/gl-eventviewlist.c:745 ../src/gl-eventviewlist.c:755
 msgid "Not implemented"
 msgstr "Uygulanabilir değil"
 
