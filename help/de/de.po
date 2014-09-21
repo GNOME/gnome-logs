@@ -1,0 +1,193 @@
+# German translation for gnome-logs.
+# Copyright (C) 2014 gnome-logs's COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-logs package.
+# Christian Kirbach <Christian.Kirbach@gmail.com>, 2014.
+# Benjamin Steinwender <b@stbe.at>, 2014.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-logs master\n"
+"POT-Creation-Date: 2014-09-19 06:52+0000\n"
+"PO-Revision-Date: 2014-09-21 12:14+0200\n"
+"Last-Translator: Benjamin Steinwender <b@stbe.at>\n"
+"Language-Team: Deutsch <gnome-de@gnome.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Gtranslator 2.91.6\n"
+
+#. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
+msgctxt "_"
+msgid "translator-credits"
+msgstr "Christian Kirbach <christian.kirbach@gmail.com>, 2014"
+
+#. (itstool) path: info/title
+#: C/index.page:7
+msgctxt "text"
+msgid "Logs help"
+msgstr "Hilfe für Systemprotokoll"
+
+#. (itstool) path: info/title
+#: C/index.page:8
+msgctxt "link"
+msgid "Logs help"
+msgstr "Hilfe für Systemprotokoll"
+
+#. (itstool) path: info/desc
+#: C/index.page:13
+msgid "Browse and search through your systemd journal logs."
+msgstr "Untersuchen Sie die Protokolle vom systemd-Journal."
+
+#. (itstool) path: page/title
+#: C/index.page:16
+msgid "<_:media-1/> Logs"
+msgstr "<_:media-1/> Systemprotokoll"
+
+#. (itstool) path: media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/introduction.page:35
+msgctxt "_"
+msgid ""
+"external ref='media/gnome-logs-3-12.png' "
+"md5='56e83d7808cdfd80457691aff5ffc2d1'"
+msgstr "OK"
+
+#. (itstool) path: credit/name
+#: C/introduction.page:11
+msgid "David King"
+msgstr "David King"
+
+#. (itstool) path: credit/years
+#: C/introduction.page:13 C/introduction.page:18
+msgid "2014"
+msgstr "2014"
+
+#. (itstool) path: credit/name
+#: C/introduction.page:16 C/permissions.page:11
+msgid "Ekaterina Gerasimova"
+msgstr "Ekaterina Gerasimova"
+
+#. (itstool) path: info/desc
+#: C/introduction.page:23
+msgid "<app>Logs</app> is a viewer for the <sys>systemd</sys> journal."
+msgstr ""
+"<app>Systemprotokoll</app> ist ein Betrachter des <sys>systemd</sys>-"
+"Journals."
+
+#. (itstool) path: page/title
+#: C/introduction.page:27
+msgid "Introduction"
+msgstr "Einführung"
+
+#. (itstool) path: page/p
+#: C/introduction.page:29
+msgid ""
+"Logs shows events from the systemd journal, and sorts them into categories, "
+"such as hardware and applications."
+msgstr ""
+"Protokolle zeigt Ereignisse aus dem systemd-Journal an und kategorisiert "
+"diese u.a. als Hardware und Anwendungen."
+
+#. (itstool) path: page/p
+#: C/introduction.page:32
+msgid ""
+"Using Logs you can search your logs by typing a search term, and view "
+"detailed information about each event by clicking on it."
+msgstr ""
+"Mit Systemprotokoll können Sie Ihre Systemprotokolle durchsuchen, indem Sie "
+"einen Suchbegriff eintippen. Sie erhalten detaillierte Informationen zu "
+"jedem Ereignis, wenn Sie darauf mit der Maus klicken."
+
+#. (itstool) path: media/p
+#: C/introduction.page:36
+msgid "Screenshot of Logs showing some journal entries."
+msgstr "Bildschirmfoto von Systemprotokoll mit geöffneten Journal-Einträgen."
+
+#. (itstool) path: p/link
+#: C/legal.xml:5
+msgid "Creative Commons Attribution-ShareAlike 3.0 Unported License"
+msgstr ""
+"Creative Commons Namensnennung - Weitergabe unter gleichen Bedingungen 3.0 "
+"nicht angepasst"
+
+#. (itstool) path: license/p
+#: C/legal.xml:4
+msgid "This work is licensed under a <_:link-1/>."
+msgstr "Dieses Werk ist unter <_:link-1/> lizenziert."
+
+#. (itstool) path: credit/years
+#: C/permissions.page:13
+msgid "2013"
+msgstr "2013"
+
+#. (itstool) path: info/desc
+#: C/permissions.page:18
+msgid ""
+"You can read some or all of the logs, depending on which permissions you "
+"have."
+msgstr ""
+"Sie können einige oder alle Systemprotokolle lesen, abhängig von Ihren "
+"Berechtigungen."
+
+#. (itstool) path: page/title
+#: C/permissions.page:22
+msgid "Can I view all logs?"
+msgstr "Kann man sich alle Protokolle anschauen?"
+
+#. (itstool) path: page/p
+#: C/permissions.page:24
+msgid ""
+"You will be able to browse some messages that have been logged since the "
+"last reboot, depending on which permissions you have. Some of your "
+"permissions are set by your distribution, but they can be changed by your "
+"system administrator."
+msgstr ""
+"Sie dürfen einige seit dem letzten Neustart protokollierte Nachrichten "
+"durchsehen, abhängig von Ihren Berechtigungen. Einige Ihrer Berechtigungen "
+"sind durch Ihre Distribution vorgegeben, aber sie können von Ihrem "
+"Systemverwalter angepasst werden."
+
+#. (itstool) path: page/p
+#. TRANSLATORS: 'Standard' is taken from the user account type in the
+#. control panel when used in <em> or <gui> tags.
+#: C/permissions.page:30
+msgid ""
+"By default, <em href=\"help:gnome-help/user-admin-explain\">Standard</em> "
+"users are shown a limited set of logs, such as application logs and their "
+"own session logs. If you are a <gui>Standard</gui> user and do not see any "
+"logs, it is possible that your system administrator has disabled your "
+"ability to view logs."
+msgstr ""
+"Laut Voreinstellung werden <em href=\"help:gnome-help/user-admin-explain"
+"\">Standard</em>-Benutzern eine begrenzte Menge Systemprotokoll gezeigt, wie "
+"z.B. Anwendungsprotokolle und zugehörige Sitzungsprotokolle. Wenn sie ein "
+"<gui>Standard</gui>-Benutzer sind und keine Systemprotokolle sehen, so hat "
+"eventuell Ihr Systemverwalter verhindert, dass Sie Systemprotokoll "
+"betrachten dürfen."
+
+#. (itstool) path: page/p
+#. TRANSLATORS: 'Administrator' is taken from the user account type in the
+#. control panel when used in <em> or <gui> tags.
+#: C/permissions.page:39
+msgid ""
+"<em>Administrator</em> users will normally be able to view more sensitive "
+"logs, such as kernel logs and the logs of other users. It is possible for "
+"administrators to have different levels of access to logs, so you may not be "
+"able to view all logs. If you are an <gui>Administrator</gui> user, then "
+"only other administrators can change which logs you can access. For more "
+"information about log access permissions, <link href=\"man:systemd-journald"
+"\">see the <_:cmd-1/> man page</link>."
+msgstr ""
+"<em>Systemverwalter</em> können normalerweise kritischere Systemprotokolle "
+"einsehen, wie z.B. Kernel-Protokolle und die Protokolle anderer Benutzer. "
+"Eventuell haben Systemverwalter verschiedene Zugriffsstufen auf "
+"Systemprotokolle, d.h. Sie sehen vielleicht nicht alle Systemprotokolle. "
+"Wenn Sie <gui>Systemverwalter</gui> sind, dann können nur andere "
+"Systemverwalter Ihre Berechtigungen für Protokolle anpassen. <link href="
+"\"man:systemd-journald\">Lesen Sie <_:cmd-1/> man page</link> für weitere "
+"Informationen zu Zugriffsberechtigungen auf Systemprotokolle."
