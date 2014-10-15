@@ -121,6 +121,22 @@ dist_appicon48_DATA = data/icons/48x48/gnome-logs.png
 dist_appicon256_DATA = data/icons/256x256/gnome-logs.png
 dist_appicon512_DATA = data/icons/512x512/gnome-logs.png
 
+HCiconthemedir = $(datadir)/icons/HighContrast
+
+HCappicon16dir = $(HCiconthemedir)/16x16/apps
+HCappicon22dir = $(HCiconthemedir)/22x22/apps
+HCappicon24dir = $(HCiconthemedir)/24x24/apps
+HCappicon32dir = $(HCiconthemedir)/32x32/apps
+HCappicon48dir = $(HCiconthemedir)/48x48/apps
+HCappicon256dir = $(HCiconthemedir)/256x256/apps
+
+dist_HCappicon16_DATA = data/icons/HighContrast/16x16/gnome-logs.png
+dist_HCappicon22_DATA = data/icons/HighContrast/22x22/gnome-logs.png
+dist_HCappicon24_DATA = data/icons/HighContrast/24x24/gnome-logs.png
+dist_HCappicon32_DATA = data/icons/HighContrast/32x32/gnome-logs.png
+dist_HCappicon48_DATA = data/icons/HighContrast/48x48/gnome-logs.png
+dist_HCappicon256_DATA = data/icons/HighContrast/256x256/gnome-logs.png
+
 update_icon_cache = gtk-update-icon-cache --ignore-theme-index --force
 
 install-data-hook: install-update-icon-cache
@@ -128,10 +144,12 @@ uninstall-hook: uninstall-update-icon-cache
 
 install-update-icon-cache:
 	$(AM_V_at)$(POST_INSTALL)
+	test -n "$(DESTDIR)" || $(update_icon_cache) "$(HCiconthemedir)"
 	test -n "$(DESTDIR)" || $(update_icon_cache) "$(iconthemedir)"
 
 uninstall-update-icon-cache:
 	$(AM_V_at)$(POST_UNINSTALL)
+	test -n "$(DESTDIR)" || $(update_icon_cache) "$(HCiconthemedir)"
 	test -n "$(DESTDIR)" || $(update_icon_cache) "$(iconthemedir)"
 
 src/gl-enums.c: $(gnome_logs_enum_headers) src/gl-enums.h Makefile
