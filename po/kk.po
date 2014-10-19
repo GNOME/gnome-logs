@@ -1,0 +1,211 @@
+# Kazakh translation for gnome-logs.
+# Copyright (C) 2014 gnome-logs's COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-logs package.
+# Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2014.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-logs master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"logs&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2014-10-15 14:23+0000\n"
+"PO-Revision-Date: 2014-10-19 09:01+0600\n"
+"Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
+"Language-Team: Kazakh <kk@li.org>\n"
+"Language: kk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+
+#: ../data/gl-categorylist.ui.h:1
+msgid "Important"
+msgstr "Маңызды"
+
+#: ../data/gl-categorylist.ui.h:2
+msgid "Alerts"
+msgstr "Ескертулер"
+
+#: ../data/gl-categorylist.ui.h:3
+msgid "Starred"
+msgstr "Жұлдызшалы"
+
+#: ../data/gl-categorylist.ui.h:4
+msgid "All"
+msgstr "Барлығы"
+
+#: ../data/gl-categorylist.ui.h:5
+msgid "Applications"
+msgstr "Қолданбалар"
+
+#: ../data/gl-categorylist.ui.h:6
+msgid "System"
+msgstr "Жүйе"
+
+#: ../data/gl-categorylist.ui.h:7
+msgid "Security"
+msgstr "Қауіпсіздік"
+
+#: ../data/gl-categorylist.ui.h:8
+msgid "Hardware"
+msgstr "Құрылғылар"
+
+#: ../data/gl-categorylist.ui.h:9
+msgid "Updates"
+msgstr "Жаңартулар"
+
+#: ../data/gl-categorylist.ui.h:10
+msgid "Usage"
+msgstr "Қолданылу"
+
+#: ../data/gl-eventtoolbar.ui.h:1 ../data/org.gnome.Logs.desktop.in.h:1
+msgid "Logs"
+msgstr "Логтар"
+
+#: ../data/gl-eventtoolbar.ui.h:2
+msgid "Go back to the event view"
+msgstr "Оқиға көрінісіне қайтып оралу"
+
+#: ../data/gl-eventtoolbar.ui.h:3
+msgid "Search the displayed logs"
+msgstr "Көрсетілген логтардан іздеу"
+
+#: ../data/gl-eventviewdetail.ui.h:1
+msgid "Message"
+msgstr "Хабарлама"
+
+#: ../data/gl-eventviewdetail.ui.h:2
+msgid "Audit Session"
+msgstr "Аудит сессиясы"
+
+#: ../data/gl-eventviewdetail.ui.h:3
+msgid "Kernel Device"
+msgstr "Ядро құрылғысы"
+
+#: ../data/gl-eventviewdetail.ui.h:4
+msgid "Priority"
+msgstr "Приоритеті"
+
+#: ../data/gl-eventviewdetail.ui.h:5
+msgid "Subject"
+msgstr "Тақырыбы"
+
+#: ../data/gl-eventviewdetail.ui.h:6
+msgid "Defined By"
+msgstr "Анықталған"
+
+#: ../data/gl-eventviewdetail.ui.h:7
+msgid "Support"
+msgstr "Қолдау"
+
+#: ../data/gl-eventviewdetail.ui.h:8
+msgid "Documentation"
+msgstr "Құжаттама"
+
+#: ../data/menus.ui.h:1
+msgid "_New Window"
+msgstr "_Жаңа терезе"
+
+#: ../data/menus.ui.h:2
+msgid "_Help"
+msgstr "_Көмек"
+
+#: ../data/menus.ui.h:3
+msgid "_About"
+msgstr "Ос_ы туралы"
+
+#: ../data/menus.ui.h:4
+msgid "_Quit"
+msgstr "_Шығу"
+
+#: ../data/org.gnome.Logs.appdata.xml.in.h:1
+msgid ""
+"Logs shows events from the systemd journal, and sorts them into categories, "
+"such as hardware and applications."
+msgstr ""
+"Логтар systemd журналынан оқиғаларды көрсетеді, және де оларды құрылғылар, "
+"қолданбалар сияқты санаттар бойынша сұрыптайды."
+
+#: ../data/org.gnome.Logs.appdata.xml.in.h:2
+msgid ""
+"Using Logs you can search your logs by typing a search term, and view "
+"detailed information about each event by clicking on it."
+msgstr ""
+"Логтар көмегімен сіз іздеу сөзін енгізу арқылы іздей аласыз, ал, оқиға "
+"туралы көбірек білу үшін, оған шерте аласыз."
+
+#: ../data/org.gnome.Logs.desktop.in.h:2
+msgid "Log Viewer"
+msgstr "Логтар көрсетушісі"
+
+#: ../data/org.gnome.Logs.desktop.in.h:3
+msgid "View detailed event logs for the system"
+msgstr "Жүйенің толығырақ ақпараты бар оқиғалар логын қарау"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: ../data/org.gnome.Logs.desktop.in.h:5
+msgid "log;journal;debug;error;"
+msgstr "лог;журнал;жөндеу;қате;"
+
+#: ../src/gl-application.c:99
+msgid "translator-credits"
+msgstr "Baurzhan Muftakhidinov <baurthefirst@gmail.com>"
+
+#: ../src/gl-application.c:100
+msgid "View and search logs"
+msgstr "Жүйелік журналдарды қарау және олардан іздеу"
+
+#: ../src/gl-application.c:207
+msgid "Print version information and exit"
+msgstr "Нұсқа ақпаратын шығару және шығу"
+
+#. Translators: Shown when there are no (zero) results in the current
+#. * view.
+#: ../src/gl-eventviewlist.c:217
+msgid "No results"
+msgstr "Нәтижелері жоқ"
+
+#: ../src/gl-eventviewlist.c:604 ../src/gl-eventviewlist.c:614
+#: ../src/gl-eventviewlist.c:745 ../src/gl-eventviewlist.c:755
+msgid "Not implemented"
+msgstr "Іске асырылмаған"
+
+#. Translators: timestamp format for events on the current
+#. * day, showing the time in 12-hour format.
+#: ../src/gl-util.c:95
+msgid "%l:%M %p"
+msgstr "%l:%M %p"
+
+#. Translators: timestamp format for events in the current
+#. * year, showing the abbreviated month name, day of the
+#. * month and the time in 12-hour format.
+#: ../src/gl-util.c:101
+msgid "%b %e %l:%M %p"
+msgstr "%b %e %l:%M %p"
+
+#. Translators: timestamp format for events in a different
+#. * year, showing the abbreviated month name, day of the
+#. * month, year and the time in 12-hour format.
+#: ../src/gl-util.c:107
+msgid "%b %e %Y %l:%M %p"
+msgstr "%b %e %Y %l:%M %p"
+
+#. Translators: timestamp format for events on the current
+#. * day, showing the time in 24-hour format.
+#: ../src/gl-util.c:120
+msgid "%H:%M"
+msgstr "%H:%M"
+
+#. Translators: timestamp format for events in the current
+#. * year, showing the abbreviated month name, day of the
+#. * month and the time in 24-hour format.
+#: ../src/gl-util.c:126
+msgid "%b %e %H:%M"
+msgstr "%b %e %H:%M"
+
+#. Translators: timestamp format for events in a different
+#. * year, showing the abbreviated month name, day of the
+#. * month, year and the time in 24-hour format.
+#: ../src/gl-util.c:132
+msgid "%b %e %Y %H:%M"
+msgstr "%b %e %Y %H:%M"
