@@ -1,6 +1,6 @@
 /*
  *  GNOME Logs - View and search logs
- *  Copyright (C) 2013  Red Hat, Inc.
+ *  Copyright (C) 2013, 2014  Red Hat, Inc.
  *
  *  This program is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -20,7 +20,6 @@
 #define GL_JOURNAL_H_
 
 #include <glib-object.h>
-#include <systemd/sd-journal.h>
 
 G_BEGIN_DECLS
 

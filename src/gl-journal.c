@@ -1,6 +1,6 @@
 /*
  *  GNOME Logs - View and search logs
- *  Copyright (C) 2013  Red Hat, Inc.
+ *  Copyright (C) 2013, 2014  Red Hat, Inc.
  *
  *  This program is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -21,6 +21,7 @@
 #include <glib-unix.h>
 #include <gio/gio.h>
 #include <stdlib.h>
+#include <systemd/sd-journal.h>
 
 typedef struct
 {

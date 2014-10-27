@@ -21,7 +21,6 @@
 #include <glib/gi18n.h>
 #include <glib-unix.h>
 #include <stdlib.h>
-#include <systemd/sd-journal.h>
 
 #include "gl-enums.h"
 
