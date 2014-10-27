@@ -1,3 +1,12 @@
+GNOME Logs 3.15.1
+=================
+
+* Coverity warning fix
+* enhanced systemd message catalog parsing and display from Jonathan Kang
+* Persian and Kazakh translations
+* updates to Brazilian Portuguese, Hungarian, Norwegian bokmål and Spanish
+  translations
+
 GNOME Logs 3.14.0
 =================
 
