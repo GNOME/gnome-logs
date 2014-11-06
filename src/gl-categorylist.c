@@ -23,6 +23,13 @@
 #include "gl-enums.h"
 #include "gl-eventviewlist.h"
 
+enum
+{
+    PROP_0,
+    PROP_CATEGORY,
+    N_PROPERTIES
+};
+
 typedef struct
 {
     GtkWidget *important;
@@ -35,9 +42,12 @@ typedef struct
     GtkWidget *hardware;
     GtkWidget *updates;
     GtkWidget *usage;
+    GlCategoryListFilter category;
 } GlCategoryListPrivate;
 
 G_DEFINE_TYPE_WITH_PRIVATE (GlCategoryList, gl_category_list, GTK_TYPE_LIST_BOX)
+
+static GParamSpec *obj_properties[N_PROPERTIES] = { NULL, };
 
 static gboolean
 gl_category_list_focus (GtkWidget *listbox, GtkDirectionType direction)
@@ -75,86 +85,137 @@ on_gl_category_list_row_selected (GlCategoryList *listbox,
                                   gpointer user_data)
 {
     GlCategoryListPrivate *priv;
-    GtkWidget *toplevel;
-    GActionMap *appwindow;
-    GAction *category;
     GEnumClass *eclass;
     GEnumValue *evalue;
 
     priv = gl_category_list_get_instance_private (listbox);
-    toplevel = gtk_widget_get_toplevel (GTK_WIDGET (listbox));
-
-    if (gtk_widget_is_toplevel (toplevel))
-    {
-        appwindow = G_ACTION_MAP (toplevel);
-        category = g_action_map_lookup_action (appwindow, "category");
-    }
-    else
-    {
-        /* TODO: Investigate whether this only happens during dispose. */
-        g_debug ("%s",
-                 "Category list row selected while not in a toplevel");
-        return;
-    }
-
-    eclass = g_type_class_ref (GL_TYPE_EVENT_VIEW_LIST_FILTER);
+    eclass = g_type_class_ref (GL_TYPE_CATEGORY_LIST_FILTER);
 
     if (row == GTK_LIST_BOX_ROW (priv->important))
     {
-        evalue = g_enum_get_value (eclass, GL_EVENT_VIEW_LIST_FILTER_IMPORTANT);
+        evalue = g_enum_get_value (eclass, GL_CATEGORY_LIST_FILTER_IMPORTANT);
     }
     else if (row == GTK_LIST_BOX_ROW (priv->alerts))
     {
-        evalue = g_enum_get_value (eclass, GL_EVENT_VIEW_LIST_FILTER_ALERTS);
+        evalue = g_enum_get_value (eclass, GL_CATEGORY_LIST_FILTER_ALERTS);
     }
     else if (row == GTK_LIST_BOX_ROW (priv->starred))
     {
-        evalue = g_enum_get_value (eclass, GL_EVENT_VIEW_LIST_FILTER_STARRED);
+        evalue = g_enum_get_value (eclass, GL_CATEGORY_LIST_FILTER_STARRED);
     }
     else if (row == GTK_LIST_BOX_ROW (priv->all))
     {
-        evalue = g_enum_get_value (eclass, GL_EVENT_VIEW_LIST_FILTER_ALL);
+        evalue = g_enum_get_value (eclass, GL_CATEGORY_LIST_FILTER_ALL);
     }
     else if (row == GTK_LIST_BOX_ROW (priv->applications))
     {
-        evalue = g_enum_get_value (eclass, GL_EVENT_VIEW_LIST_FILTER_APPLICATIONS);
+        evalue = g_enum_get_value (eclass, GL_CATEGORY_LIST_FILTER_APPLICATIONS);
     }
     else if (row == GTK_LIST_BOX_ROW (priv->system))
     {
-        evalue = g_enum_get_value (eclass, GL_EVENT_VIEW_LIST_FILTER_SYSTEM);
+        evalue = g_enum_get_value (eclass, GL_CATEGORY_LIST_FILTER_SYSTEM);
     }
     else if (row == GTK_LIST_BOX_ROW (priv->security))
     {
-        evalue = g_enum_get_value (eclass, GL_EVENT_VIEW_LIST_FILTER_SECURITY);
+        evalue = g_enum_get_value (eclass, GL_CATEGORY_LIST_FILTER_SECURITY);
     }
     else if (row == GTK_LIST_BOX_ROW (priv->hardware))
     {
-        evalue = g_enum_get_value (eclass, GL_EVENT_VIEW_LIST_FILTER_HARDWARE);
+        evalue = g_enum_get_value (eclass, GL_CATEGORY_LIST_FILTER_HARDWARE);
     }
     else if (row == GTK_LIST_BOX_ROW (priv->updates))
     {
-        evalue = g_enum_get_value (eclass, GL_EVENT_VIEW_LIST_FILTER_UPDATES);
+        evalue = g_enum_get_value (eclass, GL_CATEGORY_LIST_FILTER_UPDATES);
     }
     else if (row == GTK_LIST_BOX_ROW (priv->usage))
     {
-        evalue = g_enum_get_value (eclass, GL_EVENT_VIEW_LIST_FILTER_USAGE);
+        evalue = g_enum_get_value (eclass, GL_CATEGORY_LIST_FILTER_USAGE);
     }
     else
     {
-        g_assert_not_reached ();
+        /* This is only for the occasion when GlCategoryList is destroyed,
+         * in other words when there are no children for GlCategoryList */
+        return;
     }
 
-    g_action_activate (category, g_variant_new_string (evalue->value_nick));
+    priv->category = evalue->value;
+
+    g_object_notify_by_pspec (G_OBJECT (listbox),
+                              obj_properties[PROP_CATEGORY]);
 
     g_type_class_unref (eclass);
+}
+
+GlCategoryListFilter
+gl_category_list_get_category (GlCategoryList *list)
+{
+    GlCategoryListPrivate *priv;
+
+    priv = gl_category_list_get_instance_private (list);
+
+    return priv->category;
+}
+
+static void
+gl_category_list_get_property (GObject *object,
+                               guint prop_id,
+                               GValue *value,
+                               GParamSpec *pspec)
+{
+    GlCategoryList *list = GL_CATEGORY_LIST (object);
+    GlCategoryListPrivate *priv = gl_category_list_get_instance_private (list);
+
+    switch (prop_id)
+    {
+        case PROP_CATEGORY:
+            g_value_set_enum (value, priv->category);
+            break;
+        default:
+            G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
+            break;
+    }
+}
+
+static void
+gl_category_list_set_property (GObject *object,
+                               guint prop_id,
+                               const GValue *value,
+                               GParamSpec *pspec)
+{
+    GlCategoryList *list = GL_CATEGORY_LIST (object);
+    GlCategoryListPrivate *priv = gl_category_list_get_instance_private (list);
+
+    switch (prop_id)
+    {
+        case PROP_CATEGORY:
+            priv->category = g_value_get_enum (value);
+            break;
+        default:
+            G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
+            break;
+    }
 }
 
 static void
 gl_category_list_class_init (GlCategoryListClass *klass)
 {
+    GObjectClass *gobject_class = G_OBJECT_CLASS (klass);
     GtkWidgetClass *widget_class = GTK_WIDGET_CLASS (klass);
 
+    gobject_class->get_property = gl_category_list_get_property;
+    gobject_class->set_property = gl_category_list_set_property;
     widget_class->focus = gl_category_list_focus;
+
+    obj_properties[PROP_CATEGORY] = g_param_spec_enum ("category", "Category",
+                                                       "Filter events by",
+                                                       GL_TYPE_CATEGORY_LIST_FILTER,
+                                                       GL_CATEGORY_LIST_FILTER_ALL,
+                                                       G_PARAM_READWRITE |
+                                                       G_PARAM_STATIC_STRINGS);
+
+    g_object_class_install_properties (gobject_class, N_PROPERTIES,
+                                       obj_properties);
+
     gtk_widget_class_set_template_from_resource (widget_class,
                                                  "/org/gnome/Logs/gl-categorylist.ui");
     gtk_widget_class_bind_template_child_private (widget_class, GlCategoryList,
@@ -201,6 +262,7 @@ gl_category_list_init (GlCategoryList *list)
     GlCategoryListPrivate *priv;
 
     gtk_widget_init_template (GTK_WIDGET (list));
+
     priv = gl_category_list_get_instance_private (list);
     gtk_list_box_set_header_func (GTK_LIST_BOX (list),
                                   (GtkListBoxUpdateHeaderFunc)gl_category_list_header_func,

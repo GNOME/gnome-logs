@@ -35,11 +35,41 @@ typedef struct
     GtkListBoxClass parent_class;
 } GlCategoryListClass;
 
+/*
+ * GlCategoryListFilter:
+ * @GL_CATEGORY_LIST_FILTER_IMPORTANT:
+ * @GL_CATEGORY_LIST_FILTER_ALERTS:
+ * @GL_CATEGORY_LIST_FILTER_STARRED:
+ * @GL_CATEGORY_LIST_FILTER_ALL:
+ * @GL_CATEGORY_LIST_FILTER_APPLICATIONS:
+ * @GL_CATEGORY_LIST_FILTER_SYSTEM:
+ * @GL_CATEGORY_LIST_FILTER_SECURITY:
+ * @GL_CATEGORY_LIST_FILTER_HARDWARE:
+ * @GL_CATEGORY_LIST_FILTER_UPDATES:
+ * @GL_CATEGORY_LIST_FILTER_USAGE:
+ *
+ * The category, selected in #GlCategoryList, to filter the events by.
+ */
+typedef enum
+{
+    GL_CATEGORY_LIST_FILTER_IMPORTANT,
+    GL_CATEGORY_LIST_FILTER_ALERTS,
+    GL_CATEGORY_LIST_FILTER_STARRED,
+    GL_CATEGORY_LIST_FILTER_ALL,
+    GL_CATEGORY_LIST_FILTER_APPLICATIONS,
+    GL_CATEGORY_LIST_FILTER_SYSTEM,
+    GL_CATEGORY_LIST_FILTER_SECURITY,
+    GL_CATEGORY_LIST_FILTER_HARDWARE,
+    GL_CATEGORY_LIST_FILTER_UPDATES,
+    GL_CATEGORY_LIST_FILTER_USAGE
+} GlCategoryListFilter;
+
 #define GL_TYPE_CATEGORY_LIST (gl_category_list_get_type ())
 #define GL_CATEGORY_LIST(object) (G_TYPE_CHECK_INSTANCE_CAST ((object), GL_TYPE_CATEGORY_LIST, GlCategoryList))
 
 GType gl_category_list_get_type (void);
 GtkWidget * gl_category_list_new (void);
+GlCategoryListFilter gl_category_list_get_category (GlCategoryList *list);
 
 G_END_DECLS
 

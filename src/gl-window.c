@@ -22,6 +22,7 @@
 
 #include "gl-categorylist.h"
 #include "gl-eventtoolbar.h"
+#include "gl-eventview.h"
 #include "gl-eventviewlist.h"
 #include "gl-enums.h"
 #include "gl-util.h"
@@ -29,9 +30,7 @@
 typedef struct
 {
     GtkWidget *event_toolbar;
-    GtkWidget *event_search;
-    GtkWidget *search_entry;
-    GtkWidget *events;
+    GtkWidget *event;
 } GlWindowPrivate;
 
 G_DEFINE_TYPE_WITH_PRIVATE (GlWindow, gl_window, GTK_TYPE_APPLICATION_WINDOW)
@@ -59,34 +58,7 @@ on_action_toggle (GSimpleAction *action,
 }
 
 static void
-on_category (GSimpleAction *action,
-             GVariant *variant,
-             gpointer user_data)
-{
-    GlWindowPrivate *priv;
-    const gchar *category;
-    GlEventViewList *events;
-    GEnumClass *eclass;
-    GEnumValue *evalue;
-
-    priv = gl_window_get_instance_private (GL_WINDOW (user_data));
-    category = g_variant_get_string (variant, NULL);
-    events = GL_EVENT_VIEW_LIST (priv->events);
-    eclass = g_type_class_ref (GL_TYPE_EVENT_VIEW_LIST_FILTER);
-    evalue = g_enum_get_value_by_nick (eclass, category);
-
-    /* First switch the event view back to list mode if the category
-       tab is clicked. */
-    gl_event_view_list_set_mode (events, GL_EVENT_VIEW_MODE_LIST);
-    gl_event_view_list_set_filter (events, evalue->value);
-
-    g_simple_action_set_state (action, variant);
-
-    g_type_class_unref (eclass);
-}
-
-static void
-on_close (GSimpleAction *action, 
+on_close (GSimpleAction *action,
           GVariant *variant,
           gpointer user_data)
 {
@@ -118,11 +90,11 @@ on_toolbar_mode (GSimpleAction *action,
     {
         /* Switch the event view back to list mode if the back button is
          * clicked. */
-        GlEventViewList *view;
+        GlEventView *view;
 
-        view = GL_EVENT_VIEW_LIST (priv->events);
+        view = GL_EVENT_VIEW (priv->event);
 
-        gl_event_view_list_set_mode (view, GL_EVENT_VIEW_MODE_LIST);
+        gl_event_view_set_mode (view, GL_EVENT_VIEW_MODE_LIST);
 
         g_simple_action_set_enabled (G_SIMPLE_ACTION (search), TRUE);
     }
@@ -145,11 +117,13 @@ on_view_mode (GSimpleAction *action,
     GlWindowPrivate *priv;
     const gchar *mode;
     GlEventToolbar *toolbar;
+    GlEventView *event;
     GEnumClass *eclass;
     GEnumValue *evalue;
 
     priv = gl_window_get_instance_private (GL_WINDOW (user_data));
     mode = g_variant_get_string (variant, NULL);
+    event = GL_EVENT_VIEW (priv->event);
     toolbar = GL_EVENT_TOOLBAR (priv->event_toolbar);
     eclass = g_type_class_ref (GL_TYPE_EVENT_VIEW_MODE);
     evalue = g_enum_get_value_by_nick (eclass, mode);
@@ -161,6 +135,7 @@ on_view_mode (GSimpleAction *action,
             break;
         case GL_EVENT_VIEW_MODE_DETAIL:
             gl_event_toolbar_set_mode (toolbar, GL_EVENT_TOOLBAR_MODE_DETAIL);
+            gl_event_view_set_mode (event, GL_EVENT_VIEW_MODE_DETAIL);
             break;
     }
 
@@ -176,21 +151,13 @@ on_search (GSimpleAction *action,
 {
     gboolean state;
     GlWindowPrivate *priv;
+    GlEventView *view;
 
     state = g_variant_get_boolean (variant);
     priv = gl_window_get_instance_private (GL_WINDOW (user_data));
+    view = GL_EVENT_VIEW (priv->event);
 
-    gtk_search_bar_set_search_mode (GTK_SEARCH_BAR (priv->event_search), state);
-
-    if (state)
-    {
-        gtk_widget_grab_focus (priv->search_entry);
-        gtk_editable_set_position (GTK_EDITABLE (priv->search_entry), -1);
-    }
-    else
-    {
-        gtk_entry_set_text (GTK_ENTRY (priv->search_entry), "");
-    }
+    gl_event_view_set_search_mode (view, state);
 
     g_simple_action_set_state (action, variant);
 }
@@ -201,6 +168,7 @@ on_gl_window_key_press_event (GlWindow *window,
                               gpointer user_data)
 {
     GlWindowPrivate *priv;
+    GlEventView *view;
     GAction *action;
     GVariant *variant;
     const gchar *mode;
@@ -209,16 +177,11 @@ on_gl_window_key_press_event (GlWindow *window,
 
     priv = gl_window_get_instance_private (window);
     action = g_action_map_lookup_action (G_ACTION_MAP (window), "search");
+    view = GL_EVENT_VIEW (priv->event);
 
-    if (g_action_get_enabled (action))
+    if (gl_event_view_handle_search_event (view, action, event) == GDK_EVENT_STOP)
     {
-        if (gtk_search_bar_handle_event (GTK_SEARCH_BAR (priv->event_search),
-                                         event) == GDK_EVENT_STOP)
-        {
-            g_action_change_state (action, g_variant_new_boolean (TRUE));
-
-            return GDK_EVENT_STOP;
-        }
+        return GDK_EVENT_STOP;
     }
 
     action = g_action_map_lookup_action (G_ACTION_MAP (window), "view-mode");
@@ -238,10 +201,10 @@ on_gl_window_key_press_event (GlWindow *window,
                                                            (GdkEventKey*)event)
                 == GDK_EVENT_STOP)
             {
-                GlEventViewList *events;
+                GlEventView *view;
 
-                events = GL_EVENT_VIEW_LIST (priv->events);
-                gl_event_view_list_set_mode (events, GL_EVENT_VIEW_MODE_LIST);
+                view = GL_EVENT_VIEW (priv->event);
+                gl_event_view_set_mode (view, GL_EVENT_VIEW_MODE_LIST);
                 g_type_class_unref (eclass);
 
                 return GDK_EVENT_STOP;
@@ -254,32 +217,7 @@ on_gl_window_key_press_event (GlWindow *window,
     return GDK_EVENT_PROPAGATE;
 }
 
-static void
-on_gl_window_search_entry_changed (GtkSearchEntry *entry,
-                                   gpointer user_data)
-{
-    GlWindowPrivate *priv;
-
-    priv = gl_window_get_instance_private (GL_WINDOW (user_data));
-
-    gl_event_view_list_search (GL_EVENT_VIEW_LIST (priv->events),
-                               gtk_entry_get_text (GTK_ENTRY (priv->search_entry)));
-}
-
-static void
-on_gl_window_search_bar_notify_search_mode_enabled (GtkSearchBar *search_bar,
-                                                    GParamSpec *pspec,
-                                                    gpointer user_data)
-{
-    GAction *search;
-
-    search = g_action_map_lookup_action (G_ACTION_MAP (user_data), "search");
-    g_action_change_state (search,
-                           g_variant_new_boolean (gtk_search_bar_get_search_mode (search_bar)));
-}
-
 static GActionEntry actions[] = {
-    { "category", on_action_radio, "s", "'important'", on_category },
     { "view-mode", on_action_radio, "s", "'list'", on_view_mode },
     { "toolbar-mode", on_action_radio, "s", "'list'", on_toolbar_mode },
     { "search", on_action_toggle, NULL, "false", on_search },
@@ -296,18 +234,10 @@ gl_window_class_init (GlWindowClass *klass)
     gtk_widget_class_bind_template_child_private (widget_class, GlWindow,
                                                   event_toolbar);
     gtk_widget_class_bind_template_child_private (widget_class, GlWindow,
-                                                  event_search);
-    gtk_widget_class_bind_template_child_private (widget_class, GlWindow,
-                                                  search_entry);
-    gtk_widget_class_bind_template_child_private (widget_class, GlWindow,
-                                                  events);
+                                                  event);
 
     gtk_widget_class_bind_template_callback (widget_class,
                                              on_gl_window_key_press_event);
-    gtk_widget_class_bind_template_callback (widget_class,
-                                             on_gl_window_search_entry_changed);
-    gtk_widget_class_bind_template_callback (widget_class,
-                                             on_gl_window_search_bar_notify_search_mode_enabled);
 }
 
 static void
