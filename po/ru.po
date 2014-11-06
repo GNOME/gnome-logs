@@ -3,15 +3,16 @@
 # This file is distributed under the same license as the gnome-logs package.
 # Stas Solovey <whats_up@tut.by>, 2014.
 # Yuri Myasoedov <ymyasoedov@yandex.ru>, 2014.
+# Mihail Gurin <mikegurin@yandex.ru>, 2014.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-03-11 19:10+0000\n"
-"PO-Revision-Date: 2014-03-23 13:36+0400\n"
-"Last-Translator: Yuri Myasoedov <ymyasoedov@yandex.ru>\n"
+"POT-Creation-Date: 2014-11-06 07:47+0000\n"
+"PO-Revision-Date: 2014-11-06 10:47+0400\n"
+"Last-Translator: Mihail Gurin <mikegurin@yandex.ru>\n"
 "Language-Team: русский <gnome-cyr@gnome.org>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -20,22 +21,6 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Poedit 1.6.4\n"
-
-#: ../data/appmenu.ui.h:1
-msgid "_New Window"
-msgstr "_Создать окно"
-
-#: ../data/appmenu.ui.h:2
-msgid "_Help"
-msgstr "_Справка"
-
-#: ../data/appmenu.ui.h:3
-msgid "_About"
-msgstr "_О приложении"
-
-#: ../data/appmenu.ui.h:4
-msgid "_Quit"
-msgstr "_Завершить"
 
 #: ../data/gl-categorylist.ui.h:1
 msgid "Important"
@@ -77,7 +62,9 @@ msgstr "Обновления"
 msgid "Usage"
 msgstr "Использование"
 
-#: ../data/gl-eventtoolbar.ui.h:1
+#. Name and summary taken from the desktop file.
+#: ../data/gl-eventtoolbar.ui.h:1 ../data/org.gnome.Logs.appdata.xml.in.h:2
+#: ../data/org.gnome.Logs.desktop.in.h:1
 msgid "Logs"
 msgstr "Журналы"
 
@@ -89,7 +76,60 @@ msgstr "Вернуться к просмотру событий"
 msgid "Search the displayed logs"
 msgstr "Поиск по журналам"
 
-#: ../data/gnome-logs.appdata.xml.in.h:1
+#: ../data/gl-eventviewdetail.ui.h:1
+msgid "Message"
+msgstr "Сообщение"
+
+#: ../data/gl-eventviewdetail.ui.h:2
+msgid "Audit Session"
+msgstr "Сеанс аудита"
+
+#: ../data/gl-eventviewdetail.ui.h:3
+msgid "Kernel Device"
+msgstr "Устройство"
+
+#: ../data/gl-eventviewdetail.ui.h:4
+msgid "Priority"
+msgstr "Приоритет"
+
+#: ../data/gl-eventviewdetail.ui.h:5
+msgid "Subject"
+msgstr "Тема"
+
+#: ../data/gl-eventviewdetail.ui.h:6
+msgid "Defined By"
+msgstr "Определено"
+
+#: ../data/gl-eventviewdetail.ui.h:7
+msgid "Support"
+msgstr "Поддержка"
+
+#: ../data/gl-eventviewdetail.ui.h:8
+msgid "Documentation"
+msgstr "Документация"
+
+#: ../data/menus.ui.h:1
+msgid "_New Window"
+msgstr "_Создать окно"
+
+#: ../data/menus.ui.h:2
+msgid "_Help"
+msgstr "_Справка"
+
+#: ../data/menus.ui.h:3
+msgid "_About"
+msgstr "_О приложении"
+
+#: ../data/menus.ui.h:4
+msgid "_Quit"
+msgstr "_Завершить"
+
+#: ../data/org.gnome.Logs.appdata.xml.in.h:3
+#: ../data/org.gnome.Logs.desktop.in.h:3
+msgid "View detailed event logs for the system"
+msgstr "Просмотр подробной информации о событиях в системе"
+
+#: ../data/org.gnome.Logs.appdata.xml.in.h:4
 msgid ""
 "Logs shows events from the systemd journal, and sorts them into categories, "
 "such as hardware and applications."
@@ -97,7 +137,7 @@ msgstr ""
 "Приложение «Журналы» показывает события из журнала systemd и упорядочивает "
 "их по категориям (аппаратные, программные)."
 
-#: ../data/gnome-logs.appdata.xml.in.h:2
+#: ../data/org.gnome.Logs.appdata.xml.in.h:5
 msgid ""
 "Using Logs you can search your logs by typing a search term, and view "
 "detailed information about each event by clicking on it."
@@ -105,16 +145,12 @@ msgstr ""
 "С помощью приложения «Журналы» вы можете выполнять поиск по журналам и "
 "просматривать подробную информацию о событиях."
 
-#: ../data/gnome-logs.desktop.in.h:1
+#: ../data/org.gnome.Logs.desktop.in.h:2
 msgid "Log Viewer"
 msgstr "Журнал событий"
 
-#: ../data/gnome-logs.desktop.in.h:2
-msgid "View detailed event logs for the system"
-msgstr "Просмотр подробной информации о событиях в системе"
-
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: ../data/gnome-logs.desktop.in.h:4
+#: ../data/org.gnome.Logs.desktop.in.h:5
 msgid "log;journal;debug;error;"
 msgstr "логи;журнал;debug;ошибка;отладка;"
 
@@ -126,37 +162,20 @@ msgstr "Стас Соловей <whats_up@tut.by>, 2014."
 msgid "View and search logs"
 msgstr "Просмотр и поиск событий"
 
-#: ../src/gl-application.c:222
+#: ../src/gl-application.c:207
 msgid "Print version information and exit"
 msgstr "Показать информацию о версии и выйти"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventview.c:217
+#: ../src/gl-eventviewlist.c:216
 msgid "No results"
 msgstr "Результаты отсутствуют"
 
-#: ../src/gl-eventview.c:604 ../src/gl-eventview.c:614
-#: ../src/gl-eventview.c:745 ../src/gl-eventview.c:755
+#: ../src/gl-eventviewlist.c:603 ../src/gl-eventviewlist.c:613
+#: ../src/gl-eventviewlist.c:744 ../src/gl-eventviewlist.c:754
 msgid "Not implemented"
 msgstr "Не реализовано"
-
-#: ../src/gl-eventviewdetail.c:140
-msgid "Message"
-msgstr "Сообщение"
-
-#. TODO: Give a user-friendly representation of the priority.
-#: ../src/gl-eventviewdetail.c:161
-msgid "Priority"
-msgstr "Приоритет"
-
-#: ../src/gl-eventviewdetail.c:189
-msgid "Kernel Device"
-msgstr "Устройство"
-
-#: ../src/gl-eventviewdetail.c:209
-msgid "Audit Session"
-msgstr "Сеанс аудита"
 
 #. Translators: timestamp format for events on the current
 #. * day, showing the time in 12-hour format.
