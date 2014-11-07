@@ -7,33 +7,17 @@ msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-04-18 18:32+0000\n"
-"PO-Revision-Date: 2014-07-08 11:30+0200\n"
-"Last-Translator: Tom Tryfonidis <tomtryf@gmail.com>\n"
+"POT-Creation-Date: 2014-11-02 07:49+0000\n"
+"PO-Revision-Date: 2014-11-02 13:45+0200\n"
+"Last-Translator: Efstathios Iosifidis <iosifidis@opensuse.org>\n"
 "Language-Team: www.gnome.gr\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.6.5\n"
+"X-Generator: Poedit 1.5.7\n"
 "X-Project-Style: gnome\n"
-
-#: ../data/appmenu.ui.h:1
-msgid "_New Window"
-msgstr "_Νέο παράθυρο"
-
-#: ../data/appmenu.ui.h:2
-msgid "_Help"
-msgstr "_Βοήθεια"
-
-#: ../data/appmenu.ui.h:3
-msgid "_About"
-msgstr "_Περί"
-
-#: ../data/appmenu.ui.h:4
-msgid "_Quit"
-msgstr "Έ_ξοδος"
 
 #: ../data/gl-categorylist.ui.h:1
 msgid "Important"
@@ -75,7 +59,9 @@ msgstr "Ενημερώσεις"
 msgid "Usage"
 msgstr "Χρήση"
 
-#: ../data/gl-eventtoolbar.ui.h:1
+#. Name and summary taken from the desktop file.
+#: ../data/gl-eventtoolbar.ui.h:1 ../data/org.gnome.Logs.appdata.xml.in.h:2
+#: ../data/org.gnome.Logs.desktop.in.h:1
 msgid "Logs"
 msgstr "Καταγραφές"
 
@@ -87,7 +73,60 @@ msgstr "Επιστροφή στην προβολή συμβάντων"
 msgid "Search the displayed logs"
 msgstr "Αναζήτηση των εμφανιζόμενων καταγραφών"
 
-#: ../data/org.gnome.Logs.appdata.xml.in.h:1
+#: ../data/gl-eventviewdetail.ui.h:1
+msgid "Message"
+msgstr "Μήνυμα"
+
+#: ../data/gl-eventviewdetail.ui.h:2
+msgid "Audit Session"
+msgstr "Συνεδρία εσωτερικής αξιολόγησης"
+
+#: ../data/gl-eventviewdetail.ui.h:3
+msgid "Kernel Device"
+msgstr "Συσκευή πυρήνα"
+
+#: ../data/gl-eventviewdetail.ui.h:4
+msgid "Priority"
+msgstr "Προτεραιότητα"
+
+#: ../data/gl-eventviewdetail.ui.h:5
+msgid "Subject"
+msgstr "Θέμα"
+
+#: ../data/gl-eventviewdetail.ui.h:6
+msgid "Defined By"
+msgstr "Καθορίστηκε από"
+
+#: ../data/gl-eventviewdetail.ui.h:7
+msgid "Support"
+msgstr "Υποστήριξη"
+
+#: ../data/gl-eventviewdetail.ui.h:8
+msgid "Documentation"
+msgstr "Τεκμηρίωση"
+
+#: ../data/menus.ui.h:1
+msgid "_New Window"
+msgstr "_Νέο παράθυρο"
+
+#: ../data/menus.ui.h:2
+msgid "_Help"
+msgstr "_Βοήθεια"
+
+#: ../data/menus.ui.h:3
+msgid "_About"
+msgstr "_Περί"
+
+#: ../data/menus.ui.h:4
+msgid "_Quit"
+msgstr "Έ_ξοδος"
+
+#: ../data/org.gnome.Logs.appdata.xml.in.h:3
+#: ../data/org.gnome.Logs.desktop.in.h:3
+msgid "View detailed event logs for the system"
+msgstr "Δείτε λεπτομερείς καταγραφές συμβάντων για το σύστημα σας"
+
+#: ../data/org.gnome.Logs.appdata.xml.in.h:4
 msgid ""
 "Logs shows events from the systemd journal, and sorts them into categories, "
 "such as hardware and applications."
@@ -95,7 +134,7 @@ msgstr ""
 "Η εφαρμογή Καταγραφές εμφανίζει συμβάντα από το systemd journal και τα "
 "ταξινομεί σε κατηγορίες, όπως υλικό και εφαρμογές."
 
-#: ../data/org.gnome.Logs.appdata.xml.in.h:2
+#: ../data/org.gnome.Logs.appdata.xml.in.h:5
 msgid ""
 "Using Logs you can search your logs by typing a search term, and view "
 "detailed information about each event by clicking on it."
@@ -104,16 +143,12 @@ msgstr ""
 "καταγραφών πληκτρολογώντας έναν όρο αναζήτησης και να προβάλετε λεπτομερείς "
 "πληροφορίες για κάθε συμβάν πατώντας πάνω του."
 
-#: ../data/org.gnome.Logs.desktop.in.h:1
+#: ../data/org.gnome.Logs.desktop.in.h:2
 msgid "Log Viewer"
 msgstr "Εφαρμογή προβολής καταγραφών"
 
-#: ../data/org.gnome.Logs.desktop.in.h:2
-msgid "View detailed event logs for the system"
-msgstr "Δείτε λεπτομερείς καταγραφές συμβάντων για το σύστημα σας"
-
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: ../data/org.gnome.Logs.desktop.in.h:4
+#: ../data/org.gnome.Logs.desktop.in.h:5
 msgid "log;journal;debug;error;"
 msgstr "καταγραφή;ημερολόγιο;αποσφαλμάτωση;σφάλμα;log;journal;debug;error;"
 
@@ -129,37 +164,20 @@ msgstr ""
 msgid "View and search logs"
 msgstr "Προβολή και αναζήτηση καταγραφών"
 
-#: ../src/gl-application.c:224
+#: ../src/gl-application.c:207
 msgid "Print version information and exit"
 msgstr "Προβολή πληροφοριών έκδοσης και έξοδος"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventview.c:217
+#: ../src/gl-eventviewlist.c:216
 msgid "No results"
 msgstr "Χωρίς αποτελέσματα"
 
-#: ../src/gl-eventview.c:604 ../src/gl-eventview.c:614
-#: ../src/gl-eventview.c:745 ../src/gl-eventview.c:755
+#: ../src/gl-eventviewlist.c:603 ../src/gl-eventviewlist.c:613
+#: ../src/gl-eventviewlist.c:744 ../src/gl-eventviewlist.c:754
 msgid "Not implemented"
 msgstr "Δεν έχει υλοποιηθεί"
-
-#: ../src/gl-eventviewdetail.c:140
-msgid "Message"
-msgstr "Μήνυμα"
-
-#. TODO: Give a user-friendly representation of the priority.
-#: ../src/gl-eventviewdetail.c:161
-msgid "Priority"
-msgstr "Προτεραιότητα"
-
-#: ../src/gl-eventviewdetail.c:189
-msgid "Kernel Device"
-msgstr "Συσκευή πυρήνα"
-
-#: ../src/gl-eventviewdetail.c:209
-msgid "Audit Session"
-msgstr "Συνεδρία εσωτερικής αξιολόγησης"
 
 #. Translators: timestamp format for events on the current
 #. * day, showing the time in 12-hour format.
