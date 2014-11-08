@@ -15,6 +15,7 @@ AM_SILENT_RULES([yes])
 dnl Check for programs
 AC_PROG_CC
 AM_PROG_CC_C_O
+AC_PROG_SED
 
 GNOME_COMPILE_WARNINGS([maximum])
 
@@ -93,7 +94,6 @@ SYSTEMD_JOURNAL_REQUIRED="libsystemd-journal"
 PKG_CHECK_MODULES([LOGS], [$GIO_REQUIRED $GTK_REQUIRED $SYSTEMD_JOURNAL_REQUIRED])
 
 AC_CONFIG_FILES([
-data/org.gnome.Logs.service
 data/version.xml
 help/Makefile
 Makefile
