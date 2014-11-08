@@ -80,8 +80,12 @@ desktop_in_files = data/org.gnome.Logs.desktop.in
 $(desktop_in_files:.desktop.in=.desktop): data/.dstamp
 desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
 
+data/org.gnome.Logs.service: data/org.gnome.Logs.service.in
+	$(AM_V_GEN)$(SED) -e "s|[@]bindir[@]|$(bindir)|" $< > $@
+
 servicedir = $(datadir)/dbus-1/services
-service_DATA = data/org.gnome.Logs.service
+service_in_files = data/org.gnome.Logs.service.in
+service_DATA = $(service_in_files:.service.in=.service)
 
 if ENABLE_MAN
 data/gnome-logs.1: data/gnome-logs.xml
@@ -172,6 +176,7 @@ dist_noinst_DATA = \
 	$(noinst_resource_files) \
 	$(appstream_in_files) \
 	$(desktop_in_files) \
+	$(service_in_files) \
 	data/org.gnome.Logs.gresource.xml \
 	data/gnome-logs.xml \
 	data/icons/gnome-logs.svg
@@ -198,6 +203,7 @@ CLEANFILES = \
 	$(desktop_DATA) \
 	$(enum_data) \
 	$(nodist_man_MANS) \
+	$(service_DATA) \
 	src/gl-resource.c \
 	src/gl-resource.h \
 	test-desktop-file-validate.sh
