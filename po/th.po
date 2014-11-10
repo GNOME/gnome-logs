@@ -1,0 +1,199 @@
+# Thai translation for gnome-logs.
+# Copyright (C) 2014 Free Software Foundation, Inc.
+# This file is distributed under the same license as the gnome-logs package.
+#
+# Akom Chotiphantawanon <knight2000@gmail.com>, 2014.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-logs gnome-3-14\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"logs&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2014-10-28 07:44+0000\n"
+"PO-Revision-Date: 2014-11-10 21:49+0700\n"
+"Last-Translator: Akom Chotiphantawanon <knight2000@gmail.com>\n"
+"Language-Team: Thai <thai-l10n@googlegroups.com>\n"
+"Language: th\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../data/gl-categorylist.ui.h:1
+msgid "Important"
+msgstr "สำคัญ"
+
+#: ../data/gl-categorylist.ui.h:2
+msgid "Alerts"
+msgstr "แจ้งเหตุ"
+
+#: ../data/gl-categorylist.ui.h:3
+msgid "Starred"
+msgstr "ติดดาว"
+
+#: ../data/gl-categorylist.ui.h:4
+msgid "All"
+msgstr "ทั้งหมด"
+
+#: ../data/gl-categorylist.ui.h:5
+msgid "Applications"
+msgstr "โปรแกรม"
+
+#: ../data/gl-categorylist.ui.h:6
+msgid "System"
+msgstr "ระบบ"
+
+#: ../data/gl-categorylist.ui.h:7
+msgid "Security"
+msgstr "ความปลอดภัย"
+
+#: ../data/gl-categorylist.ui.h:8
+msgid "Hardware"
+msgstr "ฮาร์ดแวร์"
+
+#: ../data/gl-categorylist.ui.h:9
+msgid "Updates"
+msgstr "รายการใหม่"
+
+#: ../data/gl-categorylist.ui.h:10
+msgid "Usage"
+msgstr "การใช้งาน"
+
+#. Name and summary taken from the desktop file.
+#: ../data/gl-eventtoolbar.ui.h:1 ../data/org.gnome.Logs.appdata.xml.in.h:2
+#: ../data/org.gnome.Logs.desktop.in.h:1
+msgid "Logs"
+msgstr "ปูม"
+
+#: ../data/gl-eventtoolbar.ui.h:2
+msgid "Go back to the event view"
+msgstr "ย้อนกลับไปมุมมองเหตุการณ์"
+
+#: ../data/gl-eventtoolbar.ui.h:3
+msgid "Search the displayed logs"
+msgstr "ค้นปูมที่แสดง"
+
+#: ../data/gl-eventviewdetail.ui.h:1
+msgid "Message"
+msgstr "ข้อความ"
+
+#: ../data/gl-eventviewdetail.ui.h:2
+msgid "Audit Session"
+msgstr "วาระการตรวจสอบ"
+
+#: ../data/gl-eventviewdetail.ui.h:3
+msgid "Kernel Device"
+msgstr "อุปกรณ์ของเคอร์เนล"
+
+#: ../data/gl-eventviewdetail.ui.h:4
+msgid "Priority"
+msgstr "ลำดับความสำคัญ"
+
+#: ../data/menus.ui.h:1
+msgid "_New Window"
+msgstr "หน้าต่างใ_หม่"
+
+#: ../data/menus.ui.h:2
+msgid "_Help"
+msgstr "_วิธีใช้"
+
+#: ../data/menus.ui.h:3
+msgid "_About"
+msgstr "เ_กี่ยวกับ"
+
+#: ../data/menus.ui.h:4
+msgid "_Quit"
+msgstr "_ออก"
+
+#: ../data/org.gnome.Logs.appdata.xml.in.h:3
+#: ../data/org.gnome.Logs.desktop.in.h:3
+msgid "View detailed event logs for the system"
+msgstr "ดูปูมเหตุการณ์ของระบบอย่างละเอียด"
+
+#: ../data/org.gnome.Logs.appdata.xml.in.h:4
+msgid ""
+"Logs shows events from the systemd journal, and sorts them into categories, "
+"such as hardware and applications."
+msgstr ""
+"\"ปูม\" จะแสดงเหตุการณ์จากบันทึกของ systemd และคัดแยกเหตุการณ์เป็นหมวดๆ เช่น "
+"ฮาร์ดแวร์และโปรแกรม"
+
+#: ../data/org.gnome.Logs.appdata.xml.in.h:5
+msgid ""
+"Using Logs you can search your logs by typing a search term, and view "
+"detailed information about each event by clicking on it."
+msgstr ""
+"ด้วย \"ปูม\" คุณสามารถค้นปูมต่างๆ ของคุณได้โดยป้อนคำค้น "
+"และสามารถดูข้อมูลรายละเอียดเกี่ยวกับแต่ละเหตุการณ์ได้โดยคลิกที่เหตุการณ์นั้นๆ"
+
+#: ../data/org.gnome.Logs.desktop.in.h:2
+msgid "Log Viewer"
+msgstr "เครื่องมือดูปูม"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: ../data/org.gnome.Logs.desktop.in.h:5
+msgid "log;journal;debug;error;"
+msgstr "ปูม;บันทึก;ดีบั๊ก;ข้อผิดพลาด;"
+
+#: ../src/gl-application.c:99
+msgid "translator-credits"
+msgstr "Akom Chotiphantawanon <knight2000@gmail.com>"
+
+#: ../src/gl-application.c:100
+msgid "View and search logs"
+msgstr "ดูและค้นปูม"
+
+#: ../src/gl-application.c:207
+msgid "Print version information and exit"
+msgstr "พิมพ์ข้อมูลรุ่นแล้วจบโปรแกรม"
+
+#. Translators: Shown when there are no (zero) results in the current
+#. * view.
+#: ../src/gl-eventviewlist.c:217
+msgid "No results"
+msgstr "ไม่มีผลลัพธ์"
+
+#: ../src/gl-eventviewlist.c:604 ../src/gl-eventviewlist.c:614
+#: ../src/gl-eventviewlist.c:745 ../src/gl-eventviewlist.c:755
+msgid "Not implemented"
+msgstr "ยังไม่ทำ"
+
+#. Translators: timestamp format for events on the current
+#. * day, showing the time in 12-hour format.
+#: ../src/gl-util.c:95
+msgid "%l:%M %p"
+msgstr "%l:%M %p"
+
+#. Translators: timestamp format for events in the current
+#. * year, showing the abbreviated month name, day of the
+#. * month and the time in 12-hour format.
+#: ../src/gl-util.c:101
+msgid "%b %e %l:%M %p"
+msgstr "%e %b %l:%M %p"
+
+#. Translators: timestamp format for events in a different
+#. * year, showing the abbreviated month name, day of the
+#. * month, year and the time in 12-hour format.
+#: ../src/gl-util.c:107
+msgid "%b %e %Y %l:%M %p"
+msgstr "%e %b %Ey %l:%M %p"
+
+#. Translators: timestamp format for events on the current
+#. * day, showing the time in 24-hour format.
+#: ../src/gl-util.c:120
+msgid "%H:%M"
+msgstr "%H:%M"
+
+#. Translators: timestamp format for events in the current
+#. * year, showing the abbreviated month name, day of the
+#. * month and the time in 24-hour format.
+#: ../src/gl-util.c:126
+msgid "%b %e %H:%M"
+msgstr "%e %b %H:%M"
+
+#. Translators: timestamp format for events in a different
+#. * year, showing the abbreviated month name, day of the
+#. * month, year and the time in 24-hour format.
+#: ../src/gl-util.c:132
+msgid "%b %e %Y %H:%M"
+msgstr "%e %b %Ey %H:%M"
