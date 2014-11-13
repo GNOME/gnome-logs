@@ -1,0 +1,400 @@
+# Vietnamese Translation for GNOME logs.
+# Copyright © 2014 GNOME i18n Project for Vietnamese.
+# Nguyễn Thái Ngọc Duy <pclouds@gmail.com>, 2002,2007,2011.
+# Clytie Siddall <clytie@riverland.net.au>, 2005-2009.
+# Trần Ngọc Quân <vnwildman@gmail.com>, 2014.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-logs master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"logs&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2014-11-12 19:45+0000\n"
+"PO-Revision-Date: 2014-11-13 08:16+0700\n"
+"Last-Translator: Trần Ngọc Quân <vnwildman@gmail.com>\n"
+"Language-Team: Vietnamese <gnome-vi-list@gnome.org>\n"
+"Language: vi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../data/gl-categorylist.ui.h:1
+msgid "Important"
+msgstr "Quan trọng"
+
+#: ../data/gl-categorylist.ui.h:2
+msgid "Alerts"
+msgstr "Báo động"
+
+#: ../data/gl-categorylist.ui.h:3
+msgid "Starred"
+msgstr "Bắt đầu"
+
+#: ../data/gl-categorylist.ui.h:4
+msgid "All"
+msgstr "Tất cả"
+
+#: ../data/gl-categorylist.ui.h:5
+msgid "Applications"
+msgstr "Ứng dụng"
+
+#: ../data/gl-categorylist.ui.h:6
+msgid "System"
+msgstr "Hệ thống"
+
+#: ../data/gl-categorylist.ui.h:7
+msgid "Security"
+msgstr "Bảo mật"
+
+#: ../data/gl-categorylist.ui.h:8
+msgid "Hardware"
+msgstr "Phần cứng"
+
+#: ../data/gl-categorylist.ui.h:9
+msgid "Updates"
+msgstr "Cập nhật"
+
+#: ../data/gl-categorylist.ui.h:10
+msgid "Usage"
+msgstr "Cách dùng"
+
+#. Name and summary taken from the desktop file.
+#: ../data/gl-eventtoolbar.ui.h:1 ../data/org.gnome.Logs.appdata.xml.in.h:2
+#: ../data/org.gnome.Logs.desktop.in.h:1
+msgid "Logs"
+msgstr "Nhật ký máy"
+
+#: ../data/gl-eventtoolbar.ui.h:2
+msgid "Go back to the event view"
+msgstr "Trở lại xem sự kiện"
+
+#: ../data/gl-eventtoolbar.ui.h:3
+msgid "Search the displayed logs"
+msgstr "Tìm kiếm nhật ký đang được xem"
+
+#: ../data/gl-eventviewdetail.ui.h:1
+msgid "Message"
+msgstr "Thông báo"
+
+#: ../data/gl-eventviewdetail.ui.h:2
+msgid "Audit Session"
+msgstr "Phiên kiểm tra"
+
+#: ../data/gl-eventviewdetail.ui.h:3
+msgid "Kernel Device"
+msgstr "Thiết bị nhân"
+
+#: ../data/gl-eventviewdetail.ui.h:4
+msgid "Priority"
+msgstr "Ưu tiên"
+
+#: ../data/gl-eventviewdetail.ui.h:5
+msgid "Subject"
+msgstr "Chủ đề"
+
+#: ../data/gl-eventviewdetail.ui.h:6
+msgid "Defined By"
+msgstr "Định nghĩa bởi"
+
+#: ../data/gl-eventviewdetail.ui.h:7
+msgid "Support"
+msgstr "Hỗ trợ"
+
+#: ../data/gl-eventviewdetail.ui.h:8
+msgid "Documentation"
+msgstr "Tài liệu"
+
+#: ../data/menus.ui.h:1
+msgid "_New Window"
+msgstr "_Cửa sổ mới"
+
+#: ../data/menus.ui.h:2
+msgid "_Help"
+msgstr "Trợ _giúp"
+
+#: ../data/menus.ui.h:3
+msgid "_About"
+msgstr "G_iới thiệu"
+
+#: ../data/menus.ui.h:4
+msgid "_Quit"
+msgstr "T_hoát"
+
+#: ../data/org.gnome.Logs.appdata.xml.in.h:3
+#: ../data/org.gnome.Logs.desktop.in.h:3
+msgid "View detailed event logs for the system"
+msgstr "Xem nhật ký sự kiện chi tiết của hệ thống"
+
+#: ../data/org.gnome.Logs.appdata.xml.in.h:4
+msgid ""
+"Logs shows events from the systemd journal, and sorts them into categories, "
+"such as hardware and applications."
+msgstr ""
+"Ứng dụng xem nhật ký này cho ta xem nhật ký do máy tính ghi lại, và sắp xếp "
+"chúng thành từng nhóm, như là phần cứng và ứng dụng."
+
+#: ../data/org.gnome.Logs.appdata.xml.in.h:5
+msgid ""
+"Using Logs you can search your logs by typing a search term, and view "
+"detailed information about each event by clicking on it."
+msgstr ""
+"Dùng ứng dụng xem nhật ký này, bạn có thể tìm trong nhật ký bằng cách gõ các "
+"hạng mục muốn tìm, và hiển thị chi tiết các thông tin về từng sự kiện bằng "
+"cách bấm chuột vào nó."
+
+#: ../data/org.gnome.Logs.desktop.in.h:2
+msgid "Log Viewer"
+msgstr "Bộ xem nhật ký"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: ../data/org.gnome.Logs.desktop.in.h:5
+msgid "log;journal;debug;error;"
+msgstr "log;nhật;ký;nhat;ky;journal;debug;gỡ;lỗi;go;loi;error;"
+
+#: ../src/gl-application.c:100
+msgid "translator-credits"
+msgstr ""
+"Nhóm Việt hoá GNOME (https://l10n.gnome.org/teams/vi/)\n"
+"\n"
+"Launchpad Contributions:\n"
+"  Nguyễn Thái Ngọc Duy https://launchpad.net/~pclouds\n"
+"  dalmate https://launchpad.net/~dalmate"
+
+#: ../src/gl-application.c:101
+msgid "View and search logs"
+msgstr "Xem và tìm kiếm nhật ký"
+
+#: ../src/gl-application.c:209
+msgid "Print version information and exit"
+msgstr "In ra thông tin phiên bản và thoát"
+
+#. Translators: Shown when there are no (zero) results in the current
+#. * view.
+#: ../src/gl-eventviewlist.c:279
+msgid "No results"
+msgstr "Không tìm thấy kết quả nào"
+
+#: ../src/gl-eventviewlist.c:671 ../src/gl-eventviewlist.c:684
+#: ../src/gl-eventviewlist.c:833 ../src/gl-eventviewlist.c:846
+msgid "Not implemented"
+msgstr "Chưa thực hiện"
+
+#. Translators: timestamp format for events on the current
+#. * day, showing the time in 12-hour format.
+#: ../src/gl-util.c:95
+msgid "%l:%M %p"
+msgstr "%l:%M %p"
+
+#. Translators: timestamp format for events in the current
+#. * year, showing the abbreviated month name, day of the
+#. * month and the time in 12-hour format.
+#: ../src/gl-util.c:101
+msgid "%b %e %l:%M %p"
+msgstr "%l:%M %p %e %b"
+
+#. Translators: timestamp format for events in a different
+#. * year, showing the abbreviated month name, day of the
+#. * month, year and the time in 12-hour format.
+#: ../src/gl-util.c:107
+msgid "%b %e %Y %l:%M %p"
+msgstr "%l:%M %p %e %b %Y"
+
+#. Translators: timestamp format for events on the current
+#. * day, showing the time in 24-hour format.
+#: ../src/gl-util.c:120
+msgid "%H:%M"
+msgstr "%H:%M"
+
+#. Translators: timestamp format for events in the current
+#. * year, showing the abbreviated month name, day of the
+#. * month and the time in 24-hour format.
+#: ../src/gl-util.c:126
+msgid "%b %e %H:%M"
+msgstr "%H:%M %e %b"
+
+#. Translators: timestamp format for events in a different
+#. * year, showing the abbreviated month name, day of the
+#. * month, year and the time in 24-hour format.
+#: ../src/gl-util.c:132
+msgid "%b %e %Y %H:%M"
+msgstr "%H:%M %e %b %Y"
+
+#~ msgid "View or monitor system log files"
+#~ msgstr "Xem hay theo dõi tập tin bản ghi hệ thống"
+
+#~ msgid "Log file to open up on startup"
+#~ msgstr "Bản ghi cần mở lúc khởi động"
+
+#~ msgid ""
+#~ "Specifies the log file displayed at startup. The default is either /var/"
+#~ "adm/messages or /var/log/messages, depending on your operating system."
+#~ msgstr ""
+#~ "Xác định tập tin bản ghi cần hiển thị vào lúc khởi động. Mặc định hoặc là "
+#~ "</var/adm/messages> hay </var/log/messages>, tùy thuộc vào hệ điều hành "
+#~ "của bạn."
+
+#~ msgid "Size of the font used to display the log"
+#~ msgstr "Kích cỡ của phông chữ dùng để hiển thị bản ghi"
+
+#~ msgid ""
+#~ "Specifies the size of the fixed-width font used to display the log in the "
+#~ "main tree view. The default is taken from the default terminal font size."
+#~ msgstr ""
+#~ "Ghi rõ kích cỡ của phông chữ cỡ cố định dùng để hiển thị bản ghi trong "
+#~ "khung xem cây chính. Mặc định dựa vào kích cỡ phông chữ thiết bị cuối mặc "
+#~ "định."
+
+#~ msgid "Height of the main window in pixels"
+#~ msgstr "Độ cao của cửa sổ chính theo điểm ảnh"
+
+#~ msgid "Specifies the height of the log viewer main window in pixels."
+#~ msgstr "Ghi rõ độ cao của cửa sổ chính cho bộ xem bản ghi, theo điểm ảnh."
+
+#~ msgid "Width of the main window in pixels"
+#~ msgstr "Độ cao của cửa sổ chính theo điểm ảnh"
+
+#~ msgid "Specifies the width of the log viewer main window in pixels."
+#~ msgstr "Ghi rõ độ rộng của cửa sổ chính cho bộ xem bản ghi, theo điểm ảnh."
+
+#~ msgid "Log files to open up on startup"
+#~ msgstr "Tập tin bản ghi cần mở vào lúc khởi động"
+
+#~ msgid ""
+#~ "Specifies a list of log files to open up at startup. A default list is "
+#~ "created by reading /etc/syslog.conf."
+#~ msgstr ""
+#~ "Xác định danh sách các tập tin bản ghi cần mở vào lúc khởi động. Danh "
+#~ "sách mặc định được tạo do việc đọc tập tin cấu hình bản ghi hệ thống </"
+#~ "etc/syslog.conf>."
+
+#~ msgid "List of saved filters"
+#~ msgstr "Danh sách bộ lọc được lưu"
+
+#~ msgid "List of saved regexp filters"
+#~ msgstr "Danh sách bộ lọc biểu thức chính quy được lưu"
+
+#~ msgid ""
+#~ "This program is free software; you can redistribute it and/or modify it "
+#~ "under the terms of the GNU General Public License as published by the "
+#~ "Free Software Foundation; either version 2 of the License, or (at your "
+#~ "option) any later version."
+#~ msgstr ""
+#~ "Chương trình này là phần mềm tự do; bạn có thể phát hành lại nó và/hoặc "
+#~ "sửa đổi nó với điều kiện của Giấy Phép Công Cộng GNU như được xuất bản "
+#~ "bởi Tổ Chức Phần Mềm Tự Do; hoặc phiên bản 2 của Giấy Phép này, hoặc (tùy "
+#~ "chọn) bất kỳ phiên bản sau nào."
+
+#~ msgid ""
+#~ "This program is distributed in the hope that it will be useful, but "
+#~ "WITHOUT ANY WARRANTY; without even the implied warranty of "
+#~ "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General "
+#~ "Public License for more details."
+#~ msgstr ""
+#~ "Chương trình này được phát hành vì mong muốn nó có ích, nhưng KHÔNG CÓ "
+#~ "BẢO HÀNH GÌ CẢ, THẬM CHÍ KHÔNG CÓ BẢO ĐẢM ĐƯỢC NGỤ Ý KHẢ NĂNG BÁN HAY KHẢ "
+#~ "NĂNG LÀM ĐƯỢC VIỆC DỨT KHOÁT. Xem Giấy Phép Công Cộng GNU để biết thêm "
+#~ "chi tiết."
+
+#~ msgid ""
+#~ "You should have received a copy of the GNU General Public License along "
+#~ "with this program; if not, write to the Free Software Foundation, Inc., "
+#~ "51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA"
+#~ msgstr ""
+#~ "Bạn đã nhận một bản sao của Giấy Phép Công Cộng GNU cùng với chương trình "
+#~ "này; nếu không, hãy viết thư cho Tổ Chức Phần Mềm Tự Do,\n"
+#~ "Free Software Foundation, Inc.,\n"
+#~ "51 Franklin Street, Fifth Floor,\n"
+#~ "Boston, MA  02110-1301, USA (Mỹ)."
+
+#~ msgid "There was an error displaying help: %s"
+#~ msgstr "Gặp lỗi khi hiển thị trợ giúp: %s"
+
+#~ msgid "A system log viewer for GNOME."
+#~ msgstr "Bộ xem bản ghi hệ thống của GNOME."
+
+#~ msgid "Impossible to open the file %s"
+#~ msgstr "Không thể mở được tập tin %s"
+
+#~ msgid "Filter name is empty!"
+#~ msgstr "Bộ lọc tên rỗng!"
+
+#~ msgid "Filter name may not contain the ':' character"
+#~ msgstr "Lọc tên không được chứa ký tự “:”"
+
+#~ msgid "Regular expression is empty!"
+#~ msgstr "Biểu thức chính quy rỗng!"
+
+#~ msgid "Regular expression is invalid: %s"
+#~ msgstr "Biểu thức chính quy không hợp lệ: %s"
+
+#~ msgid "Please specify either foreground or background color!"
+#~ msgstr "Vui lòng xác định màu nền và màu chữ!"
+
+#~ msgid "Edit filter"
+#~ msgstr "Sửa bộ lọc"
+
+#~ msgid "Add new filter"
+#~ msgstr "Thêm bộ lọc mới"
+
+#~ msgid "Filters"
+#~ msgstr "Bộ lọc"
+
+#~ msgid "_Name:"
+#~ msgstr "Tê_n:"
+
+#~ msgid "_Regular Expression:"
+#~ msgstr "_Biểu thức chính quy:"
+
+#~ msgid "Highlight"
+#~ msgstr "Tô sáng"
+
+#~ msgid "Hide"
+#~ msgstr "Ẩn"
+
+#~ msgid "Foreground:"
+#~ msgstr "Nội dung:"
+
+#~ msgid "Background:"
+#~ msgstr "Nền:"
+
+#~ msgid "Effect:"
+#~ msgstr "Hiệu ứng:"
+
+#~ msgid "Find previous occurrence of the search string"
+#~ msgstr "Tìm lần trước gặp chuỗi tìm kiếm"
+
+#~ msgid "Find next occurrence of the search string"
+#~ msgstr "Tìm lần kế tiếp gặp chuỗi tìm kiếm"
+
+#~ msgid ""
+#~ "Error while uncompressing the GZipped log. The file might be corrupt."
+#~ msgstr ""
+#~ "Gặp lỗi trong khi giải nén bản ghi đã nén GZip. Có thể là tập tin này bị "
+#~ "hỏng."
+
+#~ msgid "You don't have enough permissions to read the file."
+#~ msgstr "Bạn không có đủ quyền để đọc tập tin này."
+
+#~ msgid "The file is not a regular file or is not a text file."
+#~ msgstr ""
+#~ "Tập tin này không phải là một tập tin thông thường, hoặc không phải là "
+#~ "một tập tin văn bản."
+
+#~ msgid "This version of System Log does not support GZipped logs."
+#~ msgstr ""
+#~ "Phiên bản Bản ghi Hệ thống (System Log) không hỗ trợ bản ghi đã nén GZip."
+
+#~ msgid "Loading..."
+#~ msgstr "Đang nạp..."
+
+#~ msgid "Wrapped"
+#~ msgstr "Đã bao bọc"
+
+#~ msgid "Can't read from \"%s\""
+#~ msgstr "Không thể đọc từ \"%s\""
+
+#~ msgid "Open Log"
+#~ msgstr "Mở bản ghi"
+
+#~ msgid "Could not open the following files:"
+#~ msgstr "Không thể mở những tập tin theo đây:"
