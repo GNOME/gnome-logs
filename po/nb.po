@@ -5,10 +5,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-logs 3.14.x\n"
+"Project-Id-Version: gnome-logs 3.15.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-03 19:32+0200\n"
-"PO-Revision-Date: 2014-10-03 19:35+0200\n"
+"POT-Creation-Date: 2014-11-16 12:30+0100\n"
+"PO-Revision-Date: 2014-11-16 12:31+0100\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
 "Language: \n"
@@ -56,7 +56,9 @@ msgstr "Oppdateringer"
 msgid "Usage"
 msgstr "Bruk"
 
-#: ../data/gl-eventtoolbar.ui.h:1 ../data/org.gnome.Logs.desktop.in.h:1
+#. Name and summary taken from the desktop file.
+#: ../data/gl-eventtoolbar.ui.h:1 ../data/org.gnome.Logs.appdata.xml.in.h:2
+#: ../data/org.gnome.Logs.desktop.in.h:1
 msgid "Logs"
 msgstr "Logger"
 
@@ -84,6 +86,22 @@ msgstr "Kjerneenhet"
 msgid "Priority"
 msgstr "Prioritet"
 
+#: ../data/gl-eventviewdetail.ui.h:5
+msgid "Subject"
+msgstr "Emne"
+
+#: ../data/gl-eventviewdetail.ui.h:6
+msgid "Defined By"
+msgstr "Definert av"
+
+#: ../data/gl-eventviewdetail.ui.h:7
+msgid "Support"
+msgstr "Brukerstøtte"
+
+#: ../data/gl-eventviewdetail.ui.h:8
+msgid "Documentation"
+msgstr "Dokumentasjon"
+
 #: ../data/menus.ui.h:1
 msgid "_New Window"
 msgstr "_Nytt vindu"
@@ -100,51 +118,56 @@ msgstr "_Om"
 msgid "_Quit"
 msgstr "A_vslutt"
 
-#: ../data/org.gnome.Logs.appdata.xml.in.h:1
+#: ../data/org.gnome.Logs.appdata.xml.in.h:3
+#: ../data/org.gnome.Logs.desktop.in.h:3
+msgid "View detailed event logs for the system"
+msgstr "Vis detaljerte hendelseslogger for systemet"
+
+#: ../data/org.gnome.Logs.appdata.xml.in.h:4
 msgid ""
 "Logs shows events from the systemd journal, and sorts them into categories, "
 "such as hardware and applications."
-msgstr "Logger viser hendelser fra systemd-journalen og sorterer dem inn i kategorier slik som maskinvare og programmer."
+msgstr ""
+"Logger viser hendelser fra systemd-journalen og sorterer dem inn i "
+"kategorier slik som maskinvare og programmer."
 
-#: ../data/org.gnome.Logs.appdata.xml.in.h:2
+#: ../data/org.gnome.Logs.appdata.xml.in.h:5
 msgid ""
 "Using Logs you can search your logs by typing a search term, and view "
 "detailed information about each event by clicking on it."
-msgstr "Med Logger kan du søke i dine logger ved å skrive inn teksten du søker etter og du kan vise detaljert informasjon om hver hendelse ved å klikke på den."
+msgstr ""
+"Med Logger kan du søke i dine logger ved å skrive inn teksten du søker etter "
+"og du kan vise detaljert informasjon om hver hendelse ved å klikke på den."
 
 #: ../data/org.gnome.Logs.desktop.in.h:2
 msgid "Log Viewer"
 msgstr "Loggvisning"
-
-#: ../data/org.gnome.Logs.desktop.in.h:3
-msgid "View detailed event logs for the system"
-msgstr "Vis detaljerte hendelseslogger for systemet"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: ../data/org.gnome.Logs.desktop.in.h:5
 msgid "log;journal;debug;error;"
 msgstr "logg;journal;feilsøking;feil;"
 
-#: ../src/gl-application.c:99
+#: ../src/gl-application.c:100
 msgid "translator-credits"
 msgstr "Kjartan Maraas <kmaraas@gnome.org>"
 
-#: ../src/gl-application.c:100
+#: ../src/gl-application.c:101
 msgid "View and search logs"
 msgstr "Vis og søk i logger"
 
-#: ../src/gl-application.c:207
+#: ../src/gl-application.c:209
 msgid "Print version information and exit"
 msgstr "Skriv ut versjonsinformasjon og avslutt"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventviewlist.c:217
+#: ../src/gl-eventviewlist.c:279
 msgid "No results"
 msgstr "Ingen resultater"
 
-#: ../src/gl-eventviewlist.c:604 ../src/gl-eventviewlist.c:614
-#: ../src/gl-eventviewlist.c:745 ../src/gl-eventviewlist.c:755
+#: ../src/gl-eventviewlist.c:671 ../src/gl-eventviewlist.c:684
+#: ../src/gl-eventviewlist.c:833 ../src/gl-eventviewlist.c:846
 msgid "Not implemented"
 msgstr "Ikke implementert"
 
