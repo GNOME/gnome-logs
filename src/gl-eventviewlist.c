@@ -54,7 +54,9 @@ G_DEFINE_TYPE_WITH_PRIVATE (GlEventViewList, gl_event_view_list, GTK_TYPE_BOX)
 static const gssize N_RESULTS = -1;
 static const gssize N_RESULTS_IDLE = 25;
 static const gchar DESKTOP_SCHEMA[] = "org.gnome.desktop.interface";
+static const gchar SETTINGS_SCHEMA[] = "org.gnome.Logs";
 static const gchar CLOCK_FORMAT[] = "clock-format";
+static const gchar SORT_ORDER[] = "sort-order";
 
 static gboolean
 gl_event_view_search_is_case_sensitive (GlEventViewList *view)
@@ -860,6 +862,8 @@ on_notify_category (GlCategoryList *list,
     GtkStack *stack;
     GtkWidget *scrolled;
     GtkWidget *viewport;
+    GSettings *settings;
+    gint sort_order;
 
     view = GL_EVENT_VIEW_LIST (user_data);
     priv = gl_event_view_list_get_instance_private (view);
@@ -923,6 +927,96 @@ on_notify_category (GlCategoryList *list,
     scrolled = gtk_stack_get_visible_child (stack);
     viewport = gtk_bin_get_child (GTK_BIN (scrolled));
     priv->active_listbox = GTK_LIST_BOX (gtk_bin_get_child (GTK_BIN (viewport)));
+
+    settings = g_settings_new (SETTINGS_SCHEMA);
+    sort_order = g_settings_get_enum (settings, SORT_ORDER);
+    g_object_unref (settings);
+    gl_event_view_list_set_sort_order (view, sort_order);
+}
+
+static gint
+gl_event_view_sort_by_ascending_time (GtkListBoxRow *row1,
+                                      GtkListBoxRow *row2)
+{
+    GlJournalResult *result1;
+    GlJournalResult *result2;
+    guint64 time1;
+    guint64 time2;
+
+    result1 = gl_event_view_row_get_result (GL_EVENT_VIEW_ROW (row1));
+    result2 = gl_event_view_row_get_result (GL_EVENT_VIEW_ROW (row2));
+    time1 = result1->timestamp;
+    time2 = result2->timestamp;
+
+    if (time1 > time2)
+    {
+        return 1;
+    }
+    else if (time1 < time2)
+    {
+        return -1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+static gint
+gl_event_view_sort_by_descending_time (GtkListBoxRow *row1,
+                                       GtkListBoxRow *row2)
+{
+    GlJournalResult *result1;
+    GlJournalResult *result2;
+    guint64 time1;
+    guint64 time2;
+
+    result1 = gl_event_view_row_get_result (GL_EVENT_VIEW_ROW (row1));
+    result2 = gl_event_view_row_get_result (GL_EVENT_VIEW_ROW (row2));
+    time1 = result1->timestamp;
+    time2 = result2->timestamp;
+
+    if (time1 > time2)
+    {
+        return -1;
+    }
+    else if (time1 < time2)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+void
+gl_event_view_list_set_sort_order (GlEventViewList *view,
+                                   GlSortOrder sort_order)
+{
+    GlEventViewListPrivate *priv;
+
+    g_return_if_fail (GL_EVENT_VIEW_LIST (view));
+
+    priv = gl_event_view_list_get_instance_private (view);
+
+    switch (sort_order)
+    {
+        case GL_SORT_ORDER_ASCENDING_TIME:
+            gtk_list_box_set_sort_func (GTK_LIST_BOX (priv->active_listbox),
+                                        (GtkListBoxSortFunc) gl_event_view_sort_by_ascending_time,
+                                        NULL, NULL);
+            break;
+        case GL_SORT_ORDER_DESCENDING_TIME:
+            gtk_list_box_set_sort_func (GTK_LIST_BOX (priv->active_listbox),
+                                        (GtkListBoxSortFunc) gl_event_view_sort_by_descending_time,
+                                        NULL, NULL);
+            break;
+        default:
+            g_assert_not_reached ();
+            break;
+    }
+
 }
 
 static void

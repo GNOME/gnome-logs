@@ -8,6 +8,7 @@ Makefile.in
 /data/org.gnome.Logs.appdata.valid
 /data/org.gnome.Logs.appdata.xml
 /data/org.gnome.Logs.desktop
+/data/org.gnome.Logs.gschema.valid
 /data/org.gnome.Logs.service
 /data/version.xml
 /help/*/*.mo
@@ -16,6 +17,7 @@ Makefile.in
 /help/*/legal.xml
 !/help/C
 /m4/
+/org.gnome.Logs.enums.xml
 /po/.intltool-merge-cache
 /po/Makefile.in*
 /po/POTFILES

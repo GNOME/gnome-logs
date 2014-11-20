@@ -22,6 +22,8 @@
 
 #include <gtk/gtk.h>
 
+#include "gl-application.h"
+
 G_BEGIN_DECLS
 
 typedef struct
@@ -59,6 +61,7 @@ void gl_event_view_set_mode (GlEventView *view, GlEventViewMode mode);
 void gl_event_view_show_detail (GlEventView *view);
 gboolean gl_event_view_handle_search_event (GlEventView *view, GAction *action, GdkEvent *event);
 void gl_event_view_set_search_mode (GlEventView *view, gboolean state);
+void gl_event_view_set_sort_order (GlEventView *view, GlSortOrder sort_order);
 
 G_END_DECLS
 

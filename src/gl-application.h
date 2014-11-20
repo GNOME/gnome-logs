@@ -35,6 +35,13 @@ typedef struct
     GtkApplicationClass parent_class;
 } GlApplicationClass;
 
+/* Types of sorting. See the GSettings key "sort-order". */
+typedef enum
+{
+    GL_SORT_ORDER_ASCENDING_TIME,
+    GL_SORT_ORDER_DESCENDING_TIME
+} GlSortOrder;
+
 #define GL_TYPE_APPLICATION (gl_application_get_type ())
 #define GL_APPLICATION(object) (G_TYPE_CHECK_INSTANCE_CAST ((object), GL_TYPE_APPLICATION, GlApplication))
 

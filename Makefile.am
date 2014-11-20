@@ -90,6 +90,12 @@ servicedir = $(datadir)/dbus-1/services
 service_in_files = data/org.gnome.Logs.service.in
 service_DATA = $(service_in_files:.service.in=.service)
 
+gsettings_ENUM_FILES = src/gl-application.h
+gsettings_ENUM_NAMESPACE = org.gnome.Logs
+gsettings_SCHEMAS = data/org.gnome.Logs.gschema.xml
+data/org.gnome.Logs.gschema.valid: data/.dstamp
+@GSETTINGS_RULES@
+
 if ENABLE_MAN
 data/gnome-logs.1: data/gnome-logs.xml
 	$(AM_V_GEN)xsltproc --nonet --path $(builddir)/data --output $(builddir)/data/ http://docbook.sourceforge.net/release/xsl/current/manpages/docbook.xsl $<
@@ -198,6 +204,7 @@ dist_noinst_DATA = \
 	$(appstream_in_files) \
 	$(desktop_in_files) \
 	$(service_in_files) \
+	$(gsettings_SCHEMAS) \
 	data/org.gnome.Logs.gresource.xml \
 	data/gnome-logs.xml \
 	data/icons/gnome-logs.svg

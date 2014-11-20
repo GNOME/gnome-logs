@@ -100,6 +100,21 @@ gl_event_view_set_search_mode (GlEventView *view,
     gl_event_view_list_set_search_mode (events, state);
 }
 
+void
+gl_event_view_set_sort_order (GlEventView *view,
+                              GlSortOrder sort_order)
+{
+    GlEventViewPrivate *priv;
+    GlEventViewList *events;
+
+    g_return_if_fail (GL_EVENT_VIEW (view));
+
+    priv = gl_event_view_get_instance_private (view);
+    events = GL_EVENT_VIEW_LIST (priv->events);
+
+    gl_event_view_list_set_sort_order (events, sort_order);
+}
+
 static void
 on_notify_mode (GlEventView *view,
                 GParamSpec *pspec,

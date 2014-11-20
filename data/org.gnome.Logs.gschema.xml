@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="org.gnome.Logs" path="/org/gnome/logs/">
+    <key name="sort-order" enum="org.gnome.Logs.GlSortOrder">
+      <summary>How to sort list rows in the event view list</summary>
+      <description>Sort list rows in ascending or descending order for the selected type</description>
+      <default>'descending-time'</default>
+    </key>
+  </schema>
+</schemalist>

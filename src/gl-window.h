@@ -21,6 +21,8 @@
 
 #include <gtk/gtk.h>
 
+#include "gl-application.h"
+
 G_BEGIN_DECLS
 
 typedef struct
@@ -40,6 +42,7 @@ typedef struct
 
 GType gl_window_get_type (void);
 GtkWidget * gl_window_new (GtkApplication *application);
+void gl_window_set_sort_order (GlWindow *window, GlSortOrder sort_order);
 
 G_END_DECLS
 

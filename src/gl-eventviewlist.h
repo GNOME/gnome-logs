@@ -20,6 +20,8 @@
 #define GL_EVENT_VIEW_LIST_H_
 
 #include <gtk/gtk.h>
+
+#include "gl-application.h"
 #include "gl-journal.h"
 
 G_BEGIN_DECLS
@@ -47,6 +49,7 @@ gboolean gl_event_view_list_handle_search_event (GlEventViewList *view,
                                                  GAction *action,
                                                  GdkEvent *event);
 void gl_event_view_list_set_search_mode (GlEventViewList *view, gboolean state);
+void gl_event_view_list_set_sort_order (GlEventViewList *view, GlSortOrder  sort_order);
 
 G_END_DECLS
 
