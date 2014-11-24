@@ -55,6 +55,7 @@ noinst_gnome_logs_headers = \
 	src/gl-application.h \
 	src/gl-categorylist.h \
 	src/gl-eventtoolbar.h \
+	src/gl-eventview.h \
 	src/gl-eventviewdetail.h \
 	src/gl-eventviewlist.h \
 	src/gl-eventviewrow.h \
