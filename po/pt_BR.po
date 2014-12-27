@@ -9,16 +9,16 @@ msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-09-23 12:14+0000\n"
-"PO-Revision-Date: 2014-09-23 10:18-0300\n"
-"Last-Translator: Rafael Ferreira <rafael.f.f1@gmail.com>\n"
+"POT-Creation-Date: 2014-12-24 07:52+0000\n"
+"PO-Revision-Date: 2014-12-24 09:04-0300\n"
+"Last-Translator: Ricardo Barbosa <barbosa.cisco@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 1.6.9\n"
+"X-Generator: Poedit 1.7.1\n"
 
 #: ../data/gl-categorylist.ui.h:1
 msgid "Important"
@@ -60,7 +60,9 @@ msgstr "Atualizações"
 msgid "Usage"
 msgstr "Utilização"
 
-#: ../data/gl-eventtoolbar.ui.h:1 ../data/org.gnome.Logs.desktop.in.h:1
+#. Name and summary taken from the desktop file.
+#: ../data/gl-eventtoolbar.ui.h:1 ../data/org.gnome.Logs.appdata.xml.in.h:2
+#: ../data/org.gnome.Logs.desktop.in.h:1
 msgid "Logs"
 msgstr "Registros"
 
@@ -120,8 +122,13 @@ msgstr "_Sobre"
 msgid "_Quit"
 msgstr "Sai_r"
 
+#: ../data/org.gnome.Logs.appdata.xml.in.h:3
+#: ../data/org.gnome.Logs.desktop.in.h:3
+msgid "View detailed event logs for the system"
+msgstr "Veja registros detalhados de eventos do sistema"
+
 # 'Logs' ao início da frase é o nome próprio do aplicativo. Acrescentei o artigo 'Os' para facilitar a compreensão dos usuários; Journal é um sistema de registros, systemd é um gerenciador e sistema de serviço  para Linux. referência: <https://wiki.archlinux.org/index.php/systemd#Journal> --Enrico
-#: ../data/org.gnome.Logs.appdata.xml.in.h:1
+#: ../data/org.gnome.Logs.appdata.xml.in.h:4
 msgid ""
 "Logs shows events from the systemd journal, and sorts them into categories, "
 "such as hardware and applications."
@@ -129,7 +136,7 @@ msgstr ""
 "Os registros mostram eventos de sistema Journal através de systemd e os "
 "ordena em categorias, como hardware e aplicativos."
 
-#: ../data/org.gnome.Logs.appdata.xml.in.h:2
+#: ../data/org.gnome.Logs.appdata.xml.in.h:5
 msgid ""
 "Using Logs you can search your logs by typing a search term, and view "
 "detailed information about each event by clicking on it."
@@ -142,35 +149,42 @@ msgstr ""
 msgid "Log Viewer"
 msgstr "Visualizador de registros"
 
-#: ../data/org.gnome.Logs.desktop.in.h:3
-msgid "View detailed event logs for the system"
-msgstr "Veja registros detalhados de eventos do sistema"
-
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: ../data/org.gnome.Logs.desktop.in.h:5
 msgid "log;journal;debug;error;"
 msgstr "registro;registros;log;journal;depuração;debug;erro;"
 
-#: ../src/gl-application.c:99
+#: ../data/org.gnome.Logs.gschema.xml.h:1
+msgid "How to sort list rows in the event view list"
+msgstr ""
+"Como classificar a lista de linhas na lista de visualização de eventos."
+
+#: ../data/org.gnome.Logs.gschema.xml.h:2
+msgid "Sort list rows in ascending or descending order for the selected type"
+msgstr ""
+"Classifica as linhas da lista em ordem crescente ou decrescente para o tipo "
+"selecionado."
+
+#: ../src/gl-application.c:103
 msgid "translator-credits"
 msgstr "Enrico Nicoletto <liverig@gmail.com>, 2013, 2014."
 
-#: ../src/gl-application.c:100
+#: ../src/gl-application.c:104
 msgid "View and search logs"
 msgstr "Veja e pesquise registros"
 
-#: ../src/gl-application.c:207
+#: ../src/gl-application.c:231
 msgid "Print version information and exit"
 msgstr "Exibe informação da versão e sai"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventviewlist.c:217
+#: ../src/gl-eventviewlist.c:281
 msgid "No results"
 msgstr "Nenhum resultado"
 
-#: ../src/gl-eventviewlist.c:604 ../src/gl-eventviewlist.c:614
-#: ../src/gl-eventviewlist.c:745 ../src/gl-eventviewlist.c:755
+#: ../src/gl-eventviewlist.c:673 ../src/gl-eventviewlist.c:686
+#: ../src/gl-eventviewlist.c:835 ../src/gl-eventviewlist.c:848
 msgid "Not implemented"
 msgstr "Não implementado"
 
