@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs 3.15.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-11-16 12:30+0100\n"
+"POT-Creation-Date: 2015-01-05 20:00+0100\n"
 "PO-Revision-Date: 2014-11-16 12:31+0100\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
@@ -148,26 +148,34 @@ msgstr "Loggvisning"
 msgid "log;journal;debug;error;"
 msgstr "logg;journal;feilsøking;feil;"
 
-#: ../src/gl-application.c:100
+#: ../data/org.gnome.Logs.gschema.xml.h:1
+msgid "How to sort list rows in the event view list"
+msgstr ""
+
+#: ../data/org.gnome.Logs.gschema.xml.h:2
+msgid "Sort list rows in ascending or descending order for the selected type"
+msgstr ""
+
+#: ../src/gl-application.c:103
 msgid "translator-credits"
 msgstr "Kjartan Maraas <kmaraas@gnome.org>"
 
-#: ../src/gl-application.c:101
+#: ../src/gl-application.c:104
 msgid "View and search logs"
 msgstr "Vis og søk i logger"
 
-#: ../src/gl-application.c:209
+#: ../src/gl-application.c:231
 msgid "Print version information and exit"
 msgstr "Skriv ut versjonsinformasjon og avslutt"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventviewlist.c:279
+#: ../src/gl-eventviewlist.c:281
 msgid "No results"
 msgstr "Ingen resultater"
 
-#: ../src/gl-eventviewlist.c:671 ../src/gl-eventviewlist.c:684
-#: ../src/gl-eventviewlist.c:833 ../src/gl-eventviewlist.c:846
+#: ../src/gl-eventviewlist.c:673 ../src/gl-eventviewlist.c:686
+#: ../src/gl-eventviewlist.c:835 ../src/gl-eventviewlist.c:848
 msgid "Not implemented"
 msgstr "Ikke implementert"
 
