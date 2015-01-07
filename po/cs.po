@@ -1,15 +1,15 @@
 # Czech translation for gnome-logs.
 # Copyright (C) 2013 gnome-logs's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-logs package.
-# Marek Černocký <marek@manet.cz>, 2013, 2014.
+# Marek Černocký <marek@manet.cz>, 2013, 2014, 2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-09-23 12:14+0000\n"
-"PO-Revision-Date: 2014-11-25 20:13+0100\n"
+"POT-Creation-Date: 2015-01-07 07:50+0000\n"
+"PO-Revision-Date: 2015-01-07 09:21+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -59,7 +59,9 @@ msgstr "Aktualizace"
 msgid "Usage"
 msgstr "Využití"
 
-#: ../data/gl-eventtoolbar.ui.h:1 ../data/org.gnome.Logs.desktop.in.h:1
+#. Name and summary taken from the desktop file.
+#: ../data/gl-eventtoolbar.ui.h:1 ../data/org.gnome.Logs.appdata.xml.in.h:2
+#: ../data/org.gnome.Logs.desktop.in.h:1
 msgid "Logs"
 msgstr "Záznamy"
 
@@ -119,7 +121,12 @@ msgstr "O _aplikaci"
 msgid "_Quit"
 msgstr "U_končit"
 
-#: ../data/org.gnome.Logs.appdata.xml.in.h:1
+#: ../data/org.gnome.Logs.appdata.xml.in.h:3
+#: ../data/org.gnome.Logs.desktop.in.h:3
+msgid "View detailed event logs for the system"
+msgstr "Zobrazit podrobné záznamy událostí v systému"
+
+#: ../data/org.gnome.Logs.appdata.xml.in.h:4
 msgid ""
 "Logs shows events from the systemd journal, and sorts them into categories, "
 "such as hardware and applications."
@@ -127,7 +134,7 @@ msgstr ""
 "Aplikace Záznamy zobrazuje události ze žurnálu systemd a řadí je do "
 "kategorií, jako jsou třeba hardware nebo aplikace."
 
-#: ../data/org.gnome.Logs.appdata.xml.in.h:2
+#: ../data/org.gnome.Logs.appdata.xml.in.h:5
 msgid ""
 "Using Logs you can search your logs by typing a search term, and view "
 "detailed information about each event by clicking on it."
@@ -139,35 +146,40 @@ msgstr ""
 msgid "Log Viewer"
 msgstr "Prohlížeč záznamů o provozu"
 
-#: ../data/org.gnome.Logs.desktop.in.h:3
-msgid "View detailed event logs for the system"
-msgstr "Zobrazit podrobné záznamy událostí v systému"
-
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: ../data/org.gnome.Logs.desktop.in.h:5
 msgid "log;journal;debug;error;"
 msgstr "log;záznam;protokol;evidence;žurnál;ladění;chyba;"
 
-#: ../src/gl-application.c:99
+#: ../data/org.gnome.Logs.gschema.xml.h:1
+msgid "How to sort list rows in the event view list"
+msgstr "Jak řadit řádky v zobrazení seznamu událostí"
+
+#: ../data/org.gnome.Logs.gschema.xml.h:2
+msgid "Sort list rows in ascending or descending order for the selected type"
+msgstr ""
+"Pro vybraný typ řadit řádky seznamu ve vzestupném nebo sestupném pořadí"
+
+#: ../src/gl-application.c:103
 msgid "translator-credits"
 msgstr "Marek Černocký <marek@manet.cz>"
 
-#: ../src/gl-application.c:100
+#: ../src/gl-application.c:104
 msgid "View and search logs"
 msgstr "Zobrazit a prohledat záznamy o provozu"
 
-#: ../src/gl-application.c:207
+#: ../src/gl-application.c:231
 msgid "Print version information and exit"
 msgstr "Vypsat informace o verzi a skončit"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventviewlist.c:217
+#: ../src/gl-eventviewlist.c:281
 msgid "No results"
 msgstr "Žádné výsledky"
 
-#: ../src/gl-eventviewlist.c:604 ../src/gl-eventviewlist.c:614
-#: ../src/gl-eventviewlist.c:745 ../src/gl-eventviewlist.c:755
+#: ../src/gl-eventviewlist.c:673 ../src/gl-eventviewlist.c:686
+#: ../src/gl-eventviewlist.c:835 ../src/gl-eventviewlist.c:848
 msgid "Not implemented"
 msgstr "Neimplementováno"
 
