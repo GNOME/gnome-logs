@@ -9,9 +9,9 @@ msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-09-15 06:55+0000\n"
-"PO-Revision-Date: 2014-09-15 20:04+0100\n"
-"Last-Translator:  <dev@hmt.im>\n"
+"POT-Creation-Date: 2014-12-26 19:55+0000\n"
+"PO-Revision-Date: 2015-01-08 23:48+0100\n"
+"Last-Translator: Christian Kirbach <christian.kirbach@gmail.com>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -60,7 +60,9 @@ msgstr "Aktualisierungen"
 msgid "Usage"
 msgstr "Verwendung"
 
-#: ../data/gl-eventtoolbar.ui.h:1 ../data/org.gnome.Logs.desktop.in.h:1
+#. Name and summary taken from the desktop file.
+#: ../data/gl-eventtoolbar.ui.h:1 ../data/org.gnome.Logs.appdata.xml.in.h:2
+#: ../data/org.gnome.Logs.desktop.in.h:1
 msgid "Logs"
 msgstr "Protokolle"
 
@@ -88,6 +90,22 @@ msgstr "Kernel-Gerät"
 msgid "Priority"
 msgstr "Priorität"
 
+#: ../data/gl-eventviewdetail.ui.h:5
+msgid "Subject"
+msgstr "Betreff"
+
+#: ../data/gl-eventviewdetail.ui.h:6
+msgid "Defined By"
+msgstr "Definiert durch"
+
+#: ../data/gl-eventviewdetail.ui.h:7
+msgid "Support"
+msgstr "Unterstützung"
+
+#: ../data/gl-eventviewdetail.ui.h:8
+msgid "Documentation"
+msgstr "Dokumentation"
+
 #: ../data/menus.ui.h:1
 msgid "_New Window"
 msgstr "_Neues Fenster"
@@ -104,7 +122,12 @@ msgstr "_Info"
 msgid "_Quit"
 msgstr "_Beenden"
 
-#: ../data/org.gnome.Logs.appdata.xml.in.h:1
+#: ../data/org.gnome.Logs.appdata.xml.in.h:3
+#: ../data/org.gnome.Logs.desktop.in.h:3
+msgid "View detailed event logs for the system"
+msgstr "Detaillierte Ereignisprotokolle des Systems ansehen"
+
+#: ../data/org.gnome.Logs.appdata.xml.in.h:4
 msgid ""
 "Logs shows events from the systemd journal, and sorts them into categories, "
 "such as hardware and applications."
@@ -112,7 +135,7 @@ msgstr ""
 "Protokoll zeigt Ereignisse aus dem »systemd«-Protokoll und sortiert sie nach "
 "Kategorien wie z.B. Hardware oder Anwendungen."
 
-#: ../data/org.gnome.Logs.appdata.xml.in.h:2
+#: ../data/org.gnome.Logs.appdata.xml.in.h:5
 msgid ""
 "Using Logs you can search your logs by typing a search term, and view "
 "detailed information about each event by clicking on it."
@@ -125,37 +148,47 @@ msgstr ""
 msgid "Log Viewer"
 msgstr "Protokollbetrachter"
 
-#: ../data/org.gnome.Logs.desktop.in.h:3
-msgid "View detailed event logs for the system"
-msgstr "Detaillierte Ereignisprotokolle des Systems ansehen"
-
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: ../data/org.gnome.Logs.desktop.in.h:5
 msgid "log;journal;debug;error;"
 msgstr "log;journal;debug;error;Protokoll;Fehler;Fehlersuche;"
 
-#: ../src/gl-application.c:99
+# gsettings-Schema
+#: ../data/org.gnome.Logs.gschema.xml.h:1
+msgid "How to sort list rows in the event view list"
+msgstr "Legt fest, wie Zeilen in der Ereignisansicht sortiert werden"
+
+# gsettings-Schema
+#: ../data/org.gnome.Logs.gschema.xml.h:2
+msgid "Sort list rows in ascending or descending order for the selected type"
+msgstr ""
+"Legt fest, ob Zeilen in auf- oder absteigender Reihenfolge für den "
+"ausgewählten Typ sortiert werden"
+
+#: ../src/gl-application.c:103
 msgid "translator-credits"
 msgstr ""
 "David Lüder <davidl-dev@gmx-topmail.de>\n"
-"Benjamin Steinwender <b@stbe.at>"
+"Benjamin Steinwender <b@stbe.at>\n"
+"Bernd Homuth <dev@hmt.im>\n"
+"Christian Kirbach <christian.kirbach@gmail.com>"
 
-#: ../src/gl-application.c:100
+#: ../src/gl-application.c:104
 msgid "View and search logs"
 msgstr "Protokoll ansehen und durchsuchen"
 
-#: ../src/gl-application.c:207
+#: ../src/gl-application.c:231
 msgid "Print version information and exit"
 msgstr "Versionsinformationen anzeigen und beenden"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventviewlist.c:217
+#: ../src/gl-eventviewlist.c:281
 msgid "No results"
 msgstr "Keine Ergebnisse gefunden"
 
-#: ../src/gl-eventviewlist.c:604 ../src/gl-eventviewlist.c:614
-#: ../src/gl-eventviewlist.c:745 ../src/gl-eventviewlist.c:755
+#: ../src/gl-eventviewlist.c:673 ../src/gl-eventviewlist.c:686
+#: ../src/gl-eventviewlist.c:835 ../src/gl-eventviewlist.c:848
 msgid "Not implemented"
 msgstr "Nicht implementiert"
 
