@@ -1,26 +1,26 @@
 # Russian translation for gnome-logs.
 # Copyright (C) 2014 gnome-logs's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-logs package.
-# Stas Solovey <whats_up@tut.by>, 2014.
 # Yuri Myasoedov <ymyasoedov@yandex.ru>, 2014.
 # Mihail Gurin <mikegurin@yandex.ru>, 2014.
+# Stas Solovey <whats_up@tut.by>, 2014, 2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-11-06 07:47+0000\n"
-"PO-Revision-Date: 2014-11-06 10:47+0400\n"
-"Last-Translator: Mihail Gurin <mikegurin@yandex.ru>\n"
-"Language-Team: русский <gnome-cyr@gnome.org>\n"
+"POT-Creation-Date: 2015-01-12 07:50+0000\n"
+"PO-Revision-Date: 2015-01-12 16:02+0300\n"
+"Last-Translator: Stas Solovey <whats_up@tut.by>\n"
+"Language-Team: Русский <gnome-cyr@gnome.org>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Poedit 1.6.4\n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"X-Generator: Gtranslator 2.91.6\n"
 
 #: ../data/gl-categorylist.ui.h:1
 msgid "Important"
@@ -154,26 +154,36 @@ msgstr "Журнал событий"
 msgid "log;journal;debug;error;"
 msgstr "логи;журнал;debug;ошибка;отладка;"
 
-#: ../src/gl-application.c:99
-msgid "translator-credits"
-msgstr "Стас Соловей <whats_up@tut.by>, 2014."
+#: ../data/org.gnome.Logs.gschema.xml.h:1
+msgid "How to sort list rows in the event view list"
+msgstr "Как сортировать список строк в списке просмотра событий"
 
-#: ../src/gl-application.c:100
+#: ../data/org.gnome.Logs.gschema.xml.h:2
+msgid "Sort list rows in ascending or descending order for the selected type"
+msgstr ""
+"Сортировать список строк в порядке возрастания или убывания для выбранного "
+"типа"
+
+#: ../src/gl-application.c:103
+msgid "translator-credits"
+msgstr "Станислав Соловей <whats_up@tut.by>, 2014, 2015."
+
+#: ../src/gl-application.c:104
 msgid "View and search logs"
 msgstr "Просмотр и поиск событий"
 
-#: ../src/gl-application.c:207
+#: ../src/gl-application.c:231
 msgid "Print version information and exit"
 msgstr "Показать информацию о версии и выйти"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventviewlist.c:216
+#: ../src/gl-eventviewlist.c:281
 msgid "No results"
 msgstr "Результаты отсутствуют"
 
-#: ../src/gl-eventviewlist.c:603 ../src/gl-eventviewlist.c:613
-#: ../src/gl-eventviewlist.c:744 ../src/gl-eventviewlist.c:754
+#: ../src/gl-eventviewlist.c:673 ../src/gl-eventviewlist.c:686
+#: ../src/gl-eventviewlist.c:835 ../src/gl-eventviewlist.c:848
 msgid "Not implemented"
 msgstr "Не реализовано"
 
