@@ -1,22 +1,25 @@
 # Vietnamese Translation for GNOME logs.
-# Copyright © 2014 GNOME i18n Project for Vietnamese.
+# Bản dịch tiếng Việt dành cho ứng dụng xem nhật ký máy của GNOME.
+# Copyright © 2015 GNOME i18n Project for Vietnamese.
+# This file is distributed under the same license as the gnome-logs package.
 # Nguyễn Thái Ngọc Duy <pclouds@gmail.com>, 2002,2007,2011.
 # Clytie Siddall <clytie@riverland.net.au>, 2005-2009.
-# Trần Ngọc Quân <vnwildman@gmail.com>, 2014.
+# Trần Ngọc Quân <vnwildman@gmail.com>, 2014, 2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-11-12 19:45+0000\n"
-"PO-Revision-Date: 2014-11-13 08:16+0700\n"
+"POT-Creation-Date: 2015-01-13 19:50+0000\n"
+"PO-Revision-Date: 2015-01-14 14:57+0700\n"
 "Last-Translator: Trần Ngọc Quân <vnwildman@gmail.com>\n"
 "Language-Team: Vietnamese <gnome-vi-list@gnome.org>\n"
 "Language: vi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../data/gl-categorylist.ui.h:1
 msgid "Important"
@@ -144,38 +147,41 @@ msgstr ""
 
 #: ../data/org.gnome.Logs.desktop.in.h:2
 msgid "Log Viewer"
-msgstr "Bộ xem nhật ký"
+msgstr "Xem nhật ký máy"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: ../data/org.gnome.Logs.desktop.in.h:5
 msgid "log;journal;debug;error;"
 msgstr "log;nhật;ký;nhat;ky;journal;debug;gỡ;lỗi;go;loi;error;"
 
-#: ../src/gl-application.c:100
+#: ../data/org.gnome.Logs.gschema.xml.h:1
+msgid "How to sort list rows in the event view list"
+msgstr "Sắp xếp các hàng trong danh sách trình bày sự kiện như thế nào"
+
+#: ../data/org.gnome.Logs.gschema.xml.h:2
+msgid "Sort list rows in ascending or descending order for the selected type"
+msgstr "Xếp các hàng của danh sách theo thứ tự tăng/giảm dần cho kiểu đã chọn"
+
+#: ../src/gl-application.c:103
 msgid "translator-credits"
-msgstr ""
-"Nhóm Việt hoá GNOME (https://l10n.gnome.org/teams/vi/)\n"
-"\n"
-"Launchpad Contributions:\n"
-"  Nguyễn Thái Ngọc Duy https://launchpad.net/~pclouds\n"
-"  dalmate https://launchpad.net/~dalmate"
+msgstr "Nhóm Việt hóa GNOME (https://l10n.gnome.org/teams/vi/)"
 
-#: ../src/gl-application.c:101
+#: ../src/gl-application.c:104
 msgid "View and search logs"
-msgstr "Xem và tìm kiếm nhật ký"
+msgstr "Xem và tìm kiếm từ nhật ký của máy tính"
 
-#: ../src/gl-application.c:209
+#: ../src/gl-application.c:231
 msgid "Print version information and exit"
 msgstr "In ra thông tin phiên bản và thoát"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventviewlist.c:279
+#: ../src/gl-eventviewlist.c:281
 msgid "No results"
 msgstr "Không tìm thấy kết quả nào"
 
-#: ../src/gl-eventviewlist.c:671 ../src/gl-eventviewlist.c:684
-#: ../src/gl-eventviewlist.c:833 ../src/gl-eventviewlist.c:846
+#: ../src/gl-eventviewlist.c:673 ../src/gl-eventviewlist.c:686
+#: ../src/gl-eventviewlist.c:835 ../src/gl-eventviewlist.c:848
 msgid "Not implemented"
 msgstr "Chưa thực hiện"
 
@@ -385,7 +391,7 @@ msgstr "%H:%M %e %b %Y"
 #~ "Phiên bản Bản ghi Hệ thống (System Log) không hỗ trợ bản ghi đã nén GZip."
 
 #~ msgid "Loading..."
-#~ msgstr "Đang nạp..."
+#~ msgstr "Đang nạp…"
 
 #~ msgid "Wrapped"
 #~ msgstr "Đã bao bọc"
