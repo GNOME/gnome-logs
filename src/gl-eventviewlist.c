@@ -362,17 +362,28 @@ insert_devices_idle (GlEventViewList *view)
 }
 
 static void
-insert_journal_query_devices (GlEventViewList *view,
-                              const GlJournalQuery *query,
-                              GtkListBox *listbox)
+query_devices_ready (GObject *source_object,
+                     GAsyncResult *res,
+                     gpointer user_data)
 {
+    GlEventViewList *view;
     GlEventViewListPrivate *priv;
+    GlJournal *journal;
+    GError *error = NULL;
     GList *l;
     gsize n_results;
 
+    view = GL_EVENT_VIEW_LIST (user_data);
     priv = gl_event_view_list_get_instance_private (view);
-    priv->results = gl_journal_query (priv->journal, query);
-    priv->results_listbox = listbox;
+    journal = GL_JOURNAL (source_object);
+
+    priv->results = gl_journal_query_finish (journal, res, &error);
+
+    if (!priv->results)
+    {
+        /* TODO: Check for error. */
+        g_error_free (error);
+    }
 
     n_results = g_list_length (priv->results);
 
@@ -391,6 +402,20 @@ insert_journal_query_devices (GlEventViewList *view,
     priv->insert_idle_id = g_idle_add ((GSourceFunc) insert_devices_idle,
                                        view);
     g_source_set_name_by_id (priv->insert_idle_id, G_STRFUNC);
+}
+
+static void
+insert_journal_query_devices (GlEventViewList *view,
+                              const GlJournalQuery *query,
+                              GtkListBox *listbox)
+{
+    GlEventViewListPrivate *priv;
+
+    priv = gl_event_view_list_get_instance_private (view);
+
+    priv->results_listbox = listbox;
+    gl_journal_query_async (priv->journal, query, NULL, query_devices_ready,
+                            view);
 }
 
 static gboolean
@@ -447,17 +472,28 @@ insert_security_idle (GlEventViewList *view)
 }
 
 static void
-insert_journal_query_security (GlEventViewList *view,
-                               const GlJournalQuery *query,
-                               GtkListBox *listbox)
+query_security_ready (GObject *source_object,
+                      GAsyncResult *res,
+                      gpointer user_data)
 {
+    GlEventViewList *view;
     GlEventViewListPrivate *priv;
+    GlJournal *journal;
+    GError *error = NULL;
     GList *l;
-    gsize n_results;
+    guint n_results;
 
+    view = GL_EVENT_VIEW_LIST (user_data);
     priv = gl_event_view_list_get_instance_private (view);
-    priv->results = gl_journal_query (priv->journal, query);
-    priv->results_listbox = listbox;
+    journal = GL_JOURNAL (source_object);
+
+    priv->results = gl_journal_query_finish (journal, res, &error);
+
+    if (!priv->results)
+    {
+        /* TODO: Check for error. */
+        g_error_free (error);
+    }
 
     n_results = g_list_length (priv->results);
 
@@ -476,6 +512,20 @@ insert_journal_query_security (GlEventViewList *view,
     priv->insert_idle_id = g_idle_add ((GSourceFunc) insert_security_idle,
                                        view);
     g_source_set_name_by_id (priv->insert_idle_id, G_STRFUNC);
+}
+
+static void
+insert_journal_query_security (GlEventViewList *view,
+                               const GlJournalQuery *query,
+                               GtkListBox *listbox)
+{
+    GlEventViewListPrivate *priv;
+
+    priv = gl_event_view_list_get_instance_private (view);
+
+    priv->results_listbox = listbox;
+    gl_journal_query_async (priv->journal, query, NULL, query_security_ready,
+                            view);
 }
 
 static gboolean
@@ -527,17 +577,28 @@ insert_simple_idle (GlEventViewList *view)
 }
 
 static void
-insert_journal_query_simple (GlEventViewList *view,
-                             const GlJournalQuery *query,
-                             GtkListBox *listbox)
+query_simple_ready (GObject *source_object,
+                    GAsyncResult *res,
+                    gpointer user_data)
 {
+    GlEventViewList *view;
     GlEventViewListPrivate *priv;
+    GlJournal *journal;
+    GError *error = NULL;
     GList *l;
     gsize n_results;
 
+    view = GL_EVENT_VIEW_LIST (user_data);
     priv = gl_event_view_list_get_instance_private (view);
-    priv->results = gl_journal_query (priv->journal, query);
-    priv->results_listbox = listbox;
+    journal = GL_JOURNAL (source_object);
+
+    priv->results = gl_journal_query_finish (journal, res, &error);
+
+    if (!priv->results)
+    {
+        /* TODO: Check for error. */
+        g_error_free (error);
+    }
 
     n_results = g_list_length (priv->results);
 
@@ -547,6 +608,7 @@ insert_journal_query_simple (GlEventViewList *view,
     }
 
     priv->pending_results = g_queue_new ();
+
     for (l = priv->results; l != NULL; l = g_list_next (l))
     {
         g_queue_push_tail (priv->pending_results, l->data);
@@ -554,6 +616,19 @@ insert_journal_query_simple (GlEventViewList *view,
 
     priv->insert_idle_id = g_idle_add ((GSourceFunc) insert_simple_idle, view);
     g_source_set_name_by_id (priv->insert_idle_id, G_STRFUNC);
+}
+
+static void
+insert_journal_query_simple (GlEventViewList *view,
+                             const GlJournalQuery *query,
+                             GtkListBox *listbox)
+{
+    GlEventViewListPrivate *priv;
+
+    priv = gl_event_view_list_get_instance_private (view);
+    priv->results_listbox = listbox;
+    gl_journal_query_async (priv->journal, query, NULL, query_simple_ready,
+                            view);
 }
 
 static gboolean
@@ -605,17 +680,28 @@ insert_cmdline_idle (GlEventViewList *view)
 }
 
 static void
-insert_journal_query_cmdline (GlEventViewList *view,
-                              const GlJournalQuery *query,
-                              GtkListBox *listbox)
+query_cmdline_ready (GObject *source_object,
+                     GAsyncResult *res,
+                     gpointer user_data)
 {
+    GlEventViewList *view;
     GlEventViewListPrivate *priv;
+    GlJournal *journal;
+    GError *error = NULL;
     GList *l;
     gsize n_results;
 
+    view = GL_EVENT_VIEW_LIST (user_data);
     priv = gl_event_view_list_get_instance_private (view);
-    priv->results = gl_journal_query (priv->journal, query);
-    priv->results_listbox = listbox;
+    journal = GL_JOURNAL (source_object);
+
+    priv->results = gl_journal_query_finish (journal, res, &error);
+
+    if (!priv->results)
+    {
+        /* TODO: Check for error. */
+        g_error_free (error);
+    }
 
     n_results = g_list_length (priv->results);
 
@@ -634,6 +720,19 @@ insert_journal_query_cmdline (GlEventViewList *view,
     priv->insert_idle_id = g_idle_add ((GSourceFunc) insert_cmdline_idle,
                                        view);
     g_source_set_name_by_id (priv->insert_idle_id, G_STRFUNC);
+}
+
+static void
+insert_journal_query_cmdline (GlEventViewList *view,
+                              const GlJournalQuery *query,
+                              GtkListBox *listbox)
+{
+    GlEventViewListPrivate *priv;
+
+    priv = gl_event_view_list_get_instance_private (view);
+    priv->results_listbox = listbox;
+    gl_journal_query_async (priv->journal, query, NULL, query_cmdline_ready,
+                            view);
 }
 
 static void
