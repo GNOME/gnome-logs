@@ -19,7 +19,7 @@
 #ifndef GL_JOURNAL_H_
 #define GL_JOURNAL_H_
 
-#include <glib-object.h>
+#include <gio/gio.h>
 
 G_BEGIN_DECLS
 
@@ -82,6 +82,8 @@ typedef struct
 
 GType gl_journal_result_get_type (void);
 GType gl_journal_get_type (void);
+void gl_journal_query_async (GlJournal *self, const GlJournalQuery *query, GCancellable *cancellable, GAsyncReadyCallback callback, gpointer user_data);
+GList * gl_journal_query_finish (GlJournal *self, GAsyncResult *res, GError **error);
 GList * gl_journal_query (GlJournal *self, const GlJournalQuery *query);
 GlJournalResult * gl_journal_result_ref (GlJournalResult *result);
 void gl_journal_result_unref (GlJournalResult *result);

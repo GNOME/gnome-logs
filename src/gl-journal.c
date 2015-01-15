@@ -310,6 +310,88 @@ out:
     return NULL;
 }
 
+static GlJournalQuery *
+gl_journal_query_copy (const GlJournalQuery *source)
+{
+    GlJournalQuery *result;
+    guint n_matches = 0;
+    gchar **matches;
+    guint i;
+
+    result = g_slice_new (GlJournalQuery);
+
+    if (source->matches)
+    {
+        n_matches = g_strv_length (source->matches);
+    }
+
+    /* Remember the trailing NULL. */
+    matches = g_new (gchar *, n_matches + 1);
+
+    for (i = 0; i < n_matches; i++)
+    {
+        matches[i] = g_strdup (source->matches[i]);
+    }
+
+    matches[n_matches] = NULL;
+
+    result->matches = matches;
+    result->n_results = source->n_results;
+
+    return result;
+}
+
+static void
+gl_journal_query_free (GlJournalQuery *query)
+{
+    g_strfreev (query->matches);
+    g_slice_free (GlJournalQuery, query);
+}
+
+static void
+gl_journal_query_async_thread (GTask *task,
+                               gpointer source_object,
+                               gpointer task_data,
+                               GCancellable *cancellable)
+{
+    GList *results;
+
+    /* TODO: gl_journal_query() should accept a cancellable. */
+    results = gl_journal_query (GL_JOURNAL (source_object),
+                                (GlJournalQuery *)task_data);
+    g_task_return_pointer (task, results,
+                           (GDestroyNotify)gl_journal_results_free);
+    /* TODO: Return error if necessary (if cancelled?). */
+}
+
+void
+gl_journal_query_async (GlJournal *self,
+                        const GlJournalQuery *query,
+                        GCancellable *cancellable,
+                        GAsyncReadyCallback callback,
+                        gpointer user_data)
+{
+    GTask *task;
+    GlJournalQuery *data;
+
+    data = gl_journal_query_copy (query);
+
+    task = g_task_new (self, cancellable, callback, user_data);
+    g_task_set_task_data (task, data, (GDestroyNotify)gl_journal_query_free);
+    g_task_run_in_thread (task, gl_journal_query_async_thread);
+    g_object_unref (task);
+}
+
+GList *
+gl_journal_query_finish (GlJournal *self,
+                         GAsyncResult *res,
+                         GError **error)
+{
+    g_return_val_if_fail (g_task_is_valid (res, self), NULL);
+
+    return g_task_propagate_pointer (G_TASK (res), error);
+}
+
 GList *
 gl_journal_query (GlJournal *self, const GlJournalQuery *query)
 {
