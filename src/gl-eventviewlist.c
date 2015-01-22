@@ -371,7 +371,6 @@ query_devices_ready (GObject *source_object,
     GlJournal *journal;
     GError *error = NULL;
     GList *l;
-    gsize n_results;
 
     view = GL_EVENT_VIEW_LIST (user_data);
     priv = gl_event_view_list_get_instance_private (view);
@@ -383,13 +382,6 @@ query_devices_ready (GObject *source_object,
     {
         /* TODO: Check for error. */
         g_error_free (error);
-    }
-
-    n_results = g_list_length (priv->results);
-
-    if ((n_results != -1) && (n_results != N_RESULTS))
-    {
-        g_debug ("Number of results different than requested");
     }
 
     priv->pending_results = g_queue_new ();
@@ -481,7 +473,6 @@ query_security_ready (GObject *source_object,
     GlJournal *journal;
     GError *error = NULL;
     GList *l;
-    guint n_results;
 
     view = GL_EVENT_VIEW_LIST (user_data);
     priv = gl_event_view_list_get_instance_private (view);
@@ -493,13 +484,6 @@ query_security_ready (GObject *source_object,
     {
         /* TODO: Check for error. */
         g_error_free (error);
-    }
-
-    n_results = g_list_length (priv->results);
-
-    if ((n_results != -1) && (n_results != N_RESULTS))
-    {
-        g_debug ("Number of results different than requested");
     }
 
     priv->pending_results = g_queue_new ();
@@ -586,7 +570,6 @@ query_simple_ready (GObject *source_object,
     GlJournal *journal;
     GError *error = NULL;
     GList *l;
-    gsize n_results;
 
     view = GL_EVENT_VIEW_LIST (user_data);
     priv = gl_event_view_list_get_instance_private (view);
@@ -598,13 +581,6 @@ query_simple_ready (GObject *source_object,
     {
         /* TODO: Check for error. */
         g_error_free (error);
-    }
-
-    n_results = g_list_length (priv->results);
-
-    if ((n_results != -1) && (n_results != N_RESULTS))
-    {
-        g_debug ("Number of results different than requested");
     }
 
     priv->pending_results = g_queue_new ();
@@ -689,7 +665,6 @@ query_cmdline_ready (GObject *source_object,
     GlJournal *journal;
     GError *error = NULL;
     GList *l;
-    gsize n_results;
 
     view = GL_EVENT_VIEW_LIST (user_data);
     priv = gl_event_view_list_get_instance_private (view);
@@ -701,13 +676,6 @@ query_cmdline_ready (GObject *source_object,
     {
         /* TODO: Check for error. */
         g_error_free (error);
-    }
-
-    n_results = g_list_length (priv->results);
-
-    if ((n_results != -1) && (n_results != N_RESULTS))
-    {
-        g_debug ("Number of results different than requested");
     }
 
     priv->pending_results = g_queue_new ();
