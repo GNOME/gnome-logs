@@ -172,6 +172,7 @@ gl_event_view_get_property (GObject *object,
     {
         case PROP_MODE:
             g_value_set_enum (value, priv->mode);
+            break;
         default:
             G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
             break;
