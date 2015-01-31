@@ -6,34 +6,18 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-03-26 08:08+0000\n"
-"PO-Revision-Date: 2014-03-28 21:59+0100\n"
-"Last-Translator: Peter Mráz <etkinator@gmail.com>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-logs&keywords=I18N"
+"+L10N&component=general\n"
+"POT-Creation-Date: 2015-01-31 07:53+0000\n"
+"PO-Revision-Date: 2015-01-31 17:21+0100\n"
+"Last-Translator: Dušan Kazik <prescott66@gmail.com>\n"
 "Language-Team: Slovak <gnome-sk-list@gnome.org>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 1 : (n>=2 && n<=4) ? 2 : 0;\n"
-"X-Generator: Poedit 1.5.4\n"
-
-#: ../data/appmenu.ui.h:1
-msgid "_New Window"
-msgstr "_Nové okno"
-
-#: ../data/appmenu.ui.h:2
-msgid "_Help"
-msgstr "_Pomocník"
-
-#: ../data/appmenu.ui.h:3
-msgid "_About"
-msgstr "_O programe"
-
-#: ../data/appmenu.ui.h:4
-msgid "_Quit"
-msgstr "U_končiť"
+"X-Generator: Poedit 1.7.3\n"
 
 #: ../data/gl-categorylist.ui.h:1
 msgid "Important"
@@ -77,7 +61,8 @@ msgstr "Aktualizácie"
 msgid "Usage"
 msgstr "Použitie"
 
-#: ../data/gl-eventtoolbar.ui.h:1
+#. Name and summary taken from the desktop file.
+#: ../data/gl-eventtoolbar.ui.h:1 ../data/org.gnome.Logs.appdata.xml.in.h:2 ../data/org.gnome.Logs.desktop.in.h:1
 msgid "Logs"
 msgstr "Záznamy"
 
@@ -89,80 +74,118 @@ msgstr "Vráti sa do zobrazenia udalostí"
 msgid "Search the displayed logs"
 msgstr "Prehľadá zobrazené záznamy"
 
-#: ../data/gnome-logs.appdata.xml.in.h:1
-msgid ""
-"Logs shows events from the systemd journal, and sorts them into categories, "
-"such as hardware and applications."
-msgstr ""
-"Aplikácia záznamy zobrazuje udalosti z denníka služby systemd a triedi ich "
-"do kategórií ako sú napríklad hardvér alebo aplikácie."
+#: ../data/gl-eventviewdetail.ui.h:1
+msgid "Message"
+msgstr "Správa"
 
-#: ../data/gnome-logs.appdata.xml.in.h:2
-msgid ""
-"Using Logs you can search your logs by typing a search term, and view "
-"detailed information about each event by clicking on it."
-msgstr ""
-"Použitím aplikácie Záznamy môžete vyhľadať zadaný výraz a kliknutím na "
-"udalosť zobraziť podrobné informácie o každej udalosti."
+# DK: session prekladame ako reláciu
+#: ../data/gl-eventviewdetail.ui.h:2
+msgid "Audit Session"
+msgstr "Audit relácie"
 
-#: ../data/gnome-logs.desktop.in.h:1
-msgid "Log Viewer"
-msgstr "Prehliadač záznamov"
+#: ../data/gl-eventviewdetail.ui.h:3
+msgid "Kernel Device"
+msgstr "Zariadenie jadra"
+
+#: ../data/gl-eventviewdetail.ui.h:4
+msgid "Priority"
+msgstr "Priorita"
+
+#: ../data/gl-eventviewdetail.ui.h:5
+msgid "Subject"
+msgstr "Predmet"
+
+#: ../data/gl-eventviewdetail.ui.h:6
+msgid "Defined By"
+msgstr "Definoval"
+
+#: ../data/gl-eventviewdetail.ui.h:7
+msgid "Support"
+msgstr "Podpora"
+
+#: ../data/gl-eventviewdetail.ui.h:8
+msgid "Documentation"
+msgstr "Dokumentácia"
+
+#: ../data/menus.ui.h:1
+msgid "_New Window"
+msgstr "_Nové okno"
+
+#: ../data/menus.ui.h:2
+msgid "_Help"
+msgstr "_Pomocník"
+
+#: ../data/menus.ui.h:3
+msgid "_About"
+msgstr "_O programe"
+
+#: ../data/menus.ui.h:4
+msgid "_Quit"
+msgstr "U_končiť"
 
 # DK:nezda sa mi moc presny ten preklad aj ked znie dobre. dal by som: "Zobrazuje podrobné záznamy udalostí systému"
-#: ../data/gnome-logs.desktop.in.h:2
+#: ../data/org.gnome.Logs.appdata.xml.in.h:3 ../data/org.gnome.Logs.desktop.in.h:3
 msgid "View detailed event logs for the system"
 msgstr "Zobrazuje podrobné záznamy o udalostiach v systéme"
+
+#: ../data/org.gnome.Logs.appdata.xml.in.h:4
+msgid ""
+"Logs shows events from the systemd journal, and sorts them into categories, such as hardware and applications."
+msgstr ""
+"Aplikácia záznamy zobrazuje udalosti z denníka služby systemd a triedi ich do kategórií ako sú napríklad hardvér "
+"alebo aplikácie."
+
+#: ../data/org.gnome.Logs.appdata.xml.in.h:5
+msgid ""
+"Using Logs you can search your logs by typing a search term, and view detailed information about each event by "
+"clicking on it."
+msgstr ""
+"Použitím aplikácie Záznamy môžete vyhľadať zadaný výraz a kliknutím na udalosť zobraziť podrobné informácie o "
+"každej udalosti."
+
+#: ../data/org.gnome.Logs.desktop.in.h:2
+msgid "Log Viewer"
+msgstr "Prehliadač záznamov"
 
 # DK: co tak doplnit aj slovo "žurnál" ?
 # PV: no áno + som zabudol na bodkočiarku na konci
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: ../data/gnome-logs.desktop.in.h:4
+#: ../data/org.gnome.Logs.desktop.in.h:5
 msgid "log;journal;debug;error;"
 msgstr "log;záznam;žurnál;denník;ladenie;chyba;"
 
-#: ../src/gl-application.c:99
+#: ../data/org.gnome.Logs.gschema.xml.h:1
+msgid "How to sort list rows in the event view list"
+msgstr "Ako usporiadať riadky zoznamu v zobrazení udalostí"
+
+#: ../data/org.gnome.Logs.gschema.xml.h:2
+msgid "Sort list rows in ascending or descending order for the selected type"
+msgstr "Usporiadať zoznam riadkov vzostupne alebo  zostupne pre vybratý typ"
+
+#: ../src/gl-application.c:103
 msgid "translator-credits"
 msgstr "Peter Vágner <pvdeejay@gmail.com>"
 
-#: ../src/gl-application.c:100
+#: ../src/gl-application.c:104
 msgid "View and search logs"
 msgstr "Zobrazuje a prehľadáva záznamy"
 
-#: ../src/gl-application.c:222
+#: ../src/gl-application.c:231
 msgid "Print version information and exit"
 msgstr "Vypíše informácie o verzii a skončí"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventview.c:217
+#: ../src/gl-eventviewlist.c:281
 msgid "No results"
 msgstr "Žiadne výsledky"
 
 # DK: sedi rod pre vsetky pripady? s tymto slovom mam tiez problem v Rygeli
 # PV: nedokážem určiť v akom je to kontexte, neprichádza mi na um univerzálnejší preklad
-#: ../src/gl-eventview.c:604 ../src/gl-eventview.c:614
-#: ../src/gl-eventview.c:745 ../src/gl-eventview.c:755
+#: ../src/gl-eventviewlist.c:740 ../src/gl-eventviewlist.c:753 ../src/gl-eventviewlist.c:902
+#: ../src/gl-eventviewlist.c:915
 msgid "Not implemented"
 msgstr "Neimplementované"
-
-#: ../src/gl-eventviewdetail.c:140
-msgid "Message"
-msgstr "Správa"
-
-#. TODO: Give a user-friendly representation of the priority.
-#: ../src/gl-eventviewdetail.c:161
-msgid "Priority"
-msgstr "Priorita"
-
-#: ../src/gl-eventviewdetail.c:189
-msgid "Kernel Device"
-msgstr "Zariadenie jadra"
-
-# DK: session prekladame ako reláciu
-#: ../src/gl-eventviewdetail.c:209
-msgid "Audit Session"
-msgstr "Audit relácie"
 
 #. Translators: timestamp format for events on the current
 #. * day, showing the time in 12-hour format.
