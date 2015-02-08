@@ -20,6 +20,18 @@
 
 #include <glib/gi18n.h>
 
+/**
+ * GlUtilTimestamps:
+ * @GL_UTIL_TIMESTAMPS_SAME_DAY: the timestamps have the same year, month and
+ * day
+ * @GL_UTIL_TIMESTAMPS_SAME_YEAR: the timestamps have the same year, but
+ * different months and days
+ * @GL_UTIL_TIMESTAMPS_DIFFERENT_YEAR: the timestamps have different years,
+ * months and days
+ *
+ * Date string comparison result, used for formatting a date into an
+ * appropriate string.
+ */
 typedef enum
 {
     GL_UTIL_TIMESTAMPS_SAME_DAY,
@@ -27,6 +39,16 @@ typedef enum
     GL_UTIL_TIMESTAMPS_DIFFERENT_YEAR
 } GlUtilTimestamps;
 
+/**
+ * gl_util_on_css_provider_parsing_error:
+ * @provider: the provider that had a parsing error
+ * @section: section the error happened in
+ * @error: the parsing error
+ * @user_data: user data set when the signal handler was connected
+ *
+ * Handle the GtkCssProvider::parsing-error signal and print a warning based on
+ * @section and @error.
+ */
 void
 gl_util_on_css_provider_parsing_error (GtkCssProvider *provider,
                                        GtkCssSection *section,
@@ -39,6 +61,15 @@ gl_util_on_css_provider_parsing_error (GtkCssProvider *provider,
                 error->message);
 }
 
+/**
+ * compare_timestamps:
+ * @a: a date
+ * @b: a date to compare with
+ *
+ * Compare @a to @b and return how similar the dates are.
+ *
+ * Returns: a value from GlUtilTimestamps
+ */
 static GlUtilTimestamps
 compare_timestamps (GDateTime *a,
                     GDateTime *b)
@@ -64,6 +95,17 @@ compare_timestamps (GDateTime *a,
     return GL_UTIL_TIMESTAMPS_SAME_YEAR;
 }
 
+/**
+ * gl_util_timestamp_to_display:
+ * @microsecs: number of microseconds since the Unix epoch in UTC
+ * @format: clock format (12 or 24 hour)
+ *
+ * Return a human readable time, corresponding to @microsecs, using an
+ * appropriate @format after comparing it to the current time and discarding
+ * unnecessary elements (for example, return only time if the date is today).
+ *
+ * Returns: a newly-allocated human readable string which represents @microsecs
+ */
 gchar *
 gl_util_timestamp_to_display (guint64 microsecs,
                               GlUtilClockFormat format)
