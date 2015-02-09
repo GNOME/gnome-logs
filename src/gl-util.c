@@ -1,6 +1,7 @@
 /*
  *  GNOME Logs - View and search logs
  *  Copyright (C) 2013  Red Hat, Inc.
+ *  Copyright (C) 2015  Ekaterina Gerasimova
  *
  *  This program is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -98,21 +99,22 @@ compare_timestamps (GDateTime *a,
 /**
  * gl_util_timestamp_to_display:
  * @microsecs: number of microseconds since the Unix epoch in UTC
+ * @now: the time to compare with
  * @format: clock format (12 or 24 hour)
  *
  * Return a human readable time, corresponding to @microsecs, using an
- * appropriate @format after comparing it to the current time and discarding
- * unnecessary elements (for example, return only time if the date is today).
+ * appropriate @format after comparing it to @now and discarding unnecessary
+ * elements (for example, return only time if the date is today).
  *
  * Returns: a newly-allocated human readable string which represents @microsecs
  */
 gchar *
 gl_util_timestamp_to_display (guint64 microsecs,
+                              GDateTime *now,
                               GlUtilClockFormat format)
 {
     GDateTime *datetime;
     GDateTime *local;
-    GDateTime *now;
     gchar *time = NULL;
 
     datetime = g_date_time_new_from_unix_utc (microsecs / G_TIME_SPAN_SECOND);
@@ -124,7 +126,6 @@ gl_util_timestamp_to_display (guint64 microsecs,
     }
 
     local = g_date_time_to_local (datetime);
-    now = g_date_time_new_now_local ();
 
     switch (format)
     {
@@ -184,7 +185,6 @@ gl_util_timestamp_to_display (guint64 microsecs,
 
     g_date_time_unref (datetime);
     g_date_time_unref (local);
-    g_date_time_unref (now);
 
     if (time == NULL)
     {

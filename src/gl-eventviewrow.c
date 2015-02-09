@@ -117,6 +117,7 @@ gl_event_view_row_create_cmdline (GlEventViewRow *row)
     gboolean rtl;
     GtkWidget *image;
     GlJournalResult *result;
+    GDateTime *now;
 
     priv = gl_event_view_row_get_instance_private (row);
     result = priv->result;
@@ -148,8 +149,10 @@ gl_event_view_row_create_cmdline (GlEventViewRow *row)
     gtk_label_set_ellipsize (GTK_LABEL (label), PANGO_ELLIPSIZE_END);
     gtk_grid_attach (GTK_GRID (grid), label, 0, 1, 2, 1);
 
-    time = gl_util_timestamp_to_display (result->timestamp,
+    now = g_date_time_new_now_local ();
+    time = gl_util_timestamp_to_display (result->timestamp, now,
                                          priv->clock_format);
+    g_date_time_unref (now);
     label = gtk_label_new (time);
     context = gtk_widget_get_style_context (GTK_WIDGET (label));
     gtk_style_context_add_class (context, "dim-label");
@@ -175,6 +178,7 @@ gl_event_view_row_create_simple (GlEventViewRow *row)
     gboolean rtl;
     GtkWidget *image;
     GlJournalResult *result;
+    GDateTime *now;
 
     priv = gl_event_view_row_get_instance_private (row);
     result = priv->result;
@@ -196,8 +200,10 @@ gl_event_view_row_create_simple (GlEventViewRow *row)
     gtk_label_set_ellipsize (GTK_LABEL (label), PANGO_ELLIPSIZE_END);
     gtk_grid_attach (GTK_GRID (grid), label, 0, 1, 1, 1);
 
-    time = gl_util_timestamp_to_display (result->timestamp,
+    now = g_date_time_new_now_local ();
+    time = gl_util_timestamp_to_display (result->timestamp, now,
                                          priv->clock_format);
+    g_date_time_unref (now);
     label = gtk_label_new (time);
     context = gtk_widget_get_style_context (GTK_WIDGET (label));
     gtk_style_context_add_class (context, "dim-label");

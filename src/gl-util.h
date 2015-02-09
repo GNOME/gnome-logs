@@ -40,6 +40,7 @@ void gl_util_on_css_provider_parsing_error (GtkCssProvider *provider,
                                             GError *error,
                                             G_GNUC_UNUSED gpointer user_data);
 gchar * gl_util_timestamp_to_display (guint64 microsecs,
+                                      GDateTime *now,
                                       GlUtilClockFormat format);
 
 G_END_DECLS
