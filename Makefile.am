@@ -112,7 +112,34 @@ test-desktop-file-validate.sh: Makefile
 check_SCRIPTS = \
 	test-desktop-file-validate.sh
 
+# Tests:
+TESTS_ENVIRONMENT = \
+	LANG=C \
+	MALLOC_CHECK_=2 \
+	MALLOC_PERTURB_=$$(($${RANDOM:-256} % 256)) \
+	G_SLICE=debug-blocks
+
+tests_test_gl_util_CPPFLAGS = \
+	-DLOCALEDIR=\""$(localedir)"\" \
+	-I$(top_builddir) \
+	-I$(top_builddir)/src \
+	$(WARN_CFLAGS)
+
+tests_test_gl_util_CFLAGS = \
+	$(LOGS_CFLAGS)
+
+tests_test_gl_util_LDADD = \
+	$(LOGS_LIBS)
+
+tests_test_gl_util_SOURCES = \
+	tests/test-gl-util.c \
+	src/gl-util.c
+
+check_PROGRAMS = \
+	tests/test-gl-util
+
 TESTS = \
+	$(check_PROGRAMS) \
 	$(check_SCRIPTS)
 endif
 
