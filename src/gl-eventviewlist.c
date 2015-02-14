@@ -731,32 +731,6 @@ gl_event_view_list_add_listbox_important (GlEventViewList *view)
 }
 
 static void
-gl_event_view_list_add_listbox_alerts (GlEventViewList *view)
-{
-    GtkWidget *label;
-    GlEventViewListPrivate *priv;
-
-    priv = gl_event_view_list_get_instance_private (view);
-    label = gtk_label_new (_("Not implemented"));
-    gtk_widget_show_all (label);
-    gtk_stack_add_named (GTK_STACK (priv->event_stack), label,
-                         "listbox-alerts");
-}
-
-static void
-gl_event_view_list_add_listbox_starred (GlEventViewList *view)
-{
-    GtkWidget *label;
-    GlEventViewListPrivate *priv;
-
-    priv = gl_event_view_list_get_instance_private (view);
-    label = gtk_label_new (_("Not implemented"));
-    gtk_widget_show_all (label);
-    gtk_stack_add_named (GTK_STACK (priv->event_stack), label,
-                         "listbox-starred");
-}
-
-static void
 gl_event_view_list_add_listbox_all (GlEventViewList *view)
 {
     const GlJournalQuery query = { N_RESULTS, NULL };
@@ -893,32 +867,6 @@ gl_event_view_list_add_listbox_security (GlEventViewList *view)
 }
 
 static void
-gl_event_view_list_add_listbox_updates (GlEventViewList *view)
-{
-    GtkWidget *label;
-    GlEventViewListPrivate *priv;
-
-    priv = gl_event_view_list_get_instance_private (view);
-    label = gtk_label_new (_("Not implemented"));
-    gtk_widget_show_all (label);
-    gtk_stack_add_named (GTK_STACK (priv->event_stack), label,
-                         "listbox-updates");
-}
-
-static void
-gl_event_view_list_add_listbox_usage (GlEventViewList *view)
-{
-    GtkWidget *label;
-    GlEventViewListPrivate *priv;
-
-    priv = gl_event_view_list_get_instance_private (view);
-    label = gtk_label_new (_("Not implemented"));
-    gtk_widget_show_all (label);
-    gtk_stack_add_named (GTK_STACK (priv->event_stack), label,
-                         "listbox-usage");
-}
-
-static void
 on_notify_category (GlCategoryList *list,
                     GParamSpec *pspec,
                     gpointer user_data)
@@ -951,14 +899,6 @@ on_notify_category (GlCategoryList *list,
             gl_event_view_list_add_listbox_important (view);
             gtk_stack_set_visible_child_name (stack, "listbox-important");
             break;
-        case GL_CATEGORY_LIST_FILTER_ALERTS:
-            gl_event_view_list_add_listbox_alerts (view);
-            gtk_stack_set_visible_child_name (stack, "listbox-alerts");
-            break;
-        case GL_CATEGORY_LIST_FILTER_STARRED:
-            gl_event_view_list_add_listbox_starred (view);
-            gtk_stack_set_visible_child_name (stack, "listbox-starred");
-            break;
         case GL_CATEGORY_LIST_FILTER_ALL:
             gl_event_view_list_add_listbox_all (view);
             gtk_stack_set_visible_child_name (stack, "listbox-all");
@@ -978,14 +918,6 @@ on_notify_category (GlCategoryList *list,
         case GL_CATEGORY_LIST_FILTER_SECURITY:
             gl_event_view_list_add_listbox_security (view);
             gtk_stack_set_visible_child_name (stack, "listbox-security");
-            break;
-        case GL_CATEGORY_LIST_FILTER_UPDATES:
-            gl_event_view_list_add_listbox_updates (view);
-            gtk_stack_set_visible_child_name (stack, "listbox-updates");
-            break;
-        case GL_CATEGORY_LIST_FILTER_USAGE:
-            gl_event_view_list_add_listbox_usage (view);
-            gtk_stack_set_visible_child_name (stack, "listbox-usage");
             break;
         default:
             break;
