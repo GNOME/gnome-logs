@@ -4,19 +4,20 @@
 #
 # Hongis_3 <hongis1982@gmail.com>, 2014.
 # Muhammet Kara <muhammetk@gmail.com>, 2014.
+# Gökhan Gurbetoğlu <ggurbet@gmail.com>, 2014.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-09-18 09:03+0000\n"
-"PO-Revision-Date: 2014-09-18 18:43+0000\n"
-"Last-Translator: Muhammet Kara <muhammetk@gmail.com>\n"
+"POT-Creation-Date: 2015-02-14 07:55+0000\n"
+"PO-Revision-Date: 2014-12-25 15:56+0000\n"
+"Last-Translator: Gökhan Gurbetoğlu <ggurbet@gmail.com>\n"
 "Language-Team: Türkçe <gnome-turk@gnome.org>\n"
+"Language: tr_TR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: tr_TR\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../data/gl-categorylist.ui.h:1
@@ -59,7 +60,9 @@ msgstr "Güncellemeler"
 msgid "Usage"
 msgstr "Kullanım"
 
-#: ../data/gl-eventtoolbar.ui.h:1 ../data/org.gnome.Logs.desktop.in.h:1
+#. Name and summary taken from the desktop file.
+#: ../data/gl-eventtoolbar.ui.h:1 ../data/org.gnome.Logs.appdata.xml.in.h:2
+#: ../data/org.gnome.Logs.desktop.in.h:1
 msgid "Logs"
 msgstr "Günlükler"
 
@@ -87,6 +90,22 @@ msgstr "Çekirdek (Kernel) Aygıtı"
 msgid "Priority"
 msgstr "Öncelik"
 
+#: ../data/gl-eventviewdetail.ui.h:5
+msgid "Subject"
+msgstr "Konu"
+
+#: ../data/gl-eventviewdetail.ui.h:6
+msgid "Defined By"
+msgstr "Tanımlayan"
+
+#: ../data/gl-eventviewdetail.ui.h:7
+msgid "Support"
+msgstr "Destek"
+
+#: ../data/gl-eventviewdetail.ui.h:8
+msgid "Documentation"
+msgstr "Belgelendirme"
+
 #: ../data/menus.ui.h:1
 msgid "_New Window"
 msgstr "_Yeni Pencere"
@@ -103,13 +122,18 @@ msgstr "_Hakkında"
 msgid "_Quit"
 msgstr "_Çıkış"
 
-#: ../data/org.gnome.Logs.appdata.xml.in.h:1
+#: ../data/org.gnome.Logs.appdata.xml.in.h:3
+#: ../data/org.gnome.Logs.desktop.in.h:3
+msgid "View detailed event logs for the system"
+msgstr "Sistem için ayrıntılı olay günlüklerini görüntüle"
+
+#: ../data/org.gnome.Logs.appdata.xml.in.h:4
 msgid ""
 "Logs shows events from the systemd journal, and sorts them into categories, "
 "such as hardware and applications."
 msgstr "Günlükler, systemd günlüğünden olayları gösterir ve bunları donanım ve uygulamalar gibi kategoriler halinde sıralar."
 
-#: ../data/org.gnome.Logs.appdata.xml.in.h:2
+#: ../data/org.gnome.Logs.appdata.xml.in.h:5
 msgid ""
 "Using Logs you can search your logs by typing a search term, and view "
 "detailed information about each event by clicking on it."
@@ -119,75 +143,79 @@ msgstr "Günlükleri kullanarak, bir arama terimi yazarak günlüklerde arama ya
 msgid "Log Viewer"
 msgstr "Günlük Görüntüleyici"
 
-#: ../data/org.gnome.Logs.desktop.in.h:3
-msgid "View detailed event logs for the system"
-msgstr "Sistem için ayrıntılı olay günlüklerini görüntüle"
-
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: ../data/org.gnome.Logs.desktop.in.h:5
 msgid "log;journal;debug;error;"
 msgstr "log;kayıt;journal;günlük;dergi;debug;hata ayıklama;error;hata;"
 
-#: ../src/gl-application.c:99
+#: ../data/org.gnome.Logs.gschema.xml.h:1
+msgid "How to sort list rows in the event view list"
+msgstr "Olay görüntüleme listesinde liste satırlarının nasıl sıralanacağı"
+
+#: ../data/org.gnome.Logs.gschema.xml.h:2
+msgid "Sort list rows in ascending or descending order for the selected type"
+msgstr "Seçili tür için liste satırlarını artan ya da azalan düzende sırala"
+
+#: ../src/gl-application.c:103
 msgid "translator-credits"
 msgstr "Yusuf YILMAZ"
 
-#: ../src/gl-application.c:100
+#: ../src/gl-application.c:104
 msgid "View and search logs"
 msgstr "Günlükleri görüntüleyin ve arayın"
 
-#: ../src/gl-application.c:207
+#: ../src/gl-application.c:231
 msgid "Print version information and exit"
 msgstr "Sürüm bilgilerini yazdır ve çık"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventviewlist.c:217
+#: ../src/gl-eventviewlist.c:281
 msgid "No results"
 msgstr "Sonuç yok"
 
-#: ../src/gl-eventviewlist.c:604 ../src/gl-eventviewlist.c:614
-#: ../src/gl-eventviewlist.c:745 ../src/gl-eventviewlist.c:755
+#: ../src/gl-eventviewlist.c:740 ../src/gl-eventviewlist.c:753
+#: ../src/gl-eventviewlist.c:902 ../src/gl-eventviewlist.c:915
 msgid "Not implemented"
 msgstr "Uygulanabilir değil"
 
 #. Translators: timestamp format for events on the current
 #. * day, showing the time in 12-hour format.
-#: ../src/gl-util.c:95
+#: ../src/gl-util.c:138
 msgid "%l:%M %p"
 msgstr "%l:%M %p"
 
 #. Translators: timestamp format for events in the current
 #. * year, showing the abbreviated month name, day of the
 #. * month and the time in 12-hour format.
-#: ../src/gl-util.c:101
+#: ../src/gl-util.c:144
 msgid "%b %e %l:%M %p"
 msgstr "%e %b %l:%M %p"
 
 #. Translators: timestamp format for events in a different
 #. * year, showing the abbreviated month name, day of the
 #. * month, year and the time in 12-hour format.
-#: ../src/gl-util.c:107
+#: ../src/gl-util.c:150
 msgid "%b %e %Y %l:%M %p"
 msgstr "%e %b %Y %l:%M %p"
 
 #. Translators: timestamp format for events on the current
 #. * day, showing the time in 24-hour format.
-#: ../src/gl-util.c:120
+#: ../src/gl-util.c:163
 msgid "%H:%M"
 msgstr "%H:%M"
 
 #. Translators: timestamp format for events in the current
 #. * year, showing the abbreviated month name, day of the
 #. * month and the time in 24-hour format.
-#: ../src/gl-util.c:126
+#: ../src/gl-util.c:169
 msgid "%b %e %H:%M"
 msgstr "%e %b %H:%M"
 
 #. Translators: timestamp format for events in a different
 #. * year, showing the abbreviated month name, day of the
 #. * month, year and the time in 24-hour format.
-#: ../src/gl-util.c:132
+#: ../src/gl-util.c:175
 msgid "%b %e %Y %H:%M"
 msgstr "%e %b %Y %H:%M"
