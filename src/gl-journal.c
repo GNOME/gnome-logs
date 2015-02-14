@@ -348,22 +348,6 @@ gl_journal_query_free (GlJournalQuery *query)
     g_slice_free (GlJournalQuery, query);
 }
 
-static void
-gl_journal_query_async_thread (GTask *task,
-                               gpointer source_object,
-                               gpointer task_data,
-                               GCancellable *cancellable)
-{
-    GList *results;
-
-    /* TODO: gl_journal_query() should accept a cancellable. */
-    results = gl_journal_query (GL_JOURNAL (source_object),
-                                (GlJournalQuery *)task_data);
-    g_task_return_pointer (task, results,
-                           (GDestroyNotify)gl_journal_results_free);
-    /* TODO: Return error if necessary (if cancelled?). */
-}
-
 void
 gl_journal_query_async (GlJournal *self,
                         const GlJournalQuery *query,
@@ -373,12 +357,16 @@ gl_journal_query_async (GlJournal *self,
 {
     GTask *task;
     GlJournalQuery *data;
+    GList *results;
 
     data = gl_journal_query_copy (query);
 
     task = g_task_new (self, cancellable, callback, user_data);
-    g_task_set_task_data (task, data, (GDestroyNotify)gl_journal_query_free);
-    g_task_run_in_thread (task, gl_journal_query_async_thread);
+    g_task_set_task_data (task, data, (GDestroyNotify) gl_journal_query_free);
+
+    results = gl_journal_query (self, query);
+    g_task_return_pointer (task, results, (GDestroyNotify) gl_journal_results_free);
+
     g_object_unref (task);
 }
 
