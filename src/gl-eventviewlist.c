@@ -28,15 +28,15 @@
 #include "gl-eventview.h"
 #include "gl-eventviewdetail.h"
 #include "gl-eventviewrow.h"
-#include "gl-journal.h"
+#include "gl-journal-model.h"
 #include "gl-util.h"
 
 typedef struct
 {
-    GlJournal *journal;
+    GlJournalModel *journal_model;
     GlJournalEntry *entry;
     GlUtilClockFormat clock_format;
-    GtkListBox *active_listbox;
+    GtkListBox *entries_box;
     GtkWidget *categories;
     GtkWidget *event_search;
     GtkWidget *event_scrolled;
@@ -44,12 +44,10 @@ typedef struct
     gchar *search_text;
 
     GlEventViewRowStyle current_row_style;
-    guint insert_idle_id;
 } GlEventViewListPrivate;
 
 G_DEFINE_TYPE_WITH_PRIVATE (GlEventViewList, gl_event_view_list, GTK_TYPE_BOX)
 
-static const gssize N_RESULTS_IDLE = 5;
 static const gchar DESKTOP_SCHEMA[] = "org.gnome.desktop.interface";
 static const gchar SETTINGS_SCHEMA[] = "org.gnome.Logs";
 static const gchar CLOCK_FORMAT[] = "clock-format";
@@ -301,56 +299,14 @@ gl_event_view_create_empty (G_GNUC_UNUSED GlEventViewList *view)
 }
 
 static GtkWidget *
-gl_event_view_list_box_new (GlEventViewList *view)
+gl_event_list_view_create_row_widget (gpointer item,
+                                      gpointer user_data)
 {
-    GtkWidget *listbox;
+    GlEventViewList *view = user_data;
 
-    listbox = gtk_list_box_new ();
-
-    gtk_list_box_set_filter_func (GTK_LIST_BOX (listbox),
-                                  (GtkListBoxFilterFunc)listbox_search_filter_func,
-                                  view, NULL);
-    gtk_list_box_set_placeholder (GTK_LIST_BOX (listbox),
-                                  gl_event_view_create_empty (view));
-    gtk_list_box_set_selection_mode (GTK_LIST_BOX (listbox),
-                                     GTK_SELECTION_NONE);
-    g_signal_connect (listbox, "row-activated",
-                      G_CALLBACK (on_listbox_row_activated), GTK_BOX (view));
-
-    return listbox;
-}
-
-static gboolean
-insert_idle (gpointer data)
-{
-    GlEventViewList *view = data;
     GlEventViewListPrivate *priv = gl_event_view_list_get_instance_private (view);
-    gint i;
 
-    for (i = 0; i < N_RESULTS_IDLE; i++)
-    {
-        GlJournalEntry *entry;
-        GtkWidget *row;
-
-        entry = gl_journal_previous (priv->journal);
-        if (entry)
-        {
-            row = gl_event_view_row_new (entry,
-                                         priv->current_row_style,
-                                         priv->clock_format);
-            gtk_container_add (GTK_CONTAINER (priv->active_listbox), row);
-            gtk_widget_show_all (row);
-
-            g_object_unref (entry);
-        }
-        else
-        {
-            priv->insert_idle_id = 0;
-            return G_SOURCE_REMOVE;
-        }
-    }
-
-    return G_SOURCE_CONTINUE;
+    return gl_event_view_row_new (item, priv->current_row_style, priv->clock_format);
 }
 
 static gchar *
@@ -385,23 +341,6 @@ on_notify_category (GlCategoryList *list,
     priv = gl_event_view_list_get_instance_private (view);
     filter = gl_category_list_get_category (list);
 
-    if (priv->insert_idle_id)
-      {
-        g_source_remove (priv->insert_idle_id);
-        priv->insert_idle_id = 0;
-      }
-
-    if (priv->active_listbox)
-      {
-        GtkWidget *child;
-
-        child = gtk_bin_get_child (GTK_BIN (priv->event_scrolled));
-        gtk_widget_destroy (child);
-      }
-
-    priv->active_listbox = GTK_LIST_BOX (gl_event_view_list_box_new (view));
-    gtk_container_add (GTK_CONTAINER (priv->event_scrolled), GTK_WIDGET (priv->active_listbox));
-
     switch (filter)
     {
         case GL_CATEGORY_LIST_FILTER_IMPORTANT:
@@ -410,7 +349,7 @@ on_notify_category (GlCategoryList *list,
               const gchar * query[] = { "PRIORITY=0", "PRIORITY=1", "PRIORITY=2", "PRIORITY=3", NULL };
 
               priv->current_row_style = GL_EVENT_VIEW_ROW_STYLE_CMDLINE;
-              gl_journal_set_matches (priv->journal, query);
+              gl_journal_model_set_matches (priv->journal_model, query);
             }
             break;
 
@@ -419,7 +358,7 @@ on_notify_category (GlCategoryList *list,
                 const gchar *query[] = { NULL };
 
                 priv->current_row_style = GL_EVENT_VIEW_ROW_STYLE_CMDLINE;
-                gl_journal_set_matches (priv->journal, query);
+                gl_journal_model_set_matches (priv->journal_model, query);
             }
             break;
 
@@ -437,7 +376,7 @@ on_notify_category (GlCategoryList *list,
                 priv->current_row_style = GL_EVENT_VIEW_ROW_STYLE_CMDLINE;
                 uid_str = create_uid_match_string ();
                 query[3] = uid_str;
-                gl_journal_set_matches (priv->journal, query);
+                gl_journal_model_set_matches (priv->journal_model, query);
 
                 g_free (uid_str);
             }
@@ -448,7 +387,7 @@ on_notify_category (GlCategoryList *list,
                 const gchar *query[] = { "_TRANSPORT=kernel", NULL };
 
                 priv->current_row_style = GL_EVENT_VIEW_ROW_STYLE_SIMPLE;
-                gl_journal_set_matches (priv->journal, query);
+                gl_journal_model_set_matches (priv->journal_model, query);
             }
             break;
 
@@ -457,7 +396,7 @@ on_notify_category (GlCategoryList *list,
                 const gchar *query[] = { "_TRANSPORT=kernel", "_KERNEL_DEVICE", NULL };
 
                 priv->current_row_style = GL_EVENT_VIEW_ROW_STYLE_SIMPLE;
-                gl_journal_set_matches (priv->journal, query);
+                gl_journal_model_set_matches (priv->journal_model, query);
             }
             break;
 
@@ -466,17 +405,13 @@ on_notify_category (GlCategoryList *list,
                 const gchar *query[] = { "_AUDIT_SESSION", NULL };
 
                 priv->current_row_style = GL_EVENT_VIEW_ROW_STYLE_CMDLINE;
-                gl_journal_set_matches (priv->journal, query);
+                gl_journal_model_set_matches (priv->journal_model, query);
             }
             break;
 
         default:
             g_assert_not_reached ();
     }
-
-    priv->insert_idle_id = g_idle_add (insert_idle, view);
-
-    gtk_widget_show_all (GTK_WIDGET (priv->active_listbox));
 
     settings = g_settings_new (SETTINGS_SCHEMA);
     sort_order = g_settings_get_enum (settings, SORT_ORDER);
@@ -553,12 +488,12 @@ gl_event_view_list_set_sort_order (GlEventViewList *view,
     switch (sort_order)
     {
         case GL_SORT_ORDER_ASCENDING_TIME:
-            gtk_list_box_set_sort_func (GTK_LIST_BOX (priv->active_listbox),
+            gtk_list_box_set_sort_func (GTK_LIST_BOX (priv->entries_box),
                                         (GtkListBoxSortFunc) gl_event_view_sort_by_ascending_time,
                                         NULL, NULL);
             break;
         case GL_SORT_ORDER_DESCENDING_TIME:
-            gtk_list_box_set_sort_func (GTK_LIST_BOX (priv->active_listbox),
+            gtk_list_box_set_sort_func (GTK_LIST_BOX (priv->entries_box),
                                         (GtkListBoxSortFunc) gl_event_view_sort_by_descending_time,
                                         NULL, NULL);
             break;
@@ -615,11 +550,7 @@ gl_event_view_list_finalize (GObject *object)
     GlEventViewList *view = GL_EVENT_VIEW_LIST (object);
     GlEventViewListPrivate *priv = gl_event_view_list_get_instance_private (view);
 
-    if (priv->insert_idle_id)
-    {
-        g_source_remove (priv->insert_idle_id);
-    }
-
+    g_clear_object (&priv->journal_model);
     g_clear_pointer (&priv->search_text, g_free);
 }
 
@@ -633,6 +564,8 @@ gl_event_view_list_class_init (GlEventViewListClass *klass)
 
     gtk_widget_class_set_template_from_resource (widget_class,
                                                  "/org/gnome/Logs/gl-eventviewlist.ui");
+    gtk_widget_class_bind_template_child_private (widget_class, GlEventViewList,
+                                                  entries_box);
     gtk_widget_class_bind_template_child_private (widget_class, GlEventViewList,
                                                   categories);
     gtk_widget_class_bind_template_child_private (widget_class, GlEventViewList,
@@ -659,10 +592,22 @@ gl_event_view_list_init (GlEventViewList *view)
 
     priv = gl_event_view_list_get_instance_private (view);
     priv->search_text = NULL;
-    priv->active_listbox = NULL;
-    priv->insert_idle_id = 0;
-    priv->journal = gl_journal_new ();
     categories = GL_CATEGORY_LIST (priv->categories);
+
+    priv->journal_model = gl_journal_model_new ();
+
+    gtk_list_box_bind_model (GTK_LIST_BOX (priv->entries_box),
+                             G_LIST_MODEL (priv->journal_model),
+                             gl_event_list_view_create_row_widget,
+                             view, NULL);
+
+    gtk_list_box_set_filter_func (GTK_LIST_BOX (priv->entries_box),
+                                  (GtkListBoxFilterFunc) listbox_search_filter_func,
+                                  view, NULL);
+    gtk_list_box_set_placeholder (GTK_LIST_BOX (priv->entries_box),
+                                  gl_event_view_create_empty (view));
+    g_signal_connect (priv->entries_box, "row-activated",
+                      G_CALLBACK (on_listbox_row_activated), GTK_BOX (view));
 
     /* TODO: Monitor and propagate any GSettings changes. */
     settings = g_settings_new (DESKTOP_SCHEMA);
@@ -686,7 +631,7 @@ gl_event_view_list_search (GlEventViewList *view,
     g_free (priv->search_text);
     priv->search_text = g_strdup (needle);
 
-    gtk_list_box_invalidate_filter (priv->active_listbox);
+    gtk_list_box_invalidate_filter (priv->entries_box);
 }
 
 GtkWidget *

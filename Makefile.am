@@ -32,6 +32,7 @@ gnome_logs_SOURCES = \
 	src/gl-eventviewlist.c \
 	src/gl-eventviewrow.c \
 	src/gl-journal.c \
+	src/gl-journal-model.c \
 	src/gl-main.c \
 	src/gl-util.c \
 	src/gl-window.c
@@ -60,6 +61,7 @@ noinst_gnome_logs_headers = \
 	src/gl-eventviewlist.h \
 	src/gl-eventviewrow.h \
 	src/gl-journal.h \
+	src/gl-journal-model.h \
 	src/gl-util.h \
 	src/gl-window.h
 
