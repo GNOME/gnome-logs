@@ -389,32 +389,6 @@ query_ready (GObject *source_object,
     g_source_set_name_by_id (priv->insert_idle_id, G_STRFUNC);
 }
 
-static void
-gl_event_view_list_add_listbox_important (GlEventViewList *view)
-{
-    /* Alert or emergency priority. */
-    const gchar * query[] = { "PRIORITY=0", "PRIORITY=1", "PRIORITY=2", "PRIORITY=3", NULL };
-
-    GlEventViewListPrivate *priv;
-
-    priv = gl_event_view_list_get_instance_private (view);
-    priv->current_row_style = GL_EVENT_VIEW_ROW_STYLE_CMDLINE;
-
-    gl_journal_query_async (priv->journal, query, NULL, query_ready, view);
-}
-
-static void
-gl_event_view_list_add_listbox_all (GlEventViewList *view)
-{
-    const gchar *query[] = { NULL };
-    GlEventViewListPrivate *priv;
-
-    priv = gl_event_view_list_get_instance_private (view);
-    priv->current_row_style = GL_EVENT_VIEW_ROW_STYLE_CMDLINE;
-
-    gl_journal_query_async (priv->journal, query, NULL, query_ready, view);
-}
-
 static gchar *
 create_uid_match_string (void)
 {
@@ -430,66 +404,6 @@ create_uid_match_string (void)
 
     g_object_unref (creds);
     return str;
-}
-
-/* Allow all _TRANSPORT != kernel. Attempt to filter by only processes
- * owned by the same UID. */
-static void
-gl_event_view_list_add_listbox_applications (GlEventViewList *view)
-{
-    GlEventViewListPrivate *priv;
-    gchar *uid_str = NULL;
-    const gchar *query[] = { "_TRANSPORT=journal",
-                             "_TRANSPORT=stdout",
-                             "_TRANSPORT=syslog",
-                             NULL,
-                             NULL };
-
-    priv = gl_event_view_list_get_instance_private (view);
-    priv->current_row_style = GL_EVENT_VIEW_ROW_STYLE_CMDLINE;
-
-    uid_str = create_uid_match_string ();
-    query[3] = uid_str;
-
-    gl_journal_query_async (priv->journal, query, NULL, query_ready, view);
-
-    g_free (uid_str);
-}
-
-static void
-gl_event_view_list_add_listbox_system (GlEventViewList *view)
-{
-    const gchar *query[] = { "_TRANSPORT=kernel", NULL };
-    GlEventViewListPrivate *priv;
-
-    priv = gl_event_view_list_get_instance_private (view);
-    priv->current_row_style = GL_EVENT_VIEW_ROW_STYLE_SIMPLE;
-
-    gl_journal_query_async (priv->journal, query, NULL, query_ready, view);
-}
-
-static void
-gl_event_view_list_add_listbox_hardware (GlEventViewList *view)
-{
-    const gchar *query[] = { "_TRANSPORT=kernel", "_KERNEL_DEVICE", NULL };
-    GlEventViewListPrivate *priv;
-
-    priv = gl_event_view_list_get_instance_private (view);
-    priv->current_row_style = GL_EVENT_VIEW_ROW_STYLE_SIMPLE;
-
-    gl_journal_query_async (priv->journal, query, NULL, query_ready, view);
-}
-
-static void
-gl_event_view_list_add_listbox_security (GlEventViewList *view)
-{
-    const gchar *query[] = { "_AUDIT_SESSION", NULL };
-    GlEventViewListPrivate *priv;
-
-    priv = gl_event_view_list_get_instance_private (view);
-    priv->current_row_style = GL_EVENT_VIEW_ROW_STYLE_CMDLINE;
-
-    gl_journal_query_async (priv->journal, query, NULL, query_ready, view);
 }
 
 static void
@@ -521,23 +435,71 @@ on_notify_category (GlCategoryList *list,
     switch (filter)
     {
         case GL_CATEGORY_LIST_FILTER_IMPORTANT:
-            gl_event_view_list_add_listbox_important (view);
+            {
+              /* Alert or emergency priority. */
+              const gchar * query[] = { "PRIORITY=0", "PRIORITY=1", "PRIORITY=2", "PRIORITY=3", NULL };
+
+              priv->current_row_style = GL_EVENT_VIEW_ROW_STYLE_CMDLINE;
+              gl_journal_query_async (priv->journal, query, NULL, query_ready, view);
+            }
             break;
+
         case GL_CATEGORY_LIST_FILTER_ALL:
-            gl_event_view_list_add_listbox_all (view);
+            {
+                const gchar *query[] = { NULL };
+
+                priv->current_row_style = GL_EVENT_VIEW_ROW_STYLE_CMDLINE;
+                gl_journal_query_async (priv->journal, query, NULL, query_ready, view);
+            }
             break;
+
         case GL_CATEGORY_LIST_FILTER_APPLICATIONS:
-            gl_event_view_list_add_listbox_applications (view);
+            /* Allow all _TRANSPORT != kernel. Attempt to filter by only processes
+             * owned by the same UID. */
+            {
+                gchar *uid_str = NULL;
+                const gchar *query[] = { "_TRANSPORT=journal",
+                                         "_TRANSPORT=stdout",
+                                         "_TRANSPORT=syslog",
+                                         NULL,
+                                         NULL };
+
+                priv->current_row_style = GL_EVENT_VIEW_ROW_STYLE_CMDLINE;
+                uid_str = create_uid_match_string ();
+                query[3] = uid_str;
+                gl_journal_query_async (priv->journal, query, NULL, query_ready, view);
+
+                g_free (uid_str);
+            }
             break;
+
         case GL_CATEGORY_LIST_FILTER_SYSTEM:
-            gl_event_view_list_add_listbox_system (view);
+            {
+                const gchar *query[] = { "_TRANSPORT=kernel", NULL };
+
+                priv->current_row_style = GL_EVENT_VIEW_ROW_STYLE_SIMPLE;
+                gl_journal_query_async (priv->journal, query, NULL, query_ready, view);
+            }
             break;
+
         case GL_CATEGORY_LIST_FILTER_HARDWARE:
-            gl_event_view_list_add_listbox_hardware (view);
+            {
+                const gchar *query[] = { "_TRANSPORT=kernel", "_KERNEL_DEVICE", NULL };
+
+                priv->current_row_style = GL_EVENT_VIEW_ROW_STYLE_SIMPLE;
+                gl_journal_query_async (priv->journal, query, NULL, query_ready, view);
+            }
             break;
+
         case GL_CATEGORY_LIST_FILTER_SECURITY:
-            gl_event_view_list_add_listbox_security (view);
+            {
+                const gchar *query[] = { "_AUDIT_SESSION", NULL };
+
+                priv->current_row_style = GL_EVENT_VIEW_ROW_STYLE_CMDLINE;
+                gl_journal_query_async (priv->journal, query, NULL, query_ready, view);
+            }
             break;
+
         default:
             g_assert_not_reached ();
     }
