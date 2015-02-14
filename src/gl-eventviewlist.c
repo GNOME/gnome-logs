@@ -394,20 +394,6 @@ query_devices_ready (GObject *source_object,
     g_source_set_name_by_id (priv->insert_idle_id, G_STRFUNC);
 }
 
-static void
-insert_journal_query_devices (GlEventViewList *view,
-                              const GlJournalQuery *query,
-                              GtkListBox *listbox)
-{
-    GlEventViewListPrivate *priv;
-
-    priv = gl_event_view_list_get_instance_private (view);
-
-    priv->active_listbox = listbox;
-    gl_journal_query_async (priv->journal, query, NULL, query_devices_ready,
-                            view);
-}
-
 static gboolean
 insert_security_idle (GlEventViewList *view)
 {
@@ -495,19 +481,6 @@ query_security_ready (GObject *source_object,
     g_source_set_name_by_id (priv->insert_idle_id, G_STRFUNC);
 }
 
-static void
-insert_journal_query_security (GlEventViewList *view,
-                               const GlJournalQuery *query,
-                               GtkListBox *listbox)
-{
-    GlEventViewListPrivate *priv;
-
-    priv = gl_event_view_list_get_instance_private (view);
-
-    gl_journal_query_async (priv->journal, query, NULL, query_security_ready,
-                            view);
-}
-
 static gboolean
 insert_simple_idle (GlEventViewList *view)
 {
@@ -587,18 +560,6 @@ query_simple_ready (GObject *source_object,
 
     priv->insert_idle_id = g_idle_add ((GSourceFunc) insert_simple_idle, view);
     g_source_set_name_by_id (priv->insert_idle_id, G_STRFUNC);
-}
-
-static void
-insert_journal_query_simple (GlEventViewList *view,
-                             const GlJournalQuery *query,
-                             GtkListBox *listbox)
-{
-    GlEventViewListPrivate *priv;
-
-    priv = gl_event_view_list_get_instance_private (view);
-    gl_journal_query_async (priv->journal, query, NULL, query_simple_ready,
-                            view);
 }
 
 static gboolean
@@ -684,18 +645,6 @@ query_cmdline_ready (GObject *source_object,
 }
 
 static void
-insert_journal_query_cmdline (GlEventViewList *view,
-                              const GlJournalQuery *query,
-                              GtkListBox *listbox)
-{
-    GlEventViewListPrivate *priv;
-
-    priv = gl_event_view_list_get_instance_private (view);
-    gl_journal_query_async (priv->journal, query, NULL, query_cmdline_ready,
-                            view);
-}
-
-static void
 gl_event_view_list_add_listbox_important (GlEventViewList *view)
 {
     /* Alert or emergency priority. */
@@ -709,7 +658,7 @@ gl_event_view_list_add_listbox_important (GlEventViewList *view)
 
     priv = gl_event_view_list_get_instance_private (view);
 
-    insert_journal_query_cmdline (view, &query, priv->active_listbox);
+    gl_journal_query_async (priv->journal, &query, NULL, query_cmdline_ready, view);
 }
 
 static void
@@ -720,7 +669,7 @@ gl_event_view_list_add_listbox_all (GlEventViewList *view)
 
     priv = gl_event_view_list_get_instance_private (view);
 
-    insert_journal_query_cmdline (view, &query, priv->active_listbox);
+    gl_journal_query_async (priv->journal, &query, NULL, query_cmdline_ready, view);
 }
 
 static void
@@ -749,7 +698,7 @@ gl_event_view_list_add_listbox_applications (GlEventViewList *view)
                                                    "_TRANSPORT=syslog",
                                                    uid_str, NULL } };
 
-            insert_journal_query_cmdline (view, &query, priv->active_listbox);
+            gl_journal_query_async (priv->journal, &query, NULL, query_cmdline_ready, view);
         }
 
         g_free (uid_str);
@@ -761,7 +710,7 @@ gl_event_view_list_add_listbox_applications (GlEventViewList *view)
                                                "_TRANSPORT=stdout",
                                                "_TRANSPORT=syslog", NULL } };
 
-        insert_journal_query_cmdline (view, &query, priv->active_listbox);
+        gl_journal_query_async (priv->journal, &query, NULL, query_cmdline_ready, view);
     }
 
     g_object_unref (creds);
@@ -776,7 +725,7 @@ gl_event_view_list_add_listbox_system (GlEventViewList *view)
 
     priv = gl_event_view_list_get_instance_private (view);
 
-    insert_journal_query_simple (view, &query, priv->active_listbox);
+    gl_journal_query_async (priv->journal, &query, NULL, query_simple_ready, view);
 }
 
 static void
@@ -788,7 +737,7 @@ gl_event_view_list_add_listbox_hardware (GlEventViewList *view)
 
     priv = gl_event_view_list_get_instance_private (view);
 
-    insert_journal_query_devices (view, &query, priv->active_listbox);
+    gl_journal_query_async (priv->journal, &query, NULL, query_devices_ready, view);
 }
 
 static void
@@ -799,7 +748,7 @@ gl_event_view_list_add_listbox_security (GlEventViewList *view)
 
     priv = gl_event_view_list_get_instance_private (view);
 
-    insert_journal_query_security (view, &query, priv->active_listbox);
+    gl_journal_query_async (priv->journal, &query, NULL, query_security_ready, view);
 }
 
 static void
