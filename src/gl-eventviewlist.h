@@ -44,7 +44,7 @@ typedef struct
 GType gl_event_view_list_get_type (void);
 GtkWidget * gl_event_view_list_new (void);
 void gl_event_view_list_search (GlEventViewList *view, const gchar *needle);
-GlJournalResult *gl_event_view_list_get_detail_result (GlEventViewList *view);
+GlJournalEntry *gl_event_view_list_get_detail_entry (GlEventViewList *view);
 gboolean gl_event_view_list_handle_search_event (GlEventViewList *view,
                                                  GAction *action,
                                                  GdkEvent *event);

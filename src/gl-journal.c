@@ -23,6 +23,22 @@
 #include <stdlib.h>
 #include <systemd/sd-journal.h>
 
+struct _GlJournalEntry
+{
+  GObject parent_instance;
+
+  guint64 timestamp;
+  gchar *cursor;
+  gchar *message;
+  gchar *comm;
+  gchar *kernel_device;
+  gchar *audit_session;
+  gchar *catalog;
+  guint priority;
+};
+
+G_DEFINE_TYPE (GlJournalEntry, gl_journal_entry, G_TYPE_OBJECT);
+
 typedef struct
 {
     sd_journal *journal;
@@ -32,9 +48,6 @@ typedef struct
 } GlJournalPrivate;
 
 G_DEFINE_TYPE_WITH_PRIVATE (GlJournal, gl_journal, G_TYPE_OBJECT)
-
-G_DEFINE_BOXED_TYPE (GlJournalResult, gl_journal_result, gl_journal_result_ref,
-                     gl_journal_result_unref)
 
 GQuark
 gl_journal_error_quark (void)
@@ -194,11 +207,11 @@ gl_journal_get_data (GlJournal *self,
     return g_strndup ((const gchar *)data + prefix_len, length - prefix_len);
 }
 
-static GlJournalResult *
-_gl_journal_query_result (GlJournal *self)
+static GlJournalEntry *
+_gl_journal_query_entry (GlJournal *self)
 {
     GlJournalPrivate *priv;
-    GlJournalResult *result;
+    GlJournalEntry *entry;
     gint ret;
     sd_journal *journal;
     GError *error = NULL;
@@ -207,11 +220,9 @@ _gl_journal_query_result (GlJournal *self)
     priv = gl_journal_get_instance_private (self);
     journal = priv->journal;
 
-    result = g_slice_new (GlJournalResult);
+    entry = g_object_new (GL_TYPE_JOURNAL_ENTRY, NULL);
 
-    result->ref_count = 1;
-
-    ret = sd_journal_get_realtime_usec (journal, &result->timestamp);
+    ret = sd_journal_get_realtime_usec (journal, &entry->timestamp);
 
     if (ret < 0)
     {
@@ -220,7 +231,7 @@ _gl_journal_query_result (GlJournal *self)
         goto out;
     }
 
-    ret = sd_journal_get_cursor (journal, &result->cursor);
+    ret = sd_journal_get_cursor (journal, &entry->cursor);
 
     if (ret < 0)
     {
@@ -229,13 +240,13 @@ _gl_journal_query_result (GlJournal *self)
         goto out;
     }
 
-    ret = sd_journal_test_cursor (journal, result->cursor);
+    ret = sd_journal_test_cursor (journal, entry->cursor);
 
     if (ret < 0)
     {
         g_warning ("Error testing cursor string: %s", g_strerror (-ret));
-        free (result->cursor);
-        result->cursor = NULL;
+        free (entry->cursor);
+        entry->cursor = NULL;
         goto out;
     }
     else if (ret == 0)
@@ -245,29 +256,29 @@ _gl_journal_query_result (GlJournal *self)
          * later on. */
     }
 
-    ret = sd_journal_get_catalog (journal, &result->catalog);
+    ret = sd_journal_get_catalog (journal, &entry->catalog);
 
     if (ret == -ENOENT)
     {
         g_debug ("No message for this log entry was found in the catalog");
-        result->catalog = NULL;
+        entry->catalog = NULL;
     }
     else if (ret < 0)
     {
         g_warning ("Error while getting message from catalog: %s",
                    g_strerror (-ret));
-        free (result->cursor);
+        free (entry->cursor);
         goto out;
     }
 
-    result->message = gl_journal_get_data (self, "MESSAGE", NULL);
+    entry->message = gl_journal_get_data (self, "MESSAGE", NULL);
 
     if (error != NULL)
     {
         g_warning ("%s", error->message);
         g_clear_error (&error);
-        free (result->cursor);
-        free (result->catalog);
+        free (entry->cursor);
+        free (entry->catalog);
         goto out;
     }
 
@@ -277,16 +288,16 @@ _gl_journal_query_result (GlJournal *self)
     {
         g_warning ("%s", error->message);
         g_clear_error (&error);
-        free (result->cursor);
-        free (result->catalog);
-        g_free (result->message);
+        free (entry->cursor);
+        free (entry->catalog);
+        g_free (entry->message);
         goto out;
     }
 
-    result->priority = priority ? atoi (priority) : LOG_INFO;
+    entry->priority = priority ? atoi (priority) : LOG_INFO;
     g_free (priority);
 
-    result->comm = gl_journal_get_data (self, "_COMM", &error);
+    entry->comm = gl_journal_get_data (self, "_COMM", &error);
 
     if (error != NULL)
     {
@@ -294,7 +305,7 @@ _gl_journal_query_result (GlJournal *self)
         g_clear_error (&error);
     }
 
-    result->kernel_device = gl_journal_get_data (self, "_KERNEL_DEVICE", NULL);
+    entry->kernel_device = gl_journal_get_data (self, "_KERNEL_DEVICE", NULL);
 
     if (error != NULL)
     {
@@ -302,12 +313,12 @@ _gl_journal_query_result (GlJournal *self)
         g_clear_error (&error);
     }
 
-    result->audit_session = gl_journal_get_data (self, "_AUDIT_SESSION", NULL);
+    entry->audit_session = gl_journal_get_data (self, "_AUDIT_SESSION", NULL);
 
-    return result;
+    return entry;
 
 out:
-    g_slice_free (GlJournalResult, result);
+    g_object_unref (entry);
 
     return NULL;
 }
@@ -444,7 +455,7 @@ gl_journal_set_matches (GlJournal           *journal,
         g_warning ("Error seeking to start of systemd journal: %s", g_strerror (-r));
 }
 
-GlJournalResult *
+GlJournalEntry *
 gl_journal_previous (GlJournal *journal)
 {
     GlJournalPrivate *priv = gl_journal_get_instance_private (journal);
@@ -464,47 +475,95 @@ gl_journal_previous (GlJournal *journal)
     if (!gl_journal_query_match (priv->journal, (const gchar * const *) priv->mandatory_fields))
         return gl_journal_previous (journal);
 
-    return _gl_journal_query_result (journal);
-}
-
-static void
-gl_journal_result_free (GlJournalResult *result,
-                        G_GNUC_UNUSED gpointer user_data)
-{
-    gl_journal_result_unref (result);
-}
-
-void
-gl_journal_results_free (GList *results)
-{
-    g_list_foreach (results, (GFunc)gl_journal_result_free, NULL);
-    g_list_free (results);
-}
-
-GlJournalResult *
-gl_journal_result_ref (GlJournalResult *result)
-{
-    g_atomic_int_inc (&result->ref_count);
-    return result;
-}
-
-void
-gl_journal_result_unref (GlJournalResult *result)
-{
-    if (g_atomic_int_dec_and_test (&result->ref_count))
-    {
-        free (result->cursor);
-        free (result->catalog);
-        g_free (result->message);
-        g_free (result->comm);
-        g_free (result->kernel_device);
-        g_free (result->audit_session);
-        g_slice_free (GlJournalResult, result);
-    }
+    return _gl_journal_query_entry (journal);
 }
 
 GlJournal *
 gl_journal_new (void)
 {
     return g_object_new (GL_TYPE_JOURNAL, NULL);
+}
+
+static void
+gl_journal_entry_init (GlJournalEntry *entry)
+{
+}
+
+static void
+gl_journal_entry_finalize (GObject *object)
+{
+  GlJournalEntry *entry = GL_JOURNAL_ENTRY (object);
+
+  free (entry->cursor);
+  free (entry->catalog);
+  g_free (entry->message);
+  g_free (entry->comm);
+  g_free (entry->kernel_device);
+  g_free (entry->audit_session);
+
+  G_OBJECT_CLASS (gl_journal_entry_parent_class)->finalize (object);
+}
+
+static void
+gl_journal_entry_class_init (GlJournalEntryClass *class)
+{
+  GObjectClass *object_class = G_OBJECT_CLASS (class);
+
+  object_class->finalize = gl_journal_entry_finalize;
+}
+
+guint64
+gl_journal_entry_get_timestamp (GlJournalEntry *entry)
+{
+  g_return_val_if_fail (GL_IS_JOURNAL_ENTRY (entry), 0);
+
+  return entry->timestamp;
+}
+
+const gchar *
+gl_journal_entry_get_message (GlJournalEntry *entry)
+{
+  g_return_val_if_fail (GL_IS_JOURNAL_ENTRY (entry), NULL);
+
+  return entry->message;
+}
+
+const gchar *
+gl_journal_entry_get_command_line (GlJournalEntry *entry)
+{
+  g_return_val_if_fail (GL_IS_JOURNAL_ENTRY (entry), NULL);
+
+  return entry->comm;
+}
+
+const gchar *
+gl_journal_entry_get_kernel_device (GlJournalEntry *entry)
+{
+  g_return_val_if_fail (GL_IS_JOURNAL_ENTRY (entry), NULL);
+
+  return entry->kernel_device;
+}
+
+const gchar *
+gl_journal_entry_get_audit_session (GlJournalEntry *entry)
+{
+  g_return_val_if_fail (GL_IS_JOURNAL_ENTRY (entry), NULL);
+
+  return entry->audit_session;
+}
+
+const gchar *
+gl_journal_entry_get_catalog (GlJournalEntry *entry)
+{
+  g_return_val_if_fail (GL_IS_JOURNAL_ENTRY (entry), NULL);
+
+  return entry->catalog;
+}
+
+guint
+gl_journal_entry_get_priority (GlJournalEntry *entry)
+{
+  g_return_val_if_fail (GL_IS_JOURNAL_ENTRY (entry), 0);
+
+  return entry->priority;
 }

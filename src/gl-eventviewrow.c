@@ -28,7 +28,7 @@ enum
 {
     PROP_0,
     PROP_CLOCK_FORMAT,
-    PROP_RESULT,
+    PROP_ENTRY,
     PROP_STYLE,
     N_PROPERTIES
 };
@@ -36,7 +36,7 @@ enum
 typedef struct
 {
     GlUtilClockFormat clock_format;
-    GlJournalResult *result;
+    GlJournalEntry *entry;
     GlEventViewRowStyle style;
 } GlEventViewRowPrivate;
 
@@ -50,7 +50,7 @@ gl_event_view_row_finalize (GObject *object)
     GlEventViewRow *row = GL_EVENT_VIEW_ROW (object);
     GlEventViewRowPrivate *priv = gl_event_view_row_get_instance_private (row);
 
-    g_clear_pointer (&priv->result, gl_journal_result_unref);
+    g_clear_object (&priv->entry);
 }
 
 static void
@@ -67,8 +67,8 @@ gl_event_view_row_get_property (GObject *object,
         case PROP_CLOCK_FORMAT:
             g_value_set_enum (value, priv->clock_format);
             break;
-        case PROP_RESULT:
-            g_value_set_boxed (value, priv->result);
+        case PROP_ENTRY:
+            g_value_set_object (value, priv->entry);
             break;
         case PROP_STYLE:
             g_value_set_enum (value, priv->style);
@@ -93,8 +93,8 @@ gl_event_view_row_set_property (GObject *object,
         case PROP_CLOCK_FORMAT:
             priv->clock_format = g_value_get_enum (value);
             break;
-        case PROP_RESULT:
-            priv->result = g_value_dup_boxed (value);
+        case PROP_ENTRY:
+            priv->entry = g_value_dup_object (value);
             break;
         case PROP_STYLE:
             priv->style = g_value_get_enum (value);
@@ -116,11 +116,11 @@ gl_event_view_row_create_cmdline (GlEventViewRow *row)
     gchar *time;
     gboolean rtl;
     GtkWidget *image;
-    GlJournalResult *result;
+    GlJournalEntry *entry;
     GDateTime *now;
 
     priv = gl_event_view_row_get_instance_private (row);
-    result = priv->result;
+    entry = priv->entry;
 
     rtl = (gtk_widget_get_default_direction () == GTK_TEXT_DIR_RTL);
 
@@ -130,8 +130,11 @@ gl_event_view_row_create_cmdline (GlEventViewRow *row)
     gtk_grid_set_column_spacing (GTK_GRID (grid), 6);
     gtk_container_add (GTK_CONTAINER (row), grid);
 
-    markup = g_markup_printf_escaped ("<b>%s</b>",
-                                      result->comm ? result->comm : "");
+    if (gl_journal_entry_get_command_line (entry))
+      markup = g_markup_printf_escaped ("<b>%s</b>", gl_journal_entry_get_command_line (entry));
+    else
+      markup = g_strdup ("");
+
     label = gtk_label_new (NULL);
     gtk_widget_set_direction (label, GTK_TEXT_DIR_LTR);
     gtk_widget_set_hexpand (label, TRUE);
@@ -141,7 +144,7 @@ gl_event_view_row_create_cmdline (GlEventViewRow *row)
     g_free (markup);
     gtk_grid_attach (GTK_GRID (grid), label, rtl ? 1 : 0, 0, 1, 1);
 
-    label = gtk_label_new (result->message);
+    label = gtk_label_new (gl_journal_entry_get_message (entry));
     gtk_widget_set_direction (label, GTK_TEXT_DIR_LTR);
     context = gtk_widget_get_style_context (GTK_WIDGET (label));
     gtk_style_context_add_class (context, "event-monospace");
@@ -150,8 +153,8 @@ gl_event_view_row_create_cmdline (GlEventViewRow *row)
     gtk_grid_attach (GTK_GRID (grid), label, 0, 1, 2, 1);
 
     now = g_date_time_new_now_local ();
-    time = gl_util_timestamp_to_display (result->timestamp, now,
-                                         priv->clock_format);
+    time = gl_util_timestamp_to_display (gl_journal_entry_get_timestamp (entry),
+                                         now, priv->clock_format);
     g_date_time_unref (now);
     label = gtk_label_new (time);
     context = gtk_widget_get_style_context (GTK_WIDGET (label));
@@ -177,11 +180,11 @@ gl_event_view_row_create_simple (GlEventViewRow *row)
     gchar *time;
     gboolean rtl;
     GtkWidget *image;
-    GlJournalResult *result;
+    GlJournalEntry *entry;
     GDateTime *now;
 
     priv = gl_event_view_row_get_instance_private (row);
-    result = priv->result;
+    entry = priv->entry;
 
     rtl = (gtk_widget_get_default_direction () == GTK_TEXT_DIR_RTL);
 
@@ -191,7 +194,7 @@ gl_event_view_row_create_simple (GlEventViewRow *row)
     gtk_grid_set_column_spacing (GTK_GRID (grid), 6);
     gtk_container_add (GTK_CONTAINER (row), grid);
 
-    label = gtk_label_new (result->message);
+    label = gtk_label_new (gl_journal_entry_get_message (entry));
     gtk_widget_set_direction (label, GTK_TEXT_DIR_LTR);
     context = gtk_widget_get_style_context (GTK_WIDGET (label));
     gtk_style_context_add_class (context, "event-monospace");
@@ -201,8 +204,8 @@ gl_event_view_row_create_simple (GlEventViewRow *row)
     gtk_grid_attach (GTK_GRID (grid), label, 0, 1, 1, 1);
 
     now = g_date_time_new_now_local ();
-    time = gl_util_timestamp_to_display (result->timestamp, now,
-                                         priv->clock_format);
+    time = gl_util_timestamp_to_display (gl_journal_entry_get_timestamp (entry),
+                                         now, priv->clock_format);
     g_date_time_unref (now);
     label = gtk_label_new (time);
     context = gtk_widget_get_style_context (GTK_WIDGET (label));
@@ -260,9 +263,9 @@ gl_event_view_row_class_init (GlEventViewRowClass *klass)
                                                            G_PARAM_CONSTRUCT_ONLY |
                                                            G_PARAM_STATIC_STRINGS);
 
-    obj_properties[PROP_RESULT] = g_param_spec_boxed ("result", "Result",
-                                                      "Journal query result for this row",
-                                                      GL_TYPE_JOURNAL_RESULT,
+    obj_properties[PROP_ENTRY] = g_param_spec_object ("entry", "Entry",
+                                                      "Journal entry for this row",
+                                                      GL_TYPE_JOURNAL_ENTRY,
                                                       G_PARAM_READWRITE |
                                                       G_PARAM_CONSTRUCT_ONLY |
                                                       G_PARAM_STATIC_STRINGS);
@@ -285,8 +288,8 @@ gl_event_view_row_init (GlEventViewRow *row)
     /* See gl_event_view_row_constructed (). */
 }
 
-GlJournalResult *
-gl_event_view_row_get_result (GlEventViewRow *row)
+GlJournalEntry *
+gl_event_view_row_get_entry (GlEventViewRow *row)
 {
     GlEventViewRowPrivate *priv;
 
@@ -294,14 +297,14 @@ gl_event_view_row_get_result (GlEventViewRow *row)
 
     priv = gl_event_view_row_get_instance_private (row);
 
-    return priv->result;
+    return priv->entry;
 }
 
 GtkWidget *
-gl_event_view_row_new (GlJournalResult *result,
+gl_event_view_row_new (GlJournalEntry *entry,
                        GlEventViewRowStyle style,
                        GlUtilClockFormat clock_format)
 {
-    return g_object_new (GL_TYPE_EVENT_VIEW_ROW, "style", style, "result",
-                         result, "clock-format", clock_format, NULL);
+    return g_object_new (GL_TYPE_EVENT_VIEW_ROW, "style", style, "entry",
+                         entry, "clock-format", clock_format, NULL);
 }

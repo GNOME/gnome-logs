@@ -27,13 +27,13 @@ enum
 {
     PROP_0,
     PROP_CLOCK_FORMAT,
-    PROP_RESULT,
+    PROP_ENTRY,
     N_PROPERTIES
 };
 
 typedef struct
 {
-    GlJournalResult *result;
+    GlJournalEntry *entry;
     GlUtilClockFormat clock_format;
     GtkWidget *grid;
     GtkWidget *comm_image;
@@ -64,7 +64,7 @@ static void
 gl_event_view_detail_create_detail (GlEventViewDetail *detail)
 {
     GlEventViewDetailPrivate *priv;
-    GlJournalResult *result;
+    GlJournalEntry *entry;
     gchar *str;
     gchar *str_field;
     gchar *str_message;
@@ -73,7 +73,7 @@ gl_event_view_detail_create_detail (GlEventViewDetail *detail)
 
     priv = gl_event_view_detail_get_instance_private (detail);
 
-    result = priv->result;
+    entry = priv->entry;
 
     /* Force LTR direction also for RTL languages */
     gtk_widget_set_direction (priv->grid, GTK_TEXT_DIR_LTR);
@@ -87,13 +87,13 @@ gl_event_view_detail_create_detail (GlEventViewDetail *detail)
     gtk_widget_set_direction (priv->documentation_label, GTK_TEXT_DIR_LTR);
     gtk_widget_set_direction (priv->detailed_message_label, GTK_TEXT_DIR_LTR);
 
-    if (result->comm && *result->comm)
+    if (gl_journal_entry_get_command_line (entry))
     {
         /* Command-line, look for a desktop file. */
         GDesktopAppInfo *desktop;
 
         /* TODO: Use g_desktop_app_info_search? */
-        str = g_strconcat (result->comm, ".desktop", NULL);
+        str = g_strconcat (gl_journal_entry_get_command_line (entry), ".desktop", NULL);
         desktop = g_desktop_app_info_new (str);
         g_free (str);
 
@@ -112,46 +112,46 @@ gl_event_view_detail_create_detail (GlEventViewDetail *detail)
         }
         else
         {
-            gtk_label_set_text (GTK_LABEL (priv->comm_label), result->comm);
+            gtk_label_set_text (GTK_LABEL (priv->comm_label), gl_journal_entry_get_command_line (entry));
         }
     }
 
     now = g_date_time_new_now_local ();
-    str = gl_util_timestamp_to_display (result->timestamp, now,
+    str = gl_util_timestamp_to_display (gl_journal_entry_get_timestamp (entry), now,
                                         priv->clock_format);
     g_date_time_unref (now);
     gtk_label_set_text (GTK_LABEL (priv->time_label), str);
     g_free (str);
 
-    gtk_label_set_text (GTK_LABEL (priv->message_label), result->message);
+    gtk_label_set_text (GTK_LABEL (priv->message_label), gl_journal_entry_get_message (entry));
 
-    if (result->audit_session && *result->audit_session)
+    if (gl_journal_entry_get_audit_session (entry))
     {
-        gtk_label_set_text (GTK_LABEL (priv->audit_label), result->audit_session);
+        gtk_label_set_text (GTK_LABEL (priv->audit_label), gl_journal_entry_get_audit_session (entry));
         gtk_widget_show (priv->audit_field_label);
         gtk_widget_show (priv->audit_label);
     }
 
-    if (result->kernel_device && *result->kernel_device)
+    if (gl_journal_entry_get_kernel_device (entry))
     {
-        gtk_label_set_text (GTK_LABEL (priv->device_label), result->kernel_device);
+        gtk_label_set_text (GTK_LABEL (priv->device_label), gl_journal_entry_get_kernel_device (entry));
         gtk_widget_show (priv->device_field_label);
         gtk_widget_show (priv->device_label);
     }
 
     /* TODO: Give a user-friendly representation of the priority. */
-    str = g_strdup_printf ("%d", result->priority);
+    str = g_strdup_printf ("%d", gl_journal_entry_get_priority (entry));
     gtk_label_set_text (GTK_LABEL (priv->priority_label), str);
     g_free (str);
 
-    if (result->catalog != NULL)
+    if (gl_journal_entry_get_catalog (entry) != NULL)
     {
         gint subject_count = 0;
         gint definedby_count = 0;
         gint support_count = 0;
         gint documentation_count = 0;
 
-        str_copy = g_strdup (result->catalog);
+        str_copy = g_strdup (gl_journal_entry_get_catalog (entry));
 
         do
         {
@@ -325,7 +325,7 @@ gl_event_view_detail_finalize (GObject *object)
     GlEventViewDetail *detail = GL_EVENT_VIEW_DETAIL (object);
     GlEventViewDetailPrivate *priv = gl_event_view_detail_get_instance_private (detail);
 
-    g_clear_pointer (&priv->result, gl_journal_result_unref);
+    g_clear_object (&priv->entry);
 }
 
 static void
@@ -342,8 +342,8 @@ gl_event_view_detail_get_property (GObject *object,
         case PROP_CLOCK_FORMAT:
             g_value_set_enum (value, priv->clock_format);
             break;
-        case PROP_RESULT:
-            g_value_set_boxed (value, priv->result);
+        case PROP_ENTRY:
+            g_value_set_object (value, priv->entry);
             break;
         default:
             G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
@@ -365,8 +365,8 @@ gl_event_view_detail_set_property (GObject *object,
         case PROP_CLOCK_FORMAT:
             priv->clock_format = g_value_get_enum (value);
             break;
-        case PROP_RESULT:
-            priv->result = g_value_dup_boxed (value);
+        case PROP_ENTRY:
+            priv->entry = g_value_dup_object (value);
             break;
         default:
             G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
@@ -404,9 +404,9 @@ gl_event_view_detail_class_init (GlEventViewDetailClass *klass)
                                                            G_PARAM_CONSTRUCT_ONLY |
                                                            G_PARAM_STATIC_STRINGS);
 
-    obj_properties[PROP_RESULT] = g_param_spec_boxed ("result", "Result",
-                                                      "Journal query result for this detailed view",
-                                                      GL_TYPE_JOURNAL_RESULT,
+    obj_properties[PROP_ENTRY] = g_param_spec_object ("entry", "Entry",
+                                                      "Journal entry for this detailed view",
+                                                      GL_TYPE_JOURNAL_ENTRY,
                                                       G_PARAM_READWRITE |
                                                       G_PARAM_CONSTRUCT_ONLY |
                                                       G_PARAM_STATIC_STRINGS);
@@ -463,9 +463,9 @@ gl_event_view_detail_init (GlEventViewDetail *detail)
 }
 
 GtkWidget *
-gl_event_view_detail_new (GlJournalResult *result,
+gl_event_view_detail_new (GlJournalEntry *entry,
                           GlUtilClockFormat clock_format)
 {
-    return g_object_new (GL_TYPE_EVENT_VIEW_DETAIL, "result", result,
+    return g_object_new (GL_TYPE_EVENT_VIEW_DETAIL, "entry", entry,
                          "clock-format", clock_format, NULL);
 }

@@ -42,21 +42,8 @@ typedef enum
 
 GQuark gl_journal_error_quark (void);
 
-typedef struct
-{
-    /*< private >*/
-    guint ref_count;
-
-    /*< public >*/
-    guint64 timestamp;
-    gchar *cursor;
-    gchar *message;
-    gchar *comm;
-    gchar *kernel_device;
-    gchar *audit_session;
-    gchar *catalog;
-    guint priority;
-} GlJournalResult;
+#define GL_TYPE_JOURNAL_ENTRY gl_journal_entry_get_type()
+G_DECLARE_FINAL_TYPE (GlJournalEntry, gl_journal_entry, GL, JOURNAL_ENTRY, GObject)
 
 typedef struct
 {
@@ -70,18 +57,22 @@ typedef struct
     GObjectClass parent_class;
 } GlJournalClass;
 
-#define GL_TYPE_JOURNAL_RESULT (gl_journal_result_get_type ())
 #define GL_TYPE_JOURNAL (gl_journal_get_type ())
 #define GL_JOURNAL(object) (G_TYPE_CHECK_INSTANCE_CAST ((object), GL_TYPE_JOURNAL, GlJournal))
 
 GType gl_journal_result_get_type (void);
 GType gl_journal_get_type (void);
 void gl_journal_set_matches (GlJournal *journal, const gchar * const *matches);
-GlJournalResult * gl_journal_previous (GlJournal *journal);
-GlJournalResult * gl_journal_result_ref (GlJournalResult *result);
-void gl_journal_result_unref (GlJournalResult *result);
-void gl_journal_results_free (GList *results);
+GlJournalEntry * gl_journal_previous (GlJournal *journal);
 GlJournal * gl_journal_new (void);
+
+guint64                 gl_journal_entry_get_timestamp                  (GlJournalEntry *entry);
+const gchar *           gl_journal_entry_get_message                    (GlJournalEntry *entry);
+const gchar *           gl_journal_entry_get_command_line               (GlJournalEntry *entry);
+const gchar *           gl_journal_entry_get_kernel_device              (GlJournalEntry *entry);
+const gchar *           gl_journal_entry_get_audit_session              (GlJournalEntry *entry);
+const gchar *           gl_journal_entry_get_catalog                    (GlJournalEntry *entry);
+guint                   gl_journal_entry_get_priority                   (GlJournalEntry *entry);
 
 G_END_DECLS
 

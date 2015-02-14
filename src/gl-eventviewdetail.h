@@ -42,7 +42,7 @@ typedef struct
 #define GL_EVENT_VIEW_DETAIL(object) (G_TYPE_CHECK_INSTANCE_CAST ((object), GL_TYPE_EVENT_VIEW_DETAIL, GlEventViewDetail))
 
 GType gl_event_view_detail_get_type (void);
-GtkWidget * gl_event_view_detail_new (GlJournalResult *result, GlUtilClockFormat clock_format);
+GtkWidget * gl_event_view_detail_new (GlJournalEntry *result, GlUtilClockFormat clock_format);
 
 G_END_DECLS
 

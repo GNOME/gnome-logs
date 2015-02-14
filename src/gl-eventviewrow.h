@@ -56,8 +56,8 @@ typedef enum
 #define GL_EVENT_VIEW_ROW(object) (G_TYPE_CHECK_INSTANCE_CAST ((object), GL_TYPE_EVENT_VIEW_ROW, GlEventViewRow))
 
 GType gl_event_view_row_get_type (void);
-GtkWidget * gl_event_view_row_new (GlJournalResult *result, GlEventViewRowStyle style, GlUtilClockFormat clock_format);
-GlJournalResult * gl_event_view_row_get_result (GlEventViewRow *row);
+GtkWidget * gl_event_view_row_new (GlJournalEntry *entry, GlEventViewRowStyle style, GlUtilClockFormat clock_format);
+GlJournalEntry * gl_event_view_row_get_entry (GlEventViewRow *row);
 
 G_END_DECLS
 

@@ -41,7 +41,7 @@ enum
 typedef struct
 {
     GtkWidget *events;
-    GlJournalResult *result;
+    GlJournalEntry *entry;
     GlUtilClockFormat clock_format;
     GlEventViewMode mode;
 } GlEventViewPrivate;
@@ -62,7 +62,7 @@ gl_event_view_show_detail (GlEventView *view)
 
     priv = gl_event_view_get_instance_private (view);
     events = GL_EVENT_VIEW_LIST (priv->events);
-    priv->result = gl_event_view_list_get_detail_result (events);
+    priv->entry = gl_event_view_list_get_detail_entry (events);
 }
 
 gboolean
@@ -146,7 +146,7 @@ on_notify_mode (GlEventView *view,
         case GL_EVENT_VIEW_MODE_DETAIL:
             {
                 gl_event_view_show_detail (view);
-                detail = gl_event_view_detail_new (priv->result,
+                detail = gl_event_view_detail_new (priv->entry,
                                                    priv->clock_format);
                 gtk_widget_show_all (detail);
                 gtk_stack_add_named (stack, detail, "detail");

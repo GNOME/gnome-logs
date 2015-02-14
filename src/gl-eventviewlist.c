@@ -34,7 +34,7 @@
 typedef struct
 {
     GlJournal *journal;
-    GlJournalResult *result;
+    GlJournalEntry *entry;
     GlUtilClockFormat clock_format;
     GtkListBox *active_listbox;
     GtkWidget *categories;
@@ -80,15 +80,23 @@ gl_event_view_search_is_case_sensitive (GlEventViewList *view)
 }
 
 static gboolean
-search_in_result (GlJournalResult *result,
+search_in_result (GlJournalEntry *entry,
                   const gchar *search_text)
 {
-    if ((result->comm ? strstr (result->comm, search_text) : NULL)
-        || (result->message ? strstr (result->message, search_text) : NULL)
-        || (result->kernel_device ? strstr (result->kernel_device, search_text)
-                                  : NULL)
-        || (result->audit_session ? strstr (result->audit_session, search_text)
-                                  : NULL))
+    const gchar *comm;
+    const gchar *message;
+    const gchar *kernel_device;
+    const gchar *audit_session;
+
+    comm = gl_journal_entry_get_command_line (entry);
+    message = gl_journal_entry_get_message (entry);
+    kernel_device = gl_journal_entry_get_kernel_device (entry);
+    audit_session = gl_journal_entry_get_audit_session (entry);
+
+    if ((comm ? strstr (comm, search_text) : NULL)
+        || (message ? strstr (message, search_text) : NULL)
+        || (kernel_device ? strstr (kernel_device, search_text) : NULL)
+        || (audit_session ? strstr (audit_session, search_text) : NULL))
     {
         return TRUE;
     }
@@ -110,33 +118,39 @@ listbox_search_filter_func (GtkListBoxRow *row,
     }
     else
     {
-        GlJournalResult *result;
+        GlJournalEntry *entry;
 
-        result = gl_event_view_row_get_result (GL_EVENT_VIEW_ROW (row));
+        entry = gl_event_view_row_get_entry (GL_EVENT_VIEW_ROW (row));
 
         if (gl_event_view_search_is_case_sensitive (view))
         {
-            if (search_in_result (result, priv->search_text))
+            if (search_in_result (entry, priv->search_text))
             {
                 return TRUE;
             }
         }
+#if 0
         else
         {
             gchar *casefolded_text;
             GlJournalResult casefolded;
+            const gchar *comm;
+            const gchar *message;
+            const gchar *kernel_device;
+            const gchar *audit_session;
+
+            comm = gl_journal_entry_get_command_line (entry);
+            message = gl_journal_entry_get_message (entry);
+            kernel_device = gl_journal_entry_get_kernel_device (entry);
+            audit_session = gl_journal_entry_get_audit_session (entry);
 
             /* Case-insensitive search. */
             casefolded_text = g_utf8_casefold (priv->search_text, -1);
 
-            casefolded.comm = result->comm ? g_utf8_casefold (result->comm, -1)
-                                           : NULL;
-            casefolded.message = result->message ? g_utf8_casefold (result->message, -1)
-                                                 : NULL;
-            casefolded.kernel_device = result->kernel_device ? g_utf8_casefold (result->kernel_device, -1)
-                                                             : NULL;
-            casefolded.audit_session = result->audit_session ? g_utf8_casefold (result->audit_session, -1)
-                                                             : NULL;
+            casefolded.comm = comm ? g_utf8_casefold (comm, -1) : NULL;
+            casefolded.message = message ? g_utf8_casefold (message, -1) : NULL;
+            casefolded.kernel_device = kernel_device ? g_utf8_casefold (kernel_device, -1) : NULL;
+            casefolded.audit_session = audit_session ? g_utf8_casefold (audit_session, -1) : NULL;
 
             if (search_in_result (&casefolded, casefolded_text))
             {
@@ -155,6 +169,7 @@ listbox_search_filter_func (GtkListBoxRow *row,
             g_free (casefolded.audit_session);
             g_free (casefolded_text);
         }
+#endif
     }
 
     return FALSE;
@@ -169,7 +184,7 @@ on_listbox_row_activated (GtkListBox *listbox,
     GtkWidget *toplevel;
 
     priv = gl_event_view_list_get_instance_private (view);
-    priv->result = gl_event_view_row_get_result (GL_EVENT_VIEW_ROW (row));
+    priv->entry = gl_event_view_row_get_entry (GL_EVENT_VIEW_ROW (row));
 
     toplevel = gtk_widget_get_toplevel (GTK_WIDGET (view));
 
@@ -193,14 +208,14 @@ on_listbox_row_activated (GtkListBox *listbox,
     }
 }
 
-GlJournalResult *
-gl_event_view_list_get_detail_result (GlEventViewList *view)
+GlJournalEntry *
+gl_event_view_list_get_detail_entry (GlEventViewList *view)
 {
     GlEventViewListPrivate *priv;
 
     priv = gl_event_view_list_get_instance_private (view);
 
-    return priv->result;
+    return priv->entry;
 }
 
 gboolean
@@ -314,19 +329,19 @@ insert_idle (gpointer data)
 
     for (i = 0; i < N_RESULTS_IDLE; i++)
     {
-        GlJournalResult *result;
+        GlJournalEntry *entry;
         GtkWidget *row;
 
-        result = gl_journal_previous (priv->journal);
-        if (result)
+        entry = gl_journal_previous (priv->journal);
+        if (entry)
         {
-            row = gl_event_view_row_new (result,
+            row = gl_event_view_row_new (entry,
                                          priv->current_row_style,
                                          priv->clock_format);
             gtk_container_add (GTK_CONTAINER (priv->active_listbox), row);
             gtk_widget_show_all (row);
 
-            gl_journal_result_unref (result);
+            g_object_unref (entry);
         }
         else
         {
@@ -473,15 +488,15 @@ static gint
 gl_event_view_sort_by_ascending_time (GtkListBoxRow *row1,
                                       GtkListBoxRow *row2)
 {
-    GlJournalResult *result1;
-    GlJournalResult *result2;
+    GlJournalEntry *entry1;
+    GlJournalEntry *entry2;
     guint64 time1;
     guint64 time2;
 
-    result1 = gl_event_view_row_get_result (GL_EVENT_VIEW_ROW (row1));
-    result2 = gl_event_view_row_get_result (GL_EVENT_VIEW_ROW (row2));
-    time1 = result1->timestamp;
-    time2 = result2->timestamp;
+    entry1 = gl_event_view_row_get_entry (GL_EVENT_VIEW_ROW (row1));
+    entry2 = gl_event_view_row_get_entry (GL_EVENT_VIEW_ROW (row2));
+    time1 = gl_journal_entry_get_timestamp (entry1);
+    time2 = gl_journal_entry_get_timestamp (entry2);
 
     if (time1 > time2)
     {
@@ -501,15 +516,15 @@ static gint
 gl_event_view_sort_by_descending_time (GtkListBoxRow *row1,
                                        GtkListBoxRow *row2)
 {
-    GlJournalResult *result1;
-    GlJournalResult *result2;
+    GlJournalEntry *entry1;
+    GlJournalEntry *entry2;
     guint64 time1;
     guint64 time2;
 
-    result1 = gl_event_view_row_get_result (GL_EVENT_VIEW_ROW (row1));
-    result2 = gl_event_view_row_get_result (GL_EVENT_VIEW_ROW (row2));
-    time1 = result1->timestamp;
-    time2 = result2->timestamp;
+    entry1 = gl_event_view_row_get_entry (GL_EVENT_VIEW_ROW (row1));
+    entry2 = gl_event_view_row_get_entry (GL_EVENT_VIEW_ROW (row2));
+    time1 = gl_journal_entry_get_timestamp (entry1);
+    time2 = gl_journal_entry_get_timestamp (entry2);
 
     if (time1 > time2)
     {
