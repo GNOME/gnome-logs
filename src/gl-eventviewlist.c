@@ -44,14 +44,12 @@ typedef struct
     gchar *search_text;
 
     GlEventViewRowStyle current_row_style;
-    GQueue *pending_results;
-    GList *results;
     guint insert_idle_id;
 } GlEventViewListPrivate;
 
 G_DEFINE_TYPE_WITH_PRIVATE (GlEventViewList, gl_event_view_list, GTK_TYPE_BOX)
 
-static const gssize N_RESULTS_IDLE = 25;
+static const gssize N_RESULTS_IDLE = 5;
 static const gchar DESKTOP_SCHEMA[] = "org.gnome.desktop.interface";
 static const gchar SETTINGS_SCHEMA[] = "org.gnome.Logs";
 static const gchar CLOCK_FORMAT[] = "clock-format";
@@ -308,85 +306,36 @@ gl_event_view_list_box_new (GlEventViewList *view)
 }
 
 static gboolean
-insert_idle (GlEventViewList *view)
+insert_idle (gpointer data)
 {
-    GlEventViewListPrivate *priv;
+    GlEventViewList *view = data;
+    GlEventViewListPrivate *priv = gl_event_view_list_get_instance_private (view);
+    gint i;
 
-    priv = gl_event_view_list_get_instance_private (view);
-
-    if (priv->pending_results)
+    for (i = 0; i < N_RESULTS_IDLE; i++)
     {
-        gssize i;
+        GlJournalResult *result;
+        GtkWidget *row;
 
-        for (i = 0; i < N_RESULTS_IDLE; i++)
+        result = gl_journal_previous (priv->journal);
+        if (result)
         {
-            GlJournalResult *result;
-            GtkWidget *row;
+            row = gl_event_view_row_new (result,
+                                         priv->current_row_style,
+                                         priv->clock_format);
+            gtk_container_add (GTK_CONTAINER (priv->active_listbox), row);
+            gtk_widget_show_all (row);
 
-            result = g_queue_pop_head (priv->pending_results);
-
-            if (result)
-            {
-                row = gl_event_view_row_new (result,
-                                             priv->current_row_style,
-                                             priv->clock_format);
-                gtk_container_add (GTK_CONTAINER (priv->active_listbox), row);
-                gtk_widget_show_all (row);
-            }
-            else
-            {
-                g_queue_free (priv->pending_results);
-                gl_journal_results_free (priv->results);
-                priv->pending_results = NULL;
-                priv->results = NULL;
-
-                priv->insert_idle_id = 0;
-                return G_SOURCE_REMOVE;
-            }
+            gl_journal_result_unref (result);
         }
-
-        return G_SOURCE_CONTINUE;
-    }
-    else
-    {
-        priv->insert_idle_id = 0;
-        return G_SOURCE_REMOVE;
-    }
-}
-
-static void
-query_ready (GObject *source_object,
-             GAsyncResult *res,
-             gpointer user_data)
-{
-    GlEventViewList *view;
-    GlEventViewListPrivate *priv;
-    GlJournal *journal;
-    GError *error = NULL;
-    GList *l;
-
-    view = GL_EVENT_VIEW_LIST (user_data);
-    priv = gl_event_view_list_get_instance_private (view);
-    journal = GL_JOURNAL (source_object);
-
-    priv->results = gl_journal_query_finish (journal, res, &error);
-
-    if (!priv->results)
-    {
-        /* TODO: Check for error. */
-        g_error_free (error);
+        else
+        {
+            priv->insert_idle_id = 0;
+            return G_SOURCE_REMOVE;
+        }
     }
 
-    priv->pending_results = g_queue_new ();
-
-    for (l = priv->results; l != NULL; l = g_list_next (l))
-    {
-        g_queue_push_tail (priv->pending_results, l->data);
-    }
-
-    priv->insert_idle_id = g_idle_add ((GSourceFunc) insert_idle,
-                                       view);
-    g_source_set_name_by_id (priv->insert_idle_id, G_STRFUNC);
+    return G_SOURCE_CONTINUE;
 }
 
 static gchar *
@@ -510,7 +459,7 @@ on_notify_category (GlCategoryList *list,
             g_assert_not_reached ();
     }
 
-    gl_journal_query_async (priv->journal, NULL, query_ready, view);
+    priv->insert_idle_id = g_idle_add (insert_idle, view);
 
     gtk_widget_show_all (GTK_WIDGET (priv->active_listbox));
 
@@ -657,7 +606,6 @@ gl_event_view_list_finalize (GObject *object)
     }
 
     g_clear_pointer (&priv->search_text, g_free);
-    g_clear_pointer (&priv->pending_results, g_queue_free);
 }
 
 static void

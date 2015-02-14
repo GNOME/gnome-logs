@@ -312,33 +312,6 @@ out:
     return NULL;
 }
 
-void
-gl_journal_query_async (GlJournal *self,
-                        GCancellable *cancellable,
-                        GAsyncReadyCallback callback,
-                        gpointer user_data)
-{
-    GTask *task;
-    GList *results;
-
-    task = g_task_new (self, cancellable, callback, user_data);
-
-    results = gl_journal_query (self);
-    g_task_return_pointer (task, results, (GDestroyNotify) gl_journal_results_free);
-
-    g_object_unref (task);
-}
-
-GList *
-gl_journal_query_finish (GlJournal *self,
-                         GAsyncResult *res,
-                         GError **error)
-{
-    g_return_val_if_fail (g_task_is_valid (res, self), NULL);
-
-    return g_task_propagate_pointer (G_TASK (res), error);
-}
-
 /**
  * gl_journal_query_match:
  * @query: a @query to match against the current log entry
@@ -378,83 +351,22 @@ gl_journal_query_match (sd_journal          *journal,
   return TRUE;
 }
 
-GList *
-gl_journal_query (GlJournal *self)
+static gchar *
+create_boot_id_match_string (void)
 {
-    GlJournalPrivate *priv;
-    sd_journal *journal;
-    gint ret;
-    GList *results = NULL;
-
-    g_return_val_if_fail (GL_JOURNAL (self), NULL);
-
-    priv = gl_journal_get_instance_private (self);
-    journal = priv->journal;
-
-    /* Take events from this boot only. */
     sd_id128_t boot_id;
     gchar boot_string[33];
-    gchar *match_string;
+    int r;
 
-    ret = sd_id128_get_boot (&boot_id);
-
-    if (ret < 0)
+    r = sd_id128_get_boot (&boot_id);
+    if (r < 0)
     {
-        g_warning ("Error getting boot ID of running kernel: %s",
-                   g_strerror (-ret));
+        g_warning ("Error getting boot ID of running kernel: %s", g_strerror (-r));
+        return NULL;
     }
 
     sd_id128_to_string (boot_id, boot_string);
-
-    match_string = g_strconcat ("_BOOT_ID=", boot_string, NULL);
-
-    ret = sd_journal_add_match (journal, match_string, 0);
-
-    if (ret < 0)
-    {
-        g_warning ("Error adding match '%s': %s", match_string,
-                   g_strerror (-ret));
-    }
-
-    g_free (match_string);
-
-    ret = sd_journal_seek_head (journal);
-
-    if (ret < 0)
-    {
-        g_warning ("Error seeking to start of systemd journal: %s",
-                   g_strerror (-ret));
-    }
-
-    do
-    {
-        GlJournalResult *result;
-
-        ret = sd_journal_next (journal);
-
-        if (ret < 0)
-        {
-            g_warning ("Error setting cursor to next position in systemd journal: %s",
-                       g_strerror (-ret));
-            break;
-        }
-        else if (ret == 0)
-        {
-            g_debug ("End of systemd journal reached");
-            break;
-        }
-
-        if (!gl_journal_query_match (journal, (const gchar * const *) priv->mandatory_fields))
-            continue;
-
-        result = _gl_journal_query_result (self);
-
-        results = g_list_prepend (results, result);
-    } while (TRUE);
-
-    sd_journal_flush_matches (journal);
-
-    return results;
+    return g_strconcat ("_BOOT_ID=", boot_string, NULL);
 }
 
 /**
@@ -471,7 +383,9 @@ gl_journal_set_matches (GlJournal           *journal,
 {
     GlJournalPrivate *priv = gl_journal_get_instance_private (journal);
     GPtrArray *mandatory_fields;
+    int r;
     gint i;
+    gboolean has_boot_id;
 
     g_return_if_fail (matches != NULL);
 
@@ -483,8 +397,6 @@ gl_journal_set_matches (GlJournal           *journal,
     mandatory_fields = g_ptr_array_new ();
     for (i = 0; matches[i]; i++)
     {
-        int r;
-
         /* matches without a value should only check for existence.
          * systemd doesn't support that, so let's remember them to
          * filter out later.
@@ -494,6 +406,9 @@ gl_journal_set_matches (GlJournal           *journal,
             g_ptr_array_add (mandatory_fields, g_strdup (matches[i]));
             continue;
         }
+
+        if (g_str_has_prefix (matches[i], "_BOOT_ID="))
+          has_boot_id = TRUE;
 
         r = sd_journal_add_match (priv->journal, matches[i], 0);
         if (r < 0)
@@ -506,7 +421,50 @@ gl_journal_set_matches (GlJournal           *journal,
     /* add sentinel */
     g_ptr_array_add (mandatory_fields, NULL);
 
+    /* take events from this boot only, unless _BOOT_ID was in @matches */
+    if (!has_boot_id)
+    {
+        gchar *match;
+
+        match = create_boot_id_match_string ();
+        if (match)
+        {
+            r = sd_journal_add_match (priv->journal, match, 0);
+            if (r < 0)
+                g_warning ("Failed to add match '%s': %s", matches[i], g_strerror (-r));
+
+            g_free (match);
+        }
+    }
+
     priv->mandatory_fields = (gchar **) g_ptr_array_free (mandatory_fields, FALSE);
+
+    r = sd_journal_seek_tail (priv->journal);
+    if (r < 0)
+        g_warning ("Error seeking to start of systemd journal: %s", g_strerror (-r));
+}
+
+GlJournalResult *
+gl_journal_previous (GlJournal *journal)
+{
+    GlJournalPrivate *priv = gl_journal_get_instance_private (journal);
+    gint r;
+
+    r = sd_journal_previous (priv->journal);
+    if (r < 0)
+    {
+        g_warning ("Failed to fetch previous log entry: %s", g_strerror (-r));
+        return NULL;
+    }
+
+    if (r == 0) /* end */
+        return NULL;
+
+    /* filter this one out because of a non-existent field */
+    if (!gl_journal_query_match (priv->journal, (const gchar * const *) priv->mandatory_fields))
+        return gl_journal_previous (journal);
+
+    return _gl_journal_query_result (journal);
 }
 
 static void

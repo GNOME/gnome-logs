@@ -76,10 +76,8 @@ typedef struct
 
 GType gl_journal_result_get_type (void);
 GType gl_journal_get_type (void);
-void gl_journal_query_async (GlJournal *self, GCancellable *cancellable, GAsyncReadyCallback callback, gpointer user_data);
-GList * gl_journal_query_finish (GlJournal *self, GAsyncResult *res, GError **error);
-GList * gl_journal_query (GlJournal *self);
 void gl_journal_set_matches (GlJournal *journal, const gchar * const *matches);
+GlJournalResult * gl_journal_previous (GlJournal *journal);
 GlJournalResult * gl_journal_result_ref (GlJournalResult *result);
 void gl_journal_result_unref (GlJournalResult *result);
 void gl_journal_results_free (GList *results);
