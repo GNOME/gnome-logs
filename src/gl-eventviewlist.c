@@ -43,6 +43,7 @@ typedef struct
     GtkWidget *search_entry;
     gchar *search_text;
 
+    GlEventViewRowStyle current_row_style;
     GQueue *pending_results;
     GList *results;
     guint insert_idle_id;
@@ -308,7 +309,7 @@ gl_event_view_list_box_new (GlEventViewList *view)
 }
 
 static gboolean
-insert_devices_idle (GlEventViewList *view)
+insert_idle (GlEventViewList *view)
 {
     GlEventViewListPrivate *priv;
 
@@ -328,7 +329,7 @@ insert_devices_idle (GlEventViewList *view)
             if (result)
             {
                 row = gl_event_view_row_new (result,
-                                             GL_EVENT_VIEW_ROW_STYLE_SIMPLE,
+                                             priv->current_row_style,
                                              priv->clock_format);
                 gtk_container_add (GTK_CONTAINER (priv->active_listbox), row);
                 gtk_widget_show_all (row);
@@ -355,9 +356,9 @@ insert_devices_idle (GlEventViewList *view)
 }
 
 static void
-query_devices_ready (GObject *source_object,
-                     GAsyncResult *res,
-                     gpointer user_data)
+query_ready (GObject *source_object,
+             GAsyncResult *res,
+             gpointer user_data)
 {
     GlEventViewList *view;
     GlEventViewListPrivate *priv;
@@ -384,252 +385,7 @@ query_devices_ready (GObject *source_object,
         g_queue_push_tail (priv->pending_results, l->data);
     }
 
-    priv->insert_idle_id = g_idle_add ((GSourceFunc) insert_devices_idle,
-                                       view);
-    g_source_set_name_by_id (priv->insert_idle_id, G_STRFUNC);
-}
-
-static gboolean
-insert_security_idle (GlEventViewList *view)
-{
-    GlEventViewListPrivate *priv;
-
-    priv = gl_event_view_list_get_instance_private (view);
-
-    if (priv->pending_results)
-    {
-        gssize i;
-
-        for (i = 0; i < N_RESULTS_IDLE; i++)
-        {
-            GlJournalResult *result;
-            GtkWidget *row;
-
-            result = g_queue_pop_head (priv->pending_results);
-
-            if (result)
-            {
-                row = gl_event_view_row_new (result,
-                                             GL_EVENT_VIEW_ROW_STYLE_CMDLINE,
-                                             priv->clock_format);
-                gtk_container_add (GTK_CONTAINER (priv->active_listbox), row);
-                gtk_widget_show_all (row);
-            }
-            else
-            {
-                g_queue_free (priv->pending_results);
-                gl_journal_results_free (priv->results);
-                priv->pending_results = NULL;
-                priv->results = NULL;
-
-                priv->insert_idle_id = 0;
-                return G_SOURCE_REMOVE;
-            }
-        }
-
-        return G_SOURCE_CONTINUE;
-    }
-    else
-    {
-        priv->insert_idle_id = 0;
-        return G_SOURCE_REMOVE;
-    }
-}
-
-static void
-query_security_ready (GObject *source_object,
-                      GAsyncResult *res,
-                      gpointer user_data)
-{
-    GlEventViewList *view;
-    GlEventViewListPrivate *priv;
-    GlJournal *journal;
-    GError *error = NULL;
-    GList *l;
-
-    view = GL_EVENT_VIEW_LIST (user_data);
-    priv = gl_event_view_list_get_instance_private (view);
-    journal = GL_JOURNAL (source_object);
-
-    priv->results = gl_journal_query_finish (journal, res, &error);
-
-    if (!priv->results)
-    {
-        /* TODO: Check for error. */
-        g_error_free (error);
-    }
-
-    priv->pending_results = g_queue_new ();
-
-    for (l = priv->results; l != NULL; l = g_list_next (l))
-    {
-        g_queue_push_tail (priv->pending_results, l->data);
-    }
-
-    priv->insert_idle_id = g_idle_add ((GSourceFunc) insert_security_idle,
-                                       view);
-    g_source_set_name_by_id (priv->insert_idle_id, G_STRFUNC);
-}
-
-static gboolean
-insert_simple_idle (GlEventViewList *view)
-{
-    GlEventViewListPrivate *priv;
-
-    priv = gl_event_view_list_get_instance_private (view);
-
-    if (priv->pending_results)
-    {
-        gssize i;
-
-        for (i = 0; i < N_RESULTS_IDLE; i++)
-        {
-            GlJournalResult *result;
-            GtkWidget *row;
-
-            result = g_queue_pop_head (priv->pending_results);
-
-            if (result)
-            {
-                row = gl_event_view_row_new (result,
-                                             GL_EVENT_VIEW_ROW_STYLE_SIMPLE,
-                                             priv->clock_format);
-                gtk_container_add (GTK_CONTAINER (priv->active_listbox), row);
-                gtk_widget_show_all (row);
-            }
-            else
-            {
-                g_queue_free (priv->pending_results);
-                gl_journal_results_free (priv->results);
-                priv->pending_results = NULL;
-                priv->results = NULL;
-
-                priv->insert_idle_id = 0;
-                return G_SOURCE_REMOVE;
-            }
-        }
-
-        return G_SOURCE_CONTINUE;
-    }
-    else
-    {
-        priv->insert_idle_id = 0;
-        return G_SOURCE_REMOVE;
-    }
-}
-
-static void
-query_simple_ready (GObject *source_object,
-                    GAsyncResult *res,
-                    gpointer user_data)
-{
-    GlEventViewList *view;
-    GlEventViewListPrivate *priv;
-    GlJournal *journal;
-    GError *error = NULL;
-    GList *l;
-
-    view = GL_EVENT_VIEW_LIST (user_data);
-    priv = gl_event_view_list_get_instance_private (view);
-    journal = GL_JOURNAL (source_object);
-
-    priv->results = gl_journal_query_finish (journal, res, &error);
-
-    if (!priv->results)
-    {
-        /* TODO: Check for error. */
-        g_error_free (error);
-    }
-
-    priv->pending_results = g_queue_new ();
-
-    for (l = priv->results; l != NULL; l = g_list_next (l))
-    {
-        g_queue_push_tail (priv->pending_results, l->data);
-    }
-
-    priv->insert_idle_id = g_idle_add ((GSourceFunc) insert_simple_idle, view);
-    g_source_set_name_by_id (priv->insert_idle_id, G_STRFUNC);
-}
-
-static gboolean
-insert_cmdline_idle (GlEventViewList *view)
-{
-    GlEventViewListPrivate *priv;
-
-    priv = gl_event_view_list_get_instance_private (view);
-
-    if (priv->pending_results)
-    {
-        gssize i;
-
-        for (i = 0; i < N_RESULTS_IDLE; i++)
-        {
-            GlJournalResult *result;
-            GtkWidget *row;
-
-            result = g_queue_pop_head (priv->pending_results);
-
-            if (result)
-            {
-                row = gl_event_view_row_new (result,
-                                             GL_EVENT_VIEW_ROW_STYLE_CMDLINE,
-                                             priv->clock_format);
-                gtk_container_add (GTK_CONTAINER (priv->active_listbox), row);
-                gtk_widget_show_all (row);
-            }
-            else
-            {
-                g_queue_free (priv->pending_results);
-                gl_journal_results_free (priv->results);
-                priv->pending_results = NULL;
-                priv->results = NULL;
-
-                priv->insert_idle_id = 0;
-                return G_SOURCE_REMOVE;
-            }
-        }
-
-        return G_SOURCE_CONTINUE;
-    }
-    else
-    {
-        priv->insert_idle_id = 0;
-        return G_SOURCE_REMOVE;
-    }
-}
-
-static void
-query_cmdline_ready (GObject *source_object,
-                     GAsyncResult *res,
-                     gpointer user_data)
-{
-    GlEventViewList *view;
-    GlEventViewListPrivate *priv;
-    GlJournal *journal;
-    GError *error = NULL;
-    GList *l;
-
-    view = GL_EVENT_VIEW_LIST (user_data);
-    priv = gl_event_view_list_get_instance_private (view);
-    journal = GL_JOURNAL (source_object);
-
-    priv->results = gl_journal_query_finish (journal, res, &error);
-
-    if (!priv->results)
-    {
-        /* TODO: Check for error. */
-        g_error_free (error);
-    }
-
-    priv->pending_results = g_queue_new ();
-
-    for (l = priv->results; l != NULL; l = g_list_next (l))
-    {
-        g_queue_push_tail (priv->pending_results, l->data);
-    }
-
-    priv->insert_idle_id = g_idle_add ((GSourceFunc) insert_cmdline_idle,
+    priv->insert_idle_id = g_idle_add ((GSourceFunc) insert_idle,
                                        view);
     g_source_set_name_by_id (priv->insert_idle_id, G_STRFUNC);
 }
@@ -647,8 +403,9 @@ gl_event_view_list_add_listbox_important (GlEventViewList *view)
     GlEventViewListPrivate *priv;
 
     priv = gl_event_view_list_get_instance_private (view);
+    priv->current_row_style = GL_EVENT_VIEW_ROW_STYLE_CMDLINE;
 
-    gl_journal_query_async (priv->journal, &query, NULL, query_cmdline_ready, view);
+    gl_journal_query_async (priv->journal, &query, NULL, query_ready, view);
 }
 
 static void
@@ -658,8 +415,9 @@ gl_event_view_list_add_listbox_all (GlEventViewList *view)
     GlEventViewListPrivate *priv;
 
     priv = gl_event_view_list_get_instance_private (view);
+    priv->current_row_style = GL_EVENT_VIEW_ROW_STYLE_CMDLINE;
 
-    gl_journal_query_async (priv->journal, &query, NULL, query_cmdline_ready, view);
+    gl_journal_query_async (priv->journal, &query, NULL, query_ready, view);
 }
 
 static void
@@ -670,6 +428,7 @@ gl_event_view_list_add_listbox_applications (GlEventViewList *view)
     GlEventViewListPrivate *priv;
 
     priv = gl_event_view_list_get_instance_private (view);
+    priv->current_row_style = GL_EVENT_VIEW_ROW_STYLE_CMDLINE;
     creds = g_credentials_new ();
     uid = g_credentials_get_unix_user (creds, NULL);
 
@@ -688,7 +447,7 @@ gl_event_view_list_add_listbox_applications (GlEventViewList *view)
                                                    "_TRANSPORT=syslog",
                                                    uid_str, NULL } };
 
-            gl_journal_query_async (priv->journal, &query, NULL, query_cmdline_ready, view);
+            gl_journal_query_async (priv->journal, &query, NULL, query_ready, view);
         }
 
         g_free (uid_str);
@@ -700,7 +459,7 @@ gl_event_view_list_add_listbox_applications (GlEventViewList *view)
                                                "_TRANSPORT=stdout",
                                                "_TRANSPORT=syslog", NULL } };
 
-        gl_journal_query_async (priv->journal, &query, NULL, query_cmdline_ready, view);
+        gl_journal_query_async (priv->journal, &query, NULL, query_ready, view);
     }
 
     g_object_unref (creds);
@@ -714,8 +473,9 @@ gl_event_view_list_add_listbox_system (GlEventViewList *view)
     GlEventViewListPrivate *priv;
 
     priv = gl_event_view_list_get_instance_private (view);
+    priv->current_row_style = GL_EVENT_VIEW_ROW_STYLE_SIMPLE;
 
-    gl_journal_query_async (priv->journal, &query, NULL, query_simple_ready, view);
+    gl_journal_query_async (priv->journal, &query, NULL, query_ready, view);
 }
 
 static void
@@ -726,8 +486,9 @@ gl_event_view_list_add_listbox_hardware (GlEventViewList *view)
     GlEventViewListPrivate *priv;
 
     priv = gl_event_view_list_get_instance_private (view);
+    priv->current_row_style = GL_EVENT_VIEW_ROW_STYLE_SIMPLE;
 
-    gl_journal_query_async (priv->journal, &query, NULL, query_devices_ready, view);
+    gl_journal_query_async (priv->journal, &query, NULL, query_ready, view);
 }
 
 static void
@@ -737,8 +498,9 @@ gl_event_view_list_add_listbox_security (GlEventViewList *view)
     GlEventViewListPrivate *priv;
 
     priv = gl_event_view_list_get_instance_private (view);
+    priv->current_row_style = GL_EVENT_VIEW_ROW_STYLE_CMDLINE;
 
-    gl_journal_query_async (priv->journal, &query, NULL, query_security_ready, view);
+    gl_journal_query_async (priv->journal, &query, NULL, query_ready, view);
 }
 
 static void
