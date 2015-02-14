@@ -43,7 +43,6 @@ typedef struct
     GtkWidget *search_entry;
     gchar *search_text;
 
-    GtkListBox *results_listbox;
     GQueue *pending_results;
     GList *results;
     guint insert_idle_id;
@@ -336,7 +335,7 @@ insert_devices_idle (GlEventViewList *view)
                 row = gl_event_view_row_new (result,
                                              GL_EVENT_VIEW_ROW_STYLE_SIMPLE,
                                              priv->clock_format);
-                gtk_container_add (GTK_CONTAINER (priv->results_listbox), row);
+                gtk_container_add (GTK_CONTAINER (priv->active_listbox), row);
                 gtk_widget_show_all (row);
             }
             else
@@ -344,7 +343,6 @@ insert_devices_idle (GlEventViewList *view)
                 g_queue_free (priv->pending_results);
                 gl_journal_results_free (priv->results);
                 priv->pending_results = NULL;
-                priv->results_listbox = NULL;
                 priv->results = NULL;
 
                 priv->insert_idle_id = 0;
@@ -405,7 +403,7 @@ insert_journal_query_devices (GlEventViewList *view,
 
     priv = gl_event_view_list_get_instance_private (view);
 
-    priv->results_listbox = listbox;
+    priv->active_listbox = listbox;
     gl_journal_query_async (priv->journal, query, NULL, query_devices_ready,
                             view);
 }
@@ -438,7 +436,7 @@ insert_security_idle (GlEventViewList *view)
                 row = gl_event_view_row_new (result,
                                              GL_EVENT_VIEW_ROW_STYLE_CMDLINE,
                                              priv->clock_format);
-                gtk_container_add (GTK_CONTAINER (priv->results_listbox), row);
+                gtk_container_add (GTK_CONTAINER (priv->active_listbox), row);
                 gtk_widget_show_all (row);
             }
             else
@@ -446,7 +444,6 @@ insert_security_idle (GlEventViewList *view)
                 g_queue_free (priv->pending_results);
                 gl_journal_results_free (priv->results);
                 priv->pending_results = NULL;
-                priv->results_listbox = NULL;
                 priv->results = NULL;
 
                 priv->insert_idle_id = 0;
@@ -507,7 +504,6 @@ insert_journal_query_security (GlEventViewList *view,
 
     priv = gl_event_view_list_get_instance_private (view);
 
-    priv->results_listbox = listbox;
     gl_journal_query_async (priv->journal, query, NULL, query_security_ready,
                             view);
 }
@@ -535,7 +531,7 @@ insert_simple_idle (GlEventViewList *view)
                 row = gl_event_view_row_new (result,
                                              GL_EVENT_VIEW_ROW_STYLE_SIMPLE,
                                              priv->clock_format);
-                gtk_container_add (GTK_CONTAINER (priv->results_listbox), row);
+                gtk_container_add (GTK_CONTAINER (priv->active_listbox), row);
                 gtk_widget_show_all (row);
             }
             else
@@ -543,7 +539,6 @@ insert_simple_idle (GlEventViewList *view)
                 g_queue_free (priv->pending_results);
                 gl_journal_results_free (priv->results);
                 priv->pending_results = NULL;
-                priv->results_listbox = NULL;
                 priv->results = NULL;
 
                 priv->insert_idle_id = 0;
@@ -602,7 +597,6 @@ insert_journal_query_simple (GlEventViewList *view,
     GlEventViewListPrivate *priv;
 
     priv = gl_event_view_list_get_instance_private (view);
-    priv->results_listbox = listbox;
     gl_journal_query_async (priv->journal, query, NULL, query_simple_ready,
                             view);
 }
@@ -630,7 +624,7 @@ insert_cmdline_idle (GlEventViewList *view)
                 row = gl_event_view_row_new (result,
                                              GL_EVENT_VIEW_ROW_STYLE_CMDLINE,
                                              priv->clock_format);
-                gtk_container_add (GTK_CONTAINER (priv->results_listbox), row);
+                gtk_container_add (GTK_CONTAINER (priv->active_listbox), row);
                 gtk_widget_show_all (row);
             }
             else
@@ -638,7 +632,6 @@ insert_cmdline_idle (GlEventViewList *view)
                 g_queue_free (priv->pending_results);
                 gl_journal_results_free (priv->results);
                 priv->pending_results = NULL;
-                priv->results_listbox = NULL;
                 priv->results = NULL;
 
                 priv->insert_idle_id = 0;
@@ -698,7 +691,6 @@ insert_journal_query_cmdline (GlEventViewList *view,
     GlEventViewListPrivate *priv;
 
     priv = gl_event_view_list_get_instance_private (view);
-    priv->results_listbox = listbox;
     gl_journal_query_async (priv->journal, query, NULL, query_cmdline_ready,
                             view);
 }
