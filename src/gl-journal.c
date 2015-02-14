@@ -310,58 +310,21 @@ out:
     return NULL;
 }
 
-static GlJournalQuery *
-gl_journal_query_copy (const GlJournalQuery *source)
-{
-    GlJournalQuery *result;
-    guint n_matches = 0;
-    gchar **matches;
-    guint i;
-
-    result = g_slice_new (GlJournalQuery);
-
-    if (source->matches)
-    {
-        n_matches = g_strv_length (source->matches);
-    }
-
-    /* Remember the trailing NULL. */
-    matches = g_new (gchar *, n_matches + 1);
-
-    for (i = 0; i < n_matches; i++)
-    {
-        matches[i] = g_strdup (source->matches[i]);
-    }
-
-    matches[n_matches] = NULL;
-
-    result->matches = matches;
-
-    return result;
-}
-
-static void
-gl_journal_query_free (GlJournalQuery *query)
-{
-    g_strfreev (query->matches);
-    g_slice_free (GlJournalQuery, query);
-}
-
 void
 gl_journal_query_async (GlJournal *self,
-                        const GlJournalQuery *query,
+                        const gchar * const *query,
                         GCancellable *cancellable,
                         GAsyncReadyCallback callback,
                         gpointer user_data)
 {
     GTask *task;
-    GlJournalQuery *data;
+    gchar **data;
     GList *results;
 
-    data = gl_journal_query_copy (query);
+    data = g_strdupv ((gchar **) query);
 
     task = g_task_new (self, cancellable, callback, user_data);
-    g_task_set_task_data (task, data, (GDestroyNotify) gl_journal_query_free);
+    g_task_set_task_data (task, data, (GDestroyNotify) g_strfreev);
 
     results = gl_journal_query (self, query);
     g_task_return_pointer (task, results, (GDestroyNotify) gl_journal_results_free);
@@ -391,22 +354,22 @@ gl_journal_query_finish (GlJournal *self,
  * Returns: %TRUE if the current log entry contains all fields in @query
  */
 static gboolean
-gl_journal_query_match (sd_journal           *journal,
-                        const GlJournalQuery *query)
+gl_journal_query_match (sd_journal          *journal,
+                        const gchar * const *query)
 {
   gint i;
 
-  for (i = 0; query->matches[i]; i++)
+  for (i = 0; query[i]; i++)
   {
       int r;
       const void *data;
       size_t len;
 
       /* don't check fields that match on a value */
-      if (strchr (query->matches[i], '='))
+      if (strchr (query[i], '='))
           continue;
 
-      r = sd_journal_get_data (journal, query->matches[i], &data, &len);
+      r = sd_journal_get_data (journal, query[i], &data, &len);
 
       if (r == -ENOENT) /* field doesn't exist */
           return FALSE;
@@ -419,7 +382,8 @@ gl_journal_query_match (sd_journal           *journal,
 }
 
 GList *
-gl_journal_query (GlJournal *self, const GlJournalQuery *query)
+gl_journal_query (GlJournal           *self,
+                  const gchar * const *query)
 {
     GlJournalPrivate *priv;
     sd_journal *journal;
@@ -433,24 +397,19 @@ gl_journal_query (GlJournal *self, const GlJournalQuery *query)
     priv = gl_journal_get_instance_private (self);
     journal = priv->journal;
 
-    if (query->matches)
+
+    for (i = 0; query[i]; i++)
     {
-        const gchar *match;
+        /* don't add fields of which we only want to check existance */
+        if (strchr (query[i], '=') == NULL)
+            continue;
 
-        for (i = 0, match = query->matches[i]; match;
-             match = query->matches[++i])
+        ret = sd_journal_add_match (journal, query[i], 0);
+
+        if (ret < 0)
         {
-            /* don't add fields of which we only want to check existance */
-            if (strchr (match, '=') == NULL)
-                continue;
-
-            ret = sd_journal_add_match (journal, match, 0);
-
-            if (ret < 0)
-            {
-                g_warning ("Error adding match '%s': %s", match,
-                           g_strerror (-ret));
-            }
+            g_warning ("Error adding match '%s': %s", query[i],
+                       g_strerror (-ret));
         }
     }
 

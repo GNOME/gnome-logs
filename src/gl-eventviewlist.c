@@ -393,29 +393,26 @@ static void
 gl_event_view_list_add_listbox_important (GlEventViewList *view)
 {
     /* Alert or emergency priority. */
-    const GlJournalQuery query = { (gchar*[5]){ "PRIORITY=0",
-                                                "PRIORITY=1",
-                                                "PRIORITY=2",
-                                                "PRIORITY=3",
-                                                NULL } };
+    const gchar * query[] = { "PRIORITY=0", "PRIORITY=1", "PRIORITY=2", "PRIORITY=3", NULL };
+
     GlEventViewListPrivate *priv;
 
     priv = gl_event_view_list_get_instance_private (view);
     priv->current_row_style = GL_EVENT_VIEW_ROW_STYLE_CMDLINE;
 
-    gl_journal_query_async (priv->journal, &query, NULL, query_ready, view);
+    gl_journal_query_async (priv->journal, query, NULL, query_ready, view);
 }
 
 static void
 gl_event_view_list_add_listbox_all (GlEventViewList *view)
 {
-    const GlJournalQuery query = { NULL };
+    const gchar *query[] = { NULL };
     GlEventViewListPrivate *priv;
 
     priv = gl_event_view_list_get_instance_private (view);
     priv->current_row_style = GL_EVENT_VIEW_ROW_STYLE_CMDLINE;
 
-    gl_journal_query_async (priv->journal, &query, NULL, query_ready, view);
+    gl_journal_query_async (priv->journal, query, NULL, query_ready, view);
 }
 
 static void
@@ -439,23 +436,23 @@ gl_event_view_list_add_listbox_applications (GlEventViewList *view)
         uid_str = g_strdup_printf ("_UID=%d", uid);
 
         {
-            GlJournalQuery query = { (gchar *[5]){ "_TRANSPORT=journal",
-                                                   "_TRANSPORT=stdout",
-                                                   "_TRANSPORT=syslog",
-                                                   uid_str, NULL } };
+            const gchar *query[] = { "_TRANSPORT=journal",
+                                     "_TRANSPORT=stdout",
+                                     "_TRANSPORT=syslog",
+                                     uid_str, NULL };
 
-            gl_journal_query_async (priv->journal, &query, NULL, query_ready, view);
+            gl_journal_query_async (priv->journal, query, NULL, query_ready, view);
         }
 
         g_free (uid_str);
     }
     else
     {
-        GlJournalQuery query = { (gchar *[4]){ "_TRANSPORT=journal",
-                                               "_TRANSPORT=stdout",
-                                               "_TRANSPORT=syslog", NULL } };
+        const gchar *query[] = { "_TRANSPORT=journal",
+                                 "_TRANSPORT=stdout",
+                                 "_TRANSPORT=syslog", NULL };
 
-        gl_journal_query_async (priv->journal, &query, NULL, query_ready, view);
+        gl_journal_query_async (priv->journal, query, NULL, query_ready, view);
     }
 
     g_object_unref (creds);
@@ -464,37 +461,37 @@ gl_event_view_list_add_listbox_applications (GlEventViewList *view)
 static void
 gl_event_view_list_add_listbox_system (GlEventViewList *view)
 {
-    GlJournalQuery query = { (gchar *[2]){ "_TRANSPORT=kernel", NULL } };
+    const gchar *query[] = { "_TRANSPORT=kernel", NULL };
     GlEventViewListPrivate *priv;
 
     priv = gl_event_view_list_get_instance_private (view);
     priv->current_row_style = GL_EVENT_VIEW_ROW_STYLE_SIMPLE;
 
-    gl_journal_query_async (priv->journal, &query, NULL, query_ready, view);
+    gl_journal_query_async (priv->journal, query, NULL, query_ready, view);
 }
 
 static void
 gl_event_view_list_add_listbox_hardware (GlEventViewList *view)
 {
-    GlJournalQuery query = { (gchar *[3]){ "_TRANSPORT=kernel", "_KERNEL_DEVICE", NULL } };
+    const gchar *query[] = { "_TRANSPORT=kernel", "_KERNEL_DEVICE", NULL };
     GlEventViewListPrivate *priv;
 
     priv = gl_event_view_list_get_instance_private (view);
     priv->current_row_style = GL_EVENT_VIEW_ROW_STYLE_SIMPLE;
 
-    gl_journal_query_async (priv->journal, &query, NULL, query_ready, view);
+    gl_journal_query_async (priv->journal, query, NULL, query_ready, view);
 }
 
 static void
 gl_event_view_list_add_listbox_security (GlEventViewList *view)
 {
-    const GlJournalQuery query = { (gchar *[2]){ "_AUDIT_SESSION", NULL } };
+    const gchar *query[] = { "_AUDIT_SESSION", NULL };
     GlEventViewListPrivate *priv;
 
     priv = gl_event_view_list_get_instance_private (view);
     priv->current_row_style = GL_EVENT_VIEW_ROW_STYLE_CMDLINE;
 
-    gl_journal_query_async (priv->journal, &query, NULL, query_ready, view);
+    gl_journal_query_async (priv->journal, query, NULL, query_ready, view);
 }
 
 static void
