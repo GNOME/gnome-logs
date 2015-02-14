@@ -421,6 +421,12 @@ on_notify_category (GlCategoryList *list,
     priv = gl_event_view_list_get_instance_private (view);
     filter = gl_category_list_get_category (list);
 
+    if (priv->insert_idle_id)
+      {
+        g_source_remove (priv->insert_idle_id);
+        priv->insert_idle_id = 0;
+      }
+
     if (priv->active_listbox)
       {
         GtkWidget *child;
