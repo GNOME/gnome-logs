@@ -34,7 +34,7 @@
                     </object>
                 </child>
                 <child>
-                    <object class="GtkStack" id="event_stack">
+                    <object class="GtkScrolledWindow" id="event_scrolled">
                         <property name="visible">True</property>
                         <property name="expand">True</property>
                     </object>

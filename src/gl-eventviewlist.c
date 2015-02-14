@@ -39,7 +39,7 @@ typedef struct
     GtkListBox *active_listbox;
     GtkWidget *categories;
     GtkWidget *event_search;
-    GtkWidget *event_stack;
+    GtkWidget *event_scrolled;
     GtkWidget *search_entry;
     gchar *search_text;
 
@@ -758,63 +758,50 @@ on_notify_category (GlCategoryList *list,
 {
     GlCategoryListFilter filter;
     GlEventViewList *view;
-    GtkWidget *scrolled;
     GlEventViewListPrivate *priv;
-    GtkStack *stack;
     GSettings *settings;
     gint sort_order;
-    const gchar *stack_child_name;
 
     view = GL_EVENT_VIEW_LIST (user_data);
     priv = gl_event_view_list_get_instance_private (view);
-    stack = GTK_STACK (priv->event_stack);
     filter = gl_category_list_get_category (list);
 
     if (priv->active_listbox)
-    {
+      {
         GtkWidget *child;
 
-        child = gtk_stack_get_visible_child (stack);
+        child = gtk_bin_get_child (GTK_BIN (priv->event_scrolled));
         gtk_widget_destroy (child);
-    }
+      }
 
     priv->active_listbox = GTK_LIST_BOX (gl_event_view_list_box_new (view));
-    scrolled = gtk_scrolled_window_new (NULL, NULL);
-    gtk_container_add (GTK_CONTAINER (scrolled), GTK_WIDGET (priv->active_listbox));
+    gtk_container_add (GTK_CONTAINER (priv->event_scrolled), GTK_WIDGET (priv->active_listbox));
 
     switch (filter)
     {
         case GL_CATEGORY_LIST_FILTER_IMPORTANT:
             gl_event_view_list_add_listbox_important (view);
-            stack_child_name = "listbox-important";
             break;
         case GL_CATEGORY_LIST_FILTER_ALL:
             gl_event_view_list_add_listbox_all (view);
-            stack_child_name = "listbox-all";
             break;
         case GL_CATEGORY_LIST_FILTER_APPLICATIONS:
             gl_event_view_list_add_listbox_applications (view);
-            stack_child_name = "listbox-applications";
             break;
         case GL_CATEGORY_LIST_FILTER_SYSTEM:
             gl_event_view_list_add_listbox_system (view);
-            stack_child_name = "listbox-system";
             break;
         case GL_CATEGORY_LIST_FILTER_HARDWARE:
             gl_event_view_list_add_listbox_hardware (view);
-            stack_child_name = "listbox-hardware";
             break;
         case GL_CATEGORY_LIST_FILTER_SECURITY:
             gl_event_view_list_add_listbox_security (view);
-            stack_child_name = "listbox-security";
             break;
         default:
             g_assert_not_reached ();
     }
 
-    gtk_stack_add_named (GTK_STACK (priv->event_stack), scrolled, stack_child_name);
-    gtk_stack_set_visible_child_name (stack, stack_child_name);
-    gtk_widget_show_all (scrolled);
+    gtk_widget_show_all (GTK_WIDGET (priv->active_listbox));
 
     settings = g_settings_new (SETTINGS_SCHEMA);
     sort_order = g_settings_get_enum (settings, SORT_ORDER);
@@ -977,7 +964,7 @@ gl_event_view_list_class_init (GlEventViewListClass *klass)
     gtk_widget_class_bind_template_child_private (widget_class, GlEventViewList,
                                                   event_search);
     gtk_widget_class_bind_template_child_private (widget_class, GlEventViewList,
-                                                  event_stack);
+                                                  event_scrolled);
     gtk_widget_class_bind_template_child_private (widget_class, GlEventViewList,
                                                   search_entry);
 
