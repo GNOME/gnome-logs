@@ -51,7 +51,6 @@ typedef struct
 
 G_DEFINE_TYPE_WITH_PRIVATE (GlEventViewList, gl_event_view_list, GTK_TYPE_BOX)
 
-static const gssize N_RESULTS = -1;
 static const gssize N_RESULTS_IDLE = 25;
 static const gchar DESKTOP_SCHEMA[] = "org.gnome.desktop.interface";
 static const gchar SETTINGS_SCHEMA[] = "org.gnome.Logs";
@@ -394,8 +393,7 @@ static void
 gl_event_view_list_add_listbox_important (GlEventViewList *view)
 {
     /* Alert or emergency priority. */
-    const GlJournalQuery query = { N_RESULTS,
-                                   (gchar*[5]){ "PRIORITY=0",
+    const GlJournalQuery query = { (gchar*[5]){ "PRIORITY=0",
                                                 "PRIORITY=1",
                                                 "PRIORITY=2",
                                                 "PRIORITY=3",
@@ -411,7 +409,7 @@ gl_event_view_list_add_listbox_important (GlEventViewList *view)
 static void
 gl_event_view_list_add_listbox_all (GlEventViewList *view)
 {
-    const GlJournalQuery query = { N_RESULTS, NULL };
+    const GlJournalQuery query = { NULL };
     GlEventViewListPrivate *priv;
 
     priv = gl_event_view_list_get_instance_private (view);
@@ -441,8 +439,7 @@ gl_event_view_list_add_listbox_applications (GlEventViewList *view)
         uid_str = g_strdup_printf ("_UID=%d", uid);
 
         {
-            GlJournalQuery query = { N_RESULTS,
-                                     (gchar *[5]){ "_TRANSPORT=journal",
+            GlJournalQuery query = { (gchar *[5]){ "_TRANSPORT=journal",
                                                    "_TRANSPORT=stdout",
                                                    "_TRANSPORT=syslog",
                                                    uid_str, NULL } };
@@ -454,8 +451,7 @@ gl_event_view_list_add_listbox_applications (GlEventViewList *view)
     }
     else
     {
-        GlJournalQuery query = { N_RESULTS,
-                                 (gchar *[4]){ "_TRANSPORT=journal",
+        GlJournalQuery query = { (gchar *[4]){ "_TRANSPORT=journal",
                                                "_TRANSPORT=stdout",
                                                "_TRANSPORT=syslog", NULL } };
 
@@ -468,8 +464,7 @@ gl_event_view_list_add_listbox_applications (GlEventViewList *view)
 static void
 gl_event_view_list_add_listbox_system (GlEventViewList *view)
 {
-    GlJournalQuery query = { N_RESULTS,
-                             (gchar *[2]){ "_TRANSPORT=kernel", NULL } };
+    GlJournalQuery query = { (gchar *[2]){ "_TRANSPORT=kernel", NULL } };
     GlEventViewListPrivate *priv;
 
     priv = gl_event_view_list_get_instance_private (view);
@@ -481,8 +476,7 @@ gl_event_view_list_add_listbox_system (GlEventViewList *view)
 static void
 gl_event_view_list_add_listbox_hardware (GlEventViewList *view)
 {
-    GlJournalQuery query = { N_RESULTS,
-                             (gchar *[3]){ "_TRANSPORT=kernel", "_KERNEL_DEVICE", NULL } };
+    GlJournalQuery query = { (gchar *[3]){ "_TRANSPORT=kernel", "_KERNEL_DEVICE", NULL } };
     GlEventViewListPrivate *priv;
 
     priv = gl_event_view_list_get_instance_private (view);
@@ -494,7 +488,7 @@ gl_event_view_list_add_listbox_hardware (GlEventViewList *view)
 static void
 gl_event_view_list_add_listbox_security (GlEventViewList *view)
 {
-    const GlJournalQuery query = { N_RESULTS, (gchar *[2]){ "_AUDIT_SESSION", NULL } };
+    const GlJournalQuery query = { (gchar *[2]){ "_AUDIT_SESSION", NULL } };
     GlEventViewListPrivate *priv;
 
     priv = gl_event_view_list_get_instance_private (view);

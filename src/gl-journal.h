@@ -44,7 +44,6 @@ GQuark gl_journal_error_quark (void);
 
 typedef struct
 {
-    gssize n_results;
     gchar **matches;
 } GlJournalQuery;
 
