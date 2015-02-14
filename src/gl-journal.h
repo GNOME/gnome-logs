@@ -83,7 +83,6 @@ void gl_journal_set_matches (GlJournal *journal, const gchar * const *matches);
 GlJournalResult * gl_journal_result_ref (GlJournalResult *result);
 void gl_journal_result_unref (GlJournalResult *result);
 void gl_journal_results_free (GList *results);
-GlJournalResult * gl_journal_query_cursor (GlJournal *self, const gchar *cursor);
 GlJournal * gl_journal_new (void);
 
 G_END_DECLS

@@ -509,56 +509,6 @@ gl_journal_set_matches (GlJournal           *journal,
     priv->mandatory_fields = (gchar **) g_ptr_array_free (mandatory_fields, FALSE);
 }
 
-GlJournalResult *
-gl_journal_query_cursor (GlJournal *self,
-                         const gchar *cursor)
-{
-    GlJournalPrivate *priv;
-    sd_journal *journal;
-    gint ret;
-    GlJournalResult *result = NULL;
-
-    g_return_val_if_fail (GL_JOURNAL (self), NULL);
-    g_return_val_if_fail (cursor != NULL, NULL);
-
-    priv = gl_journal_get_instance_private (self);
-    journal = priv->journal;
-
-    ret = sd_journal_seek_cursor (journal, cursor);
-
-    if (ret < 0)
-    {
-        g_warning ("Error seeking to cursor position: %s", g_strerror (-ret));
-        goto out;
-    }
-
-    ret = sd_journal_next (journal);
-
-    if (ret < 0)
-    {
-        g_warning ("Error positioning cursor in systemd journal: %s",
-                   g_strerror (-ret));
-    }
-
-    ret = sd_journal_test_cursor (journal, cursor);
-
-    if (ret < 0)
-    {
-        g_warning ("Error testing cursor string: %s", g_strerror (-ret));
-        goto out;
-    }
-    else if (ret == 0)
-    {
-        g_warning ("Cursor string does not match journal entry");
-        goto out;
-    }
-
-    result = _gl_journal_query_result (self);
-
-out:
-    return result;
-}
-
 static void
 gl_journal_result_free (GlJournalResult *result,
                         G_GNUC_UNUSED gpointer user_data)
