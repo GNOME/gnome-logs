@@ -446,7 +446,7 @@ on_notify_category (GlCategoryList *list,
               const gchar * query[] = { "PRIORITY=0", "PRIORITY=1", "PRIORITY=2", "PRIORITY=3", NULL };
 
               priv->current_row_style = GL_EVENT_VIEW_ROW_STYLE_CMDLINE;
-              gl_journal_query_async (priv->journal, query, NULL, query_ready, view);
+              gl_journal_set_matches (priv->journal, query);
             }
             break;
 
@@ -455,7 +455,7 @@ on_notify_category (GlCategoryList *list,
                 const gchar *query[] = { NULL };
 
                 priv->current_row_style = GL_EVENT_VIEW_ROW_STYLE_CMDLINE;
-                gl_journal_query_async (priv->journal, query, NULL, query_ready, view);
+                gl_journal_set_matches (priv->journal, query);
             }
             break;
 
@@ -473,7 +473,7 @@ on_notify_category (GlCategoryList *list,
                 priv->current_row_style = GL_EVENT_VIEW_ROW_STYLE_CMDLINE;
                 uid_str = create_uid_match_string ();
                 query[3] = uid_str;
-                gl_journal_query_async (priv->journal, query, NULL, query_ready, view);
+                gl_journal_set_matches (priv->journal, query);
 
                 g_free (uid_str);
             }
@@ -484,7 +484,7 @@ on_notify_category (GlCategoryList *list,
                 const gchar *query[] = { "_TRANSPORT=kernel", NULL };
 
                 priv->current_row_style = GL_EVENT_VIEW_ROW_STYLE_SIMPLE;
-                gl_journal_query_async (priv->journal, query, NULL, query_ready, view);
+                gl_journal_set_matches (priv->journal, query);
             }
             break;
 
@@ -493,7 +493,7 @@ on_notify_category (GlCategoryList *list,
                 const gchar *query[] = { "_TRANSPORT=kernel", "_KERNEL_DEVICE", NULL };
 
                 priv->current_row_style = GL_EVENT_VIEW_ROW_STYLE_SIMPLE;
-                gl_journal_query_async (priv->journal, query, NULL, query_ready, view);
+                gl_journal_set_matches (priv->journal, query);
             }
             break;
 
@@ -502,13 +502,15 @@ on_notify_category (GlCategoryList *list,
                 const gchar *query[] = { "_AUDIT_SESSION", NULL };
 
                 priv->current_row_style = GL_EVENT_VIEW_ROW_STYLE_CMDLINE;
-                gl_journal_query_async (priv->journal, query, NULL, query_ready, view);
+                gl_journal_set_matches (priv->journal, query);
             }
             break;
 
         default:
             g_assert_not_reached ();
     }
+
+    gl_journal_query_async (priv->journal, NULL, query_ready, view);
 
     gtk_widget_show_all (GTK_WIDGET (priv->active_listbox));
 

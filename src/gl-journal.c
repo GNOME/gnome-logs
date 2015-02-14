@@ -28,6 +28,7 @@ typedef struct
     sd_journal *journal;
     gint fd;
     guint source_id;
+    gchar **mandatory_fields;
 } GlJournalPrivate;
 
 G_DEFINE_TYPE_WITH_PRIVATE (GlJournal, gl_journal, G_TYPE_OBJECT)
@@ -79,6 +80,7 @@ gl_journal_finalize (GObject *object)
 
     g_source_remove (priv->source_id);
     g_clear_pointer (&priv->journal, sd_journal_close);
+    g_clear_pointer (&priv->mandatory_fields, g_strfreev);
 }
 
 static void
@@ -312,21 +314,16 @@ out:
 
 void
 gl_journal_query_async (GlJournal *self,
-                        const gchar * const *query,
                         GCancellable *cancellable,
                         GAsyncReadyCallback callback,
                         gpointer user_data)
 {
     GTask *task;
-    gchar **data;
     GList *results;
 
-    data = g_strdupv ((gchar **) query);
-
     task = g_task_new (self, cancellable, callback, user_data);
-    g_task_set_task_data (task, data, (GDestroyNotify) g_strfreev);
 
-    results = gl_journal_query (self, query);
+    results = gl_journal_query (self);
     g_task_return_pointer (task, results, (GDestroyNotify) gl_journal_results_free);
 
     g_object_unref (task);
@@ -382,36 +379,17 @@ gl_journal_query_match (sd_journal          *journal,
 }
 
 GList *
-gl_journal_query (GlJournal           *self,
-                  const gchar * const *query)
+gl_journal_query (GlJournal *self)
 {
     GlJournalPrivate *priv;
     sd_journal *journal;
-    gsize i;
     gint ret;
     GList *results = NULL;
 
     g_return_val_if_fail (GL_JOURNAL (self), NULL);
-    g_return_val_if_fail (query != NULL, NULL);
 
     priv = gl_journal_get_instance_private (self);
     journal = priv->journal;
-
-
-    for (i = 0; query[i]; i++)
-    {
-        /* don't add fields of which we only want to check existance */
-        if (strchr (query[i], '=') == NULL)
-            continue;
-
-        ret = sd_journal_add_match (journal, query[i], 0);
-
-        if (ret < 0)
-        {
-            g_warning ("Error adding match '%s': %s", query[i],
-                       g_strerror (-ret));
-        }
-    }
 
     /* Take events from this boot only. */
     sd_id128_t boot_id;
@@ -466,7 +444,7 @@ gl_journal_query (GlJournal           *self,
             break;
         }
 
-        if (!gl_journal_query_match (journal, query))
+        if (!gl_journal_query_match (journal, (const gchar * const *) priv->mandatory_fields))
             continue;
 
         result = _gl_journal_query_result (self);
@@ -477,6 +455,58 @@ gl_journal_query (GlJournal           *self,
     sd_journal_flush_matches (journal);
 
     return results;
+}
+
+/**
+ * gl_journal_set_matches:
+ * @journal: a #GlJournal
+ * @matches: new matches to set
+ *
+ * Sets @matches on @journal. Will reset the cursor position to the
+ * beginning.
+ */
+void
+gl_journal_set_matches (GlJournal           *journal,
+                        const gchar * const *matches)
+{
+    GlJournalPrivate *priv = gl_journal_get_instance_private (journal);
+    GPtrArray *mandatory_fields;
+    gint i;
+
+    g_return_if_fail (matches != NULL);
+
+    if (priv->mandatory_fields)
+      g_clear_pointer (&priv->mandatory_fields, g_strfreev);
+
+    sd_journal_flush_matches (priv->journal);
+
+    mandatory_fields = g_ptr_array_new ();
+    for (i = 0; matches[i]; i++)
+    {
+        int r;
+
+        /* matches without a value should only check for existence.
+         * systemd doesn't support that, so let's remember them to
+         * filter out later.
+         */
+        if (strchr (matches[i], '=') == NULL)
+        {
+            g_ptr_array_add (mandatory_fields, g_strdup (matches[i]));
+            continue;
+        }
+
+        r = sd_journal_add_match (priv->journal, matches[i], 0);
+        if (r < 0)
+        {
+            g_critical ("Failed to add match '%s': %s", matches[i], g_strerror (-r));
+            break;
+        }
+    }
+
+    /* add sentinel */
+    g_ptr_array_add (mandatory_fields, NULL);
+
+    priv->mandatory_fields = (gchar **) g_ptr_array_free (mandatory_fields, FALSE);
 }
 
 GlJournalResult *
