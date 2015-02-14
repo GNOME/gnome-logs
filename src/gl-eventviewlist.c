@@ -327,11 +327,6 @@ insert_devices_idle (GlEventViewList *view)
 
             if (result)
             {
-                if (result->kernel_device == NULL)
-                {
-                    continue;
-                }
-
                 row = gl_event_view_row_new (result,
                                              GL_EVENT_VIEW_ROW_STYLE_SIMPLE,
                                              priv->clock_format);
@@ -414,11 +409,6 @@ insert_security_idle (GlEventViewList *view)
 
             if (result)
             {
-                if (result->audit_session == NULL)
-                {
-                    continue;
-                }
-
                 row = gl_event_view_row_new (result,
                                              GL_EVENT_VIEW_ROW_STYLE_CMDLINE,
                                              priv->clock_format);
@@ -732,7 +722,7 @@ static void
 gl_event_view_list_add_listbox_hardware (GlEventViewList *view)
 {
     GlJournalQuery query = { N_RESULTS,
-                             (gchar *[2]){ "_TRANSPORT=kernel", NULL } };
+                             (gchar *[3]){ "_TRANSPORT=kernel", "_KERNEL_DEVICE", NULL } };
     GlEventViewListPrivate *priv;
 
     priv = gl_event_view_list_get_instance_private (view);
@@ -743,7 +733,7 @@ gl_event_view_list_add_listbox_hardware (GlEventViewList *view)
 static void
 gl_event_view_list_add_listbox_security (GlEventViewList *view)
 {
-    const GlJournalQuery query = { N_RESULTS, NULL };
+    const GlJournalQuery query = { N_RESULTS, (gchar *[2]){ "_AUDIT_SESSION", NULL } };
     GlEventViewListPrivate *priv;
 
     priv = gl_event_view_list_get_instance_private (view);

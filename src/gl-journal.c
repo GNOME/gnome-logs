@@ -392,6 +392,45 @@ gl_journal_query_finish (GlJournal *self,
     return g_task_propagate_pointer (G_TASK (res), error);
 }
 
+/**
+ * gl_journal_query_match:
+ * @query: a @query to match against the current log entry
+ *
+ * systemd's matching doesn't allow checking for the existance of
+ * fields. This function checks if fields in @query that don't have a
+ * value (and thus no '=' delimiter) are present at all in the current
+ * log entry.
+ *
+ * Returns: %TRUE if the current log entry contains all fields in @query
+ */
+static gboolean
+gl_journal_query_match (sd_journal           *journal,
+                        const GlJournalQuery *query)
+{
+  gint i;
+
+  for (i = 0; query->matches[i]; i++)
+  {
+      int r;
+      const void *data;
+      size_t len;
+
+      /* don't check fields that match on a value */
+      if (strchr (query->matches[i], '='))
+          continue;
+
+      r = sd_journal_get_data (journal, query->matches[i], &data, &len);
+
+      if (r == -ENOENT) /* field doesn't exist */
+          return FALSE;
+
+      else if (r < 0)
+          g_warning ("Failed to read log entry: %s", g_strerror (-r));
+  }
+
+  return TRUE;
+}
+
 GList *
 gl_journal_query (GlJournal *self, const GlJournalQuery *query)
 {
@@ -414,6 +453,10 @@ gl_journal_query (GlJournal *self, const GlJournalQuery *query)
         for (i = 0, match = query->matches[i]; match;
              match = query->matches[++i])
         {
+            /* don't add fields of which we only want to check existance */
+            if (strchr (match, '=') == NULL)
+                continue;
+
             ret = sd_journal_add_match (journal, match, 0);
 
             if (ret < 0)
@@ -479,6 +522,9 @@ gl_journal_query (GlJournal *self, const GlJournalQuery *query)
                 break;
             }
 
+            if (!gl_journal_query_match (journal, query))
+                continue;
+
             result = _gl_journal_query_result (self);
 
             results = g_list_prepend (results, result);
@@ -513,6 +559,9 @@ gl_journal_query (GlJournal *self, const GlJournalQuery *query)
                 g_debug ("End of systemd journal reached");
                 break;
             }
+
+            if (!gl_journal_query_match (journal, query))
+                continue;
 
             result = _gl_journal_query_result (self);
 
