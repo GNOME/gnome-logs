@@ -713,41 +713,22 @@ gl_event_view_list_add_listbox_important (GlEventViewList *view)
                                                 "PRIORITY=2",
                                                 "PRIORITY=3",
                                                 NULL } };
-    GtkWidget *listbox;
-    GtkWidget *scrolled;
     GlEventViewListPrivate *priv;
 
     priv = gl_event_view_list_get_instance_private (view);
-    listbox = gl_event_view_list_box_new (view);
 
-    insert_journal_query_cmdline (view, &query,
-                                  GTK_LIST_BOX (listbox));
-
-    scrolled = gtk_scrolled_window_new (NULL, NULL);
-    gtk_container_add (GTK_CONTAINER (scrolled), listbox);
-    gtk_widget_show_all (scrolled);
-    gtk_stack_add_named (GTK_STACK (priv->event_stack), scrolled,
-                                    "listbox-important");
+    insert_journal_query_cmdline (view, &query, priv->active_listbox);
 }
 
 static void
 gl_event_view_list_add_listbox_all (GlEventViewList *view)
 {
     const GlJournalQuery query = { N_RESULTS, NULL };
-    GtkWidget *listbox;
-    GtkWidget *scrolled;
     GlEventViewListPrivate *priv;
 
     priv = gl_event_view_list_get_instance_private (view);
-    listbox = gl_event_view_list_box_new (view);
 
-    insert_journal_query_cmdline (view, &query, GTK_LIST_BOX (listbox));
-
-    scrolled = gtk_scrolled_window_new (NULL, NULL);
-    gtk_container_add (GTK_CONTAINER (scrolled), listbox);
-    gtk_widget_show_all (scrolled);
-    gtk_stack_add_named (GTK_STACK (priv->event_stack), scrolled,
-                         "listbox-all");
+    insert_journal_query_cmdline (view, &query, priv->active_listbox);
 }
 
 static void
@@ -755,12 +736,9 @@ gl_event_view_list_add_listbox_applications (GlEventViewList *view)
 {
     GCredentials *creds;
     uid_t uid;
-    GtkWidget *listbox;
-    GtkWidget *scrolled;
     GlEventViewListPrivate *priv;
 
     priv = gl_event_view_list_get_instance_private (view);
-    listbox = gl_event_view_list_box_new (view);
     creds = g_credentials_new ();
     uid = g_credentials_get_unix_user (creds, NULL);
 
@@ -779,8 +757,7 @@ gl_event_view_list_add_listbox_applications (GlEventViewList *view)
                                                    "_TRANSPORT=syslog",
                                                    uid_str, NULL } };
 
-            insert_journal_query_cmdline (view, &query,
-                                          GTK_LIST_BOX (listbox));
+            insert_journal_query_cmdline (view, &query, priv->active_listbox);
         }
 
         g_free (uid_str);
@@ -792,14 +769,8 @@ gl_event_view_list_add_listbox_applications (GlEventViewList *view)
                                                "_TRANSPORT=stdout",
                                                "_TRANSPORT=syslog", NULL } };
 
-        insert_journal_query_cmdline (view, &query, GTK_LIST_BOX (listbox));
+        insert_journal_query_cmdline (view, &query, priv->active_listbox);
     }
-
-    scrolled = gtk_scrolled_window_new (NULL, NULL);
-    gtk_container_add (GTK_CONTAINER (scrolled), listbox);
-    gtk_widget_show_all (scrolled);
-    gtk_stack_add_named (GTK_STACK (priv->event_stack), scrolled,
-                                    "listbox-applications");
 
     g_object_unref (creds);
 }
@@ -809,20 +780,11 @@ gl_event_view_list_add_listbox_system (GlEventViewList *view)
 {
     GlJournalQuery query = { N_RESULTS,
                              (gchar *[2]){ "_TRANSPORT=kernel", NULL } };
-    GtkWidget *listbox;
-    GtkWidget *scrolled;
     GlEventViewListPrivate *priv;
 
     priv = gl_event_view_list_get_instance_private (view);
-    listbox = gl_event_view_list_box_new (view);
 
-    insert_journal_query_simple (view, &query, GTK_LIST_BOX (listbox));
-
-    scrolled = gtk_scrolled_window_new (NULL, NULL);
-    gtk_container_add (GTK_CONTAINER (scrolled), listbox);
-    gtk_widget_show_all (scrolled);
-    gtk_stack_add_named (GTK_STACK (priv->event_stack), scrolled,
-                         "listbox-system");
+    insert_journal_query_simple (view, &query, priv->active_listbox);
 }
 
 static void
@@ -830,40 +792,22 @@ gl_event_view_list_add_listbox_hardware (GlEventViewList *view)
 {
     GlJournalQuery query = { N_RESULTS,
                              (gchar *[2]){ "_TRANSPORT=kernel", NULL } };
-    GtkWidget *listbox;
-    GtkWidget *scrolled;
     GlEventViewListPrivate *priv;
 
     priv = gl_event_view_list_get_instance_private (view);
-    listbox = gl_event_view_list_box_new (view);
 
-    insert_journal_query_devices (view, &query, GTK_LIST_BOX (listbox));
-
-    scrolled = gtk_scrolled_window_new (NULL, NULL);
-    gtk_container_add (GTK_CONTAINER (scrolled), listbox);
-    gtk_widget_show_all (scrolled);
-    gtk_stack_add_named (GTK_STACK (priv->event_stack), scrolled,
-                         "listbox-hardware");
+    insert_journal_query_devices (view, &query, priv->active_listbox);
 }
 
 static void
 gl_event_view_list_add_listbox_security (GlEventViewList *view)
 {
     const GlJournalQuery query = { N_RESULTS, NULL };
-    GtkWidget *listbox;
-    GtkWidget *scrolled;
     GlEventViewListPrivate *priv;
 
     priv = gl_event_view_list_get_instance_private (view);
-    listbox = gl_event_view_list_box_new (view);
 
-    insert_journal_query_security (view, &query, GTK_LIST_BOX (listbox));
-
-    scrolled = gtk_scrolled_window_new (NULL, NULL);
-    gtk_container_add (GTK_CONTAINER (scrolled), listbox);
-    gtk_widget_show_all (scrolled);
-    gtk_stack_add_named (GTK_STACK (priv->event_stack), scrolled,
-                         "listbox-security");
+    insert_journal_query_security (view, &query, priv->active_listbox);
 }
 
 static void
@@ -873,12 +817,12 @@ on_notify_category (GlCategoryList *list,
 {
     GlCategoryListFilter filter;
     GlEventViewList *view;
+    GtkWidget *scrolled;
     GlEventViewListPrivate *priv;
     GtkStack *stack;
-    GtkWidget *scrolled;
-    GtkWidget *viewport;
     GSettings *settings;
     gint sort_order;
+    const gchar *stack_child_name;
 
     view = GL_EVENT_VIEW_LIST (user_data);
     priv = gl_event_view_list_get_instance_private (view);
@@ -893,39 +837,43 @@ on_notify_category (GlCategoryList *list,
         gtk_widget_destroy (child);
     }
 
+    priv->active_listbox = GTK_LIST_BOX (gl_event_view_list_box_new (view));
+    scrolled = gtk_scrolled_window_new (NULL, NULL);
+    gtk_container_add (GTK_CONTAINER (scrolled), GTK_WIDGET (priv->active_listbox));
+
     switch (filter)
     {
         case GL_CATEGORY_LIST_FILTER_IMPORTANT:
             gl_event_view_list_add_listbox_important (view);
-            gtk_stack_set_visible_child_name (stack, "listbox-important");
+            stack_child_name = "listbox-important";
             break;
         case GL_CATEGORY_LIST_FILTER_ALL:
             gl_event_view_list_add_listbox_all (view);
-            gtk_stack_set_visible_child_name (stack, "listbox-all");
+            stack_child_name = "listbox-all";
             break;
         case GL_CATEGORY_LIST_FILTER_APPLICATIONS:
             gl_event_view_list_add_listbox_applications (view);
-            gtk_stack_set_visible_child_name (stack, "listbox-applications");
+            stack_child_name = "listbox-applications";
             break;
         case GL_CATEGORY_LIST_FILTER_SYSTEM:
             gl_event_view_list_add_listbox_system (view);
-            gtk_stack_set_visible_child_name (stack, "listbox-system");
+            stack_child_name = "listbox-system";
             break;
         case GL_CATEGORY_LIST_FILTER_HARDWARE:
             gl_event_view_list_add_listbox_hardware (view);
-            gtk_stack_set_visible_child_name (stack, "listbox-hardware");
+            stack_child_name = "listbox-hardware";
             break;
         case GL_CATEGORY_LIST_FILTER_SECURITY:
             gl_event_view_list_add_listbox_security (view);
-            gtk_stack_set_visible_child_name (stack, "listbox-security");
+            stack_child_name = "listbox-security";
             break;
         default:
-            break;
+            g_assert_not_reached ();
     }
 
-    scrolled = gtk_stack_get_visible_child (stack);
-    viewport = gtk_bin_get_child (GTK_BIN (scrolled));
-    priv->active_listbox = GTK_LIST_BOX (gtk_bin_get_child (GTK_BIN (viewport)));
+    gtk_stack_add_named (GTK_STACK (priv->event_stack), scrolled, stack_child_name);
+    gtk_stack_set_visible_child_name (stack, stack_child_name);
+    gtk_widget_show_all (scrolled);
 
     settings = g_settings_new (SETTINGS_SCHEMA);
     sort_order = g_settings_get_enum (settings, SORT_ORDER);
