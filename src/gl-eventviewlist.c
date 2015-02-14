@@ -415,47 +415,45 @@ gl_event_view_list_add_listbox_all (GlEventViewList *view)
     gl_journal_query_async (priv->journal, query, NULL, query_ready, view);
 }
 
-static void
-gl_event_view_list_add_listbox_applications (GlEventViewList *view)
+static gchar *
+create_uid_match_string (void)
 {
     GCredentials *creds;
     uid_t uid;
-    GlEventViewListPrivate *priv;
+    gchar *str = NULL;
 
-    priv = gl_event_view_list_get_instance_private (view);
-    priv->current_row_style = GL_EVENT_VIEW_ROW_STYLE_CMDLINE;
     creds = g_credentials_new ();
     uid = g_credentials_get_unix_user (creds, NULL);
 
-    /* Allow all _TRANSPORT != kernel. Attempt to filter by only processes
-     * owned by the same UID. */
     if (uid != -1)
-    {
-        gchar *uid_str;
-
-        uid_str = g_strdup_printf ("_UID=%d", uid);
-
-        {
-            const gchar *query[] = { "_TRANSPORT=journal",
-                                     "_TRANSPORT=stdout",
-                                     "_TRANSPORT=syslog",
-                                     uid_str, NULL };
-
-            gl_journal_query_async (priv->journal, query, NULL, query_ready, view);
-        }
-
-        g_free (uid_str);
-    }
-    else
-    {
-        const gchar *query[] = { "_TRANSPORT=journal",
-                                 "_TRANSPORT=stdout",
-                                 "_TRANSPORT=syslog", NULL };
-
-        gl_journal_query_async (priv->journal, query, NULL, query_ready, view);
-    }
+        str = g_strdup_printf ("_UID=%d", uid);
 
     g_object_unref (creds);
+    return str;
+}
+
+/* Allow all _TRANSPORT != kernel. Attempt to filter by only processes
+ * owned by the same UID. */
+static void
+gl_event_view_list_add_listbox_applications (GlEventViewList *view)
+{
+    GlEventViewListPrivate *priv;
+    gchar *uid_str = NULL;
+    const gchar *query[] = { "_TRANSPORT=journal",
+                             "_TRANSPORT=stdout",
+                             "_TRANSPORT=syslog",
+                             NULL,
+                             NULL };
+
+    priv = gl_event_view_list_get_instance_private (view);
+    priv->current_row_style = GL_EVENT_VIEW_ROW_STYLE_CMDLINE;
+
+    uid_str = create_uid_match_string ();
+    query[3] = uid_str;
+
+    gl_journal_query_async (priv->journal, query, NULL, query_ready, view);
+
+    g_free (uid_str);
 }
 
 static void
