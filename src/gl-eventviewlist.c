@@ -127,11 +127,8 @@ listbox_search_filter_func (GtkListBoxRow *row,
                 return TRUE;
             }
         }
-#if 0
         else
         {
-            gchar *casefolded_text;
-            GlJournalResult casefolded;
             const gchar *comm;
             const gchar *message;
             const gchar *kernel_device;
@@ -142,32 +139,12 @@ listbox_search_filter_func (GtkListBoxRow *row,
             kernel_device = gl_journal_entry_get_kernel_device (entry);
             audit_session = gl_journal_entry_get_audit_session (entry);
 
-            /* Case-insensitive search. */
-            casefolded_text = g_utf8_casefold (priv->search_text, -1);
-
-            casefolded.comm = comm ? g_utf8_casefold (comm, -1) : NULL;
-            casefolded.message = message ? g_utf8_casefold (message, -1) : NULL;
-            casefolded.kernel_device = kernel_device ? g_utf8_casefold (kernel_device, -1) : NULL;
-            casefolded.audit_session = audit_session ? g_utf8_casefold (audit_session, -1) : NULL;
-
-            if (search_in_result (&casefolded, casefolded_text))
-            {
-                g_free (casefolded.comm);
-                g_free (casefolded.message);
-                g_free (casefolded.kernel_device);
-                g_free (casefolded.audit_session);
-                g_free (casefolded_text);
-
-                return TRUE;
-            }
-
-            g_free (casefolded.comm);
-            g_free (casefolded.message);
-            g_free (casefolded.kernel_device);
-            g_free (casefolded.audit_session);
-            g_free (casefolded_text);
+            if ((comm && g_str_match_string (priv->search_text, comm, TRUE)) ||
+                (message && g_str_match_string (priv->search_text, message, TRUE)) ||
+                (kernel_device && g_str_match_string (priv->search_text, kernel_device, TRUE)) ||
+                (audit_session && g_str_match_string (priv->search_text, audit_session, TRUE)))
+              return TRUE;
         }
-#endif
     }
 
     return FALSE;
