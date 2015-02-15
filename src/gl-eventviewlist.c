@@ -592,6 +592,7 @@ gl_event_view_list_init (GlEventViewList *view)
     categories = GL_CATEGORY_LIST (priv->categories);
 
     priv->journal_model = gl_journal_model_new ();
+    g_application_bind_busy_property (g_application_get_default (), priv->journal_model, "loading");
 
     gtk_list_box_bind_model (GTK_LIST_BOX (priv->entries_box),
                              G_LIST_MODEL (priv->journal_model),

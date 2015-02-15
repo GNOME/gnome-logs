@@ -12,4 +12,6 @@ GlJournalModel *        gl_journal_model_new                            (void);
 void                    gl_journal_model_set_matches                    (GlJournalModel      *model,
                                                                          const gchar * const *matches);
 
+gboolean                gl_journal_model_get_loading                    (GlJournalModel *model);
+
 #endif
