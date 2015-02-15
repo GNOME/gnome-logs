@@ -103,6 +103,20 @@ search_in_result (GlJournalEntry *entry,
 }
 
 static gboolean
+utf8_strcasestr (const gchar *potential_hit,
+                 const gchar *search_term)
+{
+  gchar *folded;
+  gboolean matches;
+
+  folded = g_utf8_casefold (potential_hit, -1);
+  matches = strstr (folded, search_term) != NULL;
+
+  g_free (folded);
+  return matches;
+}
+
+static gboolean
 listbox_search_filter_func (GtkListBoxRow *row,
                             GlEventViewList *view)
 {
@@ -129,21 +143,27 @@ listbox_search_filter_func (GtkListBoxRow *row,
         }
         else
         {
+            gchar *folded_search_term;
             const gchar *comm;
             const gchar *message;
             const gchar *kernel_device;
             const gchar *audit_session;
+            gboolean matches;
+
+            folded_search_term = g_utf8_casefold (priv->search_text, -1);
 
             comm = gl_journal_entry_get_command_line (entry);
             message = gl_journal_entry_get_message (entry);
             kernel_device = gl_journal_entry_get_kernel_device (entry);
             audit_session = gl_journal_entry_get_audit_session (entry);
 
-            if ((comm && g_str_match_string (priv->search_text, comm, TRUE)) ||
-                (message && g_str_match_string (priv->search_text, message, TRUE)) ||
-                (kernel_device && g_str_match_string (priv->search_text, kernel_device, TRUE)) ||
-                (audit_session && g_str_match_string (priv->search_text, audit_session, TRUE)))
-              return TRUE;
+            matches = (comm && utf8_strcasestr (comm, priv->search_text)) ||
+                      (message && utf8_strcasestr (message, priv->search_text)) ||
+                      (kernel_device && utf8_strcasestr (kernel_device, priv->search_text)) ||
+                      (audit_session && utf8_strcasestr (audit_session, priv->search_text));
+
+            g_free (folded_search_term);
+            return matches;
         }
     }
 
