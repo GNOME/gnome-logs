@@ -1,14 +1,14 @@
 # Swedish translation for gnome-logs.
-# Copyright © 2014 gnome-logs's COPYRIGHT HOLDER
+# Copyright © 2014, 2015 gnome-logs's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-logs package.
-# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2014.
+# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2014, 2015.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-05-05 18:48+0000\n"
-"PO-Revision-Date: 2014-04-15 19:37+0100\n"
+"POT-Creation-Date: 2015-01-25 19:55+0000\n"
+"PO-Revision-Date: 2015-01-26 23:54+0100\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@lists.tp-sv.se>\n"
 "Language: sv\n"
@@ -16,23 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.6.4\n"
-
-#: ../data/appmenu.ui.h:1
-msgid "_New Window"
-msgstr "_Nytt fönster"
-
-#: ../data/appmenu.ui.h:2
-msgid "_Help"
-msgstr "_Hjälp"
-
-#: ../data/appmenu.ui.h:3
-msgid "_About"
-msgstr "_Om"
-
-#: ../data/appmenu.ui.h:4
-msgid "_Quit"
-msgstr "_Avsluta"
+"X-Generator: Poedit 1.7.3\n"
 
 #: ../data/gl-categorylist.ui.h:1
 msgid "Important"
@@ -74,7 +58,9 @@ msgstr "Uppdateringar"
 msgid "Usage"
 msgstr "Användning"
 
-#: ../data/gl-eventtoolbar.ui.h:1
+#. Name and summary taken from the desktop file.
+#: ../data/gl-eventtoolbar.ui.h:1 ../data/org.gnome.Logs.appdata.xml.in.h:2
+#: ../data/org.gnome.Logs.desktop.in.h:1
 msgid "Logs"
 msgstr "Loggar"
 
@@ -86,7 +72,60 @@ msgstr "Gå tillbaka till händelsevyn"
 msgid "Search the displayed logs"
 msgstr "Sök igenom de visade loggarna"
 
-#: ../data/org.gnome.Logs.appdata.xml.in.h:1
+#: ../data/gl-eventviewdetail.ui.h:1
+msgid "Message"
+msgstr "Meddelande"
+
+#: ../data/gl-eventviewdetail.ui.h:2
+msgid "Audit Session"
+msgstr "Granskningssession"
+
+#: ../data/gl-eventviewdetail.ui.h:3
+msgid "Kernel Device"
+msgstr "Kärnenhet"
+
+#: ../data/gl-eventviewdetail.ui.h:4
+msgid "Priority"
+msgstr "Prioritet"
+
+#: ../data/gl-eventviewdetail.ui.h:5
+msgid "Subject"
+msgstr "Ämne"
+
+#: ../data/gl-eventviewdetail.ui.h:6
+msgid "Defined By"
+msgstr "Definierat av"
+
+#: ../data/gl-eventviewdetail.ui.h:7
+msgid "Support"
+msgstr "Support"
+
+#: ../data/gl-eventviewdetail.ui.h:8
+msgid "Documentation"
+msgstr "Dokumentation"
+
+#: ../data/menus.ui.h:1
+msgid "_New Window"
+msgstr "_Nytt fönster"
+
+#: ../data/menus.ui.h:2
+msgid "_Help"
+msgstr "_Hjälp"
+
+#: ../data/menus.ui.h:3
+msgid "_About"
+msgstr "_Om"
+
+#: ../data/menus.ui.h:4
+msgid "_Quit"
+msgstr "_Avsluta"
+
+#: ../data/org.gnome.Logs.appdata.xml.in.h:3
+#: ../data/org.gnome.Logs.desktop.in.h:3
+msgid "View detailed event logs for the system"
+msgstr "Visa detaljerade händelseloggar för systemet"
+
+#: ../data/org.gnome.Logs.appdata.xml.in.h:4
 msgid ""
 "Logs shows events from the systemd journal, and sorts them into categories, "
 "such as hardware and applications."
@@ -94,7 +133,7 @@ msgstr ""
 "Loggar visar händelser från systemd-journalen och sorterar in dem i "
 "kategorier som exempelvis hårdvara eller program."
 
-#: ../data/org.gnome.Logs.appdata.xml.in.h:2
+#: ../data/org.gnome.Logs.appdata.xml.in.h:5
 msgid ""
 "Using Logs you can search your logs by typing a search term, and view "
 "detailed information about each event by clicking on it."
@@ -102,20 +141,25 @@ msgstr ""
 "Med Loggar kan du söka dina loggar genom att skriva in en sökterm. Se sedan "
 "detaljerad information om enstaka händelser genom att klicka på dem."
 
-#: ../data/org.gnome.Logs.desktop.in.h:1
+#: ../data/org.gnome.Logs.desktop.in.h:2
 msgid "Log Viewer"
 msgstr "Loggvisare"
 
-#: ../data/org.gnome.Logs.desktop.in.h:2
-msgid "View detailed event logs for the system"
-msgstr "Visa detaljerade händelseloggar för systemet"
-
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: ../data/org.gnome.Logs.desktop.in.h:4
+#: ../data/org.gnome.Logs.desktop.in.h:5
 msgid "log;journal;debug;error;"
 msgstr "logg;journal;debug;avlusning;fel;felsökning;"
 
-#: ../src/gl-application.c:99
+#: ../data/org.gnome.Logs.gschema.xml.h:1
+msgid "How to sort list rows in the event view list"
+msgstr "Hur listrader ska sorteras i händelsevylistan"
+
+#: ../data/org.gnome.Logs.gschema.xml.h:2
+msgid "Sort list rows in ascending or descending order for the selected type"
+msgstr ""
+"Sortera listrader i stigande eller fallande ordning för den valda typen"
+
+#: ../src/gl-application.c:103
 msgid "translator-credits"
 msgstr ""
 "Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
@@ -123,78 +167,61 @@ msgstr ""
 "Skicka synpunkter på översättningen till\n"
 "<tp-sv@listor.tp-sv.se>."
 
-#: ../src/gl-application.c:100
+#: ../src/gl-application.c:104
 msgid "View and search logs"
 msgstr "Visa och sök igenom loggar"
 
-#: ../src/gl-application.c:224
+#: ../src/gl-application.c:231
 msgid "Print version information and exit"
 msgstr "Skriv ut versionsinformation och avsluta"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventview.c:217
+#: ../src/gl-eventviewlist.c:281
 msgid "No results"
 msgstr "Inga resultat"
 
-#: ../src/gl-eventview.c:604 ../src/gl-eventview.c:614
-#: ../src/gl-eventview.c:745 ../src/gl-eventview.c:755
+#: ../src/gl-eventviewlist.c:740 ../src/gl-eventviewlist.c:753
+#: ../src/gl-eventviewlist.c:902 ../src/gl-eventviewlist.c:915
 msgid "Not implemented"
 msgstr "Ej implementerat"
-
-#: ../src/gl-eventviewdetail.c:140
-msgid "Message"
-msgstr "Meddelande"
-
-#. TODO: Give a user-friendly representation of the priority.
-#: ../src/gl-eventviewdetail.c:161
-msgid "Priority"
-msgstr "Prioritet"
-
-#: ../src/gl-eventviewdetail.c:189
-msgid "Kernel Device"
-msgstr "Kärnenhet"
-
-#: ../src/gl-eventviewdetail.c:209
-msgid "Audit Session"
-msgstr "Granskningssession"
 
 #. Translators: timestamp format for events on the current
 #. * day, showing the time in 12-hour format.
 #: ../src/gl-util.c:95
 msgid "%l:%M %p"
-msgstr "%H.%M"
+msgstr "%l:%M %p"
 
 #. Translators: timestamp format for events in the current
 #. * year, showing the abbreviated month name, day of the
 #. * month and the time in 12-hour format.
 #: ../src/gl-util.c:101
 msgid "%b %e %l:%M %p"
-msgstr "%e %b %H.%M"
+msgstr "%e %b %l:%M %p"
 
 #. Translators: timestamp format for events in a different
 #. * year, showing the abbreviated month name, day of the
 #. * month, year and the time in 12-hour format.
 #: ../src/gl-util.c:107
 msgid "%b %e %Y %l:%M %p"
-msgstr "%e %b %Y %H.%M"
+msgstr "%e %b %Y %l:%M %p"
 
 #. Translators: timestamp format for events on the current
 #. * day, showing the time in 24-hour format.
 #: ../src/gl-util.c:120
 msgid "%H:%M"
-msgstr "%H.%M"
+msgstr "%H:%M"
 
 #. Translators: timestamp format for events in the current
 #. * year, showing the abbreviated month name, day of the
 #. * month and the time in 24-hour format.
 #: ../src/gl-util.c:126
 msgid "%b %e %H:%M"
-msgstr "%e %b %H.%M"
+msgstr "%e %b %H:%M"
 
 #. Translators: timestamp format for events in a different
 #. * year, showing the abbreviated month name, day of the
 #. * month, year and the time in 24-hour format.
 #: ../src/gl-util.c:132
 msgid "%b %e %Y %H:%M"
-msgstr "%e %b %Y %H.%M"
+msgstr "%e %b %Y %H:%M"
