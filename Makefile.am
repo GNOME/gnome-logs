@@ -124,7 +124,7 @@ TESTS_ENVIRONMENT = \
 tests_test_gl_util_CPPFLAGS = \
 	-DLOCALEDIR=\""$(localedir)"\" \
 	-I$(top_builddir) \
-	-I$(top_builddir)/src \
+	-I$(top_srcdir)/src \
 	$(WARN_CFLAGS)
 
 tests_test_gl_util_CFLAGS = \
