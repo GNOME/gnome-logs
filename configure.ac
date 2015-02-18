@@ -88,7 +88,7 @@ AS_IF([test "x$have_desktop_file_validate" = "xyes"],
 AM_CONDITIONAL([LOGS_ENABLE_TESTS], [test "x$testing_utilities" = "xyes"])
 
 dnl Libraries
-GIO_REQUIRED="gio-unix-2.0 >= 2.43.4"
+GIO_REQUIRED="gio-unix-2.0 >= 2.43.90"
 GTK_REQUIRED="gtk+-3.0 >= 3.15.7"
 SYSTEMD_JOURNAL_REQUIRED="libsystemd-journal"
 PKG_CHECK_MODULES([LOGS], [$GIO_REQUIRED $GTK_REQUIRED $SYSTEMD_JOURNAL_REQUIRED])
