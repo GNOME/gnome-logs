@@ -1,3 +1,14 @@
+GNOME Logs 3.15.90
+==================
+
+* port to GListModel from Lars Uebernickel
+* extensive refactoring of the journal query code from Lars Uebernickel
+* mark the application as busy when reading from the journal from Lars
+  Uebernickel
+* unit test for timestamp comparison from Ekaterina Gerasimova
+* updates to Aragonese, Slovak, Esperanto, Norwegian bokmål, Turkish, Swedish,
+  Slovenian and Italian translations
+
 GNOME Logs 3.15.4
 =================
 
