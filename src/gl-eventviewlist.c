@@ -542,6 +542,18 @@ on_search_bar_notify_search_mode_enabled (GtkSearchBar *search_bar,
 }
 
 static void
+gl_event_list_view_edge_reached (GtkScrolledWindow *scrolled,
+                                 GtkPositionType    pos,
+                                 gpointer           user_data)
+{
+    GlEventViewList *view = user_data;
+    GlEventViewListPrivate *priv = gl_event_view_list_get_instance_private (view);
+
+    if (pos == GTK_POS_BOTTOM)
+        gl_journal_model_fetch_more_entries (priv->journal_model, FALSE);
+}
+
+static void
 gl_event_view_list_finalize (GObject *object)
 {
     GlEventViewList *view = GL_EVENT_VIEW_LIST (object);
@@ -594,6 +606,9 @@ gl_event_view_list_init (GlEventViewList *view)
     priv->journal_model = gl_journal_model_new ();
     g_application_bind_busy_property (g_application_get_default (), priv->journal_model, "loading");
 
+    g_signal_connect (priv->event_scrolled, "edge-reached",
+                      G_CALLBACK (gl_event_list_view_edge_reached), view);
+
     gtk_list_box_bind_model (GTK_LIST_BOX (priv->entries_box),
                              G_LIST_MODEL (priv->journal_model),
                              gl_event_list_view_create_row_widget,
@@ -628,6 +643,9 @@ gl_event_view_list_search (GlEventViewList *view,
 
     g_free (priv->search_text);
     priv->search_text = g_strdup (needle);
+
+    /* for search, we need all entries - tell the model to fetch them */
+    gl_journal_model_fetch_more_entries (priv->journal_model, TRUE);
 
     gtk_list_box_invalidate_filter (priv->entries_box);
 }

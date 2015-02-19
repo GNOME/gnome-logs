@@ -6,9 +6,13 @@ struct _GlJournalModel
 {
     GObject parent_instance;
 
+    guint batch_size;
+
     GlJournal *journal;
     GPtrArray *entries;
 
+    guint n_entries_to_fetch;
+    gboolean fetched_all;
     guint idle_source;
 };
 
@@ -28,19 +32,29 @@ enum
 static GParamSpec *properties[N_PROPERTIES];
 
 static gboolean
-gl_journal_model_fetch_entries (gpointer user_data)
+gl_journal_model_fetch_idle (gpointer user_data)
 {
     GlJournalModel *model = user_data;
     GlJournalEntry *entry;
     guint last;
 
-    last = model->entries->len;
+    g_assert (model->n_entries_to_fetch > 0);
 
-    entry = gl_journal_previous (model->journal);
-    if (entry)
+    last = model->entries->len;
+    if ((entry = gl_journal_previous (model->journal)))
     {
+        model->n_entries_to_fetch--;
         g_ptr_array_add (model->entries, entry);
         g_list_model_items_changed (G_LIST_MODEL (model), last, 0, 1);
+    }
+    else
+    {
+        model->fetched_all = TRUE;
+        model->n_entries_to_fetch = 0;
+    }
+
+    if (model->n_entries_to_fetch > 0)
+    {
         return G_SOURCE_CONTINUE;
     }
     else
@@ -54,9 +68,11 @@ gl_journal_model_fetch_entries (gpointer user_data)
 static void
 gl_journal_model_init (GlJournalModel *model)
 {
+    model->batch_size = 50;
     model->journal = gl_journal_new ();
     model->entries = g_ptr_array_new_with_free_func (g_object_unref);
-    model->idle_source = g_idle_add_full (G_PRIORITY_LOW, gl_journal_model_fetch_entries, model, NULL);
+
+    gl_journal_model_fetch_more_entries (model, FALSE);
 }
 
 static void
@@ -201,6 +217,7 @@ gl_journal_model_set_matches (GlJournalModel      *model,
     g_return_if_fail (matches != NULL);
 
     gl_journal_model_stop_idle (model);
+    model->fetched_all = FALSE;
     if (model->entries->len > 0)
     {
         g_list_model_items_changed (G_LIST_MODEL (model), 0, model->entries->len, 0);
@@ -209,8 +226,7 @@ gl_journal_model_set_matches (GlJournalModel      *model,
 
     gl_journal_set_matches (model->journal, matches);
 
-    model->idle_source = g_idle_add_full (G_PRIORITY_LOW, gl_journal_model_fetch_entries, model, NULL);
-    g_object_notify_by_pspec (G_OBJECT (model), properties[PROP_LOADING]);
+    gl_journal_model_fetch_more_entries (model, FALSE);
 }
 
 /**
@@ -228,4 +244,34 @@ gl_journal_model_get_loading (GlJournalModel *model)
     g_return_val_if_fail (GL_IS_JOURNAL_MODEL (model), FALSE);
 
     return model->idle_source > 0;
+}
+
+/**
+ * gl_journal_model_fetch_more_entries:
+ * @model: a #GlJournalModel
+ * @all: whether to fetch all available entries
+ *
+ * @model doesn't loads all entries at once, but in batches. This
+ * function triggers it to load the next batch, or all remaining entries
+ * if @all is %TRUE.
+ */
+void
+gl_journal_model_fetch_more_entries (GlJournalModel *model,
+                                     gboolean        all)
+{
+    g_return_if_fail (GL_IS_JOURNAL_MODEL (model));
+
+    if (model->fetched_all)
+      return;
+
+    if (all)
+        model->n_entries_to_fetch = G_MAXUINT32;
+    else
+        model->n_entries_to_fetch = model->batch_size;
+
+    if (model->idle_source == 0)
+    {
+        model->idle_source = g_idle_add_full (G_PRIORITY_LOW, gl_journal_model_fetch_idle, model, NULL);
+        g_object_notify_by_pspec (G_OBJECT (model), properties[PROP_LOADING]);
+    }
 }

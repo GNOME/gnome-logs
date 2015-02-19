@@ -14,4 +14,7 @@ void                    gl_journal_model_set_matches                    (GlJourn
 
 gboolean                gl_journal_model_get_loading                    (GlJournalModel *model);
 
+void                    gl_journal_model_fetch_more_entries             (GlJournalModel *model,
+                                                                         gboolean        all);
+
 #endif
