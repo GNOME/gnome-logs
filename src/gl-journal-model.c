@@ -31,29 +31,24 @@ static gboolean
 gl_journal_model_fetch_entries (gpointer user_data)
 {
     GlJournalModel *model = user_data;
+    GlJournalEntry *entry;
     guint last;
-    gint i;
 
     last = model->entries->len;
-    for (i = 0; i < 5; i++)
+
+    entry = gl_journal_previous (model->journal);
+    if (entry)
     {
-        GlJournalEntry *entry;
-
-        entry = gl_journal_previous (model->journal);
-        if (entry)
-        {
-            g_ptr_array_add (model->entries, entry);
-        }
-        else
-        {
-            model->idle_source = 0;
-            g_object_notify_by_pspec (G_OBJECT (model), properties[PROP_LOADING]);
-            return G_SOURCE_REMOVE;
-        }
+        g_ptr_array_add (model->entries, entry);
+        g_list_model_items_changed (G_LIST_MODEL (model), last, 0, 1);
+        return G_SOURCE_CONTINUE;
     }
-
-    g_list_model_items_changed (G_LIST_MODEL (model), last, 0, i);
-    return G_SOURCE_CONTINUE;
+    else
+    {
+        model->idle_source = 0;
+        g_object_notify_by_pspec (G_OBJECT (model), properties[PROP_LOADING]);
+        return G_SOURCE_REMOVE;
+    }
 }
 
 static void
