@@ -1,17 +1,17 @@
 # Lithuanian translation for gnome-logs.
 # Copyright (C) 2014 gnome-logs's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-logs package.
-# Aurimas Černius <aurisc4@gmail.com>, 2014.
 # FULL NAME <EMAIL@ADDRESS>, 2014.
+# Aurimas Černius <aurisc4@gmail.com>, 2014, 2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-03-08 19:53+0000\n"
-"PO-Revision-Date: 2014-03-08 22:13+0200\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2015-02-16 07:18+0000\n"
+"PO-Revision-Date: 2015-02-28 16:33+0200\n"
+"Last-Translator: Aurimas Černius <aurisc4@gmail.com>\n"
 "Language-Team: Lithuanian <gnome-lt@lists.akl.lt>\n"
 "Language: lt\n"
 "MIME-Version: 1.0\n"
@@ -20,22 +20,6 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
 "%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Gtranslator 2.91.6\n"
-
-#: ../data/appmenu.ui.h:1
-msgid "_New Window"
-msgstr "_Naujas langas"
-
-#: ../data/appmenu.ui.h:2
-msgid "_Help"
-msgstr "_Žinynas"
-
-#: ../data/appmenu.ui.h:3
-msgid "_About"
-msgstr "_Apie"
-
-#: ../data/appmenu.ui.h:4
-msgid "_Quit"
-msgstr "_Išeiti"
 
 #: ../data/gl-categorylist.ui.h:1
 msgid "Important"
@@ -77,7 +61,9 @@ msgstr "Atnaujinimai"
 msgid "Usage"
 msgstr "Naudojimas"
 
-#: ../data/gl-eventtoolbar.ui.h:1
+#. Name and summary taken from the desktop file.
+#: ../data/gl-eventtoolbar.ui.h:1 ../data/org.gnome.Logs.appdata.xml.in.h:2
+#: ../data/org.gnome.Logs.desktop.in.h:1
 msgid "Logs"
 msgstr "Žurnalai"
 
@@ -89,7 +75,60 @@ msgstr "Eiti atgal į įvykio vaizdą"
 msgid "Search the displayed logs"
 msgstr "Ieškoti rodomų žurnalų"
 
-#: ../data/gnome-logs.appdata.xml.in.h:1
+#: ../data/gl-eventviewdetail.ui.h:1
+msgid "Message"
+msgstr "Pranešimas"
+
+#: ../data/gl-eventviewdetail.ui.h:2
+msgid "Audit Session"
+msgstr "Audito seansas"
+
+#: ../data/gl-eventviewdetail.ui.h:3
+msgid "Kernel Device"
+msgstr "Branduolio įrenginys"
+
+#: ../data/gl-eventviewdetail.ui.h:4
+msgid "Priority"
+msgstr "Prioritetas"
+
+#: ../data/gl-eventviewdetail.ui.h:5
+msgid "Subject"
+msgstr "Subjektas"
+
+#: ../data/gl-eventviewdetail.ui.h:6
+msgid "Defined By"
+msgstr "Apibrėžtas"
+
+#: ../data/gl-eventviewdetail.ui.h:7
+msgid "Support"
+msgstr "Palaikymas"
+
+#: ../data/gl-eventviewdetail.ui.h:8
+msgid "Documentation"
+msgstr "Dokumentacija"
+
+#: ../data/menus.ui.h:1
+msgid "_New Window"
+msgstr "_Naujas langas"
+
+#: ../data/menus.ui.h:2
+msgid "_Help"
+msgstr "_Žinynas"
+
+#: ../data/menus.ui.h:3
+msgid "_About"
+msgstr "_Apie"
+
+#: ../data/menus.ui.h:4
+msgid "_Quit"
+msgstr "_Išeiti"
+
+#: ../data/org.gnome.Logs.appdata.xml.in.h:3
+#: ../data/org.gnome.Logs.desktop.in.h:3
+msgid "View detailed event logs for the system"
+msgstr "Matykite sistemos įvykių detalius žurnalus"
+
+#: ../data/org.gnome.Logs.appdata.xml.in.h:4
 msgid ""
 "Logs shows events from the systemd journal, and sorts them into categories, "
 "such as hardware and applications."
@@ -97,7 +136,7 @@ msgstr ""
 "Žurnalai rodo įvykius iš systemd žurnalo bei rūšiuoja juos į kategorijas, "
 "tokias kaip aparatinės įrangos ir programų."
 
-#: ../data/gnome-logs.appdata.xml.in.h:2
+#: ../data/org.gnome.Logs.appdata.xml.in.h:5
 msgid ""
 "Using Logs you can search your logs by typing a search term, and view "
 "detailed information about each event by clicking on it."
@@ -105,97 +144,82 @@ msgstr ""
 "Naudodami žurnalus galite ieškoti žurnaluose įvesdami paieškos sąlygą bei "
 "matyti detalią informaciją apie kiekvieną įvykį paspaudę ant jo."
 
-#: ../data/gnome-logs.desktop.in.h:1
+#: ../data/org.gnome.Logs.desktop.in.h:2
 msgid "Log Viewer"
 msgstr "Žurnalų žiūryklė"
 
-#: ../data/gnome-logs.desktop.in.h:2
-msgid "View detailed event logs for the system"
-msgstr "Matykite sistemos įvykių detalius žurnalus"
-
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: ../data/gnome-logs.desktop.in.h:4
+#: ../data/org.gnome.Logs.desktop.in.h:5
 msgid "log;journal;debug;error;"
 msgstr "žurnalas;derinimas;klaida;"
 
-#: ../src/gl-application.c:99
+#: ../data/org.gnome.Logs.gschema.xml.h:1
+msgid "How to sort list rows in the event view list"
+msgstr "Kaip rikiuoti eilutes įvykių vaizde"
+
+#: ../data/org.gnome.Logs.gschema.xml.h:2
+msgid "Sort list rows in ascending or descending order for the selected type"
+msgstr "Rikiuoti eilutes didėjimo arba mažėjimo tvarka pasirinktam tipui"
+
+#: ../src/gl-application.c:103
 msgid "translator-credits"
 msgstr ""
 "Išvertė:\n"
 "Aurimas Černius <aurisc4@gmail.com>"
 
-#: ../src/gl-application.c:100
+#: ../src/gl-application.c:104
 msgid "View and search logs"
 msgstr "Rodyti ir ieškoti žurnaluose"
 
-#: ../src/gl-application.c:222
+#: ../src/gl-application.c:231
 msgid "Print version information and exit"
 msgstr "Atspausdinti versijos informaciją ir išeiti"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventview.c:217
+#: ../src/gl-eventviewlist.c:280
 msgid "No results"
 msgstr "Nėra rezultatų"
 
-#: ../src/gl-eventview.c:604 ../src/gl-eventview.c:614
-#: ../src/gl-eventview.c:745 ../src/gl-eventview.c:755
-msgid "Not implemented"
-msgstr "Nerealizuota"
-
-#: ../src/gl-eventviewdetail.c:140
-msgid "Message"
-msgstr "Pranešimas"
-
-#. TODO: Give a user-friendly representation of the priority.
-#: ../src/gl-eventviewdetail.c:161
-msgid "Priority"
-msgstr "Prioritetas"
-
-#: ../src/gl-eventviewdetail.c:189
-msgid "Kernel Device"
-msgstr "Branduolio įrenginys"
-
-#: ../src/gl-eventviewdetail.c:209
-msgid "Audit Session"
-msgstr "Audito seansas"
-
 #. Translators: timestamp format for events on the current
 #. * day, showing the time in 12-hour format.
-#: ../src/gl-util.c:95
+#: ../src/gl-util.c:138
 msgid "%l:%M %p"
 msgstr "%l:%M %p"
 
 #. Translators: timestamp format for events in the current
 #. * year, showing the abbreviated month name, day of the
 #. * month and the time in 12-hour format.
-#: ../src/gl-util.c:101
+#: ../src/gl-util.c:144
 msgid "%b %e %l:%M %p"
 msgstr "%b %e %l:%M %p"
 
 #. Translators: timestamp format for events in a different
 #. * year, showing the abbreviated month name, day of the
 #. * month, year and the time in 12-hour format.
-#: ../src/gl-util.c:107
+#: ../src/gl-util.c:150
 msgid "%b %e %Y %l:%M %p"
 msgstr "%Y %b %e %l:%M %p"
 
 #. Translators: timestamp format for events on the current
 #. * day, showing the time in 24-hour format.
-#: ../src/gl-util.c:120
+#: ../src/gl-util.c:163
 msgid "%H:%M"
 msgstr "%H:%M"
 
 #. Translators: timestamp format for events in the current
 #. * year, showing the abbreviated month name, day of the
 #. * month and the time in 24-hour format.
-#: ../src/gl-util.c:126
+#: ../src/gl-util.c:169
 msgid "%b %e %H:%M"
 msgstr "%b %e %H:%M"
 
 #. Translators: timestamp format for events in a different
 #. * year, showing the abbreviated month name, day of the
 #. * month, year and the time in 24-hour format.
-#: ../src/gl-util.c:132
+#: ../src/gl-util.c:175
 msgid "%b %e %Y %H:%M"
 msgstr "%Y %b %e %H:%M"
+
+#~ msgid "Not implemented"
+#~ msgstr "Nerealizuota"
