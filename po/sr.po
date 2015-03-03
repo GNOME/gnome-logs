@@ -2,39 +2,24 @@
 # Courtesy of Prevod.org team (http://prevod.org/) -- 2013—2014.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-logs package.
-# Мирослав Николић <miroslavnikolic@rocketmail.com>, 2013—2014.
+# Мирослав Николић <miroslavnikolic@rocketmail.com>, 2013—2014, 2015.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-02-21 23:09+0000\n"
-"PO-Revision-Date: 2014-03-22 09:57+0200\n"
+"POT-Creation-Date: 2015-02-16 07:18+0000\n"
+"PO-Revision-Date: 2015-03-03 21:01+0200\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <gnom@prevod.org>\n"
 "Language: sr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=n==1? 3 : n%10==1 && n%100!=11 ? 0 : "
-"n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Virtaal 0.7.1\n"
 "X-Project-Style: gnome\n"
-
-#: ../data/appmenu.ui.h:1
-msgid "_New Window"
-msgstr "_Нови прозор"
-
-#: ../data/appmenu.ui.h:2
-msgid "_Help"
-msgstr "По_моћ"
-
-#: ../data/appmenu.ui.h:3
-msgid "_About"
-msgstr "_О програму"
-
-#: ../data/appmenu.ui.h:4
-msgid "_Quit"
-msgstr "_Изађи"
 
 #: ../data/gl-categorylist.ui.h:1
 msgid "Important"
@@ -76,7 +61,9 @@ msgstr "Освежења"
 msgid "Usage"
 msgstr "Употреба"
 
-#: ../data/gl-eventtoolbar.ui.h:1
+#. Name and summary taken from the desktop file.
+#: ../data/gl-eventtoolbar.ui.h:1 ../data/org.gnome.Logs.appdata.xml.in.h:2
+#: ../data/org.gnome.Logs.desktop.in.h:1
 msgid "Logs"
 msgstr "Дневници"
 
@@ -88,7 +75,60 @@ msgstr "Вратите се на преглед догађаја"
 msgid "Search the displayed logs"
 msgstr "Потражите приказане дневнике"
 
-#: ../data/gnome-logs.appdata.xml.in.h:1
+#: ../data/gl-eventviewdetail.ui.h:1
+msgid "Message"
+msgstr "Порука"
+
+#: ../data/gl-eventviewdetail.ui.h:2
+msgid "Audit Session"
+msgstr "Сесија ревизије"
+
+#: ../data/gl-eventviewdetail.ui.h:3
+msgid "Kernel Device"
+msgstr "Уређај језгра"
+
+#: ../data/gl-eventviewdetail.ui.h:4
+msgid "Priority"
+msgstr "Важност"
+
+#: ../data/gl-eventviewdetail.ui.h:5
+msgid "Subject"
+msgstr "Наслов"
+
+#: ../data/gl-eventviewdetail.ui.h:6
+msgid "Defined By"
+msgstr "Одређено"
+
+#: ../data/gl-eventviewdetail.ui.h:7
+msgid "Support"
+msgstr "Подршка"
+
+#: ../data/gl-eventviewdetail.ui.h:8
+msgid "Documentation"
+msgstr "Документација"
+
+#: ../data/menus.ui.h:1
+msgid "_New Window"
+msgstr "_Нови прозор"
+
+#: ../data/menus.ui.h:2
+msgid "_Help"
+msgstr "По_моћ"
+
+#: ../data/menus.ui.h:3
+msgid "_About"
+msgstr "_О програму"
+
+#: ../data/menus.ui.h:4
+msgid "_Quit"
+msgstr "_Изађи"
+
+#: ../data/org.gnome.Logs.appdata.xml.in.h:3
+#: ../data/org.gnome.Logs.desktop.in.h:3
+msgid "View detailed event logs for the system"
+msgstr "Прегледајте опширне дневнике догађаја на систему"
+
+#: ../data/org.gnome.Logs.appdata.xml.in.h:4
 msgid ""
 "Logs shows events from the systemd journal, and sorts them into categories, "
 "such as hardware and applications."
@@ -96,7 +136,7 @@ msgstr ""
 "Дневници приказују догађаје из записника, и ређају по категоријама, рецимо "
 "хардвер и програми."
 
-#: ../data/gnome-logs.appdata.xml.in.h:2
+#: ../data/org.gnome.Logs.appdata.xml.in.h:5
 msgid ""
 "Using Logs you can search your logs by typing a search term, and view "
 "detailed information about each event by clicking on it."
@@ -104,101 +144,86 @@ msgstr ""
 "Употребом Дневника можете да претражујете ваше дневнике уписивањем појма, и "
 "да видите опширне податке о сваком догађају кликом на њ."
 
-#: ../data/gnome-logs.desktop.in.h:1
+#: ../data/org.gnome.Logs.desktop.in.h:2
 msgid "Log Viewer"
 msgstr "Прегледач дневника"
 
-#: ../data/gnome-logs.desktop.in.h:2
-msgid "View detailed event logs for the system"
-msgstr "Прегледајте опширне дневнике догађаја на систему"
-
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: ../data/gnome-logs.desktop.in.h:4
+#: ../data/org.gnome.Logs.desktop.in.h:5
 msgid "log;journal;debug;error;"
 msgstr "дневник;записник;запис;прочишћавање;грешка;"
 
-#: ../src/gl-application.c:100
+#: ../data/org.gnome.Logs.gschema.xml.h:1
+msgid "How to sort list rows in the event view list"
+msgstr "Како да поређа редове списка у списку прегледа догађаја"
+
+#: ../data/org.gnome.Logs.gschema.xml.h:2
+msgid "Sort list rows in ascending or descending order for the selected type"
+msgstr "Ређа редове списка растућим или опадајућим поретком за изабрану врсту"
+
+#: ../src/gl-application.c:103
 msgid "translator-credits"
 msgstr ""
 "  Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "\n"
 "http://prevod.org — превод на српски језик"
 
-#: ../src/gl-application.c:101
+#: ../src/gl-application.c:104
 msgid "View and search logs"
 msgstr "Прегледа и претражује дневнике"
 
-#: ../src/gl-application.c:223
+#: ../src/gl-application.c:231
 msgid "Print version information and exit"
 msgstr "Исписује податке о издању и излази"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventview.c:216
+#: ../src/gl-eventviewlist.c:280
 msgid "No results"
 msgstr "Нема резултата"
 
-#: ../src/gl-eventview.c:594 ../src/gl-eventview.c:604
-#: ../src/gl-eventview.c:735 ../src/gl-eventview.c:745
-msgid "Not implemented"
-msgstr "Није примењено"
-
-#: ../src/gl-eventviewdetail.c:140
-msgid "Message"
-msgstr "Порука"
-
-#. TODO: Give a user-friendly representation of the priority.
-#: ../src/gl-eventviewdetail.c:161
-msgid "Priority"
-msgstr "Важност"
-
-#: ../src/gl-eventviewdetail.c:189
-msgid "Kernel Device"
-msgstr "Уређај језгра"
-
-#: ../src/gl-eventviewdetail.c:209
-msgid "Audit Session"
-msgstr "Сесија ревизије"
-
 #. Translators: timestamp format for events on the current
 #. * day, showing the time in 12-hour format.
-#: ../src/gl-util.c:95
+#: ../src/gl-util.c:138
 msgid "%l:%M %p"
 msgstr "%l:%M %p"
 
 #. Translators: timestamp format for events in the current
 #. * year, showing the abbreviated month name, day of the
 #. * month and the time in 12-hour format.
-#: ../src/gl-util.c:101
+#: ../src/gl-util.c:144
 msgid "%b %e %l:%M %p"
 msgstr "%e. %b. у %l:%M %p"
 
 #. Translators: timestamp format for events in a different
 #. * year, showing the abbreviated month name, day of the
 #. * month, year and the time in 12-hour format.
-#: ../src/gl-util.c:107
+#: ../src/gl-util.c:150
 msgid "%b %e %Y %l:%M %p"
 msgstr "%e. %b. %Y. у %l:%M %p"
 
 #. Translators: timestamp format for events on the current
 #. * day, showing the time in 24-hour format.
-#: ../src/gl-util.c:120
+#: ../src/gl-util.c:163
 msgid "%H:%M"
 msgstr "%H:%M"
 
 #. Translators: timestamp format for events in the current
 #. * year, showing the abbreviated month name, day of the
 #. * month and the time in 24-hour format.
-#: ../src/gl-util.c:126
+#: ../src/gl-util.c:169
 msgid "%b %e %H:%M"
 msgstr "%e. %b. у %H:%M"
 
 #. Translators: timestamp format for events in a different
 #. * year, showing the abbreviated month name, day of the
 #. * month, year and the time in 24-hour format.
-#: ../src/gl-util.c:132
+#: ../src/gl-util.c:175
 msgid "%b %e %Y %H:%M"
 msgstr "%e. %b. %Y. у %H:%M"
+
+#~ msgid "Not implemented"
+#~ msgstr "Није примењено"
 
 #~ msgid "Categories"
 #~ msgstr "Категорије"
