@@ -4,14 +4,14 @@
 # pomóc w jego rozwijaniu i pielęgnowaniu, napisz do nas:
 # gnomepl@aviary.pl
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-# Piotr Drąg <piotrdrag@gmail.com>, 2013-2014.
-# Aviary.pl <gnomepl@aviary.pl>, 2013-2014.
+# Piotr Drąg <piotrdrag@gmail.com>, 2013-2015.
+# Aviary.pl <gnomepl@aviary.pl>, 2013-2015.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-22 01:04+0100\n"
-"PO-Revision-Date: 2014-02-22 01:05+0100\n"
+"POT-Creation-Date: 2015-03-04 20:53+0100\n"
+"PO-Revision-Date: 2015-03-04 20:54+0100\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <gnomepl@aviary.pl>\n"
 "Language: pl\n"
@@ -22,22 +22,6 @@ msgstr ""
 "|| n%100>=20) ? 1 : 2);\n"
 "X-Poedit-Language: Polish\n"
 "X-Poedit-Country: Poland\n"
-
-#: ../data/appmenu.ui.h:1
-msgid "_New Window"
-msgstr "_Nowe okno"
-
-#: ../data/appmenu.ui.h:2
-msgid "_Help"
-msgstr "Pomo_c"
-
-#: ../data/appmenu.ui.h:3
-msgid "_About"
-msgstr "_O programie"
-
-#: ../data/appmenu.ui.h:4
-msgid "_Quit"
-msgstr "Za_kończ"
 
 #: ../data/gl-categorylist.ui.h:1
 msgid "Important"
@@ -79,7 +63,9 @@ msgstr "Aktualizacje"
 msgid "Usage"
 msgstr "Wykorzystanie"
 
-#: ../data/gl-eventtoolbar.ui.h:1
+#. Name and summary taken from the desktop file.
+#: ../data/gl-eventtoolbar.ui.h:1 ../data/org.gnome.Logs.appdata.xml.in.h:2
+#: ../data/org.gnome.Logs.desktop.in.h:1
 msgid "Logs"
 msgstr "Dzienniki"
 
@@ -91,7 +77,60 @@ msgstr "Przechodzi wstecz do widoku zdarzeń"
 msgid "Search the displayed logs"
 msgstr "Przeszukuje wyświetlone dzienniki"
 
-#: ../data/gnome-logs.appdata.xml.in.h:1
+#: ../data/gl-eventviewdetail.ui.h:1
+msgid "Message"
+msgstr "Komunikat"
+
+#: ../data/gl-eventviewdetail.ui.h:2
+msgid "Audit Session"
+msgstr "Sesja audytu"
+
+#: ../data/gl-eventviewdetail.ui.h:3
+msgid "Kernel Device"
+msgstr "Urządzenie jądra"
+
+#: ../data/gl-eventviewdetail.ui.h:4
+msgid "Priority"
+msgstr "Priorytet"
+
+#: ../data/gl-eventviewdetail.ui.h:5
+msgid "Subject"
+msgstr "Temat"
+
+#: ../data/gl-eventviewdetail.ui.h:6
+msgid "Defined By"
+msgstr "Określone przez"
+
+#: ../data/gl-eventviewdetail.ui.h:7
+msgid "Support"
+msgstr "Wsparcie"
+
+#: ../data/gl-eventviewdetail.ui.h:8
+msgid "Documentation"
+msgstr "Dokumentacja"
+
+#: ../data/menus.ui.h:1
+msgid "_New Window"
+msgstr "_Nowe okno"
+
+#: ../data/menus.ui.h:2
+msgid "_Help"
+msgstr "Pomo_c"
+
+#: ../data/menus.ui.h:3
+msgid "_About"
+msgstr "_O programie"
+
+#: ../data/menus.ui.h:4
+msgid "_Quit"
+msgstr "Za_kończ"
+
+#: ../data/org.gnome.Logs.appdata.xml.in.h:3
+#: ../data/org.gnome.Logs.desktop.in.h:3
+msgid "View detailed event logs for the system"
+msgstr "Wyświetlanie szczegółowych dzienników zdarzeń w systemie"
+
+#: ../data/org.gnome.Logs.appdata.xml.in.h:4
 msgid ""
 "Logs shows events from the systemd journal, and sorts them into categories, "
 "such as hardware and applications."
@@ -99,7 +138,7 @@ msgstr ""
 "Przeglądarka dzienników wyświetla zdarzenia z dziennika systemd i porządkuje "
 "je według kategorii, takich jak sprzęt i programy."
 
-#: ../data/gnome-logs.appdata.xml.in.h:2
+#: ../data/org.gnome.Logs.appdata.xml.in.h:5
 msgid ""
 "Using Logs you can search your logs by typing a search term, and view "
 "detailed information about each event by clicking on it."
@@ -108,97 +147,79 @@ msgstr ""
 "szukany termin oraz wyświetlać szczegółowe informacje o każdym zdarzenie po "
 "jego kliknięciu."
 
-#: ../data/gnome-logs.desktop.in.h:1
+#: ../data/org.gnome.Logs.desktop.in.h:2
 msgid "Log Viewer"
 msgstr "Przeglądarka dzienników"
 
-#: ../data/gnome-logs.desktop.in.h:2
-msgid "View detailed event logs for the system"
-msgstr "Wyświetlanie szczegółowych dzienników zdarzeń w systemie"
-
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: ../data/gnome-logs.desktop.in.h:4
+#: ../data/org.gnome.Logs.desktop.in.h:5
 msgid "log;journal;debug;error;"
-msgstr "dziennik;logi;journal;debugowanie;błąd;error;"
+msgstr "dziennik;logi;journal;journald;debugowanie;debuggowanie;błąd;error;"
 
-#: ../src/gl-application.c:100
+#: ../data/org.gnome.Logs.gschema.xml.h:1
+msgid "How to sort list rows in the event view list"
+msgstr "Jak porządkować rzędy list na liście widoków zdarzeń"
+
+#: ../data/org.gnome.Logs.gschema.xml.h:2
+msgid "Sort list rows in ascending or descending order for the selected type"
+msgstr "Porządkowanie rzędów list rosnąco lub malejąco dla wybranego typu"
+
+#: ../src/gl-application.c:103
 msgid "translator-credits"
 msgstr ""
-"Piotr Drąg <piotrdrag@gmail.com>, 2013-2014\n"
-"Aviary.pl <gnomepl@aviary.pl>, 2013-2014"
+"Piotr Drąg <piotrdrag@gmail.com>, 2013-2015\n"
+"Aviary.pl <gnomepl@aviary.pl>, 2013-2015"
 
-#: ../src/gl-application.c:101
+#: ../src/gl-application.c:104
 msgid "View and search logs"
 msgstr "Wyświetlanie i przeszukiwanie dzienników"
 
-#: ../src/gl-application.c:223
+#: ../src/gl-application.c:231
 msgid "Print version information and exit"
 msgstr "Wyświetla informację o wersji i kończy działanie"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventview.c:216
+#: ../src/gl-eventviewlist.c:288
 msgid "No results"
 msgstr "Brak wyników"
 
-#: ../src/gl-eventview.c:594 ../src/gl-eventview.c:604
-#: ../src/gl-eventview.c:735 ../src/gl-eventview.c:745
-msgid "Not implemented"
-msgstr "Niezaimplementowane"
-
-#: ../src/gl-eventviewdetail.c:140
-msgid "Message"
-msgstr "Komunikat"
-
-#. TODO: Give a user-friendly representation of the priority.
-#: ../src/gl-eventviewdetail.c:161
-msgid "Priority"
-msgstr "Priorytet"
-
-#: ../src/gl-eventviewdetail.c:189
-msgid "Kernel Device"
-msgstr "Urządzenie jądra"
-
-#: ../src/gl-eventviewdetail.c:209
-msgid "Audit Session"
-msgstr "Sesja audytu"
-
 #. Translators: timestamp format for events on the current
 #. * day, showing the time in 12-hour format.
-#: ../src/gl-util.c:95
+#: ../src/gl-util.c:138
 msgid "%l:%M %p"
 msgstr "%l∶%M %p"
 
 #. Translators: timestamp format for events in the current
 #. * year, showing the abbreviated month name, day of the
 #. * month and the time in 12-hour format.
-#: ../src/gl-util.c:101
+#: ../src/gl-util.c:144
 msgid "%b %e %l:%M %p"
 msgstr "%e %b, %l∶%M %p"
 
 #. Translators: timestamp format for events in a different
 #. * year, showing the abbreviated month name, day of the
 #. * month, year and the time in 12-hour format.
-#: ../src/gl-util.c:107
+#: ../src/gl-util.c:150
 msgid "%b %e %Y %l:%M %p"
 msgstr "%e %b %Y, %l∶%M %p"
 
 #. Translators: timestamp format for events on the current
 #. * day, showing the time in 24-hour format.
-#: ../src/gl-util.c:120
+#: ../src/gl-util.c:163
 msgid "%H:%M"
 msgstr "%H∶%M"
 
 #. Translators: timestamp format for events in the current
 #. * year, showing the abbreviated month name, day of the
 #. * month and the time in 24-hour format.
-#: ../src/gl-util.c:126
+#: ../src/gl-util.c:169
 msgid "%b %e %H:%M"
 msgstr "%e %b, %H∶%M"
 
 #. Translators: timestamp format for events in a different
 #. * year, showing the abbreviated month name, day of the
 #. * month, year and the time in 24-hour format.
-#: ../src/gl-util.c:132
+#: ../src/gl-util.c:175
 msgid "%b %e %Y %H:%M"
 msgstr "%e %b %Y, %H∶%M"
