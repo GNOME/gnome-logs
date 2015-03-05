@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
 "POT-Creation-Date: 2015-02-16 07:18+0000\n"
-"PO-Revision-Date: 2015-03-05 21:56+0900\n"
+"PO-Revision-Date: 2015-03-05 22:05+0900\n"
 "Last-Translator: Changwoo Ryu <cwryu@debian.org>\n"
 "Language-Team: Korean <gnome-kr@googlegroups.com>\n"
 "Language: ko\n"
@@ -152,11 +152,11 @@ msgstr "log;로그;기록;journal;저널;debug;디버깅;error;오류;"
 
 #: ../data/org.gnome.Logs.gschema.xml.h:1
 msgid "How to sort list rows in the event view list"
-msgstr ""
+msgstr "이벤트 보기 목록에서 행을 정렬하는 방식"
 
 #: ../data/org.gnome.Logs.gschema.xml.h:2
 msgid "Sort list rows in ascending or descending order for the selected type"
-msgstr ""
+msgstr "선택한 기준에 따라 오름차순 또는 내림차순으로 행 정렬"
 
 #: ../src/gl-application.c:103
 msgid "translator-credits"
