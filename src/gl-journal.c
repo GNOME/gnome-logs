@@ -396,7 +396,7 @@ gl_journal_set_matches (GlJournal           *journal,
     GPtrArray *mandatory_fields;
     int r;
     gint i;
-    gboolean has_boot_id;
+    gboolean has_boot_id = FALSE;
 
     g_return_if_fail (matches != NULL);
 
