@@ -1,0 +1,221 @@
+# Bosnian translation for bosnianuniversetranslation
+# Copyright (c) 2013 Rosetta Contributors and Canonical Ltd 2013
+# This file is distributed under the same license as the bosnianuniversetranslation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: bosnianuniversetranslation\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"logs&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2015-02-26 19:59+0000\n"
+"PO-Revision-Date: 2015-02-28 15:09+0100\n"
+"Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
+"Language-Team: Bosnian <bs@li.org>\n"
+"Language: bs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Launchpad (build 17341)\n"
+"X-Launchpad-Export-Date: 2015-02-15 06:20+0000\n"
+
+#: ../data/gl-categorylist.ui.h:1
+msgid "Important"
+msgstr "Važno"
+
+#: ../data/gl-categorylist.ui.h:2
+msgid "Alerts"
+msgstr "Upozorenja"
+
+#: ../data/gl-categorylist.ui.h:3
+msgid "Starred"
+msgstr "Sa zvijezdom"
+
+#: ../data/gl-categorylist.ui.h:4
+msgid "All"
+msgstr "Sve"
+
+#: ../data/gl-categorylist.ui.h:5
+msgid "Applications"
+msgstr "Aplikacije"
+
+#: ../data/gl-categorylist.ui.h:6
+msgid "System"
+msgstr "Sistem"
+
+#: ../data/gl-categorylist.ui.h:7
+msgid "Security"
+msgstr "Sigurnost"
+
+#: ../data/gl-categorylist.ui.h:8
+msgid "Hardware"
+msgstr "Hardver"
+
+#: ../data/gl-categorylist.ui.h:9
+msgid "Updates"
+msgstr "Nadogradnje"
+
+#: ../data/gl-categorylist.ui.h:10
+msgid "Usage"
+msgstr "Upotreba"
+
+#. Nami and summary taken from the desktop file.
+#: ../data/gl-eventtoolbar.ui.h:1 ../data/org.gnome.Logs.appdata.xml.in.h:2
+#: ../data/org.gnome.Logs.desktop.in.h:1
+msgid "Logs"
+msgstr "Dnevnik"
+
+#: ../data/gl-eventtoolbar.ui.h:2
+msgid "Go back to the event view"
+msgstr "Idi nazad na prikaz događaja"
+
+#: ../data/gl-eventtoolbar.ui.h:3
+msgid "Search the displayed logs"
+msgstr "Traži prikazane dnevnike"
+
+#: ../data/gl-eventviewdetail.ui.h:1
+msgid "Message"
+msgstr "Poruka"
+
+#: ../data/gl-eventviewdetail.ui.h:2
+msgid "Audit Session"
+msgstr "Prati sesiju"
+
+#: ../data/gl-eventviewdetail.ui.h:3
+msgid "Kernel Device"
+msgstr "Kernel uređaj"
+
+#: ../data/gl-eventviewdetail.ui.h:4
+msgid "Priority"
+msgstr "Prioritet"
+
+#: ../data/gl-eventviewdetail.ui.h:5
+msgid "Subject"
+msgstr "Tema"
+
+#: ../data/gl-eventviewdetail.ui.h:6
+msgid "Defined By"
+msgstr "Definiran od strane"
+
+#: ../data/gl-eventviewdetail.ui.h:7
+msgid "Support"
+msgstr "Podrška"
+
+#: ../data/gl-eventviewdetail.ui.h:8
+msgid "Documentation"
+msgstr "Dokumentacija"
+
+#: ../data/menus.ui.h:1
+msgid "_New Window"
+msgstr "_Novi prozor"
+
+#: ../data/menus.ui.h:2
+msgid "_Help"
+msgstr "_Pomoć"
+
+#: ../data/menus.ui.h:3
+msgid "_About"
+msgstr "_O programu"
+
+#: ../data/menus.ui.h:4
+msgid "_Quit"
+msgstr "_Izlaz"
+
+#: ../data/org.gnome.Logs.appdata.xml.in.h:3
+#: ../data/org.gnome.Logs.desktop.in.h:3
+msgid "View detailed event logs for the system"
+msgstr "Pogledaj detaljne zapisnike o događajima u sistemu"
+
+#: ../data/org.gnome.Logs.appdata.xml.in.h:4
+msgid ""
+"Logs shows events from the systemd journal, and sorts them into categories, "
+"such as hardware and applications."
+msgstr ""
+"Dnevnici prikazuju događaje iz sistemskih časopisa, te ih sortira u "
+"kategorije kao što su hardver i aplikacije."
+
+#: ../data/org.gnome.Logs.appdata.xml.in.h:5
+msgid ""
+"Using Logs you can search your logs by typing a search term, and view "
+"detailed information about each event by clicking on it."
+msgstr ""
+"Korištenjem Dnevnika možete pretraživati Vae dnevnike upisivanjem traženog "
+"pojma, i pogledati detaljne informacije o svakom događaju tako što ćete "
+"kliknuti na njeg."
+
+#: ../data/org.gnome.Logs.desktop.in.h:2
+msgid "Log Viewer"
+msgstr "Pregled dnevnika"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: ../data/org.gnome.Logs.desktop.in.h:5
+msgid "log;journal;debug;error;"
+msgstr "log;časopis;debug;greška;"
+
+#: ../data/org.gnome.Logs.gschema.xml.h:1
+msgid "How to sort list rows in the event view list"
+msgstr "Kako sortirati redove liste u listi događaja"
+
+#: ../data/org.gnome.Logs.gschema.xml.h:2
+msgid "Sort list rows in ascending or descending order for the selected type"
+msgstr "Sortiraj listu u rastućem ili opadajućem redu izabranog tipa"
+
+#: ../src/gl-application.c:103
+msgid "translator-credits"
+msgstr ""
+"   Merima Cisija https://launchpad.net/~cisijam\n"
+"  Samir Ribić https://launchpad.net/~megaribi"
+
+#: ../src/gl-application.c:104
+msgid "View and search logs"
+msgstr "Pogledaj i traži dnevnike"
+
+#: ../src/gl-application.c:231
+msgid "Print version information and exit"
+msgstr "Ispiši podatke o verziji i izađi"
+
+#. Translators: Shown when there are no (zero) results in the current
+#. * view.
+#: ../src/gl-eventviewlist.c:288
+msgid "No results"
+msgstr "Nema rezultata"
+
+#. Translators: timestamp format for events on the current
+#. * day, showing the time in 12-hour format.
+#: ../src/gl-util.c:138
+msgid "%l:%M %p"
+msgstr "%l:%M %p"
+
+#. Translators: timestamp format for events in the current
+#. * year, showing the abbreviated month nami, day of the
+#. * month and the time in 12-hour format.
+#: ../src/gl-util.c:144
+msgid "%b %e %l:%M %p"
+msgstr "%b %e %l:%M %p"
+
+#. Translators: timestamp format for events in a different
+#. * year, showing the abbreviated month nami, day of the
+#. * month, year and the time in 12-hour format.
+#: ../src/gl-util.c:150
+msgid "%b %e %Y %l:%M %p"
+msgstr "%b %e %Y %l:%M %p"
+
+#. Translators: timestamp format for events on the current
+#. * day, showing the time in 24-hour format.
+#: ../src/gl-util.c:163
+msgid "%H:%M"
+msgstr "%H:%M"
+
+#. Translators: timestamp format for events in the current
+#. * year, showing the abbreviated month nami, day of the
+#. * month and the time in 24-hour format.
+#: ../src/gl-util.c:169
+msgid "%b %e %H:%M"
+msgstr "%b %e %H:%M"
+
+#. Translators: timestamp format for events in a different
+#. * year, showing the abbreviated month nami, day of the
+#. * month, year and the time in 24-hour format.
+#: ../src/gl-util.c:175
+msgid "%b %e %Y %H:%M"
+msgstr "%b %e %Y %H:%M"
