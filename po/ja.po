@@ -1,0 +1,216 @@
+# Japanese translation for gnome-logs.
+# Copyright (C) 2014 gnome-logs's COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-logs package.
+# Aaron Hamilton <aaron@correspondwith.me>, 2014.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-logs master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"logs&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2015-02-16 14:35+0000\n"
+"PO-Revision-Date: 2014-06-25 19:44+0000\n"
+"Last-Translator: Aaron Hamilton <aaron@correspondwith.me>\n"
+"Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../data/gl-categorylist.ui.h:1
+msgid "Important"
+msgstr "重要"
+
+#: ../data/gl-categorylist.ui.h:2
+msgid "Alerts"
+msgstr "アラート"
+
+#: ../data/gl-categorylist.ui.h:3
+msgid "Starred"
+msgstr "スター付き"
+
+#: ../data/gl-categorylist.ui.h:4
+msgid "All"
+msgstr "すべて"
+
+#: ../data/gl-categorylist.ui.h:5
+msgid "Applications"
+msgstr "アプリケーション"
+
+#: ../data/gl-categorylist.ui.h:6
+msgid "System"
+msgstr "システム"
+
+#: ../data/gl-categorylist.ui.h:7
+msgid "Security"
+msgstr "セキュリティ"
+
+#: ../data/gl-categorylist.ui.h:8
+msgid "Hardware"
+msgstr "ハードウェア"
+
+#: ../data/gl-categorylist.ui.h:9
+msgid "Updates"
+msgstr "アップデート"
+
+#: ../data/gl-categorylist.ui.h:10
+msgid "Usage"
+msgstr ""
+
+#. Name and summary taken from the desktop file.
+#: ../data/gl-eventtoolbar.ui.h:1 ../data/org.gnome.Logs.appdata.xml.in.h:2
+#: ../data/org.gnome.Logs.desktop.in.h:1
+msgid "Logs"
+msgstr "ログ"
+
+#: ../data/gl-eventtoolbar.ui.h:2
+msgid "Go back to the event view"
+msgstr "イベントビューへ戻ります"
+
+#: ../data/gl-eventtoolbar.ui.h:3
+msgid "Search the displayed logs"
+msgstr "表示しているログを検索します"
+
+#: ../data/gl-eventviewdetail.ui.h:1
+msgid "Message"
+msgstr "メッセージ"
+
+#: ../data/gl-eventviewdetail.ui.h:2
+msgid "Audit Session"
+msgstr ""
+
+#: ../data/gl-eventviewdetail.ui.h:3
+msgid "Kernel Device"
+msgstr "カーネルデバイス"
+
+#: ../data/gl-eventviewdetail.ui.h:4
+msgid "Priority"
+msgstr "優先度"
+
+#: ../data/gl-eventviewdetail.ui.h:5
+msgid "Subject"
+msgstr ""
+
+#: ../data/gl-eventviewdetail.ui.h:6
+msgid "Defined By"
+msgstr ""
+
+#: ../data/gl-eventviewdetail.ui.h:7
+msgid "Support"
+msgstr ""
+
+#: ../data/gl-eventviewdetail.ui.h:8
+msgid "Documentation"
+msgstr ""
+
+#: ../data/menus.ui.h:1
+msgid "_New Window"
+msgstr "新しいウィンドウ(_N)"
+
+#: ../data/menus.ui.h:2
+msgid "_Help"
+msgstr "ヘルプ(_H)"
+
+#: ../data/menus.ui.h:3
+msgid "_About"
+msgstr "このアプリケーションについて(_A)"
+
+#: ../data/menus.ui.h:4
+msgid "_Quit"
+msgstr "終了(_Q)"
+
+#: ../data/org.gnome.Logs.appdata.xml.in.h:3
+#: ../data/org.gnome.Logs.desktop.in.h:3
+msgid "View detailed event logs for the system"
+msgstr ""
+
+#: ../data/org.gnome.Logs.appdata.xml.in.h:4
+msgid ""
+"Logs shows events from the systemd journal, and sorts them into categories, "
+"such as hardware and applications."
+msgstr ""
+
+#: ../data/org.gnome.Logs.appdata.xml.in.h:5
+msgid ""
+"Using Logs you can search your logs by typing a search term, and view "
+"detailed information about each event by clicking on it."
+msgstr ""
+
+#: ../data/org.gnome.Logs.desktop.in.h:2
+msgid "Log Viewer"
+msgstr ""
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: ../data/org.gnome.Logs.desktop.in.h:5
+msgid "log;journal;debug;error;"
+msgstr ""
+
+#: ../data/org.gnome.Logs.gschema.xml.h:1
+msgid "How to sort list rows in the event view list"
+msgstr ""
+
+#: ../data/org.gnome.Logs.gschema.xml.h:2
+msgid "Sort list rows in ascending or descending order for the selected type"
+msgstr ""
+
+#: ../src/gl-application.c:103
+msgid "translator-credits"
+msgstr "Aaron Hamilton <aaron@correspondwith.me>"
+
+#: ../src/gl-application.c:104
+msgid "View and search logs"
+msgstr ""
+
+#: ../src/gl-application.c:231
+msgid "Print version information and exit"
+msgstr "バージョンを表示する"
+
+#. Translators: Shown when there are no (zero) results in the current
+#. * view.
+#: ../src/gl-eventviewlist.c:288
+msgid "No results"
+msgstr "見つかりませんでした"
+
+#. Translators: timestamp format for events on the current
+#. * day, showing the time in 12-hour format.
+#: ../src/gl-util.c:138
+msgid "%l:%M %p"
+msgstr ""
+
+#. Translators: timestamp format for events in the current
+#. * year, showing the abbreviated month name, day of the
+#. * month and the time in 12-hour format.
+#: ../src/gl-util.c:144
+msgid "%b %e %l:%M %p"
+msgstr ""
+
+#. Translators: timestamp format for events in a different
+#. * year, showing the abbreviated month name, day of the
+#. * month, year and the time in 12-hour format.
+#: ../src/gl-util.c:150
+msgid "%b %e %Y %l:%M %p"
+msgstr ""
+
+#. Translators: timestamp format for events on the current
+#. * day, showing the time in 24-hour format.
+#: ../src/gl-util.c:163
+msgid "%H:%M"
+msgstr ""
+
+#. Translators: timestamp format for events in the current
+#. * year, showing the abbreviated month name, day of the
+#. * month and the time in 24-hour format.
+#: ../src/gl-util.c:169
+msgid "%b %e %H:%M"
+msgstr ""
+
+#. Translators: timestamp format for events in a different
+#. * year, showing the abbreviated month name, day of the
+#. * month, year and the time in 24-hour format.
+#: ../src/gl-util.c:175
+msgid "%b %e %Y %H:%M"
+msgstr ""
+
+#~ msgid "Not implemented"
+#~ msgstr "実装されていない"
