@@ -258,9 +258,7 @@ gl_window_class_init (GlWindowClass *klass)
 static void
 gl_window_init (GlWindow *window)
 {
-    GFile *file;
     GtkCssProvider *provider;
-    GError *err = NULL;
     GdkScreen *screen;
 
     gtk_widget_init_template (GTK_WIDGET (window));
@@ -268,28 +266,18 @@ gl_window_init (GlWindow *window)
     g_action_map_add_action_entries (G_ACTION_MAP (window), actions,
                                      G_N_ELEMENTS (actions), window);
 
-    file = g_file_new_for_uri ("resource:///org/gnome/Logs/gl-style.css");
     provider = gtk_css_provider_new ();
     g_signal_connect (provider, "parsing-error",
                       G_CALLBACK (gl_util_on_css_provider_parsing_error),
                       NULL);
-    gtk_css_provider_load_from_file (provider, file, &err);
-
-    if (err != NULL)
-    {
-        g_critical ("Error parsing CSS styling data: %s", err->message);
-        g_error_free (err);
-        g_object_unref (file);
-        g_object_unref (provider);
-        return;
-    }
+    gtk_css_provider_load_from_resource (provider,
+                                         "/org/gnome/Logs/gl-style.css");
 
     screen = gdk_screen_get_default ();
     gtk_style_context_add_provider_for_screen (screen,
                                                GTK_STYLE_PROVIDER (provider),
                                                GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
 
-    g_object_unref (file);
     g_object_unref (provider);
 }
 
