@@ -1,16 +1,16 @@
 # Thai translation for gnome-logs.
-# Copyright (C) 2014 Free Software Foundation, Inc.
+# Copyright (C) 2014-2015 Free Software Foundation, Inc.
 # This file is distributed under the same license as the gnome-logs package.
 #
-# Akom Chotiphantawanon <knight2000@gmail.com>, 2014.
+# Akom Chotiphantawanon <knight2000@gmail.com>, 2014-2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs gnome-3-14\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-10-28 07:44+0000\n"
-"PO-Revision-Date: 2014-11-10 21:49+0700\n"
+"POT-Creation-Date: 2015-03-14 07:59+0000\n"
+"PO-Revision-Date: 2015-03-20 11:36+0700\n"
 "Last-Translator: Akom Chotiphantawanon <knight2000@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
 "Language: th\n"
@@ -18,6 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Gtranslator 2.91.6\n"
 
 #: ../data/gl-categorylist.ui.h:1
 msgid "Important"
@@ -89,6 +90,22 @@ msgstr "อุปกรณ์ของเคอร์เนล"
 msgid "Priority"
 msgstr "ลำดับความสำคัญ"
 
+#: ../data/gl-eventviewdetail.ui.h:5
+msgid "Subject"
+msgstr "เรื่อง"
+
+#: ../data/gl-eventviewdetail.ui.h:6
+msgid "Defined By"
+msgstr "กำหนดโดย"
+
+#: ../data/gl-eventviewdetail.ui.h:7
+msgid "Support"
+msgstr "สนับสนุน"
+
+#: ../data/gl-eventviewdetail.ui.h:8
+msgid "Documentation"
+msgstr "เอกสาร"
+
 #: ../data/menus.ui.h:1
 msgid "_New Window"
 msgstr "หน้าต่างใ_หม่"
@@ -135,65 +152,71 @@ msgstr "เครื่องมือดูปูม"
 msgid "log;journal;debug;error;"
 msgstr "ปูม;บันทึก;ดีบั๊ก;ข้อผิดพลาด;"
 
-#: ../src/gl-application.c:99
+#: ../data/org.gnome.Logs.gschema.xml.h:1
+msgid "How to sort list rows in the event view list"
+msgstr "วิธีเรียงลำดับรายการในการแสดงเหตุการณ์"
+
+#: ../data/org.gnome.Logs.gschema.xml.h:2
+msgid "Sort list rows in ascending or descending order for the selected type"
+msgstr "เรียงลำดับรายการจากหน้าไปหลังหรือจากหลังมาหน้าสำหรับชนิดที่เลือก"
+
+#: ../src/gl-application.c:103
 msgid "translator-credits"
 msgstr "Akom Chotiphantawanon <knight2000@gmail.com>"
 
-#: ../src/gl-application.c:100
+#: ../src/gl-application.c:104
 msgid "View and search logs"
 msgstr "ดูและค้นปูม"
 
-#: ../src/gl-application.c:207
+#: ../src/gl-application.c:231
 msgid "Print version information and exit"
 msgstr "พิมพ์ข้อมูลรุ่นแล้วจบโปรแกรม"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventviewlist.c:217
+#: ../src/gl-eventviewlist.c:288
 msgid "No results"
 msgstr "ไม่มีผลลัพธ์"
 
-#: ../src/gl-eventviewlist.c:604 ../src/gl-eventviewlist.c:614
-#: ../src/gl-eventviewlist.c:745 ../src/gl-eventviewlist.c:755
-msgid "Not implemented"
-msgstr "ยังไม่ทำ"
-
 #. Translators: timestamp format for events on the current
 #. * day, showing the time in 12-hour format.
-#: ../src/gl-util.c:95
+#: ../src/gl-util.c:138
 msgid "%l:%M %p"
 msgstr "%l:%M %p"
 
 #. Translators: timestamp format for events in the current
 #. * year, showing the abbreviated month name, day of the
 #. * month and the time in 12-hour format.
-#: ../src/gl-util.c:101
+#: ../src/gl-util.c:144
 msgid "%b %e %l:%M %p"
 msgstr "%e %b %l:%M %p"
 
 #. Translators: timestamp format for events in a different
 #. * year, showing the abbreviated month name, day of the
 #. * month, year and the time in 12-hour format.
-#: ../src/gl-util.c:107
+#: ../src/gl-util.c:150
 msgid "%b %e %Y %l:%M %p"
 msgstr "%e %b %Ey %l:%M %p"
 
 #. Translators: timestamp format for events on the current
 #. * day, showing the time in 24-hour format.
-#: ../src/gl-util.c:120
+#: ../src/gl-util.c:163
 msgid "%H:%M"
 msgstr "%H:%M"
 
 #. Translators: timestamp format for events in the current
 #. * year, showing the abbreviated month name, day of the
 #. * month and the time in 24-hour format.
-#: ../src/gl-util.c:126
+#: ../src/gl-util.c:169
 msgid "%b %e %H:%M"
 msgstr "%e %b %H:%M"
 
 #. Translators: timestamp format for events in a different
 #. * year, showing the abbreviated month name, day of the
 #. * month, year and the time in 24-hour format.
-#: ../src/gl-util.c:132
+#: ../src/gl-util.c:175
 msgid "%b %e %Y %H:%M"
 msgstr "%e %b %Ey %H:%M"
+
+#~ msgid "Not implemented"
+#~ msgstr "ยังไม่ทำ"
