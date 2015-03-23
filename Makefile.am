@@ -117,6 +117,7 @@ check_SCRIPTS = \
 # Tests:
 TESTS_ENVIRONMENT = \
 	LANG=C \
+	TZ=UTC \
 	MALLOC_CHECK_=2 \
 	MALLOC_PERTURB_=$$(($${RANDOM:-256} % 256)) \
 	G_SLICE=debug-blocks
