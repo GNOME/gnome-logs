@@ -76,10 +76,21 @@ AS_IF([test "x$enable_tests" != "xno"],
       [AC_PATH_PROG([DESKTOP_FILE_VALIDATE], [desktop-file-validate])
        AS_IF([test "x$ac_cv_path_DESKTOP_FILE_VALIDATE" != "xyes"],
              [have_desktop_file_validate=yes],
-             [have_desktop_file_validate=no])],
-      [have_desktop_file_validate=no])
+             [have_desktop_file_validate=no])
+       AM_PATH_PYTHON([2.7])
+       py_module=dogtail
+       AC_MSG_CHECKING([for python module $py_module])
+       echo "import $py_module" | python - &>/dev/null
+       AS_IF([test $? != 0],
+             [AC_MSG_RESULT([not found])
+              have_dogtail=no],
+             [AC_MSG_RESULT([found])
+              have_dogtail=yes])],
+      [have_desktop_file_validate=no
+       have_dogtail=no])
 
-AS_IF([test "x$have_desktop_file_validate" = "xyes"],
+AS_IF([test "x$have_desktop_file_validate" = "xyes" \
+       -a "x$have_dogtail" = "xyes"],
       [testing_utilities=yes],
       [testing_utilities=no
        AS_IF([test "x$enable_tests" = "xyes"],

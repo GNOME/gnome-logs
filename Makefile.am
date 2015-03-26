@@ -106,6 +106,8 @@ nodist_man_MANS = data/gnome-logs.1
 endif
 
 if LOGS_ENABLE_TESTS
+tests/basic.py: gnome-logs
+
 test-desktop-file-validate.sh: Makefile
 	$(AM_V_GEN)echo "#!/bin/sh -e" > $@; \
 		echo "$(DESKTOP_FILE_VALIDATE) $(top_builddir)/$(desktop_DATA) || exit 1" >> $@; \
@@ -113,6 +115,11 @@ test-desktop-file-validate.sh: Makefile
 
 check_SCRIPTS = \
 	test-desktop-file-validate.sh
+
+# GSettings schema must be compiled and gnome-logs installed in PATH before
+# running the test.
+installcheck-local:
+	$(AM_V_at)env $(TESTS_ENVIRONMENT) $(top_srcdir)/tests/basic.py
 
 # Tests:
 TESTS_ENVIRONMENT = \
@@ -224,7 +231,8 @@ dist_noinst_DATA = \
 	data/icons/gnome-logs.svg
 
 dist_noinst_SCRIPTS = \
-	autogen.sh
+	autogen.sh \
+	tests/basic.py
 
 dist-hook: git-changelog-hook
 
