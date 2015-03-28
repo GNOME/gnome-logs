@@ -6,32 +6,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-03-09 07:53+0000\n"
-"PO-Revision-Date: 2014-03-09 09:10+0100\n"
-"Last-Translator: Pau Iranzo <paugnu@gmail.com>\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-28 11:51+0100\n"
+"PO-Revision-Date: 2015-03-27 12:00+0100\n"
+"Last-Translator: David <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <gnome@llistes.softcatala.org>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-
-#: ../data/appmenu.ui.h:1
-msgid "_New Window"
-msgstr "Finestra _nova"
-
-#: ../data/appmenu.ui.h:2
-msgid "_Help"
-msgstr "_Ajuda"
-
-#: ../data/appmenu.ui.h:3
-msgid "_About"
-msgstr "_Quant a"
-
-#: ../data/appmenu.ui.h:4
-msgid "_Quit"
-msgstr "_Surt"
+"X-Generator: Poedit 1.6.9\n"
 
 #: ../data/gl-categorylist.ui.h:1
 msgid "Important"
@@ -73,7 +57,9 @@ msgstr "Actualitzacions"
 msgid "Usage"
 msgstr "Utilització"
 
-#: ../data/gl-eventtoolbar.ui.h:1
+#. Name and summary taken from the desktop file.
+#: ../data/gl-eventtoolbar.ui.h:1 ../data/org.gnome.Logs.appdata.xml.in.h:2
+#: ../data/org.gnome.Logs.desktop.in.h:1
 msgid "Logs"
 msgstr "Registres"
 
@@ -85,7 +71,60 @@ msgstr "Vés enrere a la visualització d'esdeveniment"
 msgid "Search the displayed logs"
 msgstr "Cerqueu els registres mostrats"
 
-#: ../data/gnome-logs.appdata.xml.in.h:1
+#: ../data/gl-eventviewdetail.ui.h:1
+msgid "Message"
+msgstr "Missatge"
+
+#: ../data/gl-eventviewdetail.ui.h:2
+msgid "Audit Session"
+msgstr "Audita la sessió"
+
+#: ../data/gl-eventviewdetail.ui.h:3
+msgid "Kernel Device"
+msgstr "Dispositiu del nucli"
+
+#: ../data/gl-eventviewdetail.ui.h:4
+msgid "Priority"
+msgstr "Prioritat"
+
+#: ../data/gl-eventviewdetail.ui.h:5
+msgid "Subject"
+msgstr "Tema"
+
+#: ../data/gl-eventviewdetail.ui.h:6
+msgid "Defined By"
+msgstr "Definit per"
+
+#: ../data/gl-eventviewdetail.ui.h:7
+msgid "Support"
+msgstr "Suport"
+
+#: ../data/gl-eventviewdetail.ui.h:8
+msgid "Documentation"
+msgstr "Documentació"
+
+#: ../data/menus.ui.h:1
+msgid "_New Window"
+msgstr "Finestra _nova"
+
+#: ../data/menus.ui.h:2
+msgid "_Help"
+msgstr "_Ajuda"
+
+#: ../data/menus.ui.h:3
+msgid "_About"
+msgstr "_Quant a"
+
+#: ../data/menus.ui.h:4
+msgid "_Quit"
+msgstr "_Surt"
+
+#: ../data/org.gnome.Logs.appdata.xml.in.h:3
+#: ../data/org.gnome.Logs.desktop.in.h:3
+msgid "View detailed event logs for the system"
+msgstr "Mostra els registres detallats d'esdeveniments del sistema"
+
+#: ../data/org.gnome.Logs.appdata.xml.in.h:4
 msgid ""
 "Logs shows events from the systemd journal, and sorts them into categories, "
 "such as hardware and applications."
@@ -93,103 +132,92 @@ msgstr ""
 "El Logs mostra els esdeveniments del diari systemd i els ordena per "
 "categories com maquinari i aplicacions."
 
-#: ../data/gnome-logs.appdata.xml.in.h:2
+#: ../data/org.gnome.Logs.appdata.xml.in.h:5
 msgid ""
 "Using Logs you can search your logs by typing a search term, and view "
 "detailed information about each event by clicking on it."
 msgstr ""
-"Amb el Logs podeu cercar els vostres registres teclejant un terme de "
-"cerca i veure la informació detallada sobre cada esdeveniment fent-hi clic."
+"Amb el Logs podeu cercar els vostres registres teclejant un terme de cerca i "
+"veure la informació detallada sobre cada esdeveniment fent-hi clic."
 
-#: ../data/gnome-logs.desktop.in.h:1
+#: ../data/org.gnome.Logs.desktop.in.h:2
 msgid "Log Viewer"
 msgstr "Visualitzador de registres"
 
-#: ../data/gnome-logs.desktop.in.h:2
-msgid "View detailed event logs for the system"
-msgstr "Mostra els registres detallats d'esdeveniments del sistema"
-
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: ../data/gnome-logs.desktop.in.h:4
+#: ../data/org.gnome.Logs.desktop.in.h:5
 msgid "log;journal;debug;error;"
 msgstr "registre;diari;depuració;error;"
 
-#: ../src/gl-application.c:99
+#: ../data/org.gnome.Logs.gschema.xml.h:1
+msgid "How to sort list rows in the event view list"
+msgstr ""
+"Com classificar les files de la llista a la visualització de la llista "
+"d'esdeveniments"
+
+#: ../data/org.gnome.Logs.gschema.xml.h:2
+msgid "Sort list rows in ascending or descending order for the selected type"
+msgstr ""
+"Classifica la llista de files en ordre ascendent o descendent segons el "
+"tipus seleccionat"
+
+#: ../src/gl-application.c:103
 msgid "translator-credits"
 msgstr "Pau Iranzo <pau.iranzo@softcatala.org>"
 
-#: ../src/gl-application.c:100
+#: ../src/gl-application.c:104
 msgid "View and search logs"
 msgstr "Visualitza i cerca registres"
 
-#: ../src/gl-application.c:222
+#: ../src/gl-application.c:231
 msgid "Print version information and exit"
 msgstr "Mostra la informació de la versió i surt"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventview.c:217
+#: ../src/gl-eventviewlist.c:288
 msgid "No results"
 msgstr "Cap resultat"
 
-#: ../src/gl-eventview.c:604 ../src/gl-eventview.c:614
-#: ../src/gl-eventview.c:745 ../src/gl-eventview.c:755
-msgid "Not implemented"
-msgstr "Sense implementar"
-
-#: ../src/gl-eventviewdetail.c:140
-msgid "Message"
-msgstr "Missatge"
-
-#. TODO: Give a user-friendly representation of the priority.
-#: ../src/gl-eventviewdetail.c:161
-msgid "Priority"
-msgstr "Prioritat"
-
-#: ../src/gl-eventviewdetail.c:189
-msgid "Kernel Device"
-msgstr "Dispositiu del nucli"
-
-#: ../src/gl-eventviewdetail.c:209
-msgid "Audit Session"
-msgstr "Audita la sessió"
-
 #. Translators: timestamp format for events on the current
 #. * day, showing the time in 12-hour format.
-#: ../src/gl-util.c:95
+#: ../src/gl-util.c:138
 msgid "%l:%M %p"
 msgstr "%l:%M %p"
 
 #. Translators: timestamp format for events in the current
 #. * year, showing the abbreviated month name, day of the
 #. * month and the time in 12-hour format.
-#: ../src/gl-util.c:101
+#: ../src/gl-util.c:144
 msgid "%b %e %l:%M %p"
 msgstr "%b %e %l:%M %p"
 
 #. Translators: timestamp format for events in a different
 #. * year, showing the abbreviated month name, day of the
 #. * month, year and the time in 12-hour format.
-#: ../src/gl-util.c:107
+#: ../src/gl-util.c:150
 msgid "%b %e %Y %l:%M %p"
 msgstr "%b %e %Y %l:%M %p"
 
 #. Translators: timestamp format for events on the current
 #. * day, showing the time in 24-hour format.
-#: ../src/gl-util.c:120
+#: ../src/gl-util.c:163
 msgid "%H:%M"
 msgstr "%H:%M"
 
 #. Translators: timestamp format for events in the current
 #. * year, showing the abbreviated month name, day of the
 #. * month and the time in 24-hour format.
-#: ../src/gl-util.c:126
+#: ../src/gl-util.c:169
 msgid "%b %e %H:%M"
 msgstr "%b %e %H:%M"
 
 #. Translators: timestamp format for events in a different
 #. * year, showing the abbreviated month name, day of the
 #. * month, year and the time in 24-hour format.
-#: ../src/gl-util.c:132
+#: ../src/gl-util.c:175
 msgid "%b %e %Y %H:%M"
 msgstr "%b %e %Y %H:%M"
+
+#~ msgid "Not implemented"
+#~ msgstr "Sense implementar"
