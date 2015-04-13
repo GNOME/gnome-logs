@@ -31,6 +31,12 @@ enum
     N_PROPERTIES
 };
 
+struct _GlEventViewDetail
+{
+    /*< private >*/
+    GtkBin parent_instance;
+};
+
 typedef struct
 {
     GlJournalEntry *entry;

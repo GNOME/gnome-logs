@@ -1,6 +1,6 @@
 /*
  *  GNOME Logs - View and search logs
- *  Copyright (C) 2013, 2014  Red Hat, Inc.
+ *  Copyright (C) 2013, 2014, 2015  Red Hat, Inc.
  *
  *  This program is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -30,6 +30,12 @@
 #include "gl-eventviewrow.h"
 #include "gl-journal-model.h"
 #include "gl-util.h"
+
+struct _GlEventViewList
+{
+    /*< private >*/
+    GtkBox parent_instance;
+};
 
 typedef struct
 {

@@ -1,6 +1,6 @@
 /*
  *  GNOME Logs - View and search logs
- *  Copyright (C) 2013  Red Hat, Inc.
+ *  Copyright (C) 2013, 2014, 2015  Red Hat, Inc.
  *
  *  This program is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -25,22 +25,9 @@
 
 G_BEGIN_DECLS
 
-typedef struct
-{
-    /*< private >*/
-    GtkApplicationWindow parent_instance;
-} GlWindow;
-
-typedef struct
-{
-    /*< private >*/
-    GtkApplicationWindowClass parent_class;
-} GlWindowClass;
-
 #define GL_TYPE_WINDOW (gl_window_get_type ())
-#define GL_WINDOW(object) (G_TYPE_CHECK_INSTANCE_CAST ((object), GL_TYPE_WINDOW, GlWindow))
+G_DECLARE_FINAL_TYPE (GlWindow, gl_window, GL, WINDOW, GtkApplicationWindow)
 
-GType gl_window_get_type (void);
 GtkWidget * gl_window_new (GtkApplication *application);
 void gl_window_set_sort_order (GlWindow *window, GlSortOrder sort_order);
 

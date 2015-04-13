@@ -1,6 +1,6 @@
 /*
  *  GNOME Logs - View and search logs
- *  Copyright (C) 2013  Red Hat, Inc.
+ *  Copyright (C) 2013, 2014, 2015  Red Hat, Inc.
  *
  *  This program is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -26,18 +26,6 @@ G_BEGIN_DECLS
 #include "gl-journal.h"
 #include "gl-util.h"
 
-typedef struct
-{
-    /*< private >*/
-    GtkListBoxRow parent_instance;
-} GlEventViewRow;
-
-typedef struct
-{
-    /*< private >*/
-    GtkListBoxRowClass parent_class;
-} GlEventViewRowClass;
-
 /*
  * GlEventViewRowStyle:
  * @GL_EVENT_VIEW_ROW_STYLE_CMDLINE: show the command-line in bold, if it
@@ -53,9 +41,8 @@ typedef enum
 } GlEventViewRowStyle;
 
 #define GL_TYPE_EVENT_VIEW_ROW (gl_event_view_row_get_type ())
-#define GL_EVENT_VIEW_ROW(object) (G_TYPE_CHECK_INSTANCE_CAST ((object), GL_TYPE_EVENT_VIEW_ROW, GlEventViewRow))
+G_DECLARE_FINAL_TYPE (GlEventViewRow, gl_event_view_row, GL, EVENT_VIEW_ROW, GtkListBoxRow)
 
-GType gl_event_view_row_get_type (void);
 GtkWidget * gl_event_view_row_new (GlJournalEntry *entry, GlEventViewRowStyle style, GlUtilClockFormat clock_format);
 GlJournalEntry * gl_event_view_row_get_entry (GlEventViewRow *row);
 

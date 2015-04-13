@@ -1,6 +1,6 @@
 /*
  *  GNOME Logs - View and search logs
- *  Copyright (C) 2013, 2014  Red Hat, Inc.
+ *  Copyright (C) 2013, 2014, 2015  Red Hat, Inc.
  *
  *  This program is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -28,6 +28,12 @@ enum
     PROP_0,
     PROP_MODE,
     N_PROPERTIES
+};
+
+struct _GlEventToolbar
+{
+    /*< private >*/
+    GtkHeaderBar parent_instance;
 };
 
 typedef struct

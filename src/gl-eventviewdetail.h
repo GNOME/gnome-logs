@@ -1,6 +1,6 @@
 /*
  *  GNOME Logs - View and search logs
- *  Copyright (C) 2013  Red Hat, Inc.
+ *  Copyright (C) 2013, 2014, 2015  Red Hat, Inc.
  *
  *  This program is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -26,22 +26,9 @@ G_BEGIN_DECLS
 #include "gl-journal.h"
 #include "gl-util.h"
 
-typedef struct
-{
-    /*< private >*/
-    GtkBin parent_instance;
-} GlEventViewDetail;
-
-typedef struct
-{
-    /*< private >*/
-    GtkBinClass parent_class;
-} GlEventViewDetailClass;
-
 #define GL_TYPE_EVENT_VIEW_DETAIL (gl_event_view_detail_get_type ())
-#define GL_EVENT_VIEW_DETAIL(object) (G_TYPE_CHECK_INSTANCE_CAST ((object), GL_TYPE_EVENT_VIEW_DETAIL, GlEventViewDetail))
+G_DECLARE_FINAL_TYPE (GlEventViewDetail, gl_event_view_detail, GL, EVENT_VIEW_DETAIL, GtkBin)
 
-GType gl_event_view_detail_get_type (void);
 GtkWidget * gl_event_view_detail_new (GlJournalEntry *result, GlUtilClockFormat clock_format);
 
 G_END_DECLS

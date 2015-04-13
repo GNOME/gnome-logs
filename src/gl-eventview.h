@@ -1,6 +1,6 @@
 /*
  *  GNOME Logs - View and search logs
- *  Copyright (C) 2014  Red Hat, Inc.
+ *  Copyright (C) 2014, 2015  Red Hat, Inc.
  *  Copyright (C) 2014  Jonathan Kang
  *
  *  This program is free software: you can redistribute it and/or modify
@@ -26,18 +26,6 @@
 
 G_BEGIN_DECLS
 
-typedef struct
-{
-    /*< private >*/
-    GtkStack parent_instance;
-} GlEventView;
-
-typedef struct
-{
-    /*< private >*/
-    GtkStackClass parent_class;
-} GlEventViewClass;
-
 /*
  * GlEventViewMode:
  * @GL_EVENT_VIEW_MODE_LIST:
@@ -52,9 +40,8 @@ typedef enum
 } GlEventViewMode;
 
 #define GL_TYPE_EVENT_VIEW (gl_event_view_get_type ())
-#define GL_EVENT_VIEW(object) (G_TYPE_CHECK_INSTANCE_CAST ((object), GL_TYPE_EVENT_VIEW, GlEventView))
+G_DECLARE_FINAL_TYPE (GlEventView, gl_event_view, GL, EVENT_VIEW, GtkStack)
 
-GType gl_event_view_get_type (void);
 GtkWidget * gl_event_view_new (void);
 void gl_event_view_search (GlEventView *view, const gchar *needle);
 void gl_event_view_set_mode (GlEventView *view, GlEventViewMode mode);

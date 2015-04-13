@@ -1,6 +1,6 @@
 /*
  *  GNOME Logs - View and search logs
- *  Copyright (C) 2013  Red Hat, Inc.
+ *  Copyright (C) 2013, 2014, 2015  Red Hat, Inc.
  *
  *  This program is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -23,18 +23,6 @@
 
 G_BEGIN_DECLS
 
-typedef struct
-{
-    /*< private >*/
-    GtkHeaderBar parent_instance;
-} GlEventToolbar;
-
-typedef struct
-{
-    /*< private >*/
-    GtkListBoxClass parent_class;
-} GlEventToolbarClass;
-
 /*
  * GlEventToolbarMode:
  * @GL_EVENT_TOOLBAR_MODE_LIST:
@@ -49,9 +37,8 @@ typedef enum
 } GlEventToolbarMode;
 
 #define GL_TYPE_EVENT_TOOLBAR (gl_event_toolbar_get_type ())
-#define GL_EVENT_TOOLBAR(object) (G_TYPE_CHECK_INSTANCE_CAST ((object), GL_TYPE_EVENT_TOOLBAR, GlEventToolbar))
+G_DECLARE_FINAL_TYPE (GlEventToolbar, gl_event_toolbar, GL, EVENT_TOOLBAR, GtkHeaderBar)
 
-GType gl_event_toolbar_get_type (void);
 GtkWidget * gl_event_toolbar_new (void);
 gboolean gl_event_toolbar_handle_back_button_event (GlEventToolbar *toolbar,
                                                     GdkEventKey *event);

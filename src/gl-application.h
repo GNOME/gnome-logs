@@ -1,6 +1,6 @@
 /*
  *  GNOME Logs - View and search logs
- *  Copyright (C) 2013  Red Hat, Inc.
+ *  Copyright (C) 2013, 2014, 2015  Red Hat, Inc.
  *
  *  This program is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -23,18 +23,6 @@
 
 G_BEGIN_DECLS
 
-typedef struct
-{
-    /*< private >*/
-    GtkApplication parent_instance;
-} GlApplication;
-
-typedef struct
-{
-    /*< private >*/
-    GtkApplicationClass parent_class;
-} GlApplicationClass;
-
 /* Types of sorting. See the GSettings key "sort-order". */
 typedef enum
 {
@@ -43,9 +31,8 @@ typedef enum
 } GlSortOrder;
 
 #define GL_TYPE_APPLICATION (gl_application_get_type ())
-#define GL_APPLICATION(object) (G_TYPE_CHECK_INSTANCE_CAST ((object), GL_TYPE_APPLICATION, GlApplication))
+G_DECLARE_FINAL_TYPE (GlApplication, gl_application, GL, APPLICATION, GtkApplication)
 
-GType gl_application_get_type (void);
 GtkApplication * gl_application_new (void);
 
 G_END_DECLS

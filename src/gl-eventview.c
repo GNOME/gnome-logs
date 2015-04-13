@@ -1,6 +1,6 @@
 /*
  *  GNOME Logs - View and search logs
- *  Copyright (C) 2014  Red Hat, Inc.
+ *  Copyright (C) 2014, 2015  Red Hat, Inc.
  *  Copyright (C) 2014  Jonathan Kang
  *
  *  This program is free software: you can redistribute it and/or modify
@@ -36,6 +36,12 @@ enum
     PROP_0,
     PROP_MODE,
     N_PROPERTIES
+};
+
+struct _GlEventView
+{
+    /*< private >*/
+    GtkStack parent_instance;
 };
 
 typedef struct
