@@ -155,7 +155,7 @@ appicon32dir = $(iconthemedir)/32x32/apps
 appicon48dir = $(iconthemedir)/48x48/apps
 appicon256dir = $(iconthemedir)/256x256/apps
 appicon512dir = $(iconthemedir)/512x512/apps
-appiconscalabledir = $(iconthemedir)/scalable/apps
+appiconsymbolicdir = $(iconthemedir)/symbolic/apps
 
 dist_appicon16_DATA = data/icons/16x16/gnome-logs.png
 dist_appicon22_DATA = data/icons/22x22/gnome-logs.png
@@ -164,7 +164,7 @@ dist_appicon32_DATA = data/icons/32x32/gnome-logs.png
 dist_appicon48_DATA = data/icons/48x48/gnome-logs.png
 dist_appicon256_DATA = data/icons/256x256/gnome-logs.png
 dist_appicon512_DATA = data/icons/512x512/gnome-logs.png
-dist_appiconscalable_DATA = data/icons/scalable/gnome-logs-symbolic.svg
+dist_appiconsymbolic_DATA = data/icons/symbolic/gnome-logs-symbolic.svg
 
 update_icon_cache = gtk-update-icon-cache --ignore-theme-index --force
 
