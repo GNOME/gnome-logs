@@ -1,3 +1,12 @@
+GNOME Logs 3.17.1
+=================
+
+* port to G_DECLARE_FINAL_TYPE
+* symbolic application icon from Jakub Steiner
+* Dogtail installed test from Rashi Aswani
+* CSS provider simplification from Arnaud Bonatti
+* fix for variable initialization from Jonathan Kang
+
 GNOME Logs 3.16.0
 =================
 
