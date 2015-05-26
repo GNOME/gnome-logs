@@ -44,11 +44,33 @@ typedef struct
     GlUtilClockFormat clock_format;
     GlJournalEntry *entry;
     GlEventViewRowStyle style;
+    GtkWidget *message_label;
+    GtkWidget *time_label;
 } GlEventViewRowPrivate;
 
 G_DEFINE_TYPE_WITH_PRIVATE (GlEventViewRow, gl_event_view_row, GTK_TYPE_LIST_BOX_ROW)
 
 static GParamSpec *obj_properties[N_PROPERTIES] = { NULL, };
+
+GtkWidget *
+gl_event_view_row_get_message_label (GlEventViewRow *row)
+{
+    GlEventViewRowPrivate *priv;
+
+    priv = gl_event_view_row_get_instance_private (row);
+
+    return priv->message_label;
+}
+
+GtkWidget *
+gl_event_view_row_get_time_label (GlEventViewRow *row)
+{
+    GlEventViewRowPrivate *priv;
+
+    priv = gl_event_view_row_get_instance_private (row);
+
+    return priv->time_label;
+}
 
 static void
 gl_event_view_row_finalize (GObject *object)
@@ -117,11 +139,8 @@ gl_event_view_row_create_cmdline (GlEventViewRow *row)
     GlEventViewRowPrivate *priv;
     GtkStyleContext *context;
     GtkWidget *grid;
-    gchar *markup;
-    GtkWidget *label;
     gchar *time;
     gboolean rtl;
-    GtkWidget *image;
     GlJournalEntry *entry;
     GDateTime *now;
 
@@ -136,42 +155,28 @@ gl_event_view_row_create_cmdline (GlEventViewRow *row)
     gtk_grid_set_column_spacing (GTK_GRID (grid), 6);
     gtk_container_add (GTK_CONTAINER (row), grid);
 
-    if (gl_journal_entry_get_command_line (entry))
-      markup = g_markup_printf_escaped ("<b>%s</b>", gl_journal_entry_get_command_line (entry));
-    else
-      markup = g_strdup ("");
-
-    label = gtk_label_new (NULL);
-    gtk_widget_set_direction (label, GTK_TEXT_DIR_LTR);
-    gtk_widget_set_hexpand (label, TRUE);
-    gtk_widget_set_halign (label, GTK_ALIGN_START);
-    gtk_label_set_ellipsize (GTK_LABEL (label), PANGO_ELLIPSIZE_END);
-    gtk_label_set_markup (GTK_LABEL (label), markup);
-    g_free (markup);
-    gtk_grid_attach (GTK_GRID (grid), label, rtl ? 1 : 0, 0, 1, 1);
-
-    label = gtk_label_new (gl_journal_entry_get_message (entry));
-    gtk_widget_set_direction (label, GTK_TEXT_DIR_LTR);
-    context = gtk_widget_get_style_context (GTK_WIDGET (label));
+    priv->message_label = gtk_label_new (gl_journal_entry_get_message (entry));
+    gtk_widget_set_direction (priv->message_label, GTK_TEXT_DIR_LTR);
+    context = gtk_widget_get_style_context (GTK_WIDGET (priv->message_label));
     gtk_style_context_add_class (context, "event-monospace");
-    gtk_widget_set_halign (label, GTK_ALIGN_START);
-    gtk_label_set_ellipsize (GTK_LABEL (label), PANGO_ELLIPSIZE_END);
-    gtk_grid_attach (GTK_GRID (grid), label, 0, 1, 2, 1);
+    gtk_widget_set_halign (priv->message_label, GTK_ALIGN_START);
+    gtk_label_set_ellipsize (GTK_LABEL (priv->message_label),
+                             PANGO_ELLIPSIZE_END);
+    gtk_label_set_xalign (GTK_LABEL (priv->message_label), 0);
+    gtk_grid_attach (GTK_GRID (grid), priv->message_label,
+                     rtl ? 1 : 0, 0, 1, 1);
 
     now = g_date_time_new_now_local ();
     time = gl_util_timestamp_to_display (gl_journal_entry_get_timestamp (entry),
                                          now, priv->clock_format);
     g_date_time_unref (now);
-    label = gtk_label_new (time);
-    context = gtk_widget_get_style_context (GTK_WIDGET (label));
+    priv->time_label = gtk_label_new (time);
+    context = gtk_widget_get_style_context (GTK_WIDGET (priv->time_label));
     gtk_style_context_add_class (context, "dim-label");
     gtk_style_context_add_class (context, "event-time");
-    gtk_widget_set_halign (label, GTK_ALIGN_END);
-    gtk_grid_attach (GTK_GRID (grid), label, rtl ? 0 : 1, 0, 1, 1);
-
-    image = gtk_image_new_from_icon_name ("go-next-symbolic",
-                                          GTK_ICON_SIZE_MENU);
-    gtk_grid_attach (GTK_GRID (grid), image, 2, 0, 1, 2);
+    gtk_widget_set_halign (priv->time_label, GTK_ALIGN_END);
+    gtk_label_set_xalign (GTK_LABEL (priv->time_label), 1);
+    gtk_grid_attach (GTK_GRID (grid), priv->time_label, rtl ? 0 : 1, 0, 1, 1);
 
     g_free (time);
 }
@@ -182,10 +187,8 @@ gl_event_view_row_create_simple (GlEventViewRow *row)
     GlEventViewRowPrivate *priv;
     GtkStyleContext *context;
     GtkWidget *grid;
-    GtkWidget *label;
     gchar *time;
     gboolean rtl;
-    GtkWidget *image;
     GlJournalEntry *entry;
     GDateTime *now;
 
@@ -200,29 +203,28 @@ gl_event_view_row_create_simple (GlEventViewRow *row)
     gtk_grid_set_column_spacing (GTK_GRID (grid), 6);
     gtk_container_add (GTK_CONTAINER (row), grid);
 
-    label = gtk_label_new (gl_journal_entry_get_message (entry));
-    gtk_widget_set_direction (label, GTK_TEXT_DIR_LTR);
-    context = gtk_widget_get_style_context (GTK_WIDGET (label));
+    priv->message_label = gtk_label_new (gl_journal_entry_get_message (entry));
+    gtk_widget_set_direction (priv->message_label, GTK_TEXT_DIR_LTR);
+    context = gtk_widget_get_style_context (GTK_WIDGET (priv->message_label));
     gtk_style_context_add_class (context, "event-monospace");
-    gtk_widget_set_hexpand (label, TRUE);
-    gtk_widget_set_halign (label, GTK_ALIGN_START);
-    gtk_label_set_ellipsize (GTK_LABEL (label), PANGO_ELLIPSIZE_END);
-    gtk_grid_attach (GTK_GRID (grid), label, 0, 1, 1, 1);
+    gtk_widget_set_halign (priv->message_label, GTK_ALIGN_START);
+    gtk_label_set_ellipsize (GTK_LABEL (priv->message_label),
+                             PANGO_ELLIPSIZE_END);
+    gtk_label_set_xalign (GTK_LABEL (priv->message_label), 0);
+    gtk_grid_attach (GTK_GRID (grid), priv->message_label,
+                     rtl ? 1 : 0, 0, 1, 1);
 
     now = g_date_time_new_now_local ();
     time = gl_util_timestamp_to_display (gl_journal_entry_get_timestamp (entry),
                                          now, priv->clock_format);
     g_date_time_unref (now);
-    label = gtk_label_new (time);
-    context = gtk_widget_get_style_context (GTK_WIDGET (label));
+    priv->time_label = gtk_label_new (time);
+    context = gtk_widget_get_style_context (GTK_WIDGET (priv->time_label));
     gtk_style_context_add_class (context, "dim-label");
     gtk_style_context_add_class (context, "event-time");
-    gtk_widget_set_halign (label, GTK_ALIGN_END);
-    gtk_grid_attach (GTK_GRID (grid), label, rtl ? 1 : 0, 0, 1, 1);
-
-    image = gtk_image_new_from_icon_name ("go-next-symbolic",
-                                          GTK_ICON_SIZE_MENU);
-    gtk_grid_attach (GTK_GRID (grid), image, 1, 0, 1, 2);
+    gtk_widget_set_halign (priv->time_label, GTK_ALIGN_END);
+    gtk_label_set_xalign (GTK_LABEL (priv->time_label), 1);
+    gtk_grid_attach (GTK_GRID (grid), priv->time_label, rtl ? 0 : 1, 0, 1, 1);
 
     g_free (time);
 }

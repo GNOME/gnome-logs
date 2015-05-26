@@ -45,6 +45,8 @@ G_DECLARE_FINAL_TYPE (GlEventViewRow, gl_event_view_row, GL, EVENT_VIEW_ROW, Gtk
 
 GtkWidget * gl_event_view_row_new (GlJournalEntry *entry, GlEventViewRowStyle style, GlUtilClockFormat clock_format);
 GlJournalEntry * gl_event_view_row_get_entry (GlEventViewRow *row);
+GtkWidget * gl_event_view_row_get_message_label (GlEventViewRow *row);
+GtkWidget * gl_event_view_row_get_time_label (GlEventViewRow *row);
 
 G_END_DECLS
 
