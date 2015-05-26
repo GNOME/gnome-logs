@@ -26,24 +26,10 @@ G_BEGIN_DECLS
 #include "gl-journal.h"
 #include "gl-util.h"
 
-/*
- * GlEventViewRowStyle:
- * @GL_EVENT_VIEW_ROW_STYLE_CMDLINE: show the command-line in bold, if it
- * exists, as well as the log message
- * @GL_EVENT_VIEW_ROW_STYLE_SIMPLE: show only the event message and timestamp
- *
- * The style for the row.
- */
-typedef enum
-{
-    GL_EVENT_VIEW_ROW_STYLE_CMDLINE,
-    GL_EVENT_VIEW_ROW_STYLE_SIMPLE
-} GlEventViewRowStyle;
-
 #define GL_TYPE_EVENT_VIEW_ROW (gl_event_view_row_get_type ())
 G_DECLARE_FINAL_TYPE (GlEventViewRow, gl_event_view_row, GL, EVENT_VIEW_ROW, GtkListBoxRow)
 
-GtkWidget * gl_event_view_row_new (GlJournalEntry *entry, GlEventViewRowStyle style, GlUtilClockFormat clock_format);
+GtkWidget * gl_event_view_row_new (GlJournalEntry *entry, GlUtilClockFormat clock_format);
 GlJournalEntry * gl_event_view_row_get_entry (GlEventViewRow *row);
 GtkWidget * gl_event_view_row_get_message_label (GlEventViewRow *row);
 GtkWidget * gl_event_view_row_get_time_label (GlEventViewRow *row);

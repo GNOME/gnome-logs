@@ -50,8 +50,6 @@ typedef struct
     GtkWidget *event_scrolled;
     GtkWidget *search_entry;
     gchar *search_text;
-
-    GlEventViewRowStyle current_row_style;
 } GlEventViewListPrivate;
 
 G_DEFINE_TYPE_WITH_PRIVATE (GlEventViewList, gl_event_view_list, GTK_TYPE_BOX)
@@ -337,7 +335,7 @@ gl_event_list_view_create_row_widget (gpointer item,
 
     GlEventViewListPrivate *priv = gl_event_view_list_get_instance_private (view);
 
-    rtn = gl_event_view_row_new (item, priv->current_row_style, priv->clock_format);
+    rtn = gl_event_view_row_new (item, priv->clock_format);
     message_label = gl_event_view_row_get_message_label (GL_EVENT_VIEW_ROW (rtn));
     time_label = gl_event_view_row_get_time_label (GL_EVENT_VIEW_ROW (rtn));
 
@@ -388,7 +386,6 @@ on_notify_category (GlCategoryList *list,
               /* Alert or emergency priority. */
               const gchar * query[] = { "PRIORITY=0", "PRIORITY=1", "PRIORITY=2", "PRIORITY=3", NULL };
 
-              priv->current_row_style = GL_EVENT_VIEW_ROW_STYLE_CMDLINE;
               gl_journal_model_set_matches (priv->journal_model, query);
             }
             break;
@@ -397,7 +394,6 @@ on_notify_category (GlCategoryList *list,
             {
                 const gchar *query[] = { NULL };
 
-                priv->current_row_style = GL_EVENT_VIEW_ROW_STYLE_CMDLINE;
                 gl_journal_model_set_matches (priv->journal_model, query);
             }
             break;
@@ -413,7 +409,6 @@ on_notify_category (GlCategoryList *list,
                                          NULL,
                                          NULL };
 
-                priv->current_row_style = GL_EVENT_VIEW_ROW_STYLE_CMDLINE;
                 uid_str = create_uid_match_string ();
                 query[3] = uid_str;
                 gl_journal_model_set_matches (priv->journal_model, query);
@@ -426,7 +421,6 @@ on_notify_category (GlCategoryList *list,
             {
                 const gchar *query[] = { "_TRANSPORT=kernel", NULL };
 
-                priv->current_row_style = GL_EVENT_VIEW_ROW_STYLE_SIMPLE;
                 gl_journal_model_set_matches (priv->journal_model, query);
             }
             break;
@@ -435,7 +429,6 @@ on_notify_category (GlCategoryList *list,
             {
                 const gchar *query[] = { "_TRANSPORT=kernel", "_KERNEL_DEVICE", NULL };
 
-                priv->current_row_style = GL_EVENT_VIEW_ROW_STYLE_SIMPLE;
                 gl_journal_model_set_matches (priv->journal_model, query);
             }
             break;
@@ -444,7 +437,6 @@ on_notify_category (GlCategoryList *list,
             {
                 const gchar *query[] = { "_AUDIT_SESSION", NULL };
 
-                priv->current_row_style = GL_EVENT_VIEW_ROW_STYLE_CMDLINE;
                 gl_journal_model_set_matches (priv->journal_model, query);
             }
             break;
