@@ -43,6 +43,8 @@ typedef struct
     GlJournalEntry *entry;
     GlUtilClockFormat clock_format;
     GtkListBox *entries_box;
+    GtkSizeGroup *message_sizegroup;
+    GtkSizeGroup *time_sizegroup;
     GtkWidget *categories;
     GtkWidget *event_search;
     GtkWidget *event_scrolled;
@@ -120,6 +122,29 @@ utf8_strcasestr (const gchar *potential_hit,
 
   g_free (folded);
   return matches;
+}
+
+static void
+listbox_update_header_func (GtkListBoxRow *row,
+                            GtkListBoxRow *before,
+                            gpointer user_data)
+{
+    GtkWidget *current;
+
+    if (before == NULL)
+    {
+        gtk_list_box_row_set_header (row, NULL);
+        return;
+    }
+
+    current = gtk_list_box_row_get_header (row);
+
+    if (current == NULL)
+    {
+        current = gtk_separator_new (GTK_ORIENTATION_HORIZONTAL);
+        gtk_widget_show (current);
+        gtk_list_box_row_set_header (row, current);
+    }
 }
 
 static gboolean
@@ -305,11 +330,23 @@ static GtkWidget *
 gl_event_list_view_create_row_widget (gpointer item,
                                       gpointer user_data)
 {
+    GtkWidget *rtn;
+    GtkWidget *message_label;
+    GtkWidget *time_label;
     GlEventViewList *view = user_data;
 
     GlEventViewListPrivate *priv = gl_event_view_list_get_instance_private (view);
 
-    return gl_event_view_row_new (item, priv->current_row_style, priv->clock_format);
+    rtn = gl_event_view_row_new (item, priv->current_row_style, priv->clock_format);
+    message_label = gl_event_view_row_get_message_label (GL_EVENT_VIEW_ROW (rtn));
+    time_label = gl_event_view_row_get_time_label (GL_EVENT_VIEW_ROW (rtn));
+
+    gtk_size_group_add_widget (GTK_SIZE_GROUP (priv->message_sizegroup),
+                               message_label);
+    gtk_size_group_add_widget (GTK_SIZE_GROUP (priv->time_sizegroup),
+                               time_label);
+
+    return rtn;
 }
 
 static gchar *
@@ -567,6 +604,8 @@ gl_event_view_list_finalize (GObject *object)
 
     g_clear_object (&priv->journal_model);
     g_clear_pointer (&priv->search_text, g_free);
+    g_object_unref (priv->message_sizegroup);
+    g_object_unref (priv->time_sizegroup);
 }
 
 static void
@@ -607,6 +646,8 @@ gl_event_view_list_init (GlEventViewList *view)
 
     priv = gl_event_view_list_get_instance_private (view);
     priv->search_text = NULL;
+    priv->message_sizegroup = gtk_size_group_new (GTK_SIZE_GROUP_BOTH);
+    priv->time_sizegroup = gtk_size_group_new (GTK_SIZE_GROUP_BOTH);
     categories = GL_CATEGORY_LIST (priv->categories);
 
     priv->journal_model = gl_journal_model_new ();
@@ -620,6 +661,9 @@ gl_event_view_list_init (GlEventViewList *view)
                              gl_event_list_view_create_row_widget,
                              view, NULL);
 
+    gtk_list_box_set_header_func (GTK_LIST_BOX (priv->entries_box),
+                                  (GtkListBoxUpdateHeaderFunc) listbox_update_header_func,
+                                  NULL, NULL);
     gtk_list_box_set_filter_func (GTK_LIST_BOX (priv->entries_box),
                                   (GtkListBoxFilterFunc) listbox_search_filter_func,
                                   view, NULL);
