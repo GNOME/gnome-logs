@@ -8,4 +8,5 @@ data/org.gnome.Logs.gschema.xml
 src/gl-application.c
 src/gl-eventviewdetail.c
 src/gl-eventviewlist.c
+src/gl-eventviewrow.c
 src/gl-util.c

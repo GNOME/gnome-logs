@@ -34,8 +34,10 @@ struct _GlJournalEntry
   gchar *comm;
   gchar *kernel_device;
   gchar *audit_session;
+  gchar *transport;
   gchar *catalog;
   guint priority;
+  gint uid;
 };
 
 G_DEFINE_TYPE (GlJournalEntry, gl_journal_entry, G_TYPE_OBJECT);
@@ -217,6 +219,7 @@ _gl_journal_query_entry (GlJournal *self)
     sd_journal *journal;
     GError *error = NULL;
     gchar *priority;
+    gchar *uid;
 
     priv = gl_journal_get_instance_private (self);
     journal = priv->journal;
@@ -315,6 +318,27 @@ _gl_journal_query_entry (GlJournal *self)
     }
 
     entry->audit_session = gl_journal_get_data (self, "_AUDIT_SESSION", NULL);
+
+    entry->transport = gl_journal_get_data (self, "_TRANSPORT", &error);
+
+    if (error != NULL)
+    {
+        g_debug ("Error while getting transport from journal: %s",
+                 error->message);
+        g_clear_error (&error);
+    }
+
+    uid = gl_journal_get_data (self, "_UID", &error);
+
+    if (error != NULL)
+    {
+        g_debug ("Error while getting uid from journal: %s", error->message);
+        g_clear_error (&error);
+    }
+
+    /* We store an invalid or non-existent UID as -1 */
+    entry->uid = uid ? atoi (uid) : -1;
+    g_free (uid);
 
     return entry;
 
@@ -501,6 +525,7 @@ gl_journal_entry_finalize (GObject *object)
   g_free (entry->comm);
   g_free (entry->kernel_device);
   g_free (entry->audit_session);
+  g_free (entry->transport);
 
   G_OBJECT_CLASS (gl_journal_entry_parent_class)->finalize (object);
 }
@@ -554,6 +579,14 @@ gl_journal_entry_get_audit_session (GlJournalEntry *entry)
 }
 
 const gchar *
+gl_journal_entry_get_transport (GlJournalEntry *entry)
+{
+  g_return_val_if_fail (GL_IS_JOURNAL_ENTRY (entry), NULL);
+
+  return entry->transport;
+}
+
+const gchar *
 gl_journal_entry_get_catalog (GlJournalEntry *entry)
 {
   g_return_val_if_fail (GL_IS_JOURNAL_ENTRY (entry), NULL);
@@ -567,4 +600,12 @@ gl_journal_entry_get_priority (GlJournalEntry *entry)
   g_return_val_if_fail (GL_IS_JOURNAL_ENTRY (entry), 0);
 
   return entry->priority;
+}
+
+gint
+gl_journal_entry_get_uid (GlJournalEntry *entry)
+{
+  g_return_val_if_fail (GL_IS_JOURNAL_ENTRY (entry), -1);
+
+  return entry->uid;
 }

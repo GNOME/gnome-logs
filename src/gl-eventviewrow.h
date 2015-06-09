@@ -26,11 +26,26 @@ G_BEGIN_DECLS
 #include "gl-journal.h"
 #include "gl-util.h"
 
+/*
+ * GlEventViewRowCategory:
+ * @GL_EVENT_VIEW_ROW_CATEGORY_NONE:
+ * @GL_EVENT_VIEW_ROW_CATEGORY_IMPORTANT:
+ *
+ * The category, a property of GlEventViewRow, to filter events from
+ * "important" category.
+ */
+typedef enum
+{
+    GL_EVENT_VIEW_ROW_CATEGORY_NONE,
+    GL_EVENT_VIEW_ROW_CATEGORY_IMPORTANT
+} GlEventViewRowCategory;
+
 #define GL_TYPE_EVENT_VIEW_ROW (gl_event_view_row_get_type ())
 G_DECLARE_FINAL_TYPE (GlEventViewRow, gl_event_view_row, GL, EVENT_VIEW_ROW, GtkListBoxRow)
 
-GtkWidget * gl_event_view_row_new (GlJournalEntry *entry, GlUtilClockFormat clock_format);
+GtkWidget * gl_event_view_row_new (GlJournalEntry *entry, GlUtilClockFormat clock_format, GlEventViewRowCategory category);
 GlJournalEntry * gl_event_view_row_get_entry (GlEventViewRow *row);
+GtkWidget * gl_event_view_row_get_category_label (GlEventViewRow *row);
 GtkWidget * gl_event_view_row_get_message_label (GlEventViewRow *row);
 GtkWidget * gl_event_view_row_get_time_label (GlEventViewRow *row);
 

@@ -42,6 +42,7 @@ void gl_util_on_css_provider_parsing_error (GtkCssProvider *provider,
 gchar * gl_util_timestamp_to_display (guint64 microsecs,
                                       GDateTime *now,
                                       GlUtilClockFormat format);
+gint gl_util_get_uid (void);
 
 G_END_DECLS
 

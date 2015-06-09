@@ -194,3 +194,17 @@ gl_util_timestamp_to_display (guint64 microsecs,
 out:
     return time;
 }
+
+gint
+gl_util_get_uid (void)
+{
+    GCredentials *creds;
+    uid_t uid;
+
+    creds = g_credentials_new ();
+    uid = g_credentials_get_unix_user (creds, NULL);
+
+    g_object_unref (creds);
+
+    return uid;
+}

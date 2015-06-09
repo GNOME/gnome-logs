@@ -72,8 +72,10 @@ const gchar *           gl_journal_entry_get_message                    (GlJourn
 const gchar *           gl_journal_entry_get_command_line               (GlJournalEntry *entry);
 const gchar *           gl_journal_entry_get_kernel_device              (GlJournalEntry *entry);
 const gchar *           gl_journal_entry_get_audit_session              (GlJournalEntry *entry);
+const gchar *           gl_journal_entry_get_transport                  (GlJournalEntry *entry);
 const gchar *           gl_journal_entry_get_catalog                    (GlJournalEntry *entry);
 guint                   gl_journal_entry_get_priority                   (GlJournalEntry *entry);
+gint                    gl_journal_entry_get_uid                        (GlJournalEntry *entry);
 
 G_END_DECLS
 

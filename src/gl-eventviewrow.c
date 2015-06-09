@@ -27,6 +27,7 @@
 enum
 {
     PROP_0,
+    PROP_CATEGORY,
     PROP_CLOCK_FORMAT,
     PROP_ENTRY,
     N_PROPERTIES
@@ -40,8 +41,10 @@ struct _GlEventViewRow
 
 typedef struct
 {
+    GlEventViewRowCategory category;
     GlUtilClockFormat clock_format;
     GlJournalEntry *entry;
+    GtkWidget *category_label;
     GtkWidget *message_label;
     GtkWidget *time_label;
 } GlEventViewRowPrivate;
@@ -49,6 +52,16 @@ typedef struct
 G_DEFINE_TYPE_WITH_PRIVATE (GlEventViewRow, gl_event_view_row, GTK_TYPE_LIST_BOX_ROW)
 
 static GParamSpec *obj_properties[N_PROPERTIES] = { NULL, };
+
+GtkWidget *
+gl_event_view_row_get_category_label (GlEventViewRow *row)
+{
+    GlEventViewRowPrivate *priv;
+
+    priv = gl_event_view_row_get_instance_private (row);
+
+    return priv->category_label;
+}
 
 GtkWidget *
 gl_event_view_row_get_message_label (GlEventViewRow *row)
@@ -90,6 +103,9 @@ gl_event_view_row_get_property (GObject *object,
 
     switch (prop_id)
     {
+        case PROP_CATEGORY:
+            g_value_set_enum (value, priv->category);
+            break;
         case PROP_CLOCK_FORMAT:
             g_value_set_enum (value, priv->clock_format);
             break;
@@ -113,6 +129,9 @@ gl_event_view_row_set_property (GObject *object,
 
     switch (prop_id)
     {
+        case PROP_CATEGORY:
+            priv->category = g_value_get_enum (value);
+            break;
         case PROP_CLOCK_FORMAT:
             priv->clock_format = g_value_get_enum (value);
             break;
@@ -126,12 +145,56 @@ gl_event_view_row_set_property (GObject *object,
 }
 
 static void
+gl_event_view_row_construct_category_label (GlEventViewRow *row,
+                                            GlJournalEntry *entry)
+{
+    gint uid;
+    GlEventViewRowPrivate *priv;
+
+    uid = gl_util_get_uid ();
+    priv = gl_event_view_row_get_instance_private (row);
+
+    /* The priority given to the categories should be determined by how
+     * specific the checks are. The applications category is the most
+     * specific, followed by the hardware category, then kernel, security
+     * and finally the least-specific other category. So we check the category
+     * in the order of applications, hardware, system, security and other. */
+    if ((g_strcmp0 (gl_journal_entry_get_transport (entry), "kernel") == 0
+         || g_strcmp0 (gl_journal_entry_get_transport (entry), "stdout") == 0
+         || g_strcmp0 (gl_journal_entry_get_transport (entry), "syslog") == 0)
+        && gl_journal_entry_get_uid (entry) == uid)
+    {
+        priv->category_label = gtk_label_new (_("Applications"));
+    }
+    else if (g_strcmp0 (gl_journal_entry_get_transport (entry), "kernel") == 0
+             && gl_journal_entry_get_kernel_device (entry) != NULL)
+    {
+        priv->category_label = gtk_label_new (_("Hardware"));
+    }
+    else if (g_strcmp0 (gl_journal_entry_get_transport (entry), "kernel") == 0)
+    {
+        priv->category_label = gtk_label_new (_("System"));
+    }
+    else if (gl_journal_entry_get_audit_session (entry) != NULL)
+    {
+        priv->category_label = gtk_label_new (_("Security"));
+    }
+    else
+    {
+        priv->category_label = gtk_label_new (_("Other"));
+    }
+}
+
+static void
 gl_event_view_row_constructed (GObject *object)
 {
     GtkStyleContext *context;
     GtkWidget *grid;
     gchar *time;
     gboolean rtl;
+    GlEventViewRowCategory category;
+    GlUtilClockFormat tmp_clock_format;
+    GlJournalEntry *tmp_entry;
     GlJournalEntry *entry;
     GDateTime *now;
     GlEventViewRow *row = GL_EVENT_VIEW_ROW (object);
@@ -148,6 +211,23 @@ gl_event_view_row_constructed (GObject *object)
     gtk_grid_set_column_spacing (GTK_GRID (grid), 6);
     gtk_container_add (GTK_CONTAINER (row), grid);
 
+    g_object_get (object,
+                  "category", &category,
+                  "clock-format", &tmp_clock_format,
+                  "entry", &tmp_entry,
+                  NULL);
+
+    if (category == GL_EVENT_VIEW_ROW_CATEGORY_IMPORTANT)
+    {
+        gl_event_view_row_construct_category_label (row, entry);
+
+        context = gtk_widget_get_style_context (GTK_WIDGET (priv->category_label));
+        gtk_style_context_add_class (context, "dim-label");
+        gtk_label_set_xalign (GTK_LABEL (priv->category_label), 0);
+        gtk_grid_attach (GTK_GRID (grid), priv->category_label,
+                         rtl ? 2 : 0, 0, 1, 1);
+    }
+
     priv->message_label = gtk_label_new (gl_journal_entry_get_message (entry));
     gtk_widget_set_direction (priv->message_label, GTK_TEXT_DIR_LTR);
     context = gtk_widget_get_style_context (GTK_WIDGET (priv->message_label));
@@ -157,7 +237,7 @@ gl_event_view_row_constructed (GObject *object)
                              PANGO_ELLIPSIZE_END);
     gtk_label_set_xalign (GTK_LABEL (priv->message_label), 0);
     gtk_grid_attach (GTK_GRID (grid), priv->message_label,
-                     rtl ? 1 : 0, 0, 1, 1);
+                     1, 0, 1, 1);
 
     now = g_date_time_new_now_local ();
     time = gl_util_timestamp_to_display (gl_journal_entry_get_timestamp (entry),
@@ -169,9 +249,10 @@ gl_event_view_row_constructed (GObject *object)
     gtk_style_context_add_class (context, "event-time");
     gtk_widget_set_halign (priv->time_label, GTK_ALIGN_END);
     gtk_label_set_xalign (GTK_LABEL (priv->time_label), 1);
-    gtk_grid_attach (GTK_GRID (grid), priv->time_label, rtl ? 0 : 1, 0, 1, 1);
+    gtk_grid_attach (GTK_GRID (grid), priv->time_label, rtl ? 0 : 2, 0, 1, 1);
 
     g_free (time);
+    g_object_unref (tmp_entry);
 
     G_OBJECT_CLASS (gl_event_view_row_parent_class)->constructed (object);
 }
@@ -185,6 +266,14 @@ gl_event_view_row_class_init (GlEventViewRowClass *klass)
     gobject_class->finalize = gl_event_view_row_finalize;
     gobject_class->get_property = gl_event_view_row_get_property;
     gobject_class->set_property = gl_event_view_row_set_property;
+
+    obj_properties[PROP_CATEGORY] = g_param_spec_enum ("category", "Category",
+                                                       "Filter rows from important category",
+                                                       GL_TYPE_EVENT_VIEW_ROW_CATEGORY,
+                                                       GL_EVENT_VIEW_ROW_CATEGORY_NONE,
+                                                       G_PARAM_READWRITE |
+                                                       G_PARAM_CONSTRUCT_ONLY |
+                                                       G_PARAM_STATIC_STRINGS);
 
     obj_properties[PROP_CLOCK_FORMAT] = g_param_spec_enum ("clock-format", "Clock format",
                                                            "Format of the clock in which to show timestamps",
@@ -226,8 +315,10 @@ gl_event_view_row_get_entry (GlEventViewRow *row)
 
 GtkWidget *
 gl_event_view_row_new (GlJournalEntry *entry,
-                       GlUtilClockFormat clock_format)
+                       GlUtilClockFormat clock_format,
+                       GlEventViewRowCategory category)
 {
     return g_object_new (GL_TYPE_EVENT_VIEW_ROW, "entry", entry,
-                         "clock-format", clock_format, NULL);
+                         "clock-format", clock_format,
+                         "category", category, NULL);
 }

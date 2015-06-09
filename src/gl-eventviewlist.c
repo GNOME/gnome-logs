@@ -43,6 +43,7 @@ typedef struct
     GlJournalEntry *entry;
     GlUtilClockFormat clock_format;
     GtkListBox *entries_box;
+    GtkSizeGroup *category_sizegroup;
     GtkSizeGroup *message_sizegroup;
     GtkSizeGroup *time_sizegroup;
     GtkWidget *categories;
@@ -331,11 +332,34 @@ gl_event_list_view_create_row_widget (gpointer item,
     GtkWidget *rtn;
     GtkWidget *message_label;
     GtkWidget *time_label;
+    GlCategoryList *list;
+    GlCategoryListFilter filter;
     GlEventViewList *view = user_data;
 
     GlEventViewListPrivate *priv = gl_event_view_list_get_instance_private (view);
 
-    rtn = gl_event_view_row_new (item, priv->clock_format);
+    list = GL_CATEGORY_LIST (priv->categories);
+    filter = gl_category_list_get_category (list);
+
+    if (filter == GL_CATEGORY_LIST_FILTER_IMPORTANT)
+    {
+        GtkWidget *category_label;
+
+        rtn = gl_event_view_row_new (item,
+                                     priv->clock_format,
+                                     GL_EVENT_VIEW_ROW_CATEGORY_IMPORTANT);
+
+        category_label = gl_event_view_row_get_category_label (GL_EVENT_VIEW_ROW (rtn));
+        gtk_size_group_add_widget (GTK_SIZE_GROUP (priv->category_sizegroup),
+                                   category_label);
+    }
+    else
+    {
+        rtn = gl_event_view_row_new (item,
+                                     priv->clock_format,
+                                     GL_EVENT_VIEW_ROW_CATEGORY_NONE);
+    }
+
     message_label = gl_event_view_row_get_message_label (GL_EVENT_VIEW_ROW (rtn));
     time_label = gl_event_view_row_get_time_label (GL_EVENT_VIEW_ROW (rtn));
 
@@ -596,6 +620,7 @@ gl_event_view_list_finalize (GObject *object)
 
     g_clear_object (&priv->journal_model);
     g_clear_pointer (&priv->search_text, g_free);
+    g_object_unref (priv->category_sizegroup);
     g_object_unref (priv->message_sizegroup);
     g_object_unref (priv->time_sizegroup);
 }
@@ -638,6 +663,7 @@ gl_event_view_list_init (GlEventViewList *view)
 
     priv = gl_event_view_list_get_instance_private (view);
     priv->search_text = NULL;
+    priv->category_sizegroup = gtk_size_group_new (GTK_SIZE_GROUP_BOTH);
     priv->message_sizegroup = gtk_size_group_new (GTK_SIZE_GROUP_BOTH);
     priv->time_sizegroup = gtk_size_group_new (GTK_SIZE_GROUP_BOTH);
     categories = GL_CATEGORY_LIST (priv->categories);
