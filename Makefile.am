@@ -107,6 +107,8 @@ endif
 
 if LOGS_ENABLE_TESTS
 tests/basic.py: gnome-logs
+tests/gl-journal-mock.c: gnome-logs
+tests/gl-journal-mock.h: gnome-logs
 
 test-desktop-file-validate.sh: Makefile
 	$(AM_V_GEN)echo "#!/bin/sh -e" > $@; \
@@ -145,8 +147,16 @@ tests_test_gl_util_SOURCES = \
 	tests/test-gl-util.c \
 	src/gl-util.c
 
+tests_test_gl_journal_CFLAGS = \
+	$(LOGS_CFLAGS)
+
+tests_test_gl_journal_SOURCES = \
+	tests/gl-journal-mock.c
+	src/gl-journal.c
+
 check_PROGRAMS = \
 	tests/test-gl-util
+	tests/gl-journal-mock
 
 TESTS = \
 	$(check_PROGRAMS) \
@@ -232,7 +242,9 @@ dist_noinst_DATA = \
 
 dist_noinst_SCRIPTS = \
 	autogen.sh \
-	tests/basic.py
+	tests/basic.py \
+	tests/gl-journal-mock.c \
+	tests/gl-journal-mock.h
 
 dist-hook: git-changelog-hook
 
