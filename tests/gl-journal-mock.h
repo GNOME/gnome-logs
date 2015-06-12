@@ -17,64 +17,66 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef GL_JOURNAL_H_
-#define GL_JOURNAL_H_
+#ifndef GL_MOCK_JOURNAL_H_
+#define GL_MOCK_JOURNAL_H_
 
 #include <gio/gio.h>
 
 G_BEGIN_DECLS
 
 /*
- * GlJournalError:
- * @GL_JOURNAL_ERROR_NO_FIELD: the requested field was not found in the current
+ * GlMockJournalError:
+ * @GL_MOCK_JOURNAL_ERROR_NO_FIELD: the requested field was not found in the current
  * journal entry
- * @GL_JOURNAL_ERROR_INVALID_POINTER: the pointer to the current journal entry
+ * @GL_MOCK_JOURNAL_ERROR_INVALID_POINTER: the pointer to the current journal entry
  * is not valid
- * @GL_JOURNAL_ERROR_FAILED: unknown failure
+ * @GL_MOCK_JOURNAL_ERROR_FAILED: unknown failure
  */
 typedef enum
 {
-    GL_JOURNAL_ERROR_NO_FIELD,
-    GL_JOURNAL_ERROR_INVALID_POINTER,
-    GL_JOURNAL_ERROR_FAILED
-} MockGlJournalError;
+    GL_MOCK_JOURNAL_ERROR_NO_FIELD,
+    GL_MOCK_JOURNAL_ERROR_INVALID_POINTER,
+    GL_MOCK_JOURNAL_ERROR_FAILED
+} GlMockJournalError;
 
-#define GL_JOURNAL_ERROR gl_journal_error_quark ()
+#define GL_MOCK_JOURNAL_ERROR gl_mock_journal_error_quark ()
 
-GQuark mock_gl_journal_error_quark (void);
+GQuark gl_mock_journal_error_quark (void);
 
-#define GL_TYPE_JOURNAL_ENTRY gl_journal_entry_get_type()
-G_DECLARE_FINAL_TYPE (MockGlJournalEntry, gl_journal_entry, GL, JOURNAL_ENTRY, GObject)
+#define GL_TYPE_MOCK_JOURNAL_ENTRY gl_mock_journal_entry_get_type()
+G_DECLARE_FINAL_TYPE (GlMockJournalEntry, gl_mock_journal_entry, GL, MOCK_JOURNAL_ENTRY, GObject)
+G_DECLARE_FINAL_TYPE (GlIsMockJournalEntry, gl_is_mock_journal_entry, GL, JOURNAL_ENTRY, GObject)
+G_DECLARE_FINAL_TYPE (GlMockJournalEntryParentClass, gl_mock_journal_entry_parent_class, GL, JOURNAL_ENTRY_PARENT_CLASS, GObject)
 
 typedef struct
 {
     /*< private >*/
     GObject parent_instance;
-} MockGlJournal;
+} GlMockJournal;
 
 typedef struct
 {
     /*< private >*/
     GObjectClass parent_class;
-} MockGlJournalClass;
+} GlMockJournalClass;
 
-#define GL_TYPE_JOURNAL (gl_journal_get_type ())
-#define GL_JOURNAL(object) (G_TYPE_CHECK_INSTANCE_CAST ((object), GL_TYPE_JOURNAL, GlJournal))
+#define GL_TYPE_MOCK_JOURNAL (gl_mock_journal_get_type ())
+#define GL_MOCK_JOURNAL(object) (G_TYPE_CHECK_INSTANCE_CAST ((object), GL_TYPE_MOCK_JOURNAL, GlMockJournal))
 
-GType gl_journal_mock_result_get_type (void);
-GType gl_journal_mock_get_type (void);
-void gl_journal_mock_set_matches (MockGlJournal *journal, const gchar * const *matches);
-MockGlJournalEntry * gl_journal_mock_previous (MockGlJournal *journal);
-GlJournal * gl_journal_mock_new (void);
+GType gl_mock_journal_result_get_type (void);
+GType gl_mock_journal_get_type (void);
+void gl_mock_journal_set_matches (GlMockJournal *journal, const gchar * const *matches);
+GlMockJournalEntry * gl_mock_journal_previous (GlMockJournal *journal);
+GlMockJournal * gl_mock_journal_new (void);
 
-guint64                 gl_journal_mock_entry_get_timestamp                  (MockGlJournalEntry *entry);
-const gchar *           gl_journal_mock_entry_get_message                    (MockGlJournalEntry *entry);
-const gchar *           gl_journal_mock_entry_get_command_line               (MockGlJournalEntry *entry);
-const gchar *           gl_journal_mock_entry_get_kernel_device              (MockGlJournalEntry *entry);
-const gchar *           gl_journal_mock_entry_get_audit_session              (MockGlJournalEntry *entry);
-const gchar *           gl_journal_mock_entry_get_catalog                    (MockGlJournalEntry *entry);
-guint                   gl_journal_mock_entry_get_priority                   (MockGlJournalEntry *entry);
+guint64                 gl_mock_journal_entry_get_timestamp                  (GlMockJournalEntry *entry);
+const gchar *           gl_mock_journal_entry_get_message                    (GlMockJournalEntry *entry);
+const gchar *           gl_mock_journal_entry_get_command_line               (GlMockJournalEntry *entry);
+const gchar *           gl_mock_journal_entry_get_kernel_device              (GlMockJournalEntry *entry);
+const gchar *           gl_mock_journal_entry_get_audit_session              (GlMockJournalEntry *entry);
+const gchar *           gl_mock_journal_entry_get_catalog                    (GlMockJournalEntry *entry);
+guint                   gl_mock_journal_entry_get_priority                   (GlMockJournalEntry *entry);
 
 G_END_DECLS
 
-#endif /* GL_JOURNAL_H_ */
+#endif /* GL_MOCK_JOURNAL_H_ */

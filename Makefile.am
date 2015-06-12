@@ -2,7 +2,7 @@ ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
 
 DISTCHECK_CONFIGURE_FLAGS = \
 	--enable-appstream-util \
-	--enable-tests
+	--enable-tests=yes
 
 SUBDIRS = help po
 
@@ -107,8 +107,6 @@ endif
 
 if LOGS_ENABLE_TESTS
 tests/basic.py: gnome-logs
-tests/gl-journal-mock.c: gnome-logs
-tests/gl-journal-mock.h: gnome-logs
 
 test-desktop-file-validate.sh: Makefile
 	$(AM_V_GEN)echo "#!/bin/sh -e" > $@; \
@@ -147,16 +145,35 @@ tests_test_gl_util_SOURCES = \
 	tests/test-gl-util.c \
 	src/gl-util.c
 
-tests_test_gl_journal_CFLAGS = \
+tests_gl_journal_mock_CFLAGS = \
 	$(LOGS_CFLAGS)
 
-tests_test_gl_journal_SOURCES = \
-	tests/gl-journal-mock.c
+tests_gl_journal_mock_LDADD = \
+        $(LOGS_LIBS)
+
+tests_gl_journal_mock_SOURCES = \
+	tests/gl-journal-mock.c \
 	src/gl-journal.c
 
+tests_test_gnome_logs_test_CPPFLAGS = \
+        -DLOCALEDIR=\""$(localedir)"\" \
+        -I$(top_builddir) \
+        -I$(top_srcdir)/src \
+        $(WARN_CFLAGS)
+
+tests_gnome_logs_test_CFLAGS = \
+        $(LOGS_CFLAGS)
+
+tests_gnome_logs_test_LDADD = \
+        $(LOGS_LIBS)
+
+tests_gnome_logs_test_SOURCES = \
+        tests/gnome-logs-test.c \
+        tests/gl-journal-mock.c
+
 check_PROGRAMS = \
-	tests/test-gl-util
-	tests/gl-journal-mock
+	tests/test-gl-util \
+	tests/gnome-logs-test
 
 TESTS = \
 	$(check_PROGRAMS) \
@@ -242,9 +259,7 @@ dist_noinst_DATA = \
 
 dist_noinst_SCRIPTS = \
 	autogen.sh \
-	tests/basic.py \
-	tests/gl-journal-mock.c \
-	tests/gl-journal-mock.h
+	tests/basic.py
 
 dist-hook: git-changelog-hook
 
