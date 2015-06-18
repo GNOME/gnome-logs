@@ -145,16 +145,6 @@ tests_test_gl_util_SOURCES = \
 	tests/test-gl-util.c \
 	src/gl-util.c
 
-tests_gl_journal_mock_CFLAGS = \
-	$(LOGS_CFLAGS)
-
-tests_gl_journal_mock_LDADD = \
-        $(LOGS_LIBS)
-
-tests_gl_journal_mock_SOURCES = \
-	tests/gl-journal-mock.c \
-	src/gl-journal.c
-
 tests_test_gnome_logs_test_CPPFLAGS = \
         -DLOCALEDIR=\""$(localedir)"\" \
         -I$(top_builddir) \

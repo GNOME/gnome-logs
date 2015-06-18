@@ -45,8 +45,6 @@ GQuark gl_mock_journal_error_quark (void);
 
 #define GL_TYPE_MOCK_JOURNAL_ENTRY gl_mock_journal_entry_get_type()
 G_DECLARE_FINAL_TYPE (GlMockJournalEntry, gl_mock_journal_entry, GL, MOCK_JOURNAL_ENTRY, GObject)
-G_DECLARE_FINAL_TYPE (GlIsMockJournalEntry, gl_is_mock_journal_entry, GL, JOURNAL_ENTRY, GObject)
-G_DECLARE_FINAL_TYPE (GlMockJournalEntryParentClass, gl_mock_journal_entry_parent_class, GL, JOURNAL_ENTRY_PARENT_CLASS, GObject)
 
 typedef struct
 {

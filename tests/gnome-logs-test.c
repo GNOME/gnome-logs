@@ -1,6 +1,6 @@
 /*
  *  GNOME Logs - View and search logs
- *  Copyright (C) 2015 Ekaterina Gerasimova
+ *  Copyright (C) 2015 Rashi Aswani
  *
  *  This program is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -21,9 +21,11 @@
 static void
 check_log_message (void)
 {
-   GlMockJournalEntry *entry;
-   gchar *mystring = gl_mock_journal_entry_get_message(entry);
-   g_assert_cmpstr(mystring, ==, "Test");
+   
+   GlMockJournal *journal = gl_mock_journal_new();
+   GlMockJournalEntry *entry = gl_mock_journal_previous(journal);
+   const gchar *mystring = gl_mock_journal_entry_get_message(entry);
+   g_assert_cmpstr(mystring, ==, "This is a test");
 }
 
 int

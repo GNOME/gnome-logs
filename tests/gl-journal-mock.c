@@ -17,24 +17,8 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#define gl_journal_error_quack (void) gl_mock_journal_error_quack (void)
-#define gl_journal_finalize (GObject *object) gl_mock_journal_finalize (GObject *object)
-#define gl_journal_class_init (GlJournalClass *klass) gl_mock_journal_class_init (GlMockJournalClass *klass)
-#define gl_journal_init (GlJournal *self)  gl_mock_journal_init (GlMockJournal *self)
-#define gl_journal_get_data (GlJournal *self, const gchar *field, GError **error) gl_mock_journal_get_data(GlMockJournal *self, const gchar *field, GError **error)
-#define gl_journal_query_entry (GlJournal *self) gl_mock_journal_query_entry (GlMockJournal *self) 
-#define gl_journal_set_matches (GlJournal *journal, const gchar * const *matches) gl_mock_journal_set_matches (GlMockJournal *journal, const gchar * const *matches)
-#define gl_journal_previous (GlJournal *journal) gl_mock_journal_previous (GlMockJournal *journal)
-#define gl_journal_new (void) gl_mock_journal_new (void)
-#define gl_journal_entry_init (GlJournalEntry *entry) gl_mock_journal_entry_init (GlMockJournalEntry *entry)
-#define gl_journal_entry_get_timestamp (GlJournalEntry *entry) gl_mock_journal_entry_get_timestamp (GlMockJournalEntry *entry)
-#define gl_journal_entry_get_message (GlJournalEntry *entry) gl_mock_journal_entry_get_message (GlMockJournalEntry *entry)
-#define gl_journal_entry_get_command_line (GlJournalEntry *entry) gl_mock_journal_entry_get_command_line (GlMockJournalEntry *entry)
-#define gl_journal_entry_get_kernel_device (GlJournalEntry *entry) gl_mock_journal_entry_get_kernel_device (GlMockJournalEntry *entry)
-#define gl_journal_entry_get_audit_session (GlJournalEntry *entry) gl_mock_journal_entry_get_audit_session (GlMockJournalEntry *entry)
-#define gl_journal_entry_get_catalog (GlJournalEntry *entry) gl_mock_journal_entry_get_catalog (GlMockJournalEntry *entry)
-#define gl_journal_entry_get_priority (GlJournalEntry *entry) gl_mock_journal_entry_get_priority(GlMockJournalEntry *entry)
- 
+#define gl_journal_ gl_mock_journal_
+
 #include "gl-journal-mock.h"
 
 #include <glib-unix.h>
@@ -55,6 +39,8 @@ struct _GlMockJournalEntry
   gchar *catalog;
   guint priority;
 };
+
+G_DEFINE_TYPE (GlMockJournalEntry, gl_mock_journal_entry, G_TYPE_OBJECT)
 
 typedef struct
 {
@@ -102,25 +88,25 @@ gl_mock_journal_get_data (GlMockJournal *self,
     g_return_val_if_fail (error == NULL || *error == NULL, NULL);
     g_return_val_if_fail (field != NULL, NULL);
 
-    if (strcmp(field,"message")==0)
-            return "Test";
+    if (strcmp(field,"MESSAGE")==0)
+            return "This is a test";
 
-    if (strcmp(field,"priority")==0)
+    if (strcmp(field,"PRIORITY")==0)
             return "Low";
 
-    if(strcmp(field,"comm")==0)
+    if(strcmp(field,"_COMM")==0)
             return "No idea";
  
-    if(strcmp(field,"kernel_device")==0)
+    if(strcmp(field,"KERNEL_DEVICE")==0)
 	    return "Something";
 
-    if(strcmp(field,"audit_session")==0)
+    if(strcmp(field,"AUDIT_SESSION")==0)
 	    return "Session";
 
-    if(strcmp(field,"transport")==0)
+    if(strcmp(field,"TRANSPORT")==0)
 	    return "Transport";
 
-    if(strcmp(field,"uid")==0)
+    if(strcmp(field,"UID")==0)
 	    return "0001";
    return NULL;
 }
@@ -283,13 +269,15 @@ const gchar *
 gl_mock_journal_entry_get_command_line (GlMockJournalEntry *entry)
 {
   g_return_val_if_fail (GL_IS_MOCK_JOURNAL_ENTRY (entry), NULL);
-  return entry->comm;
+ 
+   return entry->comm;
 }
 
 const gchar *
 gl_mock_journal_entry_get_kernel_device (GlMockJournalEntry *entry)
 {
   g_return_val_if_fail (GL_IS_MOCK_JOURNAL_ENTRY (entry), NULL);
+
   return entry->kernel_device;
 }
 
@@ -305,6 +293,7 @@ const gchar *
 gl_mock_journal_entry_get_catalog (GlMockJournalEntry *entry)
 {
   g_return_val_if_fail (GL_IS_MOCK_JOURNAL_ENTRY (entry), NULL);
+
   return entry->catalog;
 }
 
@@ -312,5 +301,6 @@ guint
 gl_mock_journal_entry_get_priority (GlMockJournalEntry *entry)
 {
   g_return_val_if_fail (GL_IS_MOCK_JOURNAL_ENTRY (entry), 0);
+
   return entry->priority;
 }
