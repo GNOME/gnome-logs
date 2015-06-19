@@ -51,6 +51,7 @@ typedef struct
     GtkWidget *event_scrolled;
     GtkWidget *search_entry;
     gchar *search_text;
+    const gchar *boot_match;
 } GlEventViewListPrivate;
 
 G_DEFINE_TYPE_WITH_PRIVATE (GlEventViewList, gl_event_view_list, GTK_TYPE_BOX)
@@ -243,6 +244,16 @@ gl_event_view_list_get_detail_entry (GlEventViewList *view)
     return priv->entry;
 }
 
+GArray *
+gl_event_view_list_get_boot_ids (GlEventViewList *view)
+{
+    GlEventViewListPrivate *priv;
+
+    priv = gl_event_view_list_get_instance_private (view);
+
+    return gl_journal_model_get_boot_ids (priv->journal_model);
+}
+
 gboolean
 gl_event_view_list_handle_search_event (GlEventViewList *view,
                                         GAction *action,
@@ -408,16 +419,18 @@ on_notify_category (GlCategoryList *list,
         case GL_CATEGORY_LIST_FILTER_IMPORTANT:
             {
               /* Alert or emergency priority. */
-              const gchar * query[] = { "PRIORITY=0", "PRIORITY=1", "PRIORITY=2", "PRIORITY=3", NULL };
+              const gchar * query[] = { "PRIORITY=0", "PRIORITY=1", "PRIORITY=2", "PRIORITY=3", NULL, NULL };
 
+              query[4] = priv->boot_match;
               gl_journal_model_set_matches (priv->journal_model, query);
             }
             break;
 
         case GL_CATEGORY_LIST_FILTER_ALL:
             {
-                const gchar *query[] = { NULL };
+                const gchar *query[] = { NULL, NULL };
 
+                query[0] = priv->boot_match;
                 gl_journal_model_set_matches (priv->journal_model, query);
             }
             break;
@@ -431,10 +444,12 @@ on_notify_category (GlCategoryList *list,
                                          "_TRANSPORT=stdout",
                                          "_TRANSPORT=syslog",
                                          NULL,
+                                         NULL,
                                          NULL };
 
                 uid_str = create_uid_match_string ();
                 query[3] = uid_str;
+                query[4] = priv->boot_match;
                 gl_journal_model_set_matches (priv->journal_model, query);
 
                 g_free (uid_str);
@@ -443,24 +458,27 @@ on_notify_category (GlCategoryList *list,
 
         case GL_CATEGORY_LIST_FILTER_SYSTEM:
             {
-                const gchar *query[] = { "_TRANSPORT=kernel", NULL };
+                const gchar *query[] = { "_TRANSPORT=kernel", NULL, NULL };
 
+                query[1] = priv->boot_match;
                 gl_journal_model_set_matches (priv->journal_model, query);
             }
             break;
 
         case GL_CATEGORY_LIST_FILTER_HARDWARE:
             {
-                const gchar *query[] = { "_TRANSPORT=kernel", "_KERNEL_DEVICE", NULL };
+                const gchar *query[] = { "_TRANSPORT=kernel", "_KERNEL_DEVICE", NULL, NULL };
 
+                query[2] = priv->boot_match;
                 gl_journal_model_set_matches (priv->journal_model, query);
             }
             break;
 
         case GL_CATEGORY_LIST_FILTER_SECURITY:
             {
-                const gchar *query[] = { "_AUDIT_SESSION", NULL };
+                const gchar *query[] = { "_AUDIT_SESSION", NULL, NULL };
 
+                query[1] = priv->boot_match;
                 gl_journal_model_set_matches (priv->journal_model, query);
             }
             break;
@@ -473,6 +491,21 @@ on_notify_category (GlCategoryList *list,
     sort_order = g_settings_get_enum (settings, SORT_ORDER);
     g_object_unref (settings);
     gl_event_view_list_set_sort_order (view, sort_order);
+}
+
+void
+gl_event_view_list_view_boot (GlEventViewList *view, const gchar *match)
+{
+    GlEventViewListPrivate *priv;
+    GlCategoryList *categories;
+
+    g_return_if_fail (GL_EVENT_VIEW_LIST (view));
+
+    priv = gl_event_view_list_get_instance_private (view);
+    categories = GL_CATEGORY_LIST (priv->categories);
+    priv->boot_match = match;
+
+    on_notify_category (categories, NULL, view);
 }
 
 static gint
@@ -662,10 +695,13 @@ gl_event_view_list_init (GlEventViewList *view)
     gtk_widget_init_template (GTK_WIDGET (view));
 
     priv = gl_event_view_list_get_instance_private (view);
+
     priv->search_text = NULL;
+    priv->boot_match = NULL;
     priv->category_sizegroup = gtk_size_group_new (GTK_SIZE_GROUP_BOTH);
     priv->message_sizegroup = gtk_size_group_new (GTK_SIZE_GROUP_BOTH);
     priv->time_sizegroup = gtk_size_group_new (GTK_SIZE_GROUP_BOTH);
+
     categories = GL_CATEGORY_LIST (priv->categories);
 
     priv->journal_model = gl_journal_model_new ();

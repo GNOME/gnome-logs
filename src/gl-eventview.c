@@ -58,6 +58,32 @@ static GParamSpec *obj_properties[N_PROPERTIES] = { NULL, };
 static const gchar DESKTOP_SCHEMA[] = "org.gnome.desktop.interface";
 static const gchar CLOCK_FORMAT[] = "clock-format";
 
+GArray *
+gl_event_view_get_boot_ids (GlEventView *view)
+{
+    GlEventViewPrivate *priv;
+    GlEventViewList *events;
+
+    priv = gl_event_view_get_instance_private (view);
+    events = GL_EVENT_VIEW_LIST (priv->events);
+
+    return gl_event_view_list_get_boot_ids (events);
+}
+
+void
+gl_event_view_view_boot (GlEventView *view, const gchar *match)
+{
+    GlEventViewList *events;
+    GlEventViewPrivate *priv;
+
+    g_return_if_fail (GL_EVENT_VIEW (view));
+
+    priv = gl_event_view_get_instance_private (view);
+    events = GL_EVENT_VIEW_LIST (priv->events);
+
+    gl_event_view_list_view_boot (events, match);
+}
+
 void
 gl_event_view_show_detail (GlEventView *view)
 {

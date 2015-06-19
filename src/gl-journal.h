@@ -21,6 +21,7 @@
 #define GL_JOURNAL_H_
 
 #include <gio/gio.h>
+#include <systemd/sd-journal.h>
 
 G_BEGIN_DECLS
 
@@ -58,12 +59,19 @@ typedef struct
     GObjectClass parent_class;
 } GlJournalClass;
 
+typedef struct
+{
+    gchar *boot_match;
+    guint64 realtime;
+} GlJournalBootID;
+
 #define GL_TYPE_JOURNAL (gl_journal_get_type ())
 #define GL_JOURNAL(object) (G_TYPE_CHECK_INSTANCE_CAST ((object), GL_TYPE_JOURNAL, GlJournal))
 
 GType gl_journal_result_get_type (void);
 GType gl_journal_get_type (void);
 void gl_journal_set_matches (GlJournal *journal, const gchar * const *matches);
+GArray * gl_journal_get_boot_ids (GlJournal *journal);
 GlJournalEntry * gl_journal_previous (GlJournal *journal);
 GlJournal * gl_journal_new (void);
 

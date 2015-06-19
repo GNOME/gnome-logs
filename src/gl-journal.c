@@ -42,12 +42,19 @@ struct _GlJournalEntry
 
 G_DEFINE_TYPE (GlJournalEntry, gl_journal_entry, G_TYPE_OBJECT);
 
+/* "_BOOT_ID=" contains 9 characters, and 33 more characters is needed to
+ * store the string formated from a 128-bit ID. The ID will be formatted as
+ * 32 lowercase hexadecimal digits and be terminated by a NUL byte. So an
+ * array of with a size 42 is need. */
+static char match[42] = "_BOOT_ID=";
+
 typedef struct
 {
     sd_journal *journal;
     gint fd;
     guint source_id;
     gchar **mandatory_fields;
+    GArray *boot_ids;
 } GlJournalPrivate;
 
 G_DEFINE_TYPE_WITH_PRIVATE (GlJournal, gl_journal, G_TYPE_OBJECT)
@@ -56,6 +63,105 @@ GQuark
 gl_journal_error_quark (void)
 {
     return g_quark_from_static_string ("gl-journal-error-quark");
+}
+
+static gint
+boot_id_cmp (const void *a, const void *b)
+{
+    guint64 _a, _b;
+
+    _a = ((const GlJournalBootID *)a)->realtime;
+    _b = ((const GlJournalBootID *)b)->realtime;
+
+    return _a < _b ? -1 : (_a > _b ? 1 : 0);
+}
+
+static void
+gl_journal_get_boots (GlJournal *journal)
+{
+    GlJournalPrivate *priv;
+    int r;
+    const void *data;
+    size_t length;
+
+    g_return_if_fail (GL_JOURNAL (journal));
+
+    priv = gl_journal_get_instance_private (journal);
+
+    r = sd_journal_query_unique (priv->journal, "_BOOT_ID");
+    if (r < 0)
+    {
+        g_warning ("Error reading unique data fields: %s", g_strerror (-r));
+    }
+
+    SD_JOURNAL_FOREACH_UNIQUE (priv->journal, data, length)
+    {
+        gchar *boot_match;
+        GlJournalBootID boot_id;
+        sd_id128_t id;
+
+        r = sd_id128_from_string (((const char *)data) + strlen ("_BOOT_ID="),
+                                  &id);
+        if (r < 0)
+        {
+            g_warning ("Error parsing strings into 128-bit IDs: %s",
+                       g_strerror (-r));
+            continue;
+        }
+
+        /* convert id.boot_id into boot_match */
+        sd_id128_to_string (id, match + 9);
+        boot_match = g_strdup (match);
+        boot_id.boot_match = boot_match;
+
+        r = sd_journal_add_match (priv->journal, data, length);
+        if (r < 0)
+        {
+            g_warning ("Error adding entry match: %s", g_strerror (-r));
+        }
+
+        r = sd_journal_seek_head (priv->journal);
+        if (r < 0)
+        {
+            g_warning ("Error seeking to the beginning of the journal: %s\n",
+                       g_strerror (-r));
+        }
+
+        r = sd_journal_next (priv->journal);
+        if (r < 0)
+        {
+            g_warning ("Error advance the read pointer in the journal: %s",
+                       g_strerror (-r));
+        }
+        else if (r == 0)
+        {
+            goto flush;
+        }
+
+        r = sd_journal_get_realtime_usec (priv->journal, &boot_id.realtime);
+        if (r < 0)
+        {
+            g_warning ("Error retrieving the sender timestamps: %s",
+                       g_strerror (-r));
+        }
+
+        priv->boot_ids = g_array_append_val (priv->boot_ids, boot_id);
+
+    flush:
+        sd_journal_flush_matches (priv->journal);
+    }
+
+    g_array_sort (priv->boot_ids, boot_id_cmp);
+}
+
+GArray *
+gl_journal_get_boot_ids (GlJournal *journal)
+{
+    GlJournalPrivate *priv;
+
+    priv = gl_journal_get_instance_private (journal);
+
+    return priv->boot_ids;
 }
 
 static gboolean
@@ -91,12 +197,23 @@ on_journal_changed (gint fd,
 static void
 gl_journal_finalize (GObject *object)
 {
+    guint i;
     GlJournal *journal = GL_JOURNAL (object);
     GlJournalPrivate *priv = gl_journal_get_instance_private (journal);
 
     g_source_remove (priv->source_id);
     g_clear_pointer (&priv->journal, sd_journal_close);
     g_clear_pointer (&priv->mandatory_fields, g_strfreev);
+
+    for (i = 0; i < priv->boot_ids->len; i++)
+    {
+        GlJournalBootID *boot_id;
+
+        boot_id = &g_array_index (priv->boot_ids, GlJournalBootID, i);
+
+        g_free (boot_id->boot_match);
+    }
+    g_array_free (priv->boot_ids, TRUE);
 }
 
 static void
@@ -160,6 +277,9 @@ gl_journal_init (GlJournal *self)
         g_debug ("Immediate wakeups expected for systemd journal activity");
     }
 
+    priv->boot_ids = g_array_new (FALSE, TRUE, sizeof (GlJournalBootID));
+
+    gl_journal_get_boots (self);
 }
 
 static gchar *

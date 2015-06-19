@@ -246,6 +246,12 @@ gl_journal_model_set_matches (GlJournalModel      *model,
     gl_journal_model_fetch_more_entries (model, FALSE);
 }
 
+GArray *
+gl_journal_model_get_boot_ids (GlJournalModel *model)
+{
+    return gl_journal_get_boot_ids (model->journal);
+}
+
 /**
  * gl_journal_model_get_loading:
  * @model: a #GlJournalModel

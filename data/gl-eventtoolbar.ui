@@ -22,6 +22,20 @@
             </object>
         </child>
         <child>
+            <object class="GtkMenuButton" id="menu_button">
+                <property name="direction">none</property>
+                <property name="tooltip-text" translatable="yes">Choose the boot from which to view logs</property>
+                <property name="valign">center</property>
+                <property name="visible">True</property>
+                <style>
+                    <class name="image-button"/>
+                </style>
+            </object>
+            <packing>
+                <property name="pack-type">end</property>
+            </packing>
+        </child>
+        <child>
             <object class="GtkToggleButton" id="search_button">
                 <property name="action-name">win.search</property>
                 <property name="tooltip-text" translatable="yes">Search the displayed logs</property>

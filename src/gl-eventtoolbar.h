@@ -44,6 +44,7 @@ gboolean gl_event_toolbar_handle_back_button_event (GlEventToolbar *toolbar,
                                                     GdkEventKey *event);
 void gl_event_toolbar_set_mode (GlEventToolbar *toolbar,
                                 GlEventToolbarMode mode);
+void gl_event_toolbar_add_boots (GlEventToolbar *toolbar, GArray *boot_ids);
 
 G_END_DECLS
 

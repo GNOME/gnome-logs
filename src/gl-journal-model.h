@@ -34,4 +34,6 @@ gboolean                gl_journal_model_get_loading                    (GlJourn
 void                    gl_journal_model_fetch_more_entries             (GlJournalModel *model,
                                                                          gboolean        all);
 
+GArray *                gl_journal_model_get_boot_ids                   (GlJournalModel *model);
+
 #endif

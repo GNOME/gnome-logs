@@ -168,6 +168,23 @@ on_search (GSimpleAction *action,
     g_simple_action_set_state (action, variant);
 }
 
+static void
+on_view_boot (GSimpleAction *action,
+              GVariant *variant,
+              gpointer user_data)
+{
+    GlWindowPrivate *priv;
+    GlEventView *event;
+    const gchar *boot_match;
+
+    priv = gl_window_get_instance_private (GL_WINDOW (user_data));
+    event = GL_EVENT_VIEW (priv->event);
+
+    boot_match = g_variant_get_string (variant, NULL);
+
+    gl_event_view_view_boot (event, boot_match);
+}
+
 static gboolean
 on_gl_window_key_press_event (GlWindow *window,
                               GdkEvent *event,
@@ -242,6 +259,7 @@ static GActionEntry actions[] = {
     { "view-mode", on_action_radio, "s", "'list'", on_view_mode },
     { "toolbar-mode", on_action_radio, "s", "'list'", on_toolbar_mode },
     { "search", on_action_toggle, NULL, "false", on_search },
+    { "view-boot", on_view_boot, "s", NULL, NULL },
     { "close", on_close }
 };
 
@@ -266,8 +284,19 @@ gl_window_init (GlWindow *window)
 {
     GtkCssProvider *provider;
     GdkScreen *screen;
+    GlWindowPrivate *priv;
+    GlEventToolbar *toolbar;
+    GlEventView *event;
+    GArray *boot_ids;
 
     gtk_widget_init_template (GTK_WIDGET (window));
+
+    priv = gl_window_get_instance_private (window);
+    event = GL_EVENT_VIEW (priv->event);
+    toolbar = GL_EVENT_TOOLBAR (priv->event_toolbar);
+
+    boot_ids = gl_event_view_get_boot_ids (event);
+    gl_event_toolbar_add_boots (toolbar, boot_ids);
 
     g_action_map_add_action_entries (G_ACTION_MAP (window), actions,
                                      G_N_ELEMENTS (actions), window);

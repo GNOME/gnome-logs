@@ -22,6 +22,7 @@
 
 #include "gl-enums.h"
 #include "gl-eventviewlist.h"
+#include "gl-util.h"
 
 enum
 {
@@ -39,13 +40,67 @@ struct _GlEventToolbar
 typedef struct
 {
     GtkWidget *back_button;
+    GtkWidget *menu_button;
     GtkWidget *search_button;
     GlEventToolbarMode mode;
 } GlEventToolbarPrivate;
 
 G_DEFINE_TYPE_WITH_PRIVATE (GlEventToolbar, gl_event_toolbar, GTK_TYPE_HEADER_BAR)
 
+static const gchar DESKTOP_SCHEMA[] = "org.gnome.desktop.interface";
+static const gchar CLOCK_FORMAT[] = "clock-format";
 static GParamSpec *obj_properties[N_PROPERTIES] = { NULL, };
+
+void
+gl_event_toolbar_add_boots (GlEventToolbar *toolbar,
+                           GArray *boot_ids)
+{
+    gint i;
+    GMenu *boot_menu;
+    GlEventToolbarPrivate *priv;
+    GSettings *settings;
+    GlUtilClockFormat clock_format;
+
+    priv = gl_event_toolbar_get_instance_private (toolbar);
+
+    /* TODO: Monitor and propagate any GSettings changes. */
+    settings = g_settings_new (DESKTOP_SCHEMA);
+    clock_format = g_settings_get_enum (settings, CLOCK_FORMAT);
+
+    g_object_unref (settings);
+
+    boot_menu = g_menu_new ();
+
+    for (i = boot_ids->len - 1; i >= boot_ids->len - 5 && i >= 0; i--)
+    {
+        gchar *boot_match;
+        gchar *time;
+        GDateTime *now;
+        GlJournalBootID *boot_id;
+        GMenuItem *item;
+        GVariant *variant;
+
+        boot_id = &g_array_index (boot_ids, GlJournalBootID, i);
+        boot_match = boot_id->boot_match;
+
+        now = g_date_time_new_now_local ();
+        time = gl_util_timestamp_to_display (boot_id->realtime,
+                                             now, clock_format);
+
+        item = g_menu_item_new (time, NULL);
+        variant = g_variant_new_string (boot_match);
+        g_menu_item_set_action_and_target_value (item, "win.view-boot",
+                                                 variant);
+        g_menu_append_item (boot_menu, item);
+
+        g_date_time_unref (now);
+        g_free (time);
+        g_object_unref (item);
+    }
+
+    gtk_menu_button_set_menu_model (GTK_MENU_BUTTON (priv->menu_button),
+                                    G_MENU_MODEL (boot_menu));
+}
 
 static void
 on_gl_event_toolbar_back_button_clicked (GlEventToolbar *toolbar,
@@ -68,10 +123,12 @@ on_notify_mode (GlEventToolbar *toolbar,
     {
         case GL_EVENT_TOOLBAR_MODE_LIST:
             gtk_widget_hide (priv->back_button);
+            gtk_widget_show (priv->menu_button);
             gtk_widget_show (priv->search_button);
             break;
         case GL_EVENT_TOOLBAR_MODE_DETAIL:
             gtk_widget_show (priv->back_button);
+            gtk_widget_hide (priv->menu_button);
             gtk_widget_hide (priv->search_button);
             break;
         default:
@@ -166,6 +223,8 @@ gl_event_toolbar_class_init (GlEventToolbarClass *klass)
                                                  "/org/gnome/Logs/gl-eventtoolbar.ui");
     gtk_widget_class_bind_template_child_private (widget_class, GlEventToolbar,
                                                   back_button);
+    gtk_widget_class_bind_template_child_private (widget_class, GlEventToolbar,
+                                                  menu_button);
     gtk_widget_class_bind_template_child_private (widget_class, GlEventToolbar,
                                                   search_button);
 
