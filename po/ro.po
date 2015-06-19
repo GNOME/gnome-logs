@@ -3,23 +3,23 @@
 # This file is distributed under the same license as the gnome-logs package.
 # Daniel Șerbănescu <daniel [at] serbanescu [dot] dk>, 2014.
 # Bogdan Mințoi <mintoi.bogdan@gmail.com>, 2014.
-#
+# Daniel Șerbănescu <daniel [at] serbanescu [dot] dk>, 2015.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-11-11 12:42+0000\n"
-"PO-Revision-Date: 2014-10-28 09:50+0200\n"
-"Last-Translator: Bogdan Mințoi <mintoi.bogdan@gmail.com>\n"
-"Language-Team: Română <>\n"
+"POT-Creation-Date: 2015-06-19 07:16+0000\n"
+"PO-Revision-Date: 2015-06-19 20:33+0200\n"
+"Last-Translator: Daniel Șerbănescu <daniel [at] serbanescu [dot] dk>\n"
+"Language-Team: Gnome Romanian Translation Team\n"
 "Language: ro\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
-"20)) ? 1 : 2);\n"
-"X-Generator: Gtranslator 2.91.6\n"
+"20)) ? 1 : 2);;\n"
+"X-Generator: Virtaal 0.7.1\n"
 "X-Project-Style: gnome\n"
 
 #: ../data/gl-categorylist.ui.h:1
@@ -38,19 +38,19 @@ msgstr "Marcate"
 msgid "All"
 msgstr "Toate"
 
-#: ../data/gl-categorylist.ui.h:5
+#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:167
 msgid "Applications"
 msgstr "Aplicații"
 
-#: ../data/gl-categorylist.ui.h:6
+#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:176
 msgid "System"
 msgstr "Sistem"
 
-#: ../data/gl-categorylist.ui.h:7
+#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:180
 msgid "Security"
 msgstr "Securitate"
 
-#: ../data/gl-categorylist.ui.h:8
+#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:172
 msgid "Hardware"
 msgstr "Hardware"
 
@@ -156,65 +156,77 @@ msgid "log;journal;debug;error;"
 msgstr ""
 "log;journal;debug;error;jurnal;eroare;depanare;înregistrare;înregistrări;"
 
-#: ../src/gl-application.c:100
+#: ../data/org.gnome.Logs.gschema.xml.h:1
+msgid "How to sort list rows in the event view list"
+msgstr "Cum să sortez rândurile listă în lista vizualizării evenimentelor"
+
+#: ../data/org.gnome.Logs.gschema.xml.h:2
+msgid "Sort list rows in ascending or descending order for the selected type"
+msgstr ""
+"Sortează rândurile listă în ordine ascendentă sau descendentă pentru tipul "
+"selectat"
+
+#: ../src/gl-application.c:109
 msgid "translator-credits"
 msgstr "Bogdan Mințoi <mintoi.bogdan@gmail.com> 2014"
 
-#: ../src/gl-application.c:101
+#: ../src/gl-application.c:110
 msgid "View and search logs"
 msgstr "Vizualizare și căutare de înregistrări"
 
-#: ../src/gl-application.c:209
+#: ../src/gl-application.c:237
 msgid "Print version information and exit"
 msgstr "Afișează informații despre versiune și ieși"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventviewlist.c:279
+#: ../src/gl-eventviewlist.c:318
 msgid "No results"
 msgstr "Niciun rezultat"
 
-#: ../src/gl-eventviewlist.c:671 ../src/gl-eventviewlist.c:684
-#: ../src/gl-eventviewlist.c:833 ../src/gl-eventviewlist.c:846
-msgid "Not implemented"
-msgstr "Nu este implementat"
+#: ../src/gl-eventviewrow.c:184
+msgid "Other"
+msgstr "Alta"
 
 #. Translators: timestamp format for events on the current
 #. * day, showing the time in 12-hour format.
-#: ../src/gl-util.c:95
+#: ../src/gl-util.c:138
 msgid "%l:%M %p"
 msgstr "%l:%M %p"
 
 #. Translators: timestamp format for events in the current
 #. * year, showing the abbreviated month name, day of the
 #. * month and the time in 12-hour format.
-#: ../src/gl-util.c:101
+#: ../src/gl-util.c:144
 msgid "%b %e %l:%M %p"
 msgstr "%b %e %l:%M %p"
 
 #. Translators: timestamp format for events in a different
 #. * year, showing the abbreviated month name, day of the
 #. * month, year and the time in 12-hour format.
-#: ../src/gl-util.c:107
+#: ../src/gl-util.c:150
 msgid "%b %e %Y %l:%M %p"
 msgstr "%b %e %Y %l:%M %p"
 
 #. Translators: timestamp format for events on the current
 #. * day, showing the time in 24-hour format.
-#: ../src/gl-util.c:120
+#: ../src/gl-util.c:163
 msgid "%H:%M"
 msgstr "%H:%M"
 
 #. Translators: timestamp format for events in the current
 #. * year, showing the abbreviated month name, day of the
 #. * month and the time in 24-hour format.
-#: ../src/gl-util.c:126
+#: ../src/gl-util.c:169
 msgid "%b %e %H:%M"
 msgstr "%b %e %H:%M"
 
 #. Translators: timestamp format for events in a different
 #. * year, showing the abbreviated month name, day of the
 #. * month, year and the time in 24-hour format.
-#: ../src/gl-util.c:132
+#: ../src/gl-util.c:175
 msgid "%b %e %Y %H:%M"
 msgstr "%b %e %Y %H:%M"
+
+#~ msgid "Not implemented"
+#~ msgstr "Nu este implementat"
