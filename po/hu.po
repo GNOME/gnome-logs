@@ -1,17 +1,17 @@
 # Hungarian translation for gnome-logs.
-# Copyright (C) 2013 gnome-logs's COPYRIGHT HOLDER
+# Copyright (C) 2013, 2014, 2015 Free Software Foundation, Inc.
 # This file is distributed under the same license as the gnome-logs package.
 #
-# Balázs Úr <urbalazs at gmail dot com>, 2013, 2014.
+# Balázs Úr <urbalazs at gmail dot com>, 2013, 2014, 2015.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-12-03 09:28+0000\n"
-"PO-Revision-Date: 2014-12-03 16:59+0100\n"
+"POT-Creation-Date: 2015-06-22 19:16+0000\n"
+"PO-Revision-Date: 2015-06-22 23:45+0200\n"
 "Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
-"Language-Team: Hungarian <gnome-hu-list@gnome.org>\n"
+"Language-Team: Hungarian <openscope at googlegroups dot com>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -35,19 +35,19 @@ msgstr "Csillagozott"
 msgid "All"
 msgstr "Összes"
 
-#: ../data/gl-categorylist.ui.h:5
+#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:167
 msgid "Applications"
 msgstr "Alkalmazások"
 
-#: ../data/gl-categorylist.ui.h:6
+#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:176
 msgid "System"
 msgstr "Rendszer"
 
-#: ../data/gl-categorylist.ui.h:7
+#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:180
 msgid "Security"
 msgstr "Biztonság"
 
-#: ../data/gl-categorylist.ui.h:8
+#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:172
 msgid "Hardware"
 msgstr "Hardver"
 
@@ -160,66 +160,67 @@ msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr ""
 "A kijelölt típus listasorainak rendezése növekvő vagy csökkenő sorrendben"
 
-#: ../src/gl-application.c:103
+#: ../src/gl-application.c:109
 msgid "translator-credits"
 msgstr "Úr Balázs <urbalazs@gmail.com>"
 
-#: ../src/gl-application.c:104
+#: ../src/gl-application.c:110
 msgid "View and search logs"
 msgstr "Naplók megtekintése és keresése"
 
-#: ../src/gl-application.c:231
+#: ../src/gl-application.c:237
 msgid "Print version information and exit"
 msgstr "Verzióinformációk kiírása és kilépés"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventviewlist.c:281
+#: ../src/gl-eventviewlist.c:318
 msgid "No results"
 msgstr "Nincs találat"
 
-#: ../src/gl-eventviewlist.c:673 ../src/gl-eventviewlist.c:686
-#: ../src/gl-eventviewlist.c:835 ../src/gl-eventviewlist.c:848
-msgid "Not implemented"
-msgstr "Nincs megvalósítva"
+#: ../src/gl-eventviewrow.c:184
+msgid "Other"
+msgstr "Egyéb"
 
 #. Translators: timestamp format for events on the current
 #. * day, showing the time in 12-hour format.
-#: ../src/gl-util.c:95
+#: ../src/gl-util.c:138
 msgid "%l:%M %p"
 msgstr "%p %l.%M"
 
 #. Translators: timestamp format for events in the current
 #. * year, showing the abbreviated month name, day of the
 #. * month and the time in 12-hour format.
-#: ../src/gl-util.c:101
+#: ../src/gl-util.c:144
 msgid "%b %e %l:%M %p"
 msgstr "%b %e. %p %l.%M"
 
 #. Translators: timestamp format for events in a different
 #. * year, showing the abbreviated month name, day of the
 #. * month, year and the time in 12-hour format.
-#: ../src/gl-util.c:107
+#: ../src/gl-util.c:150
 msgid "%b %e %Y %l:%M %p"
 msgstr "%Y. %b %e. %p %l.%M"
 
 #. Translators: timestamp format for events on the current
 #. * day, showing the time in 24-hour format.
-#: ../src/gl-util.c:120
+#: ../src/gl-util.c:163
 msgid "%H:%M"
 msgstr "%H.%M"
 
 #. Translators: timestamp format for events in the current
 #. * year, showing the abbreviated month name, day of the
 #. * month and the time in 24-hour format.
-#: ../src/gl-util.c:126
+#: ../src/gl-util.c:169
 msgid "%b %e %H:%M"
 msgstr "%b %e. %H.%M"
 
 #. Translators: timestamp format for events in a different
 #. * year, showing the abbreviated month name, day of the
 #. * month, year and the time in 24-hour format.
-#: ../src/gl-util.c:132
+#: ../src/gl-util.c:175
 msgid "%b %e %Y %H:%M"
 msgstr "%Y. %b %e. %H.%M"
 
+#~ msgid "Not implemented"
+#~ msgstr "Nincs megvalósítva"
