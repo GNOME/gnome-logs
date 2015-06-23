@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-01-12 07:50+0000\n"
-"PO-Revision-Date: 2015-01-12 16:02+0300\n"
+"POT-Creation-Date: 2015-06-23 19:12+0000\n"
+"PO-Revision-Date: 2015-06-24 01:17+0300\n"
 "Last-Translator: Stas Solovey <whats_up@tut.by>\n"
 "Language-Team: Русский <gnome-cyr@gnome.org>\n"
 "Language: ru\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
-"X-Generator: Gtranslator 2.91.6\n"
+"X-Generator: Gtranslator 2.91.7\n"
 
 #: ../data/gl-categorylist.ui.h:1
 msgid "Important"
@@ -38,19 +38,19 @@ msgstr "Избранные"
 msgid "All"
 msgstr "Все"
 
-#: ../data/gl-categorylist.ui.h:5
+#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:167
 msgid "Applications"
 msgstr "Приложения"
 
-#: ../data/gl-categorylist.ui.h:6
+#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:176
 msgid "System"
 msgstr "Система"
 
-#: ../data/gl-categorylist.ui.h:7
+#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:180
 msgid "Security"
 msgstr "Безопасность"
 
-#: ../data/gl-categorylist.ui.h:8
+#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:172
 msgid "Hardware"
 msgstr "Оборудование"
 
@@ -164,32 +164,31 @@ msgstr ""
 "Сортировать список строк в порядке возрастания или убывания для выбранного "
 "типа"
 
-#: ../src/gl-application.c:103
+#: ../src/gl-application.c:109
 msgid "translator-credits"
 msgstr "Станислав Соловей <whats_up@tut.by>, 2014, 2015."
 
-#: ../src/gl-application.c:104
+#: ../src/gl-application.c:110
 msgid "View and search logs"
 msgstr "Просмотр и поиск событий"
 
-#: ../src/gl-application.c:231
+#: ../src/gl-application.c:237
 msgid "Print version information and exit"
 msgstr "Показать информацию о версии и выйти"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventviewlist.c:281
+#: ../src/gl-eventviewlist.c:318
 msgid "No results"
 msgstr "Результаты отсутствуют"
 
-#: ../src/gl-eventviewlist.c:673 ../src/gl-eventviewlist.c:686
-#: ../src/gl-eventviewlist.c:835 ../src/gl-eventviewlist.c:848
-msgid "Not implemented"
-msgstr "Не реализовано"
+#: ../src/gl-eventviewrow.c:184
+msgid "Other"
+msgstr "Другое"
 
 #. Translators: timestamp format for events on the current
 #. * day, showing the time in 12-hour format.
-#: ../src/gl-util.c:95
+#: ../src/gl-util.c:138
 msgid "%l:%M %p"
 msgstr "%l:%M %p"
 
@@ -197,7 +196,7 @@ msgstr "%l:%M %p"
 #. Translators: timestamp format for events in the current
 #. * year, showing the abbreviated month name, day of the
 #. * month and the time in 12-hour format.
-#: ../src/gl-util.c:101
+#: ../src/gl-util.c:144
 msgid "%b %e %l:%M %p"
 msgstr "%e %b., %l:%M %p"
 
@@ -205,13 +204,13 @@ msgstr "%e %b., %l:%M %p"
 #. Translators: timestamp format for events in a different
 #. * year, showing the abbreviated month name, day of the
 #. * month, year and the time in 12-hour format.
-#: ../src/gl-util.c:107
+#: ../src/gl-util.c:150
 msgid "%b %e %Y %l:%M %p"
-msgstr "%e %b., %Y, %l:%M %p"
+msgstr "%e %b. %Y, %l:%M %p"
 
 #. Translators: timestamp format for events on the current
 #. * day, showing the time in 24-hour format.
-#: ../src/gl-util.c:120
+#: ../src/gl-util.c:163
 msgid "%H:%M"
 msgstr "%H:%M"
 
@@ -219,7 +218,7 @@ msgstr "%H:%M"
 #. Translators: timestamp format for events in the current
 #. * year, showing the abbreviated month name, day of the
 #. * month and the time in 24-hour format.
-#: ../src/gl-util.c:126
+#: ../src/gl-util.c:169
 msgid "%b %e %H:%M"
 msgstr "%e %b., %H:%M"
 
@@ -227,6 +226,9 @@ msgstr "%e %b., %H:%M"
 #. Translators: timestamp format for events in a different
 #. * year, showing the abbreviated month name, day of the
 #. * month, year and the time in 24-hour format.
-#: ../src/gl-util.c:132
+#: ../src/gl-util.c:175
 msgid "%b %e %Y %H:%M"
-msgstr "%e %b., %Y, %H:%M"
+msgstr "%e %b. %Y, %H:%M"
+
+#~ msgid "Not implemented"
+#~ msgstr "Не реализовано"
