@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-03-13 19:59+0000\n"
-"PO-Revision-Date: 2015-03-14 11:21+0500\n"
+"POT-Creation-Date: 2015-06-24 19:16+0000\n"
+"PO-Revision-Date: 2015-06-25 10:21+0500\n"
 "Last-Translator: Victor Ibragimov <victor.ibragimov@gmail.com>\n"
 "Language-Team: Tajik <tg@li.org>\n"
 "Language: tg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.5\n"
+"X-Generator: Poedit 1.7.5\n"
 
 #: ../data/gl-categorylist.ui.h:1
 msgid "Important"
@@ -34,19 +34,19 @@ msgstr "Ситорадор"
 msgid "All"
 msgstr "Ҳама"
 
-#: ../data/gl-categorylist.ui.h:5
+#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:167
 msgid "Applications"
 msgstr "Барномаҳо"
 
-#: ../data/gl-categorylist.ui.h:6
+#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:176
 msgid "System"
 msgstr "Система"
 
-#: ../data/gl-categorylist.ui.h:7
+#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:180
 msgid "Security"
 msgstr "Амният"
 
-#: ../data/gl-categorylist.ui.h:8
+#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:172
 msgid "Hardware"
 msgstr "Сахтафзор"
 
@@ -161,23 +161,27 @@ msgstr ""
 "Мураттаб кардани рӯйхат бо тартиби болошаванда ё камшаванда барои навъи "
 "интихобшуда"
 
-#: ../src/gl-application.c:103
+#: ../src/gl-application.c:109
 msgid "translator-credits"
 msgstr "Victor Ibragimov, victor.ibragimov@gmail.com"
 
-#: ../src/gl-application.c:104
+#: ../src/gl-application.c:110
 msgid "View and search logs"
 msgstr "Намоиш ва ҷустуҷӯи сабтҳои рӯйдодҳо"
 
-#: ../src/gl-application.c:231
+#: ../src/gl-application.c:237
 msgid "Print version information and exit"
 msgstr "Намоиш додани маълумоти версия ва баромадан"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventviewlist.c:288
+#: ../src/gl-eventviewlist.c:318
 msgid "No results"
 msgstr "Ягон натиҷа нест"
+
+#: ../src/gl-eventviewrow.c:184
+msgid "Other"
+msgstr "Дигар"
 
 #. Translators: timestamp format for events on the current
 #. * day, showing the time in 12-hour format.
