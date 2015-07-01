@@ -30,6 +30,12 @@
 #include "gl-eventviewrow.h"
 #include "gl-journal-model.h"
 #include "gl-util.h"
+#ifdef TEST
+        #include "../tests/gl-mock-journal.h"
+#else
+        #include "gl-journal.h"
+#endif
+
 
 struct _GlEventViewList
 {

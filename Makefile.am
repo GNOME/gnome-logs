@@ -145,7 +145,7 @@ tests_test_gl_util_SOURCES = \
 	tests/test-gl-util.c \
 	src/gl-util.c
 
-tests_test_gnome_logs_test_CPPFLAGS = \
+tests_gnome_logs_test_CPPFLAGS = -DTEST \
         -DLOCALEDIR=\""$(localedir)"\" \
         -I$(top_builddir) \
         -I$(top_srcdir)/src \
@@ -159,7 +159,49 @@ tests_gnome_logs_test_LDADD = \
 
 tests_gnome_logs_test_SOURCES = \
         tests/gnome-logs-test.c \
-        tests/gl-journal-mock.c
+	src/gl-application.c \
+        src/gl-categorylist.c \
+        src/gl-eventtoolbar.c \
+        src/gl-eventview.c \
+        src/gl-eventviewdetail.c \
+        src/gl-eventviewlist.c \
+        src/gl-eventviewrow.c \
+        tests/gl-mock-journal.c \
+        src/gl-journal-model.c \
+        src/gl-util.c \
+        src/gl-window.c
+
+nodist_tests_gnome_logs_test_SOURCES = \
+        src/gl-enums.c \
+        src/gl-resource.c
+
+enum_data = \
+        src/gl-enums.c \
+        src/gl-enums.h
+
+tests_gnome_logs_test_enum_headers = \
+        $(srcdir)/src/gl-categorylist.h \
+        $(srcdir)/src/gl-eventtoolbar.h \
+        $(srcdir)/src/gl-eventview.h \
+        $(srcdir)/src/gl-eventviewrow.h \
+        $(srcdir)/src/gl-util.h
+
+noinst_tests_gnome_logs_test_headers = \
+        src/gl-application.h \
+        src/gl-categorylist.h \
+        src/gl-eventtoolbar.h \
+        src/gl-eventview.h \
+        src/gl-eventviewdetail.h \
+        src/gl-eventviewlist.h \
+        src/gl-eventviewrow.h \
+	tests/gl-mock-journal.h \
+        src/gl-journal-model.h \
+        src/gl-util.h \
+        src/gl-window.h
+
+nodist_tests_gnome_logs_test_headers = \
+        src/gl-enums.h \
+        src/gl-resource.h
 
 check_PROGRAMS = \
 	tests/test-gl-util \

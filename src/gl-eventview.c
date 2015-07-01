@@ -28,7 +28,12 @@
 #include "gl-eventtoolbar.h"
 #include "gl-eventviewdetail.h"
 #include "gl-eventviewlist.h"
-#include "gl-journal.h"
+#ifdef TEST
+        #include "../tests/gl-mock-journal.h"
+#else
+        #include "gl-journal.h"
+#endif
+
 #include "gl-util.h"
 
 enum

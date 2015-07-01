@@ -20,6 +20,11 @@
 #define GL_APPLICATION_H_
 
 #include <gtk/gtk.h>
+#ifdef TEST
+        #include "../tests/gl-mock-journal.h"
+#else
+        #include "gl-journal.h"
+#endif
 
 G_BEGIN_DECLS
 

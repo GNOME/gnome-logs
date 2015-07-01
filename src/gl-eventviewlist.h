@@ -22,7 +22,11 @@
 #include <gtk/gtk.h>
 
 #include "gl-application.h"
-#include "gl-journal.h"
+#ifdef TEST
+        #include "../tests/gl-mock-journal.h"
+#else
+        #include "gl-journal.h"
+#endif
 
 G_BEGIN_DECLS
 

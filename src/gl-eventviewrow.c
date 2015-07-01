@@ -21,6 +21,11 @@
 #include <glib/gi18n.h>
 #include <glib-unix.h>
 #include <stdlib.h>
+#ifdef TEST
+        #include "../tests/gl-mock-journal.h"
+#else
+        #include "gl-journal.h"
+#endif
 
 #include "gl-enums.h"
 

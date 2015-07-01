@@ -17,14 +17,13 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#define gl_journal_ gl_mock_journal_
-
-#include "gl-journal-mock.h"
+#include "gl-mock-journal.h"
 
 #include <glib-unix.h>
 #include <gio/gio.h>
 #include <stdlib.h>
 #include <string.h>
+
 
 struct _GlMockJournalEntry
 {
@@ -36,17 +35,27 @@ struct _GlMockJournalEntry
   gchar *comm;
   gchar *kernel_device;
   gchar *audit_session;
+  gchar *transport;
   gchar *catalog;
   guint priority;
+  gint uid;
+
 };
 
 G_DEFINE_TYPE (GlMockJournalEntry, gl_mock_journal_entry, G_TYPE_OBJECT)
+
+/* "_BOOT_ID=" contains 9 characters, and 33 more characters is needed to
+ * store the string formated from a 128-bit ID. The ID will be formatted as
+ * 32 lowercase hexadecimal digits and be terminated by a NUL byte. So an
+ * array of with a size 42 is need. */
+static char match[42] = "_BOOT_ID=";
 
 typedef struct
 {
     gint fd;
     guint source_id;
     gchar **mandatory_fields;
+    GArray *boot_ids;
 } GlMockJournalPrivate;
 
 G_DEFINE_TYPE_WITH_PRIVATE (GlMockJournal, gl_mock_journal, G_TYPE_OBJECT)
@@ -58,21 +67,50 @@ gl_mock_journal_error_quark (void)
 }
 
 static void
+gl_mock_journal_get_boots (GlMockJournal *journal)
+{ 
+}
+
+GArray *
+gl_mock_journal_get_boot_ids (GlMockJournal *journal)
+{
+    GlMockJournalPrivate *priv;
+
+    priv = gl_mock_journal_get_instance_private (journal);
+    priv->boot_ids = g_array_new (FALSE, FALSE, sizeof (GArray));
+    guint64 boot_id = 12;
+    priv->boot_ids = g_array_append_val (priv->boot_ids, boot_id);
+    return priv->boot_ids;
+}
+
+static void
 gl_mock_journal_finalize (GObject *object)
 {
+    guint i;
     GlMockJournal *journal = GL_MOCK_JOURNAL (object);
     GlMockJournalPrivate *priv = gl_mock_journal_get_instance_private (journal);
 
     g_source_remove (priv->source_id);
     g_clear_pointer (&priv->mandatory_fields, g_strfreev);
+    for (i = 0; i < priv->boot_ids->len; i++)
+    {
+        GlJournalBootID *boot_id;
+
+        boot_id = &g_array_index (priv->boot_ids, GlJournalBootID, i);
+
+        g_free (boot_id->boot_match);
+    }
+    g_array_free (priv->boot_ids, TRUE);
+
 }
 
 static void
 gl_mock_journal_class_init (GlMockJournalClass *klass)
 {
-    GObjectClass *gobject_class = G_OBJECT_CLASS (klass);
+ /*   GObjectClass *gobject_class = G_OBJECT_CLASS (klass);
 
     gobject_class->finalize = gl_mock_journal_finalize;
+*/
 }
 
 static void
@@ -290,6 +328,14 @@ gl_mock_journal_entry_get_audit_session (GlMockJournalEntry *entry)
 }
 
 const gchar *
+gl_mock_journal_entry_get_transport (GlMockJournalEntry *entry)
+{
+  g_return_val_if_fail (GL_IS_MOCK_JOURNAL_ENTRY (entry), NULL);
+
+  return entry->transport;
+}
+
+const gchar *
 gl_mock_journal_entry_get_catalog (GlMockJournalEntry *entry)
 {
   g_return_val_if_fail (GL_IS_MOCK_JOURNAL_ENTRY (entry), NULL);
@@ -304,3 +350,12 @@ gl_mock_journal_entry_get_priority (GlMockJournalEntry *entry)
 
   return entry->priority;
 }
+
+gint
+gl_mock_journal_entry_get_uid (GlMockJournalEntry *entry)
+{
+  g_return_val_if_fail (GL_IS_MOCK_JOURNAL_ENTRY (entry), -1);
+
+  return entry->uid;
+}
+             

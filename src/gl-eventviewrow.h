@@ -23,7 +23,13 @@
 
 G_BEGIN_DECLS
 
-#include "gl-journal.h"
+#ifdef TEST
+        #include "../tests/gl-mock-journal.h"
+#else
+        #include "gl-journal.h"
+#endif
+
+
 #include "gl-util.h"
 
 /*

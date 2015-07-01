@@ -21,7 +21,27 @@
 #define GL_MOCK_JOURNAL_H_
 
 #include <gio/gio.h>
-
+#define GL_TYPE_JOURNAL_ENTRY GL_TYPE_MOCK_JOURNAL_ENTRY
+#define GlMockJournalEntry GlJournalEntry
+#define GlMockJournalEntryClass GlJournalEntryClass
+#define GlMockJournalClass GlJournalClass
+#define GlMockJournal GlJournal
+#define GlMockJournalPrivate GlJournalPrivate
+#define GlMockJournalBootID GlJournalBootID
+#define gl_mock_journal_entry_get_type(GlMockJournalEntry) gl_journal_entry_get_type(GlMockJournalEntry)
+#define gl_mock_journal_entry_get_command_line(GlMockJournalEntry) gl_journal_entry_get_command_line(GlMockJournalEntry)
+#define gl_mock_journal_entry_get_timestamp(GlMockJournalEntry) gl_journal_entry_get_timestamp(GlMockJournalEntry)
+#define gl_mock_journal_entry_get_message(GlMockJournalEntry) gl_journal_entry_get_message(GlMockJournalEntry)
+#define gl_mock_journal_entry_get_audit_session(GlMockJournalEntry) gl_journal_entry_get_audit_session(GlMockJournalEntry)
+#define gl_mock_journal_entry_get_kernel_device(GlMockJournalEntry) gl_journal_entry_get_kernel_device(GlMockJournalEntry)
+#define gl_mock_journal_entry_get_priority(GlMockJournalEntry) gl_journal_entry_get_priority(GlMockJournalEntry)
+#define gl_mock_journal_entry_get_catalog(GlMockJournalEntry) gl_journal_entry_get_catalog(GlMockJournalEntry)
+#define gl_mock_journal_entry_get_transport(GlMockJournalEntry) gl_journal_entry_get_transport(GlMockJournalEntry)
+#define gl_mock_journal_entry_get_uid(GlMockJournalEntry) gl_journal_entry_get_uid(GlMockJournalEntry) 
+#define gl_mock_journal_previous(GlMockJournal) gl_journal_previous(GlMockJournal)
+#define gl_mock_journal_new(void) gl_journal_new(void)
+#define gl_mock_journal_set_matches gl_journal_set_matches
+#define gl_mock_journal_get_boot_ids(GlMockJournal) gl_journal_get_boot_ids(GlMockJournal)
 G_BEGIN_DECLS
 
 /*
@@ -58,12 +78,19 @@ typedef struct
     GObjectClass parent_class;
 } GlMockJournalClass;
 
+typedef struct
+{
+    gchar *boot_match;
+    guint64 realtime;
+} GlMockJournalBootID;
+
 #define GL_TYPE_MOCK_JOURNAL (gl_mock_journal_get_type ())
 #define GL_MOCK_JOURNAL(object) (G_TYPE_CHECK_INSTANCE_CAST ((object), GL_TYPE_MOCK_JOURNAL, GlMockJournal))
 
 GType gl_mock_journal_result_get_type (void);
 GType gl_mock_journal_get_type (void);
 void gl_mock_journal_set_matches (GlMockJournal *journal, const gchar * const *matches);
+GArray * gl_mock_journal_get_boot_ids (GlMockJournal *journal);
 GlMockJournalEntry * gl_mock_journal_previous (GlMockJournal *journal);
 GlMockJournal * gl_mock_journal_new (void);
 
@@ -72,8 +99,10 @@ const gchar *           gl_mock_journal_entry_get_message                    (Gl
 const gchar *           gl_mock_journal_entry_get_command_line               (GlMockJournalEntry *entry);
 const gchar *           gl_mock_journal_entry_get_kernel_device              (GlMockJournalEntry *entry);
 const gchar *           gl_mock_journal_entry_get_audit_session              (GlMockJournalEntry *entry);
+const gchar *           gl_mock_journal_entry_get_transport                  (GlMockJournalEntry *entry);
 const gchar *           gl_mock_journal_entry_get_catalog                    (GlMockJournalEntry *entry);
 guint                   gl_mock_journal_entry_get_priority                   (GlMockJournalEntry *entry);
+gint                    gl_mock_journal_entry_get_uid                        (GlMockJournalEntry *entry);
 
 G_END_DECLS
 

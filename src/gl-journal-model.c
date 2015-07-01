@@ -17,7 +17,11 @@
  */
 
 #include "gl-journal-model.h"
-#include "gl-journal.h"
+#ifdef TEST
+	#include "../tests/gl-mock-journal.h"
+#else
+	#include "gl-journal.h"
+#endif
 
 struct _GlJournalModel
 {
