@@ -698,9 +698,9 @@ gl_event_view_list_init (GlEventViewList *view)
 
     priv->search_text = NULL;
     priv->boot_match = NULL;
-    priv->category_sizegroup = gtk_size_group_new (GTK_SIZE_GROUP_BOTH);
-    priv->message_sizegroup = gtk_size_group_new (GTK_SIZE_GROUP_BOTH);
-    priv->time_sizegroup = gtk_size_group_new (GTK_SIZE_GROUP_BOTH);
+    priv->category_sizegroup = gtk_size_group_new (GTK_SIZE_GROUP_HORIZONTAL);
+    priv->message_sizegroup = gtk_size_group_new (GTK_SIZE_GROUP_HORIZONTAL);
+    priv->time_sizegroup = gtk_size_group_new (GTK_SIZE_GROUP_HORIZONTAL);
 
     categories = GL_CATEGORY_LIST (priv->categories);
 

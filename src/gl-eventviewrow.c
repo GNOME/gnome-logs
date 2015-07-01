@@ -236,6 +236,7 @@ gl_event_view_row_constructed (GObject *object)
     gtk_label_set_ellipsize (GTK_LABEL (priv->message_label),
                              PANGO_ELLIPSIZE_END);
     gtk_label_set_xalign (GTK_LABEL (priv->message_label), 0);
+    gtk_label_set_single_line_mode (GTK_LABEL (priv->message_label), TRUE);
     gtk_grid_attach (GTK_GRID (grid), priv->message_label,
                      1, 0, 1, 1);
 
