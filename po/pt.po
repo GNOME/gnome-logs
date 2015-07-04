@@ -2,21 +2,22 @@
 # Copyright © 2014 gnome-logs
 # This file is distributed under the same license as the gnome-logs package.
 # Tiago S. <almosthumane@portugalmail.pt>, 2014, 2015.
+# Pedro Albuquerque <palbuquerque73@openmailbox.com>, 2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-02-16 07:18+0000\n"
-"PO-Revision-Date: 2015-06-10 09:24+0100\n"
-"Last-Translator: Tiago S. <almosthumane@portugalmail.pt>\n"
-"Language-Team: Portuguese <gnome_pt@yahoogroups.com>\n"
+"POT-Creation-Date: 2015-07-03 19:15+0000\n"
+"PO-Revision-Date: 2015-07-04 07:01+0100\n"
+"Last-Translator: Pedro Albuquerque <palbuquerque73@openmailbox.com>\n"
+"Language-Team: Português <palbuquerque73@openmailbox.com>\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Gtranslator 2.91.6\n"
 
 #: ../data/gl-categorylist.ui.h:1
@@ -35,19 +36,19 @@ msgstr "Relevante"
 msgid "All"
 msgstr "Todas"
 
-#: ../data/gl-categorylist.ui.h:5
+#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:167
 msgid "Applications"
 msgstr "Aplicações"
 
-#: ../data/gl-categorylist.ui.h:6
+#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:176
 msgid "System"
 msgstr "Sistema"
 
-#: ../data/gl-categorylist.ui.h:7
+#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:180
 msgid "Security"
 msgstr "Segurança"
 
-#: ../data/gl-categorylist.ui.h:8
+#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:172
 msgid "Hardware"
 msgstr "Equipamento"
 
@@ -70,6 +71,10 @@ msgid "Go back to the event view"
 msgstr "Voltar à vista de evento"
 
 #: ../data/gl-eventtoolbar.ui.h:3
+msgid "Choose the boot from which to view logs"
+msgstr "Escolha de onde quer ver registos"
+
+#: ../data/gl-eventtoolbar.ui.h:4
 msgid "Search the displayed logs"
 msgstr "Procurar os registos mostrados"
 
@@ -160,25 +165,29 @@ msgstr "Como ordenar linhas na vista da lista de eventos"
 msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr "Linhas em ordem ascendente ou descendente para o tipo selecionado"
 
-#: ../src/gl-application.c:103
+#: ../src/gl-application.c:109
 msgid "translator-credits"
 msgstr ""
 "Tiago S.\n"
 "Pedro Albuquerque <palbuquerque73@gmail.com>"
 
-#: ../src/gl-application.c:104
+#: ../src/gl-application.c:110
 msgid "View and search logs"
 msgstr "Ver e procurar registos"
 
-#: ../src/gl-application.c:231
+#: ../src/gl-application.c:237
 msgid "Print version information and exit"
 msgstr "Imprimir informação da versão e sair"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventviewlist.c:280
+#: ../src/gl-eventviewlist.c:329
 msgid "No results"
 msgstr "Sem resultados"
+
+#: ../src/gl-eventviewrow.c:184
+msgid "Other"
+msgstr "Outro"
 
 #. Translators: timestamp format for events on the current
 #. * day, showing the time in 12-hour format.
