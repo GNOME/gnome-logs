@@ -127,25 +127,25 @@ gl_mock_journal_get_data (GlMockJournal *self,
     g_return_val_if_fail (field != NULL, NULL);
 
     if (strcmp(field,"MESSAGE")==0)
-            return "This is a test";
+            return g_strdup("This is a test");
 
     if (strcmp(field,"PRIORITY")==0)
-            return "Low";
+            return g_strdup("3");
 
     if(strcmp(field,"_COMM")==0)
-            return "No idea";
+            return g_strdup("dnf");
  
     if(strcmp(field,"KERNEL_DEVICE")==0)
-	    return "Something";
+	    return g_strdup("c189:3");
 
     if(strcmp(field,"AUDIT_SESSION")==0)
-	    return "Session";
+	    return g_strdup("1");
 
     if(strcmp(field,"TRANSPORT")==0)
-	    return "Transport";
+	    return g_strdup("Transport");
 
     if(strcmp(field,"UID")==0)
-	    return "0001";
+	    return g_strdup("0001");
    return NULL;
 }
 
@@ -156,13 +156,18 @@ gl_mock_journal_query_entry (GlMockJournal *self)
     GError *error = NULL;
 
     entry = g_object_new (GL_TYPE_MOCK_JOURNAL_ENTRY, NULL);
-
+    
+    entry->timestamp = g_strdup("12");
+    entry->cursor = g_strdup("start");
+    entry->catalog = g_strdup("test");
     entry->message = gl_mock_journal_get_data (self, "MESSAGE", NULL);
 
     if (error != NULL)
     {
         g_warning ("%s", error->message);
         g_clear_error (&error);
+        free (entry->cursor);
+        free (entry->catalog);
         goto out;
     }
 
