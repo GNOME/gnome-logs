@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-06-15 07:14+0000\n"
-"PO-Revision-Date: 2015-06-15 \n"
+"POT-Creation-Date: 2015-07-13 07:19+0000\n"
+"PO-Revision-Date: 2015-07-13 \n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español; Castellano <gnome-es-list@gnome.org>\n"
 "Language: es\n"
@@ -71,6 +71,10 @@ msgid "Go back to the event view"
 msgstr "Volver a la vista de eventos"
 
 #: ../data/gl-eventtoolbar.ui.h:3
+msgid "Choose the boot from which to view logs"
+msgstr "Eliga el arranque del que quiere ver los registros"
+
+#: ../data/gl-eventtoolbar.ui.h:4
 msgid "Search the displayed logs"
 msgstr "Buscar los registros mostrados"
 
@@ -176,7 +180,7 @@ msgstr "Mostrar información de la versión y salir"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventviewlist.c:318
+#: ../src/gl-eventviewlist.c:329
 msgid "No results"
 msgstr "No hay resultados"
 
