@@ -60,6 +60,7 @@ main (int argc, char** argv)
     g_test_init (&argc, &argv, NULL);
     g_test_add_func ("/util/check_log_message", check_log_message);
     g_object_unref (application);
- 
-   return g_test_run ();
+    //g_application_quit (G_APPLICATION (application));
+     
+    return g_test_run ();
 }
