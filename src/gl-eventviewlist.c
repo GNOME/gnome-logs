@@ -89,6 +89,9 @@ static gboolean
 search_in_result (GlJournalEntry *entry,
                   const gchar *search_text)
 {
+    gchar *field_name;
+    gchar *field_value;
+    gchar *search_text_copy;
     const gchar *comm;
     const gchar *message;
     const gchar *kernel_device;
@@ -99,13 +102,37 @@ search_in_result (GlJournalEntry *entry,
     kernel_device = gl_journal_entry_get_kernel_device (entry);
     audit_session = gl_journal_entry_get_audit_session (entry);
 
-    if ((comm ? strstr (comm, search_text) : NULL)
-        || (message ? strstr (message, search_text) : NULL)
-        || (kernel_device ? strstr (kernel_device, search_text) : NULL)
-        || (audit_session ? strstr (audit_session, search_text) : NULL))
+    search_text_copy = g_strdup (search_text);
+    field_name = strtok (search_text_copy, "=");
+    field_value = strtok (NULL, " ");
+
+    if (field_value == NULL)
     {
+        if ((comm ? strstr (comm, search_text) : NULL)
+            || (message ? strstr (message, search_text) : NULL)
+            || (kernel_device ? strstr (kernel_device, search_text) : NULL)
+            || (audit_session ? strstr (audit_session, search_text) : NULL))
+        {
+            g_free (search_text_copy);
+
+            return TRUE;
+        }
+    }
+    else if ((strstr ("_COMM", field_name) &&
+              comm ? strstr (comm, field_value) : NULL) ||
+             (strstr ("_MESSAGE", field_name) &&
+              message ? strstr (message, field_value) : NULL) ||
+             (strstr ("_KERNEL_DEVICE", field_name) &&
+              kernel_device ? strstr (kernel_device, field_value) : NULL) ||
+             (strstr ("_AUDIT_SESSION", field_name) &&
+              audit_session ? strstr (audit_session, field_value) : NULL))
+    {
+        g_free (search_text_copy);
+
         return TRUE;
     }
+
+    g_free (search_text_copy);
 
     return FALSE;
 }
@@ -174,27 +201,50 @@ listbox_search_filter_func (GtkListBoxRow *row,
         }
         else
         {
-            gchar *folded_search_term;
+            gchar *field_name;
+            gchar *field_value;
+            gchar *search_text_copy;
             const gchar *comm;
             const gchar *message;
             const gchar *kernel_device;
             const gchar *audit_session;
             gboolean matches;
 
-            folded_search_term = g_utf8_casefold (priv->search_text, -1);
-
             comm = gl_journal_entry_get_command_line (entry);
             message = gl_journal_entry_get_message (entry);
             kernel_device = gl_journal_entry_get_kernel_device (entry);
             audit_session = gl_journal_entry_get_audit_session (entry);
 
-            matches = (comm && utf8_strcasestr (comm, priv->search_text)) ||
-                      (message && utf8_strcasestr (message, priv->search_text)) ||
-                      (kernel_device && utf8_strcasestr (kernel_device, priv->search_text)) ||
-                      (audit_session && utf8_strcasestr (audit_session, priv->search_text));
+            search_text_copy = g_strdup (priv->search_text);
+            field_name = strtok (search_text_copy, "=");
+            field_value = strtok (NULL, " ");
 
-            g_free (folded_search_term);
-            return matches;
+            if (field_value == NULL)
+            {
+                matches = (comm && utf8_strcasestr (comm, priv->search_text)) ||
+                          (message && utf8_strcasestr (message, priv->search_text)) ||
+                          (kernel_device && utf8_strcasestr (kernel_device, priv->search_text)) ||
+                          (audit_session && utf8_strcasestr (audit_session, priv->search_text));
+
+                g_free (search_text_copy);
+
+                return matches;
+            }
+            else
+            {
+                matches = (utf8_strcasestr ("_comm", field_name) &&
+                           comm && strstr (comm, field_value)) ||
+                          (utf8_strcasestr ("_message", field_name) &&
+                           message && strstr (message, field_value)) ||
+                          (utf8_strcasestr ("_kernel_device", field_name) &&
+                           kernel_device && strstr (kernel_device, field_value)) ||
+                          (utf8_strcasestr ("_audit_session", field_name) &&
+                           audit_session && strstr (audit_session, field_value));
+
+                g_free (search_text_copy);
+
+                return matches;
+            }
         }
     }
 
