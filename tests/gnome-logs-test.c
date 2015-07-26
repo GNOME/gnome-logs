@@ -34,7 +34,6 @@
 #include "../src/gl-util.h"
 #include "../src/gl-window.h"
 
-
 static void
 check_log_message (void)
 {  
@@ -47,20 +46,7 @@ check_log_message (void)
 int
 main (int argc, char** argv)
 {
-    GtkApplication *application;
-    int status;
-
-    bindtextdomain (GETTEXT_PACKAGE, LOCALEDIR);
-    bind_textdomain_codeset (PACKAGE_TARNAME, "UTF-8");
-    textdomain (GETTEXT_PACKAGE);
-
-    g_set_prgname (PACKAGE_TARNAME);
-    application = gl_application_new ();
-    status = g_application_run (G_APPLICATION (application), argc, argv);
     g_test_init (&argc, &argv, NULL);
     g_test_add_func ("/util/check_log_message", check_log_message);
-    g_object_unref (application);
-    //g_application_quit (G_APPLICATION (application));
-     
-    return g_test_run ();
+    return g_test_run();
 }
