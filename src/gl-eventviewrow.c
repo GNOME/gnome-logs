@@ -249,6 +249,7 @@ gl_event_view_row_constructed (GObject *object)
     gtk_style_context_add_class (context, "dim-label");
     gtk_style_context_add_class (context, "event-time");
     gtk_widget_set_halign (priv->time_label, GTK_ALIGN_END);
+    gtk_widget_set_hexpand (priv->time_label, TRUE);
     gtk_label_set_xalign (GTK_LABEL (priv->time_label), 1);
     gtk_grid_attach (GTK_GRID (grid), priv->time_label, rtl ? 0 : 2, 0, 1, 1);
 
