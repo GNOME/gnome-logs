@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-logs&keywords=I18N"
 "+L10N&component=general\n"
-"POT-Creation-Date: 2015-07-27 07:19+0000\n"
-"PO-Revision-Date: 2015-07-27 11:33+0200\n"
+"POT-Creation-Date: 2015-07-27 09:34+0000\n"
+"PO-Revision-Date: 2015-07-27 12:18+0200\n"
 "Last-Translator: Dušan Kazik <prescott66@gmail.com>\n"
 "Language-Team: Slovak <gnome-sk-list@gnome.org>\n"
 "Language: sk\n"
@@ -73,7 +73,7 @@ msgstr "Vráti sa do zobrazenia udalostí"
 # tooltip
 #: ../data/gl-eventtoolbar.ui.h:3
 msgid "Choose the boot from which to view logs"
-msgstr "Zvolí zavádzač, z ktorého sa zobrazia záznamy"
+msgstr "Zvolí spustenie systému, z ktorého sa zobrazia záznamy"
 
 #: ../data/gl-eventtoolbar.ui.h:4
 msgid "Search the displayed logs"
