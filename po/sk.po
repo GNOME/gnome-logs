@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-logs&keywords=I18N"
 "+L10N&component=general\n"
-"POT-Creation-Date: 2015-06-16 19:17+0000\n"
-"PO-Revision-Date: 2015-06-17 07:45+0100\n"
+"POT-Creation-Date: 2015-07-27 07:19+0000\n"
+"PO-Revision-Date: 2015-07-27 11:33+0200\n"
 "Last-Translator: Dušan Kazik <prescott66@gmail.com>\n"
 "Language-Team: Slovak <gnome-sk-list@gnome.org>\n"
 "Language: sk\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 1 : (n>=2 && n<=4) ? 2 : 0;\n"
-"X-Generator: Poedit 1.8.1\n"
+"X-Generator: Poedit 1.8.2\n"
 
 #: ../data/gl-categorylist.ui.h:1
 msgid "Important"
@@ -70,7 +70,12 @@ msgstr "Záznamy"
 msgid "Go back to the event view"
 msgstr "Vráti sa do zobrazenia udalostí"
 
+# tooltip
 #: ../data/gl-eventtoolbar.ui.h:3
+msgid "Choose the boot from which to view logs"
+msgstr "Zvolí zavádzač, z ktorého sa zobrazia záznamy"
+
+#: ../data/gl-eventtoolbar.ui.h:4
 msgid "Search the displayed logs"
 msgstr "Prehľadá zobrazené záznamy"
 
@@ -178,7 +183,7 @@ msgstr "Vypíše informácie o verzii a skončí"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventviewlist.c:318
+#: ../src/gl-eventviewlist.c:379
 msgid "No results"
 msgstr "Žiadne výsledky"
 
