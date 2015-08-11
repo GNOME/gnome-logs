@@ -54,6 +54,12 @@ typedef struct
     const gchar *boot_match;
 } GlEventViewListPrivate;
 
+typedef enum
+{
+    LOGICAL_OR = 2,
+    LOGICAL_AND = 3
+} GlEventViewListLogic;
+
 G_DEFINE_TYPE_WITH_PRIVATE (GlEventViewList, gl_event_view_list, GTK_TYPE_BOX)
 
 static const gchar DESKTOP_SCHEMA[] = "org.gnome.desktop.interface";
@@ -86,58 +92,6 @@ gl_event_view_search_is_case_sensitive (GlEventViewList *view)
 }
 
 static gboolean
-search_in_result (GlJournalEntry *entry,
-                  const gchar *search_text)
-{
-    gchar *field_name;
-    gchar *field_value;
-    gchar *search_text_copy;
-    const gchar *comm;
-    const gchar *message;
-    const gchar *kernel_device;
-    const gchar *audit_session;
-
-    comm = gl_journal_entry_get_command_line (entry);
-    message = gl_journal_entry_get_message (entry);
-    kernel_device = gl_journal_entry_get_kernel_device (entry);
-    audit_session = gl_journal_entry_get_audit_session (entry);
-
-    search_text_copy = g_strdup (search_text);
-    field_name = strtok (search_text_copy, "=");
-    field_value = strtok (NULL, " ");
-
-    if (field_value == NULL)
-    {
-        if ((comm ? strstr (comm, search_text) : NULL)
-            || (message ? strstr (message, search_text) : NULL)
-            || (kernel_device ? strstr (kernel_device, search_text) : NULL)
-            || (audit_session ? strstr (audit_session, search_text) : NULL))
-        {
-            g_free (search_text_copy);
-
-            return TRUE;
-        }
-    }
-    else if ((strstr ("_COMM", field_name) &&
-              comm ? strstr (comm, field_value) : NULL) ||
-             (strstr ("_MESSAGE", field_name) &&
-              message ? strstr (message, field_value) : NULL) ||
-             (strstr ("_KERNEL_DEVICE", field_name) &&
-              kernel_device ? strstr (kernel_device, field_value) : NULL) ||
-             (strstr ("_AUDIT_SESSION", field_name) &&
-              audit_session ? strstr (audit_session, field_value) : NULL))
-    {
-        g_free (search_text_copy);
-
-        return TRUE;
-    }
-
-    g_free (search_text_copy);
-
-    return FALSE;
-}
-
-static gboolean
 utf8_strcasestr (const gchar *potential_hit,
                  const gchar *search_term)
 {
@@ -149,6 +103,259 @@ utf8_strcasestr (const gchar *potential_hit,
 
   g_free (folded);
   return matches;
+}
+
+static GPtrArray *
+tokenize_search_string (gchar *search_text)
+{
+    gchar *field_name;
+    gchar *field_value;
+    GPtrArray *token_array;
+    GScanner *scanner;
+
+    token_array = g_ptr_array_new_with_free_func (g_free);
+    scanner = g_scanner_new (NULL);
+    scanner->config->cset_skip_characters = " =\t\n";
+    g_scanner_input_text (scanner, search_text, strlen (search_text));
+
+    do
+    {
+        g_scanner_get_next_token (scanner);
+        if (scanner->value.v_identifier == NULL && scanner->token != '+')
+        {
+            break;
+        }
+
+        if (scanner->token == '+')
+        {
+            g_ptr_array_add (token_array, g_strdup ("+"));
+
+            g_scanner_get_next_token (scanner);
+            if (scanner->value.v_identifier != NULL)
+            {
+                field_name = g_strdup (scanner->value.v_identifier);
+                g_ptr_array_add (token_array, field_name);
+            }
+            else
+            {
+                field_name = NULL;
+            }
+        }
+        else
+        {
+            if (token_array->len != 0)
+            {
+                g_ptr_array_add (token_array, g_strdup (" "));
+            }
+
+            field_name = g_strdup (scanner->value.v_identifier);
+            g_ptr_array_add (token_array, field_name);
+        }
+
+        g_scanner_get_next_token (scanner);
+        if (scanner->value.v_identifier != NULL)
+        {
+            field_value = g_strdup (scanner->value.v_identifier);
+            g_ptr_array_add (token_array, field_value);
+        }
+        else
+        {
+            field_value = NULL;
+        }
+    } while (field_name != NULL && field_value != NULL);
+
+    g_scanner_destroy (scanner);
+
+    return token_array;
+}
+
+static gboolean
+calculate_match (GlJournalEntry *entry,
+                 GPtrArray *token_array,
+                 gboolean case_sensetive)
+{
+    const gchar *comm;
+    const gchar *message;
+    const gchar *kernel_device;
+    const gchar *audit_session;
+    gboolean matches;
+    gchar *field_name;
+    gchar *field_value;
+    gint i;
+    gint match_stack[10];
+    gint match_count = 0;
+    gint token_index = 0;
+
+    comm = gl_journal_entry_get_command_line (entry);
+    message = gl_journal_entry_get_message (entry);
+    kernel_device = gl_journal_entry_get_kernel_device (entry);
+    audit_session = gl_journal_entry_get_audit_session (entry);
+
+    if (token_array->len == 1 && case_sensetive == TRUE)
+    {
+        gchar *search_text;
+
+        search_text = g_ptr_array_index (token_array, 0);
+
+        if ((comm ? strstr (comm, search_text) : NULL)
+            || (message ? strstr (message, search_text) : NULL)
+            || (kernel_device ? strstr (kernel_device, search_text) : NULL)
+            || (audit_session ? strstr (audit_session, search_text) : NULL))
+        {
+            return TRUE;
+        }
+        else
+        {
+            return FALSE;
+        }
+    }
+    else if (token_array->len == 1 && case_sensetive == FALSE)
+    {
+        gchar *search_text;
+
+        search_text = g_ptr_array_index (token_array, 0);
+
+        matches = (comm && utf8_strcasestr (comm, search_text)) ||
+                  (message && utf8_strcasestr (message, search_text)) ||
+                  (kernel_device && utf8_strcasestr (kernel_device, search_text)) ||
+                  (audit_session && utf8_strcasestr (audit_session, search_text));
+
+        return matches;
+    }
+
+    while (token_index < token_array->len)
+    {
+        field_name = g_ptr_array_index (token_array, token_index);
+        token_index++;
+
+        if (token_index == token_array->len)
+        {
+            break;
+        }
+
+        field_value = g_ptr_array_index (token_array, token_index);
+        token_index++;
+
+        if (case_sensetive)
+        {
+            matches = (strstr ("_COMM", field_name) &&
+                       comm &&
+                       strstr (comm, field_value)) ||
+                      (strstr ("_MESSAGE", field_name) &&
+                       message &&
+                       strstr (message, field_value)) ||
+                      (strstr ("_KERNEL_DEVICE", field_name) &&
+                       kernel_device &&
+                       strstr (kernel_device, field_value)) ||
+                      (strstr ("_AUDIT_SESSION", field_name) &&
+                       audit_session &&
+                       strstr (audit_session, field_value));
+        }
+        else
+        {
+            matches = (utf8_strcasestr ("_comm", field_name) &&
+                       comm &&
+                       strstr (comm, field_value)) ||
+                      (utf8_strcasestr ("_message", field_name) &&
+                       message &&
+                       strstr (message, field_value)) ||
+                      (utf8_strcasestr ("_kernel_device", field_name) &&
+                       kernel_device &&
+                       strstr (kernel_device, field_value)) ||
+                      (utf8_strcasestr ("_audit_session", field_name) &&
+                       audit_session &&
+                       strstr (audit_session, field_value));
+        }
+
+        match_stack[match_count] = matches;
+        match_count++;
+
+        if (token_index == token_array->len)
+        {
+            break;
+        }
+
+        if (g_strcmp0 (g_ptr_array_index (token_array, token_index), " ") == 0)
+        {
+            match_stack[match_count] = LOGICAL_AND;
+            match_count++;
+            token_index++;
+        }
+        else if (g_strcmp0 (g_ptr_array_index (token_array, token_index),
+                            "+") == 0)
+        {
+            match_stack[match_count] = LOGICAL_OR;
+            match_count++;
+            token_index++;
+        }
+    }
+
+    if (match_count > 2)
+    {
+        for (i = 0; i < match_count; i++)
+        {
+            if (match_stack[i] == 3)
+            {
+                int j;
+
+                match_stack[i - 1] = match_stack[i - 1] && match_stack[i + 1];
+
+                for (j = i; j < match_count - 2; j++)
+                {
+                    if (j == match_count - 3)
+                    {
+                        match_stack[j] = match_stack[j + 2];
+                        /* We use -1 to represent the values that are not useful */
+                        match_stack[j + 1] = -1;
+
+                        break;
+                    }
+
+                    match_stack[j] = match_stack[j + 2];
+                    match_stack[j + 2] = -1;
+                }
+            }
+        }
+
+        for (i = 0; i < match_count; i++)
+        {
+            if ((match_stack[i] == 2) && (i != token_index - 1) &&
+                (match_stack[i + 1] != -1))
+            {
+                int j;
+
+                match_stack[i - 1] = match_stack[i - 1] || match_stack[i + 1];
+
+                for (j = i; j < match_count - 2; j++)
+                {
+                    match_stack[j] = match_stack[j + 2];
+                    match_stack[j + 2] = -1;
+                }
+            }
+        }
+    }
+
+    matches = match_stack[0];
+
+    return matches;
+}
+
+static gboolean
+search_in_result (GlJournalEntry *entry,
+                  const gchar *search_text)
+{
+    gboolean matches;
+    gchar *search_text_copy;
+    GPtrArray *token_array;
+
+    search_text_copy = g_strdup (search_text);
+
+    token_array = tokenize_search_string (search_text_copy);
+    matches = calculate_match (entry, token_array, TRUE);
+
+    g_ptr_array_free (token_array, TRUE);
+
+    return matches;
 }
 
 static void
@@ -201,50 +408,18 @@ listbox_search_filter_func (GtkListBoxRow *row,
         }
         else
         {
-            gchar *field_name;
-            gchar *field_value;
-            gchar *search_text_copy;
-            const gchar *comm;
-            const gchar *message;
-            const gchar *kernel_device;
-            const gchar *audit_session;
             gboolean matches;
-
-            comm = gl_journal_entry_get_command_line (entry);
-            message = gl_journal_entry_get_message (entry);
-            kernel_device = gl_journal_entry_get_kernel_device (entry);
-            audit_session = gl_journal_entry_get_audit_session (entry);
+            gchar *search_text_copy;
+            GPtrArray *token_array;
 
             search_text_copy = g_strdup (priv->search_text);
-            field_name = strtok (search_text_copy, "=");
-            field_value = strtok (NULL, " ");
 
-            if (field_value == NULL)
-            {
-                matches = (comm && utf8_strcasestr (comm, priv->search_text)) ||
-                          (message && utf8_strcasestr (message, priv->search_text)) ||
-                          (kernel_device && utf8_strcasestr (kernel_device, priv->search_text)) ||
-                          (audit_session && utf8_strcasestr (audit_session, priv->search_text));
+            token_array = tokenize_search_string (search_text_copy);
+            matches = calculate_match (entry, token_array, FALSE);
 
-                g_free (search_text_copy);
+            g_ptr_array_free (token_array, TRUE);
 
-                return matches;
-            }
-            else
-            {
-                matches = (utf8_strcasestr ("_comm", field_name) &&
-                           comm && strstr (comm, field_value)) ||
-                          (utf8_strcasestr ("_message", field_name) &&
-                           message && strstr (message, field_value)) ||
-                          (utf8_strcasestr ("_kernel_device", field_name) &&
-                           kernel_device && strstr (kernel_device, field_value)) ||
-                          (utf8_strcasestr ("_audit_session", field_name) &&
-                           audit_session && strstr (audit_session, field_value));
-
-                g_free (search_text_copy);
-
-                return matches;
-            }
+            return matches;
         }
     }
 
