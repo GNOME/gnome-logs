@@ -223,6 +223,7 @@ gl_event_view_row_constructed (GObject *object)
 
         context = gtk_widget_get_style_context (GTK_WIDGET (priv->category_label));
         gtk_style_context_add_class (context, "dim-label");
+        gtk_style_context_add_class (context, "event-monospace");
         gtk_label_set_xalign (GTK_LABEL (priv->category_label), 0);
         gtk_grid_attach (GTK_GRID (grid), priv->category_label,
                          rtl ? 2 : 0, 0, 1, 1);
@@ -247,6 +248,7 @@ gl_event_view_row_constructed (GObject *object)
     priv->time_label = gtk_label_new (time);
     context = gtk_widget_get_style_context (GTK_WIDGET (priv->time_label));
     gtk_style_context_add_class (context, "dim-label");
+    gtk_style_context_add_class (context, "event-monospace");
     gtk_style_context_add_class (context, "event-time");
     gtk_widget_set_halign (priv->time_label, GTK_ALIGN_END);
     gtk_widget_set_hexpand (priv->time_label, TRUE);
