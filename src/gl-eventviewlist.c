@@ -54,6 +54,8 @@ typedef struct
     const gchar *boot_match;
 } GlEventViewListPrivate;
 
+/* We define these two enum values as 2 and 3 to avoid the conflict with TRUE
+ * and FALSE */
 typedef enum
 {
     LOGICAL_OR = 2,
@@ -183,14 +185,15 @@ calculate_match (GlJournalEntry *entry,
     gchar *field_value;
     gint i;
     gint match_stack[10];
-    gint match_count = 0;
-    gint token_index = 0;
+    guint match_count = 0;
+    guint token_index = 0;
 
     comm = gl_journal_entry_get_command_line (entry);
     message = gl_journal_entry_get_message (entry);
     kernel_device = gl_journal_entry_get_kernel_device (entry);
     audit_session = gl_journal_entry_get_audit_session (entry);
 
+    /* No logical AND or OR used in search text */
     if (token_array->len == 1 && case_sensetive == TRUE)
     {
         gchar *search_text;
@@ -290,11 +293,14 @@ calculate_match (GlJournalEntry *entry,
         }
     }
 
+    /* match_count > 2 means there are still matches to be calculated in the
+     * stack */
     if (match_count > 2)
     {
+        /* calculate the expression with logical AND */
         for (i = 0; i < match_count; i++)
         {
-            if (match_stack[i] == 3)
+            if (match_stack[i] == LOGICAL_AND)
             {
                 int j;
 
@@ -305,7 +311,8 @@ calculate_match (GlJournalEntry *entry,
                     if (j == match_count - 3)
                     {
                         match_stack[j] = match_stack[j + 2];
-                        /* We use -1 to represent the values that are not useful */
+                        /* We use -1 to represent the values that are not
+                         * useful */
                         match_stack[j + 1] = -1;
 
                         break;
@@ -317,9 +324,11 @@ calculate_match (GlJournalEntry *entry,
             }
         }
 
+        /* calculate the expression with logical OR */
         for (i = 0; i < match_count; i++)
         {
-            if ((match_stack[i] == 2) && (i != token_index - 1) &&
+            /* We use -1 to represent the values that are not useful */
+            if ((match_stack[i] == LOGICAL_OR) && (i != token_index - 1) &&
                 (match_stack[i + 1] != -1))
             {
                 int j;
