@@ -11,6 +11,11 @@
                 <style>
                     <class name="image-button"/>
                 </style>
+                <child internal-child="accessible">
+                  <object class="AtkObject" id="Back">
+                    <property name="accessible-name" translatable="yes">Back</property>
+                  </object>
+                </child>
                 <child>
                     <object class="GtkImage" id="go_back_icon">
                         <property name="icon-name">go-previous-symbolic</property>
@@ -38,6 +43,11 @@
                 <property name="tooltip-text" translatable="yes">Search the displayed logs</property>
                 <property name="valign">center</property>
                 <property name="visible">True</property>
+		<child internal-child="accessible">
+                  <object class="AtkObject" id="Find">
+                    <property name="accessible-name" translatable="yes">Find</property>
+                  </object>
+                </child>
                 <style>
                     <class name="image-button"/>
                 </style>

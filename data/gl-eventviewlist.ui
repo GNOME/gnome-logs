@@ -2,6 +2,11 @@
     <template class="GlEventViewList" parent="GtkBox">
         <property name="orientation">horizontal</property>
         <property name="visible">True</property>
+        <child internal-child="accessible">
+            <object class="AtkObject" id="Window">
+                <property name="accessible-name" translatable="yes">Window</property>
+            </object>
+        </child>
         <child>
             <object class="GlCategoryList" id="categories">
                 <property name="visible">True</property>

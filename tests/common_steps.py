@@ -67,6 +67,7 @@ class App(object):
         """
         if self.a11yAppName is None:
             self.a11yAppName = self.internCommand
+	self.a11yAppName = 'gnome-logs'
 
         # Trap weird bus errors
         for attempt in xrange(0, 30):
@@ -118,7 +119,7 @@ class App(object):
         assert not self.isRunning(), "Application cannot be stopped"
 
 
-@step(u'Make sure that gnome-logs-test is running')
+@step(u'Make sure gnome-logs-behave-test is running')
 def ensure_app_running(context):
     context.app = context.app_class.startViaCommand()
 

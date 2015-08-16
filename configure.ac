@@ -62,6 +62,8 @@ AS_IF([test "x$enable_man" != "xno"],
 
 AM_CONDITIONAL([ENABLE_MAN], [test "x$have_manutils" = "xyes"])
 
+BEHAVE_INSTALLED_TESTS
+
 dnl AppData XML
 APPSTREAM_XML
 

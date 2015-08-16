@@ -47,7 +47,7 @@ main (int argc, char** argv)
     g_set_prgname (PACKAGE_TARNAME);
     application = gl_application_new ();
     status = g_application_run (G_APPLICATION (application), argc, argv);
-    g_application_quit (G_APPLICATION (application));
+    //g_application_quit (G_APPLICATION (application));
     g_object_unref (application);
     return status;
 }

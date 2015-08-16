@@ -48,7 +48,6 @@ G_DEFINE_TYPE (GlMockJournalEntry, gl_mock_journal_entry, G_TYPE_OBJECT)
  * store the string formated from a 128-bit ID. The ID will be formatted as
  * 32 lowercase hexadecimal digits and be terminated by a NUL byte. So an
  * array of with a size 42 is need. */
-static char match[42] = "_BOOT_ID=";
 
 typedef struct
 {
@@ -64,11 +63,6 @@ GQuark
 gl_mock_journal_error_quark (void)
 {
     return g_quark_from_static_string ("gl-mock-journal-error-quark");
-}
-
-static void
-gl_mock_journal_get_boots (GlMockJournal *journal)
-{ 
 }
 
 GArray *
@@ -107,10 +101,10 @@ gl_mock_journal_finalize (GObject *object)
 static void
 gl_mock_journal_class_init (GlMockJournalClass *klass)
 {
- /*   GObjectClass *gobject_class = G_OBJECT_CLASS (klass);
+    GObjectClass *gobject_class = G_OBJECT_CLASS (klass);
 
     gobject_class->finalize = gl_mock_journal_finalize;
-*/
+
 }
 
 static void
@@ -157,7 +151,7 @@ gl_mock_journal_query_entry (GlMockJournal *self)
 
     entry = g_object_new (GL_TYPE_MOCK_JOURNAL_ENTRY, NULL);
     
-    entry->timestamp = g_strdup("12");
+    entry->timestamp = (guint64)g_strdup("12");
     entry->cursor = g_strdup("start");
     entry->catalog = g_strdup("test");
     entry->message = gl_mock_journal_get_data (self, "MESSAGE", NULL);
@@ -172,7 +166,7 @@ gl_mock_journal_query_entry (GlMockJournal *self)
     }
 
     /* FIXME: priority is an int, not a char*. */
-    entry->priority = gl_mock_journal_get_data (self, "PRIORITY", NULL);
+    entry->priority = (guint64)gl_mock_journal_get_data (self, "PRIORITY", NULL);
 
     if (error != NULL)
     {
@@ -223,7 +217,6 @@ gl_mock_journal_set_matches (GlMockJournal           *journal,
     GlMockJournalPrivate *priv = gl_mock_journal_get_instance_private (journal);
     GPtrArray *mandatory_fields;
     gint i;
-    gboolean has_boot_id = FALSE;
     g_return_if_fail (matches != NULL);
 
     if (priv->mandatory_fields)
@@ -241,9 +234,6 @@ gl_mock_journal_set_matches (GlMockJournal           *journal,
             g_ptr_array_add (mandatory_fields, g_strdup (matches[i]));
             continue;
         }
-
-        if (g_str_has_prefix (matches[i], "_BOOT_ID="))
-          has_boot_id = TRUE;
     }
 
     /* add sentinel */

@@ -175,10 +175,6 @@ nodist_tests_gnome_logs_test_SOURCES = \
         src/gl-enums.c \
         src/gl-resource.c
 
-enum_data = \
-        src/gl-enums.c \
-        src/gl-enums.h
-
 tests_gnome_logs_test_enum_headers = \
         $(srcdir)/src/gl-categorylist.h \
         $(srcdir)/src/gl-eventtoolbar.h \
@@ -233,10 +229,6 @@ nodist_tests_gnome_logs_behave_test_SOURCES = \
         src/gl-enums.c \
         src/gl-resource.c
 
-enum_data = \
-        src/gl-enums.c \
-        src/gl-enums.h
-
 tests_gnome_logs_behave_test_enum_headers = \
         $(srcdir)/src/gl-categorylist.h \
         $(srcdir)/src/gl-eventtoolbar.h \
@@ -271,6 +263,10 @@ TESTS = \
 	tests/gnome-logs-test \
 	$(check_SCRIPTS)
 endif
+
+@BEHAVE_INSTALLED_TESTS_RULE@
+INSTALLED_TESTS=general.feature
+INSTALLED_TESTS_TYPE=session-exclusive
 
 iconthemedir = $(datadir)/icons/hicolor
 
