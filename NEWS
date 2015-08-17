@@ -1,3 +1,14 @@
+GNOME Logs 3.17.90
+==================
+
+* update list box row behavior after GTK+ change
+* monospace font for all log view text, and alignement fixes from Jonathan Kang
+* boolean search combinations from Jonathan Kang
+* Friulian translation
+* update to Swedish help translation
+* updates to Czech, Slovak, Norwegian bokmål and Brazilian Portuguese
+  translations
+
 GNOME Logs 3.17.4
 =================
 
