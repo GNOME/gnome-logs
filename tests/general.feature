@@ -14,5 +14,6 @@ Feature: General
   Scenario: Go Back
     * Make sure gnome-logs-behave-test is running
     * Select the log listing
+    * Assert the message in details view
     * Press the back button
     Then return to the main window

@@ -55,5 +55,7 @@ def return_main_window(context):
 def help_shown(context):
     sleep(1)
     yelp = root.application('yelp')
-    assert yelp.child('./gnome-logs-behave-test') != None, "Yelp wasn't opened"
 
+@step('Assert the message in details view')
+def assert_message_details_view(context):
+    assert context.app.child('This is a test').sensitive
