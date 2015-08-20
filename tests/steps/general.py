@@ -51,3 +51,9 @@ def press_back_button(context):
 def return_main_window(context):
     context.app.child('Window').sensitive
 
+@step('Help is shown')
+def help_shown(context):
+    sleep(1)
+    yelp = root.application('yelp')
+    assert yelp.child('./gnome-logs-behave-test') != None, "Yelp wasn't opened"
+
