@@ -478,6 +478,18 @@ gl_event_view_list_get_detail_entry (GlEventViewList *view)
     return priv->entry;
 }
 
+gchar *
+gl_event_view_list_get_current_boot_time (GlEventViewList *view,
+                                          const gchar *boot_match)
+{
+    GlEventViewListPrivate *priv;
+
+    priv = gl_event_view_list_get_instance_private (view);
+
+    return gl_journal_model_get_current_boot_time (priv->journal_model,
+                                                   boot_match);
+}
+
 GArray *
 gl_event_view_list_get_boot_ids (GlEventViewList *view)
 {

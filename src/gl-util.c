@@ -40,6 +40,9 @@ typedef enum
     GL_UTIL_TIMESTAMPS_DIFFERENT_YEAR
 } GlUtilTimestamps;
 
+static const gchar DESKTOP_SCHEMA[] = "org.gnome.desktop.interface";
+static const gchar CLOCK_FORMAT[] = "clock-format";
+
 /**
  * gl_util_on_css_provider_parsing_error:
  * @provider: the provider that had a parsing error
@@ -207,4 +210,39 @@ gl_util_get_uid (void)
     g_object_unref (creds);
 
     return uid;
+}
+
+gchar *
+gl_util_boot_time_to_display (guint64 realtime_first,
+                              guint64 realtime_last)
+{
+    gchar *time_first;
+    gchar *time_last;
+    gchar *time_display;
+    GDateTime *now;
+    GSettings *settings;
+    GlUtilClockFormat clock_format;
+
+    /* TODO: Monitor and propagate any GSettings changes. */
+    settings = g_settings_new (DESKTOP_SCHEMA);
+    clock_format = g_settings_get_enum (settings, CLOCK_FORMAT);
+
+    g_object_unref (settings);
+
+    now = g_date_time_new_now_local ();
+    time_first = gl_util_timestamp_to_display (realtime_first,
+                                               now, clock_format);
+    time_last = gl_util_timestamp_to_display (realtime_last,
+                                              now, clock_format);
+
+    /* Transltors: the first string is the earliest timestamp of the boot,
+     * and the second string is the newest timestamp. An example string might
+     * be '08:10 - 08:30' */
+    time_display = g_strdup_printf ("%s - %s", time_first, time_last);
+
+    g_date_time_unref (now);
+    g_free (time_first);
+    g_free (time_last);
+
+    return time_display;
 }

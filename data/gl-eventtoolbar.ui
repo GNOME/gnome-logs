@@ -2,7 +2,6 @@
     <template class="GlEventToolbar" parent="GtkHeaderBar">
         <property name="expand">True</property>
         <property name="show-close-button">True</property>
-        <property name="title" translatable="yes">Logs</property>
         <property name="visible">True</property>
         <child>
             <object class="GtkButton" id="back_button">
@@ -21,19 +20,17 @@
                 </child>
             </object>
         </child>
-        <child>
+        <child type="title">
             <object class="GtkMenuButton" id="menu_button">
                 <property name="direction">none</property>
                 <property name="tooltip-text" translatable="yes">Choose the boot from which to view logs</property>
                 <property name="valign">center</property>
                 <property name="visible">True</property>
+                <property name="relief">GTK_RELIEF_NONE</property>
                 <style>
-                    <class name="image-button"/>
+                    <class name="title-menu-button"/>
                 </style>
             </object>
-            <packing>
-                <property name="pack-type">end</property>
-            </packing>
         </child>
         <child>
             <object class="GtkToggleButton" id="search_button">

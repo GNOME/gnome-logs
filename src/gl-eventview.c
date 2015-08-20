@@ -58,6 +58,19 @@ static GParamSpec *obj_properties[N_PROPERTIES] = { NULL, };
 static const gchar DESKTOP_SCHEMA[] = "org.gnome.desktop.interface";
 static const gchar CLOCK_FORMAT[] = "clock-format";
 
+gchar *
+gl_event_view_get_current_boot_time (GlEventView *view,
+                                     const gchar *boot_match)
+{
+    GlEventViewPrivate *priv;
+    GlEventViewList *events;
+
+    priv = gl_event_view_get_instance_private (view);
+    events = GL_EVENT_VIEW_LIST (priv->events);
+
+    return gl_event_view_list_get_current_boot_time (events, boot_match);
+}
+
 GArray *
 gl_event_view_get_boot_ids (GlEventView *view)
 {

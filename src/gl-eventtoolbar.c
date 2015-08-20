@@ -39,6 +39,7 @@ struct _GlEventToolbar
 
 typedef struct
 {
+    GtkWidget *current_boot;
     GtkWidget *back_button;
     GtkWidget *menu_button;
     GtkWidget *search_button;
@@ -52,30 +53,40 @@ static const gchar CLOCK_FORMAT[] = "clock-format";
 static GParamSpec *obj_properties[N_PROPERTIES] = { NULL, };
 
 void
-gl_event_toolbar_add_boots (GlEventToolbar *toolbar,
-                           GArray *boot_ids)
+gl_event_toolbar_change_current_boot (GlEventToolbar *toolbar,
+                                      const gchar *current_boot)
 {
-    gint i;
-    GMenu *boot_menu;
     GlEventToolbarPrivate *priv;
-    GSettings *settings;
-    GlUtilClockFormat clock_format;
 
     priv = gl_event_toolbar_get_instance_private (toolbar);
 
-    /* TODO: Monitor and propagate any GSettings changes. */
-    settings = g_settings_new (DESKTOP_SCHEMA);
-    clock_format = g_settings_get_enum (settings, CLOCK_FORMAT);
+    /* set text to priv->current_boot */
+    gtk_label_set_text (GTK_LABEL (priv->current_boot), current_boot);
+}
 
-    g_object_unref (settings);
+void
+gl_event_toolbar_add_boots (GlEventToolbar *toolbar,
+                           GArray *boot_ids)
+{
+    GtkWidget *grid;
+    GtkWidget *title_label;
+    GtkWidget *arrow;
+    GMenu *boot_menu;
+    GMenu *section;
+    GlEventToolbarPrivate *priv;
+    GtkStyleContext *context;
+    gint i;
+    gchar *current_boot = NULL;
+
+    priv = gl_event_toolbar_get_instance_private (toolbar);
 
     boot_menu = g_menu_new ();
+    section = g_menu_new ();
 
     for (i = boot_ids->len - 1; i >= boot_ids->len - 5 && i >= 0; i--)
     {
         gchar *boot_match;
-        gchar *time;
-        GDateTime *now;
+        gchar *time_display;
         GlJournalBootID *boot_id;
         GMenuItem *item;
         GVariant *variant;
@@ -83,23 +94,52 @@ gl_event_toolbar_add_boots (GlEventToolbar *toolbar,
         boot_id = &g_array_index (boot_ids, GlJournalBootID, i);
         boot_match = boot_id->boot_match;
 
-        now = g_date_time_new_now_local ();
-        time = gl_util_timestamp_to_display (boot_id->realtime,
-                                             now, clock_format);
+        time_display = gl_util_boot_time_to_display (boot_id->realtime_first,
+                                                     boot_id->realtime_last);
+        if (i == boot_ids->len - 1)
+        {
+            current_boot = g_strdup (time_display);
+        }
 
-        item = g_menu_item_new (time, NULL);
+        item = g_menu_item_new (time_display, NULL);
         variant = g_variant_new_string (boot_match);
         g_menu_item_set_action_and_target_value (item, "win.view-boot",
                                                  variant);
-        g_menu_append_item (boot_menu, item);
+        g_menu_append_item (section, item);
 
-        g_date_time_unref (now);
-        g_free (time);
+        g_free (time_display);
         g_object_unref (item);
     }
 
+    /* Translators: Boot refers to a single run (or bootup) of the system */
+    g_menu_prepend_section (boot_menu, _("Boot"), G_MENU_MODEL (section));
+
     gtk_menu_button_set_menu_model (GTK_MENU_BUTTON (priv->menu_button),
                                     G_MENU_MODEL (boot_menu));
+
+    grid = gtk_grid_new ();
+    gtk_grid_set_column_spacing (GTK_GRID (grid), 6);
+    gtk_container_add (GTK_CONTAINER (priv->menu_button), grid);
+
+    title_label = gtk_label_new ("Logs");
+    context = gtk_widget_get_style_context (GTK_WIDGET (title_label));
+    gtk_style_context_add_class (context, "title");
+    gtk_grid_attach (GTK_GRID (grid), title_label, 0, 0, 1, 1);
+
+    gtk_label_set_text (GTK_LABEL (priv->current_boot), current_boot);
+    context = gtk_widget_get_style_context (GTK_WIDGET (priv->current_boot));
+    gtk_style_context_add_class (context, "subtitle");
+    gtk_grid_attach (GTK_GRID (grid), priv->current_boot, 0, 1, 1, 1);
+
+    arrow = gtk_image_new_from_icon_name ("pan-down-symbolic",
+                                          GTK_ICON_SIZE_BUTTON);
+    gtk_grid_attach (GTK_GRID (grid), arrow, 1, 0, 1, 2);
+    gtk_widget_show_all (grid);
+
+    gtk_header_bar_set_custom_title (GTK_HEADER_BAR (toolbar),
+                                     priv->menu_button);
+
+    g_free (current_boot);
 }
 
 static void
@@ -235,7 +275,13 @@ gl_event_toolbar_class_init (GlEventToolbarClass *klass)
 static void
 gl_event_toolbar_init (GlEventToolbar *toolbar)
 {
+    GlEventToolbarPrivate *priv;
+
+    priv = gl_event_toolbar_get_instance_private (toolbar);
+
     gtk_widget_init_template (GTK_WIDGET (toolbar));
+
+    priv->current_boot = gtk_label_new (NULL);
 
     g_signal_connect (toolbar, "notify::mode", G_CALLBACK (on_notify_mode),
                       NULL);

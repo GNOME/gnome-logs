@@ -18,6 +18,7 @@
  */
 
 #include "gl-journal.h"
+#include "gl-util.h"
 
 #include <glib-unix.h>
 #include <gio/gio.h>
@@ -65,13 +66,41 @@ gl_journal_error_quark (void)
     return g_quark_from_static_string ("gl-journal-error-quark");
 }
 
+gchar *
+gl_journal_get_current_boot_time (GlJournal *journal,
+                                  const gchar *boot_match)
+{
+    GArray *boot_ids;
+    gchar *time;
+    gint i;
+
+    boot_ids = gl_journal_get_boot_ids (journal);
+
+    for (i = boot_ids->len - 1; i >= boot_ids->len - 5 && i >= 0; i--)
+    {
+        GlJournalBootID *boot_id;
+
+        boot_id = &g_array_index (boot_ids, GlJournalBootID, i);
+
+        if (g_strcmp0 (boot_match, boot_id->boot_match) == 0)
+        {
+            time = gl_util_boot_time_to_display (boot_id->realtime_first,
+                                                 boot_id->realtime_last);
+
+            return time;
+        }
+    }
+
+    return NULL;
+}
+
 static gint
 boot_id_cmp (const void *a, const void *b)
 {
     guint64 _a, _b;
 
-    _a = ((const GlJournalBootID *)a)->realtime;
-    _b = ((const GlJournalBootID *)b)->realtime;
+    _a = ((const GlJournalBootID *)a)->realtime_first;
+    _b = ((const GlJournalBootID *)b)->realtime_first;
 
     return _a < _b ? -1 : (_a > _b ? 1 : 0);
 }
@@ -138,7 +167,34 @@ gl_journal_get_boots (GlJournal *journal)
             goto flush;
         }
 
-        r = sd_journal_get_realtime_usec (priv->journal, &boot_id.realtime);
+        r = sd_journal_get_realtime_usec (priv->journal,
+                                          &boot_id.realtime_first);
+        if (r < 0)
+        {
+            g_warning ("Error retrieving the sender timestamps: %s",
+                       g_strerror (-r));
+        }
+
+        r = sd_journal_seek_tail (priv->journal);
+        if (r < 0)
+        {
+            g_warning ("Error seeking to the beginning of the journal: %s\n",
+                       g_strerror (-r));
+        }
+
+        r = sd_journal_previous (priv->journal);
+        if (r < 0)
+        {
+            g_warning ("Error retreat the read pointer in the journal: %s",
+                       g_strerror (-r));
+        }
+        else if (r == 0)
+        {
+            goto flush;
+        }
+
+        r = sd_journal_get_realtime_usec (priv->journal,
+                                          &boot_id.realtime_last);
         if (r < 0)
         {
             g_warning ("Error retrieving the sender timestamps: %s",

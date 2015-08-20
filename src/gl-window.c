@@ -175,14 +175,29 @@ on_view_boot (GSimpleAction *action,
 {
     GlWindowPrivate *priv;
     GlEventView *event;
+    GlEventToolbar *toolbar;
+    gchar *current_boot;
     const gchar *boot_match;
 
     priv = gl_window_get_instance_private (GL_WINDOW (user_data));
     event = GL_EVENT_VIEW (priv->event);
+    toolbar = GL_EVENT_TOOLBAR (priv->event_toolbar);
 
     boot_match = g_variant_get_string (variant, NULL);
 
     gl_event_view_view_boot (event, boot_match);
+
+    current_boot = gl_event_view_get_current_boot_time (event, boot_match);
+    if (current_boot == NULL)
+    {
+        g_debug ("Error fetching the time using boot_match");
+    }
+
+    gl_event_toolbar_change_current_boot (toolbar, current_boot);
+
+    g_simple_action_set_state (action, variant);
+
+    g_free (current_boot);
 }
 
 static gboolean
@@ -259,7 +274,7 @@ static GActionEntry actions[] = {
     { "view-mode", on_action_radio, "s", "'list'", on_view_mode },
     { "toolbar-mode", on_action_radio, "s", "'list'", on_toolbar_mode },
     { "search", on_action_toggle, NULL, "false", on_search },
-    { "view-boot", on_view_boot, "s", NULL, NULL },
+    { "view-boot", on_action_radio, "s", "''", on_view_boot },
     { "close", on_close }
 };
 
@@ -287,7 +302,11 @@ gl_window_init (GlWindow *window)
     GlWindowPrivate *priv;
     GlEventToolbar *toolbar;
     GlEventView *event;
+    GAction *action_view_boot;
     GArray *boot_ids;
+    GlJournalBootID *boot_id;
+    gchar *boot_match;
+    GVariant *variant;
 
     gtk_widget_init_template (GTK_WIDGET (window));
 
@@ -296,10 +315,18 @@ gl_window_init (GlWindow *window)
     toolbar = GL_EVENT_TOOLBAR (priv->event_toolbar);
 
     boot_ids = gl_event_view_get_boot_ids (event);
+    boot_id = &g_array_index (boot_ids, GlJournalBootID, boot_ids->len - 1);
+    boot_match = boot_id->boot_match;
+
     gl_event_toolbar_add_boots (toolbar, boot_ids);
 
     g_action_map_add_action_entries (G_ACTION_MAP (window), actions,
                                      G_N_ELEMENTS (actions), window);
+
+    action_view_boot = g_action_map_lookup_action (G_ACTION_MAP (window),
+                                                   "view-boot");
+    variant = g_variant_new_string (boot_match);
+    g_action_change_state (action_view_boot, variant);
 
     provider = gtk_css_provider_new ();
     g_signal_connect (provider, "parsing-error",

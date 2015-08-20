@@ -43,6 +43,8 @@ gchar * gl_util_timestamp_to_display (guint64 microsecs,
                                       GDateTime *now,
                                       GlUtilClockFormat format);
 gint gl_util_get_uid (void);
+gchar * gl_util_boot_time_to_display (guint64 timestamp_first,
+                                      guint64 timestamp_last);
 
 G_END_DECLS
 

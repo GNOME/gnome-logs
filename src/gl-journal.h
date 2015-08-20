@@ -62,7 +62,8 @@ typedef struct
 typedef struct
 {
     gchar *boot_match;
-    guint64 realtime;
+    guint64 realtime_first;
+    guint64 realtime_last;
 } GlJournalBootID;
 
 #define GL_TYPE_JOURNAL (gl_journal_get_type ())
@@ -74,6 +75,8 @@ void gl_journal_set_matches (GlJournal *journal, const gchar * const *matches);
 GArray * gl_journal_get_boot_ids (GlJournal *journal);
 GlJournalEntry * gl_journal_previous (GlJournal *journal);
 GlJournal * gl_journal_new (void);
+gchar * gl_journal_get_current_boot_time (GlJournal *journal,
+                                          const gchar *boot_match);
 
 guint64                 gl_journal_entry_get_timestamp                  (GlJournalEntry *entry);
 const gchar *           gl_journal_entry_get_message                    (GlJournalEntry *entry);

@@ -246,6 +246,13 @@ gl_journal_model_set_matches (GlJournalModel      *model,
     gl_journal_model_fetch_more_entries (model, FALSE);
 }
 
+gchar *
+gl_journal_model_get_current_boot_time (GlJournalModel *model,
+                                        const gchar *boot_match)
+{
+    return gl_journal_get_current_boot_time (model->journal, boot_match);
+}
+
 GArray *
 gl_journal_model_get_boot_ids (GlJournalModel *model)
 {

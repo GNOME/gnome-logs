@@ -28,3 +28,8 @@
 .event-time {
     font-size: small;
 }
+
+.title-menu-button {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
