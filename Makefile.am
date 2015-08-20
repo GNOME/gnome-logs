@@ -267,6 +267,7 @@ endif
 @BEHAVE_INSTALLED_TESTS_RULE@
 INSTALLED_TESTS=	\
 		general.feature \
+		shortcuts.feature \
 		$(NULL)
 INSTALLED_TESTS_TYPE=session-exclusive
 

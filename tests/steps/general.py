@@ -4,6 +4,22 @@ from os import system
 from pyatspi import STATE_SENSITIVE
 from time import sleep
 from common_steps import App
+from dogtail.tree import root
+from dogtail.rawinput import typeText, pressKey, keyCombo
+
+def get_showing_node_name(name, parent, timeout=30, step=0.25):
+    wait = 0
+    while len(parent.findChildren(lambda x: x.name == name and x.showing and x.sensitive)) == 0:
+        sleep(step)
+        wait += step
+        if wait == timeout:
+            raise Exception("Timeout: Node %s wasn't found showing" %name)
+
+    return parent.findChildren(lambda x: x.name == name and x.showing and x.sensitive)[0]
+
+@step('About is shown')
+def about_shown(context):
+    assert context.app.child('About Logs') != None, "About window cannot be focused"
 
 @step(u'Open gnome-logs-behave-test')
 def run_gnome_logs_test(context):
@@ -55,7 +71,32 @@ def return_main_window(context):
 def help_shown(context):
     sleep(1)
     yelp = root.application('yelp')
+    assert yelp.child('Logs') != None, "Yelp wasn't opened"
+    system("killall yelp")
 
 @step('Assert the message in details view')
 def assert_message_details_view(context):
     assert context.app.child('This is a test').sensitive
+
+@step('Select "{action}" from supermenu')
+def select_menu_action(context, action):
+    keyCombo("<Super_L><F10>")
+    if action == 'Help':
+	pressKey('Down')
+    if action == 'About':
+	pressKey('Down')
+        pressKey('Down')
+    if action == 'Quit':
+        pressKey('Down')
+        pressKey('Down')
+	pressKey('Down')
+    pressKey('Enter')
+
+@step('Logs are not running')
+def logs_not_running(context):
+    assert context.app_class.isRunning() != True, "Logs window still visible"
+
+@step('Press "{button}"')
+def press_button(context, button):
+    get_showing_node_name(button, context.app).click()
+    sleep(0.5)

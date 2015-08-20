@@ -22,6 +22,36 @@ class dummy(TestCase):
     def runTest(self):  # pylint: disable=R0201
         assert True
 
+def wait_until(my_lambda, element, timeout=30, period=0.25):
+    """
+    This function keeps running lambda with specified params until the result is True
+    or timeout is reached
+    Sample usages:
+     * wait_until(lambda x: x.name != 'Loading...', context.app)
+       Pause until window title is not 'Loading...'.
+       Return False if window title is still 'Loading...'
+       Throw an exception if window doesn't exist after default timeout
+
+     * wait_until(lambda element, expected: x.text == expected, element, ('Expected text'))
+       Wait until element text becomes the expected (passed to the lambda)
+
+    """
+    exception_thrown = None
+    mustend = int(time()) + timeout
+    while int(time()) < mustend:
+        try:
+            if my_lambda(element):
+                return True
+        except Exception as e:
+            # If lambda has thrown the exception we'll re-raise it later
+            # and forget about if lambda passes
+            exception_thrown = e
+        sleep(period)
+    if exception_thrown:
+        raise exception_thrown
+    else:
+        return False
+
 class TimeoutError(Exception):
     """
     Timeout exception class for limit_execution_time_to function
