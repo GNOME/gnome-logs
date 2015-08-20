@@ -31,7 +31,7 @@ def before_all(context):
         # Store scenario start time for session logs
         context.log_start_time = strftime("%Y-%m-%d %H:%M:%S", localtime())
 
-        context.app_class = App('./gnome-logs-behave-test')
+        context.app_class = App('/home/rashi/checkout/gnome/gnome-logs/tests/gnome-logs-behave-test')
 
     except Exception as e:
         print("Error in before_all: %s" % e.message)
@@ -57,23 +57,7 @@ def after_scenario(context, scenario):
     """
 
     try:
-        # Attach journalctl logs
-        if hasattr(context, "embed"):
-            os.system("journalctl /usr/bin/gnome-session --no-pager -o cat --since='%s'> /tmp/journal-session.log" % context.log_start_time)
-            data = open("/tmp/journal-session.log", 'r').read()
-            if data:
-                context.embed('text/plain', data)
-
-            context.app_class.kill()
-
-            stdout = non_block_read(context.app_class.process.stdout)
-            stderr = non_block_read(context.app_class.process.stderr)
-
-            if stdout:
-                context.embed('text/plain', stdout)
-
-            if stderr:
-                context.embed('text/plain', stderr)
+        context.app_class.kill()
 
         # Make some pause after scenario
         sleep(1)

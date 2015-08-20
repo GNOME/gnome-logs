@@ -265,7 +265,9 @@ TESTS = \
 endif
 
 @BEHAVE_INSTALLED_TESTS_RULE@
-INSTALLED_TESTS=general.feature
+INSTALLED_TESTS=	\
+		general.feature \
+		$(NULL)
 INSTALLED_TESTS_TYPE=session-exclusive
 
 iconthemedir = $(datadir)/icons/hicolor

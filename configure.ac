@@ -62,6 +62,7 @@ AS_IF([test "x$enable_man" != "xno"],
 
 AM_CONDITIONAL([ENABLE_MAN], [test "x$have_manutils" = "xyes"])
 
+dnl Installed tests
 BEHAVE_INSTALLED_TESTS
 
 dnl AppData XML
@@ -115,3 +116,7 @@ Makefile
 po/Makefile.in
 ])
 AC_OUTPUT
+
+AC_MSG_NOTICE([
+	Installed tests:          $enable_installed_tests
+])

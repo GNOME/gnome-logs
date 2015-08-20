@@ -10,7 +10,7 @@ from signal import signal, alarm, SIGALRM
 from subprocess import Popen, PIPE
 from behave import step
 from gi.repository import GLib, Gio
-import fcntl, os
+import os
 
 from dogtail.rawinput import keyCombo, absoluteMotion, pressKey
 from dogtail.tree import root
