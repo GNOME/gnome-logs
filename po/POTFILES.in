@@ -9,5 +9,5 @@ src/gl-application.c
 src/gl-eventviewdetail.c
 src/gl-eventviewlist.c
 src/gl-eventviewrow.c
-src/gl-eventviewtoolbar.c
+src/gl-eventtoolbar.c
 src/gl-util.c
