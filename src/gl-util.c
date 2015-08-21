@@ -238,7 +238,7 @@ gl_util_boot_time_to_display (guint64 realtime_first,
     /* Transltors: the first string is the earliest timestamp of the boot,
      * and the second string is the newest timestamp. An example string might
      * be '08:10 - 08:30' */
-    time_display = g_strdup_printf ("%s - %s", time_first, time_last);
+    time_display = g_strdup_printf (_("%s – %s"), time_first, time_last);
 
     g_date_time_unref (now);
     g_free (time_first);
