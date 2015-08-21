@@ -70,9 +70,8 @@ gchar *
 gl_mock_journal_get_current_boot_time (GlMockJournal *journal,
                                   const gchar *boot_match)
 {
-    gchar *time;
-    time="01:00:00";
-    return time;
+    gchar *time = "12:00 AM";
+    return g_strdup("July 29 10:55 PM - Aug 1 12:08 AM");
 }
 
 GArray *
