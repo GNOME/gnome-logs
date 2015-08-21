@@ -31,7 +31,7 @@ def before_all(context):
         # Store scenario start time for session logs
         context.log_start_time = strftime("%Y-%m-%d %H:%M:%S", localtime())
 
-        context.app_class = App('/home/rashi/checkout/gnome/gnome-logs/tests/gnome-logs-behave-test')
+        context.app_class = App('~/checkout/gnome/gnome-logs/tests/gnome-logs-behave-test')
 
     except Exception as e:
         print("Error in before_all: %s" % e.message)
