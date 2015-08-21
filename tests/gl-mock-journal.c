@@ -70,10 +70,15 @@ gchar *
 gl_mock_journal_get_current_boot_time (GlMockJournal *journal,
                                   const gchar *boot_match)
 {
-    gchar *time = "12:00 AM";
     return g_strdup("July 29 10:55 PM - Aug 1 12:08 AM");
 }
 
+static void
+gl_mock_journal_get_boots (GlMockJournal *journal)
+{
+    GlMockJournalBootID *boot_id;
+    boot_id->boot_match = (gchar *)g_strdup("_BOOT_ID=e74546deb79c453990b96132ae3eb201");
+}
 GArray *
 gl_mock_journal_get_boot_ids (GlMockJournal *journal)
 {
@@ -81,7 +86,7 @@ gl_mock_journal_get_boot_ids (GlMockJournal *journal)
 
     priv = gl_mock_journal_get_instance_private (journal);
     priv->boot_ids = g_array_new (FALSE, FALSE, sizeof (GArray));
-    guint64 boot_id = 12;
+    guint64 boot_id = (guint64) g_strdup("e74546deb79c453990b96132ae3eb201");
     priv->boot_ids = g_array_append_val (priv->boot_ids, boot_id);
     return priv->boot_ids;
 }
@@ -119,6 +124,7 @@ gl_mock_journal_class_init (GlMockJournalClass *klass)
 static void
 gl_mock_journal_init (GlMockJournal *self)
 {
+    gl_mock_journal_get_boots(self); 
 }
 
 static gchar *
