@@ -42,6 +42,8 @@
 #define gl_mock_journal_new(void) gl_journal_new(void)
 #define gl_mock_journal_set_matches gl_journal_set_matches
 #define gl_mock_journal_get_boot_ids(GlMockJournal) gl_journal_get_boot_ids(GlMockJournal)
+#define gl_mock_journal_get_current_boot_time gl_journal_get_current_boot_time
+
 G_BEGIN_DECLS
 
 /*
@@ -82,6 +84,8 @@ typedef struct
 {
     gchar *boot_match;
     guint64 realtime;
+    guint64 realtime_first;
+    guint64 realtime_last;
 } GlMockJournalBootID;
 
 #define GL_TYPE_MOCK_JOURNAL (gl_mock_journal_get_type ())
@@ -93,6 +97,8 @@ void gl_mock_journal_set_matches (GlMockJournal *journal, const gchar * const *m
 GArray * gl_mock_journal_get_boot_ids (GlMockJournal *journal);
 GlMockJournalEntry * gl_mock_journal_previous (GlMockJournal *journal);
 GlMockJournal * gl_mock_journal_new (void);
+gchar * gl_mock_journal_get_current_boot_time (GlMockJournal *journal,
+					 const gchar *boot_match);
 
 guint64                 gl_mock_journal_entry_get_timestamp                  (GlMockJournalEntry *entry);
 const gchar *           gl_mock_journal_entry_get_message                    (GlMockJournalEntry *entry);

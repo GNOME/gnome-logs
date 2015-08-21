@@ -18,6 +18,7 @@
  */
 
 #include "gl-mock-journal.h"
+#include "gl-util.h"
 
 #include <glib-unix.h>
 #include <gio/gio.h>
@@ -63,6 +64,15 @@ GQuark
 gl_mock_journal_error_quark (void)
 {
     return g_quark_from_static_string ("gl-mock-journal-error-quark");
+}
+
+gchar *
+gl_mock_journal_get_current_boot_time (GlMockJournal *journal,
+                                  const gchar *boot_match)
+{
+    gchar *time;
+    time="01:00:00";
+    return time;
 }
 
 GArray *
