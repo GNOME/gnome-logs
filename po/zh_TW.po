@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-02-16 07:18+0000\n"
-"PO-Revision-Date: 2015-02-21 12:27+0800\n"
+"POT-Creation-Date: 2015-08-24 19:23+0000\n"
+"PO-Revision-Date: 2015-08-25 14:46+0800\n"
 "Last-Translator: Chao-Hsiung Liao <j_h_liau@yahoo.com.tw>\n"
 "Language-Team: Chinese (Taiwan) <chinese-l10n@googlegroups.com>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.7.4\n"
+"X-Generator: Poedit 1.8.4\n"
 
 #: ../data/gl-categorylist.ui.h:1
 msgid "Important"
@@ -34,19 +34,19 @@ msgstr "加星號"
 msgid "All"
 msgstr "全部"
 
-#: ../data/gl-categorylist.ui.h:5
+#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:167
 msgid "Applications"
 msgstr "程式集"
 
-#: ../data/gl-categorylist.ui.h:6
+#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:176
 msgid "System"
 msgstr "系統"
 
-#: ../data/gl-categorylist.ui.h:7
+#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:180
 msgid "Security"
 msgstr "安全性"
 
-#: ../data/gl-categorylist.ui.h:8
+#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:172
 msgid "Hardware"
 msgstr "硬體"
 
@@ -58,15 +58,13 @@ msgstr "更新"
 msgid "Usage"
 msgstr "用法"
 
-#. Name and summary taken from the desktop file.
-#: ../data/gl-eventtoolbar.ui.h:1 ../data/org.gnome.Logs.appdata.xml.in.h:2
-#: ../data/org.gnome.Logs.desktop.in.h:1
-msgid "Logs"
-msgstr "紀錄檔"
-
-#: ../data/gl-eventtoolbar.ui.h:2
+#: ../data/gl-eventtoolbar.ui.h:1
 msgid "Go back to the event view"
 msgstr "回到事件檢視"
+
+#: ../data/gl-eventtoolbar.ui.h:2
+msgid "Choose the boot from which to view logs"
+msgstr "選擇從哪一個檢視紀錄開機"
 
 #: ../data/gl-eventtoolbar.ui.h:3
 msgid "Search the displayed logs"
@@ -120,6 +118,12 @@ msgstr "關於(_A)"
 msgid "_Quit"
 msgstr "結束(_Q)"
 
+#. Name and summary taken from the desktop file.
+#: ../data/org.gnome.Logs.appdata.xml.in.h:2
+#: ../data/org.gnome.Logs.desktop.in.h:1
+msgid "Logs"
+msgstr "紀錄檔"
+
 #: ../data/org.gnome.Logs.appdata.xml.in.h:3
 #: ../data/org.gnome.Logs.desktop.in.h:3
 msgid "View detailed event logs for the system"
@@ -157,63 +161,80 @@ msgstr "在事件檢視清單中如何排序清單列"
 msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr "對選取的類型以遞增或遞減的順序來排序清單列"
 
-#: ../src/gl-application.c:103
+#: ../src/gl-application.c:109
 msgid "translator-credits"
 msgstr "Chao-Hsiung Liao <j_h_liau@yahoo.com.tw>, 2014"
 
-#: ../src/gl-application.c:104
+#: ../src/gl-application.c:110
 msgid "View and search logs"
 msgstr "檢視與搜尋紀錄檔"
 
-#: ../src/gl-application.c:231
+#: ../src/gl-application.c:237
 msgid "Print version information and exit"
 msgstr "輸出版本資訊並離開"
 
+#. Translators: Boot refers to a single run (or bootup) of the system
+#: ../src/gl-eventtoolbar.c:116
+msgid "Boot"
+msgstr "開機"
+
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventviewlist.c:280
+#: ../src/gl-eventviewlist.c:575
 msgid "No results"
 msgstr "沒有結果"
 
+#: ../src/gl-eventviewrow.c:184
+msgid "Other"
+msgstr "其他"
+
 #. Translators: timestamp format for events on the current
 #. * day, showing the time in 12-hour format.
-#: ../src/gl-util.c:138
+#: ../src/gl-util.c:142
 msgid "%l:%M %p"
 msgstr "%p %l:%M"
 
 #. Translators: timestamp format for events in the current
 #. * year, showing the abbreviated month name, day of the
 #. * month and the time in 12-hour format.
-#: ../src/gl-util.c:144
+#: ../src/gl-util.c:148
 msgid "%b %e %l:%M %p"
 msgstr "%b%e日 %p%l∶%M"
 
 #. Translators: timestamp format for events in a different
 #. * year, showing the abbreviated month name, day of the
 #. * month, year and the time in 12-hour format.
-#: ../src/gl-util.c:150
+#: ../src/gl-util.c:154
 msgid "%b %e %Y %l:%M %p"
 msgstr "%Y年%b%e日%p %l:%M"
 
 #. Translators: timestamp format for events on the current
 #. * day, showing the time in 24-hour format.
-#: ../src/gl-util.c:163
+#: ../src/gl-util.c:167
 msgid "%H:%M"
 msgstr "%H∶%M"
 
 #. Translators: timestamp format for events in the current
 #. * year, showing the abbreviated month name, day of the
 #. * month and the time in 24-hour format.
-#: ../src/gl-util.c:169
+#: ../src/gl-util.c:173
 msgid "%b %e %H:%M"
 msgstr "%b%e日 %H:%M"
 
 #. Translators: timestamp format for events in a different
 #. * year, showing the abbreviated month name, day of the
 #. * month, year and the time in 24-hour format.
-#: ../src/gl-util.c:175
+#: ../src/gl-util.c:179
 msgid "%b %e %Y %H:%M"
 msgstr "%Y年%b%e日 %H:%M"
+
+#. Transltors: the first string is the earliest timestamp of the boot,
+#. * and the second string is the newest timestamp. An example string might
+#. * be '08:10 - 08:30'
+#: ../src/gl-util.c:242
+#, c-format
+msgid "%s – %s"
+msgstr "%s – %s"
 
 #~ msgid "Not implemented"
 #~ msgstr "未實作"
