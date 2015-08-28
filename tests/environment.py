@@ -16,7 +16,7 @@ def before_all(context):
 
     try:
         # Close running logs instances
-        os.system("./gnome-logs-behave-test --force-shutdown > /dev/null")
+        os.system("killall gnome-logs-behave-tests")
 
         # Skip dogtail actions to print to stdout
         config.logDebugToStdOut = False
