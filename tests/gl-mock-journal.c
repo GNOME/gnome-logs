@@ -76,8 +76,8 @@ gl_mock_journal_get_current_boot_time (GlMockJournal *journal,
 static void
 gl_mock_journal_get_boots (GlMockJournal *journal)
 {
-    GlMockJournalBootID *boot_id;
-    boot_id->boot_match = (gchar *)g_strdup("_BOOT_ID=e74546deb79c453990b96132ae3eb201");
+    GlMockJournalBootID *boot_id = (GlMockJournalBootID *)g_malloc(sizeof(GlMockJournalBootID));
+    boot_id->boot_match = g_strdup("_BOOT_ID=e74546deb79c453990b96132ae3eb201");
 }
 GArray *
 gl_mock_journal_get_boot_ids (GlMockJournal *journal)
@@ -102,10 +102,9 @@ gl_mock_journal_finalize (GObject *object)
     g_clear_pointer (&priv->mandatory_fields, g_strfreev);
     for (i = 0; i < priv->boot_ids->len; i++)
     {
-        GlJournalBootID *boot_id;
+        GlMockJournalBootID *boot_id;
 
-        boot_id = &g_array_index (priv->boot_ids, GlJournalBootID, i);
-
+        boot_id = &g_array_index (priv->boot_ids, GlMockJournalBootID, i);
         g_free (boot_id->boot_match);
     }
     g_array_free (priv->boot_ids, TRUE);
