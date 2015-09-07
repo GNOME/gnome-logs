@@ -122,7 +122,7 @@ gl_event_toolbar_add_boots (GlEventToolbar *toolbar,
     gtk_grid_set_column_spacing (GTK_GRID (grid), 6);
     gtk_container_add (GTK_CONTAINER (priv->menu_button), grid);
 
-    title_label = gtk_label_new ("Logs");
+    title_label = gtk_label_new (_("Logs"));
     context = gtk_widget_get_style_context (GTK_WIDGET (title_label));
     gtk_style_context_add_class (context, "title");
     gtk_grid_attach (GTK_GRID (grid), title_label, 0, 0, 1, 1);
