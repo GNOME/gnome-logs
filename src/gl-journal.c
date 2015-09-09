@@ -178,7 +178,7 @@ gl_journal_get_boots (GlJournal *journal)
         r = sd_journal_seek_tail (priv->journal);
         if (r < 0)
         {
-            g_warning ("Error seeking to the beginning of the journal: %s\n",
+            g_warning ("Error seeking to the end of the journal: %s\n",
                        g_strerror (-r));
         }
 
