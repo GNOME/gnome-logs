@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-02-16 07:18+0000\n"
-"PO-Revision-Date: 2015-03-05 21:27+0200\n"
+"POT-Creation-Date: 2015-09-05 07:22+0000\n"
+"PO-Revision-Date: 2015-09-05 12:17+0300\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos+l10n@iki.fi>\n"
 "Language-Team: suomi <gnome-fi-laatu@lists.sourceforge.net>\n"
 "Language: fi\n"
@@ -36,19 +36,19 @@ msgstr "Tähdelliset"
 msgid "All"
 msgstr "Kaikki"
 
-#: ../data/gl-categorylist.ui.h:5
+#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:167
 msgid "Applications"
 msgstr "Sovellukset"
 
-#: ../data/gl-categorylist.ui.h:6
+#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:176
 msgid "System"
 msgstr "Järjestelmä"
 
-#: ../data/gl-categorylist.ui.h:7
+#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:180
 msgid "Security"
 msgstr "Tietoturva"
 
-#: ../data/gl-categorylist.ui.h:8
+#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:172
 msgid "Hardware"
 msgstr "Laitteisto"
 
@@ -60,15 +60,13 @@ msgstr "Päivitykset"
 msgid "Usage"
 msgstr "Käyttö"
 
-#. Name and summary taken from the desktop file.
-#: ../data/gl-eventtoolbar.ui.h:1 ../data/org.gnome.Logs.appdata.xml.in.h:2
-#: ../data/org.gnome.Logs.desktop.in.h:1
-msgid "Logs"
-msgstr "Lokit"
-
-#: ../data/gl-eventtoolbar.ui.h:2
+#: ../data/gl-eventtoolbar.ui.h:1
 msgid "Go back to the event view"
 msgstr "Siirry takaisin tapahtumanäkymään"
+
+#: ../data/gl-eventtoolbar.ui.h:2
+msgid "Choose the boot from which to view logs"
+msgstr "Valitse käynnistyskerta, jonka lokeja tarkastellaan"
 
 #: ../data/gl-eventtoolbar.ui.h:3
 msgid "Search the displayed logs"
@@ -122,6 +120,12 @@ msgstr "_Tietoja"
 msgid "_Quit"
 msgstr "_Lopeta"
 
+#. Name and summary taken from the desktop file.
+#: ../data/org.gnome.Logs.appdata.xml.in.h:2
+#: ../data/org.gnome.Logs.desktop.in.h:1
+msgid "Logs"
+msgstr "Lokit"
+
 #: ../data/org.gnome.Logs.appdata.xml.in.h:3
 #: ../data/org.gnome.Logs.desktop.in.h:3
 msgid "View detailed event logs for the system"
@@ -162,63 +166,80 @@ msgstr ""
 "Järjestä luettelon rivit nousevassa tai laskevassa järjestyksessä valitulle "
 "tyypille"
 
-#: ../src/gl-application.c:103
+#: ../src/gl-application.c:109
 msgid "translator-credits"
 msgstr "Jiri Grönroos"
 
-#: ../src/gl-application.c:104
+#: ../src/gl-application.c:110
 msgid "View and search logs"
 msgstr "Katsele lokeja ja etsi lokien sisällöstä"
 
-#: ../src/gl-application.c:231
+#: ../src/gl-application.c:237
 msgid "Print version information and exit"
 msgstr "Tulosta versiotiedot ja poistu"
 
+#. Translators: Boot refers to a single run (or bootup) of the system
+#: ../src/gl-eventtoolbar.c:116
+msgid "Boot"
+msgstr "Käynnistys"
+
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventviewlist.c:280
+#: ../src/gl-eventviewlist.c:575
 msgid "No results"
 msgstr "Ei tuloksia"
 
+#: ../src/gl-eventviewrow.c:184
+msgid "Other"
+msgstr "Muu"
+
 #. Translators: timestamp format for events on the current
 #. * day, showing the time in 12-hour format.
-#: ../src/gl-util.c:138
+#: ../src/gl-util.c:142
 msgid "%l:%M %p"
 msgstr "%l:%M %p"
 
 #. Translators: timestamp format for events in the current
 #. * year, showing the abbreviated month name, day of the
 #. * month and the time in 12-hour format.
-#: ../src/gl-util.c:144
+#: ../src/gl-util.c:148
 msgid "%b %e %l:%M %p"
 msgstr "%b %e %l:%M %p"
 
 #. Translators: timestamp format for events in a different
 #. * year, showing the abbreviated month name, day of the
 #. * month, year and the time in 12-hour format.
-#: ../src/gl-util.c:150
+#: ../src/gl-util.c:154
 msgid "%b %e %Y %l:%M %p"
 msgstr "%b %e %Y %l:%M %p"
 
 #. Translators: timestamp format for events on the current
 #. * day, showing the time in 24-hour format.
-#: ../src/gl-util.c:163
+#: ../src/gl-util.c:167
 msgid "%H:%M"
 msgstr "%H:%M"
 
 #. Translators: timestamp format for events in the current
 #. * year, showing the abbreviated month name, day of the
 #. * month and the time in 24-hour format.
-#: ../src/gl-util.c:169
+#: ../src/gl-util.c:173
 msgid "%b %e %H:%M"
 msgstr "%e. %Bta %H:%M"
 
 #. Translators: timestamp format for events in a different
 #. * year, showing the abbreviated month name, day of the
 #. * month, year and the time in 24-hour format.
-#: ../src/gl-util.c:175
+#: ../src/gl-util.c:179
 msgid "%b %e %Y %H:%M"
 msgstr "%e. %Bta %Y %H:%M"
+
+#. Transltors: the first string is the earliest timestamp of the boot,
+#. * and the second string is the newest timestamp. An example string might
+#. * be '08:10 - 08:30'
+#: ../src/gl-util.c:242
+#, c-format
+msgid "%s – %s"
+msgstr "%s – %s"
 
 #~ msgid "Not implemented"
 #~ msgstr "Ei toteutettu"
