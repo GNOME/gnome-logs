@@ -84,7 +84,7 @@ gl_event_toolbar_add_boots (GlEventToolbar *toolbar,
     boot_menu = g_menu_new ();
     section = g_menu_new ();
 
-    for (i = boot_ids->len - 1; i >= boot_ids->len - 5 && i >= 0; i--)
+    for (i = MAX (boot_ids->len, 5) - 5; i < boot_ids->len; i++)
     {
         gchar *boot_match;
         gchar *time_display;
@@ -106,7 +106,7 @@ gl_event_toolbar_add_boots (GlEventToolbar *toolbar,
         variant = g_variant_new_string (boot_match);
         g_menu_item_set_action_and_target_value (item, "win.view-boot",
                                                  variant);
-        g_menu_append_item (section, item);
+        g_menu_prepend_item (section, item);
 
         g_free (time_display);
         g_object_unref (item);

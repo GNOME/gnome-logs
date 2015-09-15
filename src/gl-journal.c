@@ -76,7 +76,7 @@ gl_journal_get_current_boot_time (GlJournal *journal,
 
     boot_ids = gl_journal_get_boot_ids (journal);
 
-    for (i = boot_ids->len - 1; i >= boot_ids->len - 5 && i >= 0; i--)
+    for (i = 0; i < boot_ids->len; i++)
     {
         GlJournalBootID *boot_id;
 
