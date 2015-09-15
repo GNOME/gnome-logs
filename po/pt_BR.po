@@ -7,10 +7,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-08-10 19:18+0000\n"
-"PO-Revision-Date: 2015-08-10 19:59-0300\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-logs&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2015-09-15 07:29+0000\n"
+"PO-Revision-Date: 2015-09-15 15:03-0300\n"
 "Last-Translator: Enrico Nicoletto <liverig@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
 "Language: pt_BR\n"
@@ -18,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 1.6.4\n"
+"X-Generator: Poedit 1.7.3\n"
 
 #: ../data/gl-categorylist.ui.h:1
 msgid "Important"
@@ -60,21 +59,15 @@ msgstr "Atualizações"
 msgid "Usage"
 msgstr "Utilização"
 
-#. Name and summary taken from the desktop file.
-#: ../data/gl-eventtoolbar.ui.h:1 ../data/org.gnome.Logs.appdata.xml.in.h:2
-#: ../data/org.gnome.Logs.desktop.in.h:1
-msgid "Logs"
-msgstr "Registros"
-
-#: ../data/gl-eventtoolbar.ui.h:2
+#: ../data/gl-eventtoolbar.ui.h:1
 msgid "Go back to the event view"
 msgstr "Retornar a visão de eventos"
 
-#: ../data/gl-eventtoolbar.ui.h:3
+#: ../data/gl-eventtoolbar.ui.h:2
 msgid "Choose the boot from which to view logs"
 msgstr "Escolha a inicialização desejada para ver os registros"
 
-#: ../data/gl-eventtoolbar.ui.h:4
+#: ../data/gl-eventtoolbar.ui.h:3
 msgid "Search the displayed logs"
 msgstr "Pesquisar entre os registros exibidos"
 
@@ -126,28 +119,23 @@ msgstr "_Sobre"
 msgid "_Quit"
 msgstr "Sai_r"
 
-#: ../data/org.gnome.Logs.appdata.xml.in.h:3
-#: ../data/org.gnome.Logs.desktop.in.h:3
+#. Name and summary taken from the desktop file.
+#: ../data/org.gnome.Logs.appdata.xml.in.h:2 ../data/org.gnome.Logs.desktop.in.h:1 ../src/gl-eventtoolbar.c:125
+msgid "Logs"
+msgstr "Registros"
+
+#: ../data/org.gnome.Logs.appdata.xml.in.h:3 ../data/org.gnome.Logs.desktop.in.h:3
 msgid "View detailed event logs for the system"
 msgstr "Veja registros detalhados de eventos do sistema"
 
 # 'Logs' ao início da frase é o nome próprio do aplicativo. Acrescentei o artigo 'Os' para facilitar a compreensão dos usuários; Journal é um sistema de registros, systemd é um gerenciador e sistema de serviço  para Linux. referência: <https://wiki.archlinux.org/index.php/systemd#Journal> --Enrico
 #: ../data/org.gnome.Logs.appdata.xml.in.h:4
-msgid ""
-"Logs shows events from the systemd journal, and sorts them into categories, "
-"such as hardware and applications."
-msgstr ""
-"Os registros mostram eventos de sistema Journal através de systemd e os "
-"ordena em categorias, como hardware e aplicativos."
+msgid "Logs shows events from the systemd journal, and sorts them into categories, such as hardware and applications."
+msgstr "Os registros mostram eventos de sistema Journal através de systemd e os ordena em categorias, como hardware e aplicativos."
 
 #: ../data/org.gnome.Logs.appdata.xml.in.h:5
-msgid ""
-"Using Logs you can search your logs by typing a search term, and view "
-"detailed information about each event by clicking on it."
-msgstr ""
-"Ao usar este aplicativo, você poderá pesquisar seus registros digitando um "
-"termo de pesquisa e poderá ver informações detalhadas sobre cada evento ao "
-"clicar neles."
+msgid "Using Logs you can search your logs by typing a search term, and view detailed information about each event by clicking on it."
+msgstr "Ao usar este aplicativo, você poderá pesquisar seus registros digitando um termo de pesquisa e poderá ver informações detalhadas sobre cada evento ao clicar neles."
 
 #: ../data/org.gnome.Logs.desktop.in.h:2
 msgid "Log Viewer"
@@ -160,14 +148,11 @@ msgstr "registro;registros;log;journal;depuração;debug;erro;"
 
 #: ../data/org.gnome.Logs.gschema.xml.h:1
 msgid "How to sort list rows in the event view list"
-msgstr ""
-"Como classificar a lista de linhas na lista de visualização de eventos."
+msgstr "Como classificar a lista de linhas na lista de visualização de eventos."
 
 #: ../data/org.gnome.Logs.gschema.xml.h:2
 msgid "Sort list rows in ascending or descending order for the selected type"
-msgstr ""
-"Classifica as linhas da lista em ordem crescente ou decrescente para o tipo "
-"selecionado."
+msgstr "Classifica as linhas da lista em ordem crescente ou decrescente para o tipo selecionado."
 
 #: ../src/gl-application.c:109
 msgid "translator-credits"
@@ -181,9 +166,14 @@ msgstr "Veja e pesquise registros"
 msgid "Print version information and exit"
 msgstr "Exibe informação da versão e sai"
 
+#. Translators: Boot refers to a single run (or bootup) of the system
+#: ../src/gl-eventtoolbar.c:116
+msgid "Boot"
+msgstr "Inicialização"
+
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventviewlist.c:379
+#: ../src/gl-eventviewlist.c:575
 msgid "No results"
 msgstr "Nenhum resultado"
 
@@ -193,43 +183,51 @@ msgstr "Outro"
 
 #. Translators: timestamp format for events on the current
 #. * day, showing the time in 12-hour format.
-#: ../src/gl-util.c:138
+#: ../src/gl-util.c:142
 msgid "%l:%M %p"
 msgstr "%l:%M %p"
 
 #. Translators: timestamp format for events in the current
 #. * year, showing the abbreviated month name, day of the
 #. * month and the time in 12-hour format.
-#: ../src/gl-util.c:144
+#: ../src/gl-util.c:148
 msgid "%b %e %l:%M %p"
 msgstr "%e de %b, %l:%M %p"
 
 #. Translators: timestamp format for events in a different
 #. * year, showing the abbreviated month name, day of the
 #. * month, year and the time in 12-hour format.
-#: ../src/gl-util.c:150
+#: ../src/gl-util.c:154
 msgid "%b %e %Y %l:%M %p"
 msgstr "%e de %b de %Y, %l:%M %p"
 
 #. Translators: timestamp format for events on the current
 #. * day, showing the time in 24-hour format.
-#: ../src/gl-util.c:163
+#: ../src/gl-util.c:167
 msgid "%H:%M"
 msgstr "%H:%M"
 
 #. Translators: timestamp format for events in the current
 #. * year, showing the abbreviated month name, day of the
 #. * month and the time in 24-hour format.
-#: ../src/gl-util.c:169
+#: ../src/gl-util.c:173
 msgid "%b %e %H:%M"
 msgstr "%e de %b, %H:%M"
 
 #. Translators: timestamp format for events in a different
 #. * year, showing the abbreviated month name, day of the
 #. * month, year and the time in 24-hour format.
-#: ../src/gl-util.c:175
+#: ../src/gl-util.c:179
 msgid "%b %e %Y %H:%M"
 msgstr "%e de %b de %Y, %H:%M"
+
+#. Transltors: the first string is the earliest timestamp of the boot,
+#. * and the second string is the newest timestamp. An example string might
+#. * be '08:10 - 08:30'
+#: ../src/gl-util.c:242
+#, c-format
+msgid "%s – %s"
+msgstr "%s – %s"
 
 #~ msgid "Not implemented"
 #~ msgstr "Não implementado"
