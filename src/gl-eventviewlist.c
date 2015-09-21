@@ -127,8 +127,7 @@ tokenize_search_string (gchar *search_text)
         {
             break;
         }
-
-        if (scanner->token == '+')
+        else if (scanner->token == '+')
         {
             g_ptr_array_add (token_array, g_strdup ("+"));
 
@@ -143,7 +142,17 @@ tokenize_search_string (gchar *search_text)
                 field_name = NULL;
             }
         }
-        else
+        else if (scanner->token == G_TOKEN_INT)
+        {
+            field_name = g_strdup_printf ("%lu", scanner->value.v_int);
+            g_ptr_array_add (token_array, field_name);
+        }
+        else if (scanner->token == G_TOKEN_FLOAT)
+        {
+            field_name = g_strdup_printf ("%g", scanner->value.v_float);
+            g_ptr_array_add (token_array, field_name);
+        }
+        else if (scanner->token == G_TOKEN_IDENTIFIER)
         {
             if (token_array->len != 0)
             {
@@ -153,9 +162,23 @@ tokenize_search_string (gchar *search_text)
             field_name = g_strdup (scanner->value.v_identifier);
             g_ptr_array_add (token_array, field_name);
         }
+        else
+        {
+            field_name = NULL;
+        }
 
         g_scanner_get_next_token (scanner);
-        if (scanner->value.v_identifier != NULL)
+        if (scanner->token == G_TOKEN_INT)
+        {
+            field_value = g_strdup_printf ("%lu", scanner->value.v_int);
+            g_ptr_array_add (token_array, field_value);
+        }
+        else if (scanner->token == G_TOKEN_FLOAT)
+        {
+            field_value = g_strdup_printf ("%g", scanner->value.v_float);
+            g_ptr_array_add (token_array, field_value);
+        }
+        else if (scanner->token == G_TOKEN_IDENTIFIER)
         {
             field_value = g_strdup (scanner->value.v_identifier);
             g_ptr_array_add (token_array, field_value);
