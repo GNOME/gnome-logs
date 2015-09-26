@@ -1,0 +1,234 @@
+# Irish translations for gnome-logs package.
+# Copyright (C) 2015 Free Software Foundation, Inc.
+# This file is distributed under the same license as the gnome-logs package.
+# Seán de Búrca <leftmostcat@gmail.com>, 2015.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-logs.master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-09-24 22:09-0600\n"
+"PO-Revision-Date: 2015-09-25 18:10-0600\n"
+"Last-Translator: Seán de Búrca <leftmostcat@gmail.com>\n"
+"Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
+"Language: ga\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=5; plural=n==1 ? 0 : n==2 ? 1 : n<7 ? 2 : n<11 ? 3 : "
+"4;\n"
+
+#: ../data/gl-categorylist.ui.h:1
+msgid "Important"
+msgstr "Tábhachtach"
+
+#: ../data/gl-categorylist.ui.h:2
+msgid "Alerts"
+msgstr ""
+
+#: ../data/gl-categorylist.ui.h:3
+msgid "Starred"
+msgstr ""
+
+#: ../data/gl-categorylist.ui.h:4
+msgid "All"
+msgstr "Gach Rud"
+
+#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:167
+msgid "Applications"
+msgstr "Feidhmchláir"
+
+#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:176
+msgid "System"
+msgstr "Córas"
+
+#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:180
+msgid "Security"
+msgstr "Slándáil"
+
+#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:172
+msgid "Hardware"
+msgstr "Crua-Earraí"
+
+#: ../data/gl-categorylist.ui.h:9
+msgid "Updates"
+msgstr "Nuashonruithe"
+
+#: ../data/gl-categorylist.ui.h:10
+msgid "Usage"
+msgstr "Úsáid"
+
+#: ../data/gl-eventtoolbar.ui.h:1
+msgid "Go back to the event view"
+msgstr ""
+
+#: ../data/gl-eventtoolbar.ui.h:2
+msgid "Choose the boot from which to view logs"
+msgstr ""
+
+#: ../data/gl-eventtoolbar.ui.h:3
+msgid "Search the displayed logs"
+msgstr ""
+
+#: ../data/gl-eventviewdetail.ui.h:1
+msgid "Message"
+msgstr "Teachtaireacht"
+
+#: ../data/gl-eventviewdetail.ui.h:2
+msgid "Audit Session"
+msgstr ""
+
+#: ../data/gl-eventviewdetail.ui.h:3
+msgid "Kernel Device"
+msgstr "Gléas Eithne"
+
+#: ../data/gl-eventviewdetail.ui.h:4
+msgid "Priority"
+msgstr "Tosaíocht"
+
+#: ../data/gl-eventviewdetail.ui.h:5
+msgid "Subject"
+msgstr "Ábhar"
+
+#: ../data/gl-eventviewdetail.ui.h:6
+msgid "Defined By"
+msgstr ""
+
+#: ../data/gl-eventviewdetail.ui.h:7
+msgid "Support"
+msgstr "Tacaíocht"
+
+#: ../data/gl-eventviewdetail.ui.h:8
+msgid "Documentation"
+msgstr ""
+
+#: ../data/menus.ui.h:1
+msgid "_New Window"
+msgstr "Fuinneog _Nua"
+
+#: ../data/menus.ui.h:2
+msgid "_Help"
+msgstr "Cab_hair"
+
+#: ../data/menus.ui.h:3
+msgid "_About"
+msgstr "_Maidir Leis Seo"
+
+#: ../data/menus.ui.h:4
+msgid "_Quit"
+msgstr "_Scoir"
+
+#. Name and summary taken from the desktop file.
+#: ../data/org.gnome.Logs.appdata.xml.in.h:2
+#: ../data/org.gnome.Logs.desktop.in.h:1 ../src/gl-eventtoolbar.c:125
+msgid "Logs"
+msgstr "Logaí"
+
+#: ../data/org.gnome.Logs.appdata.xml.in.h:3
+#: ../data/org.gnome.Logs.desktop.in.h:3
+msgid "View detailed event logs for the system"
+msgstr ""
+
+#: ../data/org.gnome.Logs.appdata.xml.in.h:4
+msgid ""
+"Logs shows events from the systemd journal, and sorts them into categories, "
+"such as hardware and applications."
+msgstr ""
+
+#: ../data/org.gnome.Logs.appdata.xml.in.h:5
+msgid ""
+"Using Logs you can search your logs by typing a search term, and view "
+"detailed information about each event by clicking on it."
+msgstr ""
+
+#: ../data/org.gnome.Logs.desktop.in.h:2
+msgid "Log Viewer"
+msgstr "Amharcán Logaí"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: ../data/org.gnome.Logs.desktop.in.h:5
+msgid "log;journal;debug;error;"
+msgstr ""
+
+#: ../data/org.gnome.Logs.gschema.xml.h:1
+msgid "How to sort list rows in the event view list"
+msgstr ""
+
+#: ../data/org.gnome.Logs.gschema.xml.h:2
+msgid "Sort list rows in ascending or descending order for the selected type"
+msgstr ""
+
+#: ../src/gl-application.c:109
+msgid "translator-credits"
+msgstr "Seán de Búrca <leftmostcat@gmail.com>"
+
+#: ../src/gl-application.c:110
+msgid "View and search logs"
+msgstr ""
+
+#: ../src/gl-application.c:237
+msgid "Print version information and exit"
+msgstr ""
+
+#. Translators: Boot refers to a single run (or bootup) of the system
+#: ../src/gl-eventtoolbar.c:116
+msgid "Boot"
+msgstr ""
+
+#. Translators: Shown when there are no (zero) results in the current
+#. * view.
+#: ../src/gl-eventviewlist.c:598
+msgid "No results"
+msgstr ""
+
+#: ../src/gl-eventviewrow.c:184
+msgid "Other"
+msgstr "Eile"
+
+#. Translators: timestamp format for events on the current
+#. * day, showing the time in 12-hour format.
+#: ../src/gl-util.c:142
+msgid "%l:%M %p"
+msgstr "%l:%M %p"
+
+#. Translators: timestamp format for events in the current
+#. * year, showing the abbreviated month name, day of the
+#. * month and the time in 12-hour format.
+#: ../src/gl-util.c:148
+msgid "%b %e %l:%M %p"
+msgstr "%e %b %l:%M %p"
+
+#. Translators: timestamp format for events in a different
+#. * year, showing the abbreviated month name, day of the
+#. * month, year and the time in 12-hour format.
+#: ../src/gl-util.c:154
+msgid "%b %e %Y %l:%M %p"
+msgstr "%e %b %Y %l:%M %p"
+
+#. Translators: timestamp format for events on the current
+#. * day, showing the time in 24-hour format.
+#: ../src/gl-util.c:167
+msgid "%H:%M"
+msgstr "%H:%M"
+
+#. Translators: timestamp format for events in the current
+#. * year, showing the abbreviated month name, day of the
+#. * month and the time in 24-hour format.
+#: ../src/gl-util.c:173
+msgid "%b %e %H:%M"
+msgstr "%e %b %H:%M"
+
+#. Translators: timestamp format for events in a different
+#. * year, showing the abbreviated month name, day of the
+#. * month, year and the time in 24-hour format.
+#: ../src/gl-util.c:179
+msgid "%b %e %Y %H:%M"
+msgstr "%e %b %Y %H:%M"
+
+#. Transltors: the first string is the earliest timestamp of the boot,
+#. * and the second string is the newest timestamp. An example string might
+#. * be '08:10 - 08:30'
+#: ../src/gl-util.c:242
+#, c-format
+msgid "%s – %s"
+msgstr "%s – %s"
