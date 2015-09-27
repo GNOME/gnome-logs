@@ -6,34 +6,36 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
-"POT-Creation-Date: 2014-03-14 07:52+0000\n"
-"PO-Revision-Date: 2014-03-14 09:52+0300\n"
-"Last-Translator: Dimitris Spingos (Δημήτρης Σπίγγος) <dmtrs32@gmail.com>\n"
+"POT-Creation-Date: 2014-03-21 08:49+0000\n"
+"PO-Revision-Date: 2015-09-27 20:20+0300\n"
+"Last-Translator: Tom Tryfonidis <tomtryf@gmail.com>\n"
 "Language-Team: team@lists.gnome.gr\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Virtaal 0.7.0\n"
+"X-Generator: Poedit 1.8.4\n"
 "X-Project-Style: gnome\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
 msgid "translator-credits"
-msgstr "Maria Mavridou <mavridou@gmail.com>, 2014"
+msgstr ""
+"Ελληνική μεταφραστική ομάδα GNOME <team@gnome.gr>, 2014\n"
+"Μαρία Μαυρίδου <mavridou@gmail.com>, 2014"
 
 #. (itstool) path: info/title
 #: C/index.page:7
 msgctxt "text"
 msgid "Logs help"
-msgstr "Βοήθεια αρχείων καταγραφής"
+msgstr "Βοήθεια του Καταγραφές"
 
 #. (itstool) path: info/title
 #: C/index.page:8
 msgctxt "link"
 msgid "Logs help"
-msgstr "Βοήθεια αρχείων καταγραφής"
+msgstr "Βοήθεια του Καταγραφές"
 
 #. (itstool) path: info/desc
 #: C/index.page:13
@@ -45,7 +47,7 @@ msgstr ""
 #. (itstool) path: page/title
 #: C/index.page:16
 msgid "<_:media-1/> Logs"
-msgstr "<_:media-1/> Αρχεία καταγραφής"
+msgstr "<_:media-1/> Καταγραφές"
 
 #. (itstool) path: media
 #. This is a reference to an external file such as an image or video. When
@@ -80,8 +82,8 @@ msgstr "Ekaterina Gerasimova"
 #: C/introduction.page:23
 msgid "<app>Logs</app> is a viewer for the <sys>systemd</sys> journal."
 msgstr ""
-"<app>Αρχεία Καταγραφής</app> είναι ένα πρόγραμμα προβολής του ημερολογίου "
-"του <sys>systemd</sys>."
+"Οι <app>Καταγραφές</app> είναι ένα πρόγραμμα προβολής των μηνυμάτων του "
+"<sys>systemd</sys>."
 
 #. (itstool) path: page/title
 #: C/introduction.page:27
@@ -94,8 +96,8 @@ msgid ""
 "Logs shows events from the systemd journal, and sorts them into categories, "
 "such as hardware and applications."
 msgstr ""
-"Τα αρχεία καταγραφής δείχνουν γεγονότα από το ημερολόγιο του systemd, και τα "
-"ταξινομούν σε κατηγορίες, όπως το υλικό και τις εφαρμογές."
+"Οι Καταγραφές εμφανίζουν γεγονότα από το ημερολόγιο του systemd, και τα "
+"ταξινομούν σε κατηγορίες, όπως υλικό και εφαρμογές."
 
 #. (itstool) path: page/p
 #: C/introduction.page:32
@@ -103,26 +105,25 @@ msgid ""
 "Using Logs you can search your logs by typing a search term, and view "
 "detailed information about each event by clicking on it."
 msgstr ""
-"Χρησιμοποιώντας Αρχεία Καταγραφής μπορείτε να αναζητήσετε τα αρχεία σας "
-"πληκτρολογώντας έναν όρο αναζήτησης και να δείτε αναλυτικές πληροφορίες για "
-"κάθε συμβάν κάνοντας κλικ σε αυτό."
+"Χρησιμοποιώντας τις Καταγραφές μπορείτε να αναζητήσετε τα αρχεία σας "
+"πληκτρολογώντας έναν όρο αναζήτησης και να προβάλετε αναλυτικές πληροφορίες "
+"για κάθε συμβάν κάνοντας κλικ σε αυτό."
 
 #. (itstool) path: media/p
 #: C/introduction.page:36
 msgid "Screenshot of Logs showing some journal entries."
 msgstr ""
-"Στιγμιότυπο από Αρχεία Καταγραφής που δείχνουν κάποιες ημερολογιακές "
-"εγγραφές."
+"Στιγμιότυπο από τις Καταγραφές που δείχνουν κάποιες ημερολογιακές εγγραφές."
 
 #. (itstool) path: p/link
 #: C/legal.xml:5
 msgid "Creative Commons Attribution-ShareAlike 3.0 Unported License"
-msgstr "Creative Commons Attribution-ShareAlike 3.0 Unported License"
+msgstr "Άδεια Creative Commons Attribution-ShareAlike 3.0 Unported"
 
 #. (itstool) path: license/p
 #: C/legal.xml:4
 msgid "This work is licensed under a <_:link-1/>."
-msgstr "Το έργο αυτό διανέμεται υπό την άδεια <_:link-1/>."
+msgstr "Αυτό το έργο έχει αδειοδοτηθεί υπό την <_:link-1/>."
 
 #. (itstool) path: credit/years
 #: C/permissions.page:13
@@ -167,10 +168,10 @@ msgid ""
 "logs, it is possible that your system administrator has disabled your "
 "ability to view logs."
 msgstr ""
-"Από προεπιλογή, <em href=\"help:gnome-help/user-admin-explain\">Απλοί "
-"Χρήστες</em> μπορούν να δουν ένα περιορισμένο σύνολο αρχείων καταγραφής, "
-"όπως αρχεία εφαρμογών και τα δικά τους αρχεία συνεδρίας. Αν είστε "
-"<gui>Απλός</gui> χρήστης και δεν βλέπετε κανένα αρχείο, είναι πιθανό ο "
+"Από προεπιλογή, οι <em href=\"help:gnome-help/user-admin-explain\">απλοί</"
+"em> χρήστες μπορούν να δουν ένα περιορισμένο σύνολο αρχείων καταγραφής, όπως "
+"καταγραφές των εφαρμογών καθώς και τα δικά τους αρχεία συνεδρίας. Αν είστε "
+"<gui>απλός</gui> χρήστης και δεν βλέπετε κανένα αρχείο, είναι πιθανό ο "
 "διαχειριστής του συστήματός σας να έχει απενεργοποιήσει την δυνατότητά σας "
 "να βλέπετε αρχεία καταγραφής."
 
@@ -187,11 +188,12 @@ msgid ""
 "information about log access permissions, <link href=\"man:systemd-journald"
 "\">see the <_:cmd-1/> man page</link>."
 msgstr ""
-"<em>Διαχειριστές</em> θα είναι κανονικά σε θέση να δουν πιο ευαίσθητα αρχεία "
-"καταγραφής, όπως αρχεία πυρήνα και αρχεία των άλλων χρηστών. Είναι δυνατό "
-"για τους διαχειριστές να έχουν διαφορετικά επίπεδα πρόσβασης σε αρχεία "
-"καταγραφής, έτσι ώστε να μην είναι σε θέση να δουν όλα τα αρχεία. Αν είστε "
-"<gui>Διαχειριστής</gui>, τότε μόνο άλλοι διαχειριστές μπορούν να αλλάξουν τα "
-"επίπεδα πρόσβασής σας στα αρχεία καταγραφής. Για περισσότερες πληροφορίες "
-"σχετικά με τα δικαιώματα πρόσβασης αρχείων καταγραφής, <link href=\"man:"
-"systemd-journald\"> δείτε τη σελίδα <_:cmd-1/> man page</link>."
+"Οι <em>διαχειριστές</em> θα είναι κανονικά σε θέση να δουν πιο ευαίσθητα "
+"αρχεία καταγραφής, όπως καταγραφές του πυρήνα και καταγραφές άλλων χρηστών. "
+"Είναι δυνατό για τους διαχειριστές να έχουν διαφορετικά επίπεδα πρόσβασης σε "
+"αρχεία καταγραφής, έτσι ώστε να μην είναι σε θέση να δουν όλα τα αρχεία. Αν "
+"είστε <gui>διαχειριστής</gui>, τότε μόνο άλλοι διαχειριστές μπορούν να "
+"αλλάξουν τα επίπεδα πρόσβασής σας στα αρχεία καταγραφής. Για περισσότερες "
+"πληροφορίες σχετικά με τα δικαιώματα πρόσβασης στα αρχεία καταγραφής, <link "
+"href=\"man:systemd-journald\">δείτε τη σελίδα βοήθειας του <_:cmd-1/> </"
+"link>."
