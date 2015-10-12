@@ -42,6 +42,7 @@ typedef struct
 {
     GtkWidget *current_boot;
     GtkWidget *back_button;
+    GtkWidget *output_button;
     GtkWidget *menu_button;
     GtkWidget *search_button;
     GlEventToolbarMode mode;
@@ -164,11 +165,13 @@ on_notify_mode (GlEventToolbar *toolbar,
     {
         case GL_EVENT_TOOLBAR_MODE_LIST:
             gtk_widget_hide (priv->back_button);
+            gtk_widget_show (priv->output_button);
             gtk_widget_show (priv->menu_button);
             gtk_widget_show (priv->search_button);
             break;
         case GL_EVENT_TOOLBAR_MODE_DETAIL:
             gtk_widget_show (priv->back_button);
+            gtk_widget_hide (priv->output_button);
             gtk_widget_hide (priv->menu_button);
             gtk_widget_hide (priv->search_button);
             break;
@@ -262,6 +265,8 @@ gl_event_toolbar_class_init (GlEventToolbarClass *klass)
 
     gtk_widget_class_set_template_from_resource (widget_class,
                                                  "/org/gnome/Logs/gl-eventtoolbar.ui");
+    gtk_widget_class_bind_template_child_private (widget_class, GlEventToolbar,
+                                                  output_button);
     gtk_widget_class_bind_template_child_private (widget_class, GlEventToolbar,
                                                   back_button);
     gtk_widget_class_bind_template_child_private (widget_class, GlEventToolbar,

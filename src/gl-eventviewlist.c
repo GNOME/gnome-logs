@@ -69,6 +69,59 @@ static const gchar SETTINGS_SCHEMA[] = "org.gnome.Logs";
 static const gchar CLOCK_FORMAT[] = "clock-format";
 static const gchar SORT_ORDER[] = "sort-order";
 
+gchar *
+gl_event_view_list_get_output_logs (GlEventViewList *view)
+{
+    gchar *output_buf = NULL;
+    gint index = 0;
+    GOutputStream *stream;
+    GlEventViewListPrivate *priv;
+
+    priv = gl_event_view_list_get_instance_private (view);
+
+    stream = g_memory_output_stream_new_resizable ();
+
+    while (gtk_list_box_get_row_at_index (GTK_LIST_BOX (priv->entries_box),
+                                          index) != NULL)
+    {
+        const gchar *comm;
+        const gchar *message;
+        gchar *output_text;
+        gchar *time;
+        GDateTime *now;
+        guint64 timestamp;
+        GtkListBoxRow *row;
+
+        row = gtk_list_box_get_row_at_index (GTK_LIST_BOX (priv->entries_box),
+                                             index);
+
+        comm = gl_event_view_row_get_command_line (GL_EVENT_VIEW_ROW (row));
+        message = gl_event_view_row_get_message (GL_EVENT_VIEW_ROW (row));
+        timestamp = gl_event_view_row_get_timestamp (GL_EVENT_VIEW_ROW (row));
+        now = g_date_time_new_now_local ();
+        time = gl_util_timestamp_to_display (timestamp, now,
+                                             priv->clock_format);
+
+        output_text = g_strconcat (time, " ",
+                                   comm ? comm : "kernel", ": ",
+                                   message, "\n", NULL);
+        index++;
+
+        g_output_stream_write (stream, output_text, strlen (output_text),
+                               NULL, NULL);
+
+        g_date_time_unref (now);
+        g_free (time);
+        g_free (output_text);
+    }
+
+    output_buf = g_memory_output_stream_get_data (G_MEMORY_OUTPUT_STREAM (stream));
+
+    g_output_stream_close (stream, NULL, NULL);
+
+    return output_buf;
+}
+
 static gboolean
 gl_event_view_search_is_case_sensitive (GlEventViewList *view)
 {

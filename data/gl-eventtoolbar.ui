@@ -20,6 +20,27 @@
                 </child>
             </object>
         </child>
+        <child>
+            <object class="GtkButton" id="output_button">
+                <property name="action-name">win.export</property>
+                <property name="tooltip-text" translatable="yes">Export logs to a file</property>
+                <property name="valign">center</property>
+                <property name="visible">True</property>
+                <style>
+                    <class name="image-button" />
+                </style>
+                <child>
+                    <object class="GtkImage" id="output_icon">
+                        <property name="icon-name">send-to-symbolic</property>
+                        <property name="icon-size">1</property>
+                        <property name="visible">True</property>
+                    </object>
+                </child>
+            </object>
+            <packing>
+                <property name="pack-type">end</property>
+            </packing>
+        </child>
         <child type="title">
             <object class="GtkMenuButton" id="menu_button">
                 <property name="direction">none</property>

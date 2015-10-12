@@ -169,6 +169,95 @@ on_search (GSimpleAction *action,
 }
 
 static void
+on_export (GSimpleAction *action,
+           GVariant *variant,
+           gpointer user_data)
+{
+    GlWindowPrivate *priv;
+    GlEventView *event;
+    GtkFileChooser *file_chooser;
+    GtkWidget *dialog;
+    gint res;
+
+    priv = gl_window_get_instance_private (GL_WINDOW (user_data));
+    event = GL_EVENT_VIEW (priv->event);
+
+    dialog = gtk_file_chooser_dialog_new (_("Save logs"),
+                                          GTK_WINDOW (user_data),
+                                          GTK_FILE_CHOOSER_ACTION_SAVE,
+                                          _("_Cancel"), GTK_RESPONSE_CANCEL,
+                                          _("_Save"), GTK_RESPONSE_ACCEPT,
+                                          NULL);
+
+    file_chooser = GTK_FILE_CHOOSER (dialog);
+    gtk_file_chooser_set_do_overwrite_confirmation (file_chooser, TRUE);
+    gtk_file_chooser_set_current_name (file_chooser, _("log messages"));
+
+    res = gtk_dialog_run (GTK_DIALOG (dialog));
+    if (res == GTK_RESPONSE_ACCEPT)
+    {
+        gboolean have_error = FALSE;
+        gchar *file_content;
+        GFile *output_file;
+        GFileOutputStream *file_ostream;
+        GError *error = NULL;
+        GtkWidget *error_dialog;
+
+        file_content = gl_event_view_get_output_logs (event);
+        output_file = gtk_file_chooser_get_file (file_chooser);
+        file_ostream = g_file_replace (output_file, NULL, TRUE,
+                                       G_FILE_CREATE_NONE, NULL, &error);
+        if (error != NULL)
+        {
+            have_error = TRUE;
+
+            g_warning ("Error while replacing exported log messages file: %s",
+                       error->message);
+            g_clear_error (&error);
+        }
+
+        g_output_stream_write (G_OUTPUT_STREAM (file_ostream), file_content,
+                               strlen (file_content), NULL, &error);
+        if (error != NULL)
+        {
+            have_error = TRUE;
+
+            g_warning ("Error while replacing exported log messages file: %s",
+                       error->message);
+            g_clear_error (&error);
+        }
+
+        g_output_stream_close (G_OUTPUT_STREAM (file_ostream), NULL, &error);
+        if (error != NULL)
+        {
+            have_error = TRUE;
+
+            g_warning ("Error while replacing exported log messages file: %s",
+                       error->message);
+            g_clear_error (&error);
+        }
+
+        if (have_error == TRUE)
+        {
+            error_dialog = gtk_message_dialog_new (GTK_WINDOW (user_data),
+                                                   GTK_DIALOG_MODAL,
+                                                   GTK_MESSAGE_ERROR,
+                                                   GTK_BUTTONS_CLOSE,
+                                                   "%s",
+                                                   _("Unable to export log messages to a file"));
+            gtk_dialog_run (GTK_DIALOG (error_dialog));
+            gtk_widget_destroy (error_dialog);
+        }
+
+        g_free (file_content);
+        g_object_unref (file_ostream);
+        g_object_unref (output_file);
+    }
+
+    gtk_widget_destroy (dialog);
+}
+
+static void
 on_view_boot (GSimpleAction *action,
               GVariant *variant,
               gpointer user_data)
@@ -275,6 +364,7 @@ static GActionEntry actions[] = {
     { "toolbar-mode", on_action_radio, "s", "'list'", on_toolbar_mode },
     { "search", on_action_toggle, NULL, "false", on_search },
     { "view-boot", on_action_radio, "s", "''", on_view_boot },
+    { "export", on_export },
     { "close", on_close }
 };
 

@@ -53,6 +53,36 @@ G_DEFINE_TYPE_WITH_PRIVATE (GlEventViewRow, gl_event_view_row, GTK_TYPE_LIST_BOX
 
 static GParamSpec *obj_properties[N_PROPERTIES] = { NULL, };
 
+const gchar *
+gl_event_view_row_get_command_line (GlEventViewRow *row)
+{
+    GlEventViewRowPrivate *priv;
+
+    priv = gl_event_view_row_get_instance_private (row);
+
+    return gl_journal_entry_get_command_line (priv->entry);
+}
+
+guint64
+gl_event_view_row_get_timestamp (GlEventViewRow *row)
+{
+    GlEventViewRowPrivate *priv;
+
+    priv = gl_event_view_row_get_instance_private (row);
+
+    return gl_journal_entry_get_timestamp (priv->entry);
+}
+
+const gchar *
+gl_event_view_row_get_message (GlEventViewRow *row)
+{
+    GlEventViewRowPrivate *priv;
+
+    priv = gl_event_view_row_get_instance_private (row);
+
+    return gl_journal_entry_get_message (priv->entry);
+}
+
 GtkWidget *
 gl_event_view_row_get_category_label (GlEventViewRow *row)
 {
