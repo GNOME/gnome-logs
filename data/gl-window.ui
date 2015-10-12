@@ -13,8 +13,38 @@
             </object>
         </child>
         <child>
-            <object class="GlEventView" id="event">
+            <object class="GtkBox" id="event_box">
+                <property name="orientation">vertical</property>
                 <property name="visible">True</property>
+                <child>
+                    <object class="GtkInfoBar" id="info_bar">
+                        <property name="message-type">GTK_MESSAGE_ERROR</property>
+                        <child>
+                            <object class="GtkButtonBox" id="action_area">
+                                <property name="visible">True</property>
+                                <property name="orientation">vertical</property>
+                                <property name="layout_style">center</property>
+                                <child>
+                                    <object class="GtkButton" id="help_button">
+                                        <property name="visible">True</property>
+                                        <property name="halign">center</property>
+                                        <property name="label" translatable="yes">Help</property>
+                                        <signal name="clicked" handler="on_help_button_clicked" object="GlWindow"/>
+                                    </object>
+                                </child>
+                            </object>
+                            <packing>
+                                <property name="expand">False</property>
+                                <property name="fill">True</property>
+                            </packing>
+                        </child>
+                    </object>
+                </child>
+                <child>
+                    <object class="GlEventView" id="event">
+                        <property name="visible">True</property>
+                    </object>
+                </child>
             </object>
         </child>
     </template>

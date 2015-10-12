@@ -37,6 +37,7 @@ typedef struct
 {
     GtkWidget *event_toolbar;
     GtkWidget *event;
+    GtkWidget *info_bar;
 } GlWindowPrivate;
 
 G_DEFINE_TYPE_WITH_PRIVATE (GlWindow, gl_window, GTK_TYPE_APPLICATION_WINDOW)
@@ -344,6 +345,30 @@ on_gl_window_key_press_event (GlWindow *window,
     return GDK_EVENT_PROPAGATE;
 }
 
+static void
+on_help_button_clicked (GlWindow *window,
+                        gint response_id,
+                        gpointer user_data)
+{
+    GlWindowPrivate *priv;
+    GtkWindow *parent;
+    GError *error = NULL;
+
+    parent = GTK_WINDOW (window);
+    priv = gl_window_get_instance_private (GL_WINDOW (window));
+
+    gtk_show_uri (gtk_window_get_screen (parent), "help:gnome-logs/permissions",
+                  GDK_CURRENT_TIME, &error);
+
+    if (error)
+    {
+        g_debug ("Error while opening help: %s", error->message);
+        g_error_free (error);
+    }
+
+    gtk_widget_hide (priv->info_bar);
+}
+
 void
 gl_window_set_sort_order (GlWindow *window,
                           GlSortOrder sort_order)
@@ -379,9 +404,13 @@ gl_window_class_init (GlWindowClass *klass)
                                                   event_toolbar);
     gtk_widget_class_bind_template_child_private (widget_class, GlWindow,
                                                   event);
+    gtk_widget_class_bind_template_child_private (widget_class, GlWindow,
+                                                  info_bar);
 
     gtk_widget_class_bind_template_callback (widget_class,
                                              on_gl_window_key_press_event);
+    gtk_widget_class_bind_template_callback (widget_class,
+                                             on_help_button_clicked);
 }
 
 static void
@@ -429,6 +458,34 @@ gl_window_init (GlWindow *window)
     gtk_style_context_add_provider_for_screen (screen,
                                                GTK_STYLE_PROVIDER (provider),
                                                GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
+
+    if (!gl_util_can_read_system_journal ())
+    {
+        GtkWidget *message_label;
+        GtkWidget *content_area;
+
+        message_label = gtk_label_new (_("Unable to read system logs"));
+        gtk_widget_set_hexpand (GTK_WIDGET (message_label), TRUE);
+        gtk_widget_show (message_label);
+        content_area = gtk_info_bar_get_content_area (GTK_INFO_BAR (priv->info_bar));
+        gtk_container_add (GTK_CONTAINER (content_area), message_label);
+
+        gtk_widget_show (priv->info_bar);
+    }
+
+    if (!gl_util_can_read_user_journal ())
+    {
+        GtkWidget *message_label;
+        GtkWidget *content_area;
+
+        message_label = gtk_label_new (_("Unable to read user logs"));
+        gtk_widget_set_hexpand (GTK_WIDGET (message_label), TRUE);
+        gtk_widget_show (message_label);
+        content_area = gtk_info_bar_get_content_area (GTK_INFO_BAR (priv->info_bar));
+        gtk_container_add (GTK_CONTAINER (content_area), message_label);
+
+        gtk_widget_show (priv->info_bar);
+    }
 
     g_object_unref (provider);
 }

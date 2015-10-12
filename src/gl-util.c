@@ -21,6 +21,8 @@
 #include "gl-util.h"
 
 #include <glib/gi18n.h>
+#include <systemd/sd-id128.h>
+#include <systemd/sd-journal.h>
 
 /**
  * GlUtilTimestamps:
@@ -246,4 +248,104 @@ gl_util_boot_time_to_display (guint64 realtime_first,
     g_free (time_last);
 
     return time_display;
+}
+
+gboolean
+gl_util_can_read_system_journal (void)
+{
+    GFile *file;
+    GFileInfo *info;
+    gint ret;
+    gchar *path;
+    gchar ids[33];
+    sd_id128_t machine;
+
+    ret = sd_id128_get_machine (&machine);
+    if (ret < 0)
+    {
+        g_critical ("Error getting machine id: %s", g_strerror (-ret));
+    }
+    sd_id128_to_string (machine, ids);
+
+    path = g_build_filename ("/var/log/journal", ids, "system.journal", NULL);
+
+    file = g_file_new_for_path (path);
+    info = g_file_query_info (file, G_FILE_ATTRIBUTE_ACCESS_CAN_READ,
+                              G_FILE_QUERY_INFO_NONE, NULL, NULL);
+
+    g_free (path);
+    g_object_unref (file);
+
+    if (g_file_info_get_attribute_boolean (info,
+                                           G_FILE_ATTRIBUTE_ACCESS_CAN_READ))
+    {
+        g_object_unref (info);
+
+        return TRUE;
+    }
+    else
+    {
+        g_object_unref (info);
+
+        return FALSE;
+    }
+}
+
+gboolean
+gl_util_can_read_user_journal (void)
+{
+    GFile *file;
+    GFileInfo *info;
+    gint ret;
+    gchar *path;
+    gchar ids[33];
+    gchar *filename;
+    gchar *uid;
+    uid_t user_id;
+    sd_id128_t machine;
+    GError *error = NULL;
+    GCredentials *credentials;
+
+    credentials = g_credentials_new ();
+    user_id = g_credentials_get_unix_user (credentials, &error);
+    if (error != NULL)
+    {
+        g_debug ("Unable to get uid: %s", error->message);
+        g_error_free (error);
+    }
+    uid = g_strdup_printf ("%d", user_id);
+    filename = g_strconcat ("/user-", uid, ".journal", NULL);
+
+    ret = sd_id128_get_machine (&machine);
+    if (ret < 0)
+    {
+        g_critical ("Error getting machine id: %s", g_strerror (-ret));
+    }
+    sd_id128_to_string (machine, ids);
+
+    path = g_build_filename ("/var/log/journal", ids, filename, NULL);
+
+    file = g_file_new_for_path (path);
+    info = g_file_query_info (file, G_FILE_ATTRIBUTE_ACCESS_CAN_READ,
+                              G_FILE_QUERY_INFO_NONE, NULL, NULL);
+
+    g_free (uid);
+    g_free (path);
+    g_free (filename);
+    g_object_unref (file);
+    g_object_unref (credentials);
+
+    if (g_file_info_get_attribute_boolean (info,
+                                           G_FILE_ATTRIBUTE_ACCESS_CAN_READ))
+    {
+        g_object_unref (info);
+
+        return TRUE;
+    }
+    else
+    {
+        g_object_unref (info);
+
+        return FALSE;
+    }
 }

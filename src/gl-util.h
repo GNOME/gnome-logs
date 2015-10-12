@@ -45,6 +45,8 @@ gchar * gl_util_timestamp_to_display (guint64 microsecs,
 gint gl_util_get_uid (void);
 gchar * gl_util_boot_time_to_display (guint64 timestamp_first,
                                       guint64 timestamp_last);
+gboolean gl_util_can_read_system_journal (void);
+gboolean gl_util_can_read_user_journal (void);
 
 G_END_DECLS
 
