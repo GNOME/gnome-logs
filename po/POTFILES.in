@@ -1,6 +1,7 @@
 [type: gettext/glade]data/gl-categorylist.ui
 [type: gettext/glade]data/gl-eventtoolbar.ui
 [type: gettext/glade]data/gl-eventviewdetail.ui
+[type: gettext/glade]data/gl-window.ui
 [type: gettext/glade]data/menus.ui
 data/org.gnome.Logs.appdata.xml.in
 data/org.gnome.Logs.desktop.in
@@ -11,3 +12,4 @@ src/gl-eventviewdetail.c
 src/gl-eventviewlist.c
 src/gl-eventviewrow.c
 src/gl-util.c
+src/gl-window.c
