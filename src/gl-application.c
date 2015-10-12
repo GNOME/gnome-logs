@@ -98,6 +98,7 @@ on_about (GSimpleAction *action,
     };
     static const gchar* authors[] = {
         "David King <davidk@gnome.org>",
+        "Jonathan Kang <jonathan121537@gmail.com>",
         NULL
     };
 
@@ -108,7 +109,7 @@ on_about (GSimpleAction *action,
                            "artists", artists,
                            "translator-credits", _("translator-credits"),
                            "comments", _("View and search logs"),
-                           "copyright", "Copyright © 2013–2014 Red Hat, Inc.",
+                           "copyright", "Copyright © 2013–2015 Red Hat, Inc.\nCopyright © 2014-2015 Jonathan Kang",
                            "license-type", GTK_LICENSE_GPL_3_0,
                            "logo-icon-name", PACKAGE_TARNAME,
                            "version", PACKAGE_VERSION,
