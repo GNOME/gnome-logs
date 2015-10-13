@@ -1,3 +1,12 @@
+GNOME Logs 3.18.1
+=================
+
+* fix for crash when searching from Jonathan Kang
+* fix display of boots when there is only one from Lars Uebernickel
+* Irish transtation
+* update to Greek help translation
+* updates to Serbian, Serbian Latin and Vietnamese translations
+
 GNOME Logs 3.18.0
 =================
 
