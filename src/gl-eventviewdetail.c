@@ -249,10 +249,18 @@ gl_event_view_detail_create_detail (GlEventViewDetail *detail)
 
                     if (str_message && *str_message)
                     {
-                        gtk_label_set_text (GTK_LABEL (priv->support_label),
-                                            str_message);
+                        gchar *str_link;
+
+                        /* According to the spec, this should be a URI */
+                        str_link = g_strdup_printf ("<a href=\"%s\">%s</a>",
+                                                    str_message, str_message);
+
+                        gtk_label_set_markup (GTK_LABEL (priv->support_label),
+                                              str_link);
                         gtk_widget_show (priv->support_field_label);
                         gtk_widget_show (priv->support_label);
+
+                        g_free (str_link);
                     }
                 }
                 else
@@ -263,10 +271,18 @@ gl_event_view_detail_create_detail (GlEventViewDetail *detail)
 
                     if (str && *str)
                     {
-                        gtk_label_set_text (GTK_LABEL (priv->support_label),
-                                            str);
+                        gchar *str_link;
+
+                        /* According to the spec, this should be a URI */
+                        str_link = g_strdup_printf ("<a href=\"%s\">%s</a>",
+                                                    str, str);
+
+                        gtk_label_set_markup (GTK_LABEL (priv->support_label),
+                                              str_link);
                         gtk_widget_show (priv->support_field_label);
                         gtk_widget_show (priv->support_label);
+
+                        g_free (str_link);
                     }
 
                     g_free (str);
