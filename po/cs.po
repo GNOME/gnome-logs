@@ -1,23 +1,25 @@
 # Czech translation for gnome-logs.
 # Copyright (C) 2013 gnome-logs's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-logs package.
-# Marek Černocký <marek@manet.cz>, 2013, 2014, 2015.
+#
 # Petr Kovar <pknbe@volny.cz>, 2015.
+# Marek Černocký <marek@manet.cz>, 2013, 2014, 2015.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-09-21 07:27+0000\n"
-"PO-Revision-Date: 2015-09-21 19:22+0200\n"
-"Last-Translator: Petr Kovar <pknbe@volny.cz>\n"
+"POT-Creation-Date: 2015-10-24 20:10+0000\n"
+"PO-Revision-Date: 2015-10-25 08:29+0100\n"
+"Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Virtaal 0.7.1\n"
+"X-Generator: Gtranslator 2.91.7\n"
 "X-Project-Style: gnome\n"
 
 #: ../data/gl-categorylist.ui.h:1
@@ -36,19 +38,19 @@ msgstr "Významné"
 msgid "All"
 msgstr "Vše"
 
-#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:167
+#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:197
 msgid "Applications"
 msgstr "Aplikace"
 
-#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:176
+#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:206
 msgid "System"
 msgstr "Systém"
 
-#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:180
+#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:210
 msgid "Security"
 msgstr "Bezpečnost"
 
-#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:172
+#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:202
 msgid "Hardware"
 msgstr "Hardware"
 
@@ -65,10 +67,14 @@ msgid "Go back to the event view"
 msgstr "Vrátit se na zobrazení události"
 
 #: ../data/gl-eventtoolbar.ui.h:2
+msgid "Export logs to a file"
+msgstr "Exportovat záznamy do souboru"
+
+#: ../data/gl-eventtoolbar.ui.h:3
 msgid "Choose the boot from which to view logs"
 msgstr "Zvolte zavedení systému, pro které chcete zobrazit záznamy"
 
-#: ../data/gl-eventtoolbar.ui.h:3
+#: ../data/gl-eventtoolbar.ui.h:4
 msgid "Search the displayed logs"
 msgstr "Prohledat zobrazené záznamy"
 
@@ -104,6 +110,10 @@ msgstr "Podpora"
 msgid "Documentation"
 msgstr "Dokumentace"
 
+#: ../data/gl-window.ui.h:1
+msgid "Help"
+msgstr "Nápověda"
+
 #: ../data/menus.ui.h:1
 msgid "_New Window"
 msgstr "_Nové okno"
@@ -122,14 +132,14 @@ msgstr "U_končit"
 
 #. Name and summary taken from the desktop file.
 #: ../data/org.gnome.Logs.appdata.xml.in.h:2
-#: ../data/org.gnome.Logs.desktop.in.h:1 ../src/gl-eventtoolbar.c:125
+#: ../data/org.gnome.Logs.desktop.in.h:1 ../src/gl-eventtoolbar.c:126
 msgid "Logs"
 msgstr "Záznamy"
 
 #: ../data/org.gnome.Logs.appdata.xml.in.h:3
 #: ../data/org.gnome.Logs.desktop.in.h:3
 msgid "View detailed event logs for the system"
-msgstr "Zobrazit podrobné záznamy událostí v systému"
+msgstr "Zobrazte si podrobné záznamy událostí v systému"
 
 #: ../data/org.gnome.Logs.appdata.xml.in.h:4
 msgid ""
@@ -145,7 +155,7 @@ msgid ""
 "detailed information about each event by clicking on it."
 msgstr ""
 "Díky aplikaci Záznamy můžete ve svých záznamech vyhledávat jednoduše "
-"napsaním výrazu a ke každé události si pak kliknutím zobrazit podrobnosti."
+"napsáním výrazu a ke každé události si pak kliknutím zobrazit podrobnosti."
 
 #: ../data/org.gnome.Logs.desktop.in.h:2
 msgid "Log Viewer"
@@ -165,80 +175,105 @@ msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr ""
 "Pro vybraný typ řadit řádky seznamu ve vzestupném nebo sestupném pořadí"
 
-#: ../src/gl-application.c:109
+#: ../src/gl-application.c:110
 msgid "translator-credits"
 msgstr "Marek Černocký <marek@manet.cz>"
 
-#: ../src/gl-application.c:110
+#: ../src/gl-application.c:111
 msgid "View and search logs"
 msgstr "Zobrazit a prohledat záznamy o provozu"
 
-#: ../src/gl-application.c:237
+#: ../src/gl-application.c:238
 msgid "Print version information and exit"
 msgstr "Vypsat informace o verzi a skončit"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
-#: ../src/gl-eventtoolbar.c:116
+#: ../src/gl-eventtoolbar.c:117
 msgid "Boot"
 msgstr "Spuštění"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventviewlist.c:575
+#: ../src/gl-eventviewlist.c:651
 msgid "No results"
 msgstr "Žádné výsledky"
 
-#: ../src/gl-eventviewrow.c:184
+#: ../src/gl-eventviewrow.c:214
 msgid "Other"
 msgstr "Ostatní"
 
 #. Translators: timestamp format for events on the current
 #. * day, showing the time in 12-hour format.
-#: ../src/gl-util.c:142
+#: ../src/gl-util.c:144
 msgid "%l:%M %p"
 msgstr "%l:%M %p"
 
 #. Translators: timestamp format for events in the current
 #. * year, showing the abbreviated month name, day of the
 #. * month and the time in 12-hour format.
-#: ../src/gl-util.c:148
+#: ../src/gl-util.c:150
 msgid "%b %e %l:%M %p"
 msgstr "%e. %B %l:%M %p"
 
 #. Translators: timestamp format for events in a different
 #. * year, showing the abbreviated month name, day of the
 #. * month, year and the time in 12-hour format.
-#: ../src/gl-util.c:154
+#: ../src/gl-util.c:156
 msgid "%b %e %Y %l:%M %p"
 msgstr "%e. %B %Y %l:%M %p"
 
 #. Translators: timestamp format for events on the current
 #. * day, showing the time in 24-hour format.
-#: ../src/gl-util.c:167
+#: ../src/gl-util.c:169
 msgid "%H:%M"
 msgstr "%H:%M"
 
 #. Translators: timestamp format for events in the current
 #. * year, showing the abbreviated month name, day of the
 #. * month and the time in 24-hour format.
-#: ../src/gl-util.c:173
+#: ../src/gl-util.c:175
 msgid "%b %e %H:%M"
 msgstr "%e. %B %H:%M"
 
 #. Translators: timestamp format for events in a different
 #. * year, showing the abbreviated month name, day of the
 #. * month, year and the time in 24-hour format.
-#: ../src/gl-util.c:179
+#: ../src/gl-util.c:181
 msgid "%b %e %Y %H:%M"
 msgstr "%e. %B %Y %H:%M"
 
 #. Transltors: the first string is the earliest timestamp of the boot,
 #. * and the second string is the newest timestamp. An example string might
 #. * be '08:10 - 08:30'
-#: ../src/gl-util.c:242
+#: ../src/gl-util.c:244
 #, c-format
 msgid "%s – %s"
 msgstr "%s – %s"
 
-#~ msgid "Not implemented"
-#~ msgstr "Neimplementováno"
+#: ../src/gl-window.c:186
+msgid "Save logs"
+msgstr "Uložení záznamů"
+
+#: ../src/gl-window.c:189
+msgid "_Cancel"
+msgstr "_Zrušit"
+
+#: ../src/gl-window.c:190
+msgid "_Save"
+msgstr "_Uložit"
+
+#: ../src/gl-window.c:195
+msgid "log messages"
+msgstr "Zprávy ze záznamu"
+
+#: ../src/gl-window.c:248
+msgid "Unable to export log messages to a file"
+msgstr "Nelze exportovat zprávy ze záznamů do souboru"
+
+#: ../src/gl-window.c:467
+msgid "Unable to read system logs"
+msgstr "Nelze přečíst systémové záznamy"
+
+#: ../src/gl-window.c:481
+msgid "Unable to read user logs"
+msgstr "Nelze přečíst uživatelské záznamy"
