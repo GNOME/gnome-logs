@@ -1,3 +1,16 @@
+GNOME Logs 3.19.1
+=================
+
+* search string tokenization crash fix from Jonathan Kang
+* simple log export from Jonathan Kang
+* single boot item menu fix from Lars Uebernickel
+* add Jonathan Kang as a maintainer
+* log view permissions warning from Jonathan Kang
+* clickable Support link from Jonathan Kang
+* update to Greek help translation
+* updates to Serbian, Serbian Latin, Irish, Vietnamese, Finnish, Basque and
+  Czech translations
+
 GNOME Logs 3.18.0
 =================
 
