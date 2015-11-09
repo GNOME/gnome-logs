@@ -43,12 +43,6 @@ struct _GlJournalEntry
 
 G_DEFINE_TYPE (GlJournalEntry, gl_journal_entry, G_TYPE_OBJECT);
 
-/* "_BOOT_ID=" contains 9 characters, and 33 more characters is needed to
- * store the string formated from a 128-bit ID. The ID will be formatted as
- * 32 lowercase hexadecimal digits and be terminated by a NUL byte. So an
- * array of with a size 42 is need. */
-static char match[42] = "_BOOT_ID=";
-
 typedef struct
 {
     sd_journal *journal;
@@ -94,103 +88,90 @@ gl_journal_get_current_boot_time (GlJournal *journal,
     return NULL;
 }
 
-static gint
-boot_id_cmp (const void *a, const void *b)
+static gchar *
+gl_journal_get_data (GlJournal *self,
+                     const gchar *field,
+                     GError **error)
 {
-    guint64 _a, _b;
+    GlJournalPrivate *priv;
+    gint ret;
+    gconstpointer data;
+    gsize length;
+    gsize prefix_len;
 
-    _a = ((const GlJournalBootID *)a)->realtime_first;
-    _b = ((const GlJournalBootID *)b)->realtime_first;
+    g_return_val_if_fail (error == NULL || *error == NULL, NULL);
+    g_return_val_if_fail (field != NULL, NULL);
 
-    return _a < _b ? -1 : (_a > _b ? 1 : 0);
+    priv = gl_journal_get_instance_private (self);
+    ret = sd_journal_get_data (priv->journal, field, &data, &length);
+
+    if (ret < 0)
+    {
+        gint code;
+
+        switch (-ret)
+        {
+            case ENOENT:
+                code = GL_JOURNAL_ERROR_NO_FIELD;
+                break;
+            case EADDRNOTAVAIL:
+                code = GL_JOURNAL_ERROR_INVALID_POINTER;
+                break;
+            default:
+                code = GL_JOURNAL_ERROR_FAILED;
+                break;
+        }
+
+        g_set_error (error, GL_JOURNAL_ERROR, code,
+                     "Unable to get field ‘%s’ from systemd journal: %s",
+                     field, g_strerror (-ret));
+
+        return NULL;
+    }
+
+    /* Field data proper starts after the first '='. */
+    prefix_len = strchr (data, '=') - (const gchar *)data + 1;
+
+    /* Trim the prefix off the beginning of the field. */
+    return g_strndup ((const gchar *)data + prefix_len, length - prefix_len);
 }
 
 static void
 gl_journal_get_boots (GlJournal *journal)
 {
     GlJournalPrivate *priv;
-    int r;
-    const void *data;
-    size_t length;
+    gint r;
+    gint i;
 
     g_return_if_fail (GL_JOURNAL (journal));
 
     priv = gl_journal_get_instance_private (journal);
 
-    r = sd_journal_query_unique (priv->journal, "_BOOT_ID");
+    r = sd_journal_seek_tail (priv->journal);
     if (r < 0)
     {
-        g_warning ("Error reading unique data fields: %s", g_strerror (-r));
+        g_warning ("Error seeking to the end of the journal: %s",
+                   g_strerror (-r));
     }
 
-    SD_JOURNAL_FOREACH_UNIQUE (priv->journal, data, length)
+    /* only fetch the latest 5 boots */
+    for (i = 0; i < 5; i++)
     {
         gchar *boot_match;
+        gchar *id;
         GlJournalBootID boot_id;
-        sd_id128_t id;
 
-        r = sd_id128_from_string (((const char *)data) + strlen ("_BOOT_ID="),
-                                  &id);
-        if (r < 0)
-        {
-            g_warning ("Error parsing strings into 128-bit IDs: %s",
-                       g_strerror (-r));
-            continue;
-        }
-
-        /* convert id.boot_id into boot_match */
-        sd_id128_to_string (id, match + 9);
-        boot_match = g_strdup (match);
-        boot_id.boot_match = boot_match;
-
-        r = sd_journal_add_match (priv->journal, data, length);
-        if (r < 0)
-        {
-            g_warning ("Error adding entry match: %s", g_strerror (-r));
-        }
-
-        r = sd_journal_seek_head (priv->journal);
-        if (r < 0)
-        {
-            g_warning ("Error seeking to the beginning of the journal: %s\n",
-                       g_strerror (-r));
-        }
-
-        r = sd_journal_next (priv->journal);
-        if (r < 0)
-        {
-            g_warning ("Error advance the read pointer in the journal: %s",
-                       g_strerror (-r));
-        }
-        else if (r == 0)
-        {
-            goto flush;
-        }
-
-        r = sd_journal_get_realtime_usec (priv->journal,
-                                          &boot_id.realtime_first);
-        if (r < 0)
-        {
-            g_warning ("Error retrieving the sender timestamps: %s",
-                       g_strerror (-r));
-        }
-
-        r = sd_journal_seek_tail (priv->journal);
-        if (r < 0)
-        {
-            g_warning ("Error seeking to the end of the journal: %s\n",
-                       g_strerror (-r));
-        }
+        sd_journal_flush_matches (priv->journal);
 
         r = sd_journal_previous (priv->journal);
         if (r < 0)
         {
-            g_warning ("Error retreat the read pointer in the journal: %s",
+            g_warning ("Error retreating the read pointer in the journal: %s",
                        g_strerror (-r));
         }
         else if (r == 0)
         {
-            goto flush;
+            break;
         }
 
         r = sd_journal_get_realtime_usec (priv->journal,
@@ -201,13 +182,41 @@ gl_journal_get_boots (GlJournal *journal)
                        g_strerror (-r));
         }
 
-        priv->boot_ids = g_array_append_val (priv->boot_ids, boot_id);
+        id = gl_journal_get_data (journal, "_BOOT_ID", NULL);
+        boot_match = g_strconcat ("_BOOT_ID=", id, NULL);
+        boot_id.boot_match = boot_match;
+        g_free (id);
 
-    flush:
-        sd_journal_flush_matches (priv->journal);
+        r = sd_journal_add_match (priv->journal, boot_id.boot_match, 0);
+        if (r < 0)
+        {
+            g_warning ("Error adding entry match: %s", g_strerror (-r));
+        }
+
+        r = sd_journal_seek_head (priv->journal);
+        if (r < 0)
+        {
+            g_warning ("Error seeking to the beginning of the journal: %s",
+                       g_strerror (-r));
+        }
+
+        r = sd_journal_next (priv->journal);
+        if (r < 0)
+        {
+            g_warning ("Error advancing the read pointer in the journal: %s",
+                       g_strerror (-r));
+        }
+
+        r = sd_journal_get_realtime_usec (priv->journal,
+                                          &boot_id.realtime_first);
+        if (r < 0)
+        {
+            g_warning ("Error retrieving the sender timestamps: %s",
+                       g_strerror (-r));
+        }
+
+        priv->boot_ids = g_array_prepend_val (priv->boot_ids, boot_id);
     }
-
-    g_array_sort (priv->boot_ids, boot_id_cmp);
 }
 
 GArray *
@@ -336,54 +345,6 @@ gl_journal_init (GlJournal *self)
     priv->boot_ids = g_array_new (FALSE, TRUE, sizeof (GlJournalBootID));
 
     gl_journal_get_boots (self);
-}
-
-static gchar *
-gl_journal_get_data (GlJournal *self,
-                     const gchar *field,
-                     GError **error)
-{
-    GlJournalPrivate *priv;
-    gint ret;
-    gconstpointer data;
-    gsize length;
-    gsize prefix_len;
-
-    g_return_val_if_fail (error == NULL || *error == NULL, NULL);
-    g_return_val_if_fail (field != NULL, NULL);
-
-    priv = gl_journal_get_instance_private (self);
-    ret = sd_journal_get_data (priv->journal, field, &data, &length);
-
-    if (ret < 0)
-    {
-        gint code;
-
-        switch (-ret)
-        {
-            case ENOENT:
-                code = GL_JOURNAL_ERROR_NO_FIELD;
-                break;
-            case EADDRNOTAVAIL:
-                code = GL_JOURNAL_ERROR_INVALID_POINTER;
-                break;
-            default:
-                code = GL_JOURNAL_ERROR_FAILED;
-                break;
-        }
-
-        g_set_error (error, GL_JOURNAL_ERROR, code,
-                     "Unable to get field ‘%s’ from systemd journal: %s",
-                     field, g_strerror (-ret));
-
-        return NULL;
-    }
-
-    /* Field data proper starts after the first '='. */
-    prefix_len = strchr (data, '=') - (const gchar *)data + 1;
-
-    /* Trim the prefix off the beginning of the field. */
-    return g_strndup ((const gchar *)data + prefix_len, length - prefix_len);
 }
 
 static GlJournalEntry *
