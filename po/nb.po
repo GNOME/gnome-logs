@@ -5,10 +5,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-logs 3.17.x\n"
+"Project-Id-Version: gnome-logs 3.19.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-07 19:49+0200\n"
-"PO-Revision-Date: 2015-09-07 19:50+0200\n"
+"POT-Creation-Date: 2015-11-16 07:11+0100\n"
+"PO-Revision-Date: 2015-11-16 07:12+0100\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
 "Language: Norwegian bokmål\n"
@@ -33,19 +33,19 @@ msgstr "Stjernemerket"
 msgid "All"
 msgstr "Alle"
 
-#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:167
+#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:197
 msgid "Applications"
 msgstr "Programmer"
 
-#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:176
+#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:206
 msgid "System"
 msgstr "System"
 
-#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:180
+#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:210
 msgid "Security"
 msgstr "Sikkerhet"
 
-#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:172
+#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:202
 msgid "Hardware"
 msgstr "Maskinvare"
 
@@ -62,10 +62,14 @@ msgid "Go back to the event view"
 msgstr "Gå tilbake til hendelsesvisning"
 
 #: ../data/gl-eventtoolbar.ui.h:2
+msgid "Export logs to a file"
+msgstr "Eksporter logger til en fil"
+
+#: ../data/gl-eventtoolbar.ui.h:3
 msgid "Choose the boot from which to view logs"
 msgstr "Velg oppstart du vil vise logger fra"
 
-#: ../data/gl-eventtoolbar.ui.h:3
+#: ../data/gl-eventtoolbar.ui.h:4
 msgid "Search the displayed logs"
 msgstr "Søk i viste logger"
 
@@ -101,6 +105,10 @@ msgstr "Brukerstøtte"
 msgid "Documentation"
 msgstr "Dokumentasjon"
 
+#: ../data/gl-window.ui.h:1
+msgid "Help"
+msgstr "Hjelp"
+
 #: ../data/menus.ui.h:1
 msgid "_New Window"
 msgstr "_Nytt vindu"
@@ -119,7 +127,7 @@ msgstr "A_vslutt"
 
 #. Name and summary taken from the desktop file.
 #: ../data/org.gnome.Logs.appdata.xml.in.h:2
-#: ../data/org.gnome.Logs.desktop.in.h:1 ../src/gl-eventtoolbar.c:125
+#: ../data/org.gnome.Logs.desktop.in.h:1 ../src/gl-eventtoolbar.c:126
 msgid "Logs"
 msgstr "Logger"
 
@@ -161,77 +169,105 @@ msgstr "Hvordan liste rader skal sorteres ved hendelsesvisning"
 msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr "Sorter listerader i stigende eller synkende rekkefølge for valgt type"
 
-#: ../src/gl-application.c:109
+#: ../src/gl-application.c:110
 msgid "translator-credits"
 msgstr "Kjartan Maraas <kmaraas@gnome.org>"
 
-#: ../src/gl-application.c:110
+#: ../src/gl-application.c:111
 msgid "View and search logs"
 msgstr "Vis og søk i logger"
 
-#: ../src/gl-application.c:237
+#: ../src/gl-application.c:238
 msgid "Print version information and exit"
 msgstr "Skriv ut versjonsinformasjon og avslutt"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
-#: ../src/gl-eventtoolbar.c:116
+#: ../src/gl-eventtoolbar.c:117
 msgid "Boot"
 msgstr "Omstart"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventviewlist.c:575
+#: ../src/gl-eventviewlist.c:651
 msgid "No results"
 msgstr "Ingen resultater"
 
-#: ../src/gl-eventviewrow.c:184
+#: ../src/gl-eventviewrow.c:214
 msgid "Other"
 msgstr "Annet"
 
 #. Translators: timestamp format for events on the current
 #. * day, showing the time in 12-hour format.
-#: ../src/gl-util.c:142
+#: ../src/gl-util.c:144
 msgid "%l:%M %p"
 msgstr "%H.%M"
 
 #. Translators: timestamp format for events in the current
 #. * year, showing the abbreviated month name, day of the
 #. * month and the time in 12-hour format.
-#: ../src/gl-util.c:148
+#: ../src/gl-util.c:150
 msgid "%b %e %l:%M %p"
 msgstr "%e %b %H.%M"
 
 #. Translators: timestamp format for events in a different
 #. * year, showing the abbreviated month name, day of the
 #. * month, year and the time in 12-hour format.
-#: ../src/gl-util.c:154
+#: ../src/gl-util.c:156
 msgid "%b %e %Y %l:%M %p"
 msgstr "%e %b %Y %H.%M"
 
 #. Translators: timestamp format for events on the current
 #. * day, showing the time in 24-hour format.
-#: ../src/gl-util.c:167
+#: ../src/gl-util.c:169
 msgid "%H:%M"
 msgstr "%H.%M"
 
 #. Translators: timestamp format for events in the current
 #. * year, showing the abbreviated month name, day of the
 #. * month and the time in 24-hour format.
-#: ../src/gl-util.c:173
+#: ../src/gl-util.c:175
 msgid "%b %e %H:%M"
 msgstr "%e %b %H.%M"
 
 #. Translators: timestamp format for events in a different
 #. * year, showing the abbreviated month name, day of the
 #. * month, year and the time in 24-hour format.
-#: ../src/gl-util.c:179
+#: ../src/gl-util.c:181
 msgid "%b %e %Y %H:%M"
 msgstr "%e %b %Y %H.%M"
 
 #. Transltors: the first string is the earliest timestamp of the boot,
 #. * and the second string is the newest timestamp. An example string might
 #. * be '08:10 - 08:30'
-#: ../src/gl-util.c:242
+#: ../src/gl-util.c:244
 #, c-format
 msgid "%s – %s"
 msgstr "%s – %s"
+
+#: ../src/gl-window.c:186
+msgid "Save logs"
+msgstr "Lagre logger"
+
+#: ../src/gl-window.c:189
+msgid "_Cancel"
+msgstr "A_vbryt"
+
+#: ../src/gl-window.c:190
+msgid "_Save"
+msgstr "_Lagre"
+
+#: ../src/gl-window.c:195
+msgid "log messages"
+msgstr "loggmeldinger"
+
+#: ../src/gl-window.c:248
+msgid "Unable to export log messages to a file"
+msgstr "Kan ikke eksportere loggmeldinger til en fil"
+
+#: ../src/gl-window.c:467
+msgid "Unable to read system logs"
+msgstr "Kan ikke lese systemloggene"
+
+#: ../src/gl-window.c:481
+msgid "Unable to read user logs"
+msgstr "Kan ikke lese brukerlogger"
