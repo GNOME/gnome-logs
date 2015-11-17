@@ -2,17 +2,18 @@
 # Copyright (C) 2013 gnome-logs's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-logs package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Daniel Mustieles <daniel.mustieles@gmail.com>, 2013, 2014, 2015., 2015.
 #
-# Daniel Mustieles <daniel.mustieles@gmail.com>, 2013, 2014, 2015.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-08-25 07:23+0000\n"
-"PO-Revision-Date: 2015-08-25 \n"
+"POT-Creation-Date: 2015-11-15 21:12+0000\n"
+"PO-Revision-Date: 2015-11-16 16:39+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
-"Language-Team: Spanish <gnome-es-list@gnome.org>\n"
+"Language-Team: Español; Castellano <gnome-es-list@gnome.org>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -36,19 +37,19 @@ msgstr "Favorito"
 msgid "All"
 msgstr "Todo"
 
-#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:167
+#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:197
 msgid "Applications"
 msgstr "Aplicaciones"
 
-#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:176
+#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:206
 msgid "System"
 msgstr "Sistema"
 
-#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:180
+#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:210
 msgid "Security"
 msgstr "Seguridad"
 
-#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:172
+#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:202
 msgid "Hardware"
 msgstr "Hardware"
 
@@ -65,10 +66,14 @@ msgid "Go back to the event view"
 msgstr "Volver a la vista de eventos"
 
 #: ../data/gl-eventtoolbar.ui.h:2
+msgid "Export logs to a file"
+msgstr "Exportar registros a un archivo"
+
+#: ../data/gl-eventtoolbar.ui.h:3
 msgid "Choose the boot from which to view logs"
 msgstr "Eliga el arranque del que quiere ver los registros"
 
-#: ../data/gl-eventtoolbar.ui.h:3
+#: ../data/gl-eventtoolbar.ui.h:4
 msgid "Search the displayed logs"
 msgstr "Buscar los registros mostrados"
 
@@ -104,6 +109,11 @@ msgstr "Soporte"
 msgid "Documentation"
 msgstr "Documentación"
 
+#: ../data/gl-window.ui.h:1
+#| msgid "_Help"
+msgid "Help"
+msgstr "Ayuda"
+
 #: ../data/menus.ui.h:1
 msgid "_New Window"
 msgstr "Ventana _nueva"
@@ -122,7 +132,7 @@ msgstr "_Salir"
 
 #. Name and summary taken from the desktop file.
 #: ../data/org.gnome.Logs.appdata.xml.in.h:2
-#: ../data/org.gnome.Logs.desktop.in.h:1
+#: ../data/org.gnome.Logs.desktop.in.h:1 ../src/gl-eventtoolbar.c:126
 msgid "Logs"
 msgstr "Registros"
 
@@ -166,80 +176,109 @@ msgstr ""
 "Ordenar listas de filas en orden ascendiente o descendiente para el tipo "
 "seleccionado"
 
-#: ../src/gl-application.c:109
+#: ../src/gl-application.c:110
 msgid "translator-credits"
 msgstr "Daniel Mustieles <daniel.mustieles@gmail.com>, 2013"
 
-#: ../src/gl-application.c:110
+#: ../src/gl-application.c:111
 msgid "View and search logs"
 msgstr "Ver y buscar registros"
 
-#: ../src/gl-application.c:237
+#: ../src/gl-application.c:238
 msgid "Print version information and exit"
 msgstr "Mostrar información de la versión y salir"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
-#: ../src/gl-eventtoolbar.c:116
+#: ../src/gl-eventtoolbar.c:117
 msgid "Boot"
 msgstr "Arranque"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventviewlist.c:575
+#: ../src/gl-eventviewlist.c:651
 msgid "No results"
 msgstr "No hay resultados"
 
-#: ../src/gl-eventviewrow.c:184
+#: ../src/gl-eventviewrow.c:214
 msgid "Other"
 msgstr "Otros"
 
 #. Translators: timestamp format for events on the current
 #. * day, showing the time in 12-hour format.
-#: ../src/gl-util.c:142
+#: ../src/gl-util.c:144
 msgid "%l:%M %p"
 msgstr "%l:%M %p"
 
 #. Translators: timestamp format for events in the current
 #. * year, showing the abbreviated month name, day of the
 #. * month and the time in 12-hour format.
-#: ../src/gl-util.c:148
+#: ../src/gl-util.c:150
 msgid "%b %e %l:%M %p"
 msgstr "%b %e %l:%M %p"
 
 #. Translators: timestamp format for events in a different
 #. * year, showing the abbreviated month name, day of the
 #. * month, year and the time in 12-hour format.
-#: ../src/gl-util.c:154
+#: ../src/gl-util.c:156
 msgid "%b %e %Y %l:%M %p"
 msgstr "%b %e %Y %l:%M %p"
 
 #. Translators: timestamp format for events on the current
 #. * day, showing the time in 24-hour format.
-#: ../src/gl-util.c:167
+#: ../src/gl-util.c:169
 msgid "%H:%M"
 msgstr "%H:%M"
 
 #. Translators: timestamp format for events in the current
 #. * year, showing the abbreviated month name, day of the
 #. * month and the time in 24-hour format.
-#: ../src/gl-util.c:173
+#: ../src/gl-util.c:175
 msgid "%b %e %H:%M"
 msgstr "%b %e %H:%M"
 
 #. Translators: timestamp format for events in a different
 #. * year, showing the abbreviated month name, day of the
 #. * month, year and the time in 24-hour format.
-#: ../src/gl-util.c:179
+#: ../src/gl-util.c:181
 msgid "%b %e %Y %H:%M"
 msgstr "%b %e %Y %H:%M"
 
 #. Transltors: the first string is the earliest timestamp of the boot,
 #. * and the second string is the newest timestamp. An example string might
 #. * be '08:10 - 08:30'
-#: ../src/gl-util.c:242
+#: ../src/gl-util.c:244
 #, c-format
 msgid "%s – %s"
 msgstr "%s – %s"
+
+#: ../src/gl-window.c:186
+msgid "Save logs"
+msgstr "Guardar registros"
+
+#: ../src/gl-window.c:189
+msgid "_Cancel"
+msgstr "_Cancelar"
+
+#: ../src/gl-window.c:190
+msgid "_Save"
+msgstr "_Guardar"
+
+#: ../src/gl-window.c:195
+#| msgid "Message"
+msgid "log messages"
+msgstr "mensajes de registro"
+
+#: ../src/gl-window.c:248
+msgid "Unable to export log messages to a file"
+msgstr "No se puede exportar el registro de mensajes a un archivo"
+
+#: ../src/gl-window.c:467
+msgid "Unable to read system logs"
+msgstr "No se pueden leer los registros del sistema"
+
+#: ../src/gl-window.c:481
+msgid "Unable to read user logs"
+msgstr "No se pueden leer los registros del usuario"
 
 #~ msgid "Not implemented"
 #~ msgstr "No implementado"
