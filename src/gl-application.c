@@ -202,6 +202,7 @@ gl_application_startup (GApplication *application)
 
     /* gtk_init() calls setlocale(), so gettext must be called after that. */
     g_set_application_name (_(PACKAGE_NAME));
+    gtk_window_set_default_icon_name (PACKAGE_TARNAME);
 
     /* Must register custom types before using them from GtkBuilder. */
     gl_window_get_type ();
