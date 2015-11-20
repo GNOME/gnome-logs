@@ -62,7 +62,7 @@
                         <property name="halign">end</property>
                         <property name="label" translatable="yes">Message</property>
                         <style>
-                            <class name="detail-filed-label"/>
+                            <class name="detail-field-label"/>
                             <class name="dim-label"/>
                         </style>
                     </object>
@@ -97,7 +97,7 @@
                         <property name="halign">end</property>
                         <property name="label" translatable="yes">Audit Session</property>
                         <style>
-                            <class name="detail-filed-label"/>
+                            <class name="detail-field-label"/>
                             <class name="dim-label"/>
                         </style>
                     </object>
@@ -130,7 +130,7 @@
                         <property name="halign">end</property>
                         <property name="label" translatable="yes">Kernel Device</property>
                         <style>
-                            <class name="detail-filed-label"/>
+                            <class name="detail-field-label"/>
                             <class name="dim-label"/>
                         </style>
                     </object>
@@ -162,7 +162,7 @@
                         <property name="halign">end</property>
                         <property name="label" translatable="yes">Priority</property>
                         <style>
-                            <class name="detail-filed-label"/>
+                            <class name="detail-field-label"/>
                             <class name="dim-label"/>
                         </style>
                     </object>
