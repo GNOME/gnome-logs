@@ -1,3 +1,12 @@
+GNOME Logs 3.19.2
+=================
+
+* improve startup time
+* add full log text as tooltip for each row
+* fix CSS class name typo in details view
+* updates to Portuguese, Hungarian, Occitan, Norwegian bokmål, Spanish and
+  Lithuanian translations
+
 GNOME Logs 3.19.1
 =================
 
