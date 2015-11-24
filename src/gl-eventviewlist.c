@@ -100,7 +100,7 @@ gl_event_view_list_get_output_logs (GlEventViewList *view)
         timestamp = gl_event_view_row_get_timestamp (GL_EVENT_VIEW_ROW (row));
         now = g_date_time_new_now_local ();
         time = gl_util_timestamp_to_display (timestamp, now,
-                                             priv->clock_format);
+                                             priv->clock_format, TRUE);
 
         output_text = g_strconcat (time, " ",
                                    comm ? comm : "kernel", ": ",

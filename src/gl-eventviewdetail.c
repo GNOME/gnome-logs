@@ -124,7 +124,7 @@ gl_event_view_detail_create_detail (GlEventViewDetail *detail)
 
     now = g_date_time_new_now_local ();
     str = gl_util_timestamp_to_display (gl_journal_entry_get_timestamp (entry), now,
-                                        priv->clock_format);
+                                        priv->clock_format, TRUE);
     g_date_time_unref (now);
     gtk_label_set_text (GTK_LABEL (priv->time_label), str);
     g_free (str);

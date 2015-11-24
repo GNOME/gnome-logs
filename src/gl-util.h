@@ -41,7 +41,8 @@ void gl_util_on_css_provider_parsing_error (GtkCssProvider *provider,
                                             G_GNUC_UNUSED gpointer user_data);
 gchar * gl_util_timestamp_to_display (guint64 microsecs,
                                       GDateTime *now,
-                                      GlUtilClockFormat format);
+                                      GlUtilClockFormat format,
+                                      gboolean show_second);
 gint gl_util_get_uid (void);
 gchar * gl_util_boot_time_to_display (guint64 timestamp_first,
                                       guint64 timestamp_last);

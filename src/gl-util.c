@@ -117,7 +117,8 @@ compare_timestamps (GDateTime *a,
 gchar *
 gl_util_timestamp_to_display (guint64 microsecs,
                               GDateTime *now,
-                              GlUtilClockFormat format)
+                              GlUtilClockFormat format,
+                              gboolean show_second)
 {
     GDateTime *datetime;
     GDateTime *local;
@@ -139,21 +140,59 @@ gl_util_timestamp_to_display (guint64 microsecs,
             switch (compare_timestamps (local, now))
             {
                 case GL_UTIL_TIMESTAMPS_SAME_DAY:
-                    /* Translators: timestamp format for events on the current
-                     * day, showing the time in 12-hour format. */
-                    time = g_date_time_format (local, _("%l:%M %p"));
+                    if (show_second)
+                    {
+                        /* Translators: timestamp format for events on the
+                         * current day, showing the time with seconds in
+                         * 12-hour format. */
+                        time = g_date_time_format (local, _("%l:%M:%S %p"));
+                    }
+                    else
+                    {
+                        /* Translators: timestamp format for events on the
+                         * current day, showing the time without seconds in
+                         * 12-hour format. */
+                        time = g_date_time_format (local, _("%l:%M %p"));
+                    }
                     break;
                 case GL_UTIL_TIMESTAMPS_SAME_YEAR:
-                    /* Translators: timestamp format for events in the current
-                     * year, showing the abbreviated month name, day of the
-                     * month and the time in 12-hour format. */
-                    time = g_date_time_format (local, _("%b %e %l:%M %p"));
+                    if (show_second)
+                    {
+                        /* Translators: timestamp format for events in the
+                         * current year, showing the abbreviated month name,
+                         * day of the month and the time with seconds in
+                         * 12-hour format. */
+                        time = g_date_time_format (local,
+                                                   _("%b %e %l:%M:%S %p"));
+                    }
+                    else
+                    {
+                        /* Translators: timestamp format for events in the
+                         * current year, showing the abbreviated month name,
+                         * day of the month and the time without seconds in
+                         * 12-hour format. */
+                        time = g_date_time_format (local, _("%b %e %l:%M %p"));
+                    }
                     break;
                 case GL_UTIL_TIMESTAMPS_DIFFERENT_YEAR:
-                    /* Translators: timestamp format for events in a different
-                     * year, showing the abbreviated month name, day of the
-                     * month, year and the time in 12-hour format. */
-                    time = g_date_time_format (local, _("%b %e %Y %l:%M %p"));
+                    if (show_second)
+                    {
+                        /* Translators: timestamp format for events in a
+                         * different year, showing the abbreviated month name,
+                         * day of the month, year and the time with seconds
+                         * in 12-hour format. */
+                        time = g_date_time_format (local,
+                                                   _("%b %e %Y %l:%M:%S %p"));
+                    }
+                    else
+                    {
+                        /* Translators: timestamp format for events in a
+                         * different year, showing the abbreviated month name,
+                         * day of the month, year and the time without seconds
+                         * in 12-hour format. */
+                        time = g_date_time_format (local,
+                                                   _("%b %e %Y %l:%M %p"));
+                    }
                     break;
                 default:
                     g_assert_not_reached ();
@@ -164,21 +203,57 @@ gl_util_timestamp_to_display (guint64 microsecs,
             switch (compare_timestamps (local, now))
             {
                 case GL_UTIL_TIMESTAMPS_SAME_DAY:
-                    /* Translators: timestamp format for events on the current
-                     * day, showing the time in 24-hour format. */
-                    time = g_date_time_format (local, _("%H:%M"));
+                    if (show_second)
+                    {
+                        /* Translators: timestamp format for events on the
+                         * current day, showing the time with seconds in
+                         * 24-hour format. */
+                        time = g_date_time_format (local, _("%H:%M:%S"));
+                    }
+                    else
+                    {
+                        /* Translators: timestamp format for events on the
+                         * current day, showing the time without seconds in
+                         * 24-hour format. */
+                        time = g_date_time_format (local, _("%H:%M"));
+                    }
                     break;
                 case GL_UTIL_TIMESTAMPS_SAME_YEAR:
-                    /* Translators: timestamp format for events in the current
-                     * year, showing the abbreviated month name, day of the
-                     * month and the time in 24-hour format. */
-                    time = g_date_time_format (local, _("%b %e %H:%M"));
+                    if (show_second)
+                    {
+                        /* Translators: timestamp format for events in the
+                         * current year, showing the abbreviated month name,
+                         * day of the month and the time with seconds in
+                         * 24-hour format. */
+                        time = g_date_time_format (local, _("%b %e %H:%M:%S"));
+                    }
+                    else
+                    {
+                        /* Translators: timestamp format for events in the
+                         * current year, showing the abbreviated month name,
+                         * day of the month and the time without seconds in
+                         * 24-hour format. */
+                        time = g_date_time_format (local, _("%b %e %H:%M"));
+                    }
                     break;
                 case GL_UTIL_TIMESTAMPS_DIFFERENT_YEAR:
-                    /* Translators: timestamp format for events in a different
-                     * year, showing the abbreviated month name, day of the
-                     * month, year and the time in 24-hour format. */
-                    time = g_date_time_format (local, _("%b %e %Y %H:%M"));
+                    if (show_second)
+                    {
+                        /* Translators: timestamp format for events in a
+                         * different year, showing the abbreviated month name,
+                         * day of the month, year and the time with seconds
+                         * in 24-hour format. */
+                        time = g_date_time_format (local,
+                                                   _("%b %e %Y %H:%M:%S"));
+                    }
+                    else
+                    {
+                        /* Translators: timestamp format for events in a
+                         * different year, showing the abbreviated month name,
+                         * day of the month, year and the time without seconds
+                         * in 24-hour format. */
+                        time = g_date_time_format (local, _("%b %e %Y %H:%M"));
+                    }
                     break;
                 default:
                     g_assert_not_reached ();
@@ -234,9 +309,9 @@ gl_util_boot_time_to_display (guint64 realtime_first,
 
     now = g_date_time_new_now_local ();
     time_first = gl_util_timestamp_to_display (realtime_first,
-                                               now, clock_format);
+                                               now, clock_format, FALSE);
     time_last = gl_util_timestamp_to_display (realtime_last,
-                                              now, clock_format);
+                                              now, clock_format, FALSE);
 
     /* Transltors: the first string is the earliest timestamp of the boot,
      * and the second string is the newest timestamp. An example string might

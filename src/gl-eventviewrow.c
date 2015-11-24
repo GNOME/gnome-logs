@@ -273,7 +273,7 @@ gl_event_view_row_constructed (GObject *object)
 
     now = g_date_time_new_now_local ();
     time = gl_util_timestamp_to_display (gl_journal_entry_get_timestamp (entry),
-                                         now, priv->clock_format);
+                                         now, priv->clock_format, FALSE);
     g_date_time_unref (now);
     priv->time_label = gtk_label_new (time);
     context = gtk_widget_get_style_context (GTK_WIDGET (priv->time_label));
