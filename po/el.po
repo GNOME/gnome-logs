@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-08-22 07:17+0000\n"
-"PO-Revision-Date: 2015-08-25 17:24+0300\n"
+"POT-Creation-Date: 2015-11-25 21:15+0000\n"
+"PO-Revision-Date: 2015-11-26 11:01+0200\n"
 "Last-Translator: Tom Tryfonidis <tomtryf@gmail.com>\n"
 "Language-Team: www.gnome.gr\n"
 "Language: el\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.4\n"
+"X-Generator: Poedit 1.8.5\n"
 "X-Project-Style: gnome\n"
 
 #: ../data/gl-categorylist.ui.h:1
@@ -35,19 +35,19 @@ msgstr "Διακεκριμένα"
 msgid "All"
 msgstr "Όλα"
 
-#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:167
+#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:197
 msgid "Applications"
 msgstr "Εφαρμογές"
 
-#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:176
+#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:206
 msgid "System"
 msgstr "Σύστημα"
 
-#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:180
+#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:210
 msgid "Security"
 msgstr "Ασφάλεια"
 
-#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:172
+#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:202
 msgid "Hardware"
 msgstr "Υλικό"
 
@@ -64,10 +64,14 @@ msgid "Go back to the event view"
 msgstr "Επιστροφή στην προβολή συμβάντων"
 
 #: ../data/gl-eventtoolbar.ui.h:2
+msgid "Export logs to a file"
+msgstr "Εξαγωγή καταγραφών σε αρχείο"
+
+#: ../data/gl-eventtoolbar.ui.h:3
 msgid "Choose the boot from which to view logs"
 msgstr "Επιλέξτε μια εκκίνηση συστήματος για να δείτε τις καταγραφές"
 
-#: ../data/gl-eventtoolbar.ui.h:3
+#: ../data/gl-eventtoolbar.ui.h:4
 msgid "Search the displayed logs"
 msgstr "Αναζήτηση των εμφανιζόμενων καταγραφών"
 
@@ -77,7 +81,7 @@ msgstr "Μήνυμα"
 
 #: ../data/gl-eventviewdetail.ui.h:2
 msgid "Audit Session"
-msgstr "Συνεδρία εσωτερικής αξιολόγησης"
+msgstr "Συνεδρία ελέγχου"
 
 #: ../data/gl-eventviewdetail.ui.h:3
 msgid "Kernel Device"
@@ -103,6 +107,10 @@ msgstr "Υποστήριξη"
 msgid "Documentation"
 msgstr "Τεκμηρίωση"
 
+#: ../data/gl-window.ui.h:1
+msgid "Help"
+msgstr "Βοήθεια"
+
 #: ../data/menus.ui.h:1
 msgid "_New Window"
 msgstr "_Νέο παράθυρο"
@@ -121,7 +129,7 @@ msgstr "Έ_ξοδος"
 
 #. Name and summary taken from the desktop file.
 #: ../data/org.gnome.Logs.appdata.xml.in.h:2
-#: ../data/org.gnome.Logs.desktop.in.h:1
+#: ../data/org.gnome.Logs.desktop.in.h:1 ../src/gl-eventtoolbar.c:126
 msgid "Logs"
 msgstr "Καταγραφές"
 
@@ -164,7 +172,7 @@ msgstr "Πώς να ταξινομήσετε γραμμές στη λίστα τ
 msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr "Ταξινόμηση γραμμών σε αύξουσα ή φθίνουσα σειρά για τον επιλεγμένο τύπο"
 
-#: ../src/gl-application.c:109
+#: ../src/gl-application.c:110
 msgid "translator-credits"
 msgstr ""
 "Ελληνική μεταφραστική ομάδα GNOME\n"
@@ -174,76 +182,146 @@ msgstr ""
 "Για περισσότερες πληροφορίες, επισκεφθείτε τη σελίδα\n"
 "http://gnome.gr/"
 
-#: ../src/gl-application.c:110
+#: ../src/gl-application.c:111
 msgid "View and search logs"
-msgstr "Προβολή και αναζήτηση καταγραφών"
+msgstr "Δείτε και αναζητήστε καταγραφές"
 
-#: ../src/gl-application.c:237
+#: ../src/gl-application.c:238
 msgid "Print version information and exit"
 msgstr "Προβολή πληροφοριών έκδοσης και έξοδος"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
-#: ../src/gl-eventtoolbar.c:116
+#: ../src/gl-eventtoolbar.c:117
 msgid "Boot"
 msgstr "Εκκίνηση"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventviewlist.c:575
+#: ../src/gl-eventviewlist.c:651
 msgid "No results"
 msgstr "Χωρίς αποτελέσματα"
 
-#: ../src/gl-eventviewrow.c:184
+#: ../src/gl-eventviewrow.c:214
 msgid "Other"
 msgstr "Άλλα"
 
-#. Translators: timestamp format for events on the current
-#. * day, showing the time in 12-hour format.
-#: ../src/gl-util.c:142
+#. Translators: timestamp format for events on the
+#. * current day, showing the time with seconds in
+#. * 12-hour format.
+#: ../src/gl-util.c:148
+#| msgid "%l:%M %p"
+msgid "%l:%M:%S %p"
+msgstr "%l:%M:%S %p"
+
+#. Translators: timestamp format for events on the
+#. * current day, showing the time without seconds in
+#. * 12-hour format.
+#: ../src/gl-util.c:155
 msgid "%l:%M %p"
 msgstr "%l:%M %p"
 
-#. Translators: timestamp format for events in the current
-#. * year, showing the abbreviated month name, day of the
-#. * month and the time in 12-hour format.
-#: ../src/gl-util.c:148
+#: ../src/gl-util.c:166
+#| msgid "%b %e %l:%M %p"
+msgid "%b %e %l:%M:%S %p"
+msgstr "%e %b %l:%M:%S %p"
+
+#. Translators: timestamp format for events in the
+#. * current year, showing the abbreviated month name,
+#. * day of the month and the time without seconds in
+#. * 12-hour format.
+#: ../src/gl-util.c:174
 msgid "%b %e %l:%M %p"
 msgstr "%e %b %l:%M %p"
 
-#. Translators: timestamp format for events in a different
-#. * year, showing the abbreviated month name, day of the
-#. * month, year and the time in 12-hour format.
-#: ../src/gl-util.c:154
+#: ../src/gl-util.c:185
+#| msgid "%b %e %Y %l:%M %p"
+msgid "%b %e %Y %l:%M:%S %p"
+msgstr "%e %b %Y %l:%M:%S %p"
+
+#: ../src/gl-util.c:194
 msgid "%b %e %Y %l:%M %p"
 msgstr "%e %b %Y %l:%M %p"
 
-#. Translators: timestamp format for events on the current
-#. * day, showing the time in 24-hour format.
-#: ../src/gl-util.c:167
+#. Translators: timestamp format for events on the
+#. * current day, showing the time with seconds in
+#. * 24-hour format.
+#: ../src/gl-util.c:211
+#| msgid "%H:%M"
+msgid "%H:%M:%S"
+msgstr "%H:%M:%S"
+
+#. Translators: timestamp format for events on the
+#. * current day, showing the time without seconds in
+#. * 24-hour format.
+#: ../src/gl-util.c:218
 msgid "%H:%M"
 msgstr "%H:%M"
 
-#. Translators: timestamp format for events in the current
-#. * year, showing the abbreviated month name, day of the
-#. * month and the time in 24-hour format.
-#: ../src/gl-util.c:173
+#. Translators: timestamp format for events in the
+#. * current year, showing the abbreviated month name,
+#. * day of the month and the time with seconds in
+#. * 24-hour format.
+#: ../src/gl-util.c:228
+#| msgid "%b %e %H:%M"
+msgid "%b %e %H:%M:%S"
+msgstr "%e %b %H:%M:%S"
+
+#. Translators: timestamp format for events in the
+#. * current year, showing the abbreviated month name,
+#. * day of the month and the time without seconds in
+#. * 24-hour format.
+#: ../src/gl-util.c:236
 msgid "%b %e %H:%M"
 msgstr "%e %b %H:%M"
 
-#. Translators: timestamp format for events in a different
-#. * year, showing the abbreviated month name, day of the
-#. * month, year and the time in 24-hour format.
-#: ../src/gl-util.c:179
+#: ../src/gl-util.c:247
+#| msgid "%b %e %Y %H:%M"
+msgid "%b %e %Y %H:%M:%S"
+msgstr "%e %b %Y %H:%M:%S"
+
+#. Translators: timestamp format for events in a
+#. * different year, showing the abbreviated month name,
+#. * day of the month, year and the time without seconds
+#. * in 24-hour format.
+#: ../src/gl-util.c:255
 msgid "%b %e %Y %H:%M"
 msgstr "%e %b %Y %H:%M"
 
 #. Transltors: the first string is the earliest timestamp of the boot,
 #. * and the second string is the newest timestamp. An example string might
 #. * be '08:10 - 08:30'
-#: ../src/gl-util.c:242
+#: ../src/gl-util.c:319
 #, c-format
 msgid "%s – %s"
 msgstr "%s – %s"
+
+#: ../src/gl-window.c:186
+msgid "Save logs"
+msgstr "Αποθήκευση καταγραφών"
+
+#: ../src/gl-window.c:189
+msgid "_Cancel"
+msgstr "Ακύρω_ση"
+
+#: ../src/gl-window.c:190
+msgid "_Save"
+msgstr "_Αποθήκευση"
+
+#: ../src/gl-window.c:195
+msgid "log messages"
+msgstr "καταγραφή μηνυμάτων"
+
+#: ../src/gl-window.c:248
+msgid "Unable to export log messages to a file"
+msgstr "Αδυναμία εξαγωγής των καταγραφών σε αρχείο"
+
+#: ../src/gl-window.c:467
+msgid "Unable to read system logs"
+msgstr "Αδυναμία ανάγνωσης καταγραφών του συστήματος"
+
+#: ../src/gl-window.c:481
+msgid "Unable to read user logs"
+msgstr "Αδυναμία ανάγνωσης καταγραφών του χρήστη"
 
 #~ msgid "Not implemented"
 #~ msgstr "Δεν έχει υλοποιηθεί"
