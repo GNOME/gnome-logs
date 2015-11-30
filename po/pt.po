@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-03-16 12:17+0000\n"
+"POT-Creation-Date: 2015-10-18 19:49+0000\n"
 "PO-Revision-Date: 2014-03-17 22:40+0100\n"
 "Last-Translator: Tiago S. <almosthumane@portugalmail.pt>\n"
 "Language-Team: Portuguese <gnome_pt@yahoogroups.com>\n"
@@ -18,22 +18,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Poedit 1.5.4\n"
-
-#: ../data/appmenu.ui.h:1
-msgid "_New Window"
-msgstr "_Nova Janela"
-
-#: ../data/appmenu.ui.h:2
-msgid "_Help"
-msgstr "_Ajuda"
-
-#: ../data/appmenu.ui.h:3
-msgid "_About"
-msgstr "_Sobre"
-
-#: ../data/appmenu.ui.h:4
-msgid "_Quit"
-msgstr "_Sair"
 
 #: ../data/gl-categorylist.ui.h:1
 msgid "Important"
@@ -65,7 +49,7 @@ msgstr "Segurança"
 
 #: ../data/gl-categorylist.ui.h:8
 msgid "Hardware"
-msgstr "Hardware"
+msgstr "Equipamento"
 
 #: ../data/gl-categorylist.ui.h:9
 msgid "Updates"
@@ -75,7 +59,9 @@ msgstr "Atualizações"
 msgid "Usage"
 msgstr "Utilização"
 
-#: ../data/gl-eventtoolbar.ui.h:1
+#. Name and summary taken from the desktop file.
+#: ../data/gl-eventtoolbar.ui.h:1 ../data/org.gnome.Logs.appdata.xml.in.h:2
+#: ../data/org.gnome.Logs.desktop.in.h:1
 msgid "Logs"
 msgstr "Registos"
 
@@ -85,76 +71,94 @@ msgstr "Voltar à vista de evento"
 
 #: ../data/gl-eventtoolbar.ui.h:3
 msgid "Search the displayed logs"
-msgstr "Procurar os registos apresentados"
+msgstr "Procurar os registos mostrados"
 
-#: ../data/gnome-logs.appdata.xml.in.h:1
+#: ../data/gl-eventviewdetail.ui.h:1
+msgid "Message"
+msgstr "Mensagem"
+
+#: ../data/gl-eventviewdetail.ui.h:2
+msgid "Audit Session"
+msgstr "Auditoria de sessão"
+
+#: ../data/gl-eventviewdetail.ui.h:3
+msgid "Kernel Device"
+msgstr "Dispositivo Kernel"
+
+#: ../data/gl-eventviewdetail.ui.h:4
+msgid "Priority"
+msgstr "Prioridade"
+
+#: ../data/menus.ui.h:1
+msgid "_New Window"
+msgstr "_Nova janela"
+
+#: ../data/menus.ui.h:2
+msgid "_Help"
+msgstr "A_Juda"
+
+#: ../data/menus.ui.h:3
+msgid "_About"
+msgstr "_Sobre"
+
+#: ../data/menus.ui.h:4
+msgid "_Quit"
+msgstr "_Sair"
+
+#: ../data/org.gnome.Logs.appdata.xml.in.h:3
+#: ../data/org.gnome.Logs.desktop.in.h:3
+msgid "View detailed event logs for the system"
+msgstr "Ver registos detalhados de eventos do seu sistema"
+
+#: ../data/org.gnome.Logs.appdata.xml.in.h:4
 msgid ""
 "Logs shows events from the systemd journal, and sorts them into categories, "
 "such as hardware and applications."
 msgstr ""
-"Registos apresenta os eventos do jornal systemd e ordena-os em categorias, tais "
-"como hardware e aplicações."
+"Registos mostra os eventos do jornal systemd e ordena-os em categorias, tais "
+"como equipamento e aplicações."
 
-#: ../data/gnome-logs.appdata.xml.in.h:2
+#: ../data/org.gnome.Logs.appdata.xml.in.h:5
 msgid ""
 "Using Logs you can search your logs by typing a search term, and view "
 "detailed information about each event by clicking on it."
 msgstr ""
-"Utilizar o Registos permite-lhe pesquisar os seus registos através de termos "
-"de pesquisa e ver informações detalhadas sobre cada evento clicando nele."
+"Utilizar o Registos permite-lhe procurar os seus registos através de termos "
+"de pesquisa e ver informações detalhadas sobre cada evento com um simples "
+"clique."
 
-#: ../data/gnome-logs.desktop.in.h:1
+#: ../data/org.gnome.Logs.desktop.in.h:2
 msgid "Log Viewer"
-msgstr "Visualizador de Registos"
-
-#: ../data/gnome-logs.desktop.in.h:2
-msgid "View detailed event logs for the system"
-msgstr "Ver registos de eventos detalhados para o seu sistema"
+msgstr "Visualizador de registos"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: ../data/gnome-logs.desktop.in.h:4
+#: ../data/org.gnome.Logs.desktop.in.h:5
 msgid "log;journal;debug;error;"
-msgstr "log;journal;debug;error;registo;jornal;depurar;erro;"
+msgstr "registo;jornal;depurar;erro;"
 
 #: ../src/gl-application.c:99
 msgid "translator-credits"
-msgstr "Tiago S."
+msgstr "Tiago S.\n"
+"Pedro Albuquerque <palbuquerque73@gmail.com>"
 
 #: ../src/gl-application.c:100
 msgid "View and search logs"
-msgstr "Ver e pesquisar registos"
+msgstr "Ver e procurar registos"
 
-#: ../src/gl-application.c:222
+#: ../src/gl-application.c:207
 msgid "Print version information and exit"
 msgstr "Imprimir informação da versão e sair"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventview.c:217
+#: ../src/gl-eventviewlist.c:217
 msgid "No results"
 msgstr "Sem resultados"
 
-#: ../src/gl-eventview.c:604 ../src/gl-eventview.c:614
-#: ../src/gl-eventview.c:745 ../src/gl-eventview.c:755
+#: ../src/gl-eventviewlist.c:604 ../src/gl-eventviewlist.c:614
+#: ../src/gl-eventviewlist.c:745 ../src/gl-eventviewlist.c:755
 msgid "Not implemented"
 msgstr "Não implementado"
-
-#: ../src/gl-eventviewdetail.c:140
-msgid "Message"
-msgstr "Mensagem"
-
-#. TODO: Give a user-friendly representation of the priority.
-#: ../src/gl-eventviewdetail.c:161
-msgid "Priority"
-msgstr "Prioridade"
-
-#: ../src/gl-eventviewdetail.c:189
-msgid "Kernel Device"
-msgstr "Dispositivo Kernel"
-
-#: ../src/gl-eventviewdetail.c:209
-msgid "Audit Session"
-msgstr "Auditoria de Sessão"
 
 #. Translators: timestamp format for events on the current
 #. * day, showing the time in 12-hour format.
