@@ -100,7 +100,7 @@ AM_CONDITIONAL([LOGS_ENABLE_TESTS], [test "x$testing_utilities" = "xyes"])
 
 dnl Libraries
 GIO_REQUIRED="gio-unix-2.0 >= 2.43.90"
-GTK_REQUIRED="gtk+-3.0 >= 3.15.7"
+GTK_REQUIRED="gtk+-3.0 >= 3.19.3"
 SYSTEMD_REQUIRED="libsystemd"
 PKG_CHECK_MODULES([LOGS], [$GIO_REQUIRED $GTK_REQUIRED $SYSTEMD_REQUIRED])
 
