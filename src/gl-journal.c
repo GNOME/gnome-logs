@@ -409,6 +409,7 @@ _gl_journal_query_entry (GlJournal *self)
         g_warning ("Error while getting message from catalog: %s",
                    g_strerror (-ret));
         free (entry->cursor);
+        entry->cursor = NULL;
         goto out;
     }
 
@@ -419,7 +420,9 @@ _gl_journal_query_entry (GlJournal *self)
         g_warning ("%s", error->message);
         g_clear_error (&error);
         free (entry->cursor);
+        entry->cursor = NULL;
         free (entry->catalog);
+        entry->catalog = NULL;
         goto out;
     }
 
@@ -430,8 +433,11 @@ _gl_journal_query_entry (GlJournal *self)
         g_warning ("%s", error->message);
         g_clear_error (&error);
         free (entry->cursor);
+        entry->cursor = NULL;
         free (entry->catalog);
+        entry->catalog = NULL;
         g_free (entry->message);
+        entry->message = NULL;
         goto out;
     }
 
