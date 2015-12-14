@@ -54,7 +54,7 @@ util_timestamp_to_display (void)
         gchar *compare;
 
         compare = gl_util_timestamp_to_display (times[i].microsecs, now,
-                                                times[i].format);
+                                                times[i].format, FALSE);
         g_assert_cmpstr (compare, ==, times[i].time);
         g_free (compare);
     }
