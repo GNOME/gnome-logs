@@ -1,3 +1,12 @@
+GNOME Logs 3.19.3
+=================
+
+* show seconds in details view and exported logs
+* set default icon from Arnaud Bonatti
+* avoid double frees on journal errors
+* use GtkShortcutsWindow
+* updates to Spanish, Greek, Portuguese, Slovak and Kazakh translations
+
 GNOME Logs 3.19.2
 =================
 
