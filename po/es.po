@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-11-24 21:16+0000\n"
-"PO-Revision-Date: 2015-11-25 09:47+0100\n"
+"POT-Creation-Date: 2015-12-14 09:17+0000\n"
+"PO-Revision-Date: 2015-12-14 16:35+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español; Castellano <gnome-es-list@gnome.org>\n"
 "Language: es\n"
@@ -113,6 +113,26 @@ msgstr "Documentación"
 msgid "Help"
 msgstr "Ayuda"
 
+#: ../data/help-overlay.ui.h:1
+msgid "General"
+msgstr "General"
+
+#: ../data/help-overlay.ui.h:2
+msgid "Open a new window"
+msgstr "Abrir una ventana nueva"
+
+#: ../data/help-overlay.ui.h:3
+msgid "Close a window"
+msgstr "Cerrar una ventana"
+
+#: ../data/help-overlay.ui.h:4
+msgid "Search"
+msgstr "Búsqueda"
+
+#: ../data/help-overlay.ui.h:5
+msgid "Find"
+msgstr "Buscar"
+
 #: ../data/menus.ui.h:1
 msgid "_New Window"
 msgstr "Ventana _nueva"
@@ -122,10 +142,14 @@ msgid "_Help"
 msgstr "_Ayuda"
 
 #: ../data/menus.ui.h:3
+msgid "Keyboard Shortcuts"
+msgstr "Atajos del teclado"
+
+#: ../data/menus.ui.h:4
 msgid "_About"
 msgstr "_Acerca de"
 
-#: ../data/menus.ui.h:4
+#: ../data/menus.ui.h:5
 msgid "_Quit"
 msgstr "_Salir"
 
@@ -183,7 +207,7 @@ msgstr "Daniel Mustieles <daniel.mustieles@gmail.com>, 2013"
 msgid "View and search logs"
 msgstr "Ver y buscar registros"
 
-#: ../src/gl-application.c:238
+#: ../src/gl-application.c:239
 msgid "Print version information and exit"
 msgstr "Mostrar información de la versión y salir"
 
@@ -206,7 +230,6 @@ msgstr "Otros"
 #. * current day, showing the time with seconds in
 #. * 12-hour format.
 #: ../src/gl-util.c:148
-#| msgid "%l:%M %p"
 msgid "%l:%M:%S %p"
 msgstr "%l:%M:%S %p"
 
@@ -218,7 +241,6 @@ msgid "%l:%M %p"
 msgstr "%l:%M %p"
 
 #: ../src/gl-util.c:166
-#| msgid "%b %e %l:%M %p"
 msgid "%b %e %l:%M:%S %p"
 msgstr "%b %e %l:%M:%S %p"
 
@@ -231,7 +253,6 @@ msgid "%b %e %l:%M %p"
 msgstr "%b %e %l:%M %p"
 
 #: ../src/gl-util.c:185
-#| msgid "%b %e %Y %l:%M %p"
 msgid "%b %e %Y %l:%M:%S %p"
 msgstr "%b %e %Y %l:%M:%S %p"
 
@@ -243,7 +264,6 @@ msgstr "%b %e %Y %l:%M %p"
 #. * current day, showing the time with seconds in
 #. * 24-hour format.
 #: ../src/gl-util.c:211
-#| msgid "%H:%M"
 msgid "%H:%M:%S"
 msgstr "%H:%M:%S"
 
@@ -259,7 +279,6 @@ msgstr "%H:%M"
 #. * day of the month and the time with seconds in
 #. * 24-hour format.
 #: ../src/gl-util.c:228
-#| msgid "%b %e %H:%M"
 msgid "%b %e %H:%M:%S"
 msgstr "%b %e %H:%M:%S"
 
@@ -272,7 +291,6 @@ msgid "%b %e %H:%M"
 msgstr "%b %e %H:%M"
 
 #: ../src/gl-util.c:247
-#| msgid "%b %e %Y %H:%M"
 msgid "%b %e %Y %H:%M:%S"
 msgstr "%b %e %Y %H:%M:%S"
 
