@@ -8,10 +8,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"logs&keywords=I18N+L10N&component=general\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-logs&keywords=I18N+L10N&component=general\n"
 "POT-Creation-Date: 2015-12-08 18:05+0000\n"
-"PO-Revision-Date: 2015-11-26 01:12-0300\n"
+"PO-Revision-Date: 2015-12-31 16:28-0300\n"
 "Last-Translator: Enrico Nicoletto <liverig@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
 "Language: pt_BR\n"
@@ -19,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 1.8.6\n"
+"X-Generator: Poedit 1.7.3\n"
 
 #: ../data/gl-categorylist.ui.h:1
 msgid "Important"
@@ -115,23 +114,23 @@ msgstr "Ajuda"
 
 #: ../data/help-overlay.ui.h:1
 msgid "General"
-msgstr ""
+msgstr "Geral"
 
 #: ../data/help-overlay.ui.h:2
 msgid "Open a new window"
-msgstr ""
+msgstr "Abrir uma nova janela"
 
 #: ../data/help-overlay.ui.h:3
 msgid "Close a window"
-msgstr ""
+msgstr "Fechar uma janela"
 
 #: ../data/help-overlay.ui.h:4
 msgid "Search"
-msgstr ""
+msgstr "Pesquisar"
 
 #: ../data/help-overlay.ui.h:5
 msgid "Find"
-msgstr ""
+msgstr "Localizar"
 
 #: ../data/menus.ui.h:1
 msgid "_New Window"
@@ -143,7 +142,7 @@ msgstr "_Ajuda"
 
 #: ../data/menus.ui.h:3
 msgid "Keyboard Shortcuts"
-msgstr ""
+msgstr "Atalhos de teclado"
 
 #: ../data/menus.ui.h:4
 msgid "_About"
@@ -154,33 +153,22 @@ msgid "_Quit"
 msgstr "Sai_r"
 
 #. Name and summary taken from the desktop file.
-#: ../data/org.gnome.Logs.appdata.xml.in.h:2
-#: ../data/org.gnome.Logs.desktop.in.h:1 ../src/gl-eventtoolbar.c:126
+#: ../data/org.gnome.Logs.appdata.xml.in.h:2 ../data/org.gnome.Logs.desktop.in.h:1 ../src/gl-eventtoolbar.c:126
 msgid "Logs"
 msgstr "Registros"
 
-#: ../data/org.gnome.Logs.appdata.xml.in.h:3
-#: ../data/org.gnome.Logs.desktop.in.h:3
+#: ../data/org.gnome.Logs.appdata.xml.in.h:3 ../data/org.gnome.Logs.desktop.in.h:3
 msgid "View detailed event logs for the system"
 msgstr "Veja registros detalhados de eventos do sistema"
 
 # 'Logs' ao início da frase é o nome próprio do aplicativo. Acrescentei o artigo 'Os' para facilitar a compreensão dos usuários; Journal é um sistema de registros, systemd é um gerenciador e sistema de serviço  para Linux. referência: <https://wiki.archlinux.org/index.php/systemd#Journal> --Enrico
 #: ../data/org.gnome.Logs.appdata.xml.in.h:4
-msgid ""
-"Logs shows events from the systemd journal, and sorts them into categories, "
-"such as hardware and applications."
-msgstr ""
-"Os registros mostram eventos de sistema Journal através de systemd e os "
-"ordena em categorias, como hardware e aplicativos."
+msgid "Logs shows events from the systemd journal, and sorts them into categories, such as hardware and applications."
+msgstr "Os registros mostram eventos de sistema Journal através de systemd e os ordena em categorias, como hardware e aplicativos."
 
 #: ../data/org.gnome.Logs.appdata.xml.in.h:5
-msgid ""
-"Using Logs you can search your logs by typing a search term, and view "
-"detailed information about each event by clicking on it."
-msgstr ""
-"Ao usar este aplicativo, você poderá pesquisar seus registros digitando um "
-"termo de pesquisa e poderá ver informações detalhadas sobre cada evento ao "
-"clicar neles."
+msgid "Using Logs you can search your logs by typing a search term, and view detailed information about each event by clicking on it."
+msgstr "Ao usar este aplicativo, você poderá pesquisar seus registros digitando um termo de pesquisa e poderá ver informações detalhadas sobre cada evento ao clicar neles."
 
 #: ../data/org.gnome.Logs.desktop.in.h:2
 msgid "Log Viewer"
@@ -193,14 +181,11 @@ msgstr "registro;registros;log;journal;depuração;debug;erro;"
 
 #: ../data/org.gnome.Logs.gschema.xml.h:1
 msgid "How to sort list rows in the event view list"
-msgstr ""
-"Como classificar a lista de linhas na lista de visualização de eventos."
+msgstr "Como classificar a lista de linhas na lista de visualização de eventos."
 
 #: ../data/org.gnome.Logs.gschema.xml.h:2
 msgid "Sort list rows in ascending or descending order for the selected type"
-msgstr ""
-"Classifica as linhas da lista em ordem crescente ou decrescente para o tipo "
-"selecionado."
+msgstr "Classifica as linhas da lista em ordem crescente ou decrescente para o tipo selecionado."
 
 #: ../src/gl-application.c:110
 msgid "translator-credits"
