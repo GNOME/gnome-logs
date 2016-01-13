@@ -2,15 +2,15 @@
 # Copyright (C) 2013 gnome-logs's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-logs package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# Jiri Grönroos <jiri.gronroos+l10n@iki.fi>, 2013, 2014, 2015.
+# Jiri Grönroos <jiri.gronroos+l10n@iki.fi>, 2013, 2014, 2015, 2016.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-12-20 09:19+0000\n"
-"PO-Revision-Date: 2015-12-20 21:19+0200\n"
+"POT-Creation-Date: 2016-01-13 09:17+0000\n"
+"PO-Revision-Date: 2016-01-13 12:23+0200\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos+l10n@iki.fi>\n"
 "Language-Team: suomi <gnome-fi-laatu@lists.sourceforge.net>\n"
 "Language: fi\n"
@@ -126,11 +126,11 @@ msgstr "Sulje ikkuna"
 
 #: ../data/help-overlay.ui.h:4
 msgid "Search"
-msgstr ""
+msgstr "Haku"
 
 #: ../data/help-overlay.ui.h:5
 msgid "Find"
-msgstr ""
+msgstr "Etsi"
 
 #: ../data/menus.ui.h:1
 msgid "_New Window"
@@ -229,10 +229,9 @@ msgstr "Muu"
 #. * current day, showing the time with seconds in
 #. * 12-hour format.
 #: ../src/gl-util.c:148
-#, fuzzy
 #| msgid "%l:%M %p"
 msgid "%l:%M:%S %p"
-msgstr "%l:%M %p"
+msgstr "%l:%M:%S %p"
 
 #. Translators: timestamp format for events on the
 #. * current day, showing the time without seconds in
@@ -242,10 +241,9 @@ msgid "%l:%M %p"
 msgstr "%l:%M %p"
 
 #: ../src/gl-util.c:166
-#, fuzzy
 #| msgid "%b %e %l:%M %p"
 msgid "%b %e %l:%M:%S %p"
-msgstr "%b %e %l:%M %p"
+msgstr "%b %e %l:%M:%S %p"
 
 #. Translators: timestamp format for events in the
 #. * current year, showing the abbreviated month name,
@@ -256,10 +254,9 @@ msgid "%b %e %l:%M %p"
 msgstr "%b %e %l:%M %p"
 
 #: ../src/gl-util.c:185
-#, fuzzy
 #| msgid "%b %e %Y %l:%M %p"
 msgid "%b %e %Y %l:%M:%S %p"
-msgstr "%b %e %Y %l:%M %p"
+msgstr "%b %e %Y %l:%M:%S %p"
 
 #: ../src/gl-util.c:194
 msgid "%b %e %Y %l:%M %p"
@@ -269,10 +266,9 @@ msgstr "%b %e %Y %l:%M %p"
 #. * current day, showing the time with seconds in
 #. * 24-hour format.
 #: ../src/gl-util.c:211
-#, fuzzy
 #| msgid "%H:%M"
 msgid "%H:%M:%S"
-msgstr "%H:%M"
+msgstr "%H:%M:%S"
 
 #. Translators: timestamp format for events on the
 #. * current day, showing the time without seconds in
@@ -286,10 +282,9 @@ msgstr "%H:%M"
 #. * day of the month and the time with seconds in
 #. * 24-hour format.
 #: ../src/gl-util.c:228
-#, fuzzy
 #| msgid "%b %e %H:%M"
 msgid "%b %e %H:%M:%S"
-msgstr "%e. %Bta %H:%M"
+msgstr "%e. %Bta %H:%M:%S"
 
 #. Translators: timestamp format for events in the
 #. * current year, showing the abbreviated month name,
@@ -300,10 +295,9 @@ msgid "%b %e %H:%M"
 msgstr "%e. %Bta %H:%M"
 
 #: ../src/gl-util.c:247
-#, fuzzy
 #| msgid "%b %e %Y %H:%M"
 msgid "%b %e %Y %H:%M:%S"
-msgstr "%e. %Bta %Y %H:%M"
+msgstr "%e. %Bta %Y %H:%M:%S"
 
 #. Translators: timestamp format for events in a
 #. * different year, showing the abbreviated month name,
