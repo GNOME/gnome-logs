@@ -1,3 +1,10 @@
+GNOME Logs 3.19.4
+=================
+
+* fix test error in tests/test-gl-util.c
+* updates to Slovak, Spanish, Lithuanian, Finnish, Czech, German,
+  Brazilian Portuguese, Greek and Norwegian bokmål translations
+
 GNOME Logs 3.19.3
 =================
 
