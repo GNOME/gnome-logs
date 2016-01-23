@@ -4,15 +4,15 @@
 # David Lüder <davidl-dev@gmx-topmail.de>, 2014.
 # Benjamin Steinwender <b@stbe.at>, 2014.
 # Bernd Homuth <dev@hmt.im>, 2015.
-# Mario Blättermann <mario.blaettermann@gmail.com>, 2015.
+# Mario Blättermann <mario.blaettermann@gmail.com>, 2015-2016.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-12-29 09:17+0000\n"
-"PO-Revision-Date: 2015-12-29 14:35+0100\n"
+"POT-Creation-Date: 2016-01-23 09:17+0000\n"
+"PO-Revision-Date: 2016-01-23 18:29+0100\n"
 "Last-Translator: Mario Blättermann <mario.blaettermann@gmail.com>\n"
 "Language-Team: Deutsch <gnome-de@gnome.org>\n"
 "Language: de\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.5\n"
+"X-Generator: Poedit 1.8.6\n"
 
 #: ../data/gl-categorylist.ui.h:1
 msgid "Important"
@@ -154,18 +154,16 @@ msgstr "_Info"
 msgid "_Quit"
 msgstr "_Beenden"
 
-#. Name and summary taken from the desktop file.
-#: ../data/org.gnome.Logs.appdata.xml.in.h:2
-#: ../data/org.gnome.Logs.desktop.in.h:1 ../src/gl-eventtoolbar.c:126
-msgid "Logs"
-msgstr "Protokolle"
+#: ../data/org.gnome.Logs.appdata.xml.in.h:1
+msgid "GNOME Logs"
+msgstr "GNOME Protokoll"
 
-#: ../data/org.gnome.Logs.appdata.xml.in.h:3
+#: ../data/org.gnome.Logs.appdata.xml.in.h:2
 #: ../data/org.gnome.Logs.desktop.in.h:3
 msgid "View detailed event logs for the system"
 msgstr "Detaillierte Ereignisprotokolle des Systems ansehen"
 
-#: ../data/org.gnome.Logs.appdata.xml.in.h:4
+#: ../data/org.gnome.Logs.appdata.xml.in.h:3
 msgid ""
 "Logs shows events from the systemd journal, and sorts them into categories, "
 "such as hardware and applications."
@@ -173,7 +171,7 @@ msgstr ""
 "Protokoll zeigt Ereignisse aus dem »systemd«-Protokoll und sortiert sie nach "
 "Kategorien wie z.B. Hardware oder Anwendungen."
 
-#: ../data/org.gnome.Logs.appdata.xml.in.h:5
+#: ../data/org.gnome.Logs.appdata.xml.in.h:4
 msgid ""
 "Using Logs you can search your logs by typing a search term, and view "
 "detailed information about each event by clicking on it."
@@ -181,6 +179,10 @@ msgstr ""
 "Mit Protokoll können Sie Ihre Systemprotokolle durch tippen eines "
 "Schlagwortes durchsuchen und detaillierte Informationen über die einzelnen "
 "Ereignisse ansehen."
+
+#: ../data/org.gnome.Logs.desktop.in.h:1 ../src/gl-eventtoolbar.c:126
+msgid "Logs"
+msgstr "Protokolle"
 
 #: ../data/org.gnome.Logs.desktop.in.h:2
 msgid "Log Viewer"
@@ -239,7 +241,6 @@ msgstr "Andere"
 #. * current day, showing the time with seconds in
 #. * 12-hour format.
 #: ../src/gl-util.c:148
-#| msgid "%l:%M %p"
 msgid "%l:%M:%S %p"
 msgstr "%l:%M:%S %p"
 
@@ -274,7 +275,6 @@ msgstr "%e. %b %Y %l:%M %p"
 #. * current day, showing the time with seconds in
 #. * 24-hour format.
 #: ../src/gl-util.c:211
-#| msgid "%H:%M"
 msgid "%H:%M:%S"
 msgstr "%H:%M:%S"
 
