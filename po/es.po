@@ -3,15 +3,15 @@
 # This file is distributed under the same license as the gnome-logs package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Daniel Mustieles <daniel.mustieles@gmail.com>, 2013, 2014, 2015., 2015.
+# Daniel Mustieles <daniel.mustieles@gmail.com>, 2013, 2014, 2015., 2016.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-12-14 09:17+0000\n"
-"PO-Revision-Date: 2015-12-14 16:35+0100\n"
+"POT-Creation-Date: 2016-01-25 09:18+0000\n"
+"PO-Revision-Date: 2016-01-25 13:28+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español; Castellano <gnome-es-list@gnome.org>\n"
 "Language: es\n"
@@ -153,18 +153,16 @@ msgstr "_Acerca de"
 msgid "_Quit"
 msgstr "_Salir"
 
-#. Name and summary taken from the desktop file.
-#: ../data/org.gnome.Logs.appdata.xml.in.h:2
-#: ../data/org.gnome.Logs.desktop.in.h:1 ../src/gl-eventtoolbar.c:126
-msgid "Logs"
-msgstr "Registros"
+#: ../data/org.gnome.Logs.appdata.xml.in.h:1
+msgid "GNOME Logs"
+msgstr "Registros de GNOME"
 
-#: ../data/org.gnome.Logs.appdata.xml.in.h:3
+#: ../data/org.gnome.Logs.appdata.xml.in.h:2
 #: ../data/org.gnome.Logs.desktop.in.h:3
 msgid "View detailed event logs for the system"
 msgstr "Ver registros detallados de eventos del sistema"
 
-#: ../data/org.gnome.Logs.appdata.xml.in.h:4
+#: ../data/org.gnome.Logs.appdata.xml.in.h:3
 msgid ""
 "Logs shows events from the systemd journal, and sorts them into categories, "
 "such as hardware and applications."
@@ -172,13 +170,17 @@ msgstr ""
 "Registros muestra eventos del registro de systemd, y los ordena en "
 "categorías tales como hardware o aplicaciones."
 
-#: ../data/org.gnome.Logs.appdata.xml.in.h:5
+#: ../data/org.gnome.Logs.appdata.xml.in.h:4
 msgid ""
 "Using Logs you can search your logs by typing a search term, and view "
 "detailed information about each event by clicking on it."
 msgstr ""
 "Al usar Registros puede buscar en sus registros escribiendo un término de "
 "búsqueda y ver información detallada sobre cada evento al pulsar sobre él."
+
+#: ../data/org.gnome.Logs.desktop.in.h:1 ../src/gl-eventtoolbar.c:126
+msgid "Logs"
+msgstr "Registros"
 
 #: ../data/org.gnome.Logs.desktop.in.h:2
 msgid "Log Viewer"
