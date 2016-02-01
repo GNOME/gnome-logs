@@ -5,19 +5,19 @@
                 <property name="visible">True</property>
                 <child>
                     <object class="GtkShortcutsGroup">
-                        <property name="title" translatable="yes">General</property>
+                        <property name="title" translatable="yes" context="shortcut window">General</property>
                         <property name="visible">True</property>
                         <child>
                             <object class="GtkShortcutsShortcut">
                                 <property name="accelerator">&lt;Primary&gt;n</property>
-                                <property name="title" translatable="yes">Open a new window</property>
+                                <property name="title" translatable="yes" context="shortcut window">Open a new window</property>
                                 <property name="visible">True</property>
                             </object>
                         </child>
                         <child>
                             <object class="GtkShortcutsShortcut">
                                 <property name="accelerator">&lt;Primary&gt;w</property>
-                                <property name="title" translatable="yes">Close a window</property>
+                                <property name="title" translatable="yes" context="shortcut window">Close a window</property>
                                 <property name="visible">True</property>
                             </object>
                         </child>
@@ -25,12 +25,12 @@
                 </child>
                 <child>
                     <object class="GtkShortcutsGroup">
-                        <property name="title" translatable="yes">Search</property>
+                        <property name="title" translatable="yes" context="shortcut window">Search</property>
                         <property name="visible">True</property>
                         <child>
                             <object class="GtkShortcutsShortcut">
                                 <property name="accelerator">&lt;Primary&gt;f</property>
-                                <property name="title" translatable="yes">Find</property>
+                                <property name="title" translatable="yes" context="shortcut window">Find</property>
                                 <property name="visible">True</property>
                             </object>
                         </child>
