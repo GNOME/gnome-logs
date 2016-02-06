@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-12-15 09:19+0000\n"
-"PO-Revision-Date: 2015-12-15 16:38+0100\n"
+"POT-Creation-Date: 2016-02-05 21:20+0000\n"
+"PO-Revision-Date: 2016-02-06 10:18+0100\n"
 "Last-Translator: Dušan Kazik <prescott66@gmail.com>\n"
 "Language-Team: slovenčina <>\n"
 "Language: sk\n"
@@ -118,22 +118,27 @@ msgid "Help"
 msgstr "Pomocník"
 
 #: ../data/help-overlay.ui.h:1
+msgctxt "shortcut window"
 msgid "General"
 msgstr "Všeobecné"
 
 #: ../data/help-overlay.ui.h:2
+msgctxt "shortcut window"
 msgid "Open a new window"
 msgstr "Otvorenie nového okna"
 
 #: ../data/help-overlay.ui.h:3
+msgctxt "shortcut window"
 msgid "Close a window"
 msgstr "Zatvorenie okna"
 
 #: ../data/help-overlay.ui.h:4
+msgctxt "shortcut window"
 msgid "Search"
 msgstr "Vyhľadávanie"
 
 #: ../data/help-overlay.ui.h:5
+msgctxt "shortcut window"
 msgid "Find"
 msgstr "Nájdenie"
 
@@ -157,33 +162,35 @@ msgstr "_O programe"
 msgid "_Quit"
 msgstr "U_končiť"
 
-#. Name and summary taken from the desktop file.
-#: ../data/org.gnome.Logs.appdata.xml.in.h:2
-#: ../data/org.gnome.Logs.desktop.in.h:1 ../src/gl-eventtoolbar.c:126
-msgid "Logs"
-msgstr "Záznamy"
+#: ../data/org.gnome.Logs.appdata.xml.in.h:1
+msgid "GNOME Logs"
+msgstr "Záznamy prostredia GNOME"
 
 # DK:nezda sa mi moc presny ten preklad aj ked znie dobre. dal by som: "Zobrazuje podrobné záznamy udalostí systému"
-#: ../data/org.gnome.Logs.appdata.xml.in.h:3
+#: ../data/org.gnome.Logs.appdata.xml.in.h:2
 #: ../data/org.gnome.Logs.desktop.in.h:3
 msgid "View detailed event logs for the system"
 msgstr "Zobrazuje podrobné záznamy o udalostiach v systéme"
 
-#: ../data/org.gnome.Logs.appdata.xml.in.h:4
+#: ../data/org.gnome.Logs.appdata.xml.in.h:3
 msgid ""
 "Logs shows events from the systemd journal, and sorts them into categories, "
 "such as hardware and applications."
 msgstr ""
-"Aplikácia záznamy zobrazuje udalosti z denníka služby systemd a triedi ich "
+"Aplikácia záznamy zobrazuje udalosti zo žurnálu služby systemd a triedi ich "
 "do kategórií ako sú napríklad hardvér alebo aplikácie."
 
-#: ../data/org.gnome.Logs.appdata.xml.in.h:5
+#: ../data/org.gnome.Logs.appdata.xml.in.h:4
 msgid ""
 "Using Logs you can search your logs by typing a search term, and view "
 "detailed information about each event by clicking on it."
 msgstr ""
 "Použitím aplikácie Záznamy môžete vyhľadať zadaný výraz a kliknutím na "
 "udalosť zobraziť podrobné informácie o každej udalosti."
+
+#: ../data/org.gnome.Logs.desktop.in.h:1 ../src/gl-eventtoolbar.c:126
+msgid "Logs"
+msgstr "Záznamy"
 
 #: ../data/org.gnome.Logs.desktop.in.h:2
 msgid "Log Viewer"
