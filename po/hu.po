@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-01-24 21:19+0000\n"
-"PO-Revision-Date: 2016-01-24 23:51+0100\n"
+"POT-Creation-Date: 2016-02-05 21:20+0000\n"
+"PO-Revision-Date: 2016-02-06 09:46+0100\n"
 "Last-Translator: Meskó Balázs <meskobalazs@gmail.com>\n"
 "Language-Team: Hungarian <openscope at googlegroups dot com>\n"
 "Language: hu\n"
@@ -114,22 +114,27 @@ msgid "Help"
 msgstr "Súgó"
 
 #: ../data/help-overlay.ui.h:1
+msgctxt "shortcut window"
 msgid "General"
 msgstr "Általános"
 
 #: ../data/help-overlay.ui.h:2
+msgctxt "shortcut window"
 msgid "Open a new window"
 msgstr "Új ablak megnyitása"
 
 #: ../data/help-overlay.ui.h:3
+msgctxt "shortcut window"
 msgid "Close a window"
 msgstr "Ablak bezárása"
 
 #: ../data/help-overlay.ui.h:4
+msgctxt "shortcut window"
 msgid "Search"
 msgstr "Keresés"
 
 #: ../data/help-overlay.ui.h:5
+msgctxt "shortcut window"
 msgid "Find"
 msgstr "Keresés"
 
@@ -244,7 +249,6 @@ msgid "%l:%M %p"
 msgstr "%p %l:%M"
 
 #: ../src/gl-util.c:166
-#| msgid "%b %e %l:%M %p"
 msgid "%b %e %l:%M:%S %p"
 msgstr "%b %e. %p %l:%M:%S"
 
@@ -257,7 +261,6 @@ msgid "%b %e %l:%M %p"
 msgstr "%b %e. %p %l:%M"
 
 #: ../src/gl-util.c:185
-#| msgid "%b %e %Y %l:%M %p"
 msgid "%b %e %Y %l:%M:%S %p"
 msgstr "%Y. %b %e. %p %l:%M:%S"
 
@@ -269,7 +272,6 @@ msgstr "%Y. %b %e. %p %l.%M"
 #. * current day, showing the time with seconds in
 #. * 24-hour format.
 #: ../src/gl-util.c:211
-#| msgid "%H:%M"
 msgid "%H:%M:%S"
 msgstr "%H:%M:%S"
 
