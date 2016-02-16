@@ -50,8 +50,6 @@ typedef struct
 
 G_DEFINE_TYPE_WITH_PRIVATE (GlEventToolbar, gl_event_toolbar, GTK_TYPE_HEADER_BAR)
 
-static const gchar DESKTOP_SCHEMA[] = "org.gnome.desktop.interface";
-static const gchar CLOCK_FORMAT[] = "clock-format";
 static GParamSpec *obj_properties[N_PROPERTIES] = { NULL, };
 
 void
