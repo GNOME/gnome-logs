@@ -182,7 +182,13 @@ gl_journal_get_boots (GlJournal *journal)
                        g_strerror (-r));
         }
 
-        id = gl_journal_get_data (journal, "_BOOT_ID", NULL);
+        id = gl_journal_get_data (journal, "_BOOT_ID", &error);
+        if (error != NULL)
+        {
+            g_debug ("%s", error->message);
+            g_clear_error (&error);
+        }
+
         boot_match = g_strconcat ("_BOOT_ID=", id, NULL);
         boot_id.boot_match = boot_match;
         g_free (id);
@@ -413,7 +419,7 @@ _gl_journal_query_entry (GlJournal *self)
         goto out;
     }
 
-    entry->message = gl_journal_get_data (self, "MESSAGE", NULL);
+    entry->message = gl_journal_get_data (self, "MESSAGE", &error);
 
     if (error != NULL)
     {
@@ -426,7 +432,7 @@ _gl_journal_query_entry (GlJournal *self)
         goto out;
     }
 
-    priority = gl_journal_get_data (self, "PRIORITY", NULL);
+    priority = gl_journal_get_data (self, "PRIORITY", &error);
 
     if (error != NULL)
     {
@@ -452,7 +458,7 @@ _gl_journal_query_entry (GlJournal *self)
         g_clear_error (&error);
     }
 
-    entry->kernel_device = gl_journal_get_data (self, "_KERNEL_DEVICE", NULL);
+    entry->kernel_device = gl_journal_get_data (self, "_KERNEL_DEVICE", &error);
 
     if (error != NULL)
     {
@@ -460,7 +466,13 @@ _gl_journal_query_entry (GlJournal *self)
         g_clear_error (&error);
     }
 
-    entry->audit_session = gl_journal_get_data (self, "_AUDIT_SESSION", NULL);
+    entry->audit_session = gl_journal_get_data (self, "_AUDIT_SESSION", &error);
+
+    if (error != NULL)
+    {
+        g_debug ("%s", error->message);
+        g_clear_error (&error);
+    }
 
     entry->transport = gl_journal_get_data (self, "_TRANSPORT", &error);
 
