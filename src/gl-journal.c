@@ -159,6 +159,7 @@ gl_journal_get_boots (GlJournal *journal)
     {
         gchar *boot_match;
         gchar *id;
+        GError *error = NULL;
         GlJournalBootID boot_id;
 
         sd_journal_flush_matches (priv->journal);
