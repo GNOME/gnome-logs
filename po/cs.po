@@ -3,15 +3,15 @@
 # This file is distributed under the same license as the gnome-logs package.
 #
 # Petr Kovar <pknbe@volny.cz>, 2015.
-# Marek Černocký <marek@manet.cz>, 2013, 2014, 2015.
+# Marek Černocký <marek@manet.cz>, 2013, 2014, 2015, 2016.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-12-24 09:16+0000\n"
-"PO-Revision-Date: 2015-12-24 13:28+0100\n"
+"POT-Creation-Date: 2016-02-25 09:20+0000\n"
+"PO-Revision-Date: 2016-02-25 11:46+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -115,22 +115,27 @@ msgid "Help"
 msgstr "Nápověda"
 
 #: ../data/help-overlay.ui.h:1
+msgctxt "shortcut window"
 msgid "General"
 msgstr "Obecné"
 
 #: ../data/help-overlay.ui.h:2
+msgctxt "shortcut window"
 msgid "Open a new window"
 msgstr "Otevřít nové okno"
 
 #: ../data/help-overlay.ui.h:3
+msgctxt "shortcut window"
 msgid "Close a window"
 msgstr "Zavřít okno"
 
 #: ../data/help-overlay.ui.h:4
+msgctxt "shortcut window"
 msgid "Search"
 msgstr "Hledání"
 
 #: ../data/help-overlay.ui.h:5
+msgctxt "shortcut window"
 msgid "Find"
 msgstr "Najít"
 
@@ -154,18 +159,16 @@ msgstr "O _aplikaci"
 msgid "_Quit"
 msgstr "U_končit"
 
-#. Name and summary taken from the desktop file.
-#: ../data/org.gnome.Logs.appdata.xml.in.h:2
-#: ../data/org.gnome.Logs.desktop.in.h:1 ../src/gl-eventtoolbar.c:126
-msgid "Logs"
-msgstr "Záznamy"
+#: ../data/org.gnome.Logs.appdata.xml.in.h:1
+msgid "GNOME Logs"
+msgstr "Záznamy GNOME"
 
-#: ../data/org.gnome.Logs.appdata.xml.in.h:3
+#: ../data/org.gnome.Logs.appdata.xml.in.h:2
 #: ../data/org.gnome.Logs.desktop.in.h:3
 msgid "View detailed event logs for the system"
 msgstr "Zobrazte si podrobné záznamy událostí v systému"
 
-#: ../data/org.gnome.Logs.appdata.xml.in.h:4
+#: ../data/org.gnome.Logs.appdata.xml.in.h:3
 msgid ""
 "Logs shows events from the systemd journal, and sorts them into categories, "
 "such as hardware and applications."
@@ -173,13 +176,17 @@ msgstr ""
 "Aplikace Záznamy zobrazuje události ze žurnálu systemd a řadí je do "
 "kategorií, jako jsou třeba hardware nebo aplikace."
 
-#: ../data/org.gnome.Logs.appdata.xml.in.h:5
+#: ../data/org.gnome.Logs.appdata.xml.in.h:4
 msgid ""
 "Using Logs you can search your logs by typing a search term, and view "
 "detailed information about each event by clicking on it."
 msgstr ""
 "Díky aplikaci Záznamy můžete ve svých záznamech vyhledávat jednoduše "
 "napsáním výrazu a ke každé události si pak kliknutím zobrazit podrobnosti."
+
+#: ../data/org.gnome.Logs.desktop.in.h:1 ../src/gl-eventtoolbar.c:124
+msgid "Logs"
+msgstr "Záznamy"
 
 #: ../data/org.gnome.Logs.desktop.in.h:2
 msgid "Log Viewer"
@@ -212,7 +219,7 @@ msgid "Print version information and exit"
 msgstr "Vypsat informace o verzi a skončit"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
-#: ../src/gl-eventtoolbar.c:117
+#: ../src/gl-eventtoolbar.c:115
 msgid "Boot"
 msgstr "Spuštění"
 
