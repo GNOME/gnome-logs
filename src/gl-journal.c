@@ -437,15 +437,10 @@ _gl_journal_query_entry (GlJournal *self)
 
     if (error != NULL)
     {
-        g_warning ("%s", error->message);
+        /* Some entries do not have PRIORITY field, so use g_debug instead
+         * of g_warning*/
+        g_debug ("%s", error->message);
         g_clear_error (&error);
-        free (entry->cursor);
-        entry->cursor = NULL;
-        free (entry->catalog);
-        entry->catalog = NULL;
-        g_free (entry->message);
-        entry->message = NULL;
-        goto out;
     }
 
     entry->priority = priority ? atoi (priority) : LOG_INFO;
