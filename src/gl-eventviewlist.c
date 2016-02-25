@@ -95,6 +95,15 @@ gl_event_view_list_get_output_logs (GlEventViewList *view)
         row = gtk_list_box_get_row_at_index (GTK_LIST_BOX (priv->entries_box),
                                              index);
 
+        /* Only output search results.
+         * Search results are entries that are visible and child visible */
+        if (gtk_widget_get_mapped (GTK_WIDGET (row)) == FALSE
+            || gtk_widget_get_visible (GTK_WIDGET (row)) == FALSE)
+        {
+            index++;
+            continue;
+        }
+
         comm = gl_event_view_row_get_command_line (GL_EVENT_VIEW_ROW (row));
         message = gl_event_view_row_get_message (GL_EVENT_VIEW_ROW (row));
         timestamp = gl_event_view_row_get_timestamp (GL_EVENT_VIEW_ROW (row));
