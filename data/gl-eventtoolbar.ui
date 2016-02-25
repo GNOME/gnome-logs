@@ -31,7 +31,7 @@
                 </style>
                 <child>
                     <object class="GtkImage" id="output_icon">
-                        <property name="icon-name">send-to-symbolic</property>
+                        <property name="icon-name">document-save-symbolic</property>
                         <property name="icon-size">1</property>
                         <property name="visible">True</property>
                     </object>
