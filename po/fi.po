@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-01-13 09:17+0000\n"
-"PO-Revision-Date: 2016-01-13 12:23+0200\n"
+"POT-Creation-Date: 2016-03-02 09:21+0000\n"
+"PO-Revision-Date: 2016-03-02 22:50+0200\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos+l10n@iki.fi>\n"
 "Language-Team: suomi <gnome-fi-laatu@lists.sourceforge.net>\n"
 "Language: fi\n"
@@ -113,22 +113,32 @@ msgid "Help"
 msgstr "Ohje"
 
 #: ../data/help-overlay.ui.h:1
+#| msgid "General"
+msgctxt "shortcut window"
 msgid "General"
 msgstr "Yleiset"
 
 #: ../data/help-overlay.ui.h:2
+#| msgid "Open a new window"
+msgctxt "shortcut window"
 msgid "Open a new window"
 msgstr "Avaa uusi ikkuna"
 
 #: ../data/help-overlay.ui.h:3
+#| msgid "Close a window"
+msgctxt "shortcut window"
 msgid "Close a window"
 msgstr "Sulje ikkuna"
 
 #: ../data/help-overlay.ui.h:4
+#| msgid "Search"
+msgctxt "shortcut window"
 msgid "Search"
 msgstr "Haku"
 
 #: ../data/help-overlay.ui.h:5
+#| msgid "Find"
+msgctxt "shortcut window"
 msgid "Find"
 msgstr "Etsi"
 
@@ -152,18 +162,16 @@ msgstr "_Tietoja"
 msgid "_Quit"
 msgstr "_Lopeta"
 
-#. Name and summary taken from the desktop file.
-#: ../data/org.gnome.Logs.appdata.xml.in.h:2
-#: ../data/org.gnome.Logs.desktop.in.h:1 ../src/gl-eventtoolbar.c:126
-msgid "Logs"
-msgstr "Lokit"
+#: ../data/org.gnome.Logs.appdata.xml.in.h:1
+msgid "GNOME Logs"
+msgstr "Gnomen lokit"
 
-#: ../data/org.gnome.Logs.appdata.xml.in.h:3
+#: ../data/org.gnome.Logs.appdata.xml.in.h:2
 #: ../data/org.gnome.Logs.desktop.in.h:3
 msgid "View detailed event logs for the system"
 msgstr "Katsele järjestelmän yksityiskohtaisia tapahtumalokeja"
 
-#: ../data/org.gnome.Logs.appdata.xml.in.h:4
+#: ../data/org.gnome.Logs.appdata.xml.in.h:3
 msgid ""
 "Logs shows events from the systemd journal, and sorts them into categories, "
 "such as hardware and applications."
@@ -171,13 +179,17 @@ msgstr ""
 "Lokit näyttää systemd:n tapahtumasanomia ja jakaa ne luokkiin, kuten "
 "laitteisto ja sovellukset."
 
-#: ../data/org.gnome.Logs.appdata.xml.in.h:5
+#: ../data/org.gnome.Logs.appdata.xml.in.h:4
 msgid ""
 "Using Logs you can search your logs by typing a search term, and view "
 "detailed information about each event by clicking on it."
 msgstr ""
 "Lokisovelluksen avulla voit etsiä tapahtumia lokeista, ja tarkastella "
 "yksittäisiä tapahtumia napsauttamalla niitä."
+
+#: ../data/org.gnome.Logs.desktop.in.h:1 ../src/gl-eventtoolbar.c:124
+msgid "Logs"
+msgstr "Lokit"
 
 #: ../data/org.gnome.Logs.desktop.in.h:2
 msgid "Log Viewer"
@@ -211,13 +223,13 @@ msgid "Print version information and exit"
 msgstr "Tulosta versiotiedot ja poistu"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
-#: ../src/gl-eventtoolbar.c:117
+#: ../src/gl-eventtoolbar.c:115
 msgid "Boot"
 msgstr "Käynnistys"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventviewlist.c:651
+#: ../src/gl-eventviewlist.c:660
 msgid "No results"
 msgstr "Ei tuloksia"
 
@@ -229,7 +241,6 @@ msgstr "Muu"
 #. * current day, showing the time with seconds in
 #. * 12-hour format.
 #: ../src/gl-util.c:148
-#| msgid "%l:%M %p"
 msgid "%l:%M:%S %p"
 msgstr "%l:%M:%S %p"
 
@@ -241,7 +252,6 @@ msgid "%l:%M %p"
 msgstr "%l:%M %p"
 
 #: ../src/gl-util.c:166
-#| msgid "%b %e %l:%M %p"
 msgid "%b %e %l:%M:%S %p"
 msgstr "%b %e %l:%M:%S %p"
 
@@ -254,7 +264,6 @@ msgid "%b %e %l:%M %p"
 msgstr "%b %e %l:%M %p"
 
 #: ../src/gl-util.c:185
-#| msgid "%b %e %Y %l:%M %p"
 msgid "%b %e %Y %l:%M:%S %p"
 msgstr "%b %e %Y %l:%M:%S %p"
 
@@ -266,7 +275,6 @@ msgstr "%b %e %Y %l:%M %p"
 #. * current day, showing the time with seconds in
 #. * 24-hour format.
 #: ../src/gl-util.c:211
-#| msgid "%H:%M"
 msgid "%H:%M:%S"
 msgstr "%H:%M:%S"
 
@@ -282,7 +290,6 @@ msgstr "%H:%M"
 #. * day of the month and the time with seconds in
 #. * 24-hour format.
 #: ../src/gl-util.c:228
-#| msgid "%b %e %H:%M"
 msgid "%b %e %H:%M:%S"
 msgstr "%e. %Bta %H:%M:%S"
 
@@ -295,7 +302,6 @@ msgid "%b %e %H:%M"
 msgstr "%e. %Bta %H:%M"
 
 #: ../src/gl-util.c:247
-#| msgid "%b %e %Y %H:%M"
 msgid "%b %e %Y %H:%M:%S"
 msgstr "%e. %Bta %Y %H:%M:%S"
 
