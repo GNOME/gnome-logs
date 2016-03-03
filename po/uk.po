@@ -1,13 +1,13 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# Daniel Korostil <ted.korostiled@gmail.com>, 2014, 2015.
+# Daniel Korostil <ted.korostiled@gmail.com>, 2014, 2015, 2016.
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-26 01:24+0200\n"
-"PO-Revision-Date: 2015-02-26 01:29+0300\n"
+"POT-Creation-Date: 2016-03-03 17:28+0200\n"
+"PO-Revision-Date: 2016-03-03 17:33+0300\n"
 "Last-Translator: Daniel Korostil <ted.korostiled@gmail.com>\n"
 "Language-Team: linux.org.ua\n"
 "Language: uk\n"
@@ -35,19 +35,19 @@ msgstr "Із зірочкою"
 msgid "All"
 msgstr "Усе"
 
-#: ../data/gl-categorylist.ui.h:5
+#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:197
 msgid "Applications"
 msgstr "Програми"
 
-#: ../data/gl-categorylist.ui.h:6
+#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:206
 msgid "System"
 msgstr "Система"
 
-#: ../data/gl-categorylist.ui.h:7
+#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:210
 msgid "Security"
 msgstr "Безпека"
 
-#: ../data/gl-categorylist.ui.h:8
+#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:202
 msgid "Hardware"
 msgstr "Пристрої"
 
@@ -59,17 +59,19 @@ msgstr "Оновлення"
 msgid "Usage"
 msgstr "Використання"
 
-#. Name and summary taken from the desktop file.
-#: ../data/gl-eventtoolbar.ui.h:1 ../data/org.gnome.Logs.appdata.xml.in.h:2
-#: ../data/org.gnome.Logs.desktop.in.h:1
-msgid "Logs"
-msgstr "Журнали"
-
-#: ../data/gl-eventtoolbar.ui.h:2
+#: ../data/gl-eventtoolbar.ui.h:1
 msgid "Go back to the event view"
 msgstr "Вернутись до перегляду подій"
 
+#: ../data/gl-eventtoolbar.ui.h:2
+msgid "Export logs to a file"
+msgstr "Експортувати журнал у файл"
+
 #: ../data/gl-eventtoolbar.ui.h:3
+msgid "Choose the boot from which to view logs"
+msgstr "Вибрати завантаження, з якого дивитись журнал"
+
+#: ../data/gl-eventtoolbar.ui.h:4
 msgid "Search the displayed logs"
 msgstr "Пошук показаних журналів"
 
@@ -105,6 +107,35 @@ msgstr "Підтримування"
 msgid "Documentation"
 msgstr "Документація"
 
+#: ../data/gl-window.ui.h:1
+msgid "Help"
+msgstr "Довідка"
+
+#: ../data/help-overlay.ui.h:1
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Загальне"
+
+#: ../data/help-overlay.ui.h:2
+msgctxt "shortcut window"
+msgid "Open a new window"
+msgstr "Відкрити нове вікно"
+
+#: ../data/help-overlay.ui.h:3
+msgctxt "shortcut window"
+msgid "Close a window"
+msgstr "Закрити вікно"
+
+#: ../data/help-overlay.ui.h:4
+msgctxt "shortcut window"
+msgid "Search"
+msgstr "Пошук"
+
+#: ../data/help-overlay.ui.h:5
+msgctxt "shortcut window"
+msgid "Find"
+msgstr "Знайти"
+
 #: ../data/menus.ui.h:1
 msgid "_New Window"
 msgstr "_Створити вікно"
@@ -114,32 +145,44 @@ msgid "_Help"
 msgstr "_Довідка"
 
 #: ../data/menus.ui.h:3
+msgid "Keyboard Shortcuts"
+msgstr "Клавіатурні скорочення"
+
+#: ../data/menus.ui.h:4
 msgid "_About"
 msgstr "_Про програму"
 
-#: ../data/menus.ui.h:4
+#: ../data/menus.ui.h:5
 msgid "_Quit"
 msgstr "Ви_йти"
 
-#: ../data/org.gnome.Logs.appdata.xml.in.h:3
+#: ../data/org.gnome.Logs.appdata.xml.in.h:1
+msgid "GNOME Logs"
+msgstr "Журнали GNOME"
+
+#: ../data/org.gnome.Logs.appdata.xml.in.h:2
 #: ../data/org.gnome.Logs.desktop.in.h:3
 msgid "View detailed event logs for the system"
 msgstr "Переглянути детальний журнал подій для системи"
 
-#: ../data/org.gnome.Logs.appdata.xml.in.h:4
+#: ../data/org.gnome.Logs.appdata.xml.in.h:3
 msgid ""
 "Logs shows events from the systemd journal, and sorts them into categories, "
 "such as hardware and applications."
 msgstr ""
 "Журнал показує події з журналу systemd і сортує їх за різними категоріями."
 
-#: ../data/org.gnome.Logs.appdata.xml.in.h:5
+#: ../data/org.gnome.Logs.appdata.xml.in.h:4
 msgid ""
 "Using Logs you can search your logs by typing a search term, and view "
 "detailed information about each event by clicking on it."
 msgstr ""
 "Програма може шукати журнали і переглядати подробиці про кожну подію, якщо "
 "натиснути на неї."
+
+#: ../data/org.gnome.Logs.desktop.in.h:1 ../src/gl-eventtoolbar.c:124
+msgid "Logs"
+msgstr "Журнали"
 
 #: ../data/org.gnome.Logs.desktop.in.h:2
 msgid "Log Viewer"
@@ -160,63 +203,144 @@ msgstr ""
 "Впорядкувати рядки списку в висхідному або спадному порядку для вибраного "
 "типу"
 
-#: ../src/gl-application.c:103
+#: ../src/gl-application.c:110
 msgid "translator-credits"
 msgstr "Daniel Korostil <ted.korostiled@gmail.com>"
 
-#: ../src/gl-application.c:104
+#: ../src/gl-application.c:111
 msgid "View and search logs"
 msgstr "Перегляд і пошук журналів"
 
-#: ../src/gl-application.c:231
+#: ../src/gl-application.c:239
 msgid "Print version information and exit"
 msgstr "Показати версію та вийти"
 
+#. Translators: Boot refers to a single run (or bootup) of the system
+#: ../src/gl-eventtoolbar.c:115
+msgid "Boot"
+msgstr "Завантаження"
+
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventviewlist.c:288
+#: ../src/gl-eventviewlist.c:660
 msgid "No results"
 msgstr "Безрезультатно"
 
-#. Translators: timestamp format for events on the current
-#. * day, showing the time in 12-hour format.
-#: ../src/gl-util.c:138
+#: ../src/gl-eventviewrow.c:214
+msgid "Other"
+msgstr "Інше"
+
+#. Translators: timestamp format for events on the
+#. * current day, showing the time with seconds in
+#. * 12-hour format.
+#: ../src/gl-util.c:148
+msgid "%l:%M:%S %p"
+msgstr "%l:%M:%S %p"
+
+#. Translators: timestamp format for events on the
+#. * current day, showing the time without seconds in
+#. * 12-hour format.
+#: ../src/gl-util.c:155
 msgid "%l:%M %p"
 msgstr "%l:%M %p"
 
-#. Translators: timestamp format for events in the current
-#. * year, showing the abbreviated month name, day of the
-#. * month and the time in 12-hour format.
-#: ../src/gl-util.c:144
+#: ../src/gl-util.c:166
+msgid "%b %e %l:%M:%S %p"
+msgstr "%b %e %l:%M:%S %p"
+
+#. Translators: timestamp format for events in the
+#. * current year, showing the abbreviated month name,
+#. * day of the month and the time without seconds in
+#. * 12-hour format.
+#: ../src/gl-util.c:174
 msgid "%b %e %l:%M %p"
 msgstr "%e %b %l:%M %p"
 
-#. Translators: timestamp format for events in a different
-#. * year, showing the abbreviated month name, day of the
-#. * month, year and the time in 12-hour format.
-#: ../src/gl-util.c:150
+#: ../src/gl-util.c:185
+msgid "%b %e %Y %l:%M:%S %p"
+msgstr "%b %e %Y %l:%M:%S %p"
+
+#: ../src/gl-util.c:194
 msgid "%b %e %Y %l:%M %p"
 msgstr "%e %b %Y %l:%M %p"
 
-#. Translators: timestamp format for events on the current
-#. * day, showing the time in 24-hour format.
-#: ../src/gl-util.c:163
+#. Translators: timestamp format for events on the
+#. * current day, showing the time with seconds in
+#. * 24-hour format.
+#: ../src/gl-util.c:211
+msgid "%H:%M:%S"
+msgstr "%H:%M:%S"
+
+#. Translators: timestamp format for events on the
+#. * current day, showing the time without seconds in
+#. * 24-hour format.
+#: ../src/gl-util.c:218
 msgid "%H:%M"
 msgstr "%H:%M"
 
-#. Translators: timestamp format for events in the current
-#. * year, showing the abbreviated month name, day of the
-#. * month and the time in 24-hour format.
-#: ../src/gl-util.c:169
+#. Translators: timestamp format for events in the
+#. * current year, showing the abbreviated month name,
+#. * day of the month and the time with seconds in
+#. * 24-hour format.
+#: ../src/gl-util.c:228
+msgid "%b %e %H:%M:%S"
+msgstr "%b %e %H:%M:%S"
+
+#. Translators: timestamp format for events in the
+#. * current year, showing the abbreviated month name,
+#. * day of the month and the time without seconds in
+#. * 24-hour format.
+#: ../src/gl-util.c:236
 msgid "%b %e %H:%M"
 msgstr "%e %b %H:%M"
 
-#. Translators: timestamp format for events in a different
-#. * year, showing the abbreviated month name, day of the
-#. * month, year and the time in 24-hour format.
-#: ../src/gl-util.c:175
+#: ../src/gl-util.c:247
+msgid "%b %e %Y %H:%M:%S"
+msgstr "%b %e %Y %H:%M:%S"
+
+#. Translators: timestamp format for events in a
+#. * different year, showing the abbreviated month name,
+#. * day of the month, year and the time without seconds
+#. * in 24-hour format.
+#: ../src/gl-util.c:255
 msgid "%b %e %Y %H:%M"
 msgstr "%e %b %Y %H:%M"
+
+#. Transltors: the first string is the earliest timestamp of the boot,
+#. * and the second string is the newest timestamp. An example string might
+#. * be '08:10 - 08:30'
+#: ../src/gl-util.c:319
+#, c-format
+msgid "%s – %s"
+msgstr "%s – %s"
+
+#: ../src/gl-window.c:186
+msgid "Save logs"
+msgstr "Зберегти журнали"
+
+#: ../src/gl-window.c:189
+msgid "_Cancel"
+msgstr "_Скасувати"
+
+#: ../src/gl-window.c:190
+msgid "_Save"
+msgstr "З_берегти"
+
+#: ../src/gl-window.c:195
+msgid "log messages"
+msgstr "Повідомлення журналу"
+
+#: ../src/gl-window.c:248
+msgid "Unable to export log messages to a file"
+msgstr "Неможливо експортувати повідомлення журналу у файл"
+
+#: ../src/gl-window.c:467
+msgid "Unable to read system logs"
+msgstr "Неможливо прочитати системні журнали"
+
+#: ../src/gl-window.c:481
+msgid "Unable to read user logs"
+msgstr "Неможливо прочитати журнали користувача"
 
 #~ msgid "Not implemented"
 #~ msgstr "Не впроваджено"
