@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the gnome-logs package.
 #
 # Martin Srebotnjak <miles@filmsi.net>, 2013-2015.
+# Matej Urbančič <mateju@svn.gnome.org>, 2015-2016
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-09-08 19:23+0000\n"
-"PO-Revision-Date: 2015-09-08 22:23+0100\n"
+"POT-Creation-Date: 2016-03-12 21:04+0100\n"
+"PO-Revision-Date: 2016-03-12 21:06+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian <gnome-si@googlegroups.com>\n"
 "Language: sl\n"
@@ -19,7 +20,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
-"X-Generator: Poedit 1.7.5\n"
+"X-Generator: Poedit 1.8.4\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
 #: ../data/gl-categorylist.ui.h:1
@@ -38,19 +39,19 @@ msgstr "Zaznamovano"
 msgid "All"
 msgstr "Vse"
 
-#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:167
+#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:197
 msgid "Applications"
 msgstr "Programi"
 
-#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:176
+#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:206
 msgid "System"
 msgstr "Sistem"
 
-#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:180
+#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:210
 msgid "Security"
 msgstr "Varnost"
 
-#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:172
+#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:202
 msgid "Hardware"
 msgstr "Strojna oprema"
 
@@ -67,10 +68,14 @@ msgid "Go back to the event view"
 msgstr "Vrni se na pogled dogodkov"
 
 #: ../data/gl-eventtoolbar.ui.h:2
+msgid "Export logs to a file"
+msgstr "Izvozi dnevniški izpis v datoteko"
+
+#: ../data/gl-eventtoolbar.ui.h:3
 msgid "Choose the boot from which to view logs"
 msgstr "Izberite zagonski disk, za katerega želite pregledati dnevnik."
 
-#: ../data/gl-eventtoolbar.ui.h:3
+#: ../data/gl-eventtoolbar.ui.h:4
 msgid "Search the displayed logs"
 msgstr "Išči po prikazanih zapisih dnevnika"
 
@@ -106,6 +111,35 @@ msgstr "Podpora"
 msgid "Documentation"
 msgstr "Dokumentacija"
 
+#: ../data/gl-window.ui.h:1
+msgid "Help"
+msgstr "Pomoč"
+
+#: ../data/help-overlay.ui.h:1
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Splošno"
+
+#: ../data/help-overlay.ui.h:2
+msgctxt "shortcut window"
+msgid "Open a new window"
+msgstr "Odpri novo okno"
+
+#: ../data/help-overlay.ui.h:3
+msgctxt "shortcut window"
+msgid "Close a window"
+msgstr "Zapri okno"
+
+#: ../data/help-overlay.ui.h:4
+msgctxt "shortcut window"
+msgid "Search"
+msgstr "Iskanje"
+
+#: ../data/help-overlay.ui.h:5
+msgctxt "shortcut window"
+msgid "Find"
+msgstr "Najdi"
+
 #: ../data/menus.ui.h:1
 msgid "_New Window"
 msgstr "_Novo okno"
@@ -115,25 +149,27 @@ msgid "_Help"
 msgstr "Pomo_č"
 
 #: ../data/menus.ui.h:3
+msgid "Keyboard Shortcuts"
+msgstr "Tipkovne bližnjice"
+
+#: ../data/menus.ui.h:4
 msgid "_About"
 msgstr "_O programu"
 
-#: ../data/menus.ui.h:4
+#: ../data/menus.ui.h:5
 msgid "_Quit"
 msgstr "_Končaj"
 
-#. Name and summary taken from the desktop file.
-#: ../data/org.gnome.Logs.appdata.xml.in.h:2
-#: ../data/org.gnome.Logs.desktop.in.h:1 ../src/gl-eventtoolbar.c:125
-msgid "Logs"
-msgstr "Dnevniki"
+#: ../data/org.gnome.Logs.appdata.xml.in.h:1
+msgid "GNOME Logs"
+msgstr "Dnevniki GNOME"
 
-#: ../data/org.gnome.Logs.appdata.xml.in.h:3
+#: ../data/org.gnome.Logs.appdata.xml.in.h:2
 #: ../data/org.gnome.Logs.desktop.in.h:3
 msgid "View detailed event logs for the system"
 msgstr "Pokaži podrobne dnevniške zapise dogodkov sistema"
 
-#: ../data/org.gnome.Logs.appdata.xml.in.h:4
+#: ../data/org.gnome.Logs.appdata.xml.in.h:3
 msgid ""
 "Logs shows events from the systemd journal, and sorts them into categories, "
 "such as hardware and applications."
@@ -141,13 +177,17 @@ msgstr ""
 "Program pokaže dogodke, ki jih je shranil systemd in jih združuje v "
 "kategorije, kot sta strojna oprema ali programi."
 
-#: ../data/org.gnome.Logs.appdata.xml.in.h:5
+#: ../data/org.gnome.Logs.appdata.xml.in.h:4
 msgid ""
 "Using Logs you can search your logs by typing a search term, and view "
 "detailed information about each event by clicking on it."
 msgstr ""
 "Program omogoča preiskovanje dnevnikov z vpisom iskalnega niza in pregled "
 "podrobnosti vsakega dogodka."
+
+#: ../data/org.gnome.Logs.desktop.in.h:1 ../src/gl-eventtoolbar.c:124
+msgid "Logs"
+msgstr "Dnevniki"
 
 #: ../data/org.gnome.Logs.desktop.in.h:2
 msgid "Log Viewer"
@@ -167,80 +207,144 @@ msgstr "Kako razvrstiti vrstice seznama v pogledu seznama dogodkov"
 msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr "Razvrščanje vrstic naraščajoče oziroma padajoče za izbrano vrsto"
 
-#: ../src/gl-application.c:109
+#: ../src/gl-application.c:110
 msgid "translator-credits"
 msgstr "Martin Srebotnjak <miles@filmsi.net>"
 
-#: ../src/gl-application.c:110
+#: ../src/gl-application.c:111
 msgid "View and search logs"
 msgstr "Pokaži in preišči dnevnike"
 
-#: ../src/gl-application.c:237
+#: ../src/gl-application.c:239
 msgid "Print version information and exit"
 msgstr "Izpiši podatke o različici in končaj"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
-#: ../src/gl-eventtoolbar.c:116
+#: ../src/gl-eventtoolbar.c:115
 msgid "Boot"
 msgstr "Zagoni"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventviewlist.c:575
+#: ../src/gl-eventviewlist.c:660
 msgid "No results"
 msgstr "Ni najdenih zadetkov"
 
-#: ../src/gl-eventviewrow.c:184
+#: ../src/gl-eventviewrow.c:214
 msgid "Other"
 msgstr "Drugo"
 
-#. Translators: timestamp format for events on the current
-#. * day, showing the time in 12-hour format.
-#: ../src/gl-util.c:142
+#. Translators: timestamp format for events on the
+#. * current day, showing the time with seconds in
+#. * 12-hour format.
+#: ../src/gl-util.c:148
+msgid "%l:%M:%S %p"
+msgstr "%l:%M:%S %p"
+
+#. Translators: timestamp format for events on the
+#. * current day, showing the time without seconds in
+#. * 12-hour format.
+#: ../src/gl-util.c:155
 msgid "%l:%M %p"
 msgstr "%l:%M %p"
 
-#. Translators: timestamp format for events in the current
-#. * year, showing the abbreviated month name, day of the
-#. * month and the time in 12-hour format.
-#: ../src/gl-util.c:148
+#: ../src/gl-util.c:166
+msgid "%b %e %l:%M:%S %p"
+msgstr "%b %e %l:%M:%S %p"
+
+#. Translators: timestamp format for events in the
+#. * current year, showing the abbreviated month name,
+#. * day of the month and the time without seconds in
+#. * 12-hour format.
+#: ../src/gl-util.c:174
 msgid "%b %e %l:%M %p"
 msgstr "%b %e %l:%M %p"
 
-#. Translators: timestamp format for events in a different
-#. * year, showing the abbreviated month name, day of the
-#. * month, year and the time in 12-hour format.
-#: ../src/gl-util.c:154
+#: ../src/gl-util.c:185
+msgid "%b %e %Y %l:%M:%S %p"
+msgstr "%b %e %Y %l:%M:%S %p"
+
+#: ../src/gl-util.c:194
 msgid "%b %e %Y %l:%M %p"
 msgstr "%b %e %Y %l:%M %p"
 
-#. Translators: timestamp format for events on the current
-#. * day, showing the time in 24-hour format.
-#: ../src/gl-util.c:167
+#. Translators: timestamp format for events on the
+#. * current day, showing the time with seconds in
+#. * 24-hour format.
+#: ../src/gl-util.c:211
+msgid "%H:%M:%S"
+msgstr "%H:%M:%S"
+
+#. Translators: timestamp format for events on the
+#. * current day, showing the time without seconds in
+#. * 24-hour format.
+#: ../src/gl-util.c:218
 msgid "%H:%M"
 msgstr "%H:%M"
 
-#. Translators: timestamp format for events in the current
-#. * year, showing the abbreviated month name, day of the
-#. * month and the time in 24-hour format.
-#: ../src/gl-util.c:173
+#. Translators: timestamp format for events in the
+#. * current year, showing the abbreviated month name,
+#. * day of the month and the time with seconds in
+#. * 24-hour format.
+#: ../src/gl-util.c:228
+msgid "%b %e %H:%M:%S"
+msgstr "%b %e %H:%M:%S"
+
+#. Translators: timestamp format for events in the
+#. * current year, showing the abbreviated month name,
+#. * day of the month and the time without seconds in
+#. * 24-hour format.
+#: ../src/gl-util.c:236
 msgid "%b %e %H:%M"
 msgstr "%b %e %H:%M"
 
-#. Translators: timestamp format for events in a different
-#. * year, showing the abbreviated month name, day of the
-#. * month, year and the time in 24-hour format.
-#: ../src/gl-util.c:179
+#: ../src/gl-util.c:247
+msgid "%b %e %Y %H:%M:%S"
+msgstr "%b %e %Y %H:%M:%S"
+
+#. Translators: timestamp format for events in a
+#. * different year, showing the abbreviated month name,
+#. * day of the month, year and the time without seconds
+#. * in 24-hour format.
+#: ../src/gl-util.c:255
 msgid "%b %e %Y %H:%M"
 msgstr "%b %e %Y %H:%M"
 
 #. Transltors: the first string is the earliest timestamp of the boot,
 #. * and the second string is the newest timestamp. An example string might
 #. * be '08:10 - 08:30'
-#: ../src/gl-util.c:242
+#: ../src/gl-util.c:319
 #, c-format
 msgid "%s – %s"
 msgstr "%s – %s"
+
+#: ../src/gl-window.c:186
+msgid "Save logs"
+msgstr "Shrani dnevnike"
+
+#: ../src/gl-window.c:189
+msgid "_Cancel"
+msgstr "Pre_kliči"
+
+#: ../src/gl-window.c:190
+msgid "_Save"
+msgstr "_Shrani"
+
+#: ../src/gl-window.c:195
+msgid "log messages"
+msgstr "dnevniška sporočila"
+
+#: ../src/gl-window.c:248
+msgid "Unable to export log messages to a file"
+msgstr "Ni mogoče izvoziti dnevniških sporočil v datoteko"
+
+#: ../src/gl-window.c:467
+msgid "Unable to read system logs"
+msgstr "Ni mogoče prebrati sistemskega dnevnika"
+
+#: ../src/gl-window.c:481
+msgid "Unable to read user logs"
+msgstr "Ni mogoče prebrati uporabniškega dnevnika"
 
 #~ msgid "Not implemented"
 #~ msgstr "Ni podprto"
