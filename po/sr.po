@@ -1,17 +1,17 @@
 # Serbian translation of gnome-logs
-# Courtesy of Prevod.org team (http://prevod.org/) -- 2013—2016.
+# Courtesy of Prevod.org team (http://prevod.org/) -- 2013—2014.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-logs package.
-# Мирослав Николић <miroslavnikolic@rocketmail.com>, 2013—2016.
-# Марко М. Костић (Marko M. Kostić) <marko.m.kostic@gmail.com>, 2015—2016.
+# Мирослав Николић <miroslavnikolic@rocketmail.com>, 2013—2014, 2015.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-02-16 12:40+0000\n"
-"PO-Revision-Date: 2016-02-16 20:09+0200\n"
-"Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
+"POT-Creation-Date: 2016-01-17 09:20+0000\n"
+"PO-Revision-Date: 2016-01-17 21:16+0100\n"
+"Last-Translator: Марко М. Костић (Marko M. Kostić) <marko.m.kostic@gmail."
+"com>\n"
 "Language-Team: Serbian <gnom@prevod.org>\n"
 "Language: sr\n"
 "MIME-Version: 1.0\n"
@@ -19,6 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Poedit 1.8.5\n"
 "X-Project-Style: gnome\n"
 
 #: ../data/gl-categorylist.ui.h:1
@@ -31,7 +32,7 @@ msgstr "Упозорења"
 
 #: ../data/gl-categorylist.ui.h:3
 msgid "Starred"
-msgstr "Са звездицом"
+msgstr "Озвездани"
 
 #: ../data/gl-categorylist.ui.h:4
 msgid "All"
@@ -67,15 +68,15 @@ msgstr "Вратите се на преглед догађаја"
 
 #: ../data/gl-eventtoolbar.ui.h:2
 msgid "Export logs to a file"
-msgstr "Извезите записнике у датотеку"
+msgstr "Извези записнике у датотеку"
 
 #: ../data/gl-eventtoolbar.ui.h:3
 msgid "Choose the boot from which to view logs"
-msgstr "Изаберите подизање система са ког желите видети записнике"
+msgstr "Изаберите подизање система од којег желите видети записнике"
 
 #: ../data/gl-eventtoolbar.ui.h:4
 msgid "Search the displayed logs"
-msgstr "Претражите приказане записнике"
+msgstr "Претражи приказане записнике"
 
 #: ../data/gl-eventviewdetail.ui.h:1
 msgid "Message"
@@ -114,27 +115,22 @@ msgid "Help"
 msgstr "Помоћ"
 
 #: ../data/help-overlay.ui.h:1
-msgctxt "shortcut window"
 msgid "General"
 msgstr "Опште"
 
 #: ../data/help-overlay.ui.h:2
-msgctxt "shortcut window"
 msgid "Open a new window"
 msgstr "Отвори нови прозор"
 
 #: ../data/help-overlay.ui.h:3
-msgctxt "shortcut window"
 msgid "Close a window"
 msgstr "Затвори прозор"
 
 #: ../data/help-overlay.ui.h:4
-msgctxt "shortcut window"
 msgid "Search"
 msgstr "Претражи"
 
 #: ../data/help-overlay.ui.h:5
-msgctxt "shortcut window"
 msgid "Find"
 msgstr "Нађи"
 
@@ -158,34 +154,32 @@ msgstr "_О програму"
 msgid "_Quit"
 msgstr "_Изађи"
 
-#: ../data/org.gnome.Logs.appdata.xml.in.h:1
-msgid "GNOME Logs"
-msgstr "Гномови записници"
-
+#. Name and summary taken from the desktop file.
 #: ../data/org.gnome.Logs.appdata.xml.in.h:2
+#: ../data/org.gnome.Logs.desktop.in.h:1 ../src/gl-eventtoolbar.c:126
+msgid "Logs"
+msgstr "Записници"
+
+#: ../data/org.gnome.Logs.appdata.xml.in.h:3
 #: ../data/org.gnome.Logs.desktop.in.h:3
 msgid "View detailed event logs for the system"
 msgstr "Прегледајте опширне записнике догађаја на систему"
 
-#: ../data/org.gnome.Logs.appdata.xml.in.h:3
+#: ../data/org.gnome.Logs.appdata.xml.in.h:4
 msgid ""
 "Logs shows events from the systemd journal, and sorts them into categories, "
 "such as hardware and applications."
 msgstr ""
-"Записници приказују догађаје из журнала система-д, и ређају их по "
+"Записници приказују догађаје из систем-де журнала, и ређају их по "
 "категоријама, рецимо хардвер и програми."
 
-#: ../data/org.gnome.Logs.appdata.xml.in.h:4
+#: ../data/org.gnome.Logs.appdata.xml.in.h:5
 msgid ""
 "Using Logs you can search your logs by typing a search term, and view "
 "detailed information about each event by clicking on it."
 msgstr ""
-"Овим програмом можете да претражујете ваше записнике уписивањем појма, и да "
-"видите опширне податке о сваком догађају кликом на њега."
-
-#: ../data/org.gnome.Logs.desktop.in.h:1 ../src/gl-eventtoolbar.c:124
-msgid "Logs"
-msgstr "Записници"
+"Употребом Записника можете да претражујете ваше записнике уписивањем појма, "
+"и да видите опширне податке о сваком догађају кликом на њега."
 
 #: ../data/org.gnome.Logs.desktop.in.h:2
 msgid "Log Viewer"
@@ -194,7 +188,7 @@ msgstr "Прегледач записника"
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: ../data/org.gnome.Logs.desktop.in.h:5
 msgid "log;journal;debug;error;"
-msgstr "дневник;записник;запис;прочишћавање;грешка;"
+msgstr "дневник;записник;запис;прочишћавање;грешка;лог;"
 
 #: ../data/org.gnome.Logs.gschema.xml.h:1
 msgid "How to sort list rows in the event view list"
@@ -221,7 +215,7 @@ msgid "Print version information and exit"
 msgstr "Исписује податке о издању и излази"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
-#: ../src/gl-eventtoolbar.c:115
+#: ../src/gl-eventtoolbar.c:117
 msgid "Boot"
 msgstr "Подизање система"
 
@@ -321,7 +315,7 @@ msgstr "од %s до %s"
 
 #: ../src/gl-window.c:186
 msgid "Save logs"
-msgstr "Сачувајте записнике"
+msgstr "Сачувај записнике"
 
 #: ../src/gl-window.c:189
 msgid "_Cancel"
@@ -329,7 +323,7 @@ msgstr "_Откажи"
 
 #: ../src/gl-window.c:190
 msgid "_Save"
-msgstr "_Сачувај"
+msgstr "Сачу_вај"
 
 #: ../src/gl-window.c:195
 msgid "log messages"
@@ -337,7 +331,7 @@ msgstr "поруке записника"
 
 #: ../src/gl-window.c:248
 msgid "Unable to export log messages to a file"
-msgstr "Нисам успео да извезем поруке записника у датотеку"
+msgstr "Нисам успео да извезем поруке из записника у датотеку"
 
 #: ../src/gl-window.c:467
 msgid "Unable to read system logs"
@@ -346,3 +340,9 @@ msgstr "Нисам успео да прочитам системске запи�
 #: ../src/gl-window.c:481
 msgid "Unable to read user logs"
 msgstr "Нисам успео да прочитам корисничке записнике"
+
+#~ msgid "Not implemented"
+#~ msgstr "Није примењено"
+
+#~ msgid "Categories"
+#~ msgstr "Категорије"
