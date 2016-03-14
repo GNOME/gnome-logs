@@ -215,12 +215,40 @@ gl_event_view_row_construct_category_label (GlEventViewRow *row,
     }
 }
 
+static gchar *
+gl_event_view_row_replace_newline (const gchar *message)
+{
+    GString *newmessage;
+    const gchar *newline_index;
+    const gchar *prevpos;
+
+    newmessage = g_string_sized_new (strlen (message));
+    prevpos = message;
+
+    newline_index = strchr (message, '\n');
+
+    while (newline_index != NULL)
+    {
+        g_string_append_len (newmessage, prevpos, newline_index - prevpos);
+        g_string_append_unichar (newmessage, 0x2424);
+
+        prevpos = newline_index + 1;
+        newline_index = strchr (prevpos, '\n');
+    }
+
+    g_string_append (newmessage, prevpos);
+
+    return g_string_free (newmessage, FALSE);
+}
+
 static void
 gl_event_view_row_constructed (GObject *object)
 {
     GtkStyleContext *context;
     GtkWidget *grid;
     gchar *time;
+    const gchar *message;
+    gchar *newline_index;
     gboolean rtl;
     GlEventViewRowCategory category;
     GlUtilClockFormat tmp_clock_format;
@@ -259,7 +287,25 @@ gl_event_view_row_constructed (GObject *object)
                          rtl ? 2 : 0, 0, 1, 1);
     }
 
-    priv->message_label = gtk_label_new (gl_journal_entry_get_message (entry));
+    message = gl_journal_entry_get_message (entry);
+
+    newline_index = strchr (message, '\n');
+
+    if (newline_index)
+    {
+        gchar *message_label;
+
+        message_label = gl_event_view_row_replace_newline (message);
+
+        priv->message_label = gtk_label_new (message_label);
+
+        g_free (message_label);
+    }
+    else
+    {
+        priv->message_label = gtk_label_new (message);
+    }
+
     gtk_widget_set_direction (priv->message_label, GTK_TEXT_DIR_LTR);
     context = gtk_widget_get_style_context (GTK_WIDGET (priv->message_label));
     gtk_style_context_add_class (context, "event-monospace");
