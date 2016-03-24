@@ -158,11 +158,11 @@ gl_util_timestamp_to_display (guint64 microsecs,
                 case GL_UTIL_TIMESTAMPS_SAME_YEAR:
                     if (show_second)
                     {
-                        /* Translators: timestamp format for events in the
-                         * current year, showing the abbreviated month name,
-                         * day of the month and the time with seconds in
-                         * 12-hour format. */
                         time = g_date_time_format (local,
+                               /* Translators: timestamp format for events in
+                                * the current year, showing the abbreviated
+                                * month name, day of the month and the time
+                                * with seconds in 12-hour format. */
                                                    _("%b %e %l:%M:%S %p"));
                     }
                     else
@@ -177,20 +177,20 @@ gl_util_timestamp_to_display (guint64 microsecs,
                 case GL_UTIL_TIMESTAMPS_DIFFERENT_YEAR:
                     if (show_second)
                     {
-                        /* Translators: timestamp format for events in a
-                         * different year, showing the abbreviated month name,
-                         * day of the month, year and the time with seconds
-                         * in 12-hour format. */
                         time = g_date_time_format (local,
+                               /* Translators: timestamp format for events in
+                                * a different year, showing the abbreviated
+                                * month name, day of the month, year and the
+                                * time with seconds in 12-hour format. */
                                                    _("%b %e %Y %l:%M:%S %p"));
                     }
                     else
                     {
-                        /* Translators: timestamp format for events in a
-                         * different year, showing the abbreviated month name,
-                         * day of the month, year and the time without seconds
-                         * in 12-hour format. */
                         time = g_date_time_format (local,
+                               /* Translators: timestamp format for events in
+                                * a different year, showing the abbreviated
+                                * month name day of the month, year and the
+                                * time without seconds in 12-hour format. */
                                                    _("%b %e %Y %l:%M %p"));
                     }
                     break;
@@ -239,11 +239,11 @@ gl_util_timestamp_to_display (guint64 microsecs,
                 case GL_UTIL_TIMESTAMPS_DIFFERENT_YEAR:
                     if (show_second)
                     {
-                        /* Translators: timestamp format for events in a
-                         * different year, showing the abbreviated month name,
-                         * day of the month, year and the time with seconds
-                         * in 24-hour format. */
                         time = g_date_time_format (local,
+                               /* Translators: timestamp format for events in
+                                * a different year, showing the abbreviated
+                                * month name, day of the month, year and the
+                                * time with seconds in 24-hour format. */
                                                    _("%b %e %Y %H:%M:%S"));
                     }
                     else
