@@ -1,18 +1,18 @@
 # Vietnamese Translation for GNOME logs.
 # Bản dịch tiếng Việt dành cho ứng dụng xem nhật ký máy của GNOME.
-# Copyright © 2015 GNOME i18n Project for Vietnamese.
+# Copyright © 2016 GNOME i18n Project for Vietnamese.
 # This file is distributed under the same license as the gnome-logs package.
 # Nguyễn Thái Ngọc Duy <pclouds@gmail.com>, 2002,2007,2011.
 # Clytie Siddall <clytie@riverland.net.au>, 2005-2009.
-# Trần Ngọc Quân <vnwildman@gmail.com>, 2014, 2015.
+# Trần Ngọc Quân <vnwildman@gmail.com>, 2014, 2015, 2016.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-09-26 20:01+0000\n"
-"PO-Revision-Date: 2015-09-27 08:30+0700\n"
+"POT-Creation-Date: 2016-03-26 21:34+0000\n"
+"PO-Revision-Date: 2016-03-27 14:56+0700\n"
 "Last-Translator: Trần Ngọc Quân <vnwildman@gmail.com>\n"
 "Language-Team: Vietnamese <gnome-vi-list@gnome.org>\n"
 "Language: vi\n"
@@ -38,19 +38,19 @@ msgstr "Đã khởi động"
 msgid "All"
 msgstr "Tất cả"
 
-#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:167
+#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:197
 msgid "Applications"
 msgstr "Ứng dụng"
 
-#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:176
+#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:206
 msgid "System"
 msgstr "Hệ thống"
 
-#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:180
+#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:210
 msgid "Security"
 msgstr "Bảo mật"
 
-#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:172
+#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:202
 msgid "Hardware"
 msgstr "Phần cứng"
 
@@ -67,10 +67,14 @@ msgid "Go back to the event view"
 msgstr "Trở lại xem sự kiện"
 
 #: ../data/gl-eventtoolbar.ui.h:2
+msgid "Export logs to a file"
+msgstr "Xuất nhật ký ra một tập tin"
+
+#: ../data/gl-eventtoolbar.ui.h:3
 msgid "Choose the boot from which to view logs"
 msgstr "Chọn phần khởi động mà muốn xem nhật ký"
 
-#: ../data/gl-eventtoolbar.ui.h:3
+#: ../data/gl-eventtoolbar.ui.h:4
 msgid "Search the displayed logs"
 msgstr "Tìm kiếm nhật ký đang được xem"
 
@@ -106,34 +110,65 @@ msgstr "Hỗ trợ"
 msgid "Documentation"
 msgstr "Tài liệu"
 
+#: ../data/gl-window.ui.h:1
+msgid "Help"
+msgstr "Trợ giúp"
+
+#: ../data/help-overlay.ui.h:1
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Chung"
+
+#: ../data/help-overlay.ui.h:2
+msgctxt "shortcut window"
+msgid "Open a new window"
+msgstr "Mở một cửa sổ mới"
+
+#: ../data/help-overlay.ui.h:3
+msgctxt "shortcut window"
+msgid "Close a window"
+msgstr "Đóng cửa sổ"
+
+#: ../data/help-overlay.ui.h:4
+msgctxt "shortcut window"
+msgid "Search"
+msgstr "Tìm kiếm"
+
+#: ../data/help-overlay.ui.h:5
+msgctxt "shortcut window"
+msgid "Find"
+msgstr "Tìm"
+
 #: ../data/menus.ui.h:1
 msgid "_New Window"
-msgstr "_Cửa sổ mới"
+msgstr "Cửa _sổ mới"
 
 #: ../data/menus.ui.h:2
 msgid "_Help"
-msgstr "Trợ _giúp"
+msgstr "T_rợ giúp"
 
 #: ../data/menus.ui.h:3
+msgid "Keyboard Shortcuts"
+msgstr "Phím tắt"
+
+#: ../data/menus.ui.h:4
 msgid "_About"
 msgstr "G_iới thiệu"
 
-#: ../data/menus.ui.h:4
+#: ../data/menus.ui.h:5
 msgid "_Quit"
 msgstr "T_hoát"
 
-#. Name and summary taken from the desktop file.
-#: ../data/org.gnome.Logs.appdata.xml.in.h:2
-#: ../data/org.gnome.Logs.desktop.in.h:1 ../src/gl-eventtoolbar.c:125
-msgid "Logs"
-msgstr "Nhật ký máy"
+#: ../data/org.gnome.Logs.appdata.xml.in.h:1
+msgid "GNOME Logs"
+msgstr "Nhật ký máy GNOME"
 
-#: ../data/org.gnome.Logs.appdata.xml.in.h:3
+#: ../data/org.gnome.Logs.appdata.xml.in.h:2
 #: ../data/org.gnome.Logs.desktop.in.h:3
 msgid "View detailed event logs for the system"
 msgstr "Xem nhật ký sự kiện chi tiết của hệ thống"
 
-#: ../data/org.gnome.Logs.appdata.xml.in.h:4
+#: ../data/org.gnome.Logs.appdata.xml.in.h:3
 msgid ""
 "Logs shows events from the systemd journal, and sorts them into categories, "
 "such as hardware and applications."
@@ -141,7 +176,7 @@ msgstr ""
 "Ứng dụng xem nhật ký này cho ta xem nhật ký do máy tính ghi lại, và sắp xếp "
 "chúng thành từng nhóm, như là phần cứng và ứng dụng."
 
-#: ../data/org.gnome.Logs.appdata.xml.in.h:5
+#: ../data/org.gnome.Logs.appdata.xml.in.h:4
 msgid ""
 "Using Logs you can search your logs by typing a search term, and view "
 "detailed information about each event by clicking on it."
@@ -149,6 +184,10 @@ msgstr ""
 "Dùng ứng dụng xem nhật ký này, bạn có thể tìm trong nhật ký bằng cách gõ các "
 "hạng mục muốn tìm, và hiển thị chi tiết các thông tin về từng sự kiện bằng "
 "cách bấm chuột vào nó."
+
+#: ../data/org.gnome.Logs.desktop.in.h:1 ../src/gl-eventtoolbar.c:124
+msgid "Logs"
+msgstr "Nhật ký máy"
 
 #: ../data/org.gnome.Logs.desktop.in.h:2
 msgid "Log Viewer"
@@ -167,80 +206,160 @@ msgstr "Sắp xếp các hàng trong danh sách trình bày sự kiện như th�
 msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr "Xếp các hàng của danh sách theo thứ tự tăng/giảm dần cho kiểu đã chọn"
 
-#: ../src/gl-application.c:109
+#: ../src/gl-application.c:110
 msgid "translator-credits"
 msgstr "Nhóm Việt hóa GNOME <gnome-vi-list@gnome.org>"
 
-#: ../src/gl-application.c:110
+#: ../src/gl-application.c:111
 msgid "View and search logs"
 msgstr "Xem và tìm kiếm từ nhật ký của máy tính"
 
-#: ../src/gl-application.c:237
+#: ../src/gl-application.c:239
 msgid "Print version information and exit"
 msgstr "In ra thông tin phiên bản rồi thoát"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
-#: ../src/gl-eventtoolbar.c:116
+#: ../src/gl-eventtoolbar.c:115
 msgid "Boot"
 msgstr "Khởi động"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventviewlist.c:598
+#: ../src/gl-eventviewlist.c:660
 msgid "No results"
 msgstr "Không tìm thấy kết quả nào"
 
-#: ../src/gl-eventviewrow.c:184
+#: ../src/gl-eventviewrow.c:214
 msgid "Other"
 msgstr "Khác"
 
-#. Translators: timestamp format for events on the current
-#. * day, showing the time in 12-hour format.
-#: ../src/gl-util.c:142
+#. Translators: timestamp format for events on the
+#. * current day, showing the time with seconds in
+#. * 12-hour format.
+#: ../src/gl-util.c:148
+msgid "%l:%M:%S %p"
+msgstr "%l:%M:%S %p"
+
+#. Translators: timestamp format for events on the
+#. * current day, showing the time without seconds in
+#. * 12-hour format.
+#: ../src/gl-util.c:155
 msgid "%l:%M %p"
 msgstr "%l:%M %p"
 
-#. Translators: timestamp format for events in the current
-#. * year, showing the abbreviated month name, day of the
-#. * month and the time in 12-hour format.
-#: ../src/gl-util.c:148
+#. Translators: timestamp format for events in
+#. * the current year, showing the abbreviated
+#. * month name, day of the month and the time
+#. * with seconds in 12-hour format.
+#: ../src/gl-util.c:166
+msgid "%b %e %l:%M:%S %p"
+msgstr "%l:%M:%S %p %e %b"
+
+#. Translators: timestamp format for events in the
+#. * current year, showing the abbreviated month name,
+#. * day of the month and the time without seconds in
+#. * 12-hour format.
+#: ../src/gl-util.c:174
 msgid "%b %e %l:%M %p"
 msgstr "%l:%M %p %e %b"
 
-#. Translators: timestamp format for events in a different
-#. * year, showing the abbreviated month name, day of the
-#. * month, year and the time in 12-hour format.
-#: ../src/gl-util.c:154
+#. Translators: timestamp format for events in
+#. * a different year, showing the abbreviated
+#. * month name, day of the month, year and the
+#. * time with seconds in 12-hour format.
+#: ../src/gl-util.c:185
+msgid "%b %e %Y %l:%M:%S %p"
+msgstr "%l:%M:%S %p %e %b %Y"
+
+#. Translators: timestamp format for events in
+#. * a different year, showing the abbreviated
+#. * month name day of the month, year and the
+#. * time without seconds in 12-hour format.
+#: ../src/gl-util.c:194
 msgid "%b %e %Y %l:%M %p"
 msgstr "%l:%M %p %e %b %Y"
 
-#. Translators: timestamp format for events on the current
-#. * day, showing the time in 24-hour format.
-#: ../src/gl-util.c:167
+#. Translators: timestamp format for events on the
+#. * current day, showing the time with seconds in
+#. * 24-hour format.
+#: ../src/gl-util.c:211
+msgid "%H:%M:%S"
+msgstr "%H:%M:%S"
+
+#. Translators: timestamp format for events on the
+#. * current day, showing the time without seconds in
+#. * 24-hour format.
+#: ../src/gl-util.c:218
 msgid "%H:%M"
 msgstr "%H:%M"
 
-#. Translators: timestamp format for events in the current
-#. * year, showing the abbreviated month name, day of the
-#. * month and the time in 24-hour format.
-#: ../src/gl-util.c:173
+#. Translators: timestamp format for events in the
+#. * current year, showing the abbreviated month name,
+#. * day of the month and the time with seconds in
+#. * 24-hour format.
+#: ../src/gl-util.c:228
+msgid "%b %e %H:%M:%S"
+msgstr "%H:%M:%S %e %b"
+
+#. Translators: timestamp format for events in the
+#. * current year, showing the abbreviated month name,
+#. * day of the month and the time without seconds in
+#. * 24-hour format.
+#: ../src/gl-util.c:236
 msgid "%b %e %H:%M"
 msgstr "%H:%M %e %b"
 
-#. Translators: timestamp format for events in a different
-#. * year, showing the abbreviated month name, day of the
-#. * month, year and the time in 24-hour format.
-#: ../src/gl-util.c:179
+#. Translators: timestamp format for events in
+#. * a different year, showing the abbreviated
+#. * month name, day of the month, year and the
+#. * time with seconds in 24-hour format.
+#: ../src/gl-util.c:247
+msgid "%b %e %Y %H:%M:%S"
+msgstr "%H:%M:%S %e %b %Y"
+
+#. Translators: timestamp format for events in a
+#. * different year, showing the abbreviated month name,
+#. * day of the month, year and the time without seconds
+#. * in 24-hour format.
+#: ../src/gl-util.c:255
 msgid "%b %e %Y %H:%M"
 msgstr "%H:%M %e %b %Y"
 
 #. Transltors: the first string is the earliest timestamp of the boot,
 #. * and the second string is the newest timestamp. An example string might
 #. * be '08:10 - 08:30'
-#: ../src/gl-util.c:242
+#: ../src/gl-util.c:319
 #, c-format
 msgid "%s – %s"
 msgstr "%s –> %s"
+
+#: ../src/gl-window.c:186
+msgid "Save logs"
+msgstr "Lưu các nhật ký"
+
+#: ../src/gl-window.c:189
+msgid "_Cancel"
+msgstr "T_hôi"
+
+#: ../src/gl-window.c:190
+msgid "_Save"
+msgstr "_Lưu"
+
+#: ../src/gl-window.c:195
+msgid "log messages"
+msgstr "lời nhắn nhật ký"
+
+#: ../src/gl-window.c:248
+msgid "Unable to export log messages to a file"
+msgstr "Không thể xuất các lời nhắn nhật ký ra một tập tin"
+
+#: ../src/gl-window.c:467
+msgid "Unable to read system logs"
+msgstr "Không thể đọc nhật ký hệ thống"
+
+#: ../src/gl-window.c:481
+msgid "Unable to read user logs"
+msgstr "Không thể đọc nhật ký người dùng"
 
 #~ msgid "Not implemented"
 #~ msgstr "Chưa thực hiện"
