@@ -1,22 +1,22 @@
 # Persian translation for gnome-logs.
 # Copyright (C) 2014 gnome-logs's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-logs package.
-# Arash Mousavi <mousavi.arash@gmail.com>, 2014, 2015.
+# Arash Mousavi <mousavi.arash@gmail.com>, 2014, 2015, 2016.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs gnome-3-14\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-09-12 07:28+0000\n"
-"PO-Revision-Date: 2015-09-13 00:11+0430\n"
+"POT-Creation-Date: 2016-04-08 08:38+0000\n"
+"PO-Revision-Date: 2016-04-09 22:36+0430\n"
 "Last-Translator: Arash Mousavi <mousavi.arash@gmail.com>\n"
 "Language-Team: Persian <fa@li.org>\n"
 "Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.4\n"
+"X-Generator: Poedit 1.8.7.1\n"
 
 #: ../data/gl-categorylist.ui.h:1
 msgid "Important"
@@ -34,19 +34,19 @@ msgstr "ستاره‌دار"
 msgid "All"
 msgstr "همه"
 
-#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:167
+#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:197
 msgid "Applications"
 msgstr "برنامه‌ها"
 
-#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:176
+#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:206
 msgid "System"
 msgstr "سیستم"
 
-#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:180
+#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:210
 msgid "Security"
 msgstr "امنیت"
 
-#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:172
+#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:202
 msgid "Hardware"
 msgstr "سخت‌افزار"
 
@@ -63,12 +63,16 @@ msgid "Go back to the event view"
 msgstr "برگشتن به نما رویداد"
 
 #: ../data/gl-eventtoolbar.ui.h:2
-msgid "Choose the boot from which to view logs"
-msgstr "یک بوت را برای نمایش واقیع‌اش انتخاب کنید"
+msgid "Export logs to a file"
+msgstr "صادر کردن وقایع به یک پرونده"
 
 #: ../data/gl-eventtoolbar.ui.h:3
+msgid "Choose the boot from which to view logs"
+msgstr "یک بوت را برای نمایش وقایع‌اش انتخاب کنید"
+
+#: ../data/gl-eventtoolbar.ui.h:4
 msgid "Search the displayed logs"
-msgstr "جست‌وجو وقابع نمایش داده شده"
+msgstr "جست‌وجو وقایع نمایش داده شده"
 
 #: ../data/gl-eventviewdetail.ui.h:1
 msgid "Message"
@@ -102,6 +106,35 @@ msgstr "پشتیبانی"
 msgid "Documentation"
 msgstr "مستندات"
 
+#: ../data/gl-window.ui.h:1
+msgid "Help"
+msgstr "راهنما"
+
+#: ../data/help-overlay.ui.h:1
+msgctxt "shortcut window"
+msgid "General"
+msgstr "عمومی"
+
+#: ../data/help-overlay.ui.h:2
+msgctxt "shortcut window"
+msgid "Open a new window"
+msgstr "باز کردن پنجره جدید"
+
+#: ../data/help-overlay.ui.h:3
+msgctxt "shortcut window"
+msgid "Close a window"
+msgstr "بستن یک پنجره"
+
+#: ../data/help-overlay.ui.h:4
+msgctxt "shortcut window"
+msgid "Search"
+msgstr "جست‌وجو"
+
+#: ../data/help-overlay.ui.h:5
+msgctxt "shortcut window"
+msgid "Find"
+msgstr "پیدا کردن"
+
 #: ../data/menus.ui.h:1
 msgid "_New Window"
 msgstr "_پنجره جدید"
@@ -111,39 +144,45 @@ msgid "_Help"
 msgstr "_راهنما"
 
 #: ../data/menus.ui.h:3
+msgid "Keyboard Shortcuts"
+msgstr "میان‌برهای صفحه‌کلید"
+
+#: ../data/menus.ui.h:4
 msgid "_About"
 msgstr "_درباره"
 
-#: ../data/menus.ui.h:4
+#: ../data/menus.ui.h:5
 msgid "_Quit"
 msgstr "_خروج"
 
-#. Name and summary taken from the desktop file.
-#: ../data/org.gnome.Logs.appdata.xml.in.h:2
-#: ../data/org.gnome.Logs.desktop.in.h:1 ../src/gl-eventtoolbar.c:125
-msgid "Logs"
-msgstr "تاریخچه‌وقایع"
+#: ../data/org.gnome.Logs.appdata.xml.in.h:1
+msgid "GNOME Logs"
+msgstr "وقایع گنوم"
 
-#: ../data/org.gnome.Logs.appdata.xml.in.h:3
+#: ../data/org.gnome.Logs.appdata.xml.in.h:2
 #: ../data/org.gnome.Logs.desktop.in.h:3
 msgid "View detailed event logs for the system"
 msgstr "نمایش جزئیات وقایع برای سیستم"
 
-#: ../data/org.gnome.Logs.appdata.xml.in.h:4
+#: ../data/org.gnome.Logs.appdata.xml.in.h:3
 msgid ""
 "Logs shows events from the systemd journal, and sorts them into categories, "
 "such as hardware and applications."
 msgstr ""
-"وقایع، رویدادها را از وقابع systemd نمایش و آنها را در دسته‌بندی‌های مختلف، مثل "
+"وقایع، رویدادها را از وقایع systemd نمایش و آنها را در دسته‌بندی‌های مختلف، مثل "
 "سخت‌افزار و برنامه، منظم می‌کند."
 
-#: ../data/org.gnome.Logs.appdata.xml.in.h:5
+#: ../data/org.gnome.Logs.appdata.xml.in.h:4
 msgid ""
 "Using Logs you can search your logs by typing a search term, and view detailed "
 "information about each event by clicking on it."
 msgstr ""
 "با استفاده از رویدادها می‌توانید وقایع خود را با تایپ کردن آنها جست‌وجو کنید و "
 "جزئیات اطلاعات مربوط به هر رویداد را با کلیک کردن بر روی آن ببینید."
+
+#: ../data/org.gnome.Logs.desktop.in.h:1 ../src/gl-eventtoolbar.c:124
+msgid "Logs"
+msgstr "تاریخچه‌وقایع"
 
 #: ../data/org.gnome.Logs.desktop.in.h:2
 msgid "Log Viewer"
@@ -152,7 +191,7 @@ msgstr "نمایشگر وقایع"
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: ../data/org.gnome.Logs.desktop.in.h:5
 msgid "log;journal;debug;error;"
-msgstr "وقایع;journal;رفع اشکال;خطا;"
+msgstr "وقایع;رفع اشکال;خطا;log;journal;debug;error;"
 
 #: ../data/org.gnome.Logs.gschema.xml.h:1
 msgid "How to sort list rows in the event view list"
@@ -162,80 +201,144 @@ msgstr "چگونگی ترتیب فهرست ردیف‌ها در فهرست نم�
 msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr "مرتب کردن ردیف‌های فهرست بصورت نزولی یا صعودی "
 
-#: ../src/gl-application.c:109
+#: ../src/gl-application.c:110
 msgid "translator-credits"
 msgstr "آرش موسوی <mousavi.arash@gmail.com>"
 
-#: ../src/gl-application.c:110
+#: ../src/gl-application.c:111
 msgid "View and search logs"
 msgstr "نمایش و جست‌وجو وقایع"
 
-#: ../src/gl-application.c:237
+#: ../src/gl-application.c:239
 msgid "Print version information and exit"
 msgstr "چاپ اطلاعات نسخه و خروج"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
-#: ../src/gl-eventtoolbar.c:116
+#: ../src/gl-eventtoolbar.c:115
 msgid "Boot"
 msgstr "بوت"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventviewlist.c:575
+#: ../src/gl-eventviewlist.c:660
 msgid "No results"
 msgstr "بدون نتیجه"
 
-#: ../src/gl-eventviewrow.c:184
+#: ../src/gl-eventviewrow.c:214
 msgid "Other"
 msgstr "متفرقه"
 
-#. Translators: timestamp format for events on the current
-#. * day, showing the time in 12-hour format.
-#: ../src/gl-util.c:142
+#. Translators: timestamp format for events on the
+#. * current day, showing the time with seconds in
+#. * 12-hour format.
+#: ../src/gl-util.c:148
+msgid "%l:%M:%S %p"
+msgstr "%OI:%OM:%OS %p"
+
+#. Translators: timestamp format for events on the
+#. * current day, showing the time without seconds in
+#. * 12-hour format.
+#: ../src/gl-util.c:155
 msgid "%l:%M %p"
 msgstr "%OH:%OM"
 
-#. Translators: timestamp format for events in the current
-#. * year, showing the abbreviated month name, day of the
-#. * month and the time in 12-hour format.
-#: ../src/gl-util.c:148
+#: ../src/gl-util.c:166
+msgid "%b %e %l:%M:%S %p"
+msgstr "%Od %b %OI:%OM:%OS %p"
+
+#. Translators: timestamp format for events in the
+#. * current year, showing the abbreviated month name,
+#. * day of the month and the time without seconds in
+#. * 12-hour format.
+#: ../src/gl-util.c:174
 msgid "%b %e %l:%M %p"
 msgstr "%b %Od %OH:%OM"
 
-#. Translators: timestamp format for events in a different
-#. * year, showing the abbreviated month name, day of the
-#. * month, year and the time in 12-hour format.
-#: ../src/gl-util.c:154
-msgid "%b %e %Y %l:%M %p"
-msgstr "%b %e %OY %Ol:%OM %Op"
+#: ../src/gl-util.c:185
+msgid "%b %e %Y %l:%M:%S %p"
+msgstr "%b %e %Y %Ol:%OM %p"
 
-#. Translators: timestamp format for events on the current
-#. * day, showing the time in 24-hour format.
-#: ../src/gl-util.c:167
+#: ../src/gl-util.c:194
+msgid "%b %e %Y %l:%M %p"
+msgstr "%b %e %Y %Ol:%OM %p"
+
+#. Translators: timestamp format for events on the
+#. * current day, showing the time with seconds in
+#. * 24-hour format.
+#: ../src/gl-util.c:211
+msgid "%H:%M:%S"
+msgstr "%OH:%OM:%OS"
+
+#. Translators: timestamp format for events on the
+#. * current day, showing the time without seconds in
+#. * 24-hour format.
+#: ../src/gl-util.c:218
 msgid "%H:%M"
 msgstr "%OH:%OM"
 
-#. Translators: timestamp format for events in the current
-#. * year, showing the abbreviated month name, day of the
-#. * month and the time in 24-hour format.
-#: ../src/gl-util.c:173
+#. Translators: timestamp format for events in the
+#. * current year, showing the abbreviated month name,
+#. * day of the month and the time with seconds in
+#. * 24-hour format.
+#: ../src/gl-util.c:228
+msgid "%b %e %H:%M:%S"
+msgstr "%b %e %OH:%OM:%OS"
+
+#. Translators: timestamp format for events in the
+#. * current year, showing the abbreviated month name,
+#. * day of the month and the time without seconds in
+#. * 24-hour format.
+#: ../src/gl-util.c:236
 msgid "%b %e %H:%M"
 msgstr "%b %e %OH:%OM"
 
-#. Translators: timestamp format for events in a different
-#. * year, showing the abbreviated month name, day of the
-#. * month, year and the time in 24-hour format.
-#: ../src/gl-util.c:179
+#: ../src/gl-util.c:247
+msgid "%b %e %Y %H:%M:%S"
+msgstr "%b %e %Y %OH:%OM:%OS"
+
+#. Translators: timestamp format for events in a
+#. * different year, showing the abbreviated month name,
+#. * day of the month, year and the time without seconds
+#. * in 24-hour format.
+#: ../src/gl-util.c:255
 msgid "%b %e %Y %H:%M"
-msgstr "%b %e %OY %OH:%OM"
+msgstr "%b %e %Y %OH:%OM"
 
 #. Transltors: the first string is the earliest timestamp of the boot,
 #. * and the second string is the newest timestamp. An example string might
 #. * be '08:10 - 08:30'
-#: ../src/gl-util.c:242
+#: ../src/gl-util.c:319
 #, c-format
 msgid "%s – %s"
 msgstr "%s – %s"
+
+#: ../src/gl-window.c:186
+msgid "Save logs"
+msgstr "ذخیره وقایع"
+
+#: ../src/gl-window.c:189
+msgid "_Cancel"
+msgstr "_انصراف"
+
+#: ../src/gl-window.c:190
+msgid "_Save"
+msgstr "_ذخیره"
+
+#: ../src/gl-window.c:195
+msgid "log messages"
+msgstr "پیام‌های وقایع"
+
+#: ../src/gl-window.c:248
+msgid "Unable to export log messages to a file"
+msgstr "امکان صادر کردن وقایع به یک پرونده نبود"
+
+#: ../src/gl-window.c:467
+msgid "Unable to read system logs"
+msgstr "امکان خواندن وقایع سیستم نبود"
+
+#: ../src/gl-window.c:481
+msgid "Unable to read user logs"
+msgstr "امکان خواندن وقایع کاربر نبود"
 
 #~ msgid "Not implemented"
 #~ msgstr "اجرا نشده"
