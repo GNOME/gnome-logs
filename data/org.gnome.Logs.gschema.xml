@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schemalist>
+<schemalist gettext-domain="gnome-logs">
   <schema id="org.gnome.Logs" path="/org/gnome/logs/">
     <key name="sort-order" enum="org.gnome.Logs.GlSortOrder">
       <summary>How to sort list rows in the event view list</summary>
