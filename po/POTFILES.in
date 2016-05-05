@@ -6,7 +6,7 @@
 [type: gettext/glade]data/menus.ui
 data/org.gnome.Logs.appdata.xml.in
 data/org.gnome.Logs.desktop.in
-data/org.gnome.Logs.gschema.xml
+[type: gettext/gsettings]data/org.gnome.Logs.gschema.xml
 src/gl-application.c
 src/gl-eventtoolbar.c
 src/gl-eventviewdetail.c
