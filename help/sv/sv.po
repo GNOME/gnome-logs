@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
-"POT-Creation-Date: 2015-06-23 19:13+0000\n"
-"PO-Revision-Date: 2015-06-23 21:59+0100\n"
+"POT-Creation-Date: 2016-05-05 08:50+0000\n"
+"PO-Revision-Date: 2016-05-07 12:28+0200\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <gnome-se-list@gnome.org>\n"
 "Language: sv\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.7.7\n"
+"X-Generator: Poedit 1.8.7.1\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
@@ -109,12 +109,12 @@ msgstr "Skärmbilder av Loggar som visar några journalposter."
 #. (itstool) path: p/link
 #: C/legal.xml:5
 msgid "Creative Commons Attribution-ShareAlike 3.0 Unported License"
-msgstr "Creative Commons Attribution-ShareAlike 3.0 Oportad Licens"
+msgstr "Creative Commons Erkännande-DelaLika 3.0 Unported"
 
 #. (itstool) path: license/p
 #: C/legal.xml:4
 msgid "This work is licensed under a <_:link-1/>."
-msgstr "Detta verk licensieras under en <_:link-1/>."
+msgstr "Detta verk licensieras under licensen <_:link-1/>."
 
 #. (itstool) path: credit/years
 #: C/permissions.page:13
