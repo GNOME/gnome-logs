@@ -5,10 +5,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-logs 3.19.x\n"
+"Project-Id-Version: gnome-logs 3.20.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-10 19:48+0100\n"
-"PO-Revision-Date: 2016-01-10 19:49+0100\n"
+"POT-Creation-Date: 2016-05-23 20:04+0200\n"
+"PO-Revision-Date: 2016-05-23 20:04+0200\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
 "Language: Norwegian bokmål\n"
@@ -110,22 +110,27 @@ msgid "Help"
 msgstr "Hjelp"
 
 #: ../data/help-overlay.ui.h:1
+msgctxt "shortcut window"
 msgid "General"
 msgstr "Generelt"
 
 #: ../data/help-overlay.ui.h:2
+msgctxt "shortcut window"
 msgid "Open a new window"
 msgstr "Åpne et nytt vindu"
 
 #: ../data/help-overlay.ui.h:3
+msgctxt "shortcut window"
 msgid "Close a window"
 msgstr "Lukk et vindu"
 
 #: ../data/help-overlay.ui.h:4
+msgctxt "shortcut window"
 msgid "Search"
 msgstr "Søk"
 
 #: ../data/help-overlay.ui.h:5
+msgctxt "shortcut window"
 msgid "Find"
 msgstr "Finn"
 
@@ -149,18 +154,16 @@ msgstr "_Om"
 msgid "_Quit"
 msgstr "A_vslutt"
 
-#. Name and summary taken from the desktop file.
-#: ../data/org.gnome.Logs.appdata.xml.in.h:2
-#: ../data/org.gnome.Logs.desktop.in.h:1 ../src/gl-eventtoolbar.c:126
-msgid "Logs"
-msgstr "Logger"
+#: ../data/org.gnome.Logs.appdata.xml.in.h:1
+msgid "GNOME Logs"
+msgstr "GNOME logger"
 
-#: ../data/org.gnome.Logs.appdata.xml.in.h:3
+#: ../data/org.gnome.Logs.appdata.xml.in.h:2
 #: ../data/org.gnome.Logs.desktop.in.h:3
 msgid "View detailed event logs for the system"
 msgstr "Vis detaljerte hendelseslogger for systemet"
 
-#: ../data/org.gnome.Logs.appdata.xml.in.h:4
+#: ../data/org.gnome.Logs.appdata.xml.in.h:3
 msgid ""
 "Logs shows events from the systemd journal, and sorts them into categories, "
 "such as hardware and applications."
@@ -168,13 +171,17 @@ msgstr ""
 "Logger viser hendelser fra systemd-journalen og sorterer dem inn i "
 "kategorier slik som maskinvare og programmer."
 
-#: ../data/org.gnome.Logs.appdata.xml.in.h:5
+#: ../data/org.gnome.Logs.appdata.xml.in.h:4
 msgid ""
 "Using Logs you can search your logs by typing a search term, and view "
 "detailed information about each event by clicking on it."
 msgstr ""
 "Med Logger kan du søke i dine logger ved å skrive inn teksten du søker etter "
 "og du kan vise detaljert informasjon om hver hendelse ved å klikke på den."
+
+#: ../data/org.gnome.Logs.desktop.in.h:1 ../src/gl-eventtoolbar.c:124
+msgid "Logs"
+msgstr "Logger"
 
 #: ../data/org.gnome.Logs.desktop.in.h:2
 msgid "Log Viewer"
@@ -206,13 +213,13 @@ msgid "Print version information and exit"
 msgstr "Skriv ut versjonsinformasjon og avslutt"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
-#: ../src/gl-eventtoolbar.c:117
+#: ../src/gl-eventtoolbar.c:115
 msgid "Boot"
 msgstr "Omstart"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventviewlist.c:651
+#: ../src/gl-eventviewlist.c:660
 msgid "No results"
 msgstr "Ingen resultater"
 
