@@ -714,7 +714,7 @@ gl_event_list_view_create_row_widget (gpointer item,
 }
 
 static gchar *
-create_uid_match_string (void)
+get_uid_match_field_value (void)
 {
     GCredentials *creds;
     uid_t uid;
@@ -724,25 +724,43 @@ create_uid_match_string (void)
     uid = g_credentials_get_unix_user (creds, NULL);
 
     if (uid != -1)
-        str = g_strdup_printf ("_UID=%d", uid);
+        str = g_strdup_printf ("%d", uid);
 
     g_object_unref (creds);
     return str;
 }
 
-static void
-on_notify_category (GlCategoryList *list,
-                    GParamSpec *pspec,
-                    gpointer user_data)
+/* Get Boot ID for current boot match */
+static gchar *
+get_current_boot_id (const gchar *boot_match)
 {
-    GlCategoryListFilter filter;
-    GlEventViewList *view;
-    GlEventViewListPrivate *priv;
-    GSettings *settings;
-    gint sort_order;
+    gchar *boot_value;
 
-    view = GL_EVENT_VIEW_LIST (user_data);
-    priv = gl_event_view_list_get_instance_private (view);
+    boot_value = strchr (boot_match, '=') + 1;
+
+    return g_strdup (boot_value);
+}
+
+/* Create query object according to category and set it on journal model */
+static GlQuery *
+create_query_object (GlJournalModel *model,
+                     GlCategoryList *list,
+                     const gchar *current_boot_match)
+{
+    GlQuery *query;
+    gchar *boot_id;
+    GlCategoryListFilter filter;
+
+    /* Create new query object */
+    query = gl_query_new ();
+
+    /* Get current boot id */
+    boot_id = get_current_boot_id (current_boot_match);
+
+    /* Add boot match for all the categories */
+    gl_query_add_match (query, "_BOOT_ID", boot_id);
+
+    /* Add exact matches according to selected category */
     filter = gl_category_list_get_category (list);
 
     switch (filter)
@@ -750,19 +768,16 @@ on_notify_category (GlCategoryList *list,
         case GL_CATEGORY_LIST_FILTER_IMPORTANT:
             {
               /* Alert or emergency priority. */
-              const gchar * query[] = { "PRIORITY=0", "PRIORITY=1", "PRIORITY=2", "PRIORITY=3", NULL, NULL };
-
-              query[4] = priv->boot_match;
-              gl_journal_model_set_matches (priv->journal_model, query);
+              gl_query_add_match (query, "PRIORITY", "0");
+              gl_query_add_match (query, "PRIORITY", "1");
+              gl_query_add_match (query, "PRIORITY", "2");
+              gl_query_add_match (query, "PRIORITY", "3");
             }
             break;
 
         case GL_CATEGORY_LIST_FILTER_ALL:
             {
-                const gchar *query[] = { NULL, NULL };
 
-                query[0] = priv->boot_match;
-                gl_journal_model_set_matches (priv->journal_model, query);
             }
             break;
 
@@ -770,18 +785,14 @@ on_notify_category (GlCategoryList *list,
             /* Allow all _TRANSPORT != kernel. Attempt to filter by only processes
              * owned by the same UID. */
             {
-                gchar *uid_str = NULL;
-                const gchar *query[] = { "_TRANSPORT=journal",
-                                         "_TRANSPORT=stdout",
-                                         "_TRANSPORT=syslog",
-                                         NULL,
-                                         NULL,
-                                         NULL };
+                gchar *uid_str;
 
-                uid_str = create_uid_match_string ();
-                query[3] = uid_str;
-                query[4] = priv->boot_match;
-                gl_journal_model_set_matches (priv->journal_model, query);
+                uid_str = get_uid_match_field_value ();
+
+                gl_query_add_match (query, "_TRANSPORT", "journal");
+                gl_query_add_match (query, "_TRANSPORT", "stdout");
+                gl_query_add_match (query, "_TRANSPORT", "syslog");
+                gl_query_add_match (query, "_UID", uid_str);
 
                 g_free (uid_str);
             }
@@ -789,34 +800,51 @@ on_notify_category (GlCategoryList *list,
 
         case GL_CATEGORY_LIST_FILTER_SYSTEM:
             {
-                const gchar *query[] = { "_TRANSPORT=kernel", NULL, NULL };
-
-                query[1] = priv->boot_match;
-                gl_journal_model_set_matches (priv->journal_model, query);
+                gl_query_add_match (query, "_TRANSPORT", "kernel");
             }
             break;
 
         case GL_CATEGORY_LIST_FILTER_HARDWARE:
             {
-                const gchar *query[] = { "_TRANSPORT=kernel", "_KERNEL_DEVICE", NULL, NULL };
-
-                query[2] = priv->boot_match;
-                gl_journal_model_set_matches (priv->journal_model, query);
+                gl_query_add_match (query, "_TRANSPORT", "kernel");
+                gl_query_add_match ( query, "_KERNEL_DEVICE", NULL);
             }
             break;
 
         case GL_CATEGORY_LIST_FILTER_SECURITY:
             {
-                const gchar *query[] = { "_AUDIT_SESSION", NULL, NULL };
-
-                query[1] = priv->boot_match;
-                gl_journal_model_set_matches (priv->journal_model, query);
+                gl_query_add_match (query, "_AUDIT_SESSION", NULL);
             }
             break;
 
         default:
             g_assert_not_reached ();
     }
+
+    g_free (boot_id);
+
+    return query;
+}
+
+static void
+on_notify_category (GlCategoryList *list,
+                    GParamSpec *pspec,
+                    gpointer user_data)
+{
+    GlEventViewList *view;
+    GlEventViewListPrivate *priv;
+    GSettings *settings;
+    gint sort_order;
+    GlQuery *query;
+
+    view = GL_EVENT_VIEW_LIST (user_data);
+    priv = gl_event_view_list_get_instance_private (view);
+
+    /* Create the query object */
+    query = create_query_object (priv->journal_model, list, priv->boot_match);
+
+    /* Set the created query on the journal model */
+    gl_journal_model_take_query (priv->journal_model, query);
 
     settings = g_settings_new (SETTINGS_SCHEMA);
     sort_order = g_settings_get_enum (settings, SORT_ORDER);

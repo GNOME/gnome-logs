@@ -34,6 +34,13 @@ GlJournalModel *        gl_journal_model_new                            (void);
 
 GlQuery *               gl_query_new                                    (void);
 
+void                    gl_journal_model_take_query                     (GlJournalModel *model,
+                                                                         GlQuery *query);
+
+void                    gl_query_add_match                              (GlQuery *query,
+                                                                         const gchar *field_name,
+                                                                         const gchar *field_value);
+
 void                    gl_journal_model_set_matches                    (GlJournalModel      *model,
                                                                          const gchar * const *matches);
 

@@ -35,6 +35,8 @@ struct _GlJournalModel
     GlJournal *journal;
     GPtrArray *entries;
 
+    GlQuery *query;
+
     guint n_entries_to_fetch;
     gboolean fetched_all;
     guint idle_source;
@@ -203,34 +205,6 @@ gl_journal_model_new (void)
     return g_object_new (GL_TYPE_JOURNAL_MODEL, NULL);
 }
 
-/**
- * gl_journal_model_set_matches:
- * @model: a #GlJournalModel
- * @matches: new matches
- *
- * Changes @model's filter matches to @matches. This resets all items in
- * the model, as they have to be requeried from the journal.
- */
-void
-gl_journal_model_set_matches (GlJournalModel      *model,
-                              const gchar * const *matches)
-{
-    g_return_if_fail (GL_IS_JOURNAL_MODEL (model));
-    g_return_if_fail (matches != NULL);
-
-    gl_journal_model_stop_idle (model);
-    model->fetched_all = FALSE;
-    if (model->entries->len > 0)
-    {
-        g_list_model_items_changed (G_LIST_MODEL (model), 0, model->entries->len, 0);
-        g_ptr_array_remove_range (model->entries, 0, model->entries->len);
-    }
-
-    gl_journal_set_matches (model->journal, matches);
-
-    gl_journal_model_fetch_more_entries (model, FALSE);
-}
-
 /* Free the given @queryitem */
 static void
 gl_query_item_free (GlQueryItem *queryitem)
@@ -274,6 +248,120 @@ gl_query_item_new (const gchar *field_name,
     queryitem->field_value = g_strdup (field_value);
 
     return queryitem;
+}
+
+static gchar *
+gl_query_item_create_match_string (GlQueryItem *queryitem)
+{
+    gchar *str;
+
+    if (queryitem->field_value)
+    {
+        str = g_strdup_printf ("%s=%s", queryitem->field_name, queryitem->field_value);
+    }
+    else
+    {
+        str = g_strdup (queryitem->field_name);
+    }
+
+    return str;
+}
+
+static void
+get_exact_match_string (GlQueryItem *queryitem, GPtrArray *matches)
+{
+    gchar *match;
+
+    match = gl_query_item_create_match_string (queryitem);
+
+    g_ptr_array_add (matches, match);
+}
+
+/* Get exact matches from the query object */
+static GPtrArray *
+gl_query_get_exact_matches (GlQuery *query)
+{
+    GPtrArray *matches;
+
+    matches = g_ptr_array_new_with_free_func ((GDestroyNotify) g_free);
+
+    g_ptr_array_foreach (query->queryitems, (GFunc) get_exact_match_string, matches);
+
+    /* Add NULL terminator to determine end of pointer array */
+    g_ptr_array_add (matches, NULL);
+
+    return matches;
+}
+
+/* Process the newly assigned query and repopulate the journal model */
+static void
+gl_journal_model_process_query (GlJournalModel *model)
+{
+    GPtrArray *category_matches;
+
+    /* Set the exact matches first */
+    category_matches = gl_query_get_exact_matches (model->query);
+
+    gl_journal_set_matches (model->journal, (const gchar * const *) category_matches->pdata);
+
+    /* Start re-population of the journal */
+    gl_journal_model_fetch_more_entries (model, FALSE);
+
+    /* Free array */
+    g_ptr_array_free (category_matches, TRUE);
+}
+
+/**
+ * gl_journal_model_take_query:
+ * @model: a #GlJournalModel
+ * @query: (transfer full) : query object populated from view
+ *
+ * Takes the query object from the view.
+ * Clears the previous entries in the journal model.
+ * Sets query object on the journal model and processes the newly set query.
+ */
+void
+gl_journal_model_take_query (GlJournalModel *model,
+                             GlQuery *query)
+{
+    g_return_if_fail (GL_JOURNAL_MODEL (model));
+
+    gl_journal_model_stop_idle (model);
+    model->fetched_all = FALSE;
+
+    if (model->entries->len > 0)
+    {
+        g_list_model_items_changed (G_LIST_MODEL (model), 0, model->entries->len, 0);
+
+        g_ptr_array_free (model->entries, TRUE);
+
+        model->entries = g_ptr_array_new_with_free_func (g_object_unref);
+    }
+
+    /* Clear the previous query */
+    if (model->query)
+    {
+        gl_query_free (model->query);
+    }
+
+    /* Set new query */
+    model->query = query;
+
+    /* Start processing the new query */
+    gl_journal_model_process_query (model);
+}
+
+/* Add a new queryitem to query */
+void
+gl_query_add_match (GlQuery *query,
+                    const gchar *field_name,
+                    const gchar *field_value)
+{
+    GlQueryItem *queryitem;
+
+    queryitem = gl_query_item_new (field_name, field_value);
+
+    g_ptr_array_add (query->queryitems, queryitem);
 }
 
 gchar *
