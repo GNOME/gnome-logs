@@ -41,7 +41,6 @@ G_DEFINE_TYPE_WITH_CODE (GlJournalModel, gl_journal_model, G_TYPE_OBJECT,
 enum
 {
     PROP_0,
-    PROP_MATCHES,
     PROP_LOADING,
     N_PROPERTIES
 };
@@ -111,24 +110,7 @@ gl_journal_model_get_property (GObject    *object,
     }
 }
 
-static void
-gl_journal_model_set_property (GObject      *object,
-                               guint         property_id,
-                               const GValue *value,
-                               GParamSpec   *pspec)
-{
-    GlJournalModel *model = GL_JOURNAL_MODEL (object);
 
-    switch (property_id)
-    {
-    case PROP_MATCHES:
-        gl_journal_model_set_matches (model, g_value_get_boxed (value));
-        break;
-
-    default:
-        g_assert_not_reached ();
-    }
-}
 
 static void
 gl_journal_model_stop_idle (GlJournalModel *model)
@@ -193,10 +175,6 @@ gl_journal_model_class_init (GlJournalModelClass *class)
 
     object_class->dispose = gl_journal_model_dispose;
     object_class->get_property = gl_journal_model_get_property;
-    object_class->set_property = gl_journal_model_set_property;
-
-    properties[PROP_MATCHES] = g_param_spec_boxed ("matches", "", "", G_TYPE_STRV,
-                                                   G_PARAM_WRITABLE | default_flags);
 
     properties[PROP_LOADING] = g_param_spec_boolean ("loading", "", "", TRUE,
                                                      G_PARAM_READABLE | default_flags);
