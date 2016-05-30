@@ -21,6 +21,12 @@
 
 #include <gio/gio.h>
 
+typedef enum
+{
+    SEARCH_TYPE_EXACT,
+    SEARCH_TYPE_SUBSTRING
+} GlQuerySearchType;
+
 /* Resultant query passed to journal model from eventviewlist */
 typedef struct GlQuery
 {
@@ -39,7 +45,8 @@ void                    gl_journal_model_take_query                     (GlJourn
 
 void                    gl_query_add_match                              (GlQuery *query,
                                                                          const gchar *field_name,
-                                                                         const gchar *field_value);
+                                                                         const gchar *field_value,
+                                                                         GlQuerySearchType search_type);
 
 void                    gl_journal_model_set_matches                    (GlJournalModel      *model,
                                                                          const gchar * const *matches);

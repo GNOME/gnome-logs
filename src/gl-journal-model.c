@@ -24,6 +24,7 @@ typedef struct GlQueryItem
 {
     gchar *field_name;
     gchar *field_value;
+    GlQuerySearchType search_type;
 } GlQueryItem;
 
 struct _GlJournalModel
@@ -43,6 +44,7 @@ struct _GlJournalModel
 };
 
 static void gl_journal_model_interface_init (GListModelInterface *iface);
+static gboolean search_in_entry (GlJournalEntry *entry, GlQuery *query);
 
 G_DEFINE_TYPE_WITH_CODE (GlJournalModel, gl_journal_model, G_TYPE_OBJECT,
                          G_IMPLEMENT_INTERFACE (G_TYPE_LIST_MODEL, gl_journal_model_interface_init))
@@ -53,6 +55,14 @@ enum
     PROP_LOADING,
     N_PROPERTIES
 };
+
+/* We define these two enum values as 2 and 3 to avoid the
+ * conflict with TRUE and FALSE */
+typedef enum
+{
+    LOGICAL_OR = 2,
+    LOGICAL_AND = 3
+} GlQueryLogic;
 
 static GParamSpec *properties[N_PROPERTIES];
 
@@ -68,9 +78,12 @@ gl_journal_model_fetch_idle (gpointer user_data)
     last = model->entries->len;
     if ((entry = gl_journal_previous (model->journal)))
     {
-        model->n_entries_to_fetch--;
-        g_ptr_array_add (model->entries, entry);
-        g_list_model_items_changed (G_LIST_MODEL (model), last, 0, 1);
+        if (search_in_entry (entry, model->query))
+        {
+            model->n_entries_to_fetch--;
+            g_ptr_array_add (model->entries, entry);
+            g_list_model_items_changed (G_LIST_MODEL (model), last, 0, 1);
+        }
     }
     else
     {
@@ -238,7 +251,8 @@ gl_query_new (void)
 
 static GlQueryItem *
 gl_query_item_new (const gchar *field_name,
-                   const gchar *field_value)
+                   const gchar *field_value,
+                   GlQuerySearchType search_type)
 {
     GlQueryItem *queryitem;
 
@@ -246,6 +260,7 @@ gl_query_item_new (const gchar *field_name,
 
     queryitem->field_name = g_strdup (field_name);
     queryitem->field_value = g_strdup (field_value);
+    queryitem->search_type = search_type;
 
     return queryitem;
 }
@@ -268,13 +283,16 @@ gl_query_item_create_match_string (GlQueryItem *queryitem)
 }
 
 static void
-get_exact_match_string (GlQueryItem *queryitem, GPtrArray *matches)
+populate_exact_matches (GlQueryItem *queryitem, GPtrArray *matches)
 {
     gchar *match;
 
-    match = gl_query_item_create_match_string (queryitem);
+    if (queryitem->search_type == SEARCH_TYPE_EXACT)
+    {
+        match = gl_query_item_create_match_string (queryitem);
 
-    g_ptr_array_add (matches, match);
+        g_ptr_array_add (matches, match);
+    }
 }
 
 /* Get exact matches from the query object */
@@ -285,7 +303,29 @@ gl_query_get_exact_matches (GlQuery *query)
 
     matches = g_ptr_array_new_with_free_func ((GDestroyNotify) g_free);
 
-    g_ptr_array_foreach (query->queryitems, (GFunc) get_exact_match_string, matches);
+    g_ptr_array_foreach (query->queryitems, (GFunc) populate_exact_matches, matches);
+
+    return matches;
+}
+
+static void
+populate_substring_matches (GlQueryItem *queryitem, GPtrArray *matches)
+{
+    if (queryitem->search_type == SEARCH_TYPE_SUBSTRING)
+    {
+        g_ptr_array_add (matches, queryitem);
+    }
+}
+
+/* Get exact matches from the query object */
+static GPtrArray *
+gl_query_get_substring_matches (GlQuery *query)
+{
+    GPtrArray *matches;
+
+    matches = g_ptr_array_new ();
+
+    g_ptr_array_foreach (query->queryitems, (GFunc) populate_substring_matches, matches);
 
     return matches;
 }
@@ -352,13 +392,408 @@ gl_journal_model_take_query (GlJournalModel *model,
 void
 gl_query_add_match (GlQuery *query,
                     const gchar *field_name,
-                    const gchar *field_value)
+                    const gchar *field_value,
+                    GlQuerySearchType search_type)
 {
     GlQueryItem *queryitem;
 
-    queryitem = gl_query_item_new (field_name, field_value);
+    queryitem = gl_query_item_new (field_name, field_value, search_type);
 
     g_ptr_array_add (query->queryitems, queryitem);
+}
+
+static gboolean
+is_string_case_sensitive (const gchar *user_text)
+{
+
+    const gchar *search_text;
+
+    for (search_text = user_text; search_text && *search_text;
+         search_text = g_utf8_next_char (search_text))
+    {
+        gunichar c;
+
+        c = g_utf8_get_char (search_text);
+
+        if (g_unichar_isupper (c))
+        {
+            return TRUE;
+        }
+    }
+
+    return FALSE;
+}
+
+static gboolean
+utf8_strcasestr (const gchar *potential_hit,
+                 const gchar *search_term)
+{
+  gchar *folded;
+  gboolean matches;
+
+  folded = g_utf8_casefold (potential_hit, -1);
+  matches = strstr (folded, search_term) != NULL;
+
+  g_free (folded);
+  return matches;
+}
+
+static GPtrArray *
+tokenize_search_string (gchar *search_text)
+{
+    gchar *field_name;
+    gchar *field_value;
+    GPtrArray *token_array;
+    GScanner *scanner;
+
+    token_array = g_ptr_array_new_with_free_func (g_free);
+    scanner = g_scanner_new (NULL);
+    scanner->config->cset_skip_characters = " =\t\n";
+    g_scanner_input_text (scanner, search_text, strlen (search_text));
+
+    do
+    {
+        g_scanner_get_next_token (scanner);
+        if (scanner->value.v_identifier == NULL && scanner->token != '+')
+        {
+            break;
+        }
+        else if (scanner->token == '+')
+        {
+            g_ptr_array_add (token_array, g_strdup ("+"));
+
+            g_scanner_get_next_token (scanner);
+            if (scanner->value.v_identifier != NULL)
+            {
+                field_name = g_strdup (scanner->value.v_identifier);
+                g_ptr_array_add (token_array, field_name);
+            }
+            else
+            {
+                field_name = NULL;
+            }
+        }
+        else if (scanner->token == G_TOKEN_INT)
+        {
+            field_name = g_strdup_printf ("%lu", scanner->value.v_int);
+            g_ptr_array_add (token_array, field_name);
+        }
+        else if (scanner->token == G_TOKEN_FLOAT)
+        {
+            field_name = g_strdup_printf ("%g", scanner->value.v_float);
+            g_ptr_array_add (token_array, field_name);
+        }
+        else if (scanner->token == G_TOKEN_IDENTIFIER)
+        {
+            if (token_array->len != 0)
+            {
+                g_ptr_array_add (token_array, g_strdup (" "));
+            }
+
+            field_name = g_strdup (scanner->value.v_identifier);
+            g_ptr_array_add (token_array, field_name);
+        }
+        else
+        {
+            field_name = NULL;
+        }
+
+        g_scanner_get_next_token (scanner);
+        if (scanner->token == G_TOKEN_INT)
+        {
+            field_value = g_strdup_printf ("%lu", scanner->value.v_int);
+            g_ptr_array_add (token_array, field_value);
+        }
+        else if (scanner->token == G_TOKEN_FLOAT)
+        {
+            field_value = g_strdup_printf ("%g", scanner->value.v_float);
+            g_ptr_array_add (token_array, field_value);
+        }
+        else if (scanner->token == G_TOKEN_IDENTIFIER)
+        {
+            field_value = g_strdup (scanner->value.v_identifier);
+            g_ptr_array_add (token_array, field_value);
+        }
+        else
+        {
+            field_value = NULL;
+        }
+    } while (field_name != NULL && field_value != NULL);
+
+    g_scanner_destroy (scanner);
+
+    return token_array;
+}
+
+/* Functions for replacing the big if queries in calculate token match */
+static const gchar *
+gl_query_item_get_entry_parameter (GlQueryItem *search_match,
+                                   GlJournalEntry *entry,
+                                   gboolean case_sensitive)
+{
+    const gchar *comm;
+    const gchar *message;
+    const gchar *kernel_device;
+    const gchar *audit_session;
+
+    comm = gl_journal_entry_get_command_line (entry);
+    message = gl_journal_entry_get_message (entry);
+    kernel_device = gl_journal_entry_get_kernel_device (entry);
+    audit_session = gl_journal_entry_get_audit_session (entry);
+
+    if (case_sensitive)
+    {
+        if (strstr ("_MESSAGE", search_match->field_name))
+            return message;
+
+        else if (strstr ("_COMM", search_match->field_name))
+            return comm;
+
+        else if (strstr ("_KERNEL_DEVICE", search_match->field_name))
+            return kernel_device;
+
+        else if (strstr ("_AUDIT_SESSION", search_match->field_name))
+            return audit_session;
+    }
+    else
+    {
+        if (utf8_strcasestr ("_message", search_match->field_name))
+            return message;
+
+        else if (utf8_strcasestr ("_comm", search_match->field_name))
+            return comm;
+
+        else if (utf8_strcasestr ("_kernel_device", search_match->field_name))
+            return kernel_device;
+
+        else if (utf8_strcasestr ("_audit_session", search_match->field_name))
+            return audit_session;
+    }
+
+    return NULL;
+}
+
+static gboolean
+gl_query_item_get_match (GlQueryItem *search_match,
+                         const gchar *field_value,
+                         gboolean case_sensitive)
+{
+    if (field_value)
+    {
+        if (case_sensitive)
+        {
+            if (strstr (field_value, search_match->field_value))
+            {
+                return TRUE;
+            }
+        }
+        else
+        {
+            if (utf8_strcasestr (field_value, search_match->field_value))
+            {
+                return TRUE;
+            }
+        }
+    }
+
+    return FALSE;
+}
+
+static gboolean
+gl_query_items_check_parameters (GPtrArray *search_matches,
+                                 GlJournalEntry *entry)
+{
+    GlQueryItem *search_match;
+    const gchar *entry_parameter;
+    gboolean field_value_case;
+    gboolean field_name_case;
+    gint i;
+
+    for (i=0; i < search_matches->len ;i++)
+    {
+        search_match = g_ptr_array_index (search_matches, i);
+
+        field_name_case = is_string_case_sensitive (search_match->field_name);
+        field_value_case = is_string_case_sensitive (search_match->field_value);
+
+        entry_parameter = gl_query_item_get_entry_parameter (search_match, entry, field_name_case);
+
+        if (gl_query_item_get_match (search_match, entry_parameter, field_value_case))
+        {
+            return TRUE;
+        }
+    }
+
+    return FALSE;
+}
+
+static gboolean
+calculate_match (GlJournalEntry *entry,
+                 GPtrArray *token_array,
+                 GPtrArray *search_matches)
+{
+    GlQueryItem *token_match;
+    gchar *field_name;
+    gchar *field_value;
+    gboolean field_name_case;
+    gboolean field_value_case;
+    const gchar *entry_parameter;
+    gboolean matches;
+    gint match_stack[10];
+    guint match_count = 0;
+    guint token_index = 0;
+    gint i;
+
+    /* No logical AND or OR used in search text */
+    if (token_array->len == 1)
+    {
+        return gl_query_items_check_parameters (search_matches, entry);
+    }
+
+    /* If multiple tokens are present : execute the token mode */
+    while (token_index < token_array->len)
+    {
+        field_name = g_ptr_array_index (token_array, token_index);
+        token_index++;
+
+        if (token_index == token_array->len)
+        {
+            break;
+        }
+
+        field_value = g_ptr_array_index (token_array, token_index);
+        token_index++;
+
+
+        /* check for matches */
+        token_match = gl_query_item_new (field_name, field_value, SEARCH_TYPE_SUBSTRING);
+
+        field_name_case = is_string_case_sensitive (field_name);
+        field_value_case = is_string_case_sensitive (field_value);
+
+        entry_parameter = gl_query_item_get_entry_parameter (token_match, entry, field_name_case);
+
+        matches = gl_query_item_get_match (token_match, entry_parameter, field_value_case);
+
+        gl_query_item_free (token_match);
+
+        match_stack[match_count] = matches;
+        match_count++;
+
+        if (token_index == token_array->len)
+        {
+            break;
+        }
+
+        if (g_strcmp0 (g_ptr_array_index (token_array, token_index), " ") == 0)
+        {
+            match_stack[match_count] = LOGICAL_AND;
+            match_count++;
+            token_index++;
+        }
+        else if (g_strcmp0 (g_ptr_array_index (token_array, token_index),
+                            "+") == 0)
+        {
+            match_stack[match_count] = LOGICAL_OR;
+            match_count++;
+            token_index++;
+        }
+    }
+
+    /* match_count > 2 means there are still matches to be calculated in the
+     * stack */
+    if (match_count > 2)
+    {
+        /* calculate the expression with logical AND */
+        for (i = 0; i < match_count; i++)
+        {
+            if (match_stack[i] == LOGICAL_AND)
+            {
+                int j;
+
+                match_stack[i - 1] = match_stack[i - 1] && match_stack[i + 1];
+
+                for (j = i; j < match_count - 2; j++)
+                {
+                    if (j == match_count - 3)
+                    {
+                        match_stack[j] = match_stack[j + 2];
+                        /* We use -1 to represent the values that are not
+                         * useful */
+                        match_stack[j + 1] = -1;
+
+                        break;
+                    }
+
+                    match_stack[j] = match_stack[j + 2];
+                    match_stack[j + 2] = -1;
+                }
+            }
+        }
+
+        /* calculate the expression with logical OR */
+        for (i = 0; i < match_count; i++)
+        {
+            /* We use -1 to represent the values that are not useful */
+            if ((match_stack[i] == LOGICAL_OR) && (i != token_index - 1) &&
+                (match_stack[i + 1] != -1))
+            {
+                int j;
+
+                match_stack[i - 1] = match_stack[i - 1] || match_stack[i + 1];
+
+                for (j = i; j < match_count - 2; j++)
+                {
+                    match_stack[j] = match_stack[j + 2];
+                    match_stack[j + 2] = -1;
+                }
+            }
+        }
+    }
+
+    matches = match_stack[0];
+
+    return matches;
+}
+
+static gboolean
+search_in_entry (GlJournalEntry *entry,
+                 GlQuery *query)
+{
+    GlQueryItem *search_match;
+    gboolean matches;
+    GPtrArray *search_matches;
+    GPtrArray *token_array;
+
+    search_matches = gl_query_get_substring_matches (query);
+
+    /* Get search text from a search match */
+    search_match = g_ptr_array_index (search_matches, 0);
+
+    /* check for null and empty strings */
+    if (!search_match->field_value || !*(search_match->field_value))
+    {
+        matches = TRUE;
+    }
+    else
+    {
+        gchar *search_text;
+
+        search_text = search_match->field_value;
+
+        /* Tokenize the entered text */
+        token_array = tokenize_search_string (search_text);
+
+        /* calculate match depending on the number of tokens */
+        matches = calculate_match (entry, token_array, search_matches);
+
+        /* Free variables */
+        g_ptr_array_free (token_array, TRUE);
+    }
+
+    g_ptr_array_free (search_matches, TRUE);
+
+    return matches;
 }
 
 gchar *

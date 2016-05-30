@@ -54,14 +54,6 @@ typedef struct
     const gchar *boot_match;
 } GlEventViewListPrivate;
 
-/* We define these two enum values as 2 and 3 to avoid the conflict with TRUE
- * and FALSE */
-typedef enum
-{
-    LOGICAL_OR = 2,
-    LOGICAL_AND = 3
-} GlEventViewListLogic;
-
 G_DEFINE_TYPE_WITH_PRIVATE (GlEventViewList, gl_event_view_list, GTK_TYPE_BOX)
 
 static const gchar DESKTOP_SCHEMA[] = "org.gnome.desktop.interface";
@@ -131,326 +123,7 @@ gl_event_view_list_get_output_logs (GlEventViewList *view)
     return output_buf;
 }
 
-static gboolean
-gl_event_view_search_is_case_sensitive (GlEventViewList *view)
-{
-    GlEventViewListPrivate *priv;
-    const gchar *search_text;
 
-    priv = gl_event_view_list_get_instance_private (view);
-
-    for (search_text = priv->search_text; search_text && *search_text;
-         search_text = g_utf8_next_char (search_text))
-    {
-        gunichar c;
-
-        c = g_utf8_get_char (search_text);
-
-        if (g_unichar_isupper (c))
-        {
-            return TRUE;
-        }
-    }
-
-    return FALSE;
-}
-
-static gboolean
-utf8_strcasestr (const gchar *potential_hit,
-                 const gchar *search_term)
-{
-  gchar *folded;
-  gboolean matches;
-
-  folded = g_utf8_casefold (potential_hit, -1);
-  matches = strstr (folded, search_term) != NULL;
-
-  g_free (folded);
-  return matches;
-}
-
-static GPtrArray *
-tokenize_search_string (gchar *search_text)
-{
-    gchar *field_name;
-    gchar *field_value;
-    GPtrArray *token_array;
-    GScanner *scanner;
-
-    token_array = g_ptr_array_new_with_free_func (g_free);
-    scanner = g_scanner_new (NULL);
-    scanner->config->cset_skip_characters = " =\t\n";
-    g_scanner_input_text (scanner, search_text, strlen (search_text));
-
-    do
-    {
-        g_scanner_get_next_token (scanner);
-        if (scanner->value.v_identifier == NULL && scanner->token != '+')
-        {
-            break;
-        }
-        else if (scanner->token == '+')
-        {
-            g_ptr_array_add (token_array, g_strdup ("+"));
-
-            g_scanner_get_next_token (scanner);
-            if (scanner->value.v_identifier != NULL)
-            {
-                field_name = g_strdup (scanner->value.v_identifier);
-                g_ptr_array_add (token_array, field_name);
-            }
-            else
-            {
-                field_name = NULL;
-            }
-        }
-        else if (scanner->token == G_TOKEN_INT)
-        {
-            field_name = g_strdup_printf ("%lu", scanner->value.v_int);
-            g_ptr_array_add (token_array, field_name);
-        }
-        else if (scanner->token == G_TOKEN_FLOAT)
-        {
-            field_name = g_strdup_printf ("%g", scanner->value.v_float);
-            g_ptr_array_add (token_array, field_name);
-        }
-        else if (scanner->token == G_TOKEN_IDENTIFIER)
-        {
-            if (token_array->len != 0)
-            {
-                g_ptr_array_add (token_array, g_strdup (" "));
-            }
-
-            field_name = g_strdup (scanner->value.v_identifier);
-            g_ptr_array_add (token_array, field_name);
-        }
-        else
-        {
-            field_name = NULL;
-        }
-
-        g_scanner_get_next_token (scanner);
-        if (scanner->token == G_TOKEN_INT)
-        {
-            field_value = g_strdup_printf ("%lu", scanner->value.v_int);
-            g_ptr_array_add (token_array, field_value);
-        }
-        else if (scanner->token == G_TOKEN_FLOAT)
-        {
-            field_value = g_strdup_printf ("%g", scanner->value.v_float);
-            g_ptr_array_add (token_array, field_value);
-        }
-        else if (scanner->token == G_TOKEN_IDENTIFIER)
-        {
-            field_value = g_strdup (scanner->value.v_identifier);
-            g_ptr_array_add (token_array, field_value);
-        }
-        else
-        {
-            field_value = NULL;
-        }
-    } while (field_name != NULL && field_value != NULL);
-
-    g_scanner_destroy (scanner);
-
-    return token_array;
-}
-
-static gboolean
-calculate_match (GlJournalEntry *entry,
-                 GPtrArray *token_array,
-                 gboolean case_sensetive)
-{
-    const gchar *comm;
-    const gchar *message;
-    const gchar *kernel_device;
-    const gchar *audit_session;
-    gboolean matches;
-    gchar *field_name;
-    gchar *field_value;
-    gint i;
-    gint match_stack[10];
-    guint match_count = 0;
-    guint token_index = 0;
-
-    comm = gl_journal_entry_get_command_line (entry);
-    message = gl_journal_entry_get_message (entry);
-    kernel_device = gl_journal_entry_get_kernel_device (entry);
-    audit_session = gl_journal_entry_get_audit_session (entry);
-
-    /* No logical AND or OR used in search text */
-    if (token_array->len == 1 && case_sensetive == TRUE)
-    {
-        gchar *search_text;
-
-        search_text = g_ptr_array_index (token_array, 0);
-
-        if ((comm ? strstr (comm, search_text) : NULL)
-            || (message ? strstr (message, search_text) : NULL)
-            || (kernel_device ? strstr (kernel_device, search_text) : NULL)
-            || (audit_session ? strstr (audit_session, search_text) : NULL))
-        {
-            return TRUE;
-        }
-        else
-        {
-            return FALSE;
-        }
-    }
-    else if (token_array->len == 1 && case_sensetive == FALSE)
-    {
-        gchar *search_text;
-
-        search_text = g_ptr_array_index (token_array, 0);
-
-        matches = (comm && utf8_strcasestr (comm, search_text)) ||
-                  (message && utf8_strcasestr (message, search_text)) ||
-                  (kernel_device && utf8_strcasestr (kernel_device, search_text)) ||
-                  (audit_session && utf8_strcasestr (audit_session, search_text));
-
-        return matches;
-    }
-
-    while (token_index < token_array->len)
-    {
-        field_name = g_ptr_array_index (token_array, token_index);
-        token_index++;
-
-        if (token_index == token_array->len)
-        {
-            break;
-        }
-
-        field_value = g_ptr_array_index (token_array, token_index);
-        token_index++;
-
-        if (case_sensetive)
-        {
-            matches = (strstr ("_COMM", field_name) &&
-                       comm &&
-                       strstr (comm, field_value)) ||
-                      (strstr ("_MESSAGE", field_name) &&
-                       message &&
-                       strstr (message, field_value)) ||
-                      (strstr ("_KERNEL_DEVICE", field_name) &&
-                       kernel_device &&
-                       strstr (kernel_device, field_value)) ||
-                      (strstr ("_AUDIT_SESSION", field_name) &&
-                       audit_session &&
-                       strstr (audit_session, field_value));
-        }
-        else
-        {
-            matches = (utf8_strcasestr ("_comm", field_name) &&
-                       comm &&
-                       strstr (comm, field_value)) ||
-                      (utf8_strcasestr ("_message", field_name) &&
-                       message &&
-                       strstr (message, field_value)) ||
-                      (utf8_strcasestr ("_kernel_device", field_name) &&
-                       kernel_device &&
-                       strstr (kernel_device, field_value)) ||
-                      (utf8_strcasestr ("_audit_session", field_name) &&
-                       audit_session &&
-                       strstr (audit_session, field_value));
-        }
-
-        match_stack[match_count] = matches;
-        match_count++;
-
-        if (token_index == token_array->len)
-        {
-            break;
-        }
-
-        if (g_strcmp0 (g_ptr_array_index (token_array, token_index), " ") == 0)
-        {
-            match_stack[match_count] = LOGICAL_AND;
-            match_count++;
-            token_index++;
-        }
-        else if (g_strcmp0 (g_ptr_array_index (token_array, token_index),
-                            "+") == 0)
-        {
-            match_stack[match_count] = LOGICAL_OR;
-            match_count++;
-            token_index++;
-        }
-    }
-
-    /* match_count > 2 means there are still matches to be calculated in the
-     * stack */
-    if (match_count > 2)
-    {
-        /* calculate the expression with logical AND */
-        for (i = 0; i < match_count; i++)
-        {
-            if (match_stack[i] == LOGICAL_AND)
-            {
-                int j;
-
-                match_stack[i - 1] = match_stack[i - 1] && match_stack[i + 1];
-
-                for (j = i; j < match_count - 2; j++)
-                {
-                    if (j == match_count - 3)
-                    {
-                        match_stack[j] = match_stack[j + 2];
-                        /* We use -1 to represent the values that are not
-                         * useful */
-                        match_stack[j + 1] = -1;
-
-                        break;
-                    }
-
-                    match_stack[j] = match_stack[j + 2];
-                    match_stack[j + 2] = -1;
-                }
-            }
-        }
-
-        /* calculate the expression with logical OR */
-        for (i = 0; i < match_count; i++)
-        {
-            /* We use -1 to represent the values that are not useful */
-            if ((match_stack[i] == LOGICAL_OR) && (i != token_index - 1) &&
-                (match_stack[i + 1] != -1))
-            {
-                int j;
-
-                match_stack[i - 1] = match_stack[i - 1] || match_stack[i + 1];
-
-                for (j = i; j < match_count - 2; j++)
-                {
-                    match_stack[j] = match_stack[j + 2];
-                    match_stack[j + 2] = -1;
-                }
-            }
-        }
-    }
-
-    matches = match_stack[0];
-
-    return matches;
-}
-
-static gboolean
-search_in_result (GlJournalEntry *entry,
-                  const gchar *search_text)
-{
-    gboolean matches;
-    gchar *search_text_copy;
-    GPtrArray *token_array;
-
-    search_text_copy = g_strdup (search_text);
-
-    token_array = tokenize_search_string (search_text_copy);
-    matches = calculate_match (entry, token_array, TRUE);
-
-    g_ptr_array_free (token_array, TRUE);
-
-    return matches;
-}
 
 static void
 listbox_update_header_func (GtkListBoxRow *row,
@@ -475,50 +148,7 @@ listbox_update_header_func (GtkListBoxRow *row,
     }
 }
 
-static gboolean
-listbox_search_filter_func (GtkListBoxRow *row,
-                            GlEventViewList *view)
-{
-    GlEventViewListPrivate *priv;
 
-    priv = gl_event_view_list_get_instance_private (view);
-
-    if (!priv->search_text || !*(priv->search_text))
-    {
-        return TRUE;
-    }
-    else
-    {
-        GlJournalEntry *entry;
-
-        entry = gl_event_view_row_get_entry (GL_EVENT_VIEW_ROW (row));
-
-        if (gl_event_view_search_is_case_sensitive (view))
-        {
-            if (search_in_result (entry, priv->search_text))
-            {
-                return TRUE;
-            }
-        }
-        else
-        {
-            gboolean matches;
-            gchar *search_text_copy;
-            GPtrArray *token_array;
-
-            search_text_copy = g_strdup (priv->search_text);
-
-            token_array = tokenize_search_string (search_text_copy);
-            matches = calculate_match (entry, token_array, FALSE);
-
-            g_ptr_array_free (token_array, TRUE);
-
-            return matches;
-        }
-    }
-
-    return FALSE;
-}
 
 static void
 on_listbox_row_activated (GtkListBox *listbox,
@@ -745,7 +375,8 @@ get_current_boot_id (const gchar *boot_match)
 static GlQuery *
 create_query_object (GlJournalModel *model,
                      GlCategoryList *list,
-                     const gchar *current_boot_match)
+                     const gchar *current_boot_match,
+                     const gchar *search_text)
 {
     GlQuery *query;
     gchar *boot_id;
@@ -758,7 +389,7 @@ create_query_object (GlJournalModel *model,
     boot_id = get_current_boot_id (current_boot_match);
 
     /* Add boot match for all the categories */
-    gl_query_add_match (query, "_BOOT_ID", boot_id);
+    gl_query_add_match (query, "_BOOT_ID", boot_id, SEARCH_TYPE_EXACT);
 
     /* Add exact matches according to selected category */
     filter = gl_category_list_get_category (list);
@@ -768,10 +399,10 @@ create_query_object (GlJournalModel *model,
         case GL_CATEGORY_LIST_FILTER_IMPORTANT:
             {
               /* Alert or emergency priority. */
-              gl_query_add_match (query, "PRIORITY", "0");
-              gl_query_add_match (query, "PRIORITY", "1");
-              gl_query_add_match (query, "PRIORITY", "2");
-              gl_query_add_match (query, "PRIORITY", "3");
+              gl_query_add_match (query, "PRIORITY", "0", SEARCH_TYPE_EXACT);
+              gl_query_add_match (query, "PRIORITY", "1", SEARCH_TYPE_EXACT);
+              gl_query_add_match (query, "PRIORITY", "2", SEARCH_TYPE_EXACT);
+              gl_query_add_match (query, "PRIORITY", "3", SEARCH_TYPE_EXACT);
             }
             break;
 
@@ -789,10 +420,10 @@ create_query_object (GlJournalModel *model,
 
                 uid_str = get_uid_match_field_value ();
 
-                gl_query_add_match (query, "_TRANSPORT", "journal");
-                gl_query_add_match (query, "_TRANSPORT", "stdout");
-                gl_query_add_match (query, "_TRANSPORT", "syslog");
-                gl_query_add_match (query, "_UID", uid_str);
+                gl_query_add_match (query, "_TRANSPORT", "journal", SEARCH_TYPE_EXACT);
+                gl_query_add_match (query, "_TRANSPORT", "stdout", SEARCH_TYPE_EXACT);
+                gl_query_add_match (query, "_TRANSPORT", "syslog", SEARCH_TYPE_EXACT);
+                gl_query_add_match (query, "_UID", uid_str, SEARCH_TYPE_EXACT);
 
                 g_free (uid_str);
             }
@@ -800,26 +431,32 @@ create_query_object (GlJournalModel *model,
 
         case GL_CATEGORY_LIST_FILTER_SYSTEM:
             {
-                gl_query_add_match (query, "_TRANSPORT", "kernel");
+                gl_query_add_match (query, "_TRANSPORT", "kernel", SEARCH_TYPE_EXACT);
             }
             break;
 
         case GL_CATEGORY_LIST_FILTER_HARDWARE:
             {
-                gl_query_add_match (query, "_TRANSPORT", "kernel");
-                gl_query_add_match ( query, "_KERNEL_DEVICE", NULL);
+                gl_query_add_match (query, "_TRANSPORT", "kernel", SEARCH_TYPE_EXACT);
+                gl_query_add_match ( query, "_KERNEL_DEVICE", NULL, SEARCH_TYPE_EXACT);
             }
             break;
 
         case GL_CATEGORY_LIST_FILTER_SECURITY:
             {
-                gl_query_add_match (query, "_AUDIT_SESSION", NULL);
+                gl_query_add_match (query, "_AUDIT_SESSION", NULL, SEARCH_TYPE_EXACT);
             }
             break;
 
         default:
             g_assert_not_reached ();
     }
+
+    /* Add Substring Matches */
+    gl_query_add_match (query, "_MESSAGE", search_text, SEARCH_TYPE_SUBSTRING);
+    gl_query_add_match (query, "_COMM", search_text, SEARCH_TYPE_SUBSTRING);
+    gl_query_add_match (query, "_KERNEL_DEVICE", search_text, SEARCH_TYPE_SUBSTRING);
+    gl_query_add_match (query, "_AUDIT_SESSION", search_text, SEARCH_TYPE_SUBSTRING);
 
     g_free (boot_id);
 
@@ -841,7 +478,7 @@ on_notify_category (GlCategoryList *list,
     priv = gl_event_view_list_get_instance_private (view);
 
     /* Create the query object */
-    query = create_query_object (priv->journal_model, list, priv->boot_match);
+    query = create_query_object (priv->journal_model, list, priv->boot_match, priv->search_text);
 
     /* Set the created query on the journal model */
     gl_journal_model_take_query (priv->journal_model, query);
@@ -957,11 +594,22 @@ on_search_entry_changed (GtkSearchEntry *entry,
                          gpointer user_data)
 {
     GlEventViewListPrivate *priv;
+    GlCategoryList *categories;
+    GlQuery *query;
 
     priv = gl_event_view_list_get_instance_private (GL_EVENT_VIEW_LIST (user_data));
 
-    gl_event_view_list_search (GL_EVENT_VIEW_LIST (user_data),
-                               gtk_entry_get_text (GTK_ENTRY (priv->search_entry)));
+    categories = GL_CATEGORY_LIST (priv->categories);
+
+    g_free (priv->search_text);
+
+    priv->search_text = g_strdup (gtk_entry_get_text (GTK_ENTRY (priv->search_entry)));
+
+    /* Create the query object */
+    query = create_query_object (priv->journal_model, categories, priv->boot_match, priv->search_text);
+
+    /* Set the created query on the journal model */
+    gl_journal_model_take_query (priv->journal_model, query);
 }
 
 static void
@@ -1077,9 +725,6 @@ gl_event_view_list_init (GlEventViewList *view)
     gtk_list_box_set_header_func (GTK_LIST_BOX (priv->entries_box),
                                   (GtkListBoxUpdateHeaderFunc) listbox_update_header_func,
                                   NULL, NULL);
-    gtk_list_box_set_filter_func (GTK_LIST_BOX (priv->entries_box),
-                                  (GtkListBoxFilterFunc) listbox_search_filter_func,
-                                  view, NULL);
     gtk_list_box_set_placeholder (GTK_LIST_BOX (priv->entries_box),
                                   gl_event_view_create_empty (view));
     g_signal_connect (priv->entries_box, "row-activated",
