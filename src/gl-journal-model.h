@@ -21,10 +21,18 @@
 
 #include <gio/gio.h>
 
+/* Resultant query passed to journal model from eventviewlist */
+typedef struct GlQuery
+{
+    GPtrArray *queryitems;   /* array of GlQueryItem structs */
+} GlQuery;
+
 #define GL_TYPE_JOURNAL_MODEL gl_journal_model_get_type()
 G_DECLARE_FINAL_TYPE (GlJournalModel, gl_journal_model, GL, JOURNAL_MODEL, GObject)
 
 GlJournalModel *        gl_journal_model_new                            (void);
+
+GlQuery *               gl_query_new                                    (void);
 
 void                    gl_journal_model_set_matches                    (GlJournalModel      *model,
                                                                          const gchar * const *matches);

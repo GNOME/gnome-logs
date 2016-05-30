@@ -19,6 +19,13 @@
 #include "gl-journal-model.h"
 #include "gl-journal.h"
 
+/* Details of match fields */
+typedef struct GlQueryItem
+{
+    gchar *field_name;
+    gchar *field_value;
+} GlQueryItem;
+
 struct _GlJournalModel
 {
     GObject parent_instance;
@@ -222,6 +229,51 @@ gl_journal_model_set_matches (GlJournalModel      *model,
     gl_journal_set_matches (model->journal, matches);
 
     gl_journal_model_fetch_more_entries (model, FALSE);
+}
+
+/* Free the given @queryitem */
+static void
+gl_query_item_free (GlQueryItem *queryitem)
+{
+    g_free (queryitem->field_name);
+    g_free (queryitem->field_value);
+
+    g_slice_free (GlQueryItem, queryitem);
+}
+
+/* Free the given @query */
+static void
+gl_query_free (GlQuery *query)
+{
+    g_ptr_array_free (query->queryitems, TRUE);
+
+    g_slice_free (GlQuery, query);
+}
+
+GlQuery *
+gl_query_new (void)
+{
+    GlQuery *query;
+
+    query = g_slice_new (GlQuery);
+
+    query->queryitems = g_ptr_array_new_with_free_func ((GDestroyNotify) gl_query_item_free);
+
+    return query;
+}
+
+static GlQueryItem *
+gl_query_item_new (const gchar *field_name,
+                   const gchar *field_value)
+{
+    GlQueryItem *queryitem;
+
+    queryitem = g_slice_new (GlQueryItem);
+
+    queryitem->field_name = g_strdup (field_name);
+    queryitem->field_value = g_strdup (field_value);
+
+    return queryitem;
 }
 
 gchar *
