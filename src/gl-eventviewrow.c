@@ -180,6 +180,11 @@ gl_event_view_row_construct_category_label (GlEventViewRow *row,
 {
     gint uid;
     GlEventViewRowPrivate *priv;
+    const gchar *entry_uid_string;
+    gint entry_uid;
+
+    entry_uid_string = gl_journal_entry_get_uid (entry);
+    entry_uid = entry_uid_string ? atoi (entry_uid_string) : -1;
 
     uid = gl_util_get_uid ();
     priv = gl_event_view_row_get_instance_private (row);
@@ -192,7 +197,7 @@ gl_event_view_row_construct_category_label (GlEventViewRow *row,
     if ((g_strcmp0 (gl_journal_entry_get_transport (entry), "kernel") == 0
          || g_strcmp0 (gl_journal_entry_get_transport (entry), "stdout") == 0
          || g_strcmp0 (gl_journal_entry_get_transport (entry), "syslog") == 0)
-        && gl_journal_entry_get_uid (entry) == uid)
+         && entry_uid == uid)
     {
         priv->category_label = gtk_label_new (_("Applications"));
     }

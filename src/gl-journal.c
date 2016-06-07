@@ -38,7 +38,7 @@ struct _GlJournalEntry
   gchar *transport;
   gchar *catalog;
   guint priority;
-  gint uid;
+  gchar *uid;
 };
 
 G_DEFINE_TYPE (GlJournalEntry, gl_journal_entry, G_TYPE_OBJECT);
@@ -363,7 +363,6 @@ _gl_journal_query_entry (GlJournal *self)
     sd_journal *journal;
     GError *error = NULL;
     gchar *priority;
-    gchar *uid;
 
     priv = gl_journal_get_instance_private (self);
     journal = priv->journal;
@@ -479,17 +478,13 @@ _gl_journal_query_entry (GlJournal *self)
         g_clear_error (&error);
     }
 
-    uid = gl_journal_get_data (self, "_UID", &error);
+    entry->uid = gl_journal_get_data (self, "_UID", &error);
 
     if (error != NULL)
     {
         g_debug ("Error while getting uid from journal: %s", error->message);
         g_clear_error (&error);
     }
-
-    /* We store an invalid or non-existent UID as -1 */
-    entry->uid = uid ? atoi (uid) : -1;
-    g_free (uid);
 
     return entry;
 
@@ -681,6 +676,7 @@ gl_journal_entry_finalize (GObject *object)
   g_free (entry->kernel_device);
   g_free (entry->audit_session);
   g_free (entry->transport);
+  g_free (entry->uid);
 
   G_OBJECT_CLASS (gl_journal_entry_parent_class)->finalize (object);
 }
@@ -757,10 +753,10 @@ gl_journal_entry_get_priority (GlJournalEntry *entry)
   return entry->priority;
 }
 
-gint
+const gchar *
 gl_journal_entry_get_uid (GlJournalEntry *entry)
 {
-  g_return_val_if_fail (GL_IS_JOURNAL_ENTRY (entry), -1);
+  g_return_val_if_fail (GL_IS_JOURNAL_ENTRY (entry), NULL);
 
   return entry->uid;
 }

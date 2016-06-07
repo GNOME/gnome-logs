@@ -86,7 +86,7 @@ const gchar *           gl_journal_entry_get_audit_session              (GlJourn
 const gchar *           gl_journal_entry_get_transport                  (GlJournalEntry *entry);
 const gchar *           gl_journal_entry_get_catalog                    (GlJournalEntry *entry);
 guint                   gl_journal_entry_get_priority                   (GlJournalEntry *entry);
-gint                    gl_journal_entry_get_uid                        (GlJournalEntry *entry);
+const gchar *           gl_journal_entry_get_uid                        (GlJournalEntry *entry);
 
 G_END_DECLS
 
