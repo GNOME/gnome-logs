@@ -1,3 +1,14 @@
+GNOME Logs 3.21.3
+=================
+
+* substitute a newline character in single-line strings from Pranav Ganorkar
+* toolstip string improvement from Jonathan Kang
+* GSettings schema translation improvements
+* use AM_DISTCHECK_CONFIGURE_FLAGS
+* updates to Vietnamese, Persian, Hungarian, Spanish, Swedish, Occitan,
+  Friulian, Portuguese, German, Turkish, Indonesian Brazilian Portuguese and
+  Slovak translations
+
 GNOME Logs 3.20.0
 =================
 
