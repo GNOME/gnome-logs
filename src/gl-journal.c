@@ -565,8 +565,8 @@ create_boot_id_match_string (void)
  * beginning.
  */
 void
-gl_journal_set_matches (GlJournal           *journal,
-                        const gchar * const *matches)
+gl_journal_set_matches (GlJournal *journal,
+                        GPtrArray *matches)
 {
     GlJournalPrivate *priv = gl_journal_get_instance_private (journal);
     GPtrArray *mandatory_fields;
@@ -582,25 +582,29 @@ gl_journal_set_matches (GlJournal           *journal,
     sd_journal_flush_matches (priv->journal);
 
     mandatory_fields = g_ptr_array_new ();
-    for (i = 0; matches[i]; i++)
+    for (i = 0; i < matches->len; i++)
     {
         /* matches without a value should only check for existence.
          * systemd doesn't support that, so let's remember them to
          * filter out later.
          */
-        if (strchr (matches[i], '=') == NULL)
+        const gchar *match;
+
+        match = g_ptr_array_index (matches, i);
+
+        if (strchr (match, '=') == NULL)
         {
-            g_ptr_array_add (mandatory_fields, g_strdup (matches[i]));
+            g_ptr_array_add (mandatory_fields, g_strdup (match));
             continue;
         }
 
-        if (g_str_has_prefix (matches[i], "_BOOT_ID="))
+        if (g_str_has_prefix (match, "_BOOT_ID="))
           has_boot_id = TRUE;
 
-        r = sd_journal_add_match (priv->journal, matches[i], 0);
+        r = sd_journal_add_match (priv->journal, match, 0);
         if (r < 0)
         {
-            g_critical ("Failed to add match '%s': %s", matches[i], g_strerror (-r));
+            g_critical ("Failed to add match '%s': %s", match, g_strerror (-r));
             break;
         }
     }
@@ -611,16 +615,16 @@ gl_journal_set_matches (GlJournal           *journal,
     /* take events from this boot only, unless _BOOT_ID was in @matches */
     if (!has_boot_id)
     {
-        gchar *match;
+        gchar *boot_match;
 
-        match = create_boot_id_match_string ();
-        if (match)
+        boot_match = create_boot_id_match_string ();
+        if (boot_match)
         {
-            r = sd_journal_add_match (priv->journal, match, 0);
+            r = sd_journal_add_match (priv->journal, boot_match, 0);
             if (r < 0)
-                g_warning ("Failed to add match '%s': %s", matches[i], g_strerror (-r));
+                g_warning ("Failed to add match '%s': %s", boot_match, g_strerror (-r));
 
-            g_free (match);
+            g_free (boot_match);
         }
     }
 

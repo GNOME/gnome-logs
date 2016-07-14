@@ -287,9 +287,6 @@ gl_query_get_exact_matches (GlQuery *query)
 
     g_ptr_array_foreach (query->queryitems, (GFunc) get_exact_match_string, matches);
 
-    /* Add NULL terminator to determine end of pointer array */
-    g_ptr_array_add (matches, NULL);
-
     return matches;
 }
 
@@ -302,7 +299,7 @@ gl_journal_model_process_query (GlJournalModel *model)
     /* Set the exact matches first */
     category_matches = gl_query_get_exact_matches (model->query);
 
-    gl_journal_set_matches (model->journal, (const gchar * const *) category_matches->pdata);
+    gl_journal_set_matches (model->journal, category_matches);
 
     /* Start re-population of the journal */
     gl_journal_model_fetch_more_entries (model, FALSE);
