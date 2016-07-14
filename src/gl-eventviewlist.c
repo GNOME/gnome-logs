@@ -371,22 +371,16 @@ get_current_boot_id (const gchar *boot_match)
     return g_strdup (boot_value);
 }
 
-/* Create query object according to category and set it on journal model */
-static GlQuery *
-create_query_object (GlJournalModel *model,
-                     GlCategoryList *list,
-                     const gchar *current_boot_match,
-                     const gchar *search_text)
+static void
+query_add_category_matches (GlQuery *query,
+                            GlCategoryList *list,
+                            const gchar *boot_match)
 {
-    GlQuery *query;
     gchar *boot_id;
     GlCategoryListFilter filter;
 
-    /* Create new query object */
-    query = gl_query_new ();
-
     /* Get current boot id */
-    boot_id = get_current_boot_id (current_boot_match);
+    boot_id = get_current_boot_id (boot_match);
 
     /* Add boot match for all the categories */
     gl_query_add_match (query, "_BOOT_ID", boot_id, SEARCH_TYPE_EXACT);
@@ -452,13 +446,42 @@ create_query_object (GlJournalModel *model,
             g_assert_not_reached ();
     }
 
-    /* Add Substring Matches */
-    gl_query_add_match (query, "_MESSAGE", search_text, SEARCH_TYPE_SUBSTRING);
+    g_free (boot_id);
+}
+
+static void
+query_add_search_matches (GlQuery *query,
+                          const gchar *search_text)
+{
+    /* Add substring matches */
+    gl_query_add_match (query, "_PID", search_text, SEARCH_TYPE_SUBSTRING);
+    gl_query_add_match (query, "_UID", search_text, SEARCH_TYPE_SUBSTRING);
+    gl_query_add_match (query, "_GID", search_text, SEARCH_TYPE_SUBSTRING);
+    gl_query_add_match (query, "MESSAGE", search_text, SEARCH_TYPE_SUBSTRING);
     gl_query_add_match (query, "_COMM", search_text, SEARCH_TYPE_SUBSTRING);
+    gl_query_add_match (query, "_SYSTEMD_UNIT", search_text, SEARCH_TYPE_SUBSTRING);
     gl_query_add_match (query, "_KERNEL_DEVICE", search_text, SEARCH_TYPE_SUBSTRING);
     gl_query_add_match (query, "_AUDIT_SESSION", search_text, SEARCH_TYPE_SUBSTRING);
+    gl_query_add_match (query, "_EXE", search_text, SEARCH_TYPE_SUBSTRING);
+}
 
-    g_free (boot_id);
+/* Create query object according to selected category */
+static GlQuery *
+create_query_object (GlEventViewList *view)
+{
+    GlEventViewListPrivate *priv;
+    GlQuery *query;
+    GlCategoryList *list;
+
+    priv = gl_event_view_list_get_instance_private (view);
+    list = GL_CATEGORY_LIST (priv->categories);
+
+    /* Create new query object */
+    query = gl_query_new ();
+
+    query_add_category_matches (query, list, priv->boot_match);
+
+    query_add_search_matches (query, priv->search_text);
 
     return query;
 }
@@ -478,7 +501,7 @@ on_notify_category (GlCategoryList *list,
     priv = gl_event_view_list_get_instance_private (view);
 
     /* Create the query object */
-    query = create_query_object (priv->journal_model, list, priv->boot_match, priv->search_text);
+    query = create_query_object (view);
 
     /* Set the created query on the journal model */
     gl_journal_model_take_query (priv->journal_model, query);
@@ -593,20 +616,20 @@ static void
 on_search_entry_changed (GtkSearchEntry *entry,
                          gpointer user_data)
 {
+    GlEventViewList *view;
     GlEventViewListPrivate *priv;
-    GlCategoryList *categories;
     GlQuery *query;
 
-    priv = gl_event_view_list_get_instance_private (GL_EVENT_VIEW_LIST (user_data));
+    view = GL_EVENT_VIEW_LIST (user_data);
 
-    categories = GL_CATEGORY_LIST (priv->categories);
+    priv = gl_event_view_list_get_instance_private (view);
 
     g_free (priv->search_text);
 
     priv->search_text = g_strdup (gtk_entry_get_text (GTK_ENTRY (priv->search_entry)));
 
     /* Create the query object */
-    query = create_query_object (priv->journal_model, categories, priv->boot_match, priv->search_text);
+    query = create_query_object (view);
 
     /* Set the created query on the journal model */
     gl_journal_model_take_query (priv->journal_model, query);

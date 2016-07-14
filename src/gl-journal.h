@@ -87,6 +87,10 @@ const gchar *           gl_journal_entry_get_transport                  (GlJourn
 const gchar *           gl_journal_entry_get_catalog                    (GlJournalEntry *entry);
 guint                   gl_journal_entry_get_priority                   (GlJournalEntry *entry);
 const gchar *           gl_journal_entry_get_uid                        (GlJournalEntry *entry);
+const gchar *           gl_journal_entry_get_pid                        (GlJournalEntry *entry);
+const gchar *           gl_journal_entry_get_gid                        (GlJournalEntry *entry);
+const gchar *           gl_journal_entry_get_systemd_unit               (GlJournalEntry *entry);
+const gchar *           gl_journal_entry_get_executable_path            (GlJournalEntry *entry);
 
 G_END_DECLS
 

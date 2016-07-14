@@ -449,6 +449,22 @@ tokenize_search_string (gchar *search_text)
     token_array = g_ptr_array_new_with_free_func (g_free);
     scanner = g_scanner_new (NULL);
     scanner->config->cset_skip_characters = " =\t\n";
+
+    /* All the characters used in the journal field values */
+    scanner->config->cset_identifier_first = (
+                                              G_CSET_a_2_z
+                                              G_CSET_A_2_Z
+                                              G_CSET_DIGITS
+                                              "/_.-@:\\+"
+                                              );
+
+    scanner->config->cset_identifier_nth = (
+                                            G_CSET_a_2_z
+                                            G_CSET_A_2_Z
+                                            G_CSET_DIGITS
+                                            "/_.-@:\\"
+                                            );
+
     g_scanner_input_text (scanner, search_text, strlen (search_text));
 
     do
@@ -535,39 +551,99 @@ gl_query_item_get_entry_parameter (GlQueryItem *search_match,
     const gchar *message;
     const gchar *kernel_device;
     const gchar *audit_session;
+    const gchar *pid;
+    const gchar *uid;
+    const gchar *gid;
+    const gchar *systemd_unit;
+    const gchar *executable_path;
 
     comm = gl_journal_entry_get_command_line (entry);
     message = gl_journal_entry_get_message (entry);
     kernel_device = gl_journal_entry_get_kernel_device (entry);
     audit_session = gl_journal_entry_get_audit_session (entry);
+    systemd_unit = gl_journal_entry_get_systemd_unit (entry);
+    pid = gl_journal_entry_get_pid (entry);
+    uid = gl_journal_entry_get_uid (entry);
+    gid = gl_journal_entry_get_gid (entry);
+    executable_path = gl_journal_entry_get_executable_path (entry);
 
     if (case_sensitive)
     {
         if (strstr ("_MESSAGE", search_match->field_name))
+        {
             return message;
-
+        }
         else if (strstr ("_COMM", search_match->field_name))
+        {
             return comm;
-
+        }
         else if (strstr ("_KERNEL_DEVICE", search_match->field_name))
+        {
             return kernel_device;
-
+        }
         else if (strstr ("_AUDIT_SESSION", search_match->field_name))
+        {
             return audit_session;
+        }
+        else if (strstr ("_SYSTEMD_UNIT", search_match->field_name))
+        {
+            return systemd_unit;
+        }
+        else if (strstr ("_PID", search_match->field_name))
+        {
+            return pid;
+        }
+        else if (strstr ("_UID", search_match->field_name))
+        {
+            return uid;
+        }
+        else if (strstr ("_GID", search_match->field_name))
+        {
+            return gid;
+        }
+        else if (strstr ("_EXE", search_match->field_name))
+        {
+            return executable_path;
+        }
     }
     else
     {
         if (utf8_strcasestr ("_message", search_match->field_name))
+        {
             return message;
-
+        }
         else if (utf8_strcasestr ("_comm", search_match->field_name))
+        {
             return comm;
-
+        }
         else if (utf8_strcasestr ("_kernel_device", search_match->field_name))
+        {
             return kernel_device;
-
+        }
         else if (utf8_strcasestr ("_audit_session", search_match->field_name))
+        {
             return audit_session;
+        }
+        else if (utf8_strcasestr ("_systemd_unit", search_match->field_name))
+        {
+            return systemd_unit;
+        }
+        else if (utf8_strcasestr ("_pid", search_match->field_name))
+        {
+            return pid;
+        }
+        else if (utf8_strcasestr ("_uid", search_match->field_name))
+        {
+            return uid;
+        }
+        else if (utf8_strcasestr ("_gid", search_match->field_name))
+        {
+            return gid;
+        }
+        else if (utf8_strcasestr ("_exe", search_match->field_name))
+        {
+            return executable_path;
+        }
     }
 
     return NULL;

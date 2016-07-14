@@ -39,6 +39,10 @@ struct _GlJournalEntry
   gchar *catalog;
   guint priority;
   gchar *uid;
+  gchar *pid;
+  gchar *gid;
+  gchar *systemd_unit;
+  gchar *executable_path;
 };
 
 G_DEFINE_TYPE (GlJournalEntry, gl_journal_entry, G_TYPE_OBJECT);
@@ -486,6 +490,38 @@ _gl_journal_query_entry (GlJournal *self)
         g_clear_error (&error);
     }
 
+    entry->pid = gl_journal_get_data (self, "_PID", &error);
+
+    if (error != NULL)
+    {
+        g_debug ("Error while getting pid from journal: %s", error->message);
+        g_clear_error (&error);
+    }
+
+    entry->gid = gl_journal_get_data (self, "_GID", &error);
+
+    if (error != NULL)
+    {
+        g_debug ("Error while getting gid from journal: %s", error->message);
+        g_clear_error (&error);
+    }
+
+    entry->systemd_unit = gl_journal_get_data (self, "_SYSTEMD_UNIT", &error);
+
+    if (error != NULL)
+    {
+        g_debug ("Error while getting systemd unit from journal: %s", error->message);
+        g_clear_error (&error);
+    }
+
+    entry->executable_path = gl_journal_get_data (self, "_EXE", &error);
+
+    if (error != NULL)
+    {
+        g_debug ("Error while getting executable path from journal: %s", error->message);
+        g_clear_error (&error);
+    }
+
     return entry;
 
 out:
@@ -677,6 +713,10 @@ gl_journal_entry_finalize (GObject *object)
   g_free (entry->audit_session);
   g_free (entry->transport);
   g_free (entry->uid);
+  g_free (entry->pid);
+  g_free (entry->gid);
+  g_free (entry->systemd_unit);
+  g_free (entry->executable_path);
 
   G_OBJECT_CLASS (gl_journal_entry_parent_class)->finalize (object);
 }
@@ -759,4 +799,36 @@ gl_journal_entry_get_uid (GlJournalEntry *entry)
   g_return_val_if_fail (GL_IS_JOURNAL_ENTRY (entry), NULL);
 
   return entry->uid;
+}
+
+const gchar *
+gl_journal_entry_get_pid (GlJournalEntry *entry)
+{
+  g_return_val_if_fail (GL_IS_JOURNAL_ENTRY (entry), NULL);
+
+  return entry->pid;
+}
+
+const gchar *
+gl_journal_entry_get_gid (GlJournalEntry *entry)
+{
+  g_return_val_if_fail (GL_IS_JOURNAL_ENTRY (entry), NULL);
+
+  return entry->gid;
+}
+
+const gchar *
+gl_journal_entry_get_systemd_unit (GlJournalEntry *entry)
+{
+  g_return_val_if_fail (GL_IS_JOURNAL_ENTRY (entry), NULL);
+
+  return entry->systemd_unit;
+}
+
+const gchar *
+gl_journal_entry_get_executable_path (GlJournalEntry *entry)
+{
+  g_return_val_if_fail (GL_IS_JOURNAL_ENTRY (entry), NULL);
+
+  return entry->executable_path;
 }
