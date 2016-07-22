@@ -25,10 +25,25 @@
                         <property name="visible">True</property>
                         <signal name="notify::search-mode-enabled" handler="on_search_bar_notify_search_mode_enabled"/>
                         <child>
-                            <object class="GtkSearchEntry" id="search_entry">
+                            <object class="GtkBox" id="search_entry_box">
+                                <property name="orientation">horizontal</property>
                                 <property name="visible">True</property>
-                                <property name="width-request">400</property>
-                                <signal name="search-changed" handler="on_search_entry_changed" />
+                                <style>
+                                    <class name="linked"/>
+                                </style>
+                                <child>
+                                    <object class="GtkSearchEntry" id="search_entry">
+                                        <property name="visible">True</property>
+                                        <property name="width-request">400</property>
+                                        <signal name="search-changed" handler="on_search_entry_changed" />
+                                    </object>
+                                </child>
+                                <child>
+                                    <object class="GtkMenuButton" id="search_dropdown_button">
+                                        <property name="tooltip-text" translatable="yes">Select journal field and timestamp range filtering options</property>
+                                        <property name="visible">True</property>
+                                    </object>
+                                </child>
                             </object>
                         </child>
                     </object>

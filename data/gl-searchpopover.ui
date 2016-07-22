@@ -1,0 +1,210 @@
+<interface domain="gnome-logs">
+    <template class="GlSearchPopover" parent="GtkPopover">
+        <signal name="closed" handler="search_popover_closed"/>
+        <child>
+            <object class="GtkGrid" id="popover_grid">
+                <property name="visible">True</property>
+                <property name="border_width">20</property>
+                <property name="row_spacing">8</property>
+                <property name="column_spacing">18</property>
+                <child>
+                    <object class="GtkStack" id="parameter_stack">
+                        <property name="visible">True</property>
+                        <property name="vhomogeneous">False</property>
+                        <property name="transition_type">crossfade</property>
+                        <child>
+                            <object class="GtkButton" id="select_parameter_button">
+                                <property name="visible">True</property>
+                                <property name="can_focus">True</property>
+                                <property name="receives_default">True</property>
+                                <property name="tooltip_text" translatable="yes">Select a Journal Field to filter the Logs according to it</property>
+                                <signal name="clicked" handler="select_parameter_button_clicked"/>
+                                    <child>
+                                        <object class="GtkBox" id="parameter_filter_box">
+                                            <property name="visible">True</property>
+                                            <child>
+                                                <object class="GtkLabel" id="parameter_button_label">
+                                                    <property name="visible">True</property>
+                                                    <property name="hexpand">True</property>
+                                                    <property name="label" translatable="yes">All Available Fields</property>
+                                                    <property name="width_chars">30</property>
+                                                    <property name="xalign">0</property>
+                                                </object>
+                                                <packing>
+                                                    <property name="expand">False</property>
+                                                    <property name="fill">True</property>
+                                                    <property name="position">0</property>
+                                                </packing>
+                                            </child>
+                                            <child>
+                                                <object class="GtkImage" id="parameter_button_image">
+                                                    <property name="visible">True</property>
+                                                    <property name="icon_name">pan-down-symbolic</property>
+                                                </object>
+                                                <packing>
+                                                    <property name="expand">False</property>
+                                                    <property name="fill">True</property>
+                                                    <property name="position">1</property>
+                                                </packing>
+                                            </child>
+                                        </object>
+                                    </child>
+                            </object>
+                            <packing>
+                                <property name="name">parameter-button</property>
+                            </packing>
+                        </child>
+                        <child>
+                            <object class="GtkScrolledWindow" id="parameter_scrolled_window">
+                                <property name="height_request">150</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">True</property>
+                                <property name="shadow_type">in</property>
+                                <child>
+                                    <object class="GtkTreeView" id="parameter_treeview">
+                                        <property name="visible">True</property>
+                                        <property name="model">parameter_liststore</property>
+                                        <property name="headers-visible">False</property>
+                                        <property name="activate-on-single-click">True</property>
+                                        <signal name="row-activated" handler="on_parameter_treeview_row_activated"/>
+                                        <child>
+                                            <object class="GtkTreeViewColumn" id="parameter-column">
+                                                <property name="title">Parameters</property>
+                                                <property name="visible">True</property>
+                                                <child>
+                                                    <object class="GtkCellRendererText" id="test-renderer"/>
+                                                    <attributes>
+                                                        <attribute name="text">0</attribute>
+                                                    </attributes>
+                                                </child>
+                                            </object>
+                                        </child>
+                                        <child internal-child="selection">
+                                            <object class="GtkTreeSelection" id="selection">
+                                            <property name="mode">GTK_SELECTION_BROWSE</property>
+                                            </object>
+                                        </child>
+                                    </object>
+                                </child>
+                            </object>
+                            <packing>
+                                <property name="name">parameter-list</property>
+                                <property name="position">1</property>
+                            </packing>
+                        </child>
+                    </object>
+                    <packing>
+                        <property name="left_attach">0</property>
+                        <property name="top_attach">1</property>
+                        <property name="width">2</property>
+                    </packing>
+                </child>
+                <child>
+                    <object class="GtkStack" id="parameter_label_stack">
+                        <property name="visible">True</property>
+                        <child>
+                            <object class="GtkLabel" id="what_dim_label">
+                                <property name="visible">True</property>
+                                <property name="margin_top">10</property>
+                                <!-- Translators: What [journal fields to search in] -->
+                                <property name="label" translatable="yes">What</property>
+                                <property name="xalign">0</property>
+                                <style>
+                                  <class name="dim-label"/>
+                                </style>
+                            </object>
+                            <packing>
+                                <property name="name">what-label</property>
+                                <property name="title">page0</property>
+                            </packing>
+                        </child>
+                        <child>
+                            <object class="GtkLabel" id="select_parameter_dim_label">
+                                <property name="visible">True</property>
+                                <property name="margin_top">10</property>
+                                <property name="label" translatable="yes">Select Journal Field…</property>
+                                <property name="xalign">0</property>
+                                <style>
+                                  <class name="dim-label"/>
+                                </style>
+                            </object>
+                            <packing>
+                                <property name="name">select-parameter-label</property>
+                                <property name="title">page1</property>
+                                <property name="position">1</property>
+                            </packing>
+                        </child>
+                    </object>
+                    <packing>
+                        <property name="left_attach">0</property>
+                        <property name="top_attach">0</property>
+                        <property name="width">2</property>
+                    </packing>
+                </child>
+            </object>
+        </child>
+    </template>
+    <object class="GtkListStore" id="parameter_liststore">
+        <columns>
+            <column type="gchararray"/>
+            <column type="gboolean"/>
+            <column type="GlSearchPopoverJournalFieldFilter"/>
+        </columns>
+        <data>
+            <row>
+                <col id="0" translatable="yes">All Available Fields</col>
+                <col id="1">False</col>
+                <col id="2">GL_SEARCH_POPOVER_JOURNAL_FIELD_FILTER_ALL_AVAILABLE_FIELDS</col>
+            </row>
+            <row>
+                <col id="0">Separator</col>
+                <col id="1">True</col>
+            </row>
+            <row>
+                <col id="0" translatable="yes">PID</col>
+                <col id="1">False</col>
+                <col id="2">GL_SEARCH_POPOVER_JOURNAL_FIELD_FILTER_PID</col>
+            </row>
+            <row>
+                <col id="0" translatable="yes">UID</col>
+                <col id="1">False</col>
+                <col id="2">GL_SEARCH_POPOVER_JOURNAL_FIELD_FILTER_UID</col>
+            </row>
+            <row>
+                <col id="0" translatable="yes">GID</col>
+                <col id="1">False</col>
+                <col id="2">GL_SEARCH_POPOVER_JOURNAL_FIELD_FILTER_GID</col>
+            </row>
+            <row>
+                <col id="0" translatable="yes">Message</col>
+                <col id="1">False</col>
+                <col id="2">GL_SEARCH_POPOVER_JOURNAL_FIELD_FILTER_MESSAGE</col>
+            </row>
+            <row>
+                <col id="0" translatable="yes">Process Name</col>
+                <col id="1">False</col>
+                <col id="2">GL_SEARCH_POPOVER_JOURNAL_FIELD_FILTER_PROCESS_NAME</col>
+            </row>
+            <row>
+                <col id="0" translatable="yes">Systemd Unit</col>
+                <col id="1">False</col>
+                <col id="2">GL_SEARCH_POPOVER_JOURNAL_FIELD_FILTER_SYSTEMD_UNIT</col>
+            </row>
+            <row>
+                <col id="0" translatable="yes">Kernel Device</col>
+                <col id="1">False</col>
+                <col id="2">GL_SEARCH_POPOVER_JOURNAL_FIELD_FILTER_KERNEL_DEVICE</col>
+            </row>
+            <row>
+                <col id="0" translatable="yes">Audit Session</col>
+                <col id="1">False</col>
+                <col id="2">GL_SEARCH_POPOVER_JOURNAL_FIELD_FILTER_AUDIT_SESSION</col>
+            </row>
+            <row>
+                <col id="0" translatable="yes">Executable Path</col>
+                <col id="1">False</col>
+                <col id="2">GL_SEARCH_POPOVER_JOURNAL_FIELD_FILTER_EXECUTABLE_PATH</col>
+            </row>
+        </data>
+    </object>
+</interface>
