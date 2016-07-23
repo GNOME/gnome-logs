@@ -52,7 +52,8 @@ gnome_logs_enum_headers = \
 	$(srcdir)/src/gl-eventview.h \
 	$(srcdir)/src/gl-eventviewrow.h \
 	$(srcdir)/src/gl-util.h \
-	$(srcdir)/src/gl-searchpopover.h
+	$(srcdir)/src/gl-searchpopover.h \
+	$(srcdir)/src/gl-journal-model.h
 
 noinst_gnome_logs_headers = \
 	src/gl-application.h \

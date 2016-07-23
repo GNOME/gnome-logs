@@ -245,6 +245,7 @@ gl_query_new (void)
     query = g_slice_new (GlQuery);
 
     query->queryitems = g_ptr_array_new_with_free_func ((GDestroyNotify) gl_query_item_free);
+    query->search_type = GL_QUERY_SEARCH_TYPE_SUBSTRING;
 
     return query;
 }
@@ -263,6 +264,12 @@ gl_query_item_new (const gchar *field_name,
     queryitem->search_type = search_type;
 
     return queryitem;
+}
+
+void
+gl_query_set_search_type (GlQuery *query, GlQuerySearchType search_type)
+{
+    query->search_type = search_type;
 }
 
 static gchar *
@@ -287,7 +294,7 @@ populate_exact_matches (GlQueryItem *queryitem, GPtrArray *matches)
 {
     gchar *match;
 
-    if (queryitem->search_type == SEARCH_TYPE_EXACT)
+    if (queryitem->search_type == GL_QUERY_SEARCH_TYPE_EXACT)
     {
         match = gl_query_item_create_match_string (queryitem);
 
@@ -311,7 +318,7 @@ gl_query_get_exact_matches (GlQuery *query)
 static void
 populate_substring_matches (GlQueryItem *queryitem, GPtrArray *matches)
 {
-    if (queryitem->search_type == SEARCH_TYPE_SUBSTRING)
+    if (queryitem->search_type == GL_QUERY_SEARCH_TYPE_SUBSTRING)
     {
         g_ptr_array_add (matches, queryitem);
     }
@@ -338,6 +345,22 @@ gl_journal_model_process_query (GlJournalModel *model)
 
     /* Set the exact matches first */
     category_matches = gl_query_get_exact_matches (model->query);
+
+    /* Get the search string of the exact match field */
+    if (model->query->search_type == GL_QUERY_SEARCH_TYPE_EXACT)
+    {
+        gchar *search_match;
+        gchar *field_value_pos;
+
+        /* Get the search match string */
+        search_match = g_ptr_array_index (category_matches, category_matches->len - 1);
+
+        field_value_pos = strchr (search_match, '=');
+
+        /* If it has invalid string value remove it from the matches */
+        if (!field_value_pos || !*(field_value_pos + 1))
+            g_ptr_array_remove (category_matches, search_match);
+    }
 
     gl_journal_set_matches (model->journal, category_matches);
 
@@ -742,7 +765,7 @@ calculate_match (GlJournalEntry *entry,
 
 
         /* check for matches */
-        token_match = gl_query_item_new (field_name, field_value, SEARCH_TYPE_SUBSTRING);
+        token_match = gl_query_item_new (field_name, field_value, GL_QUERY_SEARCH_TYPE_SUBSTRING);
 
         field_name_case = is_string_case_sensitive (field_name);
         field_value_case = is_string_case_sensitive (field_value);
@@ -843,28 +866,36 @@ search_in_entry (GlJournalEntry *entry,
 
     search_matches = gl_query_get_substring_matches (query);
 
-    /* Get search text from a search match */
-    search_match = g_ptr_array_index (search_matches, 0);
-
-    /* check for null and empty strings */
-    if (!search_match->field_value || !*(search_match->field_value))
+    /* Check if there is atleast one substring queryitem */
+    if (search_matches->len)
     {
-        matches = TRUE;
+        /* Get search text from a search match */
+        search_match = g_ptr_array_index (search_matches, 0);
+
+        /* check for null and empty strings */
+        if (!search_match->field_value || !*(search_match->field_value))
+        {
+            matches = TRUE;
+        }
+        else
+        {
+            gchar *search_text;
+
+            search_text = search_match->field_value;
+
+            /* Tokenize the entered text */
+            token_array = tokenize_search_string (search_text);
+
+            /* calculate match depending on the number of tokens */
+            matches = calculate_match (entry, token_array, search_matches);
+
+            /* Free variables */
+            g_ptr_array_free (token_array, TRUE);
+        }
     }
     else
     {
-        gchar *search_text;
-
-        search_text = search_match->field_value;
-
-        /* Tokenize the entered text */
-        token_array = tokenize_search_string (search_text);
-
-        /* calculate match depending on the number of tokens */
-        matches = calculate_match (entry, token_array, search_matches);
-
-        /* Free variables */
-        g_ptr_array_free (token_array, TRUE);
+        matches = TRUE;
     }
 
     g_ptr_array_free (search_matches, TRUE);

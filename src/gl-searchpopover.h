@@ -20,6 +20,7 @@
 #define GL_SEARCH_POPOVER_H_
 
 #include <gtk/gtk.h>
+#include "gl-journal-model.h"
 
 G_BEGIN_DECLS
 
@@ -43,6 +44,7 @@ G_DECLARE_FINAL_TYPE (GlSearchPopover, gl_search_popover, GL, SEARCH_POPOVER, Gt
 
 GtkWidget * gl_search_popover_new (void);
 GlSearchPopoverJournalFieldFilter gl_search_popover_get_journal_search_field (GlSearchPopover *popover);
+GlQuerySearchType gl_search_popover_get_query_search_type (GlSearchPopover *popover);
 
 G_END_DECLS
 

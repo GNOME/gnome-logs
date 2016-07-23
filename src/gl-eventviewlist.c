@@ -53,6 +53,7 @@ typedef struct
     GtkWidget *search_entry;
     GtkWidget *search_dropdown_button;
     GlSearchPopoverJournalFieldFilter journal_search_field;
+    GlQuerySearchType search_type;
     gchar *search_text;
     const gchar *boot_match;
 } GlEventViewListPrivate;
@@ -386,7 +387,7 @@ query_add_category_matches (GlQuery *query,
     boot_id = get_current_boot_id (boot_match);
 
     /* Add boot match for all the categories */
-    gl_query_add_match (query, "_BOOT_ID", boot_id, SEARCH_TYPE_EXACT);
+    gl_query_add_match (query, "_BOOT_ID", boot_id, GL_QUERY_SEARCH_TYPE_EXACT);
 
     /* Add exact matches according to selected category */
     filter = gl_category_list_get_category (list);
@@ -396,10 +397,10 @@ query_add_category_matches (GlQuery *query,
         case GL_CATEGORY_LIST_FILTER_IMPORTANT:
             {
               /* Alert or emergency priority. */
-              gl_query_add_match (query, "PRIORITY", "0", SEARCH_TYPE_EXACT);
-              gl_query_add_match (query, "PRIORITY", "1", SEARCH_TYPE_EXACT);
-              gl_query_add_match (query, "PRIORITY", "2", SEARCH_TYPE_EXACT);
-              gl_query_add_match (query, "PRIORITY", "3", SEARCH_TYPE_EXACT);
+              gl_query_add_match (query, "PRIORITY", "0", GL_QUERY_SEARCH_TYPE_EXACT);
+              gl_query_add_match (query, "PRIORITY", "1", GL_QUERY_SEARCH_TYPE_EXACT);
+              gl_query_add_match (query, "PRIORITY", "2", GL_QUERY_SEARCH_TYPE_EXACT);
+              gl_query_add_match (query, "PRIORITY", "3", GL_QUERY_SEARCH_TYPE_EXACT);
             }
             break;
 
@@ -417,10 +418,10 @@ query_add_category_matches (GlQuery *query,
 
                 uid_str = get_uid_match_field_value ();
 
-                gl_query_add_match (query, "_TRANSPORT", "journal", SEARCH_TYPE_EXACT);
-                gl_query_add_match (query, "_TRANSPORT", "stdout", SEARCH_TYPE_EXACT);
-                gl_query_add_match (query, "_TRANSPORT", "syslog", SEARCH_TYPE_EXACT);
-                gl_query_add_match (query, "_UID", uid_str, SEARCH_TYPE_EXACT);
+                gl_query_add_match (query, "_TRANSPORT", "journal", GL_QUERY_SEARCH_TYPE_EXACT);
+                gl_query_add_match (query, "_TRANSPORT", "stdout", GL_QUERY_SEARCH_TYPE_EXACT);
+                gl_query_add_match (query, "_TRANSPORT", "syslog", GL_QUERY_SEARCH_TYPE_EXACT);
+                gl_query_add_match (query, "_UID", uid_str, GL_QUERY_SEARCH_TYPE_EXACT);
 
                 g_free (uid_str);
             }
@@ -428,20 +429,20 @@ query_add_category_matches (GlQuery *query,
 
         case GL_CATEGORY_LIST_FILTER_SYSTEM:
             {
-                gl_query_add_match (query, "_TRANSPORT", "kernel", SEARCH_TYPE_EXACT);
+                gl_query_add_match (query, "_TRANSPORT", "kernel", GL_QUERY_SEARCH_TYPE_EXACT);
             }
             break;
 
         case GL_CATEGORY_LIST_FILTER_HARDWARE:
             {
-                gl_query_add_match (query, "_TRANSPORT", "kernel", SEARCH_TYPE_EXACT);
-                gl_query_add_match ( query, "_KERNEL_DEVICE", NULL, SEARCH_TYPE_EXACT);
+                gl_query_add_match (query, "_TRANSPORT", "kernel", GL_QUERY_SEARCH_TYPE_EXACT);
+                gl_query_add_match ( query, "_KERNEL_DEVICE", NULL, GL_QUERY_SEARCH_TYPE_EXACT);
             }
             break;
 
         case GL_CATEGORY_LIST_FILTER_SECURITY:
             {
-                gl_query_add_match (query, "_AUDIT_SESSION", NULL, SEARCH_TYPE_EXACT);
+                gl_query_add_match (query, "_AUDIT_SESSION", NULL, GL_QUERY_SEARCH_TYPE_EXACT);
             }
             break;
 
@@ -455,47 +456,48 @@ query_add_category_matches (GlQuery *query,
 static void
 query_add_search_matches (GlQuery *query,
                           const gchar *search_text,
-                          GlSearchPopoverJournalFieldFilter journal_search_field)
+                          GlSearchPopoverJournalFieldFilter journal_search_field,
+                          GlQuerySearchType search_type)
 {
     switch (journal_search_field)
     {
         case GL_SEARCH_POPOVER_JOURNAL_FIELD_FILTER_ALL_AVAILABLE_FIELDS:
-            gl_query_add_match (query, "_PID", search_text, SEARCH_TYPE_SUBSTRING);
-            gl_query_add_match (query, "_UID", search_text, SEARCH_TYPE_SUBSTRING);
-            gl_query_add_match (query, "_GID", search_text, SEARCH_TYPE_SUBSTRING);
-            gl_query_add_match (query, "MESSAGE", search_text, SEARCH_TYPE_SUBSTRING);
-            gl_query_add_match (query, "_COMM", search_text, SEARCH_TYPE_SUBSTRING);
-            gl_query_add_match (query, "_SYSTEMD_UNIT", search_text, SEARCH_TYPE_SUBSTRING);
-            gl_query_add_match (query, "_KERNEL_DEVICE", search_text, SEARCH_TYPE_SUBSTRING);
-            gl_query_add_match (query, "_AUDIT_SESSION", search_text, SEARCH_TYPE_SUBSTRING);
-            gl_query_add_match (query, "_EXE", search_text, SEARCH_TYPE_SUBSTRING);
+            gl_query_add_match (query, "_PID", search_text, GL_QUERY_SEARCH_TYPE_SUBSTRING);
+            gl_query_add_match (query, "_UID", search_text, GL_QUERY_SEARCH_TYPE_SUBSTRING);
+            gl_query_add_match (query, "_GID", search_text, GL_QUERY_SEARCH_TYPE_SUBSTRING);
+            gl_query_add_match (query, "MESSAGE", search_text, GL_QUERY_SEARCH_TYPE_SUBSTRING);
+            gl_query_add_match (query, "_COMM", search_text, GL_QUERY_SEARCH_TYPE_SUBSTRING);
+            gl_query_add_match (query, "_SYSTEMD_UNIT", search_text, GL_QUERY_SEARCH_TYPE_SUBSTRING);
+            gl_query_add_match (query, "_KERNEL_DEVICE", search_text, GL_QUERY_SEARCH_TYPE_SUBSTRING);
+            gl_query_add_match (query, "_AUDIT_SESSION", search_text, GL_QUERY_SEARCH_TYPE_SUBSTRING);
+            gl_query_add_match (query, "_EXE", search_text, GL_QUERY_SEARCH_TYPE_SUBSTRING);
             break;
         case GL_SEARCH_POPOVER_JOURNAL_FIELD_FILTER_PID:
-            gl_query_add_match (query, "_PID", search_text, SEARCH_TYPE_SUBSTRING);
+            gl_query_add_match (query, "_PID", search_text, search_type);
             break;
         case GL_SEARCH_POPOVER_JOURNAL_FIELD_FILTER_UID:
-            gl_query_add_match (query, "_UID", search_text, SEARCH_TYPE_SUBSTRING);
+            gl_query_add_match (query, "_UID", search_text, search_type);
             break;
         case GL_SEARCH_POPOVER_JOURNAL_FIELD_FILTER_GID:
-            gl_query_add_match (query, "_GID", search_text, SEARCH_TYPE_SUBSTRING);
+            gl_query_add_match (query, "_GID", search_text, search_type);
             break;
         case GL_SEARCH_POPOVER_JOURNAL_FIELD_FILTER_MESSAGE:
-            gl_query_add_match (query, "MESSAGE", search_text, SEARCH_TYPE_SUBSTRING);
+            gl_query_add_match (query, "MESSAGE", search_text, search_type);
             break;
         case GL_SEARCH_POPOVER_JOURNAL_FIELD_FILTER_PROCESS_NAME:
-            gl_query_add_match (query, "_COMM", search_text, SEARCH_TYPE_SUBSTRING);
+            gl_query_add_match (query, "_COMM", search_text, search_type);
             break;
         case GL_SEARCH_POPOVER_JOURNAL_FIELD_FILTER_SYSTEMD_UNIT:
-            gl_query_add_match (query, "_SYSTEMD_UNIT", search_text, SEARCH_TYPE_SUBSTRING);
+            gl_query_add_match (query, "_SYSTEMD_UNIT", search_text, search_type);
             break;
         case GL_SEARCH_POPOVER_JOURNAL_FIELD_FILTER_KERNEL_DEVICE:
-            gl_query_add_match (query, "_KERNEL_DEVICE", search_text, SEARCH_TYPE_SUBSTRING);
+            gl_query_add_match (query, "_KERNEL_DEVICE", search_text, search_type);
             break;
         case GL_SEARCH_POPOVER_JOURNAL_FIELD_FILTER_AUDIT_SESSION:
-            gl_query_add_match (query, "_AUDIT_SESSION", search_text, SEARCH_TYPE_SUBSTRING);
+            gl_query_add_match (query, "_AUDIT_SESSION", search_text, search_type);
             break;
         case GL_SEARCH_POPOVER_JOURNAL_FIELD_FILTER_EXECUTABLE_PATH:
-            gl_query_add_match (query, "_EXE", search_text, SEARCH_TYPE_SUBSTRING);
+            gl_query_add_match (query, "_EXE", search_text, search_type);
             break;
     }
 }
@@ -516,7 +518,9 @@ create_query_object (GlEventViewList *view)
 
     query_add_category_matches (query, list, priv->boot_match);
 
-    query_add_search_matches (query, priv->search_text, priv->journal_search_field);
+    query_add_search_matches (query, priv->search_text, priv->journal_search_field, priv->search_type);
+
+    gl_query_set_search_type (query, priv->search_type);
 
     return query;
 }
@@ -725,6 +729,21 @@ search_popover_journal_search_field_changed (GlSearchPopover *popover,
     gl_journal_model_take_query (priv->journal_model, query);
 }
 
+static void
+search_popover_search_type_changed (GlSearchPopover *popover,
+                                    GParamSpec *psec,
+                                    GlEventViewList *view)
+{
+    GlEventViewListPrivate *priv = gl_event_view_list_get_instance_private (view);
+    GlQuery *query;
+
+    priv->search_type = gl_search_popover_get_query_search_type (popover);
+
+    query = create_query_object (view);
+
+    gl_journal_model_take_query (priv->journal_model, query);
+}
+
 /* Get the view elements from ui file and link it with the drop down button */
 static void
 set_up_search_popover (GlEventViewList *view)
@@ -743,6 +762,8 @@ set_up_search_popover (GlEventViewList *view)
 
     g_signal_connect (search_popover, "notify::journal-search-field",
                       G_CALLBACK (search_popover_journal_search_field_changed), view);
+    g_signal_connect (search_popover, "notify::search-type",
+                      G_CALLBACK (search_popover_search_type_changed), view);
 
     /* Link the drop down button with search popover */
     gtk_menu_button_set_popover (GTK_MENU_BUTTON (priv->search_dropdown_button),
