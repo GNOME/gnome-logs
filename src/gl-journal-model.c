@@ -45,6 +45,7 @@ struct _GlJournalModel
 
 static void gl_journal_model_interface_init (GListModelInterface *iface);
 static gboolean search_in_entry (GlJournalEntry *entry, GlQuery *query);
+static gboolean gl_query_check_journal_end (GlQuery *query, GlJournalEntry *entry);
 
 G_DEFINE_TYPE_WITH_CODE (GlJournalModel, gl_journal_model, G_TYPE_OBJECT,
                          G_IMPLEMENT_INTERFACE (G_TYPE_LIST_MODEL, gl_journal_model_interface_init))
@@ -76,7 +77,7 @@ gl_journal_model_fetch_idle (gpointer user_data)
     g_assert (model->n_entries_to_fetch > 0);
 
     last = model->entries->len;
-    if ((entry = gl_journal_previous (model->journal)))
+    if ((entry = gl_journal_previous (model->journal)) && gl_query_check_journal_end (model->query, entry))
     {
         if (search_in_entry (entry, model->query))
         {
@@ -246,6 +247,8 @@ gl_query_new (void)
 
     query->queryitems = g_ptr_array_new_with_free_func ((GDestroyNotify) gl_query_item_free);
     query->search_type = GL_QUERY_SEARCH_TYPE_SUBSTRING;
+    query->start_timestamp = 0;
+    query->end_timestamp = 0;
 
     return query;
 }
@@ -364,6 +367,8 @@ gl_journal_model_process_query (GlJournalModel *model)
 
     gl_journal_set_matches (model->journal, category_matches);
 
+    gl_journal_set_start_position (model->journal, model->query->start_timestamp);
+
     /* Start re-population of the journal */
     gl_journal_model_fetch_more_entries (model, FALSE);
 
@@ -423,6 +428,38 @@ gl_query_add_match (GlQuery *query,
     queryitem = gl_query_item_new (field_name, field_value, search_type);
 
     g_ptr_array_add (query->queryitems, queryitem);
+}
+
+/* Check if current entry timestamp is less than the end timestamp */
+static gboolean
+gl_journal_entry_check_journal_end (GlJournalEntry *entry,
+                                    guint64 end_timestamp)
+{
+    guint64 entry_timestamp = gl_journal_entry_get_timestamp (entry);
+
+    if (end_timestamp)
+    {
+        /* Check if we have reached the end of given journal range */
+        if (end_timestamp >= entry_timestamp)
+            return FALSE;
+    }
+
+    return TRUE;
+}
+
+static gboolean
+gl_query_check_journal_end (GlQuery *query, GlJournalEntry *entry)
+{
+    return gl_journal_entry_check_journal_end (entry, query->end_timestamp);
+}
+
+void
+gl_query_set_journal_timestamp_range (GlQuery *query,
+                                      guint64 start_timestamp,
+                                      guint64 end_timestamp)
+{
+    query->start_timestamp = start_timestamp;
+    query->end_timestamp = end_timestamp;
 }
 
 static gboolean

@@ -32,6 +32,8 @@ typedef struct GlQuery
 {
     GPtrArray *queryitems;   /* array of GlQueryItem structs */
     GlQuerySearchType search_type;    /* indicates if search field is passed as exact match */
+    guint64 start_timestamp;
+    guint64 end_timestamp;
 } GlQuery;
 
 #define GL_TYPE_JOURNAL_MODEL gl_journal_model_get_type()
@@ -48,6 +50,10 @@ void                    gl_query_add_match                              (GlQuery
                                                                          const gchar *field_name,
                                                                          const gchar *field_value,
                                                                          GlQuerySearchType search_type);
+
+void                    gl_query_set_journal_timestamp_range            (GlQuery *query,
+                                                                         guint64 start_timestamp,
+                                                                         guint64 end_timestamp);
 
 void                    gl_journal_model_set_matches                    (GlJournalModel      *model,
                                                                          const gchar * const *matches);

@@ -569,24 +569,6 @@ gl_journal_query_match (sd_journal          *journal,
   return TRUE;
 }
 
-static gchar *
-create_boot_id_match_string (void)
-{
-    sd_id128_t boot_id;
-    gchar boot_string[33];
-    int r;
-
-    r = sd_id128_get_boot (&boot_id);
-    if (r < 0)
-    {
-        g_warning ("Error getting boot ID of running kernel: %s", g_strerror (-r));
-        return NULL;
-    }
-
-    sd_id128_to_string (boot_id, boot_string);
-    return g_strconcat ("_BOOT_ID=", boot_string, NULL);
-}
-
 /**
  * gl_journal_set_matches:
  * @journal: a #GlJournal
@@ -603,7 +585,6 @@ gl_journal_set_matches (GlJournal *journal,
     GPtrArray *mandatory_fields;
     int r;
     gint i;
-    gboolean has_boot_id = FALSE;
 
     g_return_if_fail (matches != NULL);
 
@@ -629,9 +610,6 @@ gl_journal_set_matches (GlJournal *journal,
             continue;
         }
 
-        if (g_str_has_prefix (match, "_BOOT_ID="))
-          has_boot_id = TRUE;
-
         r = sd_journal_add_match (priv->journal, match, 0);
         if (r < 0)
         {
@@ -643,27 +621,33 @@ gl_journal_set_matches (GlJournal *journal,
     /* add sentinel */
     g_ptr_array_add (mandatory_fields, NULL);
 
-    /* take events from this boot only, unless _BOOT_ID was in @matches */
-    if (!has_boot_id)
+    priv->mandatory_fields = (gchar **) g_ptr_array_free (mandatory_fields, FALSE);
+}
+
+/* Sets the starting position of journal from which to start reading the entries */
+void
+gl_journal_set_start_position (GlJournal *journal,
+                               guint64 start_timestamp)
+{
+    GlJournalPrivate *priv = gl_journal_get_instance_private (journal);
+    gint r;
+
+    if (start_timestamp)
     {
-        gchar *boot_match;
-
-        boot_match = create_boot_id_match_string ();
-        if (boot_match)
+        r = sd_journal_seek_realtime_usec (priv->journal, start_timestamp);
+        if (r < 0)
         {
-            r = sd_journal_add_match (priv->journal, boot_match, 0);
-            if (r < 0)
-                g_warning ("Failed to add match '%s': %s", boot_match, g_strerror (-r));
-
-            g_free (boot_match);
+            g_warning ("Error seeking to given timestamp %" G_GUINT64_FORMAT ": %s", start_timestamp, g_strerror (-r));
         }
     }
-
-    priv->mandatory_fields = (gchar **) g_ptr_array_free (mandatory_fields, FALSE);
-
-    r = sd_journal_seek_tail (priv->journal);
-    if (r < 0)
-        g_warning ("Error seeking to start of systemd journal: %s", g_strerror (-r));
+    else
+    {
+        r = sd_journal_seek_tail (priv->journal);
+        if (r < 0)
+        {
+            g_warning ("Error seeking to start of systemd journal: %s", g_strerror (-r));
+        }
+    }
 }
 
 GlJournalEntry *

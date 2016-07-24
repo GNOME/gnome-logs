@@ -142,6 +142,140 @@
                     </packing>
                 </child>
                 <child>
+                    <object class="GtkStack" id="range_label_stack">
+                        <property name="visible">True</property>
+                        <child>
+                            <object class="GtkLabel" id="when_dim_label">
+                                <property name="visible">True</property>
+                                <!-- Translators: When [log entries to be shown for a given timestamp range] -->
+                                <property name="label" translatable="yes">When</property>
+                                <property name="xalign">0</property>
+                                <style>
+                                    <class name="dim-label"/>
+                                </style>
+                            </object>
+                            <packing>
+                                <property name="name">when-label</property>
+                                <property name="title">page0</property>
+                            </packing>
+                        </child>
+                        <child>
+                            <object class="GtkLabel" id="show_logs_from_dim_label">
+                                <property name="visible">True</property>
+                                <property name="margin_top">10</property>
+                                <property name="label" translatable="yes">Show Logs from…</property>
+                                <property name="xalign">0</property>
+                                <style>
+                                    <class name="dim-label"/>
+                                </style>
+                            </object>
+                            <packing>
+                                <property name="name">show-log-from-label</property>
+                                <property name="title">page1</property>
+                                <property name="position">1</property>
+                            </packing>
+                        </child>
+                    </object>
+                    <packing>
+                        <property name="left_attach">0</property>
+                        <property name="top_attach">2</property>
+                        <property name="width">2</property>
+                    </packing>
+                </child>
+                <child>
+                    <object class="GtkStack" id="range_stack">
+                        <property name="visible">True</property>
+                        <property name="vhomogeneous">False</property>
+                        <property name="transition_type">crossfade</property>
+                        <child>
+                            <object class="GtkButton" id="select_range_button">
+                                <property name="visible">True</property>
+                                <property name="can_focus">True</property>
+                                <property name="receives_default">True</property>
+                                <property name="tooltip_text" translatable="yes">Select Timestamp Range of the Log Entries to be shown</property>
+                                <property name="hexpand">True</property>
+                                <signal name="clicked" handler="select_range_button_clicked"/>
+                                <child>
+                                    <object class="GtkBox">
+                                        <property name="visible">True</property>
+                                        <child>
+                                            <object class="GtkLabel" id="range_button_label">
+                                                <property name="visible">True</property>
+                                                <property name="label" translatable="yes">Current Boot</property>
+                                            </object>
+                                            <packing>
+                                                <property name="expand">False</property>
+                                                <property name="fill">True</property>
+                                                <property name="position">0</property>
+                                            </packing>
+                                        </child>
+                                        <child>
+                                            <object class="GtkImage" id="range_button_drop_down_image">
+                                                <property name="visible">True</property>
+                                                <property name="icon_name">pan-down-symbolic</property>
+                                            </object>
+                                            <packing>
+                                                <property name="expand">False</property>
+                                                <property name="fill">True</property>
+                                                <property name="pack_type">end</property>
+                                                <property name="position">1</property>
+                                            </packing>
+                                        </child>
+                                    </object>
+                                </child>
+                            </object>
+                            <packing>
+                                <property name="name">range-button</property>
+                            </packing>
+                        </child>
+                        <child>
+                            <object class="GtkScrolledWindow" id="range_scrolled_window">
+                                <property name="height_request">150</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">True</property>
+                                <property name="hexpand">True</property>
+                                <property name="shadow_type">in</property>
+                                <child>
+                                    <object class="GtkTreeView" id="range_treeview">
+                                        <property name="visible">True</property>
+                                        <property name="model">range_liststore</property>
+                                        <property name="headers-visible">False</property>
+                                        <property name="activate-on-single-click">True</property>
+                                        <signal name="row-activated" handler="on_range_treeview_row_activated"/>
+                                        <child>
+                                            <object class="GtkTreeViewColumn" id="range-column">
+                                                <property name="title">Parameters</property>
+                                                <property name="visible">True</property>
+                                                <child>
+                                                    <object class="GtkCellRendererText" id="range-text-renderer"/>
+                                                    <attributes>
+                                                        <attribute name="text">0</attribute>
+                                                    </attributes>
+                                                </child>
+                                            </object>
+                                        </child>
+                                        <child internal-child="selection">
+                                            <object class="GtkTreeSelection" id="range-selection">
+                                            <property name="mode">GTK_SELECTION_BROWSE</property>
+                                            </object>
+                                        </child>
+                                    </object>
+                                </child>
+                            </object>
+                            <packing>
+                                <property name="name">range-list</property>
+                                <property name="title">page0</property>
+                                <property name="position">1</property>
+                            </packing>
+                        </child>
+                    </object>
+                    <packing>
+                        <property name="left_attach">0</property>
+                        <property name="top_attach">3</property>
+                        <property name="width">2</property>
+                    </packing>
+                </child>
+                <child>
                     <object class="GtkRevealer" id="search_type_revealer">
                         <child>
                             <object class="GtkBox">
@@ -219,7 +353,7 @@
                     </object>
                     <packing>
                         <property name="left_attach">0</property>
-                        <property name="top_attach">2</property>
+                        <property name="top_attach">4</property>
                         <property name="width">2</property>
                     </packing>
                 </child>
@@ -286,6 +420,53 @@
                 <col id="0" translatable="yes">Executable Path</col>
                 <col id="1">False</col>
                 <col id="2">GL_SEARCH_POPOVER_JOURNAL_FIELD_FILTER_EXECUTABLE_PATH</col>
+            </row>
+        </data>
+    </object>
+    <object class="GtkListStore" id="range_liststore">
+        <columns>
+            <column type="gchararray"/>
+            <column type="gboolean"/>
+            <column type="GlSearchPopoverJournalTimestampRange"/>
+        </columns>
+        <data>
+            <row>
+                <col id="0" translatable="yes">Current Boot</col>
+                <col id="1">False</col>
+                <col id="2">GL_SEARCH_POPOVER_JOURNAL_TIMESTAMP_RANGE_CURRENT_BOOT</col>
+            </row>
+            <row>
+                <col id="0" translatable="yes">Previous Boot</col>
+                <col id="1">False</col>
+                <col id="2">GL_SEARCH_POPOVER_JOURNAL_TIMESTAMP_RANGE_PREVIOUS_BOOT</col>
+            </row>
+            <row>
+                <col id="0">Separator</col>
+                <col id="1">True</col>
+            </row>
+            <row>
+                <col id="0" translatable="yes">Today</col>
+                <col id="1">False</col>
+                <col id="2">GL_SEARCH_POPOVER_JOURNAL_TIMESTAMP_RANGE_TODAY</col>
+            </row>
+            <row>
+                <col id="0" translatable="yes">Yesterday</col>
+                <col id="1">False</col>
+                <col id="2">GL_SEARCH_POPOVER_JOURNAL_TIMESTAMP_RANGE_YESTERDAY</col>
+            </row>
+            <row>
+                <col id="0" translatable="yes">Last 3 days</col>
+                <col id="1">False</col>
+                <col id="2">GL_SEARCH_POPOVER_JOURNAL_TIMESTAMP_RANGE_LAST_3_DAYS</col>
+            </row>
+            <row>
+                <col id="0">Separator</col>
+                <col id="1">True</col>
+            </row>
+            <row>
+                <col id="0" translatable="yes">Entire Journal</col>
+                <col id="1">False</col>
+                <col id="2">GL_SEARCH_POPOVER_JOURNAL_TIMESTAMP_RANGE_ENTIRE_JOURNAL</col>
             </row>
         </data>
     </object>

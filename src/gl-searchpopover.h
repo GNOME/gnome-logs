@@ -39,12 +39,24 @@ typedef enum
     GL_SEARCH_POPOVER_JOURNAL_FIELD_FILTER_EXECUTABLE_PATH
 } GlSearchPopoverJournalFieldFilter;
 
+typedef enum
+{
+    GL_SEARCH_POPOVER_JOURNAL_TIMESTAMP_RANGE_CURRENT_BOOT,
+    GL_SEARCH_POPOVER_JOURNAL_TIMESTAMP_RANGE_PREVIOUS_BOOT,
+    GL_SEARCH_POPOVER_JOURNAL_TIMESTAMP_RANGE_TODAY,
+    GL_SEARCH_POPOVER_JOURNAL_TIMESTAMP_RANGE_YESTERDAY,
+    GL_SEARCH_POPOVER_JOURNAL_TIMESTAMP_RANGE_LAST_3_DAYS,
+    GL_SEARCH_POPOVER_JOURNAL_TIMESTAMP_RANGE_ENTIRE_JOURNAL
+} GlSearchPopoverJournalTimestampRange;
+
 #define GL_TYPE_SEARCH_POPOVER (gl_search_popover_get_type ())
 G_DECLARE_FINAL_TYPE (GlSearchPopover, gl_search_popover, GL, SEARCH_POPOVER, GtkPopover)
 
 GtkWidget * gl_search_popover_new (void);
 GlSearchPopoverJournalFieldFilter gl_search_popover_get_journal_search_field (GlSearchPopover *popover);
 GlQuerySearchType gl_search_popover_get_query_search_type (GlSearchPopover *popover);
+GlSearchPopoverJournalTimestampRange gl_search_popover_get_journal_timestamp_range (GlSearchPopover *popover);
+void gl_search_popover_set_journal_timestamp_range_current_boot (GlSearchPopover *popover);
 
 G_END_DECLS
 

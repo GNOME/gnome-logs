@@ -72,6 +72,7 @@ typedef struct
 GType gl_journal_result_get_type (void);
 GType gl_journal_get_type (void);
 void gl_journal_set_matches (GlJournal *journal, GPtrArray *matches);
+void gl_journal_set_start_position (GlJournal *journal, guint64 until_timestamp);
 GArray * gl_journal_get_boot_ids (GlJournal *journal);
 GlJournalEntry * gl_journal_previous (GlJournal *journal);
 GlJournal * gl_journal_new (void);
