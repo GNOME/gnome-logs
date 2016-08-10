@@ -423,6 +423,7 @@ gl_window_init (GlWindow *window)
     GlEventView *event;
     GAction *action_view_boot;
     GArray *boot_ids;
+    GlJournalStorage storage_type;
     GlJournalBootID *boot_id;
     gchar *boot_match;
     GVariant *variant;
@@ -459,32 +460,74 @@ gl_window_init (GlWindow *window)
                                                GTK_STYLE_PROVIDER (provider),
                                                GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
 
-    if (!gl_util_can_read_system_journal ())
+    /* Show warnings based on storage type. */
+    storage_type = gl_util_journal_storage_type ();
+    switch (storage_type)
     {
-        GtkWidget *message_label;
-        GtkWidget *content_area;
+        case GL_JOURNAL_STORAGE_PERSISTENT:
+        {
+            if (!gl_util_can_read_system_journal (GL_JOURNAL_STORAGE_PERSISTENT))
+            {
+                GtkWidget *message_label;
+                GtkWidget *content_area;
 
-        message_label = gtk_label_new (_("Unable to read system logs"));
-        gtk_widget_set_hexpand (GTK_WIDGET (message_label), TRUE);
-        gtk_widget_show (message_label);
-        content_area = gtk_info_bar_get_content_area (GTK_INFO_BAR (priv->info_bar));
-        gtk_container_add (GTK_CONTAINER (content_area), message_label);
+                message_label = gtk_label_new (_("Unable to read system logs"));
+                gtk_widget_set_hexpand (GTK_WIDGET (message_label), TRUE);
+                gtk_widget_show (message_label);
+                content_area = gtk_info_bar_get_content_area (GTK_INFO_BAR (priv->info_bar));
+                gtk_container_add (GTK_CONTAINER (content_area), message_label);
 
-        gtk_widget_show (priv->info_bar);
-    }
+                gtk_widget_show (priv->info_bar);
+            }
 
-    if (!gl_util_can_read_user_journal ())
-    {
-        GtkWidget *message_label;
-        GtkWidget *content_area;
+            if (!gl_util_can_read_user_journal ())
+            {
+                GtkWidget *message_label;
+                GtkWidget *content_area;
 
-        message_label = gtk_label_new (_("Unable to read user logs"));
-        gtk_widget_set_hexpand (GTK_WIDGET (message_label), TRUE);
-        gtk_widget_show (message_label);
-        content_area = gtk_info_bar_get_content_area (GTK_INFO_BAR (priv->info_bar));
-        gtk_container_add (GTK_CONTAINER (content_area), message_label);
+                message_label = gtk_label_new (_("Unable to read user logs"));
+                gtk_widget_set_hexpand (GTK_WIDGET (message_label), TRUE);
+                gtk_widget_show (message_label);
+                content_area = gtk_info_bar_get_content_area (GTK_INFO_BAR (priv->info_bar));
+                gtk_container_add (GTK_CONTAINER (content_area), message_label);
 
-        gtk_widget_show (priv->info_bar);
+                gtk_widget_show (priv->info_bar);
+            }
+            break;
+        }
+        case GL_JOURNAL_STORAGE_VOLATILE:
+        {
+            if (!gl_util_can_read_system_journal (GL_JOURNAL_STORAGE_VOLATILE))
+            {
+                GtkWidget *message_label;
+                GtkWidget *content_area;
+
+                message_label = gtk_label_new (_("Unable to read system logs"));
+                gtk_widget_set_hexpand (GTK_WIDGET (message_label), TRUE);
+                gtk_widget_show (message_label);
+                content_area = gtk_info_bar_get_content_area (GTK_INFO_BAR (priv->info_bar));
+                gtk_container_add (GTK_CONTAINER (content_area), message_label);
+
+                gtk_widget_show (priv->info_bar);
+            }
+            break;
+        }
+        case GL_JOURNAL_STORAGE_NONE:
+        {
+            GtkWidget *message_label;
+            GtkWidget *content_area;
+
+            message_label = gtk_label_new (_("No logs available"));
+            gtk_widget_set_hexpand (GTK_WIDGET (message_label), TRUE);
+            gtk_widget_show (message_label);
+            content_area = gtk_info_bar_get_content_area (GTK_INFO_BAR (priv->info_bar));
+            gtk_container_add (GTK_CONTAINER (content_area), message_label);
+
+            gtk_widget_show (priv->info_bar);
+            break;
+        }
+        default:
+            g_assert_not_reached ();
     }
 
     g_object_unref (provider);

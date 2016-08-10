@@ -325,8 +325,33 @@ gl_util_boot_time_to_display (guint64 realtime_first,
     return time_display;
 }
 
+/**
+ * Determine journal storage type:
+ *
+ * Test existence of possible journal storage paths.
+ *
+ * Returns: a value from GlJournalStorage
+ */
+GlJournalStorage
+gl_util_journal_storage_type (void)
+{
+    if (g_file_test ("/run/log/journal", G_FILE_TEST_EXISTS))
+    {
+        return GL_JOURNAL_STORAGE_VOLATILE;
+    }
+    else
+    {
+        return GL_JOURNAL_STORAGE_PERSISTENT;
+    }
+
+    if ((!g_file_test ("/run/log/journal", G_FILE_TEST_EXISTS)) && (!g_file_test ("/var/log/journal", G_FILE_TEST_EXISTS)))
+    {
+        return GL_JOURNAL_STORAGE_NONE;
+    }
+}
+
 gboolean
-gl_util_can_read_system_journal (void)
+gl_util_can_read_system_journal (GlJournalStorage storage_type)
 {
     GFile *file;
     GFileInfo *info;
@@ -342,7 +367,18 @@ gl_util_can_read_system_journal (void)
     }
     sd_id128_to_string (machine, ids);
 
-    path = g_build_filename ("/var/log/journal", ids, "system.journal", NULL);
+    if (storage_type == GL_JOURNAL_STORAGE_PERSISTENT)
+    {
+        path = g_build_filename ("/var/log/journal", ids, "system.journal", NULL);
+    }
+    else if (storage_type == GL_JOURNAL_STORAGE_VOLATILE)
+    {
+        path = g_build_filename ("/run/log/journal", ids, "system.journal", NULL);
+    }
+    else
+    {
+        path = "/dev/null";
+    }
 
     file = g_file_new_for_path (path);
     info = g_file_query_info (file, G_FILE_ATTRIBUTE_ACCESS_CAN_READ,

@@ -35,6 +35,22 @@ typedef enum
     GL_UTIL_CLOCK_FORMAT_12HR
 } GlUtilClockFormat;
 
+/*
+ * GlJournalStorage:
+ * @GL_JOURNAL_STORAGE_NONE: no log data
+ * @GL_JOURNAL_STORAGE_PERSISTENT: log data stored on disk
+ * below /var/log/journal hierarchy
+ * @GL_JOURNAL_STORAGE_VOLATILE:  log data stored in memory
+ * below /run/log/journal hierarchy
+ *
+ * Determine journal storage type, used in warning logic.*/
+typedef enum
+{
+    GL_JOURNAL_STORAGE_NONE,
+    GL_JOURNAL_STORAGE_PERSISTENT,
+    GL_JOURNAL_STORAGE_VOLATILE
+} GlJournalStorage;
+
 void gl_util_on_css_provider_parsing_error (GtkCssProvider *provider,
                                             GtkCssSection *section,
                                             GError *error,
@@ -46,7 +62,8 @@ gchar * gl_util_timestamp_to_display (guint64 microsecs,
 gint gl_util_get_uid (void);
 gchar * gl_util_boot_time_to_display (guint64 timestamp_first,
                                       guint64 timestamp_last);
-gboolean gl_util_can_read_system_journal (void);
+GlJournalStorage gl_util_journal_storage_type (void);
+gboolean gl_util_can_read_system_journal (GlJournalStorage storage_type);
 gboolean gl_util_can_read_user_journal (void);
 
 G_END_DECLS
