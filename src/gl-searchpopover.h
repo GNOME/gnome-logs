@@ -46,7 +46,8 @@ typedef enum
     GL_SEARCH_POPOVER_JOURNAL_TIMESTAMP_RANGE_TODAY,
     GL_SEARCH_POPOVER_JOURNAL_TIMESTAMP_RANGE_YESTERDAY,
     GL_SEARCH_POPOVER_JOURNAL_TIMESTAMP_RANGE_LAST_3_DAYS,
-    GL_SEARCH_POPOVER_JOURNAL_TIMESTAMP_RANGE_ENTIRE_JOURNAL
+    GL_SEARCH_POPOVER_JOURNAL_TIMESTAMP_RANGE_ENTIRE_JOURNAL,
+    GL_SEARCH_POPOVER_JOURNAL_TIMESTAMP_RANGE_CUSTOM
 } GlSearchPopoverJournalTimestampRange;
 
 #define GL_TYPE_SEARCH_POPOVER (gl_search_popover_get_type ())
@@ -57,6 +58,8 @@ GlSearchPopoverJournalFieldFilter gl_search_popover_get_journal_search_field (Gl
 GlQuerySearchType gl_search_popover_get_query_search_type (GlSearchPopover *popover);
 GlSearchPopoverJournalTimestampRange gl_search_popover_get_journal_timestamp_range (GlSearchPopover *popover);
 void gl_search_popover_set_journal_timestamp_range_current_boot (GlSearchPopover *popover);
+guint64 gl_search_popover_get_custom_start_timestamp (GlSearchPopover *popover);
+guint64 gl_search_popover_get_custom_end_timestamp (GlSearchPopover *popover);
 
 G_END_DECLS
 

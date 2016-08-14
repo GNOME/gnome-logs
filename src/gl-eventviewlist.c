@@ -580,6 +580,20 @@ query_add_journal_range_filter (GlQuery *query,
             query_set_day_timestamps (query, 0, 2);
 
             break;
+        case GL_SEARCH_POPOVER_JOURNAL_TIMESTAMP_RANGE_CUSTOM:
+        {
+            GlSearchPopover *popover;
+            guint64 custom_start_timestamp;
+            guint64 custom_end_timestamp;
+
+            popover = GL_SEARCH_POPOVER (priv->search_popover);
+
+            custom_start_timestamp = gl_search_popover_get_custom_start_timestamp (popover);
+            custom_end_timestamp = gl_search_popover_get_custom_end_timestamp (popover);
+
+            gl_query_set_journal_timestamp_range (query, custom_start_timestamp, custom_end_timestamp);
+            break;
+        }
         default:
 
             /* By default, search the entire journal */
