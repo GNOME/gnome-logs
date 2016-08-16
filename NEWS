@@ -1,3 +1,12 @@
+GNOME Logs 3.21.90
+==================
+
+* refactoring and movement of several journal query features to the model from
+  the view from Pranav Ganorkar
+* improved check for journal read permissions from Dirk Maetens
+* updates to Turkish, Slovak, Finnish, Czech, Portuguese, Brazilizan
+  Portuguese, Indonesian and British English translations
+
 GNOME Logs 3.21.3
 =================
 
