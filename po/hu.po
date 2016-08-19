@@ -1,23 +1,23 @@
 # Hungarian translation for gnome-logs.
-# Copyright (C) 2013, 2014, 2015 Free Software Foundation, Inc.
+# Copyright (C) 2013-2016 Free Software Foundation, Inc.
 # This file is distributed under the same license as the gnome-logs package.
 #
-# Balázs Úr <urbalazs at gmail dot com>, 2013, 2014, 2015.
+# Balázs Úr <urbalazs at gmail dot com>, 2013, 2014, 2015, 2016.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-04-27 08:41+0000\n"
-"PO-Revision-Date: 2016-04-27 11:59+0200\n"
-"Last-Translator: Meskó Balázs <meskobalazs@gmail.com>\n"
+"POT-Creation-Date: 2016-08-10 10:34+0000\n"
+"PO-Revision-Date: 2016-08-19 23:13+0200\n"
+"Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
 "Language-Team: Hungarian <openscope at googlegroups dot com>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.7\n"
+"X-Generator: Lokalize 1.2\n"
 
 #: ../data/gl-categorylist.ui.h:1
 msgid "Important"
@@ -35,19 +35,19 @@ msgstr "Csillagozott"
 msgid "All"
 msgstr "Összes"
 
-#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:197
+#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:202
 msgid "Applications"
 msgstr "Alkalmazások"
 
-#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:206
+#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:211
 msgid "System"
 msgstr "Rendszer"
 
-#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:210
+#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:215
 msgid "Security"
 msgstr "Biztonság"
 
-#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:202
+#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:207
 msgid "Hardware"
 msgstr "Hardver"
 
@@ -226,11 +226,11 @@ msgstr "Rendszerindítás"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventviewlist.c:660
+#: ../src/gl-eventviewlist.c:290
 msgid "No results"
 msgstr "Nincs találat"
 
-#: ../src/gl-eventviewrow.c:214
+#: ../src/gl-eventviewrow.c:219
 msgid "Other"
 msgstr "Egyéb"
 
@@ -354,13 +354,17 @@ msgstr "naplóüzenetek"
 msgid "Unable to export log messages to a file"
 msgstr "Nem lehetséges a naplóüzenetek fájlba mentése"
 
-#: ../src/gl-window.c:467
+#: ../src/gl-window.c:474 ../src/gl-window.c:505
 msgid "Unable to read system logs"
 msgstr "Nem lehetséges a rendszernaplók olvasása"
 
-#: ../src/gl-window.c:481
+#: ../src/gl-window.c:488
 msgid "Unable to read user logs"
 msgstr "Nem lehetséges a felhasználói naplók olvasása"
+
+#: ../src/gl-window.c:520
+msgid "No logs available"
+msgstr "Nincsenek elérhető naplók"
 
 #~ msgid "Search the displayed logs"
 #~ msgstr "A megjelenített naplók keresése"
