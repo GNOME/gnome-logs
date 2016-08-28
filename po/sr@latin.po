@@ -2,23 +2,24 @@
 # Courtesy of Prevod.org team (http://prevod.org/) -- 2013—2016.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-logs package.
+# Translators:
 # Miroslav Nikolić <miroslavnikolic@rocketmail.com>, 2013—2016.
-# Marko M. Kostić (Marko M. Kostić) <marko.m.kostic@gmail.com>, 2015—2016.
+# Marko M. Kostić <marko.m.kostic@gmail.com>, 2016.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-02-16 12:40+0000\n"
-"PO-Revision-Date: 2016-02-16 20:09+0200\n"
+"POT-Creation-Date: 2016-08-10 10:34+0000\n"
+"PO-Revision-Date: 2016-08-28 07:32+0200\n"
 "Last-Translator: Miroslav Nikolić <miroslavnikolic@rocketmail.com>\n"
-"Language-Team: Serbian <gnom@prevod.org>\n"
-"Language: sr@latin\n"
+"Language-Team: srpski <gnome-sr@googlegroups.org>\n"
+"Language: sr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=4; plural=n==1? 3 : n%10==1 && n%100!=11 ? 0 : "
+"n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Project-Style: gnome\n"
 
 #: ../data/gl-categorylist.ui.h:1
@@ -31,25 +32,25 @@ msgstr "Upozorenja"
 
 #: ../data/gl-categorylist.ui.h:3
 msgid "Starred"
-msgstr "Sa zvezdicom"
+msgstr "Ozvezdani"
 
 #: ../data/gl-categorylist.ui.h:4
 msgid "All"
 msgstr "Sve"
 
-#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:197
+#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:202
 msgid "Applications"
 msgstr "Programi"
 
-#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:206
+#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:211
 msgid "System"
 msgstr "Sistem"
 
-#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:210
+#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:215
 msgid "Security"
 msgstr "Bezbednost"
 
-#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:202
+#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:207
 msgid "Hardware"
 msgstr "Hardver"
 
@@ -67,15 +68,15 @@ msgstr "Vratite se na pregled događaja"
 
 #: ../data/gl-eventtoolbar.ui.h:2
 msgid "Export logs to a file"
-msgstr "Izvezite zapisnike u datoteku"
+msgstr "Izvezi zapisnike u datoteku"
 
 #: ../data/gl-eventtoolbar.ui.h:3
 msgid "Choose the boot from which to view logs"
-msgstr "Izaberite podizanje sistema sa kog želite videti zapisnike"
+msgstr "Izaberite podizanje sistema za koje želite videti zapisnike"
 
 #: ../data/gl-eventtoolbar.ui.h:4
-msgid "Search the displayed logs"
-msgstr "Pretražite prikazane zapisnike"
+msgid "Search all the logs of the current category"
+msgstr "Pretraži sve zapisnike u tekućoj kategoriji"
 
 #: ../data/gl-eventviewdetail.ui.h:1
 msgid "Message"
@@ -121,22 +122,23 @@ msgstr "Opšte"
 #: ../data/help-overlay.ui.h:2
 msgctxt "shortcut window"
 msgid "Open a new window"
-msgstr "Otvori novi prozor"
+msgstr "Otvaranje novog prozora"
 
 #: ../data/help-overlay.ui.h:3
 msgctxt "shortcut window"
 msgid "Close a window"
-msgstr "Zatvori prozor"
+msgstr "Zatvaranje prozora"
 
 #: ../data/help-overlay.ui.h:4
 msgctxt "shortcut window"
 msgid "Search"
-msgstr "Pretraži"
+msgstr "Pretraga"
 
+# Pronalaženje gde? Moguće je da je u pitanju trenutni dokument (find in page).
 #: ../data/help-overlay.ui.h:5
 msgctxt "shortcut window"
 msgid "Find"
-msgstr "Nađi"
+msgstr "Pronalaženje"
 
 #: ../data/menus.ui.h:1
 msgid "_New Window"
@@ -172,7 +174,7 @@ msgid ""
 "Logs shows events from the systemd journal, and sorts them into categories, "
 "such as hardware and applications."
 msgstr ""
-"Zapisnici prikazuju događaje iz žurnala sistema-d, i ređaju ih po "
+"Zapisnici prikazuju događaje iz sistem-de žurnala, i ređaju ih po "
 "kategorijama, recimo hardver i programi."
 
 #: ../data/org.gnome.Logs.appdata.xml.in.h:4
@@ -180,8 +182,8 @@ msgid ""
 "Using Logs you can search your logs by typing a search term, and view "
 "detailed information about each event by clicking on it."
 msgstr ""
-"Ovim programom možete da pretražujete vaše zapisnike upisivanjem pojma, i da "
-"vidite opširne podatke o svakom događaju klikom na njega."
+"Upotrebom Zapisnika možete da pretražujete vaše zapisnike upisivanjem pojma, "
+"i da vidite opširne podatke o svakom događaju klikom na njega."
 
 #: ../data/org.gnome.Logs.desktop.in.h:1 ../src/gl-eventtoolbar.c:124
 msgid "Logs"
@@ -194,7 +196,7 @@ msgstr "Pregledač zapisnika"
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: ../data/org.gnome.Logs.desktop.in.h:5
 msgid "log;journal;debug;error;"
-msgstr "dnevnik;zapisnik;zapis;pročišćavanje;greška;"
+msgstr "dnevnik;zapisnik;zapis;pročišćavanje;greška;log;"
 
 #: ../data/org.gnome.Logs.gschema.xml.h:1
 msgid "How to sort list rows in the event view list"
@@ -227,11 +229,11 @@ msgstr "Podizanje sistema"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventviewlist.c:651
+#: ../src/gl-eventviewlist.c:290
 msgid "No results"
 msgstr "Nema rezultata"
 
-#: ../src/gl-eventviewrow.c:214
+#: ../src/gl-eventviewrow.c:219
 msgid "Other"
 msgstr "Drugo"
 
@@ -249,6 +251,10 @@ msgstr "%l:%M:%S %p"
 msgid "%l:%M %p"
 msgstr "%l:%M %p"
 
+#. Translators: timestamp format for events in
+#. * the current year, showing the abbreviated
+#. * month name, day of the month and the time
+#. * with seconds in 12-hour format.
 #: ../src/gl-util.c:166
 msgid "%b %e %l:%M:%S %p"
 msgstr "%e. %b. u %l:%M:%S %p"
@@ -261,10 +267,18 @@ msgstr "%e. %b. u %l:%M:%S %p"
 msgid "%b %e %l:%M %p"
 msgstr "%e. %b. u %l:%M %p"
 
+#. Translators: timestamp format for events in
+#. * a different year, showing the abbreviated
+#. * month name, day of the month, year and the
+#. * time with seconds in 12-hour format.
 #: ../src/gl-util.c:185
 msgid "%b %e %Y %l:%M:%S %p"
 msgstr "%e. %b. %Y. u %l:%M:%S %p"
 
+#. Translators: timestamp format for events in
+#. * a different year, showing the abbreviated
+#. * month name day of the month, year and the
+#. * time without seconds in 12-hour format.
 #: ../src/gl-util.c:194
 msgid "%b %e %Y %l:%M %p"
 msgstr "%e. %b. %Y. u %l:%M %p"
@@ -299,6 +313,10 @@ msgstr "%e. %b. u %H:%M:%S"
 msgid "%b %e %H:%M"
 msgstr "%e. %b. u %H:%M"
 
+#. Translators: timestamp format for events in
+#. * a different year, showing the abbreviated
+#. * month name, day of the month, year and the
+#. * time with seconds in 24-hour format.
 #: ../src/gl-util.c:247
 msgid "%b %e %Y %H:%M:%S"
 msgstr "%e. %b. %Y. u %H:%M:%S"
@@ -321,7 +339,7 @@ msgstr "od %s do %s"
 
 #: ../src/gl-window.c:186
 msgid "Save logs"
-msgstr "Sačuvajte zapisnike"
+msgstr "Sačuvaj zapisnike"
 
 #: ../src/gl-window.c:189
 msgid "_Cancel"
@@ -329,7 +347,7 @@ msgstr "_Otkaži"
 
 #: ../src/gl-window.c:190
 msgid "_Save"
-msgstr "_Sačuvaj"
+msgstr "Saču_vaj"
 
 #: ../src/gl-window.c:195
 msgid "log messages"
@@ -337,12 +355,25 @@ msgstr "poruke zapisnika"
 
 #: ../src/gl-window.c:248
 msgid "Unable to export log messages to a file"
-msgstr "Nisam uspeo da izvezem poruke zapisnika u datoteku"
+msgstr "Nisam uspeo da izvezem poruke iz zapisnika u datoteku"
 
-#: ../src/gl-window.c:467
+#: ../src/gl-window.c:474 ../src/gl-window.c:505
 msgid "Unable to read system logs"
 msgstr "Nisam uspeo da pročitam sistemske zapisnike"
 
-#: ../src/gl-window.c:481
+#: ../src/gl-window.c:488
 msgid "Unable to read user logs"
 msgstr "Nisam uspeo da pročitam korisničke zapisnike"
+
+#: ../src/gl-window.c:520
+msgid "No logs available"
+msgstr "Nema dostupnih zapisnika"
+
+#~ msgid "Search the displayed logs"
+#~ msgstr "Pretraži prikazane zapisnike"
+
+#~ msgid "Not implemented"
+#~ msgstr "Nije primenjeno"
+
+#~ msgid "Categories"
+#~ msgstr "Kategorije"
