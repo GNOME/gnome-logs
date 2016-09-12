@@ -1,14 +1,14 @@
 # Danish translation for gnome-logs.
-# Copyright (C) 2014-2015 gnome-logs's COPYRIGHT HOLDER
+# Copyright (C) 2014-2016 gnome-logs's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-logs package.
-# Ask Hjorth Larsen <asklarsen@gmail.com>, 2014-2015.
+# Ask Hjorth Larsen <asklarsen@gmail.com>, 2014-2016.
 # scootergrisen, 2015, 2016.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-19 03:48+0100\n"
-"PO-Revision-Date: 2016-03-19 03:48+0100\n"
+"POT-Creation-Date: 2016-09-12 02:08+0200\n"
+"PO-Revision-Date: 2016-09-08 03:09+0200\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "Language: da\n"
@@ -37,19 +37,19 @@ msgstr "Stjernemarkeret"
 msgid "All"
 msgstr "Alle"
 
-#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:197
+#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:202
 msgid "Applications"
 msgstr "Programmer"
 
-#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:206
+#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:211
 msgid "System"
 msgstr "System"
 
-#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:210
+#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:215
 msgid "Security"
 msgstr "Sikkerhed"
 
-#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:202
+#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:207
 msgid "Hardware"
 msgstr "Hardware"
 
@@ -74,8 +74,8 @@ msgid "Choose the boot from which to view logs"
 msgstr "Vælg hvilken opstart der skal vises log fra"
 
 #: ../data/gl-eventtoolbar.ui.h:4
-msgid "Search the displayed logs"
-msgstr "Søg i de viste logge"
+msgid "Search all the logs of the current category"
+msgstr "Søg i alle loggene for den nuværende kategori"
 
 #: ../data/gl-eventviewdetail.ui.h:1
 msgid "Message"
@@ -228,11 +228,11 @@ msgstr "Opstart"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventviewlist.c:660
+#: ../src/gl-eventviewlist.c:290
 msgid "No results"
 msgstr "Ingen resultater"
 
-#: ../src/gl-eventviewrow.c:214
+#: ../src/gl-eventviewrow.c:219
 msgid "Other"
 msgstr "Andre"
 
@@ -250,6 +250,10 @@ msgstr "%l:%M:%S %p"
 msgid "%l:%M %p"
 msgstr "%l:%M %p"
 
+#. Translators: timestamp format for events in
+#. * the current year, showing the abbreviated
+#. * month name, day of the month and the time
+#. * with seconds in 12-hour format.
 #: ../src/gl-util.c:166
 msgid "%b %e %l:%M:%S %p"
 msgstr "%e. %b %l:%M:%S %p"
@@ -262,10 +266,18 @@ msgstr "%e. %b %l:%M:%S %p"
 msgid "%b %e %l:%M %p"
 msgstr "%e. %b %l:%M %p"
 
+#. Translators: timestamp format for events in
+#. * a different year, showing the abbreviated
+#. * month name, day of the month, year and the
+#. * time with seconds in 12-hour format.
 #: ../src/gl-util.c:185
 msgid "%b %e %Y %l:%M:%S %p"
 msgstr "%e. %b %Y %l:%M:%S %p"
 
+#. Translators: timestamp format for events in
+#. * a different year, showing the abbreviated
+#. * month name day of the month, year and the
+#. * time without seconds in 12-hour format.
 #: ../src/gl-util.c:194
 msgid "%b %e %Y %l:%M %p"
 msgstr "%e. %b %Y %l:%M %p"
@@ -300,6 +312,10 @@ msgstr "%e. %b %H:%M:%S"
 msgid "%b %e %H:%M"
 msgstr "%e. %b %H:%M"
 
+#. Translators: timestamp format for events in
+#. * a different year, showing the abbreviated
+#. * month name, day of the month, year and the
+#. * time with seconds in 24-hour format.
 #: ../src/gl-util.c:247
 msgid "%b %e %Y %H:%M:%S"
 msgstr "%e. %b %Y %H:%M:%S"
@@ -340,10 +356,17 @@ msgstr "logmeddelelser"
 msgid "Unable to export log messages to a file"
 msgstr "Kunne ikke eksportere logmeddelelser til en fil"
 
-#: ../src/gl-window.c:467
+#: ../src/gl-window.c:474 ../src/gl-window.c:505
 msgid "Unable to read system logs"
 msgstr "Kunne ikke læse systemlogge"
 
-#: ../src/gl-window.c:481
+#: ../src/gl-window.c:488
 msgid "Unable to read user logs"
 msgstr "Kunne ikke læse brugerlogge"
+
+#: ../src/gl-window.c:520
+msgid "No logs available"
+msgstr "Ingen tilgængelige logge"
+
+#~ msgid "Search the displayed logs"
+#~ msgstr "Søg i de viste logge"
