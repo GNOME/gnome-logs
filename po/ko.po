@@ -2,21 +2,23 @@
 # Copyright (C) 2014 gnome-logs's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-logs package.
 # Changwoo Ryu <cwryu@debian.org>, 2014-2016.
+# Seong-ho Cho <shcho@gnome.org>, 2016.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-03-20 09:25+0000\n"
-"PO-Revision-Date: 2016-03-20 19:38+0900\n"
-"Last-Translator: Changwoo Ryu <cwryu@debian.org>\n"
+"POT-Creation-Date: 2016-08-10 10:34+0000\n"
+"PO-Revision-Date: 2016-09-12 05:21+0900\n"
+"Last-Translator: Seong-ho Cho <shcho@gnome.org>\n"
 "Language-Team: Korean <gnome-kr@googlegroups.com>\n"
 "Language: ko\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 1.8.7\n"
 
 #: ../data/gl-categorylist.ui.h:1
 msgid "Important"
@@ -34,19 +36,19 @@ msgstr "별표"
 msgid "All"
 msgstr "모두"
 
-#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:197
+#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:202
 msgid "Applications"
 msgstr "프로그램"
 
-#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:206
+#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:211
 msgid "System"
 msgstr "시스템"
 
-#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:210
+#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:215
 msgid "Security"
 msgstr "보안"
 
-#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:202
+#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:207
 msgid "Hardware"
 msgstr "하드웨어"
 
@@ -71,8 +73,8 @@ msgid "Choose the boot from which to view logs"
 msgstr "로그를 볼 부팅을 고르십시오"
 
 #: ../data/gl-eventtoolbar.ui.h:4
-msgid "Search the displayed logs"
-msgstr "표시된 기록 검색"
+msgid "Search all the logs of the current category"
+msgstr "현재 분류의 모든 로그 검색"
 
 #: ../data/gl-eventviewdetail.ui.h:1
 msgid "Message"
@@ -169,8 +171,8 @@ msgid ""
 "Logs shows events from the systemd journal, and sorts them into categories, "
 "such as hardware and applications."
 msgstr ""
-"기록에서는 systemd 저널에서 이벤트를 표시하고, 하드웨어나 프로그램 등 분류에 "
-"따라 정렬합니다."
+"기록에서는 systemd 저널에서 이벤트를 표시하고, 하드웨어나 프로그램 등 분류"
+"에 따라 정렬합니다."
 
 #: ../data/org.gnome.Logs.appdata.xml.in.h:4
 msgid ""
@@ -203,7 +205,9 @@ msgstr "선택한 기준에 따라 오름차순 또는 내림차순으로 행 �
 
 #: ../src/gl-application.c:110
 msgid "translator-credits"
-msgstr "류창우 <cwryu@debian.org>"
+msgstr ""
+"류창우 <cwryu@debian.org>\n"
+"조성호 <shcho@gnome.org>"
 
 #: ../src/gl-application.c:111
 msgid "View and search logs"
@@ -220,11 +224,11 @@ msgstr "부팅"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventviewlist.c:660
+#: ../src/gl-eventviewlist.c:290
 msgid "No results"
 msgstr "결과 없음"
 
-#: ../src/gl-eventviewrow.c:214
+#: ../src/gl-eventviewrow.c:219
 msgid "Other"
 msgstr "기타"
 
@@ -242,6 +246,10 @@ msgstr "%p %l:%M:%S"
 msgid "%l:%M %p"
 msgstr "%p %l:%M"
 
+#. Translators: timestamp format for events in
+#. * the current year, showing the abbreviated
+#. * month name, day of the month and the time
+#. * with seconds in 12-hour format.
 #: ../src/gl-util.c:166
 msgid "%b %e %l:%M:%S %p"
 msgstr "%b %e일 %p %l:%M:%S"
@@ -254,10 +262,18 @@ msgstr "%b %e일 %p %l:%M:%S"
 msgid "%b %e %l:%M %p"
 msgstr "%b %e일 %p %l:%M"
 
+#. Translators: timestamp format for events in
+#. * a different year, showing the abbreviated
+#. * month name, day of the month, year and the
+#. * time with seconds in 12-hour format.
 #: ../src/gl-util.c:185
 msgid "%b %e %Y %l:%M:%S %p"
 msgstr "%Y년 %b %e일 %p %l:%M:%S"
 
+#. Translators: timestamp format for events in
+#. * a different year, showing the abbreviated
+#. * month name day of the month, year and the
+#. * time without seconds in 12-hour format.
 #: ../src/gl-util.c:194
 msgid "%b %e %Y %l:%M %p"
 msgstr "%Y년 %b %e일 %p %l:%M"
@@ -292,6 +308,10 @@ msgstr "%b %e일 %H:%M:%S"
 msgid "%b %e %H:%M"
 msgstr "%b %e일 %H:%M"
 
+#. Translators: timestamp format for events in
+#. * a different year, showing the abbreviated
+#. * month name, day of the month, year and the
+#. * time with seconds in 24-hour format.
 #: ../src/gl-util.c:247
 msgid "%b %e %Y %H:%M:%S"
 msgstr "%Y년 %b %e일 %H:%M:%S"
@@ -332,10 +352,17 @@ msgstr "로그 메시지"
 msgid "Unable to export log messages to a file"
 msgstr "로그 메시지를 파일로 내보낼 수 없습니다"
 
-#: ../src/gl-window.c:467
+#: ../src/gl-window.c:474 ../src/gl-window.c:505
 msgid "Unable to read system logs"
 msgstr "시스템 로그를 읽을 수 없습니다"
 
-#: ../src/gl-window.c:481
+#: ../src/gl-window.c:488
 msgid "Unable to read user logs"
 msgstr "사용자 로그를 읽을 수 없습니다"
+
+#: ../src/gl-window.c:520
+msgid "No logs available"
+msgstr "로그 없음"
+
+#~ msgid "Search the displayed logs"
+#~ msgstr "표시된 기록 검색"
