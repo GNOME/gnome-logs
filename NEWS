@@ -1,3 +1,11 @@
+GNOME Logs 3.21.92
+==================
+
+* fix a startup crash when the journal is empty
+* updates to Polish, Spanish, Slovenian, Hungarian, German, Friulian,
+  Serbian, French, Kazakh, Lithuanian, Vietnamese, Swedish, Latvian,
+  Galician, Greek, Danish, Korean and Persian translations
+
 GNOME Logs 3.21.90
 ==================
 
@@ -11,7 +19,7 @@ GNOME Logs 3.21.3
 =================
 
 * substitute a newline character in single-line strings from Pranav Ganorkar
-* toolstip string improvement from Jonathan Kang
+* tooltip string improvement from Jonathan Kang
 * GSettings schema translation improvements
 * use AM_DISTCHECK_CONFIGURE_FLAGS
 * updates to Vietnamese, Persian, Hungarian, Spanish, Swedish, Occitan,
