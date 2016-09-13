@@ -435,18 +435,23 @@ gl_window_init (GlWindow *window)
     toolbar = GL_EVENT_TOOLBAR (priv->event_toolbar);
 
     boot_ids = gl_event_view_get_boot_ids (event);
-    boot_id = &g_array_index (boot_ids, GlJournalBootID, boot_ids->len - 1);
-    boot_match = boot_id->boot_match;
-
-    gl_event_toolbar_add_boots (toolbar, boot_ids);
 
     g_action_map_add_action_entries (G_ACTION_MAP (window), actions,
                                      G_N_ELEMENTS (actions), window);
 
-    action_view_boot = g_action_map_lookup_action (G_ACTION_MAP (window),
-                                                   "view-boot");
-    variant = g_variant_new_string (boot_match);
-    g_action_change_state (action_view_boot, variant);
+    gl_event_toolbar_add_boots (toolbar, boot_ids);
+
+    if (boot_ids->len > 0)
+    {
+        boot_id = &g_array_index (boot_ids, GlJournalBootID,
+                                  boot_ids->len - 1);
+        boot_match = boot_id->boot_match;
+
+        action_view_boot = g_action_map_lookup_action (G_ACTION_MAP (window),
+                                                       "view-boot");
+        variant = g_variant_new_string (boot_match);
+        g_action_change_state (action_view_boot, variant);
+    }
 
     provider = gtk_css_provider_new ();
     g_signal_connect (provider, "parsing-error",
