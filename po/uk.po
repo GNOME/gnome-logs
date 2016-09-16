@@ -5,9 +5,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-03 17:28+0200\n"
-"PO-Revision-Date: 2016-03-03 17:33+0300\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"logs&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2016-08-10 10:34+0000\n"
+"PO-Revision-Date: 2016-09-16 20:01+0300\n"
 "Last-Translator: Daniel Korostil <ted.korostiled@gmail.com>\n"
 "Language-Team: linux.org.ua\n"
 "Language: uk\n"
@@ -35,19 +36,19 @@ msgstr "Із зірочкою"
 msgid "All"
 msgstr "Усе"
 
-#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:197
+#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:202
 msgid "Applications"
 msgstr "Програми"
 
-#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:206
+#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:211
 msgid "System"
 msgstr "Система"
 
-#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:210
+#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:215
 msgid "Security"
 msgstr "Безпека"
 
-#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:202
+#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:207
 msgid "Hardware"
 msgstr "Пристрої"
 
@@ -72,8 +73,8 @@ msgid "Choose the boot from which to view logs"
 msgstr "Вибрати завантаження, з якого дивитись журнал"
 
 #: ../data/gl-eventtoolbar.ui.h:4
-msgid "Search the displayed logs"
-msgstr "Пошук показаних журналів"
+msgid "Search all the logs of the current category"
+msgstr "Пошук усіх журналів поточної категорії"
 
 #: ../data/gl-eventviewdetail.ui.h:1
 msgid "Message"
@@ -222,11 +223,11 @@ msgstr "Завантаження"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventviewlist.c:660
+#: ../src/gl-eventviewlist.c:290
 msgid "No results"
 msgstr "Безрезультатно"
 
-#: ../src/gl-eventviewrow.c:214
+#: ../src/gl-eventviewrow.c:219
 msgid "Other"
 msgstr "Інше"
 
@@ -244,6 +245,10 @@ msgstr "%l:%M:%S %p"
 msgid "%l:%M %p"
 msgstr "%l:%M %p"
 
+#. Translators: timestamp format for events in
+#. * the current year, showing the abbreviated
+#. * month name, day of the month and the time
+#. * with seconds in 12-hour format.
 #: ../src/gl-util.c:166
 msgid "%b %e %l:%M:%S %p"
 msgstr "%b %e %l:%M:%S %p"
@@ -256,10 +261,18 @@ msgstr "%b %e %l:%M:%S %p"
 msgid "%b %e %l:%M %p"
 msgstr "%e %b %l:%M %p"
 
+#. Translators: timestamp format for events in
+#. * a different year, showing the abbreviated
+#. * month name, day of the month, year and the
+#. * time with seconds in 12-hour format.
 #: ../src/gl-util.c:185
 msgid "%b %e %Y %l:%M:%S %p"
 msgstr "%b %e %Y %l:%M:%S %p"
 
+#. Translators: timestamp format for events in
+#. * a different year, showing the abbreviated
+#. * month name day of the month, year and the
+#. * time without seconds in 12-hour format.
 #: ../src/gl-util.c:194
 msgid "%b %e %Y %l:%M %p"
 msgstr "%e %b %Y %l:%M %p"
@@ -294,6 +307,10 @@ msgstr "%b %e %H:%M:%S"
 msgid "%b %e %H:%M"
 msgstr "%e %b %H:%M"
 
+#. Translators: timestamp format for events in
+#. * a different year, showing the abbreviated
+#. * month name, day of the month, year and the
+#. * time with seconds in 24-hour format.
 #: ../src/gl-util.c:247
 msgid "%b %e %Y %H:%M:%S"
 msgstr "%b %e %Y %H:%M:%S"
@@ -334,13 +351,20 @@ msgstr "Повідомлення журналу"
 msgid "Unable to export log messages to a file"
 msgstr "Неможливо експортувати повідомлення журналу у файл"
 
-#: ../src/gl-window.c:467
+#: ../src/gl-window.c:474 ../src/gl-window.c:505
 msgid "Unable to read system logs"
 msgstr "Неможливо прочитати системні журнали"
 
-#: ../src/gl-window.c:481
+#: ../src/gl-window.c:488
 msgid "Unable to read user logs"
 msgstr "Неможливо прочитати журнали користувача"
+
+#: ../src/gl-window.c:520
+msgid "No logs available"
+msgstr "Немає доступних журналів"
+
+#~ msgid "Search the displayed logs"
+#~ msgstr "Пошук показаних журналів"
 
 #~ msgid "Not implemented"
 #~ msgstr "Не впроваджено"
