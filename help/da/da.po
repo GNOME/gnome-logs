@@ -1,0 +1,171 @@
+# Danish translation for gnome-logs.
+# Copyright (C) 2015 gnome-logs's COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-logs package.
+#
+# scootergrisen, 2015, 2016.
+# Gennemgået Ask Hjorth Larsen <asklarsen@gmail.com>, 2016.
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-logs master\n"
+"POT-Creation-Date: 2016-03-18 09:24+0000\n"
+"PO-Revision-Date: 2016-10-02 19:18+0200\n"
+"Last-Translator: scootergrisen\n"
+"Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
+"Language: da\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
+msgctxt "_"
+msgid "translator-credits"
+msgstr ""
+"scootergrisen, 2015, 2016\n"
+"\n"
+"Dansk-gruppen <dansk@dansk-gruppen.dk>\n"
+"Mere info: http://www.dansk-gruppen.dk"
+
+#. (itstool) path: info/title
+#: C/index.page:7
+msgctxt "text"
+msgid "Logs help"
+msgstr "Hjælp til Logge"
+
+#. (itstool) path: info/title
+#: C/index.page:8
+msgctxt "link"
+msgid "Logs help"
+msgstr "Hjælp til Logge"
+
+#. (itstool) path: info/desc
+#: C/index.page:13
+msgid "Browse and search through your systemd journal logs."
+msgstr "Gennemse og søg i dine systemd-journallogge."
+
+#. (itstool) path: page/title
+#: C/index.page:16
+msgid "<_:media-1/> Logs"
+msgstr "<_:media-1/> Logge"
+
+#. (itstool) path: media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/introduction.page:35
+msgctxt "_"
+msgid ""
+"external ref='media/gnome-logs-3-12.png' "
+"md5='56e83d7808cdfd80457691aff5ffc2d1'"
+msgstr "[Strengen bruges ikke]"
+
+#. (itstool) path: credit/name
+#: C/introduction.page:11
+msgid "David King"
+msgstr "David King"
+
+#. (itstool) path: credit/years
+#: C/introduction.page:13 C/introduction.page:18
+msgid "2014"
+msgstr "2014"
+
+#. (itstool) path: credit/name
+#: C/introduction.page:16 C/permissions.page:11
+msgid "Ekaterina Gerasimova"
+msgstr "Ekaterina Gerasimova"
+
+#. (itstool) path: info/desc
+#: C/introduction.page:23
+msgid "<app>Logs</app> is a viewer for the <sys>systemd</sys> journal."
+msgstr "<app>Logge</app> er en fremviser til <sys>systemd</sys>-journalen."
+
+#. (itstool) path: page/title
+#: C/introduction.page:27
+msgid "Introduction"
+msgstr "Introduktion"
+
+#. (itstool) path: page/p
+#: C/introduction.page:29
+msgid ""
+"Logs shows events from the systemd journal, and sorts them into categories, "
+"such as hardware and applications."
+msgstr ""
+"Logge viser begivenheder fra systemd-journalen, og sorterer dem i "
+"kategorier, såsom hardware og programmer."
+
+#. (itstool) path: page/p
+#: C/introduction.page:32
+msgid ""
+"Using Logs you can search your logs by typing a search term, and view "
+"detailed information about each event by clicking on it."
+msgstr ""
+"Med Logge kan du søge i dine logge ved at skrive en søgeterm, og vise "
+"detaljeret information om hver begivenhed ved at klikke på den."
+
+#. (itstool) path: media/p
+#: C/introduction.page:36
+msgid "Screenshot of Logs showing some journal entries."
+msgstr "Skærmbillede af Logge der viser nogle journalposter."
+
+#. (itstool) path: p/link
+#: C/legal.xml:5
+msgid "Creative Commons Attribution-ShareAlike 3.0 Unported License"
+msgstr "Creative Commons Attribution-ShareAlike 3.0 Unported License"
+
+#. (itstool) path: license/p
+#: C/legal.xml:4
+msgid "This work is licensed under a <_:link-1/>."
+msgstr "Dette værk er licenseret under <_:link-1/>."
+
+#. (itstool) path: credit/years
+#: C/permissions.page:13
+msgid "2013"
+msgstr "2013"
+
+#. (itstool) path: info/desc
+#: C/permissions.page:18
+msgid ""
+"You can read some or all of the logs, depending on which permissions you "
+"have."
+msgstr "Du kan læse nogle eller alle dine logge afhængigt af hvilke rettigheder, du har."
+
+#. (itstool) path: page/title
+#: C/permissions.page:22
+msgid "Can I view all logs?"
+msgstr "Kan jeg vise alle logge?"
+
+#. (itstool) path: page/p
+#: C/permissions.page:24
+msgid ""
+"You will be able to browse some messages that have been logged since the "
+"last reboot, depending on which permissions you have. Some of your "
+"permissions are set by your distribution, but they can be changed by your "
+"system administrator."
+msgstr "Afhængigt af hvilke rettigheder du har, vil du være i stand til at gennemse nogle meddelelser som er blevet logget siden sidste genstart. Nogle af dine rettigheder sættes af din distribution, men de kan ændres af din systemadministrator."
+
+#. (itstool) path: page/p
+#. TRANSLATORS: 'Standard' is taken from the user account type in the
+#. control panel when used in <em> or <gui> tags.
+#: C/permissions.page:30
+msgid ""
+"By default, <em href=\"help:gnome-help/user-admin-explain\">Standard</em> "
+"users are shown a limited set of logs, such as application logs and their "
+"own session logs. If you are a <gui>Standard</gui> user and do not see any "
+"logs, it is possible that your system administrator has disabled your "
+"ability to view logs."
+msgstr "Som standard vises <em href=\"help:gnome-help/user-admin-explain\">Standardbrugere</em> et begrænset sæt af logge, såsom programlogge og deres egne sessionslogge. Hvis du er en <gui>Standardbruger</gui>, og du ikke ser nogen logge, kan det være, din systemadministrator har deaktiveret din mulighed for at vise logge."
+
+#. (itstool) path: page/p
+#. TRANSLATORS: 'Administrator' is taken from the user account type in the
+#. control panel when used in <em> or <gui> tags.
+#: C/permissions.page:39
+msgid ""
+"<em>Administrator</em> users will normally be able to view more sensitive "
+"logs, such as kernel logs and the logs of other users. It is possible for "
+"administrators to have different levels of access to logs, so you may not be "
+"able to view all logs. If you are an <gui>Administrator</gui> user, then "
+"only other administrators can change which logs you can access. For more "
+"information about log access permissions, <link href=\"man:systemd-journald"
+"\">see the <_:cmd-1/> man page</link>."
+msgstr "<em>Administratorbrugere</em> er normalt i stand til at se mere følsomme logge, såsom kernellogge samt andre brugeres logge. Administratorer har mulighed for at have forskellige niveauer for adgang til logge, så du er måske ikke i stand til at vise alle logge. Hvis du er en <gui>Administratorbruger</gui>, er det kun andre administratorer, der kan ændre hvilke logge, du har adgang til. Se flere oplysninger om adgangsrettigheder til logge i <link href=\"man:systemd-journald\"><_:cmd-1/> man-siden</link>."
