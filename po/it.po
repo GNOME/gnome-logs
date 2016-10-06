@@ -3,22 +3,23 @@
 # This file is distributed under the same license as the gnome-logs package.
 # Daniele Medri <dmedri@gmail.com>, 2013.
 # Milo Casagrande <milo@milo.name>, 2014, 2015, 2016.
+# Gianvito Cavasoli <gianvito@gmx.it>, 2016.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-03-20 21:21+0000\n"
-"PO-Revision-Date: 2016-03-21 10:11+0100\n"
-"Last-Translator: Milo Casagrande <milo@milo.name>\n"
-"Language-Team: Italian <gnome-it-list@gnome.org>\n"
+"POT-Creation-Date: 2016-09-20 05:47+0000\n"
+"PO-Revision-Date: 2016-10-06 13:50+0200\n"
+"Last-Translator: Gianvito Cavasoli <gianvito@gmx.it>\n"
+"Language-Team: Italiano <gnome-it-list@gnome.org>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Poedit 1.8.7\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Gtranslator 2.91.7\n"
 
 #: ../data/gl-categorylist.ui.h:1
 msgid "Important"
@@ -36,19 +37,19 @@ msgstr "Preferiti"
 msgid "All"
 msgstr "Tutti"
 
-#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:197
+#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:202
 msgid "Applications"
 msgstr "Applicazioni"
 
-#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:206
+#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:211
 msgid "System"
 msgstr "Sistema"
 
-#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:210
+#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:215
 msgid "Security"
 msgstr "Sicurezza"
 
-#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:202
+#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:207
 msgid "Hardware"
 msgstr "Hardware"
 
@@ -73,8 +74,8 @@ msgid "Choose the boot from which to view logs"
 msgstr "Scegliere l'avvio di cui visualizzare i registri"
 
 #: ../data/gl-eventtoolbar.ui.h:4
-msgid "Search the displayed logs"
-msgstr "Cerca nei registri visualizzati"
+msgid "Search all the logs of the current category"
+msgstr "Cercare tutti i registri dell'attuale categoria"
 
 #: ../data/gl-eventviewdetail.ui.h:1
 msgid "Message"
@@ -226,11 +227,11 @@ msgstr "Avvio"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventviewlist.c:660
+#: ../src/gl-eventviewlist.c:290
 msgid "No results"
 msgstr "Nessun risultato"
 
-#: ../src/gl-eventviewrow.c:214
+#: ../src/gl-eventviewrow.c:219
 msgid "Other"
 msgstr "Altro"
 
@@ -248,6 +249,10 @@ msgstr "%I:%M:%S %p"
 msgid "%l:%M %p"
 msgstr "%I:%M %p"
 
+#. Translators: timestamp format for events in
+#. * the current year, showing the abbreviated
+#. * month name, day of the month and the time
+#. * with seconds in 12-hour format.
 #: ../src/gl-util.c:166
 msgid "%b %e %l:%M:%S %p"
 msgstr "%e %b %I:%M:%S %p"
@@ -260,10 +265,18 @@ msgstr "%e %b %I:%M:%S %p"
 msgid "%b %e %l:%M %p"
 msgstr "%e %b %I:%M %p"
 
+#. Translators: timestamp format for events in
+#. * a different year, showing the abbreviated
+#. * month name, day of the month, year and the
+#. * time with seconds in 12-hour format.
 #: ../src/gl-util.c:185
 msgid "%b %e %Y %l:%M:%S %p"
 msgstr "%e %b %Y %I:%M:%S %p"
 
+#. Translators: timestamp format for events in
+#. * a different year, showing the abbreviated
+#. * month name day of the month, year and the
+#. * time without seconds in 12-hour format.
 #: ../src/gl-util.c:194
 msgid "%b %e %Y %l:%M %p"
 msgstr "%e %b %Y %I:%M %p"
@@ -298,6 +311,10 @@ msgstr "%e %b %H:%M:%S"
 msgid "%b %e %H:%M"
 msgstr "%e %b %H:%M"
 
+#. Translators: timestamp format for events in
+#. * a different year, showing the abbreviated
+#. * month name, day of the month, year and the
+#. * time with seconds in 24-hour format.
 #: ../src/gl-util.c:247
 msgid "%b %e %Y %H:%M:%S"
 msgstr "%e %b %Y %H:%M:%S"
@@ -338,10 +355,14 @@ msgstr "messaggi del registro"
 msgid "Unable to export log messages to a file"
 msgstr "Impossibile esportare i messaggi del registro su file"
 
-#: ../src/gl-window.c:467
+#: ../src/gl-window.c:479 ../src/gl-window.c:510
 msgid "Unable to read system logs"
 msgstr "Impossibile leggere i registri di sistema"
 
-#: ../src/gl-window.c:481
+#: ../src/gl-window.c:493
 msgid "Unable to read user logs"
 msgstr "Impossibile leggere i registri utente"
+
+#: ../src/gl-window.c:525
+msgid "No logs available"
+msgstr "Nessun registro disponibile"
