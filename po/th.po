@@ -1,16 +1,15 @@
 # Thai translation for gnome-logs.
-# Copyright (C) 2014-2015 Free Software Foundation, Inc.
+# Copyright (C) 2014-2016 Free Software Foundation, Inc.
 # This file is distributed under the same license as the gnome-logs package.
-#
-# Akom Chotiphantawanon <knight2000@gmail.com>, 2014-2015.
+# Akom Chotiphantawanon <knight2000@gmail.com>, 2014-2016.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs gnome-3-14\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-03-14 07:59+0000\n"
-"PO-Revision-Date: 2015-03-20 11:36+0700\n"
+"POT-Creation-Date: 2016-09-21 17:16+0000\n"
+"PO-Revision-Date: 2016-10-09 20:47+0700\n"
 "Last-Translator: Akom Chotiphantawanon <knight2000@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
 "Language: th\n"
@@ -36,19 +35,19 @@ msgstr "ติดดาว"
 msgid "All"
 msgstr "ทั้งหมด"
 
-#: ../data/gl-categorylist.ui.h:5
+#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:202
 msgid "Applications"
 msgstr "โปรแกรม"
 
-#: ../data/gl-categorylist.ui.h:6
+#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:211
 msgid "System"
 msgstr "ระบบ"
 
-#: ../data/gl-categorylist.ui.h:7
+#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:215
 msgid "Security"
 msgstr "ความปลอดภัย"
 
-#: ../data/gl-categorylist.ui.h:8
+#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:207
 msgid "Hardware"
 msgstr "ฮาร์ดแวร์"
 
@@ -60,19 +59,21 @@ msgstr "รายการใหม่"
 msgid "Usage"
 msgstr "การใช้งาน"
 
-#. Name and summary taken from the desktop file.
-#: ../data/gl-eventtoolbar.ui.h:1 ../data/org.gnome.Logs.appdata.xml.in.h:2
-#: ../data/org.gnome.Logs.desktop.in.h:1
-msgid "Logs"
-msgstr "ปูม"
-
-#: ../data/gl-eventtoolbar.ui.h:2
+#: ../data/gl-eventtoolbar.ui.h:1
 msgid "Go back to the event view"
 msgstr "ย้อนกลับไปมุมมองเหตุการณ์"
 
+#: ../data/gl-eventtoolbar.ui.h:2
+msgid "Export logs to a file"
+msgstr "ส่งออกปูมลงในแฟ้ม"
+
 #: ../data/gl-eventtoolbar.ui.h:3
-msgid "Search the displayed logs"
-msgstr "ค้นปูมที่แสดง"
+msgid "Choose the boot from which to view logs"
+msgstr "เลือกรายการบูตที่จะดูปูม"
+
+#: ../data/gl-eventtoolbar.ui.h:4
+msgid "Search all the logs of the current category"
+msgstr "ค้นปูมทั้งหมดในหมวดปัจจุบัน"
 
 #: ../data/gl-eventviewdetail.ui.h:1
 msgid "Message"
@@ -106,6 +107,35 @@ msgstr "สนับสนุน"
 msgid "Documentation"
 msgstr "เอกสาร"
 
+#: ../data/gl-window.ui.h:1
+msgid "Help"
+msgstr "วิธีใช้"
+
+#: ../data/help-overlay.ui.h:1
+msgctxt "shortcut window"
+msgid "General"
+msgstr "ทั่วไป"
+
+#: ../data/help-overlay.ui.h:2
+msgctxt "shortcut window"
+msgid "Open a new window"
+msgstr "เปิดหน้าต่างใหม่"
+
+#: ../data/help-overlay.ui.h:3
+msgctxt "shortcut window"
+msgid "Close a window"
+msgstr "ปิดหน้าต่าง"
+
+#: ../data/help-overlay.ui.h:4
+msgctxt "shortcut window"
+msgid "Search"
+msgstr "ค้นหา"
+
+#: ../data/help-overlay.ui.h:5
+msgctxt "shortcut window"
+msgid "Find"
+msgstr "หา"
+
 #: ../data/menus.ui.h:1
 msgid "_New Window"
 msgstr "หน้าต่างใ_หม่"
@@ -115,19 +145,27 @@ msgid "_Help"
 msgstr "_วิธีใช้"
 
 #: ../data/menus.ui.h:3
+msgid "Keyboard Shortcuts"
+msgstr "ปุ่มลัด"
+
+#: ../data/menus.ui.h:4
 msgid "_About"
 msgstr "เ_กี่ยวกับ"
 
-#: ../data/menus.ui.h:4
+#: ../data/menus.ui.h:5
 msgid "_Quit"
 msgstr "_ออก"
 
-#: ../data/org.gnome.Logs.appdata.xml.in.h:3
+#: ../data/org.gnome.Logs.appdata.xml.in.h:1
+msgid "GNOME Logs"
+msgstr "ปูม GNOME"
+
+#: ../data/org.gnome.Logs.appdata.xml.in.h:2
 #: ../data/org.gnome.Logs.desktop.in.h:3
 msgid "View detailed event logs for the system"
 msgstr "ดูปูมเหตุการณ์ของระบบอย่างละเอียด"
 
-#: ../data/org.gnome.Logs.appdata.xml.in.h:4
+#: ../data/org.gnome.Logs.appdata.xml.in.h:3
 msgid ""
 "Logs shows events from the systemd journal, and sorts them into categories, "
 "such as hardware and applications."
@@ -135,13 +173,17 @@ msgstr ""
 "\"ปูม\" จะแสดงเหตุการณ์จากบันทึกของ systemd และคัดแยกเหตุการณ์เป็นหมวดๆ เช่น "
 "ฮาร์ดแวร์และโปรแกรม"
 
-#: ../data/org.gnome.Logs.appdata.xml.in.h:5
+#: ../data/org.gnome.Logs.appdata.xml.in.h:4
 msgid ""
 "Using Logs you can search your logs by typing a search term, and view "
 "detailed information about each event by clicking on it."
 msgstr ""
 "ด้วย \"ปูม\" คุณสามารถค้นปูมต่างๆ ของคุณได้โดยป้อนคำค้น "
 "และสามารถดูข้อมูลรายละเอียดเกี่ยวกับแต่ละเหตุการณ์ได้โดยคลิกที่เหตุการณ์นั้นๆ"
+
+#: ../data/org.gnome.Logs.desktop.in.h:1 ../src/gl-eventtoolbar.c:124
+msgid "Logs"
+msgstr "ปูม"
 
 #: ../data/org.gnome.Logs.desktop.in.h:2
 msgid "Log Viewer"
@@ -160,63 +202,167 @@ msgstr "วิธีเรียงลำดับรายการในกา
 msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr "เรียงลำดับรายการจากหน้าไปหลังหรือจากหลังมาหน้าสำหรับชนิดที่เลือก"
 
-#: ../src/gl-application.c:103
+#: ../src/gl-application.c:110
 msgid "translator-credits"
 msgstr "Akom Chotiphantawanon <knight2000@gmail.com>"
 
-#: ../src/gl-application.c:104
+#: ../src/gl-application.c:111
 msgid "View and search logs"
 msgstr "ดูและค้นปูม"
 
-#: ../src/gl-application.c:231
+#: ../src/gl-application.c:239
 msgid "Print version information and exit"
 msgstr "พิมพ์ข้อมูลรุ่นแล้วจบโปรแกรม"
 
+#. Translators: Boot refers to a single run (or bootup) of the system
+#: ../src/gl-eventtoolbar.c:115
+msgid "Boot"
+msgstr "รายการบูต"
+
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventviewlist.c:288
+#: ../src/gl-eventviewlist.c:290
 msgid "No results"
 msgstr "ไม่มีผลลัพธ์"
 
-#. Translators: timestamp format for events on the current
-#. * day, showing the time in 12-hour format.
-#: ../src/gl-util.c:138
+#: ../src/gl-eventviewrow.c:219
+msgid "Other"
+msgstr "อื่นๆ"
+
+#. Translators: timestamp format for events on the
+#. * current day, showing the time with seconds in
+#. * 12-hour format.
+#: ../src/gl-util.c:148
+msgid "%l:%M:%S %p"
+msgstr "%l:%M:%S %p"
+
+#. Translators: timestamp format for events on the
+#. * current day, showing the time without seconds in
+#. * 12-hour format.
+#: ../src/gl-util.c:155
 msgid "%l:%M %p"
 msgstr "%l:%M %p"
 
-#. Translators: timestamp format for events in the current
-#. * year, showing the abbreviated month name, day of the
-#. * month and the time in 12-hour format.
-#: ../src/gl-util.c:144
+#. Translators: timestamp format for events in
+#. * the current year, showing the abbreviated
+#. * month name, day of the month and the time
+#. * with seconds in 12-hour format.
+#: ../src/gl-util.c:166
+msgid "%b %e %l:%M:%S %p"
+msgstr "%e %b %l:%M:%S %p"
+
+#. Translators: timestamp format for events in the
+#. * current year, showing the abbreviated month name,
+#. * day of the month and the time without seconds in
+#. * 12-hour format.
+#: ../src/gl-util.c:174
 msgid "%b %e %l:%M %p"
 msgstr "%e %b %l:%M %p"
 
-#. Translators: timestamp format for events in a different
-#. * year, showing the abbreviated month name, day of the
-#. * month, year and the time in 12-hour format.
-#: ../src/gl-util.c:150
+#. Translators: timestamp format for events in
+#. * a different year, showing the abbreviated
+#. * month name, day of the month, year and the
+#. * time with seconds in 12-hour format.
+#: ../src/gl-util.c:185
+msgid "%b %e %Y %l:%M:%S %p"
+msgstr "%e %b %Ey %l:%M:%S %p"
+
+#. Translators: timestamp format for events in
+#. * a different year, showing the abbreviated
+#. * month name day of the month, year and the
+#. * time without seconds in 12-hour format.
+#: ../src/gl-util.c:194
 msgid "%b %e %Y %l:%M %p"
 msgstr "%e %b %Ey %l:%M %p"
 
-#. Translators: timestamp format for events on the current
-#. * day, showing the time in 24-hour format.
-#: ../src/gl-util.c:163
+#. Translators: timestamp format for events on the
+#. * current day, showing the time with seconds in
+#. * 24-hour format.
+#: ../src/gl-util.c:211
+msgid "%H:%M:%S"
+msgstr "%H:%M:%S"
+
+#. Translators: timestamp format for events on the
+#. * current day, showing the time without seconds in
+#. * 24-hour format.
+#: ../src/gl-util.c:218
 msgid "%H:%M"
 msgstr "%H:%M"
 
-#. Translators: timestamp format for events in the current
-#. * year, showing the abbreviated month name, day of the
-#. * month and the time in 24-hour format.
-#: ../src/gl-util.c:169
+#. Translators: timestamp format for events in the
+#. * current year, showing the abbreviated month name,
+#. * day of the month and the time with seconds in
+#. * 24-hour format.
+#: ../src/gl-util.c:228
+msgid "%b %e %H:%M:%S"
+msgstr "%e %b %H:%M:%S"
+
+#. Translators: timestamp format for events in the
+#. * current year, showing the abbreviated month name,
+#. * day of the month and the time without seconds in
+#. * 24-hour format.
+#: ../src/gl-util.c:236
 msgid "%b %e %H:%M"
 msgstr "%e %b %H:%M"
 
-#. Translators: timestamp format for events in a different
-#. * year, showing the abbreviated month name, day of the
-#. * month, year and the time in 24-hour format.
-#: ../src/gl-util.c:175
+#. Translators: timestamp format for events in
+#. * a different year, showing the abbreviated
+#. * month name, day of the month, year and the
+#. * time with seconds in 24-hour format.
+#: ../src/gl-util.c:247
+msgid "%b %e %Y %H:%M:%S"
+msgstr "%e %b %Ey %H:%M:%S"
+
+#. Translators: timestamp format for events in a
+#. * different year, showing the abbreviated month name,
+#. * day of the month, year and the time without seconds
+#. * in 24-hour format.
+#: ../src/gl-util.c:255
 msgid "%b %e %Y %H:%M"
 msgstr "%e %b %Ey %H:%M"
+
+#. Transltors: the first string is the earliest timestamp of the boot,
+#. * and the second string is the newest timestamp. An example string might
+#. * be '08:10 - 08:30'
+#: ../src/gl-util.c:319
+#, c-format
+msgid "%s – %s"
+msgstr "%s – %s"
+
+#: ../src/gl-window.c:186
+msgid "Save logs"
+msgstr "บันทึกปูม"
+
+#: ../src/gl-window.c:189
+msgid "_Cancel"
+msgstr "_ยกเลิก"
+
+#: ../src/gl-window.c:190
+msgid "_Save"
+msgstr "_บันทึก"
+
+#: ../src/gl-window.c:195
+msgid "log messages"
+msgstr "ข้อความปูม"
+
+#: ../src/gl-window.c:248
+msgid "Unable to export log messages to a file"
+msgstr "ไม่สามารถส่งออกข้อความปูมลงในแฟ้ม"
+
+#: ../src/gl-window.c:479 ../src/gl-window.c:510
+msgid "Unable to read system logs"
+msgstr "ไม่สามารถอ่านปูมระบบได้"
+
+#: ../src/gl-window.c:493
+msgid "Unable to read user logs"
+msgstr "ไม่สามารถอ่านปูมผู้ใช้ได้"
+
+#: ../src/gl-window.c:525
+msgid "No logs available"
+msgstr "ไม่มีปูม"
+
+#~ msgid "Search the displayed logs"
+#~ msgstr "ค้นปูมที่แสดง"
 
 #~ msgid "Not implemented"
 #~ msgstr "ยังไม่ทำ"
