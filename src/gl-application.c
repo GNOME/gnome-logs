@@ -159,12 +159,16 @@ on_monospace_font_name_changed (GSettings *settings,
     {
         GtkCssProvider *provider;
         gchar *css_fragment;
+        gchar *css_desc;
+        PangoFontDescription *font_desc;
 
         g_free (priv->monospace_font);
         priv->monospace_font = font_name;
 
-        css_fragment = g_strconcat (".event-monospace { font: ", font_name,
-                                    "; }", NULL);
+        font_desc = pango_font_description_from_string (font_name);
+        css_desc = pango_font_description_to_css (font_desc);
+        css_fragment = g_strconcat (".event-monospace ", css_desc, NULL);
+
         provider = gtk_css_provider_new ();
         g_signal_connect (provider, "parsing-error",
                           G_CALLBACK (gl_util_on_css_provider_parsing_error),
@@ -175,8 +179,10 @@ on_monospace_font_name_changed (GSettings *settings,
                                                    GTK_STYLE_PROVIDER (provider),
                                                    GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
 
+        g_free (css_desc);
         g_free (css_fragment);
         g_object_unref (provider);
+        pango_font_description_free (font_desc);
     }
     else
     {

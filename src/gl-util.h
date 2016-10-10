@@ -65,6 +65,7 @@ gchar * gl_util_boot_time_to_display (guint64 timestamp_first,
 GlJournalStorage gl_util_journal_storage_type (void);
 gboolean gl_util_can_read_system_journal (GlJournalStorage storage_type);
 gboolean gl_util_can_read_user_journal (void);
+gchar *pango_font_description_to_css (PangoFontDescription *desc);
 
 G_END_DECLS
 
