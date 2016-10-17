@@ -762,25 +762,6 @@ gl_event_view_list_init (GlEventViewList *view)
                       view);
 }
 
-void
-gl_event_view_list_search (GlEventViewList *view,
-                           const gchar *needle)
-{
-    GlEventViewListPrivate *priv;
-
-    g_return_if_fail (GL_EVENT_VIEW_LIST (view));
-
-    priv = gl_event_view_list_get_instance_private (view);
-
-    g_free (priv->search_text);
-    priv->search_text = g_strdup (needle);
-
-    /* for search, we need all entries - tell the model to fetch them */
-    gl_journal_model_fetch_more_entries (priv->journal_model, TRUE);
-
-    gtk_list_box_invalidate_filter (priv->entries_box);
-}
-
 GtkWidget *
 gl_event_view_list_new (void)
 {
