@@ -37,6 +37,7 @@ struct _GlJournalModel
     GPtrArray *entries;
 
     GlQuery *query;
+    GPtrArray *token_array;
 
     guint n_entries_to_fetch;
     gboolean fetched_all;
@@ -44,7 +45,8 @@ struct _GlJournalModel
 };
 
 static void gl_journal_model_interface_init (GListModelInterface *iface);
-static gboolean search_in_entry (GlJournalEntry *entry, GlQuery *query);
+static GPtrArray *tokenize_search_string (gchar *search_text);
+static gboolean search_in_entry (GlJournalEntry *entry, GlJournalModel *model);
 static gboolean gl_query_check_journal_end (GlQuery *query, GlJournalEntry *entry);
 
 G_DEFINE_TYPE_WITH_CODE (GlJournalModel, gl_journal_model, G_TYPE_OBJECT,
@@ -79,7 +81,7 @@ gl_journal_model_fetch_idle (gpointer user_data)
     last = model->entries->len;
     if ((entry = gl_journal_previous (model->journal)) && gl_query_check_journal_end (model->query, entry))
     {
-        if (search_in_entry (entry, model->query))
+        if (search_in_entry (entry, model))
         {
             model->n_entries_to_fetch--;
             g_ptr_array_add (model->entries, entry);
@@ -160,6 +162,10 @@ gl_journal_model_dispose (GObject *object)
     }
 
     g_clear_object (&model->journal);
+    if (model->token_array != NULL)
+    {
+        g_ptr_array_free (model->token_array, TRUE);
+    }
 
     G_OBJECT_CLASS (gl_journal_model_parent_class)->dispose (object);
 }
@@ -389,6 +395,9 @@ void
 gl_journal_model_take_query (GlJournalModel *model,
                              GlQuery *query)
 {
+    GlQueryItem *search_match;
+    GPtrArray *search_matches;
+
     g_return_if_fail (GL_JOURNAL_MODEL (model));
 
     gl_journal_model_stop_idle (model);
@@ -412,8 +421,20 @@ gl_journal_model_take_query (GlJournalModel *model,
     /* Set new query */
     model->query = query;
 
+    search_matches = gl_query_get_substring_matches (model->query);
+
+    /* Get search text from a search match */
+    search_match = g_ptr_array_index (search_matches, 0);
+
+    if (search_match->field_value != NULL)
+    {
+        model->token_array = tokenize_search_string (search_match->field_value);
+    }
+
     /* Start processing the new query */
     gl_journal_model_process_query (model);
+
+    g_ptr_array_free (search_matches, TRUE);
 }
 
 /* Add a new queryitem to query */
@@ -894,14 +915,13 @@ calculate_match (GlJournalEntry *entry,
 
 static gboolean
 search_in_entry (GlJournalEntry *entry,
-                 GlQuery *query)
+                 GlJournalModel *model)
 {
     GlQueryItem *search_match;
     gboolean matches;
     GPtrArray *search_matches;
-    GPtrArray *token_array;
 
-    search_matches = gl_query_get_substring_matches (query);
+    search_matches = gl_query_get_substring_matches (model->query);
 
     /* Check if there is atleast one substring queryitem */
     if (search_matches->len)
@@ -916,18 +936,9 @@ search_in_entry (GlJournalEntry *entry,
         }
         else
         {
-            gchar *search_text;
-
-            search_text = search_match->field_value;
-
-            /* Tokenize the entered text */
-            token_array = tokenize_search_string (search_text);
-
             /* calculate match depending on the number of tokens */
-            matches = calculate_match (entry, token_array, search_matches);
-
-            /* Free variables */
-            g_ptr_array_free (token_array, TRUE);
+            matches = calculate_match (entry, model->token_array,
+                                       search_matches);
         }
     }
     else
