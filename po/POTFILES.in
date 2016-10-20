@@ -1,6 +1,10 @@
+# List of source files containing translatable strings.
+# Please keep this file sorted alphabetically.
 [type: gettext/glade]data/gl-categorylist.ui
 [type: gettext/glade]data/gl-eventtoolbar.ui
 [type: gettext/glade]data/gl-eventviewdetail.ui
+[type: gettext/glade]data/gl-eventviewlist.ui
+[type: gettext/glade]data/gl-searchpopover.ui
 [type: gettext/glade]data/gl-window.ui
 [type: gettext/glade]data/help-overlay.ui
 [type: gettext/glade]data/menus.ui
@@ -12,5 +16,6 @@ src/gl-eventtoolbar.c
 src/gl-eventviewdetail.c
 src/gl-eventviewlist.c
 src/gl-eventviewrow.c
+src/gl-searchpopover.c
 src/gl-util.c
 src/gl-window.c
