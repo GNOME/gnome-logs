@@ -970,6 +970,9 @@ gl_event_view_list_init (GlEventViewList *view)
     g_signal_connect (priv->entries_box, "row-activated",
                       G_CALLBACK (on_listbox_row_activated), GTK_BOX (view));
 
+    gtk_search_bar_connect_entry (GTK_SEARCH_BAR (priv->event_search),
+                                  GTK_ENTRY (priv->search_entry));
+
     /* TODO: Monitor and propagate any GSettings changes. */
     settings = g_settings_new (DESKTOP_SCHEMA);
     priv->clock_format = g_settings_get_enum (settings, CLOCK_FORMAT);
