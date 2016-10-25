@@ -1,3 +1,12 @@
+GNOME Logs 3.23.1
+=================
+
+* add search popover from Pranav Ganorkar
+* fix CSS parsing error and clean up an unused function
+* updated POTFILES.in
+* update to Danish help translation
+* updates to Basque, Italian, Thai, Norwegian bokmål and Hungarian translations
+
 GNOME Logs 3.22.0
 =================
 
