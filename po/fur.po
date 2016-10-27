@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
 "POT-Creation-Date: 2016-10-20 20:12+0000\n"
-"PO-Revision-Date: 2016-10-26 05:12+0200\n"
+"PO-Revision-Date: 2016-10-27 22:34+0200\n"
 "Last-Translator: Fabio Tomat <f.t.public@gmail.com>\n"
 "Language-Team: Friulian <fur@li.org>\n"
 "Language: fur\n"
@@ -111,9 +111,8 @@ msgid "Select journal field and timestamp range filtering options"
 msgstr ""
 
 #: ../data/gl-searchpopover.ui.h:1
-#, fuzzy
 msgid "Select a Journal Field to filter the Logs according to it"
-msgstr "Selezione un cjamp dal diari par filtrâ i registris"
+msgstr "Selezione un cjamp dal diari par filtrâ i regjistris secont di chel"
 
 #: ../data/gl-searchpopover.ui.h:2
 msgid "All Available Fields"
@@ -155,7 +154,7 @@ msgstr ""
 
 #: ../data/gl-searchpopover.ui.h:11
 msgid "Match in any part of the string"
-msgstr ""
+msgstr "Corispuindince in cualsisei part de stringhe"
 
 #: ../data/gl-searchpopover.ui.h:12
 msgid "Exact"
@@ -163,7 +162,7 @@ msgstr "Di precîs"
 
 #: ../data/gl-searchpopover.ui.h:13
 msgid "Match complete string only"
-msgstr ""
+msgstr "Corispuindince dome di stringhis completis"
 
 #: ../data/gl-searchpopover.ui.h:14
 msgid "Back"
@@ -461,8 +460,6 @@ msgstr "PM"
 #. * label in the custom range submenu, showing the time with seconds
 #. * in 12-hour format.
 #: ../src/gl-searchpopover.c:987 ../src/gl-searchpopover.c:1226
-#, fuzzy
-#| msgid "%l:%M:%S %p"
 msgid "%I:%M:%S %p"
 msgstr "%I:%M:%S %p"
 
@@ -473,7 +470,6 @@ msgstr "%I:%M:%S %p"
 #. * label in the custom range submenu, showing the time with seconds
 #. * in 24-hour format.
 #: ../src/gl-searchpopover.c:994 ../src/gl-searchpopover.c:1233
-#, fuzzy
 msgid "%T"
 msgstr "%T"
 
