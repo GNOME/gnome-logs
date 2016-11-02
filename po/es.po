@@ -10,10 +10,10 @@ msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-08-10 10:34+0000\n"
-"PO-Revision-Date: 2016-08-16 12:15+0200\n"
+"POT-Creation-Date: 2016-10-20 20:12+0000\n"
+"PO-Revision-Date: 2016-11-02 09:16+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
-"Language-Team: Español; Castellano <gnome-es-list@gnome.org>\n"
+"Language-Team: es <gnome-es-list@gnome.org>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -77,15 +77,15 @@ msgstr "Eliga el arranque del que quiere ver los registros"
 msgid "Search all the logs of the current category"
 msgstr "Buscar todos los registros de la categoría actual"
 
-#: ../data/gl-eventviewdetail.ui.h:1
+#: ../data/gl-eventviewdetail.ui.h:1 ../data/gl-searchpopover.ui.h:32
 msgid "Message"
 msgstr "Mensaje"
 
-#: ../data/gl-eventviewdetail.ui.h:2
+#: ../data/gl-eventviewdetail.ui.h:2 ../data/gl-searchpopover.ui.h:36
 msgid "Audit Session"
 msgstr "Auditar sesión"
 
-#: ../data/gl-eventviewdetail.ui.h:3
+#: ../data/gl-eventviewdetail.ui.h:3 ../data/gl-searchpopover.ui.h:35
 msgid "Kernel Device"
 msgstr "Dispositivo del núcleo"
 
@@ -108,6 +108,178 @@ msgstr "Soporte"
 #: ../data/gl-eventviewdetail.ui.h:8
 msgid "Documentation"
 msgstr "Documentación"
+
+#: ../data/gl-eventviewlist.ui.h:1
+msgid "Select journal field and timestamp range filtering options"
+msgstr ""
+"Seleccionar opciones de filtrado del campo del diario y rango de marca de "
+"tiempo"
+
+#: ../data/gl-searchpopover.ui.h:1
+msgid "Select a Journal Field to filter the Logs according to it"
+msgstr "Seleccionar un campo del diario por que filtrar los registros"
+
+#: ../data/gl-searchpopover.ui.h:2
+msgid "All Available Fields"
+msgstr "Todos los campos disponibles"
+
+#: ../data/gl-searchpopover.ui.h:3
+msgid "What"
+msgstr "Qué"
+
+#: ../data/gl-searchpopover.ui.h:4
+msgid "Select Journal Field…"
+msgstr "Seleccionar campo del diario…"
+
+#: ../data/gl-searchpopover.ui.h:5
+msgid "When"
+msgstr "Cuándo"
+
+#: ../data/gl-searchpopover.ui.h:6
+msgid "Show Logs from…"
+msgstr "Mostrar registros desde…"
+
+#: ../data/gl-searchpopover.ui.h:7
+msgid "Select Timestamp Range of the Log Entries to be shown"
+msgstr ""
+"Seleccionar rango de marca de tiempo de las entradas del registro que mostrar"
+
+#: ../data/gl-searchpopover.ui.h:8 ../src/gl-searchpopover.c:1303
+msgid "Current Boot"
+msgstr "Arranque actual"
+
+#: ../data/gl-searchpopover.ui.h:9
+#| msgctxt "shortcut window"
+#| msgid "Search"
+msgid "Search Type"
+msgstr "Tipo de búsqueda"
+
+#: ../data/gl-searchpopover.ui.h:10
+msgid "Substring"
+msgstr "Subcadena"
+
+#: ../data/gl-searchpopover.ui.h:11
+msgid "Match in any part of the string"
+msgstr "Coincidir en cualquier parte de la cadena"
+
+#: ../data/gl-searchpopover.ui.h:12
+msgid "Exact"
+msgstr "Exacta"
+
+#: ../data/gl-searchpopover.ui.h:13
+msgid "Match complete string only"
+msgstr "Coincidir sólo con la cadena completa"
+
+#: ../data/gl-searchpopover.ui.h:14
+msgid "Back"
+msgstr "Atrás"
+
+#: ../data/gl-searchpopover.ui.h:15
+msgid "Show Logs Starting From…"
+msgstr "Mostrar registros desde el…"
+
+#: ../data/gl-searchpopover.ui.h:16
+msgid "Select a start date"
+msgstr "Seleccione una fecha de inicio"
+
+#: ../data/gl-searchpopover.ui.h:17
+msgid "Select Start Date…"
+msgstr "Seleccionar fecha de inicio…"
+
+#: ../data/gl-searchpopover.ui.h:18
+msgid "Select start time"
+msgstr "Seleccione una hora de inicio"
+
+#: ../data/gl-searchpopover.ui.h:19
+msgid "Select Start Time…"
+msgstr "Seleccionar hora de inicio…"
+
+#: ../data/gl-searchpopover.ui.h:20
+msgid "Hr"
+msgstr "Hr"
+
+#: ../data/gl-searchpopover.ui.h:21
+msgid "Min"
+msgstr "Min"
+
+#: ../data/gl-searchpopover.ui.h:22
+#| msgctxt "shortcut window"
+#| msgid "Search"
+msgid "Sec"
+msgstr "Seg"
+
+#: ../data/gl-searchpopover.ui.h:23
+msgid "AM/PM"
+msgstr "AM/PM"
+
+#: ../data/gl-searchpopover.ui.h:24
+msgid "Until…"
+msgstr "Hasta…"
+
+#: ../data/gl-searchpopover.ui.h:25
+msgid "Select an end date"
+msgstr "Seleccionar fecha de fin"
+
+#: ../data/gl-searchpopover.ui.h:26
+msgid "Select End Date…"
+msgstr "Seleccionar fecha de fin…"
+
+#: ../data/gl-searchpopover.ui.h:27
+msgid "Select end time"
+msgstr "Seleccionar hora de fin"
+
+#: ../data/gl-searchpopover.ui.h:28
+msgid "Select End Time…"
+msgstr "Seleccionar hora de fin…"
+
+#: ../data/gl-searchpopover.ui.h:29
+msgid "PID"
+msgstr "PID"
+
+#: ../data/gl-searchpopover.ui.h:30
+msgid "UID"
+msgstr "UID"
+
+#: ../data/gl-searchpopover.ui.h:31
+msgid "GID"
+msgstr "GID"
+
+#: ../data/gl-searchpopover.ui.h:33
+msgid "Process Name"
+msgstr "Process Name"
+
+#: ../data/gl-searchpopover.ui.h:34
+#| msgid "System"
+msgid "Systemd Unit"
+msgstr "Unidad de systemd"
+
+#: ../data/gl-searchpopover.ui.h:37
+msgid "Executable Path"
+msgstr "Ruta del ejecutable"
+
+#: ../data/gl-searchpopover.ui.h:38
+msgid "Previous Boot"
+msgstr "Arranque anterior"
+
+#: ../data/gl-searchpopover.ui.h:39
+msgid "Today"
+msgstr "Hoy"
+
+#: ../data/gl-searchpopover.ui.h:40
+msgid "Yesterday"
+msgstr "Ayer"
+
+#: ../data/gl-searchpopover.ui.h:41
+msgid "Last 3 days"
+msgstr "Últimos 3 días"
+
+#: ../data/gl-searchpopover.ui.h:42
+msgid "Entire Journal"
+msgstr "Diario completo"
+
+#: ../data/gl-searchpopover.ui.h:43
+msgid "Set Custom Range…"
+msgstr "Seleccionar rango personalizado…"
 
 #: ../data/gl-window.ui.h:1
 msgid "Help"
@@ -214,7 +386,7 @@ msgstr "Daniel Mustieles <daniel.mustieles@gmail.com>, 2013-2016"
 msgid "View and search logs"
 msgstr "Ver y buscar registros"
 
-#: ../src/gl-application.c:239
+#: ../src/gl-application.c:245
 msgid "Print version information and exit"
 msgstr "Mostrar información de la versión y salir"
 
@@ -225,13 +397,90 @@ msgstr "Arranque"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventviewlist.c:290
+#: ../src/gl-eventviewlist.c:296
 msgid "No results"
 msgstr "No hay resultados"
 
 #: ../src/gl-eventviewrow.c:219
 msgid "Other"
 msgstr "Otros"
+
+#: ../src/gl-searchpopover.c:503
+msgid "Select Start Date..."
+msgstr "Seleccionar fecha de inicio…"
+
+#: ../src/gl-searchpopover.c:504
+msgid "Select Start Time..."
+msgstr "Seleccionar hora de inicio…"
+
+#: ../src/gl-searchpopover.c:521
+msgid "Select End Date..."
+msgstr "Seleccionar fecha de fin…"
+
+#: ../src/gl-searchpopover.c:522
+msgid "Select End Time..."
+msgstr "Seleccionar hora de fin…"
+
+#. Translators: if only custom start timestamp is set, then we update
+#. * the timestamp range button label in popover to show that
+#. * logs are shown in the window starting from this timestamp
+#. * until the ending timestamp of journal.
+#: ../src/gl-searchpopover.c:687
+#, c-format
+msgid "From %s"
+msgstr "Desde %s"
+
+#. Translators: if only custom end timestamp is set, then we update
+#. * the timestamp range button label in popover to show that
+#. * logs are shown in the window upto this timestamp
+#. * with the starting timestamp being the current time.
+#: ../src/gl-searchpopover.c:700
+#, c-format
+msgid "Until %s"
+msgstr "Hasta %s"
+
+#. Translators: date format for the start date entry
+#. * and start date button label in the custom range submenu,
+#. * showing the day of month in decimal number, full month
+#. * name as string, the year as a decimal number including the century.
+#. Translators: date format for the end date entry
+#. * and end date button label in the custom range submenu,
+#. * showing the day of month in decimal number, full month
+#. * name as string, the year as a decimal number including the century.
+#: ../src/gl-searchpopover.c:737 ../src/gl-searchpopover.c:1104
+msgid "%e %B %Y"
+msgstr "%e %B %Y"
+
+#: ../src/gl-searchpopover.c:875
+#, c-format
+msgid "AM"
+msgstr "AM"
+
+#: ../src/gl-searchpopover.c:879
+#, c-format
+msgid "PM"
+msgstr "PM"
+
+#. Translators: timestamp format for the custom start time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 12-hour format.
+#. Translators: timestamp format for the custom end time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 12-hour format.
+#: ../src/gl-searchpopover.c:987 ../src/gl-searchpopover.c:1226
+#| msgid "%l:%M:%S %p"
+msgid "%I:%M:%S %p"
+msgstr "%I:%M:%S %p"
+
+#. Translators: timestamp format for the custom start time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 24-hour format.
+#. Translators: timestamp format for the custom end time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 24-hour format.
+#: ../src/gl-searchpopover.c:994 ../src/gl-searchpopover.c:1233
+msgid "%T"
+msgstr "%T"
 
 #. Translators: timestamp format for events on the
 #. * current day, showing the time with seconds in
@@ -353,15 +602,15 @@ msgstr "mensajes de registro"
 msgid "Unable to export log messages to a file"
 msgstr "No se puede exportar el registro de mensajes a un archivo"
 
-#: ../src/gl-window.c:474 ../src/gl-window.c:505
+#: ../src/gl-window.c:479 ../src/gl-window.c:510
 msgid "Unable to read system logs"
 msgstr "No se pueden leer los registros del sistema"
 
-#: ../src/gl-window.c:488
+#: ../src/gl-window.c:493
 msgid "Unable to read user logs"
 msgstr "No se pueden leer los registros del usuario"
 
-#: ../src/gl-window.c:520
+#: ../src/gl-window.c:525
 msgid "No logs available"
 msgstr "No hay registros disponibles"
 
