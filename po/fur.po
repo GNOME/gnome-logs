@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
 "POT-Creation-Date: 2016-10-20 20:12+0000\n"
-"PO-Revision-Date: 2016-10-27 22:34+0200\n"
+"PO-Revision-Date: 2016-11-04 16:09+0100\n"
 "Last-Translator: Fabio Tomat <f.t.public@gmail.com>\n"
 "Language-Team: Friulian <fur@li.org>\n"
 "Language: fur\n"
@@ -107,8 +107,9 @@ msgid "Documentation"
 msgstr "Documentazion"
 
 #: ../data/gl-eventviewlist.ui.h:1
+#, fuzzy
 msgid "Select journal field and timestamp range filtering options"
-msgstr ""
+msgstr "Selezione opzions di filtrament cjamp diari e periodi di timp"
 
 #: ../data/gl-searchpopover.ui.h:1
 msgid "Select a Journal Field to filter the Logs according to it"
@@ -136,9 +137,11 @@ msgstr "Cuant"
 msgid "Show Logs from…"
 msgstr "Mostre regjistris di..."
 
+# timestamp è giusto tradurlo così?
 #: ../data/gl-searchpopover.ui.h:7
+#, fuzzy
 msgid "Select Timestamp Range of the Log Entries to be shown"
-msgstr ""
+msgstr "Selezione periodi di timp des vôs dal regjistri di mostrâ"
 
 #: ../data/gl-searchpopover.ui.h:8 ../src/gl-searchpopover.c:1303
 msgid "Current Boot"
@@ -150,7 +153,7 @@ msgstr "Gjenar ricercje"
 
 #: ../data/gl-searchpopover.ui.h:10
 msgid "Substring"
-msgstr ""
+msgstr "Sotstringhe"
 
 #: ../data/gl-searchpopover.ui.h:11
 msgid "Match in any part of the string"
@@ -197,9 +200,6 @@ msgid "Min"
 msgstr "Min"
 
 #: ../data/gl-searchpopover.ui.h:22
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Search"
 msgid "Sec"
 msgstr "Sec"
 
