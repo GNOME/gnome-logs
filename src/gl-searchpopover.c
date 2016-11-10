@@ -500,8 +500,8 @@ reset_custom_range_widgets (GlSearchPopover *popover)
     }
 
     gtk_entry_set_text (GTK_ENTRY (priv->start_date_entry), "");
-    gtk_label_set_label (GTK_LABEL (priv->start_date_button_label), _("Select Start Date..."));
-    gtk_label_set_label (GTK_LABEL (priv->start_time_button_label), _("Select Start Time..."));
+    gtk_label_set_label (GTK_LABEL (priv->start_date_button_label), _("Select Start Date…"));
+    gtk_label_set_label (GTK_LABEL (priv->start_time_button_label), _("Select Start Time…"));
 
     /*Reset end range elements */
     gtk_spin_button_set_value (GTK_SPIN_BUTTON (priv->end_time_minute_spin), 0.0);
@@ -518,8 +518,8 @@ reset_custom_range_widgets (GlSearchPopover *popover)
     }
 
     gtk_entry_set_text (GTK_ENTRY (priv->end_date_entry), "");
-    gtk_label_set_label (GTK_LABEL (priv->end_date_button_label), _("Select End Date..."));
-    gtk_label_set_label (GTK_LABEL (priv->end_time_button_label), _("Select End Time..."));
+    gtk_label_set_label (GTK_LABEL (priv->end_date_button_label), _("Select End Date…"));
+    gtk_label_set_label (GTK_LABEL (priv->end_time_button_label), _("Select End Time…"));
 }
 
 static void
