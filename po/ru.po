@@ -2,25 +2,25 @@
 # Copyright (C) 2014 gnome-logs's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-logs package.
 # Mihail Gurin <mikegurin@yandex.ru>, 2014.
-# Stas Solovey <whats_up@tut.by>, 2014, 2015.
 # Yuri Myasoedov <ymyasoedov@yandex.ru>, 2014, 2015.
+# Stas Solovey <whats_up@tut.by>, 2014, 2015, 2016.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-03-17 09:23+0000\n"
-"PO-Revision-Date: 2016-03-17 15:37+0300\n"
-"Last-Translator: Yuri Myasoedov <ymyasoedov@yandex.ru>\n"
-"Language-Team: русский <gnome-cyr@gnome.org>\n"
+"POT-Creation-Date: 2016-09-20 05:47+0000\n"
+"PO-Revision-Date: 2016-11-24 01:06+0300\n"
+"Last-Translator: Stas Solovey <whats_up@tut.by>\n"
+"Language-Team: Русский <gnome-cyr@gnome.org>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Poedit 1.6.9\n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"X-Generator: Gtranslator 2.91.7\n"
 
 #: ../data/gl-categorylist.ui.h:1
 msgid "Important"
@@ -38,19 +38,19 @@ msgstr "Избранные"
 msgid "All"
 msgstr "Все"
 
-#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:197
+#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:202
 msgid "Applications"
 msgstr "Приложения"
 
-#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:206
+#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:211
 msgid "System"
 msgstr "Система"
 
-#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:210
+#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:215
 msgid "Security"
 msgstr "Безопасность"
 
-#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:202
+#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:207
 msgid "Hardware"
 msgstr "Оборудование"
 
@@ -75,8 +75,8 @@ msgid "Choose the boot from which to view logs"
 msgstr "Выберите загрузку, для которой хотите просмотреть журналы"
 
 #: ../data/gl-eventtoolbar.ui.h:4
-msgid "Search the displayed logs"
-msgstr "Поиск по журналам"
+msgid "Search all the logs of the current category"
+msgstr "Искать все журналы текущей категории"
 
 #: ../data/gl-eventviewdetail.ui.h:1
 msgid "Message"
@@ -228,11 +228,11 @@ msgstr "Загрузка"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventviewlist.c:660
+#: ../src/gl-eventviewlist.c:290
 msgid "No results"
 msgstr "Результаты отсутствуют"
 
-#: ../src/gl-eventviewrow.c:214
+#: ../src/gl-eventviewrow.c:219
 msgid "Other"
 msgstr "Другое"
 
@@ -251,6 +251,10 @@ msgid "%l:%M %p"
 msgstr "%l:%M %p"
 
 # fix даты
+#. Translators: timestamp format for events in
+#. * the current year, showing the abbreviated
+#. * month name, day of the month and the time
+#. * with seconds in 12-hour format.
 #: ../src/gl-util.c:166
 msgid "%b %e %l:%M:%S %p"
 msgstr "%e %b., %l:%M:%S %p"
@@ -265,11 +269,19 @@ msgid "%b %e %l:%M %p"
 msgstr "%e %b., %l:%M %p"
 
 # fix даты
+#. Translators: timestamp format for events in
+#. * a different year, showing the abbreviated
+#. * month name, day of the month, year and the
+#. * time with seconds in 12-hour format.
 #: ../src/gl-util.c:185
 msgid "%b %e %Y %l:%M:%S %p"
 msgstr "%e %b. %Y, %l:%M:%S %p"
 
 # fix даты
+#. Translators: timestamp format for events in
+#. * a different year, showing the abbreviated
+#. * month name day of the month, year and the
+#. * time without seconds in 12-hour format.
 #: ../src/gl-util.c:194
 msgid "%b %e %Y %l:%M %p"
 msgstr "%e %b. %Y, %l:%M %p"
@@ -307,6 +319,10 @@ msgid "%b %e %H:%M"
 msgstr "%e %b., %H:%M"
 
 # fix даты
+#. Translators: timestamp format for events in
+#. * a different year, showing the abbreviated
+#. * month name, day of the month, year and the
+#. * time with seconds in 24-hour format.
 #: ../src/gl-util.c:247
 msgid "%b %e %Y %H:%M:%S"
 msgstr "%e %b. %Y, %H:%M:%S"
@@ -348,10 +364,17 @@ msgstr "Сообщения журнала"
 msgid "Unable to export log messages to a file"
 msgstr "Не удалось экспортировать сообщения журнала в файл"
 
-#: ../src/gl-window.c:467
+#: ../src/gl-window.c:479 ../src/gl-window.c:510
 msgid "Unable to read system logs"
 msgstr "Не удалось прочитать системные журналы"
 
-#: ../src/gl-window.c:481
+#: ../src/gl-window.c:493
 msgid "Unable to read user logs"
 msgstr "Не удалось прочитать пользовательские журналы"
+
+#: ../src/gl-window.c:525
+msgid "No logs available"
+msgstr "Нет доступных журналов"
+
+#~ msgid "Search the displayed logs"
+#~ msgstr "Поиск по журналам"
