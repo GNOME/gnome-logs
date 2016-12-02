@@ -105,11 +105,6 @@ on_toolbar_mode (GSimpleAction *action,
 
         g_simple_action_set_enabled (G_SIMPLE_ACTION (search), TRUE);
     }
-    else
-    {
-        g_simple_action_set_enabled (G_SIMPLE_ACTION (search), FALSE);
-        g_action_change_state (search, g_variant_new_boolean (FALSE));
-    }
 
     g_simple_action_set_state (action, variant);
 
