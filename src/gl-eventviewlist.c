@@ -57,7 +57,7 @@ typedef struct
     GlQuerySearchType search_type;
     GlSearchPopoverJournalTimestampRange journal_timestamp_range;
     gchar *search_text;
-    const gchar *boot_match;
+    gchar *boot_match;
 } GlEventViewListPrivate;
 
 G_DEFINE_TYPE_WITH_PRIVATE (GlEventViewList, gl_event_view_list, GTK_TYPE_BOX)
@@ -663,7 +663,8 @@ gl_event_view_list_view_boot (GlEventViewList *view, const gchar *match)
 
     priv = gl_event_view_list_get_instance_private (view);
     popover = GL_SEARCH_POPOVER (priv->search_popover);
-    priv->boot_match = match;
+    g_free (priv->boot_match);
+    priv->boot_match = g_strdup (match);
 
     /* Make search popover journal timestamp range label consistent with
        event-toolbar boot selection menu */
@@ -896,6 +897,7 @@ gl_event_view_list_finalize (GObject *object)
     GlEventViewList *view = GL_EVENT_VIEW_LIST (object);
     GlEventViewListPrivate *priv = gl_event_view_list_get_instance_private (view);
 
+    g_free (priv->boot_match);
     g_clear_object (&priv->journal_model);
     g_clear_pointer (&priv->search_text, g_free);
     g_object_unref (priv->category_sizegroup);
