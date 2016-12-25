@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-08-10 10:34+0000\n"
-"PO-Revision-Date: 2016-08-12 16:31+0300\n"
+"POT-Creation-Date: 2016-11-10 12:49+0000\n"
+"PO-Revision-Date: 2016-12-25 15:37+0200\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos+l10n@iki.fi>\n"
 "Language-Team: suomi <lokalisointi-lista@googlegroups.com>\n"
 "Language: fi\n"
@@ -76,15 +76,15 @@ msgstr "Valitse käynnistyskerta, jonka lokeja tarkastellaan"
 msgid "Search all the logs of the current category"
 msgstr "Etsi kaikki nykyisen luokan lokit"
 
-#: ../data/gl-eventviewdetail.ui.h:1
+#: ../data/gl-eventviewdetail.ui.h:1 ../data/gl-searchpopover.ui.h:32
 msgid "Message"
 msgstr "Viesti"
 
-#: ../data/gl-eventviewdetail.ui.h:2
+#: ../data/gl-eventviewdetail.ui.h:2 ../data/gl-searchpopover.ui.h:36
 msgid "Audit Session"
 msgstr "Auditointi-istunto"
 
-#: ../data/gl-eventviewdetail.ui.h:3
+#: ../data/gl-eventviewdetail.ui.h:3 ../data/gl-searchpopover.ui.h:35
 msgid "Kernel Device"
 msgstr "Kernel-laite"
 
@@ -107,6 +107,175 @@ msgstr "Tuki"
 #: ../data/gl-eventviewdetail.ui.h:8
 msgid "Documentation"
 msgstr "Dokumentaatio"
+
+#: ../data/gl-eventviewlist.ui.h:1
+msgid "Select journal field and timestamp range filtering options"
+msgstr "Valitse lokikentän ja aikaleimavälin suodatusvalinnat"
+
+#: ../data/gl-searchpopover.ui.h:1
+msgid "Select a Journal Field to filter the Logs according to it"
+msgstr "Valitse lokikenttä, jonka pohjalta lokeja suodatetaan"
+
+#: ../data/gl-searchpopover.ui.h:2
+msgid "All Available Fields"
+msgstr "Kaikki käytettävissä olevat kentät"
+
+#: ../data/gl-searchpopover.ui.h:3
+msgid "What"
+msgstr "Mitä"
+
+#: ../data/gl-searchpopover.ui.h:4
+msgid "Select Journal Field…"
+msgstr "Valitse lokikirjakenttä…"
+
+#: ../data/gl-searchpopover.ui.h:5
+msgid "When"
+msgstr "Milloin"
+
+#: ../data/gl-searchpopover.ui.h:6
+msgid "Show Logs from…"
+msgstr "Näytä lokit alkaen…"
+
+#: ../data/gl-searchpopover.ui.h:7
+msgid "Select Timestamp Range of the Log Entries to be shown"
+msgstr "Valitse aikaleimaväli näytettävistä lokimerkinnöistä"
+
+#: ../data/gl-searchpopover.ui.h:8 ../src/gl-searchpopover.c:1303
+msgid "Current Boot"
+msgstr "Nykyinen käynnistyskerta"
+
+#: ../data/gl-searchpopover.ui.h:9
+#| msgctxt "shortcut window"
+#| msgid "Search"
+msgid "Search Type"
+msgstr "Haun tyyppi"
+
+#: ../data/gl-searchpopover.ui.h:10
+msgid "Substring"
+msgstr "Alimerkkijono"
+
+#: ../data/gl-searchpopover.ui.h:11
+msgid "Match in any part of the string"
+msgstr "Vastaa mitä tahansa kohtaa merkkijonossa"
+
+#: ../data/gl-searchpopover.ui.h:12
+msgid "Exact"
+msgstr "Täsmällinen"
+
+#: ../data/gl-searchpopover.ui.h:13
+msgid "Match complete string only"
+msgstr "Vastaa vain kokonaista merkkijonoa"
+
+#: ../data/gl-searchpopover.ui.h:14
+msgid "Back"
+msgstr "Takaisin"
+
+#: ../data/gl-searchpopover.ui.h:15
+msgid "Show Logs Starting From…"
+msgstr "Näytä lokit alkaen…"
+
+#: ../data/gl-searchpopover.ui.h:16
+msgid "Select a start date"
+msgstr "Valitse aloituspäivä"
+
+#: ../data/gl-searchpopover.ui.h:17 ../src/gl-searchpopover.c:503
+msgid "Select Start Date…"
+msgstr "Valitse aloituspäivä…"
+
+#: ../data/gl-searchpopover.ui.h:18
+msgid "Select start time"
+msgstr "Valitse aloitusaika"
+
+#: ../data/gl-searchpopover.ui.h:19 ../src/gl-searchpopover.c:504
+msgid "Select Start Time…"
+msgstr "Valitse aloitusaika…"
+
+#: ../data/gl-searchpopover.ui.h:20
+msgid "Hr"
+msgstr "t"
+
+#: ../data/gl-searchpopover.ui.h:21
+msgid "Min"
+msgstr "min"
+
+#: ../data/gl-searchpopover.ui.h:22
+#| msgctxt "shortcut window"
+#| msgid "Search"
+msgid "Sec"
+msgstr "s"
+
+#: ../data/gl-searchpopover.ui.h:23
+msgid "AM/PM"
+msgstr "ap./ip."
+
+#: ../data/gl-searchpopover.ui.h:24
+msgid "Until…"
+msgstr "Päättyen…"
+
+#: ../data/gl-searchpopover.ui.h:25
+msgid "Select an end date"
+msgstr "Valitse päättymispäivä"
+
+#: ../data/gl-searchpopover.ui.h:26 ../src/gl-searchpopover.c:521
+msgid "Select End Date…"
+msgstr "Valitse päättymispäivä…"
+
+#: ../data/gl-searchpopover.ui.h:27
+msgid "Select end time"
+msgstr "Valitse päättymisaika"
+
+#: ../data/gl-searchpopover.ui.h:28 ../src/gl-searchpopover.c:522
+msgid "Select End Time…"
+msgstr "Valitse päättymisaika…"
+
+#: ../data/gl-searchpopover.ui.h:29
+msgid "PID"
+msgstr "Prosessitunniste, PID"
+
+#: ../data/gl-searchpopover.ui.h:30
+msgid "UID"
+msgstr "Käyttäjätunniste, UID"
+
+#: ../data/gl-searchpopover.ui.h:31
+msgid "GID"
+msgstr "Ryhmätunniste, GID"
+
+#: ../data/gl-searchpopover.ui.h:33
+msgid "Process Name"
+msgstr "Prosessin nimi"
+
+#: ../data/gl-searchpopover.ui.h:34
+#| msgid "System"
+msgid "Systemd Unit"
+msgstr "Systemd-yksikkö"
+
+#: ../data/gl-searchpopover.ui.h:37
+msgid "Executable Path"
+msgstr "Suoritettavan polku"
+
+#: ../data/gl-searchpopover.ui.h:38
+msgid "Previous Boot"
+msgstr "Edellinen käynnistyskerta"
+
+#: ../data/gl-searchpopover.ui.h:39
+msgid "Today"
+msgstr "Tänään"
+
+#: ../data/gl-searchpopover.ui.h:40
+msgid "Yesterday"
+msgstr "Eilen"
+
+#: ../data/gl-searchpopover.ui.h:41
+msgid "Last 3 days"
+msgstr "Viimeiset 3 päivää"
+
+#: ../data/gl-searchpopover.ui.h:42
+msgid "Entire Journal"
+msgstr "Koko lokikirja"
+
+#: ../data/gl-searchpopover.ui.h:43
+msgid "Set Custom Range…"
+msgstr "Aseta mukautettu aikaväli…"
 
 #: ../data/gl-window.ui.h:1
 msgid "Help"
@@ -213,7 +382,7 @@ msgstr "Jiri Grönroos"
 msgid "View and search logs"
 msgstr "Katsele lokeja ja etsi lokien sisällöstä"
 
-#: ../src/gl-application.c:239
+#: ../src/gl-application.c:245
 msgid "Print version information and exit"
 msgstr "Tulosta versiotiedot ja poistu"
 
@@ -224,13 +393,74 @@ msgstr "Käynnistys"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventviewlist.c:290
+#: ../src/gl-eventviewlist.c:296
 msgid "No results"
 msgstr "Ei tuloksia"
 
 #: ../src/gl-eventviewrow.c:219
 msgid "Other"
 msgstr "Muu"
+
+#. Translators: if only custom start timestamp is set, then we update
+#. * the timestamp range button label in popover to show that
+#. * logs are shown in the window starting from this timestamp
+#. * until the ending timestamp of journal.
+#: ../src/gl-searchpopover.c:687
+#, c-format
+msgid "From %s"
+msgstr "Alkaen %s"
+
+#. Translators: if only custom end timestamp is set, then we update
+#. * the timestamp range button label in popover to show that
+#. * logs are shown in the window upto this timestamp
+#. * with the starting timestamp being the current time.
+#: ../src/gl-searchpopover.c:700
+#, c-format
+msgid "Until %s"
+msgstr "Päättyen %s"
+
+#. Translators: date format for the start date entry
+#. * and start date button label in the custom range submenu,
+#. * showing the day of month in decimal number, full month
+#. * name as string, the year as a decimal number including the century.
+#. Translators: date format for the end date entry
+#. * and end date button label in the custom range submenu,
+#. * showing the day of month in decimal number, full month
+#. * name as string, the year as a decimal number including the century.
+#: ../src/gl-searchpopover.c:737 ../src/gl-searchpopover.c:1104
+msgid "%e %B %Y"
+msgstr "%e. %Bta %Y"
+
+#: ../src/gl-searchpopover.c:875
+#, c-format
+msgid "AM"
+msgstr "ap."
+
+#: ../src/gl-searchpopover.c:879
+#, c-format
+msgid "PM"
+msgstr "ip."
+
+#. Translators: timestamp format for the custom start time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 12-hour format.
+#. Translators: timestamp format for the custom end time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 12-hour format.
+#: ../src/gl-searchpopover.c:987 ../src/gl-searchpopover.c:1226
+#| msgid "%l:%M:%S %p"
+msgid "%I:%M:%S %p"
+msgstr "%I:%M:%S %p"
+
+#. Translators: timestamp format for the custom start time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 24-hour format.
+#. Translators: timestamp format for the custom end time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 24-hour format.
+#: ../src/gl-searchpopover.c:994 ../src/gl-searchpopover.c:1233
+msgid "%T"
+msgstr "%T"
 
 #. Translators: timestamp format for events on the
 #. * current day, showing the time with seconds in
@@ -352,15 +582,15 @@ msgstr "lokiviestit"
 msgid "Unable to export log messages to a file"
 msgstr "Lokiviestien vieminen tiedostoon epäonnistui"
 
-#: ../src/gl-window.c:474 ../src/gl-window.c:505
+#: ../src/gl-window.c:479 ../src/gl-window.c:510
 msgid "Unable to read system logs"
 msgstr "Järjestelmälokien lukeminen ei onnistu"
 
-#: ../src/gl-window.c:488
+#: ../src/gl-window.c:493
 msgid "Unable to read user logs"
 msgstr "Käyttäjälokien lukeminen ei onnistu"
 
-#: ../src/gl-window.c:520
+#: ../src/gl-window.c:525
 msgid "No logs available"
 msgstr "Lokeja ei ole saatavilla"
 
