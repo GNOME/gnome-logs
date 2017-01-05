@@ -65,7 +65,7 @@ void                    gl_journal_model_fetch_more_entries             (GlJourn
 
 GArray *                gl_journal_model_get_boot_ids                   (GlJournalModel *model);
 
-gchar *                 gl_journal_model_get_current_boot_time          (GlJournalModel *model,
+gchar *                 gl_journal_model_get_boot_time                  (GlJournalModel *model,
                                                                          const gchar *boot_match);
 
 void                    gl_query_set_search_type                        (GlQuery *query,

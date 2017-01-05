@@ -65,8 +65,8 @@ gl_journal_error_quark (void)
 }
 
 gchar *
-gl_journal_get_current_boot_time (GlJournal *journal,
-                                  const gchar *boot_match)
+gl_journal_get_boot_time (GlJournal *journal,
+                          const gchar *boot_match)
 {
     GArray *boot_ids;
     gchar *time;

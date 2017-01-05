@@ -952,10 +952,10 @@ search_in_entry (GlJournalEntry *entry,
 }
 
 gchar *
-gl_journal_model_get_current_boot_time (GlJournalModel *model,
-                                        const gchar *boot_match)
+gl_journal_model_get_boot_time (GlJournalModel *model,
+                                const gchar *boot_match)
 {
-    return gl_journal_get_current_boot_time (model->journal, boot_match);
+    return gl_journal_get_boot_time (model->journal, boot_match);
 }
 
 GArray *

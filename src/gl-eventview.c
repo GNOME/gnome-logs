@@ -71,8 +71,8 @@ gl_event_view_get_output_logs (GlEventView *view)
 }
 
 gchar *
-gl_event_view_get_current_boot_time (GlEventView *view,
-                                     const gchar *boot_match)
+gl_event_view_get_boot_time (GlEventView *view,
+                             const gchar *boot_match)
 {
     GlEventViewPrivate *priv;
     GlEventViewList *events;
@@ -80,7 +80,7 @@ gl_event_view_get_current_boot_time (GlEventView *view,
     priv = gl_event_view_get_instance_private (view);
     events = GL_EVENT_VIEW_LIST (priv->events);
 
-    return gl_event_view_list_get_current_boot_time (events, boot_match);
+    return gl_event_view_list_get_boot_time (events, boot_match);
 }
 
 GArray *

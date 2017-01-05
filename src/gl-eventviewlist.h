@@ -39,8 +39,8 @@ void gl_event_view_list_set_sort_order (GlEventViewList *view, GlSortOrder  sort
 void gl_event_view_list_view_boot (GlEventViewList *view, const gchar *match);
 GArray * gl_event_view_list_get_boot_ids (GlEventViewList *view);
 gchar * gl_event_view_list_get_output_logs (GlEventViewList *view);
-gchar * gl_event_view_list_get_current_boot_time (GlEventViewList *view,
-                                                  const gchar *boot_match);
+gchar * gl_event_view_list_get_boot_time (GlEventViewList *view,
+                                          const gchar *boot_match);
 
 G_END_DECLS
 

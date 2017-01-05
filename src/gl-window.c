@@ -272,7 +272,7 @@ on_view_boot (GSimpleAction *action,
 
     gl_event_view_view_boot (event, boot_match);
 
-    current_boot = gl_event_view_get_current_boot_time (event, boot_match);
+    current_boot = gl_event_view_get_boot_time (event, boot_match);
     if (current_boot == NULL)
     {
         g_debug ("Error fetching the time using boot_match");
