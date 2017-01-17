@@ -1,5 +1,5 @@
 AC_INIT([Logs],
-        [3.23.3],
+        [3.23.4],
         [davidk@gnome.org],
         [gnome-logs],
         [https://wiki.gnome.org/Apps/Logs])

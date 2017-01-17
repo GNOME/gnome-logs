@@ -1,3 +1,10 @@
+GNOME Logs 3.23.4
+=================
+
+* keep boot_match as a duplicated string
+* rename some functions
+* updates to Kazakh, Finnish and Brazilian Portuguese translations
+
 GNOME Logs 3.23.3
 =================
 
