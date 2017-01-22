@@ -112,8 +112,7 @@
                                     <object class="GtkLabel" id="what_dim_label">
                                         <property name="visible">True</property>
                                         <property name="margin_top">10</property>
-                                        <!-- Translators: What [journal fields to search in] -->
-                                        <property name="label" translatable="yes">What</property>
+                                        <property name="label" translatable="yes" comments="Translators: What [journal fields to search in]">What</property>
                                         <property name="xalign">0</property>
                                         <style>
                                           <class name="dim-label"/>
@@ -153,8 +152,7 @@
                                 <child>
                                     <object class="GtkLabel" id="when_dim_label">
                                         <property name="visible">True</property>
-                                        <!-- Translators: When [log entries to be shown for a given timestamp range] -->
-                                        <property name="label" translatable="yes">When</property>
+                                        <property name="label" translatable="yes" comments="When [log entries to be shown for a given timestamp range]">When</property>
                                         <property name="xalign">0</property>
                                         <style>
                                             <class name="dim-label"/>
