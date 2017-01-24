@@ -370,6 +370,8 @@ get_uid_match_field_value (void)
 static gchar *
 get_current_boot_id (const gchar *boot_match)
 {
+    g_return_val_if_fail (boot_match != NULL, NULL);
+
     gchar *boot_value;
 
     boot_value = strchr (boot_match, '=') + 1;
@@ -545,10 +547,17 @@ query_add_journal_range_filter (GlQuery *query,
         case GL_SEARCH_POPOVER_JOURNAL_TIMESTAMP_RANGE_CURRENT_BOOT:
         {
             /* Get current boot id */
-            gchar *boot_match;
+            gchar *boot_match = NULL;
 
-            boot_match = get_current_boot_id (priv->boot_match);
-            gl_query_add_match (query, "_BOOT_ID", boot_match, GL_QUERY_SEARCH_TYPE_EXACT);
+            /* Don't add match when priv->boot_match equals NULL. This
+             * happens when users don't have permissions to view both
+             * system and user logs. */
+            if (priv->boot_match != NULL)
+            {
+                boot_match = get_current_boot_id (priv->boot_match);
+                gl_query_add_match (query, "_BOOT_ID", boot_match,
+                                    GL_QUERY_SEARCH_TYPE_EXACT);
+            }
 
             g_free (boot_match);
         }
