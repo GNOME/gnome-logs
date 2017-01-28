@@ -395,9 +395,6 @@ void
 gl_journal_model_take_query (GlJournalModel *model,
                              GlQuery *query)
 {
-    GlQueryItem *search_match;
-    GPtrArray *search_matches;
-
     g_return_if_fail (GL_JOURNAL_MODEL (model));
 
     gl_journal_model_stop_idle (model);
@@ -421,20 +418,30 @@ gl_journal_model_take_query (GlJournalModel *model,
     /* Set new query */
     model->query = query;
 
-    search_matches = gl_query_get_substring_matches (model->query);
-
-    /* Get search text from a search match */
-    search_match = g_ptr_array_index (search_matches, 0);
-
-    if (search_match->field_value != NULL)
+    /* Tokenize the entered input only if search type is substring */
+    if (query->search_type == GL_QUERY_SEARCH_TYPE_SUBSTRING)
     {
-        model->token_array = tokenize_search_string (search_match->field_value);
+        GlQueryItem *search_match;
+        GPtrArray *search_matches;
+
+        search_matches = gl_query_get_substring_matches (model->query);
+
+        /* Get search text from a search match */
+        search_match = g_ptr_array_index (search_matches, 0);
+
+        if (search_match->field_value != NULL)
+        {
+            model->token_array = tokenize_search_string (search_match->field_value);
+        }
+
+         g_ptr_array_free (search_matches, TRUE);
+
     }
 
     /* Start processing the new query */
     gl_journal_model_process_query (model);
 
-    g_ptr_array_free (search_matches, TRUE);
+
 }
 
 /* Add a new queryitem to query */
