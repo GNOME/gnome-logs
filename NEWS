@@ -1,3 +1,11 @@
+GNOME Logs 3.23.90
+==================
+
+* translator comments improvement from Piotr Drąg
+* exact search type crash fix from Pranav Ganorkar
+* fix crash when users don't have proper permissions
+* updates to Slovak, Chinese, Polish, Galician and Indonesian translations
+
 GNOME Logs 3.23.4
 =================
 
