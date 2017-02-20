@@ -3,22 +3,22 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 #
-# Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2014, 2015, 2016.
+# Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2014, 2015, 2016, 2017.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-lo"
-"gs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-08-10 10:34+0000\n"
-"PO-Revision-Date: 2016-09-20 12:46+0100\n"
-"Last-Translator: dooteo <dooteo@zundan.com>\n"
-"Language-Team: Basque <librezale@librezale.org>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"logs&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2017-01-21 14:38+0000\n"
+"PO-Revision-Date: 2017-02-20 17:46+0100\n"
+"Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@zundan.com>\n"
+"Language-Team: Basque <librezale@librezale.eus>\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 2.0\n"
+"X-Generator: Lokalize 1.5\n"
 
 #: ../data/gl-categorylist.ui.h:1
 msgid "Important"
@@ -76,15 +76,15 @@ msgstr "Aukeratu abioa (haren egunkariak ikusteko)"
 msgid "Search all the logs of the current category"
 msgstr "Bilatu uneko kategoriaren erregistro guztiak"
 
-#: ../data/gl-eventviewdetail.ui.h:1
+#: ../data/gl-eventviewdetail.ui.h:1 ../data/gl-searchpopover.ui.h:32
 msgid "Message"
 msgstr "Mezua"
 
-#: ../data/gl-eventviewdetail.ui.h:2
+#: ../data/gl-eventviewdetail.ui.h:2 ../data/gl-searchpopover.ui.h:36
 msgid "Audit Session"
 msgstr "Ikuskatze-saioa"
 
-#: ../data/gl-eventviewdetail.ui.h:3
+#: ../data/gl-eventviewdetail.ui.h:3 ../data/gl-searchpopover.ui.h:35
 msgid "Kernel Device"
 msgstr "Nukleoaren gailua"
 
@@ -107,6 +107,176 @@ msgstr "Euskarria"
 #: ../data/gl-eventviewdetail.ui.h:8
 msgid "Documentation"
 msgstr "Dokumentazioa"
+
+#: ../data/gl-eventviewlist.ui.h:1
+msgid "Select journal field and timestamp range filtering options"
+msgstr ""
+"Hautatu egunkariaren eremua eta denbora-zigiluaren barrutia iragazteko aukerak"
+
+#: ../data/gl-searchpopover.ui.h:1
+msgid "Select a Journal Field to filter the Logs according to it"
+msgstr "Hautatu egunkariaren eremua horren arabera erregistroak iragazteko"
+
+#: ../data/gl-searchpopover.ui.h:2
+msgid "All Available Fields"
+msgstr "Eremu erabilgarri guztiak"
+
+#: ../data/gl-searchpopover.ui.h:3
+msgid "What"
+msgstr "Zer"
+
+#: ../data/gl-searchpopover.ui.h:4
+msgid "Select Journal Field…"
+msgstr "Hautatu egunkariaren eremua…"
+
+#: ../data/gl-searchpopover.ui.h:5
+msgid "When"
+msgstr "Noiz"
+
+#: ../data/gl-searchpopover.ui.h:6
+msgid "Show Logs from…"
+msgstr "Erakutsi _egunkariak noiztik…"
+
+#: ../data/gl-searchpopover.ui.h:7
+msgid "Select Timestamp Range of the Log Entries to be shown"
+msgstr "Hautatu denbora-zigiluaren barrutia erregistroen sarrerak erakusteko"
+
+#: ../data/gl-searchpopover.ui.h:8 ../src/gl-searchpopover.c:1303
+msgid "Current Boot"
+msgstr "Uneko abioa"
+
+#: ../data/gl-searchpopover.ui.h:9
+#| msgctxt "shortcut window"
+#| msgid "Search"
+msgid "Search Type"
+msgstr "Bilaketa-mota "
+
+#: ../data/gl-searchpopover.ui.h:10
+msgid "Substring"
+msgstr "Azpi-katea"
+
+#: ../data/gl-searchpopover.ui.h:11
+msgid "Match in any part of the string"
+msgstr "Bat etorri katearen edozer zatirekin"
+
+#: ../data/gl-searchpopover.ui.h:12
+msgid "Exact"
+msgstr "Zehatza"
+
+#: ../data/gl-searchpopover.ui.h:13
+msgid "Match complete string only"
+msgstr "Bat etorri kate osoarekin soilik"
+
+#: ../data/gl-searchpopover.ui.h:14
+msgid "Back"
+msgstr "Itzuli"
+
+#: ../data/gl-searchpopover.ui.h:15
+msgid "Show Logs Starting From…"
+msgstr "Erakutsi erregistroak noiztik hasiz…"
+
+#: ../data/gl-searchpopover.ui.h:16
+msgid "Select a start date"
+msgstr "Hautatu hasierako data"
+
+#: ../data/gl-searchpopover.ui.h:17 ../src/gl-searchpopover.c:503
+msgid "Select Start Date…"
+msgstr "Hautatu hasierako data…"
+
+#: ../data/gl-searchpopover.ui.h:18
+msgid "Select start time"
+msgstr "Hautatu hasierako ordua"
+
+#: ../data/gl-searchpopover.ui.h:19 ../src/gl-searchpopover.c:504
+msgid "Select Start Time…"
+msgstr "Hautatu hasierako ordua…"
+
+#: ../data/gl-searchpopover.ui.h:20
+msgid "Hr"
+msgstr "Or"
+
+#: ../data/gl-searchpopover.ui.h:21
+msgid "Min"
+msgstr "Min"
+
+#: ../data/gl-searchpopover.ui.h:22
+#| msgctxt "shortcut window"
+#| msgid "Search"
+msgid "Sec"
+msgstr "Seg"
+
+#: ../data/gl-searchpopover.ui.h:23
+msgid "AM/PM"
+msgstr "AM/PM"
+
+#: ../data/gl-searchpopover.ui.h:24
+msgid "Until…"
+msgstr "Arte…"
+
+#: ../data/gl-searchpopover.ui.h:25
+msgid "Select an end date"
+msgstr "Hautatu amaierako data"
+
+#: ../data/gl-searchpopover.ui.h:26 ../src/gl-searchpopover.c:521
+msgid "Select End Date…"
+msgstr "Hautatu amaierako data…"
+
+#: ../data/gl-searchpopover.ui.h:27
+msgid "Select end time"
+msgstr "Hautatu amaierako ordua"
+
+#: ../data/gl-searchpopover.ui.h:28 ../src/gl-searchpopover.c:522
+msgid "Select End Time…"
+msgstr "Hautatu amaierako ordua…"
+
+#: ../data/gl-searchpopover.ui.h:29
+msgid "PID"
+msgstr "PIDa"
+
+#: ../data/gl-searchpopover.ui.h:30
+msgid "UID"
+msgstr "UIDa"
+
+#: ../data/gl-searchpopover.ui.h:31
+msgid "GID"
+msgstr "GIDa"
+
+#: ../data/gl-searchpopover.ui.h:33
+msgid "Process Name"
+msgstr "Prozesuaren izena"
+
+#: ../data/gl-searchpopover.ui.h:34
+#| msgid "System"
+msgid "Systemd Unit"
+msgstr "Systemd unitatea"
+
+#: ../data/gl-searchpopover.ui.h:37
+msgid "Executable Path"
+msgstr "Exekutagarriaren bide-izena"
+
+#: ../data/gl-searchpopover.ui.h:38
+msgid "Previous Boot"
+msgstr "Aurreko abioa"
+
+#: ../data/gl-searchpopover.ui.h:39
+msgid "Today"
+msgstr "Gaur"
+
+#: ../data/gl-searchpopover.ui.h:40
+msgid "Yesterday"
+msgstr "Atzo"
+
+#: ../data/gl-searchpopover.ui.h:41
+msgid "Last 3 days"
+msgstr "Azken 3 egun"
+
+#: ../data/gl-searchpopover.ui.h:42
+msgid "Entire Journal"
+msgstr "Egunkari osoa"
+
+#: ../data/gl-searchpopover.ui.h:43
+msgid "Set Custom Range…"
+msgstr "Ezarri barruti pertsonalizatua…"
 
 #: ../data/gl-window.ui.h:1
 msgid "Help"
@@ -211,7 +381,7 @@ msgstr "Iñaki Larrañaga Murgoitio <dooteo@zundan.com>"
 msgid "View and search logs"
 msgstr "Ikusi eta bilatu erregistroak"
 
-#: ../src/gl-application.c:239
+#: ../src/gl-application.c:245
 msgid "Print version information and exit"
 msgstr "Erakutsi bertsioaren informazioa eta irten"
 
@@ -222,13 +392,74 @@ msgstr "Abioa"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventviewlist.c:290
+#: ../src/gl-eventviewlist.c:296
 msgid "No results"
 msgstr "Ez dago emaitzarik"
 
 #: ../src/gl-eventviewrow.c:219
 msgid "Other"
 msgstr "Bestelakoa"
+
+#. Translators: if only custom start timestamp is set, then we update
+#. * the timestamp range button label in popover to show that
+#. * logs are shown in the window starting from this timestamp
+#. * until the ending timestamp of journal.
+#: ../src/gl-searchpopover.c:687
+#, c-format
+msgid "From %s"
+msgstr "%s(e)tik"
+
+#. Translators: if only custom end timestamp is set, then we update
+#. * the timestamp range button label in popover to show that
+#. * logs are shown in the window upto this timestamp
+#. * with the starting timestamp being the current time.
+#: ../src/gl-searchpopover.c:700
+#, c-format
+msgid "Until %s"
+msgstr "%s arte"
+
+#. Translators: date format for the start date entry
+#. * and start date button label in the custom range submenu,
+#. * showing the day of month in decimal number, full month
+#. * name as string, the year as a decimal number including the century.
+#. Translators: date format for the end date entry
+#. * and end date button label in the custom range submenu,
+#. * showing the day of month in decimal number, full month
+#. * name as string, the year as a decimal number including the century.
+#: ../src/gl-searchpopover.c:737 ../src/gl-searchpopover.c:1104
+msgid "%e %B %Y"
+msgstr "%Y-%e-%b"
+
+#: ../src/gl-searchpopover.c:875
+#, c-format
+msgid "AM"
+msgstr "AM"
+
+#: ../src/gl-searchpopover.c:879
+#, c-format
+msgid "PM"
+msgstr "PM"
+
+#. Translators: timestamp format for the custom start time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 12-hour format.
+#. Translators: timestamp format for the custom end time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 12-hour format.
+#: ../src/gl-searchpopover.c:987 ../src/gl-searchpopover.c:1226
+#| msgid "%l:%M:%S %p"
+msgid "%I:%M:%S %p"
+msgstr "%I:%M:%S %p"
+
+#. Translators: timestamp format for the custom start time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 24-hour format.
+#. Translators: timestamp format for the custom end time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 24-hour format.
+#: ../src/gl-searchpopover.c:994 ../src/gl-searchpopover.c:1233
+msgid "%T"
+msgstr "%T"
 
 #. Translators: timestamp format for events on the
 #. * current day, showing the time with seconds in
@@ -330,23 +561,23 @@ msgstr "%Y.eko %b(a)ren  %ean, %H:%M"
 msgid "%s – %s"
 msgstr "%s – %s"
 
-#: ../src/gl-window.c:186
+#: ../src/gl-window.c:181
 msgid "Save logs"
 msgstr "Gorde erregistroak"
 
-#: ../src/gl-window.c:189
+#: ../src/gl-window.c:184
 msgid "_Cancel"
 msgstr "_Utzi"
 
-#: ../src/gl-window.c:190
+#: ../src/gl-window.c:185
 msgid "_Save"
 msgstr "_Gorde"
 
-#: ../src/gl-window.c:195
+#: ../src/gl-window.c:190
 msgid "log messages"
 msgstr "egunkariko mezuak"
 
-#: ../src/gl-window.c:248
+#: ../src/gl-window.c:243
 msgid "Unable to export log messages to a file"
 msgstr "Ezin dira egunkariaren mezuak fitxategi batera esportatu"
 
