@@ -1,19 +1,19 @@
 # Serbian translation of gnome-logs
-# Courtesy of Prevod.org team (http://prevod.org/) -- 2013—2016.
+# Courtesy of Prevod.org team (http://prevod.org/) -- 2013—2017.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-logs package.
 # Translators:
-# Мирослав Николић <miroslavnikolic@rocketmail.com>, 2013—2016.
+# Мирослав Николић <miroslavnikolic@rocketmail.com>, 2013—2017.
 # Марко М. Костић <marko.m.kostic@gmail.com>, 2016.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-08-10 10:34+0000\n"
-"PO-Revision-Date: 2016-08-28 07:32+0200\n"
+"POT-Creation-Date: 2016-11-10 12:49+0000\n"
+"PO-Revision-Date: 2017-02-25 18:48+0200\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
-"Language-Team: српски <gnome-sr@googlegroups.org>\n"
+"Language-Team: Serbian <(nothing)>\n"
 "Language: sr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -78,15 +78,15 @@ msgstr "Изаберите подизање система за које жел�
 msgid "Search all the logs of the current category"
 msgstr "Претражи све записнике у текућој категорији"
 
-#: ../data/gl-eventviewdetail.ui.h:1
+#: ../data/gl-eventviewdetail.ui.h:1 ../data/gl-searchpopover.ui.h:32
 msgid "Message"
 msgstr "Порука"
 
-#: ../data/gl-eventviewdetail.ui.h:2
+#: ../data/gl-eventviewdetail.ui.h:2 ../data/gl-searchpopover.ui.h:36
 msgid "Audit Session"
 msgstr "Сесија ревизије"
 
-#: ../data/gl-eventviewdetail.ui.h:3
+#: ../data/gl-eventviewdetail.ui.h:3 ../data/gl-searchpopover.ui.h:35
 msgid "Kernel Device"
 msgstr "Уређај језгра"
 
@@ -109,6 +109,175 @@ msgstr "Подршка"
 #: ../data/gl-eventviewdetail.ui.h:8
 msgid "Documentation"
 msgstr "Документација"
+
+#: ../data/gl-eventviewlist.ui.h:1
+msgid "Select journal field and timestamp range filtering options"
+msgstr "Изаберите опције издвајања поља записа и опсега временске ознаке"
+
+#: ../data/gl-searchpopover.ui.h:1
+msgid "Select a Journal Field to filter the Logs according to it"
+msgstr "Изаберите поље записа да издвојите записнике у складу с њим"
+
+#: ../data/gl-searchpopover.ui.h:2
+msgid "All Available Fields"
+msgstr "Сава доступна поља"
+
+#: ../data/gl-searchpopover.ui.h:3
+msgid "What"
+msgstr "Шта"
+
+#: ../data/gl-searchpopover.ui.h:4
+msgid "Select Journal Field…"
+msgstr "Изабери поље записа…"
+
+#: ../data/gl-searchpopover.ui.h:5
+msgid "When"
+msgstr "Када"
+
+#: ../data/gl-searchpopover.ui.h:6
+msgid "Show Logs from…"
+msgstr "Прикажи записнике од…"
+
+#: ../data/gl-searchpopover.ui.h:7
+msgid "Select Timestamp Range of the Log Entries to be shown"
+msgstr "Изаберите опсег временске ознаке уноса записника за приказивање"
+
+#: ../data/gl-searchpopover.ui.h:8 ../src/gl-searchpopover.c:1303
+msgid "Current Boot"
+msgstr "Тренутно подизање система"
+
+#: ../data/gl-searchpopover.ui.h:9
+#| msgctxt "shortcut window"
+#| msgid "Search"
+msgid "Search Type"
+msgstr "Врста претраге"
+
+#: ../data/gl-searchpopover.ui.h:10
+msgid "Substring"
+msgstr "Подниска"
+
+#: ../data/gl-searchpopover.ui.h:11
+msgid "Match in any part of the string"
+msgstr "Упореди у сваком делу ниске"
+
+#: ../data/gl-searchpopover.ui.h:12
+msgid "Exact"
+msgstr "Тачно"
+
+#: ../data/gl-searchpopover.ui.h:13
+msgid "Match complete string only"
+msgstr "Упореди само читаву ниску"
+
+#: ../data/gl-searchpopover.ui.h:14
+msgid "Back"
+msgstr "Назад"
+
+#: ../data/gl-searchpopover.ui.h:15
+msgid "Show Logs Starting From…"
+msgstr "Прикажи записнике почевши од…"
+
+#: ../data/gl-searchpopover.ui.h:16
+msgid "Select a start date"
+msgstr "Изаберите датум почетка"
+
+#: ../data/gl-searchpopover.ui.h:17 ../src/gl-searchpopover.c:503
+msgid "Select Start Date…"
+msgstr "Изабери датум почетка…"
+
+#: ../data/gl-searchpopover.ui.h:18
+msgid "Select start time"
+msgstr "Изаберите време почетка"
+
+#: ../data/gl-searchpopover.ui.h:19 ../src/gl-searchpopover.c:504
+msgid "Select Start Time…"
+msgstr "Изабери време почетка…"
+
+#: ../data/gl-searchpopover.ui.h:20
+msgid "Hr"
+msgstr "Ч"
+
+#: ../data/gl-searchpopover.ui.h:21
+msgid "Min"
+msgstr "Мин"
+
+#: ../data/gl-searchpopover.ui.h:22
+#| msgctxt "shortcut window"
+#| msgid "Search"
+msgid "Sec"
+msgstr "Сек"
+
+#: ../data/gl-searchpopover.ui.h:23
+msgid "AM/PM"
+msgstr "ПрП/ПоП"
+
+#: ../data/gl-searchpopover.ui.h:24
+msgid "Until…"
+msgstr "До…"
+
+#: ../data/gl-searchpopover.ui.h:25
+msgid "Select an end date"
+msgstr "Изаберите крајњи датум"
+
+#: ../data/gl-searchpopover.ui.h:26 ../src/gl-searchpopover.c:521
+msgid "Select End Date…"
+msgstr "Изабери датум краја…"
+
+#: ../data/gl-searchpopover.ui.h:27
+msgid "Select end time"
+msgstr "Изаберите време краја"
+
+#: ../data/gl-searchpopover.ui.h:28 ../src/gl-searchpopover.c:522
+msgid "Select End Time…"
+msgstr "Изабери време краја…"
+
+#: ../data/gl-searchpopover.ui.h:29
+msgid "PID"
+msgstr "ПИД"
+
+#: ../data/gl-searchpopover.ui.h:30
+msgid "UID"
+msgstr "УИД"
+
+#: ../data/gl-searchpopover.ui.h:31
+msgid "GID"
+msgstr "ГИД"
+
+#: ../data/gl-searchpopover.ui.h:33
+msgid "Process Name"
+msgstr "Назив процеса"
+
+#: ../data/gl-searchpopover.ui.h:34
+#| msgid "System"
+msgid "Systemd Unit"
+msgstr "Јединица система-д"
+
+#: ../data/gl-searchpopover.ui.h:37
+msgid "Executable Path"
+msgstr "Извршна путања"
+
+#: ../data/gl-searchpopover.ui.h:38
+msgid "Previous Boot"
+msgstr "Претходно подизање система"
+
+#: ../data/gl-searchpopover.ui.h:39
+msgid "Today"
+msgstr "Данас"
+
+#: ../data/gl-searchpopover.ui.h:40
+msgid "Yesterday"
+msgstr "Јуче"
+
+#: ../data/gl-searchpopover.ui.h:41
+msgid "Last 3 days"
+msgstr "Последња 3 дана"
+
+#: ../data/gl-searchpopover.ui.h:42
+msgid "Entire Journal"
+msgstr "Читав запис"
+
+#: ../data/gl-searchpopover.ui.h:43
+msgid "Set Custom Range…"
+msgstr "Постави произвољан опсег…"
 
 #: ../data/gl-window.ui.h:1
 msgid "Help"
@@ -174,7 +343,7 @@ msgid ""
 "Logs shows events from the systemd journal, and sorts them into categories, "
 "such as hardware and applications."
 msgstr ""
-"Записници приказују догађаје из систем-де журнала, и ређају их по "
+"Записници приказују догађаје из систем-д журнала, и ређају их по "
 "категоријама, рецимо хардвер и програми."
 
 #: ../data/org.gnome.Logs.appdata.xml.in.h:4
@@ -218,7 +387,7 @@ msgstr ""
 msgid "View and search logs"
 msgstr "Прегледа и претражује записнике"
 
-#: ../src/gl-application.c:239
+#: ../src/gl-application.c:245
 msgid "Print version information and exit"
 msgstr "Исписује податке о издању и излази"
 
@@ -229,13 +398,74 @@ msgstr "Подизање система"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventviewlist.c:290
+#: ../src/gl-eventviewlist.c:296
 msgid "No results"
 msgstr "Нема резултата"
 
 #: ../src/gl-eventviewrow.c:219
 msgid "Other"
 msgstr "Друго"
+
+#. Translators: if only custom start timestamp is set, then we update
+#. * the timestamp range button label in popover to show that
+#. * logs are shown in the window starting from this timestamp
+#. * until the ending timestamp of journal.
+#: ../src/gl-searchpopover.c:687
+#, c-format
+msgid "From %s"
+msgstr "Од %s"
+
+#. Translators: if only custom end timestamp is set, then we update
+#. * the timestamp range button label in popover to show that
+#. * logs are shown in the window upto this timestamp
+#. * with the starting timestamp being the current time.
+#: ../src/gl-searchpopover.c:700
+#, c-format
+msgid "Until %s"
+msgstr "До %s"
+
+#. Translators: date format for the start date entry
+#. * and start date button label in the custom range submenu,
+#. * showing the day of month in decimal number, full month
+#. * name as string, the year as a decimal number including the century.
+#. Translators: date format for the end date entry
+#. * and end date button label in the custom range submenu,
+#. * showing the day of month in decimal number, full month
+#. * name as string, the year as a decimal number including the century.
+#: ../src/gl-searchpopover.c:737 ../src/gl-searchpopover.c:1104
+msgid "%e %B %Y"
+msgstr "%e %B %Y"
+
+#: ../src/gl-searchpopover.c:875
+#, c-format
+msgid "AM"
+msgstr "ПрП"
+
+#: ../src/gl-searchpopover.c:879
+#, c-format
+msgid "PM"
+msgstr "ПоП"
+
+#. Translators: timestamp format for the custom start time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 12-hour format.
+#. Translators: timestamp format for the custom end time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 12-hour format.
+#: ../src/gl-searchpopover.c:987 ../src/gl-searchpopover.c:1226
+#| msgid "%l:%M:%S %p"
+msgid "%I:%M:%S %p"
+msgstr "%I:%M:%S %p"
+
+#. Translators: timestamp format for the custom start time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 24-hour format.
+#. Translators: timestamp format for the custom end time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 24-hour format.
+#: ../src/gl-searchpopover.c:994 ../src/gl-searchpopover.c:1233
+msgid "%T"
+msgstr "%T"
 
 #. Translators: timestamp format for events on the
 #. * current day, showing the time with seconds in
@@ -357,15 +587,15 @@ msgstr "поруке записника"
 msgid "Unable to export log messages to a file"
 msgstr "Нисам успео да извезем поруке из записника у датотеку"
 
-#: ../src/gl-window.c:474 ../src/gl-window.c:505
+#: ../src/gl-window.c:479 ../src/gl-window.c:510
 msgid "Unable to read system logs"
 msgstr "Нисам успео да прочитам системске записнике"
 
-#: ../src/gl-window.c:488
+#: ../src/gl-window.c:493
 msgid "Unable to read user logs"
 msgstr "Нисам успео да прочитам корисничке записнике"
 
-#: ../src/gl-window.c:520
+#: ../src/gl-window.c:525
 msgid "No logs available"
 msgstr "Нема доступних записника"
 
