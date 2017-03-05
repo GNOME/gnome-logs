@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the gnome-logs package.
 # Cédric Valmary <cvalmary@yahoo.fr>, 2015.
 # Cédric Valmary (Tot en òc) <cvalmary@yahoo.fr>, 2015.
-# Cédric Valmary (totenoc.eu) <cvalmary@yahoo.fr>, 2016.
+# Cédric Valmary (totenoc.eu) <cvalmary@yahoo.fr>, 2016, 2017.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-05-25 12:02+0000\n"
-"PO-Revision-Date: 2016-05-08 19:04+0200\n"
+"POT-Creation-Date: 2017-02-24 22:45+0000\n"
+"PO-Revision-Date: 2017-03-05 12:11+0200\n"
 "Last-Translator: Cédric Valmary (totenoc.eu) <cvalmary@yahoo.fr>\n"
 "Language-Team: Tot En Òc\n"
 "Language: oc\n"
@@ -37,19 +37,19 @@ msgstr "Favorits"
 msgid "All"
 msgstr "Totes"
 
-#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:197
+#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:202
 msgid "Applications"
 msgstr "Aplicacions"
 
-#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:206
+#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:211
 msgid "System"
 msgstr "Sistèma"
 
-#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:210
+#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:215
 msgid "Security"
 msgstr "Seguretat"
 
-#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:202
+#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:207
 msgid "Hardware"
 msgstr "Material"
 
@@ -67,7 +67,7 @@ msgstr "Tornar a la lista dels eveniments"
 
 #: ../data/gl-eventtoolbar.ui.h:2
 msgid "Export logs to a file"
-msgstr ""
+msgstr "Exportar los jornals dins un fichièr"
 
 #: ../data/gl-eventtoolbar.ui.h:3
 msgid "Choose the boot from which to view logs"
@@ -75,17 +75,17 @@ msgstr "Seleccionatz l'aviada a partir de la quala volètz veire lo jornal"
 
 #: ../data/gl-eventtoolbar.ui.h:4
 msgid "Search all the logs of the current category"
-msgstr ""
+msgstr "Cercar dins totes los jornals de la categoria actuala"
 
-#: ../data/gl-eventviewdetail.ui.h:1
+#: ../data/gl-eventviewdetail.ui.h:1 ../data/gl-searchpopover.ui.h:34
 msgid "Message"
 msgstr "Messatge"
 
-#: ../data/gl-eventviewdetail.ui.h:2
+#: ../data/gl-eventviewdetail.ui.h:2 ../data/gl-searchpopover.ui.h:38
 msgid "Audit Session"
 msgstr "Session d'audit"
 
-#: ../data/gl-eventviewdetail.ui.h:3
+#: ../data/gl-eventviewdetail.ui.h:3 ../data/gl-searchpopover.ui.h:37
 msgid "Kernel Device"
 msgstr "Periferic nucli"
 
@@ -108,6 +108,178 @@ msgstr "Ajuda"
 #: ../data/gl-eventviewdetail.ui.h:8
 msgid "Documentation"
 msgstr "Documentacion"
+
+#: ../data/gl-eventviewlist.ui.h:1
+msgid "Select journal field and timestamp range filtering options"
+msgstr ""
+"Causir las opcions de filtratge « camp de jornal » e « interval de temps » "
+
+#: ../data/gl-searchpopover.ui.h:1
+msgid "Select a Journal Field to filter the Logs according to it"
+msgstr "Causir un camp de jornal segon lo qual cal filtrar los jornals"
+
+#: ../data/gl-searchpopover.ui.h:2
+msgid "All Available Fields"
+msgstr "Totes los camps disponibles"
+
+#. Translators: What [journal fields to search in]
+#: ../data/gl-searchpopover.ui.h:4
+msgid "What"
+msgstr "Qué"
+
+#: ../data/gl-searchpopover.ui.h:5
+msgid "Select Journal Field…"
+msgstr "Causir un camp de jornal…"
+
+#. When [log entries to be shown for a given timestamp range]
+#: ../data/gl-searchpopover.ui.h:7
+msgid "When"
+msgstr "Quora"
+
+#: ../data/gl-searchpopover.ui.h:8
+msgid "Show Logs from…"
+msgstr "Afichar los jornals dempuèi lo…"
+
+#: ../data/gl-searchpopover.ui.h:9
+msgid "Select Timestamp Range of the Log Entries to be shown"
+msgstr "Causir un interval de temps de las entradas de jornal d'afichar"
+
+#: ../data/gl-searchpopover.ui.h:10 ../src/gl-searchpopover.c:1303
+msgid "Current Boot"
+msgstr "Aviada correnta"
+
+#: ../data/gl-searchpopover.ui.h:11
+#| msgctxt "shortcut window"
+#| msgid "Search"
+msgid "Search Type"
+msgstr "Recercar lo tipe"
+
+#: ../data/gl-searchpopover.ui.h:12
+msgid "Substring"
+msgstr "Parcialament"
+
+#: ../data/gl-searchpopover.ui.h:13
+msgid "Match in any part of the string"
+msgstr "Afichar los messatges qu'una partida correspond al motiu sasit"
+
+#: ../data/gl-searchpopover.ui.h:14
+msgid "Exact"
+msgstr "Exactament"
+
+#: ../data/gl-searchpopover.ui.h:15
+msgid "Match complete string only"
+msgstr "Afichar los messatges que correspondon exactament al motiu sasit"
+
+#: ../data/gl-searchpopover.ui.h:16
+msgid "Back"
+msgstr "En arrièr"
+
+#: ../data/gl-searchpopover.ui.h:17
+msgid "Show Logs Starting From…"
+msgstr "Mostrar los jornals dempuèi lo…"
+
+#: ../data/gl-searchpopover.ui.h:18
+msgid "Select a start date"
+msgstr "Causir una data de començament"
+
+#: ../data/gl-searchpopover.ui.h:19 ../src/gl-searchpopover.c:503
+msgid "Select Start Date…"
+msgstr "Causir la data de començament…"
+
+#: ../data/gl-searchpopover.ui.h:20
+msgid "Select start time"
+msgstr "Causir l'ora de començament"
+
+#: ../data/gl-searchpopover.ui.h:21 ../src/gl-searchpopover.c:504
+msgid "Select Start Time…"
+msgstr "Causir l'ora de començament…"
+
+#: ../data/gl-searchpopover.ui.h:22
+msgid "Hr"
+msgstr "Ora"
+
+#: ../data/gl-searchpopover.ui.h:23
+msgid "Min"
+msgstr "Min."
+
+#: ../data/gl-searchpopover.ui.h:24
+#| msgctxt "shortcut window"
+#| msgid "Search"
+msgid "Sec"
+msgstr "Seg."
+
+#: ../data/gl-searchpopover.ui.h:25
+msgid "AM/PM"
+msgstr "a.m./p.m."
+
+#: ../data/gl-searchpopover.ui.h:26
+msgid "Until…"
+msgstr "Fins al…"
+
+#: ../data/gl-searchpopover.ui.h:27
+msgid "Select an end date"
+msgstr "Causir una data de fin"
+
+#: ../data/gl-searchpopover.ui.h:28 ../src/gl-searchpopover.c:521
+msgid "Select End Date…"
+msgstr "Causir la data de fin…"
+
+#: ../data/gl-searchpopover.ui.h:29
+msgid "Select end time"
+msgstr "Causir l'ora de fin"
+
+#: ../data/gl-searchpopover.ui.h:30 ../src/gl-searchpopover.c:522
+msgid "Select End Time…"
+msgstr "Causir l'ora de fin…"
+
+#: ../data/gl-searchpopover.ui.h:31
+msgid "PID"
+msgstr "PID"
+
+#: ../data/gl-searchpopover.ui.h:32
+msgid "UID"
+msgstr "UID"
+
+#: ../data/gl-searchpopover.ui.h:33
+msgid "GID"
+msgstr "GID"
+
+#: ../data/gl-searchpopover.ui.h:35
+msgid "Process Name"
+msgstr "Nom del processus"
+
+#: ../data/gl-searchpopover.ui.h:36
+#| msgid "System"
+msgid "Systemd Unit"
+msgstr "Unitat Systemd"
+
+#: ../data/gl-searchpopover.ui.h:39
+msgid "Executable Path"
+msgstr "Camin de l'executable"
+
+#: ../data/gl-searchpopover.ui.h:40
+msgid "Previous Boot"
+msgstr "Aviada precedent"
+
+#: ../data/gl-searchpopover.ui.h:41
+msgid "Today"
+msgstr "Uèi"
+
+#: ../data/gl-searchpopover.ui.h:42
+msgid "Yesterday"
+msgstr "Ièr"
+
+#: ../data/gl-searchpopover.ui.h:43
+msgid "Last 3 days"
+msgstr "Las 3 darrièrs jorns"
+
+#: ../data/gl-searchpopover.ui.h:44
+msgid "Entire Journal"
+msgstr "Lo jornal tot entièr"
+
+#: ../data/gl-searchpopover.ui.h:45
+msgid "Set Custom Range…"
+msgstr "Definir un interval de temps personalizat…"
 
 #: ../data/gl-window.ui.h:1
 msgid "Help"
@@ -160,7 +332,7 @@ msgstr "_Quitar"
 
 #: ../data/org.gnome.Logs.appdata.xml.in.h:1
 msgid "GNOME Logs"
-msgstr ""
+msgstr "Jornals GNOME"
 
 #: ../data/org.gnome.Logs.appdata.xml.in.h:2
 #: ../data/org.gnome.Logs.desktop.in.h:3
@@ -215,7 +387,7 @@ msgstr "Cédric Valmary <cvalmary@yahoo.fr>"
 msgid "View and search logs"
 msgstr "Afichar e recercar dins los jornals"
 
-#: ../src/gl-application.c:239
+#: ../src/gl-application.c:245
 msgid "Print version information and exit"
 msgstr "Afichar las informacions sus la version e quitar."
 
@@ -226,13 +398,74 @@ msgstr "Aviada"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventviewlist.c:660
+#: ../src/gl-eventviewlist.c:296
 msgid "No results"
 msgstr "Pas cap de resultat"
 
-#: ../src/gl-eventviewrow.c:214
+#: ../src/gl-eventviewrow.c:219
 msgid "Other"
 msgstr "Autre"
+
+#. Translators: if only custom start timestamp is set, then we update
+#. * the timestamp range button label in popover to show that
+#. * logs are shown in the window starting from this timestamp
+#. * until the ending timestamp of journal.
+#: ../src/gl-searchpopover.c:687
+#, c-format
+msgid "From %s"
+msgstr "A partir del %s"
+
+#. Translators: if only custom end timestamp is set, then we update
+#. * the timestamp range button label in popover to show that
+#. * logs are shown in the window upto this timestamp
+#. * with the starting timestamp being the current time.
+#: ../src/gl-searchpopover.c:700
+#, c-format
+msgid "Until %s"
+msgstr "Fins al %s"
+
+#. Translators: date format for the start date entry
+#. * and start date button label in the custom range submenu,
+#. * showing the day of month in decimal number, full month
+#. * name as string, the year as a decimal number including the century.
+#. Translators: date format for the end date entry
+#. * and end date button label in the custom range submenu,
+#. * showing the day of month in decimal number, full month
+#. * name as string, the year as a decimal number including the century.
+#: ../src/gl-searchpopover.c:737 ../src/gl-searchpopover.c:1104
+msgid "%e %B %Y"
+msgstr "%e %B %Y"
+
+#: ../src/gl-searchpopover.c:875
+#, c-format
+msgid "AM"
+msgstr "a.m."
+
+#: ../src/gl-searchpopover.c:879
+#, c-format
+msgid "PM"
+msgstr "p.m."
+
+#. Translators: timestamp format for the custom start time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 12-hour format.
+#. Translators: timestamp format for the custom end time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 12-hour format.
+#: ../src/gl-searchpopover.c:987 ../src/gl-searchpopover.c:1226
+#| msgid "%l:%M:%S %p"
+msgid "%I:%M:%S %p"
+msgstr "%I:%M:%S %p"
+
+#. Translators: timestamp format for the custom start time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 24-hour format.
+#. Translators: timestamp format for the custom end time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 24-hour format.
+#: ../src/gl-searchpopover.c:994 ../src/gl-searchpopover.c:1233
+msgid "%T"
+msgstr "%T"
 
 #. Translators: timestamp format for events on the
 #. * current day, showing the time with seconds in
@@ -334,33 +567,37 @@ msgstr "%b %e %Y %H:%M"
 msgid "%s – %s"
 msgstr "%s – %s"
 
-#: ../src/gl-window.c:186
+#: ../src/gl-window.c:181
 msgid "Save logs"
-msgstr ""
+msgstr "Enregistrar los jornals"
 
-#: ../src/gl-window.c:189
+#: ../src/gl-window.c:184
 msgid "_Cancel"
 msgstr "A_nullar"
 
-#: ../src/gl-window.c:190
+#: ../src/gl-window.c:185
 msgid "_Save"
 msgstr "_Enregistrar"
 
-#: ../src/gl-window.c:195
+#: ../src/gl-window.c:190
 msgid "log messages"
-msgstr ""
+msgstr "messatges de jornal"
 
-#: ../src/gl-window.c:248
+#: ../src/gl-window.c:243
 msgid "Unable to export log messages to a file"
-msgstr ""
+msgstr "Impossible d'exportar los messatges de jornalizacion dins un fichièr"
 
-#: ../src/gl-window.c:467
+#: ../src/gl-window.c:474 ../src/gl-window.c:505
 msgid "Unable to read system logs"
-msgstr ""
+msgstr "Impossible de legir los jornals sistèmas"
 
-#: ../src/gl-window.c:481
+#: ../src/gl-window.c:488
 msgid "Unable to read user logs"
-msgstr ""
+msgstr "Impossible de legir los jornals utilizaires"
+
+#: ../src/gl-window.c:520
+msgid "No logs available"
+msgstr "Cap de jornal pas disponible"
 
 #~ msgid "Search the displayed logs"
 #~ msgstr "Recercar dins los messatges afichats"
