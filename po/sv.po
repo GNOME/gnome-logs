@@ -1,15 +1,15 @@
 # Swedish translation for gnome-logs.
-# Copyright © 2014-2016 gnome-logs's COPYRIGHT HOLDER
+# Copyright © 2014-2017 gnome-logs's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-logs package.
-# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2014, 2015, 2016.
+# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2014, 2015, 2016, 2017.
 # Sebastian Rasmussen <sebras@gmail.com>, 2016.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-08-10 10:34+0000\n"
-"PO-Revision-Date: 2016-08-21 01:34+0200\n"
+"POT-Creation-Date: 2017-02-27 23:51+0000\n"
+"PO-Revision-Date: 2017-03-05 21:59+0100\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.8\n"
+"X-Generator: Poedit 1.8.11\n"
 
 #: ../data/gl-categorylist.ui.h:1
 msgid "Important"
@@ -75,15 +75,15 @@ msgstr "Välj uppstarten från vilken loggar ska visas"
 msgid "Search all the logs of the current category"
 msgstr "Sök alla loggar för den aktuella kategorin"
 
-#: ../data/gl-eventviewdetail.ui.h:1
+#: ../data/gl-eventviewdetail.ui.h:1 ../data/gl-searchpopover.ui.h:34
 msgid "Message"
 msgstr "Meddelande"
 
-#: ../data/gl-eventviewdetail.ui.h:2
+#: ../data/gl-eventviewdetail.ui.h:2 ../data/gl-searchpopover.ui.h:38
 msgid "Audit Session"
 msgstr "Granskningssession"
 
-#: ../data/gl-eventviewdetail.ui.h:3
+#: ../data/gl-eventviewdetail.ui.h:3 ../data/gl-searchpopover.ui.h:37
 msgid "Kernel Device"
 msgstr "Kärnenhet"
 
@@ -106,6 +106,172 @@ msgstr "Support"
 #: ../data/gl-eventviewdetail.ui.h:8
 msgid "Documentation"
 msgstr "Dokumentation"
+
+#: ../data/gl-eventviewlist.ui.h:1
+msgid "Select journal field and timestamp range filtering options"
+msgstr "Välj filteralternativ för journalfält och tidsstämpelintervall"
+
+#: ../data/gl-searchpopover.ui.h:1
+msgid "Select a Journal Field to filter the Logs according to it"
+msgstr "Välj ett journalfält för att filtrera loggarna efter det"
+
+#: ../data/gl-searchpopover.ui.h:2
+msgid "All Available Fields"
+msgstr "Alla tillgängliga fält"
+
+#. Translators: What [journal fields to search in]
+#: ../data/gl-searchpopover.ui.h:4
+msgid "What"
+msgstr "Vad"
+
+#: ../data/gl-searchpopover.ui.h:5
+msgid "Select Journal Field…"
+msgstr "Välj journalfält…"
+
+#. When [log entries to be shown for a given timestamp range]
+#: ../data/gl-searchpopover.ui.h:7
+msgid "When"
+msgstr "När"
+
+#: ../data/gl-searchpopover.ui.h:8
+msgid "Show Logs from…"
+msgstr "Visa loggar från…"
+
+#: ../data/gl-searchpopover.ui.h:9
+msgid "Select Timestamp Range of the Log Entries to be shown"
+msgstr "Välj tidsstämpelintervall för loggposterna som ska visas"
+
+#: ../data/gl-searchpopover.ui.h:10 ../src/gl-searchpopover.c:1303
+msgid "Current Boot"
+msgstr "Aktuell uppstart"
+
+#: ../data/gl-searchpopover.ui.h:11
+msgid "Search Type"
+msgstr "Söktyp"
+
+#: ../data/gl-searchpopover.ui.h:12
+msgid "Substring"
+msgstr "Delsträng"
+
+#: ../data/gl-searchpopover.ui.h:13
+msgid "Match in any part of the string"
+msgstr "Matcha i någon del av strängen"
+
+#: ../data/gl-searchpopover.ui.h:14
+msgid "Exact"
+msgstr "Exakt"
+
+#: ../data/gl-searchpopover.ui.h:15
+msgid "Match complete string only"
+msgstr "Matcha endast fullständig sträng"
+
+#: ../data/gl-searchpopover.ui.h:16
+msgid "Back"
+msgstr "Bakåt"
+
+#: ../data/gl-searchpopover.ui.h:17
+msgid "Show Logs Starting From…"
+msgstr "Visa loggar från och med…"
+
+#: ../data/gl-searchpopover.ui.h:18
+msgid "Select a start date"
+msgstr "Välj ett startdatum"
+
+#: ../data/gl-searchpopover.ui.h:19 ../src/gl-searchpopover.c:503
+msgid "Select Start Date…"
+msgstr "Välj startdatum…"
+
+#: ../data/gl-searchpopover.ui.h:20
+msgid "Select start time"
+msgstr "Välj starttid"
+
+#: ../data/gl-searchpopover.ui.h:21 ../src/gl-searchpopover.c:504
+msgid "Select Start Time…"
+msgstr "Välj starttid…"
+
+#: ../data/gl-searchpopover.ui.h:22
+msgid "Hr"
+msgstr "Tim"
+
+#: ../data/gl-searchpopover.ui.h:23
+msgid "Min"
+msgstr "Min"
+
+#: ../data/gl-searchpopover.ui.h:24
+msgid "Sec"
+msgstr "Sek"
+
+#: ../data/gl-searchpopover.ui.h:25
+msgid "AM/PM"
+msgstr "f.m./e.m."
+
+#: ../data/gl-searchpopover.ui.h:26
+msgid "Until…"
+msgstr "Till…"
+
+#: ../data/gl-searchpopover.ui.h:27
+msgid "Select an end date"
+msgstr "Välj ett slutdatum"
+
+#: ../data/gl-searchpopover.ui.h:28 ../src/gl-searchpopover.c:521
+msgid "Select End Date…"
+msgstr "Välj slutdatum…"
+
+#: ../data/gl-searchpopover.ui.h:29
+msgid "Select end time"
+msgstr "Välj sluttid"
+
+#: ../data/gl-searchpopover.ui.h:30 ../src/gl-searchpopover.c:522
+msgid "Select End Time…"
+msgstr "Välj sluttid…"
+
+#: ../data/gl-searchpopover.ui.h:31
+msgid "PID"
+msgstr "PID"
+
+#: ../data/gl-searchpopover.ui.h:32
+msgid "UID"
+msgstr "UID"
+
+#: ../data/gl-searchpopover.ui.h:33
+msgid "GID"
+msgstr "GID"
+
+#: ../data/gl-searchpopover.ui.h:35
+msgid "Process Name"
+msgstr "Processnamn"
+
+#: ../data/gl-searchpopover.ui.h:36
+msgid "Systemd Unit"
+msgstr "Systemd-enhet"
+
+#: ../data/gl-searchpopover.ui.h:39
+msgid "Executable Path"
+msgstr "Körbar sökväg"
+
+#: ../data/gl-searchpopover.ui.h:40
+msgid "Previous Boot"
+msgstr "Föregående uppstart"
+
+#: ../data/gl-searchpopover.ui.h:41
+msgid "Today"
+msgstr "Idag"
+
+#: ../data/gl-searchpopover.ui.h:42
+msgid "Yesterday"
+msgstr "Igår"
+
+#: ../data/gl-searchpopover.ui.h:43
+msgid "Last 3 days"
+msgstr "Senaste 3 dagarna"
+
+#: ../data/gl-searchpopover.ui.h:44
+msgid "Entire Journal"
+msgstr "Hela journalen"
+
+#: ../data/gl-searchpopover.ui.h:45
+msgid "Set Custom Range…"
+msgstr "Ställ in ett anpassat intervall…"
 
 #: ../data/gl-window.ui.h:1
 msgid "Help"
@@ -215,7 +381,7 @@ msgstr ""
 msgid "View and search logs"
 msgstr "Visa och sök igenom loggar"
 
-#: ../src/gl-application.c:239
+#: ../src/gl-application.c:245
 msgid "Print version information and exit"
 msgstr "Skriv ut versionsinformation och avsluta"
 
@@ -226,13 +392,73 @@ msgstr "Uppstart"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventviewlist.c:290
+#: ../src/gl-eventviewlist.c:296
 msgid "No results"
 msgstr "Inga resultat"
 
 #: ../src/gl-eventviewrow.c:219
 msgid "Other"
 msgstr "Övrigt"
+
+#. Translators: if only custom start timestamp is set, then we update
+#. * the timestamp range button label in popover to show that
+#. * logs are shown in the window starting from this timestamp
+#. * until the ending timestamp of journal.
+#: ../src/gl-searchpopover.c:687
+#, c-format
+msgid "From %s"
+msgstr "Från %s"
+
+#. Translators: if only custom end timestamp is set, then we update
+#. * the timestamp range button label in popover to show that
+#. * logs are shown in the window upto this timestamp
+#. * with the starting timestamp being the current time.
+#: ../src/gl-searchpopover.c:700
+#, c-format
+msgid "Until %s"
+msgstr "Till %s"
+
+#. Translators: date format for the start date entry
+#. * and start date button label in the custom range submenu,
+#. * showing the day of month in decimal number, full month
+#. * name as string, the year as a decimal number including the century.
+#. Translators: date format for the end date entry
+#. * and end date button label in the custom range submenu,
+#. * showing the day of month in decimal number, full month
+#. * name as string, the year as a decimal number including the century.
+#: ../src/gl-searchpopover.c:737 ../src/gl-searchpopover.c:1104
+msgid "%e %B %Y"
+msgstr "%e %B %Y"
+
+#: ../src/gl-searchpopover.c:875
+#, c-format
+msgid "AM"
+msgstr "f.m."
+
+#: ../src/gl-searchpopover.c:879
+#, c-format
+msgid "PM"
+msgstr "e.m."
+
+#. Translators: timestamp format for the custom start time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 12-hour format.
+#. Translators: timestamp format for the custom end time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 12-hour format.
+#: ../src/gl-searchpopover.c:987 ../src/gl-searchpopover.c:1226
+msgid "%I:%M:%S %p"
+msgstr "%I:%M:%S %p"
+
+#. Translators: timestamp format for the custom start time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 24-hour format.
+#. Translators: timestamp format for the custom end time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 24-hour format.
+#: ../src/gl-searchpopover.c:994 ../src/gl-searchpopover.c:1233
+msgid "%T"
+msgstr "%T"
 
 #. Translators: timestamp format for events on the
 #. * current day, showing the time with seconds in
@@ -334,23 +560,23 @@ msgstr "%e %b %Y %H:%M"
 msgid "%s – %s"
 msgstr "%s – %s"
 
-#: ../src/gl-window.c:186
+#: ../src/gl-window.c:181
 msgid "Save logs"
 msgstr "Spara loggar"
 
-#: ../src/gl-window.c:189
+#: ../src/gl-window.c:184
 msgid "_Cancel"
 msgstr "_Avbryt"
 
-#: ../src/gl-window.c:190
+#: ../src/gl-window.c:185
 msgid "_Save"
 msgstr "_Spara"
 
-#: ../src/gl-window.c:195
+#: ../src/gl-window.c:190
 msgid "log messages"
 msgstr "loggmeddelanden"
 
-#: ../src/gl-window.c:248
+#: ../src/gl-window.c:243
 msgid "Unable to export log messages to a file"
 msgstr "Kan ej exportera loggmeddelanden till en fil"
 
