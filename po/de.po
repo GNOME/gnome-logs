@@ -4,15 +4,15 @@
 # David Lüder <davidl-dev@gmx-topmail.de>, 2014.
 # Benjamin Steinwender <b@stbe.at>, 2014.
 # Bernd Homuth <dev@hmt.im>, 2015.
-# Mario Blättermann <mario.blaettermann@gmail.com>, 2015-2016.
+# Mario Blättermann <mario.blaettermann@gmail.com>, 2015-2017.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-11-10 12:49+0000\n"
-"PO-Revision-Date: 2016-11-11 21:32+0100\n"
+"POT-Creation-Date: 2017-02-24 22:45+0000\n"
+"PO-Revision-Date: 2017-03-05 18:39+0100\n"
 "Last-Translator: Mario Blättermann <mario.blaettermann@gmail.com>\n"
 "Language-Team: Deutsch <gnome-de@gnome.org>\n"
 "Language: de\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Poedit 1.8.12\n"
 
 #: ../data/gl-categorylist.ui.h:1
 msgid "Important"
@@ -78,15 +78,15 @@ msgstr "Wählen Sie den Start, von dem Sie Protokolle sehen möchten"
 msgid "Search all the logs of the current category"
 msgstr "Alle Protokolle der aktuellen Kategorie durchsuchen"
 
-#: ../data/gl-eventviewdetail.ui.h:1 ../data/gl-searchpopover.ui.h:32
+#: ../data/gl-eventviewdetail.ui.h:1 ../data/gl-searchpopover.ui.h:34
 msgid "Message"
 msgstr "Meldung"
 
-#: ../data/gl-eventviewdetail.ui.h:2 ../data/gl-searchpopover.ui.h:36
+#: ../data/gl-eventviewdetail.ui.h:2 ../data/gl-searchpopover.ui.h:38
 msgid "Audit Session"
 msgstr "Prüfsitzung"
 
-#: ../data/gl-eventviewdetail.ui.h:3 ../data/gl-searchpopover.ui.h:35
+#: ../data/gl-eventviewdetail.ui.h:3 ../data/gl-searchpopover.ui.h:37
 msgid "Kernel Device"
 msgstr "Kernel-Gerät"
 
@@ -113,165 +113,172 @@ msgstr "Dokumentation"
 #: ../data/gl-eventviewlist.ui.h:1
 msgid "Select journal field and timestamp range filtering options"
 msgstr ""
+"Wählen Sie ein Journal-Feld und einen Zeitstempel-Bereich für die "
+"Filteroptionen"
 
 #: ../data/gl-searchpopover.ui.h:1
 msgid "Select a Journal Field to filter the Logs according to it"
 msgstr ""
+"Wählen Sie ein Journal-Feld, entsprechend dem die Protokolle gefiltert "
+"werden sollen"
 
 #: ../data/gl-searchpopover.ui.h:2
 msgid "All Available Fields"
 msgstr "Alle verfügbaren Felder"
 
-#: ../data/gl-searchpopover.ui.h:3
+#. Translators: What [journal fields to search in]
+#: ../data/gl-searchpopover.ui.h:4
 msgid "What"
 msgstr "Was"
 
-#: ../data/gl-searchpopover.ui.h:4
+#: ../data/gl-searchpopover.ui.h:5
 msgid "Select Journal Field…"
 msgstr "Journal-Feld auswählen …"
 
-#: ../data/gl-searchpopover.ui.h:5
+#. When [log entries to be shown for a given timestamp range]
+#: ../data/gl-searchpopover.ui.h:7
 msgid "When"
 msgstr "Wann"
 
-#: ../data/gl-searchpopover.ui.h:6
+#: ../data/gl-searchpopover.ui.h:8
 msgid "Show Logs from…"
-msgstr ""
+msgstr "Protokolle anzeigen ab …"
 
-#: ../data/gl-searchpopover.ui.h:7
+#: ../data/gl-searchpopover.ui.h:9
 msgid "Select Timestamp Range of the Log Entries to be shown"
 msgstr ""
+"Wählen Sie einen Zeitstempel-Bereich, aus dem die Protokolle angezeigt "
+"werden sollen"
 
-#: ../data/gl-searchpopover.ui.h:8 ../src/gl-searchpopover.c:1303
+#: ../data/gl-searchpopover.ui.h:10 ../src/gl-searchpopover.c:1303
 msgid "Current Boot"
 msgstr "Aktueller Systemstart"
 
-#: ../data/gl-searchpopover.ui.h:9
+#: ../data/gl-searchpopover.ui.h:11
 msgid "Search Type"
 msgstr "Suchtyp"
 
-#: ../data/gl-searchpopover.ui.h:10
+#: ../data/gl-searchpopover.ui.h:12
 msgid "Substring"
 msgstr "Teil"
 
-#: ../data/gl-searchpopover.ui.h:11
+#: ../data/gl-searchpopover.ui.h:13
 msgid "Match in any part of the string"
 msgstr "Treffer auch als Teil der Zeichenkette"
 
-#: ../data/gl-searchpopover.ui.h:12
+#: ../data/gl-searchpopover.ui.h:14
 msgid "Exact"
 msgstr "Genau"
 
-#: ../data/gl-searchpopover.ui.h:13
+#: ../data/gl-searchpopover.ui.h:15
 msgid "Match complete string only"
 msgstr "Treffer nur als ganze Zeichenkette"
 
-#: ../data/gl-searchpopover.ui.h:14
+#: ../data/gl-searchpopover.ui.h:16
 msgid "Back"
 msgstr "Zurück"
 
-#: ../data/gl-searchpopover.ui.h:15
+#: ../data/gl-searchpopover.ui.h:17
 msgid "Show Logs Starting From…"
 msgstr "Protokolle anzeigen beginnend mit …"
 
-#: ../data/gl-searchpopover.ui.h:16
+#: ../data/gl-searchpopover.ui.h:18
 msgid "Select a start date"
 msgstr "Startdatum wählen"
 
-#: ../data/gl-searchpopover.ui.h:17 ../src/gl-searchpopover.c:503
+#: ../data/gl-searchpopover.ui.h:19 ../src/gl-searchpopover.c:503
 msgid "Select Start Date…"
 msgstr "Ein Startdatum wählen …"
 
-#: ../data/gl-searchpopover.ui.h:18
+#: ../data/gl-searchpopover.ui.h:20
 msgid "Select start time"
 msgstr "Startzeit wählen"
 
-#: ../data/gl-searchpopover.ui.h:19 ../src/gl-searchpopover.c:504
+#: ../data/gl-searchpopover.ui.h:21 ../src/gl-searchpopover.c:504
 msgid "Select Start Time…"
 msgstr "Eine Startzeit wählen …"
 
-#: ../data/gl-searchpopover.ui.h:20
+#: ../data/gl-searchpopover.ui.h:22
 msgid "Hr"
 msgstr "h"
 
-#: ../data/gl-searchpopover.ui.h:21
+#: ../data/gl-searchpopover.ui.h:23
 msgid "Min"
 msgstr "min"
 
-#: ../data/gl-searchpopover.ui.h:22
+#: ../data/gl-searchpopover.ui.h:24
 msgid "Sec"
 msgstr "s"
 
-#: ../data/gl-searchpopover.ui.h:23
+#: ../data/gl-searchpopover.ui.h:25
 msgid "AM/PM"
 msgstr "AM/PM"
 
-#: ../data/gl-searchpopover.ui.h:24
+#: ../data/gl-searchpopover.ui.h:26
 msgid "Until…"
 msgstr "bis …"
 
-#: ../data/gl-searchpopover.ui.h:25
+#: ../data/gl-searchpopover.ui.h:27
 msgid "Select an end date"
 msgstr "Ein Enddatum wählen"
 
-#: ../data/gl-searchpopover.ui.h:26 ../src/gl-searchpopover.c:521
+#: ../data/gl-searchpopover.ui.h:28 ../src/gl-searchpopover.c:521
 msgid "Select End Date…"
 msgstr "Enddatum wählen …"
 
-#: ../data/gl-searchpopover.ui.h:27
+#: ../data/gl-searchpopover.ui.h:29
 msgid "Select end time"
 msgstr "Endzeit wählen"
 
-#: ../data/gl-searchpopover.ui.h:28 ../src/gl-searchpopover.c:522
+#: ../data/gl-searchpopover.ui.h:30 ../src/gl-searchpopover.c:522
 msgid "Select End Time…"
 msgstr "Endzeit wählen …"
 
-#: ../data/gl-searchpopover.ui.h:29
+#: ../data/gl-searchpopover.ui.h:31
 msgid "PID"
 msgstr "Prozesskennung"
 
-#: ../data/gl-searchpopover.ui.h:30
+#: ../data/gl-searchpopover.ui.h:32
 msgid "UID"
 msgstr "Benutzerkennung"
 
-#: ../data/gl-searchpopover.ui.h:31
+#: ../data/gl-searchpopover.ui.h:33
 msgid "GID"
 msgstr "Gruppenkennung"
 
-#: ../data/gl-searchpopover.ui.h:33
+#: ../data/gl-searchpopover.ui.h:35
 msgid "Process Name"
 msgstr "Prozessname"
 
-#: ../data/gl-searchpopover.ui.h:34
-#| msgid "System"
+#: ../data/gl-searchpopover.ui.h:36
 msgid "Systemd Unit"
 msgstr "Systemd-Unit"
 
-#: ../data/gl-searchpopover.ui.h:37
+#: ../data/gl-searchpopover.ui.h:39
 msgid "Executable Path"
 msgstr "Pfad zur ausführbaren Datei"
 
-#: ../data/gl-searchpopover.ui.h:38
+#: ../data/gl-searchpopover.ui.h:40
 msgid "Previous Boot"
 msgstr "Voriger Systemstart"
 
-#: ../data/gl-searchpopover.ui.h:39
+#: ../data/gl-searchpopover.ui.h:41
 msgid "Today"
 msgstr "Heute"
 
-#: ../data/gl-searchpopover.ui.h:40
+#: ../data/gl-searchpopover.ui.h:42
 msgid "Yesterday"
 msgstr "Gestern"
 
-#: ../data/gl-searchpopover.ui.h:41
+#: ../data/gl-searchpopover.ui.h:43
 msgid "Last 3 days"
 msgstr "Letzte 3 Tage"
 
-#: ../data/gl-searchpopover.ui.h:42
+#: ../data/gl-searchpopover.ui.h:44
 msgid "Entire Journal"
 msgstr "Gesamtes Journal"
 
-#: ../data/gl-searchpopover.ui.h:43
+#: ../data/gl-searchpopover.ui.h:45
 msgid "Set Custom Range…"
 msgstr "Bereich wählen …"
 
@@ -435,7 +442,7 @@ msgstr "bis %s"
 #. * name as string, the year as a decimal number including the century.
 #: ../src/gl-searchpopover.c:737 ../src/gl-searchpopover.c:1104
 msgid "%e %B %Y"
-msgstr ""
+msgstr "%e. %B %Y"
 
 #: ../src/gl-searchpopover.c:875
 #, c-format
@@ -454,7 +461,6 @@ msgstr "PM"
 #. * label in the custom range submenu, showing the time with seconds
 #. * in 12-hour format.
 #: ../src/gl-searchpopover.c:987 ../src/gl-searchpopover.c:1226
-#| msgid "%l:%M:%S %p"
 msgid "%I:%M:%S %p"
 msgstr "%I:%M:%S %p"
 
@@ -568,35 +574,35 @@ msgstr "%e. %b %Y %H:%M"
 msgid "%s – %s"
 msgstr "%s – %s"
 
-#: ../src/gl-window.c:186
+#: ../src/gl-window.c:181
 msgid "Save logs"
 msgstr "Protokoll speichern"
 
-#: ../src/gl-window.c:189
+#: ../src/gl-window.c:184
 msgid "_Cancel"
 msgstr "Abbre_chen"
 
-#: ../src/gl-window.c:190
+#: ../src/gl-window.c:185
 msgid "_Save"
 msgstr "_Speichern"
 
-#: ../src/gl-window.c:195
+#: ../src/gl-window.c:190
 msgid "log messages"
 msgstr "Protokollmeldungen"
 
-#: ../src/gl-window.c:248
+#: ../src/gl-window.c:243
 msgid "Unable to export log messages to a file"
 msgstr "Protokollmeldungen konnten nicht in eine Datei exportiert werden"
 
-#: ../src/gl-window.c:479 ../src/gl-window.c:510
+#: ../src/gl-window.c:474 ../src/gl-window.c:505
 msgid "Unable to read system logs"
 msgstr "Systemprotokoll konnte nicht gelesen werden"
 
-#: ../src/gl-window.c:493
+#: ../src/gl-window.c:488
 msgid "Unable to read user logs"
 msgstr "Benutzerprotokoll konnte nicht gelesen werden"
 
-#: ../src/gl-window.c:525
+#: ../src/gl-window.c:520
 msgid "No logs available"
 msgstr "Keine Protokolle verfügbar"
 
