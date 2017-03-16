@@ -8,19 +8,19 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-09-20 05:47+0000\n"
-"PO-Revision-Date: 2016-11-24 01:06+0300\n"
-"Last-Translator: Stas Solovey <whats_up@tut.by>\n"
+"POT-Creation-Date: 2017-02-24 22:45+0000\n"
+"PO-Revision-Date: 2017-03-16 16:38+0400\n"
+"Last-Translator: Yuri Myasoedov <ymyasoedov@yandex.ru>\n"
 "Language-Team: Русский <gnome-cyr@gnome.org>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
-"X-Generator: Gtranslator 2.91.7\n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Poedit 1.8.7.1\n"
 
 #: ../data/gl-categorylist.ui.h:1
 msgid "Important"
@@ -78,15 +78,15 @@ msgstr "Выберите загрузку, для которой хотите п
 msgid "Search all the logs of the current category"
 msgstr "Искать все журналы текущей категории"
 
-#: ../data/gl-eventviewdetail.ui.h:1
+#: ../data/gl-eventviewdetail.ui.h:1 ../data/gl-searchpopover.ui.h:34
 msgid "Message"
 msgstr "Сообщение"
 
-#: ../data/gl-eventviewdetail.ui.h:2
+#: ../data/gl-eventviewdetail.ui.h:2 ../data/gl-searchpopover.ui.h:38
 msgid "Audit Session"
 msgstr "Сеанс аудита"
 
-#: ../data/gl-eventviewdetail.ui.h:3
+#: ../data/gl-eventviewdetail.ui.h:3 ../data/gl-searchpopover.ui.h:37
 msgid "Kernel Device"
 msgstr "Устройство"
 
@@ -109,6 +109,172 @@ msgstr "Поддержка"
 #: ../data/gl-eventviewdetail.ui.h:8
 msgid "Documentation"
 msgstr "Документация"
+
+#: ../data/gl-eventviewlist.ui.h:1
+msgid "Select journal field and timestamp range filtering options"
+msgstr "Выберите параметры фильтрации: поле журнала и диапазон меток времени"
+
+#: ../data/gl-searchpopover.ui.h:1
+msgid "Select a Journal Field to filter the Logs according to it"
+msgstr "Выберите поле журнала, по которому нужно фильтровать журнал"
+
+#: ../data/gl-searchpopover.ui.h:2
+msgid "All Available Fields"
+msgstr "Все доступные поля"
+
+#. Translators: What [journal fields to search in]
+#: ../data/gl-searchpopover.ui.h:4
+msgid "What"
+msgstr "Что"
+
+#: ../data/gl-searchpopover.ui.h:5
+msgid "Select Journal Field…"
+msgstr "Выбрать поле журнала…"
+
+#. When [log entries to be shown for a given timestamp range]
+#: ../data/gl-searchpopover.ui.h:7
+msgid "When"
+msgstr "Когда"
+
+#: ../data/gl-searchpopover.ui.h:8
+msgid "Show Logs from…"
+msgstr "Показать журналы от…"
+
+#: ../data/gl-searchpopover.ui.h:9
+msgid "Select Timestamp Range of the Log Entries to be shown"
+msgstr "Выберите диапазон меток времени записей журнала"
+
+#: ../data/gl-searchpopover.ui.h:10 ../src/gl-searchpopover.c:1303
+msgid "Current Boot"
+msgstr "Текущая загрузка"
+
+#: ../data/gl-searchpopover.ui.h:11
+msgid "Search Type"
+msgstr "Тип поиска"
+
+#: ../data/gl-searchpopover.ui.h:12
+msgid "Substring"
+msgstr "Подстрока"
+
+#: ../data/gl-searchpopover.ui.h:13
+msgid "Match in any part of the string"
+msgstr "Совпадение с любой частью строки"
+
+#: ../data/gl-searchpopover.ui.h:14
+msgid "Exact"
+msgstr "Точное совпадение"
+
+#: ../data/gl-searchpopover.ui.h:15
+msgid "Match complete string only"
+msgstr "Только полное совпадение строки"
+
+#: ../data/gl-searchpopover.ui.h:16
+msgid "Back"
+msgstr "Назад"
+
+#: ../data/gl-searchpopover.ui.h:17
+msgid "Show Logs Starting From…"
+msgstr "Показать журналы от…"
+
+#: ../data/gl-searchpopover.ui.h:18
+msgid "Select a start date"
+msgstr "Выберите дату начала"
+
+#: ../data/gl-searchpopover.ui.h:19 ../src/gl-searchpopover.c:503
+msgid "Select Start Date…"
+msgstr "Выбрать дату начала…"
+
+#: ../data/gl-searchpopover.ui.h:20
+msgid "Select start time"
+msgstr "Выберите время начала"
+
+#: ../data/gl-searchpopover.ui.h:21 ../src/gl-searchpopover.c:504
+msgid "Select Start Time…"
+msgstr "Выберите время начала…"
+
+#: ../data/gl-searchpopover.ui.h:22
+msgid "Hr"
+msgstr "ч"
+
+#: ../data/gl-searchpopover.ui.h:23
+msgid "Min"
+msgstr "мин"
+
+#: ../data/gl-searchpopover.ui.h:24
+msgid "Sec"
+msgstr "сек"
+
+#: ../data/gl-searchpopover.ui.h:25
+msgid "AM/PM"
+msgstr "AM/PM"
+
+#: ../data/gl-searchpopover.ui.h:26
+msgid "Until…"
+msgstr "До…"
+
+#: ../data/gl-searchpopover.ui.h:27
+msgid "Select an end date"
+msgstr "Выберите дату конца"
+
+#: ../data/gl-searchpopover.ui.h:28 ../src/gl-searchpopover.c:521
+msgid "Select End Date…"
+msgstr "Выбрать дату конца…"
+
+#: ../data/gl-searchpopover.ui.h:29
+msgid "Select end time"
+msgstr "Выберите время конца"
+
+#: ../data/gl-searchpopover.ui.h:30 ../src/gl-searchpopover.c:522
+msgid "Select End Time…"
+msgstr "Выбрать время конца…"
+
+#: ../data/gl-searchpopover.ui.h:31
+msgid "PID"
+msgstr "PID"
+
+#: ../data/gl-searchpopover.ui.h:32
+msgid "UID"
+msgstr "UID"
+
+#: ../data/gl-searchpopover.ui.h:33
+msgid "GID"
+msgstr "GID"
+
+#: ../data/gl-searchpopover.ui.h:35
+msgid "Process Name"
+msgstr "Имя процесса"
+
+#: ../data/gl-searchpopover.ui.h:36
+msgid "Systemd Unit"
+msgstr "Systemd Unit"
+
+#: ../data/gl-searchpopover.ui.h:39
+msgid "Executable Path"
+msgstr "Исполняемый путь"
+
+#: ../data/gl-searchpopover.ui.h:40
+msgid "Previous Boot"
+msgstr "Предыдущая загрузка"
+
+#: ../data/gl-searchpopover.ui.h:41
+msgid "Today"
+msgstr "Сегодня"
+
+#: ../data/gl-searchpopover.ui.h:42
+msgid "Yesterday"
+msgstr "Вчера"
+
+#: ../data/gl-searchpopover.ui.h:43
+msgid "Last 3 days"
+msgstr "За последние 3 дня"
+
+#: ../data/gl-searchpopover.ui.h:44
+msgid "Entire Journal"
+msgstr "Весь журнал"
+
+#: ../data/gl-searchpopover.ui.h:45
+msgid "Set Custom Range…"
+msgstr "Указать другой диапазон…"
 
 #: ../data/gl-window.ui.h:1
 msgid "Help"
@@ -210,14 +376,14 @@ msgstr ""
 #: ../src/gl-application.c:110
 msgid "translator-credits"
 msgstr ""
-"Станислав Соловей <whats_up@tut.by>, 2014, 2015\\n\n"
-"Юрий Мясоедов <ymyasoedov@yandex.ru, 2015"
+"Станислав Соловей <whats_up@tut.by>, 2014-2015\n"
+"Юрий Мясоедов <ymyasoedov@yandex.ru>, 2015-2017"
 
 #: ../src/gl-application.c:111
 msgid "View and search logs"
 msgstr "Просмотр и поиск событий"
 
-#: ../src/gl-application.c:239
+#: ../src/gl-application.c:245
 msgid "Print version information and exit"
 msgstr "Показать информацию о версии и выйти"
 
@@ -228,13 +394,73 @@ msgstr "Загрузка"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventviewlist.c:290
+#: ../src/gl-eventviewlist.c:296
 msgid "No results"
 msgstr "Результаты отсутствуют"
 
 #: ../src/gl-eventviewrow.c:219
 msgid "Other"
 msgstr "Другое"
+
+#. Translators: if only custom start timestamp is set, then we update
+#. * the timestamp range button label in popover to show that
+#. * logs are shown in the window starting from this timestamp
+#. * until the ending timestamp of journal.
+#: ../src/gl-searchpopover.c:687
+#, c-format
+msgid "From %s"
+msgstr "От %s"
+
+#. Translators: if only custom end timestamp is set, then we update
+#. * the timestamp range button label in popover to show that
+#. * logs are shown in the window upto this timestamp
+#. * with the starting timestamp being the current time.
+#: ../src/gl-searchpopover.c:700
+#, c-format
+msgid "Until %s"
+msgstr "До %s"
+
+#. Translators: date format for the start date entry
+#. * and start date button label in the custom range submenu,
+#. * showing the day of month in decimal number, full month
+#. * name as string, the year as a decimal number including the century.
+#. Translators: date format for the end date entry
+#. * and end date button label in the custom range submenu,
+#. * showing the day of month in decimal number, full month
+#. * name as string, the year as a decimal number including the century.
+#: ../src/gl-searchpopover.c:737 ../src/gl-searchpopover.c:1104
+msgid "%e %B %Y"
+msgstr "%e %B %Y"
+
+#: ../src/gl-searchpopover.c:875
+#, c-format
+msgid "AM"
+msgstr "AM"
+
+#: ../src/gl-searchpopover.c:879
+#, c-format
+msgid "PM"
+msgstr "PM"
+
+#. Translators: timestamp format for the custom start time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 12-hour format.
+#. Translators: timestamp format for the custom end time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 12-hour format.
+#: ../src/gl-searchpopover.c:987 ../src/gl-searchpopover.c:1226
+msgid "%I:%M:%S %p"
+msgstr "%I:%M:%S %p"
+
+#. Translators: timestamp format for the custom start time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 24-hour format.
+#. Translators: timestamp format for the custom end time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 24-hour format.
+#: ../src/gl-searchpopover.c:994 ../src/gl-searchpopover.c:1233
+msgid "%T"
+msgstr "%T"
 
 #. Translators: timestamp format for events on the
 #. * current day, showing the time with seconds in
@@ -344,35 +570,35 @@ msgstr "%e %b. %Y, %H:%M"
 msgid "%s – %s"
 msgstr "%s – %s"
 
-#: ../src/gl-window.c:186
+#: ../src/gl-window.c:181
 msgid "Save logs"
 msgstr "Сохранить журналы"
 
-#: ../src/gl-window.c:189
+#: ../src/gl-window.c:184
 msgid "_Cancel"
 msgstr "_Отменить"
 
-#: ../src/gl-window.c:190
+#: ../src/gl-window.c:185
 msgid "_Save"
 msgstr "_Сохранить"
 
-#: ../src/gl-window.c:195
+#: ../src/gl-window.c:190
 msgid "log messages"
 msgstr "Сообщения журнала"
 
-#: ../src/gl-window.c:248
+#: ../src/gl-window.c:243
 msgid "Unable to export log messages to a file"
 msgstr "Не удалось экспортировать сообщения журнала в файл"
 
-#: ../src/gl-window.c:479 ../src/gl-window.c:510
+#: ../src/gl-window.c:474 ../src/gl-window.c:505
 msgid "Unable to read system logs"
 msgstr "Не удалось прочитать системные журналы"
 
-#: ../src/gl-window.c:493
+#: ../src/gl-window.c:488
 msgid "Unable to read user logs"
 msgstr "Не удалось прочитать пользовательские журналы"
 
-#: ../src/gl-window.c:525
+#: ../src/gl-window.c:520
 msgid "No logs available"
 msgstr "Нет доступных журналов"
 
