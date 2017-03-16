@@ -1,18 +1,19 @@
 # French translation for gnome-logs.
-# Copyright (C) 2014-2016 gnome-logs's COPYRIGHT HOLDER
+# Copyright (C) 2014-2017 gnome-logs's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-logs package.
 #
 # Jérôme Sirgue  <jsirgue@free.fr>, 2014
 # Alexandre Franke <alexandre.franke@gmail.com>, 2015
+# José Fournier <jaaf64@zoraldia.com>, 2017
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-08-10 10:34+0000\n"
-"PO-Revision-Date: 2016-08-28 14:12+0200\n"
-"Last-Translator: Claude Paroz <claude@2xlibre.net>\n"
+"POT-Creation-Date: 2017-02-27 23:51+0000\n"
+"PO-Revision-Date: 2017-03-16 09:41+0100\n"
+"Last-Translator: José Fournier <jaaf64@zoraldia.com>\n"
 "Language-Team: French <gnomefr@traduc.org>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -76,15 +77,15 @@ msgstr "Sélectionnez le démarrage dont vous voulez voir le journal"
 msgid "Search all the logs of the current category"
 msgstr "Chercher dans tous les journaux de la catégorie actuelle"
 
-#: ../data/gl-eventviewdetail.ui.h:1
+#: ../data/gl-eventviewdetail.ui.h:1 ../data/gl-searchpopover.ui.h:34
 msgid "Message"
 msgstr "Message"
 
-#: ../data/gl-eventviewdetail.ui.h:2
+#: ../data/gl-eventviewdetail.ui.h:2 ../data/gl-searchpopover.ui.h:38
 msgid "Audit Session"
 msgstr "Session d'audit"
 
-#: ../data/gl-eventviewdetail.ui.h:3
+#: ../data/gl-eventviewdetail.ui.h:3 ../data/gl-searchpopover.ui.h:37
 msgid "Kernel Device"
 msgstr "Périphérique noyau"
 
@@ -107,6 +108,174 @@ msgstr "Prise en charge"
 #: ../data/gl-eventviewdetail.ui.h:8
 msgid "Documentation"
 msgstr "Documentation"
+
+#: ../data/gl-eventviewlist.ui.h:1
+msgid "Select journal field and timestamp range filtering options"
+msgstr ""
+"Choisir les options de filtrage « champ de journal » et « intervalle de  "
+"temps » "
+
+#: ../data/gl-searchpopover.ui.h:1
+msgid "Select a Journal Field to filter the Logs according to it"
+msgstr "Choisir un champ de journal selon lequel filtrer les journaux"
+
+#: ../data/gl-searchpopover.ui.h:2
+msgid "All Available Fields"
+msgstr "Tous les champs disponibles"
+
+#. Translators: What [journal fields to search in]
+#: ../data/gl-searchpopover.ui.h:4
+msgid "What"
+msgstr "Quoi"
+
+#: ../data/gl-searchpopover.ui.h:5
+msgid "Select Journal Field…"
+msgstr "Choisir un champ de journal…"
+
+#. When [log entries to be shown for a given timestamp range]
+#: ../data/gl-searchpopover.ui.h:7
+msgid "When"
+msgstr "Quand"
+
+#: ../data/gl-searchpopover.ui.h:8
+msgid "Show Logs from…"
+msgstr "Afficher les journaux depuis le…"
+
+#: ../data/gl-searchpopover.ui.h:9
+msgid "Select Timestamp Range of the Log Entries to be shown"
+msgstr "Choisir un intervalle de temps des entrées de journal à afficher"
+
+#: ../data/gl-searchpopover.ui.h:10 ../src/gl-searchpopover.c:1303
+msgid "Current Boot"
+msgstr "Démarrage courant"
+
+#: ../data/gl-searchpopover.ui.h:11
+msgid "Search Type"
+msgstr "Type de recherche"
+
+#: ../data/gl-searchpopover.ui.h:12
+msgid "Substring"
+msgstr "Partiellement"
+
+#: ../data/gl-searchpopover.ui.h:13
+msgid "Match in any part of the string"
+msgstr "Afficher les messages dont une partie correspond au motif saisi"
+
+#: ../data/gl-searchpopover.ui.h:14
+msgid "Exact"
+msgstr "Exactement"
+
+#: ../data/gl-searchpopover.ui.h:15
+msgid "Match complete string only"
+msgstr "Afficher les messages correspondant exactement au motif saisi"
+
+#: ../data/gl-searchpopover.ui.h:16
+msgid "Back"
+msgstr "En arrière"
+
+#: ../data/gl-searchpopover.ui.h:17
+msgid "Show Logs Starting From…"
+msgstr "Montrer les journaux depuis le…"
+
+#: ../data/gl-searchpopover.ui.h:18
+msgid "Select a start date"
+msgstr "Choisir une date de début"
+
+#: ../data/gl-searchpopover.ui.h:19 ../src/gl-searchpopover.c:503
+msgid "Select Start Date…"
+msgstr "Choisir la date de début…"
+
+#: ../data/gl-searchpopover.ui.h:20
+msgid "Select start time"
+msgstr "Choisir l'heure de début"
+
+#: ../data/gl-searchpopover.ui.h:21 ../src/gl-searchpopover.c:504
+msgid "Select Start Time…"
+msgstr "Choisir l'heure de début…"
+
+#: ../data/gl-searchpopover.ui.h:22
+msgid "Hr"
+msgstr "Heure"
+
+#: ../data/gl-searchpopover.ui.h:23
+msgid "Min"
+msgstr "Min."
+
+#: ../data/gl-searchpopover.ui.h:24
+msgid "Sec"
+msgstr "Sec."
+
+#: ../data/gl-searchpopover.ui.h:25
+msgid "AM/PM"
+msgstr "a.m./p.m."
+
+#: ../data/gl-searchpopover.ui.h:26
+msgid "Until…"
+msgstr "Jusqu'au…"
+
+#: ../data/gl-searchpopover.ui.h:27
+msgid "Select an end date"
+msgstr "Choisir une date de fin"
+
+#: ../data/gl-searchpopover.ui.h:28 ../src/gl-searchpopover.c:521
+msgid "Select End Date…"
+msgstr "Choisir la date de fin…"
+
+#: ../data/gl-searchpopover.ui.h:29
+msgid "Select end time"
+msgstr "Choisir l'heure de fin"
+
+#: ../data/gl-searchpopover.ui.h:30 ../src/gl-searchpopover.c:522
+msgid "Select End Time…"
+msgstr "Choisir l'heure de fin…"
+
+#: ../data/gl-searchpopover.ui.h:31
+msgid "PID"
+msgstr "PID"
+
+#: ../data/gl-searchpopover.ui.h:32
+msgid "UID"
+msgstr "UID"
+
+#: ../data/gl-searchpopover.ui.h:33
+msgid "GID"
+msgstr "GID"
+
+#: ../data/gl-searchpopover.ui.h:35
+msgid "Process Name"
+msgstr "Nom du processus"
+
+#: ../data/gl-searchpopover.ui.h:36
+msgid "Systemd Unit"
+msgstr "Unité Systemd"
+
+#: ../data/gl-searchpopover.ui.h:39
+msgid "Executable Path"
+msgstr "Chemin de l'exécutable"
+
+#: ../data/gl-searchpopover.ui.h:40
+msgid "Previous Boot"
+msgstr "Démarrage précédent"
+
+#: ../data/gl-searchpopover.ui.h:41
+msgid "Today"
+msgstr "Aujourd'hui"
+
+#: ../data/gl-searchpopover.ui.h:42
+msgid "Yesterday"
+msgstr "Hier"
+
+#: ../data/gl-searchpopover.ui.h:43
+msgid "Last 3 days"
+msgstr "Les 3 derniers jours"
+
+#: ../data/gl-searchpopover.ui.h:44
+msgid "Entire Journal"
+msgstr "Le journal tout entier"
+
+#: ../data/gl-searchpopover.ui.h:45
+msgid "Set Custom Range…"
+msgstr "Définir un intervalle de temps personnalisé…"
 
 #: ../data/gl-window.ui.h:1
 msgid "Help"
@@ -164,7 +333,7 @@ msgstr "Journaux GNOME"
 #: ../data/org.gnome.Logs.appdata.xml.in.h:2
 #: ../data/org.gnome.Logs.desktop.in.h:3
 msgid "View detailed event logs for the system"
-msgstr "Voir en détail les événements du système"
+msgstr "Afficher en détail les événements du système"
 
 #: ../data/org.gnome.Logs.appdata.xml.in.h:3
 msgid ""
@@ -179,9 +348,9 @@ msgid ""
 "Using Logs you can search your logs by typing a search term, and view "
 "detailed information about each event by clicking on it."
 msgstr ""
-"Avec Journaux vous pouvez rechercher dans les journaux en saissant un terme "
-"et visualiser des informations détaillées à propos de chaque événement en "
-"cliquant dessus."
+"Avec Journaux vous pouvez rechercher dans les journaux en saisissant un "
+"terme et visualiser des informations détaillées à propos de chaque événement "
+"en cliquant dessus."
 
 #: ../data/org.gnome.Logs.desktop.in.h:1 ../src/gl-eventtoolbar.c:124
 msgid "Logs"
@@ -189,7 +358,7 @@ msgstr "Journaux"
 
 #: ../data/org.gnome.Logs.desktop.in.h:2
 msgid "Log Viewer"
-msgstr "Visualisateur de journaux"
+msgstr "Visionneur de journaux"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: ../data/org.gnome.Logs.desktop.in.h:5
@@ -203,20 +372,21 @@ msgstr "Comment trier les lignes dans la liste des événements"
 #: ../data/org.gnome.Logs.gschema.xml.h:2
 msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr ""
-"Trier les lignes de la liste en ordre croissant ou décroissant pour le type "
+"Trier les lignes de la liste par ordre croissant ou décroissant pour le type "
 "sélectionné"
 
 #: ../src/gl-application.c:110
 msgid "translator-credits"
 msgstr ""
 "Jérôme Sirgue <jsirgue@free.fr>\n"
-"Alexandre Franke <alexandre.franke@gmail.com>"
+"Alexandre Franke <alexandre.franke@gmail.com>\n"
+"José Fournier <jaaf64@zoraldia.com>"
 
 #: ../src/gl-application.c:111
 msgid "View and search logs"
 msgstr "Visualiser et rechercher dans les journaux"
 
-#: ../src/gl-application.c:239
+#: ../src/gl-application.c:245
 msgid "Print version information and exit"
 msgstr "Afficher les informations sur la version et quitter."
 
@@ -227,13 +397,73 @@ msgstr "Démarrage"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventviewlist.c:290
+#: ../src/gl-eventviewlist.c:296
 msgid "No results"
 msgstr "Aucun résultat."
 
 #: ../src/gl-eventviewrow.c:219
 msgid "Other"
 msgstr "Autre"
+
+#. Translators: if only custom start timestamp is set, then we update
+#. * the timestamp range button label in popover to show that
+#. * logs are shown in the window starting from this timestamp
+#. * until the ending timestamp of journal.
+#: ../src/gl-searchpopover.c:687
+#, c-format
+msgid "From %s"
+msgstr "À partir du %s"
+
+#. Translators: if only custom end timestamp is set, then we update
+#. * the timestamp range button label in popover to show that
+#. * logs are shown in the window upto this timestamp
+#. * with the starting timestamp being the current time.
+#: ../src/gl-searchpopover.c:700
+#, c-format
+msgid "Until %s"
+msgstr "Jusqu'au %s"
+
+#. Translators: date format for the start date entry
+#. * and start date button label in the custom range submenu,
+#. * showing the day of month in decimal number, full month
+#. * name as string, the year as a decimal number including the century.
+#. Translators: date format for the end date entry
+#. * and end date button label in the custom range submenu,
+#. * showing the day of month in decimal number, full month
+#. * name as string, the year as a decimal number including the century.
+#: ../src/gl-searchpopover.c:737 ../src/gl-searchpopover.c:1104
+msgid "%e %B %Y"
+msgstr "%e %B %Y"
+
+#: ../src/gl-searchpopover.c:875
+#, c-format
+msgid "AM"
+msgstr "a.m."
+
+#: ../src/gl-searchpopover.c:879
+#, c-format
+msgid "PM"
+msgstr "p.m."
+
+#. Translators: timestamp format for the custom start time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 12-hour format.
+#. Translators: timestamp format for the custom end time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 12-hour format.
+#: ../src/gl-searchpopover.c:987 ../src/gl-searchpopover.c:1226
+msgid "%I:%M:%S %p"
+msgstr "%I:%M:%S %p"
+
+#. Translators: timestamp format for the custom start time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 24-hour format.
+#. Translators: timestamp format for the custom end time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 24-hour format.
+#: ../src/gl-searchpopover.c:994 ../src/gl-searchpopover.c:1233
+msgid "%T"
+msgstr "%T"
 
 #. Translators: timestamp format for events on the
 #. * current day, showing the time with seconds in
@@ -335,23 +565,23 @@ msgstr "%e %b %Y %H:%M"
 msgid "%s – %s"
 msgstr "%s – %s"
 
-#: ../src/gl-window.c:186
+#: ../src/gl-window.c:181
 msgid "Save logs"
 msgstr "Enregistrer les journaux"
 
-#: ../src/gl-window.c:189
+#: ../src/gl-window.c:184
 msgid "_Cancel"
 msgstr "A_nnuler"
 
-#: ../src/gl-window.c:190
+#: ../src/gl-window.c:185
 msgid "_Save"
 msgstr "_Enregistrer"
 
-#: ../src/gl-window.c:195
+#: ../src/gl-window.c:190
 msgid "log messages"
 msgstr "messages de journal"
 
-#: ../src/gl-window.c:248
+#: ../src/gl-window.c:243
 msgid "Unable to export log messages to a file"
 msgstr "Impossible d'exporter les messages de journalisation dans un fichier"
 
