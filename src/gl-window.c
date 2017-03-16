@@ -352,8 +352,8 @@ on_help_button_clicked (GlWindow *window,
     parent = GTK_WINDOW (window);
     priv = gl_window_get_instance_private (GL_WINDOW (window));
 
-    gtk_show_uri (gtk_window_get_screen (parent), "help:gnome-logs/permissions",
-                  GDK_CURRENT_TIME, &error);
+    gtk_show_uri_on_window (parent, "help:gnome-logs/permissions",
+                            GDK_CURRENT_TIME, &error);
 
     if (error)
     {
