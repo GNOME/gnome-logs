@@ -2,15 +2,15 @@
 # Copyright (C) 2014 gnome-logs's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-logs package.
 # Changwoo Ryu <cwryu@debian.org>, 2014-2016.
-# Seong-ho Cho <shcho@gnome.org>, 2016.
+# Seong-ho Cho <shcho@gnome.org>, 2016, 2017.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-08-10 10:34+0000\n"
-"PO-Revision-Date: 2016-09-12 05:21+0900\n"
+"POT-Creation-Date: 2017-02-24 22:45+0000\n"
+"PO-Revision-Date: 2017-03-18 00:41+0900\n"
 "Last-Translator: Seong-ho Cho <shcho@gnome.org>\n"
 "Language-Team: Korean <gnome-kr@googlegroups.com>\n"
 "Language: ko\n"
@@ -76,15 +76,15 @@ msgstr "로그를 볼 부팅을 고르십시오"
 msgid "Search all the logs of the current category"
 msgstr "현재 분류의 모든 로그 검색"
 
-#: ../data/gl-eventviewdetail.ui.h:1
+#: ../data/gl-eventviewdetail.ui.h:1 ../data/gl-searchpopover.ui.h:34
 msgid "Message"
 msgstr "메시지"
 
-#: ../data/gl-eventviewdetail.ui.h:2
+#: ../data/gl-eventviewdetail.ui.h:2 ../data/gl-searchpopover.ui.h:38
 msgid "Audit Session"
 msgstr "검사 세션"
 
-#: ../data/gl-eventviewdetail.ui.h:3
+#: ../data/gl-eventviewdetail.ui.h:3 ../data/gl-searchpopover.ui.h:37
 msgid "Kernel Device"
 msgstr "커널 장치"
 
@@ -107,6 +107,172 @@ msgstr "지원"
 #: ../data/gl-eventviewdetail.ui.h:8
 msgid "Documentation"
 msgstr "문서"
+
+#: ../data/gl-eventviewlist.ui.h:1
+msgid "Select journal field and timestamp range filtering options"
+msgstr "저널 필드와 타임스탬프 범위"
+
+#: ../data/gl-searchpopover.ui.h:1
+msgid "Select a Journal Field to filter the Logs according to it"
+msgstr "필터 조건에 만족하는 로그를 나타낼 저널 필드를 선택합니다"
+
+#: ../data/gl-searchpopover.ui.h:2
+msgid "All Available Fields"
+msgstr "존재하는 모든 필드"
+
+#. Translators: What [journal fields to search in]
+#: ../data/gl-searchpopover.ui.h:4
+msgid "What"
+msgstr "대상"
+
+#: ../data/gl-searchpopover.ui.h:5
+msgid "Select Journal Field…"
+msgstr "저널 필드 선택…"
+
+#. When [log entries to be shown for a given timestamp range]
+#: ../data/gl-searchpopover.ui.h:7
+msgid "When"
+msgstr "기간"
+
+#: ../data/gl-searchpopover.ui.h:8
+msgid "Show Logs from…"
+msgstr "주어진 기간의 로그 보이기…"
+
+#: ../data/gl-searchpopover.ui.h:9
+msgid "Select Timestamp Range of the Log Entries to be shown"
+msgstr "로그 항목을 타나낼 타임스탬프 범위를 선택합니다"
+
+#: ../data/gl-searchpopover.ui.h:10 ../src/gl-searchpopover.c:1303
+msgid "Current Boot"
+msgstr "현재 부팅"
+
+#: ../data/gl-searchpopover.ui.h:11
+msgid "Search Type"
+msgstr "검색 형식"
+
+#: ../data/gl-searchpopover.ui.h:12
+msgid "Substring"
+msgstr "부분 문자열"
+
+#: ../data/gl-searchpopover.ui.h:13
+msgid "Match in any part of the string"
+msgstr "문자열의 어떤 부분과도 일치"
+
+#: ../data/gl-searchpopover.ui.h:14
+msgid "Exact"
+msgstr "정확히"
+
+#: ../data/gl-searchpopover.ui.h:15
+msgid "Match complete string only"
+msgstr "문자열 그 자체와 완전히 일치"
+
+#: ../data/gl-searchpopover.ui.h:16
+msgid "Back"
+msgstr "뒤로"
+
+#: ../data/gl-searchpopover.ui.h:17
+msgid "Show Logs Starting From…"
+msgstr "다음부터 시작하는 로그 보이기…"
+
+#: ../data/gl-searchpopover.ui.h:18
+msgid "Select a start date"
+msgstr "처음 날짜 선택"
+
+#: ../data/gl-searchpopover.ui.h:19 ../src/gl-searchpopover.c:503
+msgid "Select Start Date…"
+msgstr "처음 날짜 선택…"
+
+#: ../data/gl-searchpopover.ui.h:20
+msgid "Select start time"
+msgstr "처음 시간 선택"
+
+#: ../data/gl-searchpopover.ui.h:21 ../src/gl-searchpopover.c:504
+msgid "Select Start Time…"
+msgstr "처음 시간 선택…"
+
+#: ../data/gl-searchpopover.ui.h:22
+msgid "Hr"
+msgstr "시간"
+
+#: ../data/gl-searchpopover.ui.h:23
+msgid "Min"
+msgstr "분"
+
+#: ../data/gl-searchpopover.ui.h:24
+msgid "Sec"
+msgstr "초"
+
+#: ../data/gl-searchpopover.ui.h:25
+msgid "AM/PM"
+msgstr "오전/오후"
+
+#: ../data/gl-searchpopover.ui.h:26
+msgid "Until…"
+msgstr "기한…"
+
+#: ../data/gl-searchpopover.ui.h:27
+msgid "Select an end date"
+msgstr "마지막 날짜 선택"
+
+#: ../data/gl-searchpopover.ui.h:28 ../src/gl-searchpopover.c:521
+msgid "Select End Date…"
+msgstr "마지막 날짜 선택…"
+
+#: ../data/gl-searchpopover.ui.h:29
+msgid "Select end time"
+msgstr "마지막 시간 선택"
+
+#: ../data/gl-searchpopover.ui.h:30 ../src/gl-searchpopover.c:522
+msgid "Select End Time…"
+msgstr "마지막 시간 선택…"
+
+#: ../data/gl-searchpopover.ui.h:31
+msgid "PID"
+msgstr "PID"
+
+#: ../data/gl-searchpopover.ui.h:32
+msgid "UID"
+msgstr "UID"
+
+#: ../data/gl-searchpopover.ui.h:33
+msgid "GID"
+msgstr "GID"
+
+#: ../data/gl-searchpopover.ui.h:35
+msgid "Process Name"
+msgstr "프로세스 이름"
+
+#: ../data/gl-searchpopover.ui.h:36
+msgid "Systemd Unit"
+msgstr "시스템 단위"
+
+#: ../data/gl-searchpopover.ui.h:39
+msgid "Executable Path"
+msgstr "실행 경로"
+
+#: ../data/gl-searchpopover.ui.h:40
+msgid "Previous Boot"
+msgstr "이전 부팅"
+
+#: ../data/gl-searchpopover.ui.h:41
+msgid "Today"
+msgstr "오늘"
+
+#: ../data/gl-searchpopover.ui.h:42
+msgid "Yesterday"
+msgstr "어제"
+
+#: ../data/gl-searchpopover.ui.h:43
+msgid "Last 3 days"
+msgstr "3일 전까지"
+
+#: ../data/gl-searchpopover.ui.h:44
+msgid "Entire Journal"
+msgstr "저널 전체"
+
+#: ../data/gl-searchpopover.ui.h:45
+msgid "Set Custom Range…"
+msgstr "개별 범위 설정…"
 
 #: ../data/gl-window.ui.h:1
 msgid "Help"
@@ -171,8 +337,8 @@ msgid ""
 "Logs shows events from the systemd journal, and sorts them into categories, "
 "such as hardware and applications."
 msgstr ""
-"기록에서는 systemd 저널에서 이벤트를 표시하고, 하드웨어나 프로그램 등 분류"
-"에 따라 정렬합니다."
+"기록에서는 systemd 저널에서 이벤트를 표시하고, 하드웨어나 프로그램 등 분류에 "
+"따라 정렬합니다."
 
 #: ../data/org.gnome.Logs.appdata.xml.in.h:4
 msgid ""
@@ -213,7 +379,7 @@ msgstr ""
 msgid "View and search logs"
 msgstr "기록 보기 및 검색"
 
-#: ../src/gl-application.c:239
+#: ../src/gl-application.c:245
 msgid "Print version information and exit"
 msgstr "버전 정보를 표시하고 끝납니다"
 
@@ -224,13 +390,73 @@ msgstr "부팅"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventviewlist.c:290
+#: ../src/gl-eventviewlist.c:296
 msgid "No results"
 msgstr "결과 없음"
 
 #: ../src/gl-eventviewrow.c:219
 msgid "Other"
 msgstr "기타"
+
+#. Translators: if only custom start timestamp is set, then we update
+#. * the timestamp range button label in popover to show that
+#. * logs are shown in the window starting from this timestamp
+#. * until the ending timestamp of journal.
+#: ../src/gl-searchpopover.c:687
+#, c-format
+msgid "From %s"
+msgstr "%s부터"
+
+#. Translators: if only custom end timestamp is set, then we update
+#. * the timestamp range button label in popover to show that
+#. * logs are shown in the window upto this timestamp
+#. * with the starting timestamp being the current time.
+#: ../src/gl-searchpopover.c:700
+#, c-format
+msgid "Until %s"
+msgstr "%s 까지"
+
+#. Translators: date format for the start date entry
+#. * and start date button label in the custom range submenu,
+#. * showing the day of month in decimal number, full month
+#. * name as string, the year as a decimal number including the century.
+#. Translators: date format for the end date entry
+#. * and end date button label in the custom range submenu,
+#. * showing the day of month in decimal number, full month
+#. * name as string, the year as a decimal number including the century.
+#: ../src/gl-searchpopover.c:737 ../src/gl-searchpopover.c:1104
+msgid "%e %B %Y"
+msgstr "%Y년 %B %e일"
+
+#: ../src/gl-searchpopover.c:875
+#, c-format
+msgid "AM"
+msgstr "오전"
+
+#: ../src/gl-searchpopover.c:879
+#, c-format
+msgid "PM"
+msgstr "오후"
+
+#. Translators: timestamp format for the custom start time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 12-hour format.
+#. Translators: timestamp format for the custom end time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 12-hour format.
+#: ../src/gl-searchpopover.c:987 ../src/gl-searchpopover.c:1226
+msgid "%I:%M:%S %p"
+msgstr "%p %I:%M:%S"
+
+#. Translators: timestamp format for the custom start time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 24-hour format.
+#. Translators: timestamp format for the custom end time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 24-hour format.
+#: ../src/gl-searchpopover.c:994 ../src/gl-searchpopover.c:1233
+msgid "%T"
+msgstr "%T"
 
 #. Translators: timestamp format for events on the
 #. * current day, showing the time with seconds in
@@ -332,23 +558,23 @@ msgstr "%Y년 %b %e일 %H:%M"
 msgid "%s – %s"
 msgstr "%s – %s"
 
-#: ../src/gl-window.c:186
+#: ../src/gl-window.c:181
 msgid "Save logs"
 msgstr "로그 저장"
 
-#: ../src/gl-window.c:189
+#: ../src/gl-window.c:184
 msgid "_Cancel"
 msgstr "취소(_C)"
 
-#: ../src/gl-window.c:190
+#: ../src/gl-window.c:185
 msgid "_Save"
 msgstr "저장(_S)"
 
-#: ../src/gl-window.c:195
+#: ../src/gl-window.c:190
 msgid "log messages"
 msgstr "로그 메시지"
 
-#: ../src/gl-window.c:248
+#: ../src/gl-window.c:243
 msgid "Unable to export log messages to a file"
 msgstr "로그 메시지를 파일로 내보낼 수 없습니다"
 
