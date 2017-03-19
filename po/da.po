@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-19 17:34+0100\n"
-"PO-Revision-Date: 2017-03-19 17:34+0100\n"
+"PO-Revision-Date: 2017-03-20 00:09+0100\n"
 "Last-Translator: Ask Hjorth Larsen <asklarsen@gmail.com>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "Language: da\n"
@@ -185,7 +185,7 @@ msgstr "Vælg startdato …"
 
 #: ../data/gl-searchpopover.ui.h:20
 msgid "22 January 2016 or 1/22/2016"
-msgstr "22. januar 2016 eller 1/22/2016"
+msgstr "22. januar 2016 eller 22/1/2016"
 
 #: ../data/gl-searchpopover.ui.h:21
 msgid "Select start time"
