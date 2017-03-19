@@ -6,17 +6,17 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-11-10 12:49+0000\n"
-"PO-Revision-Date: 2016-12-13 08:43+0500\n"
+"POT-Creation-Date: 2017-03-19 16:18+0000\n"
+"PO-Revision-Date: 2017-03-19 21:29+0500\n"
 "Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
 "Language-Team: Kazakh <kk@li.org>\n"
 "Language: kk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Poedit 1.8.12\n"
 
 #: ../data/gl-categorylist.ui.h:1
 msgid "Important"
@@ -74,15 +74,15 @@ msgstr "Қай жүктелудің логтарын қарау керектіг
 msgid "Search all the logs of the current category"
 msgstr "Ағымдағы санаттың барлық логтарынан іздеу"
 
-#: ../data/gl-eventviewdetail.ui.h:1 ../data/gl-searchpopover.ui.h:32
+#: ../data/gl-eventviewdetail.ui.h:1 ../data/gl-searchpopover.ui.h:35
 msgid "Message"
 msgstr "Хабарлама"
 
-#: ../data/gl-eventviewdetail.ui.h:2 ../data/gl-searchpopover.ui.h:36
+#: ../data/gl-eventviewdetail.ui.h:2 ../data/gl-searchpopover.ui.h:39
 msgid "Audit Session"
 msgstr "Аудит сессиясы"
 
-#: ../data/gl-eventviewdetail.ui.h:3 ../data/gl-searchpopover.ui.h:35
+#: ../data/gl-eventviewdetail.ui.h:3 ../data/gl-searchpopover.ui.h:38
 msgid "Kernel Device"
 msgstr "Ядро құрылғысы"
 
@@ -118,155 +118,161 @@ msgstr "Логтарды сүзгілеу үшін журнал өрісін т�
 msgid "All Available Fields"
 msgstr "Барлық қолжетерлік өрістер"
 
-#: ../data/gl-searchpopover.ui.h:3
+#. Translators: What [journal fields to search in]
+#: ../data/gl-searchpopover.ui.h:4
 msgid "What"
 msgstr "Не"
 
-#: ../data/gl-searchpopover.ui.h:4
+#: ../data/gl-searchpopover.ui.h:5
 msgid "Select Journal Field…"
 msgstr "Журнал өрісін таңдау…"
 
-#: ../data/gl-searchpopover.ui.h:5
+#. When [log entries to be shown for a given timestamp range]
+#: ../data/gl-searchpopover.ui.h:7
 msgid "When"
 msgstr "Қашан"
 
-#: ../data/gl-searchpopover.ui.h:6
+#: ../data/gl-searchpopover.ui.h:8
 msgid "Show Logs from…"
 msgstr "Логтарды қайдан көрсету…"
 
-#: ../data/gl-searchpopover.ui.h:7
+#: ../data/gl-searchpopover.ui.h:9
 msgid "Select Timestamp Range of the Log Entries to be shown"
 msgstr "Лог жазбаларын көрсету үшін уақыт ауқымын таңдаңыз"
 
-#: ../data/gl-searchpopover.ui.h:8 ../src/gl-searchpopover.c:1303
+#: ../data/gl-searchpopover.ui.h:10 ../src/gl-searchpopover.c:1303
 msgid "Current Boot"
 msgstr "Ағымдағы жүктелу"
 
-#: ../data/gl-searchpopover.ui.h:9
+#: ../data/gl-searchpopover.ui.h:11
 msgid "Search Type"
 msgstr "Іздеу түрі"
 
-#: ../data/gl-searchpopover.ui.h:10
+#: ../data/gl-searchpopover.ui.h:12
 msgid "Substring"
 msgstr "Ішкі жол"
 
-#: ../data/gl-searchpopover.ui.h:11
+#: ../data/gl-searchpopover.ui.h:13
 msgid "Match in any part of the string"
 msgstr "Жолдың кез-келген бөлігін сәйкестендіру"
 
-#: ../data/gl-searchpopover.ui.h:12
+#: ../data/gl-searchpopover.ui.h:14
 msgid "Exact"
 msgstr "Дәл"
 
-#: ../data/gl-searchpopover.ui.h:13
+#: ../data/gl-searchpopover.ui.h:15
 msgid "Match complete string only"
 msgstr "Тек толық жолды сәйкестендіру"
 
-#: ../data/gl-searchpopover.ui.h:14
+#: ../data/gl-searchpopover.ui.h:16
 msgid "Back"
 msgstr "Кері"
 
-#: ../data/gl-searchpopover.ui.h:15
+#: ../data/gl-searchpopover.ui.h:17
 msgid "Show Logs Starting From…"
 msgstr "Логтарды қайдан бастап көрсету…"
 
-#: ../data/gl-searchpopover.ui.h:16
+#: ../data/gl-searchpopover.ui.h:18
 msgid "Select a start date"
 msgstr "Басталу күнін таңдаңыз"
 
-#: ../data/gl-searchpopover.ui.h:17 ../src/gl-searchpopover.c:503
+#: ../data/gl-searchpopover.ui.h:19 ../src/gl-searchpopover.c:503
 msgid "Select Start Date…"
 msgstr "Басталу күнін таңдаңыз…"
 
-#: ../data/gl-searchpopover.ui.h:18
+#: ../data/gl-searchpopover.ui.h:20
+msgid "22 January 2016 or 1/22/2016"
+msgstr "22 қаңтар 2016 немесе 22/1/2016"
+
+#: ../data/gl-searchpopover.ui.h:21
 msgid "Select start time"
 msgstr "Басталу уақытын таңдаңыз"
 
-#: ../data/gl-searchpopover.ui.h:19 ../src/gl-searchpopover.c:504
+#: ../data/gl-searchpopover.ui.h:22 ../src/gl-searchpopover.c:504
 msgid "Select Start Time…"
 msgstr "Басталу уақытын таңдаңыз…"
 
-#: ../data/gl-searchpopover.ui.h:20
+#: ../data/gl-searchpopover.ui.h:23
 msgid "Hr"
 msgstr "Сағ"
 
-#: ../data/gl-searchpopover.ui.h:21
+#: ../data/gl-searchpopover.ui.h:24
 msgid "Min"
 msgstr "Мин"
 
-#: ../data/gl-searchpopover.ui.h:22
+#: ../data/gl-searchpopover.ui.h:25
 msgid "Sec"
 msgstr "Сек"
 
-#: ../data/gl-searchpopover.ui.h:23
+#: ../data/gl-searchpopover.ui.h:26
 msgid "AM/PM"
 msgstr "AM/PM"
 
-#: ../data/gl-searchpopover.ui.h:24
+#: ../data/gl-searchpopover.ui.h:27
 msgid "Until…"
 msgstr "Дейін…"
 
-#: ../data/gl-searchpopover.ui.h:25
+#: ../data/gl-searchpopover.ui.h:28
 msgid "Select an end date"
 msgstr "Аяқталу күнін таңдаңыз"
 
-#: ../data/gl-searchpopover.ui.h:26 ../src/gl-searchpopover.c:521
+#: ../data/gl-searchpopover.ui.h:29 ../src/gl-searchpopover.c:521
 msgid "Select End Date…"
 msgstr "Аяқталу күнін таңдаңыз…"
 
-#: ../data/gl-searchpopover.ui.h:27
+#: ../data/gl-searchpopover.ui.h:30
 msgid "Select end time"
 msgstr "Аяқталу уақытын таңдаңыз"
 
-#: ../data/gl-searchpopover.ui.h:28 ../src/gl-searchpopover.c:522
+#: ../data/gl-searchpopover.ui.h:31 ../src/gl-searchpopover.c:522
 msgid "Select End Time…"
 msgstr "Аяқталу уақытын таңдаңыз…"
 
-#: ../data/gl-searchpopover.ui.h:29
+#: ../data/gl-searchpopover.ui.h:32
 msgid "PID"
 msgstr "PID"
 
-#: ../data/gl-searchpopover.ui.h:30
+#: ../data/gl-searchpopover.ui.h:33
 msgid "UID"
 msgstr "UID"
 
-#: ../data/gl-searchpopover.ui.h:31
+#: ../data/gl-searchpopover.ui.h:34
 msgid "GID"
 msgstr "GID"
 
-#: ../data/gl-searchpopover.ui.h:33
+#: ../data/gl-searchpopover.ui.h:36
 msgid "Process Name"
 msgstr "Үрдіс аты"
 
-#: ../data/gl-searchpopover.ui.h:34
+#: ../data/gl-searchpopover.ui.h:37
 msgid "Systemd Unit"
 msgstr "Systemd юниті"
 
-#: ../data/gl-searchpopover.ui.h:37
+#: ../data/gl-searchpopover.ui.h:40
 msgid "Executable Path"
 msgstr "Орындалатын файл жолы"
 
-#: ../data/gl-searchpopover.ui.h:38
+#: ../data/gl-searchpopover.ui.h:41
 msgid "Previous Boot"
 msgstr "Алдындағы жүктелу"
 
-#: ../data/gl-searchpopover.ui.h:39
+#: ../data/gl-searchpopover.ui.h:42
 msgid "Today"
 msgstr "Бүгін"
 
-#: ../data/gl-searchpopover.ui.h:40
+#: ../data/gl-searchpopover.ui.h:43
 msgid "Yesterday"
 msgstr "Кеше"
 
-#: ../data/gl-searchpopover.ui.h:41
+#: ../data/gl-searchpopover.ui.h:44
 msgid "Last 3 days"
 msgstr "Соңғы 3 күн"
 
-#: ../data/gl-searchpopover.ui.h:42
+#: ../data/gl-searchpopover.ui.h:45
 msgid "Entire Journal"
 msgstr "Бүкіл журнал"
 
-#: ../data/gl-searchpopover.ui.h:43
+#: ../data/gl-searchpopover.ui.h:46
 msgid "Set Custom Range…"
 msgstr "Таңдауыңызша ауқымды орнату…"
 
@@ -355,7 +361,7 @@ msgstr "Логтар көрсетушісі"
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: ../data/org.gnome.Logs.desktop.in.h:5
 msgid "log;journal;debug;error;"
-msgstr "лог;журнал;жөндеу;қате;"
+msgstr "log;journal;debug;error;лог;журнал;жөндеу;қате;"
 
 #: ../data/org.gnome.Logs.gschema.xml.h:1
 msgid "How to sort list rows in the event view list"
@@ -552,35 +558,35 @@ msgstr "%b %e %Y %H:%M"
 msgid "%s – %s"
 msgstr "%s – %s"
 
-#: ../src/gl-window.c:186
+#: ../src/gl-window.c:181
 msgid "Save logs"
 msgstr "Логтарды сақтау"
 
-#: ../src/gl-window.c:189
+#: ../src/gl-window.c:184
 msgid "_Cancel"
 msgstr "Ба_с тарту"
 
-#: ../src/gl-window.c:190
+#: ../src/gl-window.c:185
 msgid "_Save"
 msgstr "_сақтау"
 
-#: ../src/gl-window.c:195
+#: ../src/gl-window.c:190
 msgid "log messages"
 msgstr "лог хабарламары"
 
-#: ../src/gl-window.c:248
+#: ../src/gl-window.c:243
 msgid "Unable to export log messages to a file"
 msgstr "Лог хабарламаларын файлға экспорттау мүмкін емес"
 
-#: ../src/gl-window.c:479 ../src/gl-window.c:510
+#: ../src/gl-window.c:474 ../src/gl-window.c:505
 msgid "Unable to read system logs"
 msgstr "Жүйелік логтарды оқу мүмкін емес"
 
-#: ../src/gl-window.c:493
+#: ../src/gl-window.c:488
 msgid "Unable to read user logs"
 msgstr "Пайдаланушы логтарын оқу мүмкін емес"
 
-#: ../src/gl-window.c:525
+#: ../src/gl-window.c:520
 msgid "No logs available"
 msgstr "Қолжетерлік логтар жоқ"
 
