@@ -6,9 +6,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
-"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2017-02-24 22:45+0000\n"
-"PO-Revision-Date: 2017-03-02 11:53+0100\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-19 17:34+0100\n"
+"PO-Revision-Date: 2017-03-19 17:34+0100\n"
 "Last-Translator: Ask Hjorth Larsen <asklarsen@gmail.com>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "Language: da\n"
@@ -77,15 +77,15 @@ msgstr "Vælg hvilken opstart der skal vises log fra"
 msgid "Search all the logs of the current category"
 msgstr "Søg i alle loggene for den nuværende kategori"
 
-#: ../data/gl-eventviewdetail.ui.h:1 ../data/gl-searchpopover.ui.h:34
+#: ../data/gl-eventviewdetail.ui.h:1 ../data/gl-searchpopover.ui.h:35
 msgid "Message"
 msgstr "Meddelelse"
 
-#: ../data/gl-eventviewdetail.ui.h:2 ../data/gl-searchpopover.ui.h:38
+#: ../data/gl-eventviewdetail.ui.h:2 ../data/gl-searchpopover.ui.h:39
 msgid "Audit Session"
 msgstr "Kontrolsession"
 
-#: ../data/gl-eventviewdetail.ui.h:3 ../data/gl-searchpopover.ui.h:37
+#: ../data/gl-eventviewdetail.ui.h:3 ../data/gl-searchpopover.ui.h:38
 msgid "Kernel Device"
 msgstr "Kerneenhed"
 
@@ -184,94 +184,98 @@ msgid "Select Start Date…"
 msgstr "Vælg startdato …"
 
 #: ../data/gl-searchpopover.ui.h:20
+msgid "22 January 2016 or 1/22/2016"
+msgstr "22. januar 2016 eller 1/22/2016"
+
+#: ../data/gl-searchpopover.ui.h:21
 msgid "Select start time"
 msgstr "Vælg starttidspunkt"
 
-#: ../data/gl-searchpopover.ui.h:21 ../src/gl-searchpopover.c:504
+#: ../data/gl-searchpopover.ui.h:22 ../src/gl-searchpopover.c:504
 msgid "Select Start Time…"
 msgstr "Vælg starttidspunkt …"
 
-#: ../data/gl-searchpopover.ui.h:22
+#: ../data/gl-searchpopover.ui.h:23
 msgid "Hr"
 msgstr "Time"
 
-#: ../data/gl-searchpopover.ui.h:23
+#: ../data/gl-searchpopover.ui.h:24
 msgid "Min"
 msgstr "Min"
 
-#: ../data/gl-searchpopover.ui.h:24
+#: ../data/gl-searchpopover.ui.h:25
 msgid "Sec"
 msgstr "Sek"
 
-#: ../data/gl-searchpopover.ui.h:25
+#: ../data/gl-searchpopover.ui.h:26
 msgid "AM/PM"
 msgstr "AM/PM"
 
-#: ../data/gl-searchpopover.ui.h:26
+#: ../data/gl-searchpopover.ui.h:27
 msgid "Until…"
 msgstr "Indtil …"
 
-#: ../data/gl-searchpopover.ui.h:27
+#: ../data/gl-searchpopover.ui.h:28
 msgid "Select an end date"
 msgstr "Vælg en slutdato"
 
-#: ../data/gl-searchpopover.ui.h:28 ../src/gl-searchpopover.c:521
+#: ../data/gl-searchpopover.ui.h:29 ../src/gl-searchpopover.c:521
 msgid "Select End Date…"
 msgstr "Vælg slutdato …"
 
-#: ../data/gl-searchpopover.ui.h:29
+#: ../data/gl-searchpopover.ui.h:30
 msgid "Select end time"
 msgstr "Vælg sluttidspunkt"
 
-#: ../data/gl-searchpopover.ui.h:30 ../src/gl-searchpopover.c:522
+#: ../data/gl-searchpopover.ui.h:31 ../src/gl-searchpopover.c:522
 msgid "Select End Time…"
 msgstr "Vælg et sluttidspunkt …"
 
-#: ../data/gl-searchpopover.ui.h:31
+#: ../data/gl-searchpopover.ui.h:32
 msgid "PID"
 msgstr "PID"
 
-#: ../data/gl-searchpopover.ui.h:32
+#: ../data/gl-searchpopover.ui.h:33
 msgid "UID"
 msgstr "UID"
 
-#: ../data/gl-searchpopover.ui.h:33
+#: ../data/gl-searchpopover.ui.h:34
 msgid "GID"
 msgstr "GID"
 
-#: ../data/gl-searchpopover.ui.h:35
+#: ../data/gl-searchpopover.ui.h:36
 msgid "Process Name"
 msgstr "Procesnavn"
 
-#: ../data/gl-searchpopover.ui.h:36
+#: ../data/gl-searchpopover.ui.h:37
 msgid "Systemd Unit"
 msgstr "Systemd-enhed"
 
-#: ../data/gl-searchpopover.ui.h:39
+#: ../data/gl-searchpopover.ui.h:40
 msgid "Executable Path"
 msgstr "Sti til eksekverbar fil"
 
-#: ../data/gl-searchpopover.ui.h:40
+#: ../data/gl-searchpopover.ui.h:41
 msgid "Previous Boot"
 msgstr "Forrige opstart"
 
-#: ../data/gl-searchpopover.ui.h:41
+#: ../data/gl-searchpopover.ui.h:42
 msgid "Today"
 msgstr "I dag"
 
-#: ../data/gl-searchpopover.ui.h:42
+#: ../data/gl-searchpopover.ui.h:43
 msgid "Yesterday"
 msgstr "I går"
 
-#: ../data/gl-searchpopover.ui.h:43
+#: ../data/gl-searchpopover.ui.h:44
 msgid "Last 3 days"
 msgstr "Sidste 3 dage"
 
-#: ../data/gl-searchpopover.ui.h:44
+#: ../data/gl-searchpopover.ui.h:45
 msgid "Entire Journal"
 msgstr "Hele journalen"
 
-#: ../data/gl-searchpopover.ui.h:45
+#: ../data/gl-searchpopover.ui.h:46
 msgid "Set Custom Range…"
 msgstr "Angiv brugerindstillet interval …"
 
