@@ -456,7 +456,7 @@
                                             <object class="GtkEntry" id="start_date_entry">
                                                 <property name="visible">True</property>
                                                 <property name="can_focus">True</property>
-                                                <property name="placeholder-text">22 January 2016 or 1/22/2016</property>
+                                                <property name="placeholder-text" translatable="yes">22 January 2016 or 1/22/2016</property>
                                                 <signal name="activate" handler="start_date_entry_activate"/>
                                             </object>
                                             <packing>
@@ -760,7 +760,7 @@
                                             <object class="GtkEntry" id="end_date_entry">
                                                 <property name="visible">True</property>
                                                 <property name="can_focus">True</property>
-                                                <property name="placeholder-text">22 January 2016 or 1/22/2016</property>
+                                                <property name="placeholder-text" translatable="yes">22 January 2016 or 1/22/2016</property>
                                                 <signal name="activate" handler="end_date_entry_activate"/>
                                             </object>
                                             <packing>
