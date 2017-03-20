@@ -10,9 +10,9 @@ msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2017-02-24 22:45+0000\n"
-"PO-Revision-Date: 2017-03-16 16:38+0400\n"
-"Last-Translator: Yuri Myasoedov <ymyasoedov@yandex.ru>\n"
+"POT-Creation-Date: 2017-03-19 16:18+0000\n"
+"PO-Revision-Date: 2017-03-21 00:24+0300\n"
+"Last-Translator: Stas Solovey <whats_up@tut.by>\n"
 "Language-Team: Русский <gnome-cyr@gnome.org>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"X-Generator: Poedit 1.8.11\n"
 
 #: ../data/gl-categorylist.ui.h:1
 msgid "Important"
@@ -78,15 +78,15 @@ msgstr "Выберите загрузку, для которой хотите п
 msgid "Search all the logs of the current category"
 msgstr "Искать все журналы текущей категории"
 
-#: ../data/gl-eventviewdetail.ui.h:1 ../data/gl-searchpopover.ui.h:34
+#: ../data/gl-eventviewdetail.ui.h:1 ../data/gl-searchpopover.ui.h:35
 msgid "Message"
 msgstr "Сообщение"
 
-#: ../data/gl-eventviewdetail.ui.h:2 ../data/gl-searchpopover.ui.h:38
+#: ../data/gl-eventviewdetail.ui.h:2 ../data/gl-searchpopover.ui.h:39
 msgid "Audit Session"
 msgstr "Сеанс аудита"
 
-#: ../data/gl-eventviewdetail.ui.h:3 ../data/gl-searchpopover.ui.h:37
+#: ../data/gl-eventviewdetail.ui.h:3 ../data/gl-searchpopover.ui.h:38
 msgid "Kernel Device"
 msgstr "Устройство"
 
@@ -185,94 +185,98 @@ msgid "Select Start Date…"
 msgstr "Выбрать дату начала…"
 
 #: ../data/gl-searchpopover.ui.h:20
+msgid "22 January 2016 or 1/22/2016"
+msgstr "22 января 2016 или 01.22.2016"
+
+#: ../data/gl-searchpopover.ui.h:21
 msgid "Select start time"
 msgstr "Выберите время начала"
 
-#: ../data/gl-searchpopover.ui.h:21 ../src/gl-searchpopover.c:504
+#: ../data/gl-searchpopover.ui.h:22 ../src/gl-searchpopover.c:504
 msgid "Select Start Time…"
 msgstr "Выберите время начала…"
 
-#: ../data/gl-searchpopover.ui.h:22
+#: ../data/gl-searchpopover.ui.h:23
 msgid "Hr"
 msgstr "ч"
 
-#: ../data/gl-searchpopover.ui.h:23
+#: ../data/gl-searchpopover.ui.h:24
 msgid "Min"
 msgstr "мин"
 
-#: ../data/gl-searchpopover.ui.h:24
+#: ../data/gl-searchpopover.ui.h:25
 msgid "Sec"
 msgstr "сек"
 
-#: ../data/gl-searchpopover.ui.h:25
+#: ../data/gl-searchpopover.ui.h:26
 msgid "AM/PM"
 msgstr "AM/PM"
 
-#: ../data/gl-searchpopover.ui.h:26
+#: ../data/gl-searchpopover.ui.h:27
 msgid "Until…"
 msgstr "До…"
 
-#: ../data/gl-searchpopover.ui.h:27
+#: ../data/gl-searchpopover.ui.h:28
 msgid "Select an end date"
 msgstr "Выберите дату конца"
 
-#: ../data/gl-searchpopover.ui.h:28 ../src/gl-searchpopover.c:521
+#: ../data/gl-searchpopover.ui.h:29 ../src/gl-searchpopover.c:521
 msgid "Select End Date…"
 msgstr "Выбрать дату конца…"
 
-#: ../data/gl-searchpopover.ui.h:29
+#: ../data/gl-searchpopover.ui.h:30
 msgid "Select end time"
 msgstr "Выберите время конца"
 
-#: ../data/gl-searchpopover.ui.h:30 ../src/gl-searchpopover.c:522
+#: ../data/gl-searchpopover.ui.h:31 ../src/gl-searchpopover.c:522
 msgid "Select End Time…"
 msgstr "Выбрать время конца…"
 
-#: ../data/gl-searchpopover.ui.h:31
+#: ../data/gl-searchpopover.ui.h:32
 msgid "PID"
 msgstr "PID"
 
-#: ../data/gl-searchpopover.ui.h:32
+#: ../data/gl-searchpopover.ui.h:33
 msgid "UID"
 msgstr "UID"
 
-#: ../data/gl-searchpopover.ui.h:33
+#: ../data/gl-searchpopover.ui.h:34
 msgid "GID"
 msgstr "GID"
 
-#: ../data/gl-searchpopover.ui.h:35
+#: ../data/gl-searchpopover.ui.h:36
 msgid "Process Name"
 msgstr "Имя процесса"
 
-#: ../data/gl-searchpopover.ui.h:36
+#: ../data/gl-searchpopover.ui.h:37
 msgid "Systemd Unit"
 msgstr "Systemd Unit"
 
-#: ../data/gl-searchpopover.ui.h:39
+#: ../data/gl-searchpopover.ui.h:40
 msgid "Executable Path"
 msgstr "Исполняемый путь"
 
-#: ../data/gl-searchpopover.ui.h:40
+#: ../data/gl-searchpopover.ui.h:41
 msgid "Previous Boot"
 msgstr "Предыдущая загрузка"
 
-#: ../data/gl-searchpopover.ui.h:41
+#: ../data/gl-searchpopover.ui.h:42
 msgid "Today"
 msgstr "Сегодня"
 
-#: ../data/gl-searchpopover.ui.h:42
+#: ../data/gl-searchpopover.ui.h:43
 msgid "Yesterday"
 msgstr "Вчера"
 
-#: ../data/gl-searchpopover.ui.h:43
+#: ../data/gl-searchpopover.ui.h:44
 msgid "Last 3 days"
 msgstr "За последние 3 дня"
 
-#: ../data/gl-searchpopover.ui.h:44
+#: ../data/gl-searchpopover.ui.h:45
 msgid "Entire Journal"
 msgstr "Весь журнал"
 
-#: ../data/gl-searchpopover.ui.h:45
+#: ../data/gl-searchpopover.ui.h:46
 msgid "Set Custom Range…"
 msgstr "Указать другой диапазон…"
 
@@ -376,7 +380,7 @@ msgstr ""
 #: ../src/gl-application.c:110
 msgid "translator-credits"
 msgstr ""
-"Станислав Соловей <whats_up@tut.by>, 2014-2015\n"
+"Станислав Соловей <whats_up@tut.by>, 2014-2017\n"
 "Юрий Мясоедов <ymyasoedov@yandex.ru>, 2015-2017"
 
 #: ../src/gl-application.c:111
@@ -430,7 +434,7 @@ msgstr "До %s"
 #. * name as string, the year as a decimal number including the century.
 #: ../src/gl-searchpopover.c:737 ../src/gl-searchpopover.c:1104
 msgid "%e %B %Y"
-msgstr "%e %B %Y"
+msgstr "%e %b. %Y"
 
 #: ../src/gl-searchpopover.c:875
 #, c-format
