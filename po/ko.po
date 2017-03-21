@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2017-02-24 22:45+0000\n"
-"PO-Revision-Date: 2017-03-18 00:41+0900\n"
+"POT-Creation-Date: 2017-03-19 16:18+0000\n"
+"PO-Revision-Date: 2017-03-20 22:45+0900\n"
 "Last-Translator: Seong-ho Cho <shcho@gnome.org>\n"
 "Language-Team: Korean <gnome-kr@googlegroups.com>\n"
 "Language: ko\n"
@@ -76,15 +76,15 @@ msgstr "로그를 볼 부팅을 고르십시오"
 msgid "Search all the logs of the current category"
 msgstr "현재 분류의 모든 로그 검색"
 
-#: ../data/gl-eventviewdetail.ui.h:1 ../data/gl-searchpopover.ui.h:34
+#: ../data/gl-eventviewdetail.ui.h:1 ../data/gl-searchpopover.ui.h:35
 msgid "Message"
 msgstr "메시지"
 
-#: ../data/gl-eventviewdetail.ui.h:2 ../data/gl-searchpopover.ui.h:38
+#: ../data/gl-eventviewdetail.ui.h:2 ../data/gl-searchpopover.ui.h:39
 msgid "Audit Session"
 msgstr "검사 세션"
 
-#: ../data/gl-eventviewdetail.ui.h:3 ../data/gl-searchpopover.ui.h:37
+#: ../data/gl-eventviewdetail.ui.h:3 ../data/gl-searchpopover.ui.h:38
 msgid "Kernel Device"
 msgstr "커널 장치"
 
@@ -183,94 +183,98 @@ msgid "Select Start Date…"
 msgstr "처음 날짜 선택…"
 
 #: ../data/gl-searchpopover.ui.h:20
+msgid "22 January 2016 or 1/22/2016"
+msgstr "2016년 1월 22일 또는 2016/1/22"
+
+#: ../data/gl-searchpopover.ui.h:21
 msgid "Select start time"
 msgstr "처음 시간 선택"
 
-#: ../data/gl-searchpopover.ui.h:21 ../src/gl-searchpopover.c:504
+#: ../data/gl-searchpopover.ui.h:22 ../src/gl-searchpopover.c:504
 msgid "Select Start Time…"
 msgstr "처음 시간 선택…"
 
-#: ../data/gl-searchpopover.ui.h:22
+#: ../data/gl-searchpopover.ui.h:23
 msgid "Hr"
 msgstr "시간"
 
-#: ../data/gl-searchpopover.ui.h:23
+#: ../data/gl-searchpopover.ui.h:24
 msgid "Min"
 msgstr "분"
 
-#: ../data/gl-searchpopover.ui.h:24
+#: ../data/gl-searchpopover.ui.h:25
 msgid "Sec"
 msgstr "초"
 
-#: ../data/gl-searchpopover.ui.h:25
+#: ../data/gl-searchpopover.ui.h:26
 msgid "AM/PM"
 msgstr "오전/오후"
 
-#: ../data/gl-searchpopover.ui.h:26
+#: ../data/gl-searchpopover.ui.h:27
 msgid "Until…"
 msgstr "기한…"
 
-#: ../data/gl-searchpopover.ui.h:27
+#: ../data/gl-searchpopover.ui.h:28
 msgid "Select an end date"
 msgstr "마지막 날짜 선택"
 
-#: ../data/gl-searchpopover.ui.h:28 ../src/gl-searchpopover.c:521
+#: ../data/gl-searchpopover.ui.h:29 ../src/gl-searchpopover.c:521
 msgid "Select End Date…"
 msgstr "마지막 날짜 선택…"
 
-#: ../data/gl-searchpopover.ui.h:29
+#: ../data/gl-searchpopover.ui.h:30
 msgid "Select end time"
 msgstr "마지막 시간 선택"
 
-#: ../data/gl-searchpopover.ui.h:30 ../src/gl-searchpopover.c:522
+#: ../data/gl-searchpopover.ui.h:31 ../src/gl-searchpopover.c:522
 msgid "Select End Time…"
 msgstr "마지막 시간 선택…"
 
-#: ../data/gl-searchpopover.ui.h:31
+#: ../data/gl-searchpopover.ui.h:32
 msgid "PID"
 msgstr "PID"
 
-#: ../data/gl-searchpopover.ui.h:32
+#: ../data/gl-searchpopover.ui.h:33
 msgid "UID"
 msgstr "UID"
 
-#: ../data/gl-searchpopover.ui.h:33
+#: ../data/gl-searchpopover.ui.h:34
 msgid "GID"
 msgstr "GID"
 
-#: ../data/gl-searchpopover.ui.h:35
+#: ../data/gl-searchpopover.ui.h:36
 msgid "Process Name"
 msgstr "프로세스 이름"
 
-#: ../data/gl-searchpopover.ui.h:36
+#: ../data/gl-searchpopover.ui.h:37
 msgid "Systemd Unit"
 msgstr "시스템 단위"
 
-#: ../data/gl-searchpopover.ui.h:39
+#: ../data/gl-searchpopover.ui.h:40
 msgid "Executable Path"
 msgstr "실행 경로"
 
-#: ../data/gl-searchpopover.ui.h:40
+#: ../data/gl-searchpopover.ui.h:41
 msgid "Previous Boot"
 msgstr "이전 부팅"
 
-#: ../data/gl-searchpopover.ui.h:41
+#: ../data/gl-searchpopover.ui.h:42
 msgid "Today"
 msgstr "오늘"
 
-#: ../data/gl-searchpopover.ui.h:42
+#: ../data/gl-searchpopover.ui.h:43
 msgid "Yesterday"
 msgstr "어제"
 
-#: ../data/gl-searchpopover.ui.h:43
+#: ../data/gl-searchpopover.ui.h:44
 msgid "Last 3 days"
 msgstr "3일 전까지"
 
-#: ../data/gl-searchpopover.ui.h:44
+#: ../data/gl-searchpopover.ui.h:45
 msgid "Entire Journal"
 msgstr "저널 전체"
 
-#: ../data/gl-searchpopover.ui.h:45
+#: ../data/gl-searchpopover.ui.h:46
 msgid "Set Custom Range…"
 msgstr "개별 범위 설정…"
 
