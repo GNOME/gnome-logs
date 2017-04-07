@@ -5,18 +5,18 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-08-10 10:34+0000\n"
-"PO-Revision-Date: 2016-09-07 00:42+0300\n"
-"Last-Translator: Tom Tryfonidis <tomtryf@gmail.com>\n"
+"POT-Creation-Date: 2017-03-19 16:18+0000\n"
+"PO-Revision-Date: 2017-04-07 13:25+0300\n"
+"Last-Translator: Tom Tryfonidis <tomtryf@gnome.org>\n"
 "Language-Team: www.gnome.gr\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.8\n"
+"X-Generator: Poedit 1.8.11\n"
 "X-Project-Style: gnome\n"
 
 #: ../data/gl-categorylist.ui.h:1
@@ -75,15 +75,15 @@ msgstr "Επιλέξτε μια εκκίνηση συστήματος για ν�
 msgid "Search all the logs of the current category"
 msgstr "Αναζήτηση όλων των εγγραφών της τρεχουσας κατηγορίας"
 
-#: ../data/gl-eventviewdetail.ui.h:1
+#: ../data/gl-eventviewdetail.ui.h:1 ../data/gl-searchpopover.ui.h:35
 msgid "Message"
 msgstr "Μήνυμα"
 
-#: ../data/gl-eventviewdetail.ui.h:2
+#: ../data/gl-eventviewdetail.ui.h:2 ../data/gl-searchpopover.ui.h:39
 msgid "Audit Session"
 msgstr "Συνεδρία ελέγχου"
 
-#: ../data/gl-eventviewdetail.ui.h:3
+#: ../data/gl-eventviewdetail.ui.h:3 ../data/gl-searchpopover.ui.h:38
 msgid "Kernel Device"
 msgstr "Συσκευή πυρήνα"
 
@@ -106,6 +106,181 @@ msgstr "Υποστήριξη"
 #: ../data/gl-eventviewdetail.ui.h:8
 msgid "Documentation"
 msgstr "Τεκμηρίωση"
+
+#: ../data/gl-eventviewlist.ui.h:1
+msgid "Select journal field and timestamp range filtering options"
+msgstr ""
+"Επιλέξτε το πεδίο ημερολογίου και το εύρος χρονικής σήμανσης των επιλογών "
+"φιλτραρίσματος"
+
+#: ../data/gl-searchpopover.ui.h:1
+msgid "Select a Journal Field to filter the Logs according to it"
+msgstr ""
+"Επιλέξτε πεδίο ημερολόγιου για να φιλτράρετε τα αρχεία καταγραφής, σύμφωνα "
+"με αυτό"
+
+#: ../data/gl-searchpopover.ui.h:2
+msgid "All Available Fields"
+msgstr "Όλα τα διαθέσιμα πεδία"
+
+#. Translators: What [journal fields to search in]
+#: ../data/gl-searchpopover.ui.h:4
+msgid "What"
+msgstr "Τι"
+
+#: ../data/gl-searchpopover.ui.h:5
+msgid "Select Journal Field…"
+msgstr "Επιλογή ολόκληρου ημερολογίου"
+
+#. When [log entries to be shown for a given timestamp range]
+#: ../data/gl-searchpopover.ui.h:7
+msgid "When"
+msgstr "Πότε"
+
+#: ../data/gl-searchpopover.ui.h:8
+msgid "Show Logs from…"
+msgstr "Εμφάνιση αρχείων καταγραφής από ..."
+
+#: ../data/gl-searchpopover.ui.h:9
+msgid "Select Timestamp Range of the Log Entries to be shown"
+msgstr ""
+"Επιλέξτε το εύρος χρονικής σήμανσης για τις καταγραφές που θα εμφανιστούν"
+
+#: ../data/gl-searchpopover.ui.h:10 ../src/gl-searchpopover.c:1303
+msgid "Current Boot"
+msgstr "Τρέχουσα εκκίνηση"
+
+#: ../data/gl-searchpopover.ui.h:11
+msgid "Search Type"
+msgstr "Τύπος αναζήτησης"
+
+#: ../data/gl-searchpopover.ui.h:12
+msgid "Substring"
+msgstr "Υποσυμβολοσειρά"
+
+#: ../data/gl-searchpopover.ui.h:13
+msgid "Match in any part of the string"
+msgstr "Ταίριασμα με οποιοδήποτε μέρος της συμβολοσειράς"
+
+#: ../data/gl-searchpopover.ui.h:14
+msgid "Exact"
+msgstr "Aκριβής"
+
+#: ../data/gl-searchpopover.ui.h:15
+msgid "Match complete string only"
+msgstr "Ταίριασμα μόνο με ολόκληρη τη συμβολοσειρά"
+
+#: ../data/gl-searchpopover.ui.h:16
+msgid "Back"
+msgstr "Πίσω"
+
+#: ../data/gl-searchpopover.ui.h:17
+msgid "Show Logs Starting From…"
+msgstr "Εμφάνιση αρχείων καταγραφής έναρξης από ..."
+
+#: ../data/gl-searchpopover.ui.h:18
+msgid "Select a start date"
+msgstr "Επιλέξτε μια ημερομηνία έναρξης"
+
+#: ../data/gl-searchpopover.ui.h:19 ../src/gl-searchpopover.c:503
+msgid "Select Start Date…"
+msgstr "Επιλέξτε ημερομηνία έναρξης"
+
+#: ../data/gl-searchpopover.ui.h:20
+msgid "22 January 2016 or 1/22/2016"
+msgstr "22 Ιανουαρίου 2016 ή 22/01/2016"
+
+#: ../data/gl-searchpopover.ui.h:21
+msgid "Select start time"
+msgstr "Επιλέξτε ώρα έναρξης"
+
+#: ../data/gl-searchpopover.ui.h:22 ../src/gl-searchpopover.c:504
+msgid "Select Start Time…"
+msgstr "Επιλέξτε ώρα έναρξης…"
+
+#: ../data/gl-searchpopover.ui.h:23
+msgid "Hr"
+msgstr "Ώρα"
+
+#: ../data/gl-searchpopover.ui.h:24
+msgid "Min"
+msgstr "Λεπτό"
+
+#: ../data/gl-searchpopover.ui.h:25
+msgid "Sec"
+msgstr "Δευτ."
+
+#: ../data/gl-searchpopover.ui.h:26
+msgid "AM/PM"
+msgstr "Π.Μ./Μ.Μ."
+
+#: ../data/gl-searchpopover.ui.h:27
+msgid "Until…"
+msgstr "Μέχρι…"
+
+#: ../data/gl-searchpopover.ui.h:28
+msgid "Select an end date"
+msgstr "Επιλέξτε μια ημερομηνία λήξης"
+
+#: ../data/gl-searchpopover.ui.h:29 ../src/gl-searchpopover.c:521
+msgid "Select End Date…"
+msgstr "Επιλέξτε ημερομηνία λήξης…"
+
+#: ../data/gl-searchpopover.ui.h:30
+msgid "Select end time"
+msgstr "Επιλέξτε ώρα λήξης"
+
+#: ../data/gl-searchpopover.ui.h:31 ../src/gl-searchpopover.c:522
+msgid "Select End Time…"
+msgstr "Επιλέξτε ώρα λήξης…"
+
+#: ../data/gl-searchpopover.ui.h:32
+msgid "PID"
+msgstr "PID"
+
+#: ../data/gl-searchpopover.ui.h:33
+msgid "UID"
+msgstr "UID"
+
+#: ../data/gl-searchpopover.ui.h:34
+msgid "GID"
+msgstr "GID"
+
+#: ../data/gl-searchpopover.ui.h:36
+msgid "Process Name"
+msgstr "Όνομα  διεργασίας"
+
+#: ../data/gl-searchpopover.ui.h:37
+msgid "Systemd Unit"
+msgstr "Μονάδα systemd"
+
+#: ../data/gl-searchpopover.ui.h:40
+msgid "Executable Path"
+msgstr "Διαδρομή εκτελέσιμου"
+
+#: ../data/gl-searchpopover.ui.h:41
+msgid "Previous Boot"
+msgstr "Προηγούμενη εκκίνηση"
+
+#: ../data/gl-searchpopover.ui.h:42
+msgid "Today"
+msgstr "Σήμερα"
+
+#: ../data/gl-searchpopover.ui.h:43
+msgid "Yesterday"
+msgstr "Εχθές"
+
+#: ../data/gl-searchpopover.ui.h:44
+msgid "Last 3 days"
+msgstr "Τελευταίες 3 ημέρες"
+
+#: ../data/gl-searchpopover.ui.h:45
+msgid "Entire Journal"
+msgstr "Ολόκληρο ημερολόγιο"
+
+#: ../data/gl-searchpopover.ui.h:46
+msgid "Set Custom Range…"
+msgstr "Ορισμός προσαρμοσμένου εύρους…"
 
 #: ../data/gl-window.ui.h:1
 msgid "Help"
@@ -217,7 +392,7 @@ msgstr ""
 msgid "View and search logs"
 msgstr "Δείτε και ψάξτε καταγραφές"
 
-#: ../src/gl-application.c:239
+#: ../src/gl-application.c:245
 msgid "Print version information and exit"
 msgstr "Προβολή πληροφοριών έκδοσης και έξοδος"
 
@@ -228,13 +403,73 @@ msgstr "Εκκίνηση"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventviewlist.c:290
+#: ../src/gl-eventviewlist.c:296
 msgid "No results"
 msgstr "Χωρίς αποτελέσματα"
 
 #: ../src/gl-eventviewrow.c:219
 msgid "Other"
 msgstr "Άλλα"
+
+#. Translators: if only custom start timestamp is set, then we update
+#. * the timestamp range button label in popover to show that
+#. * logs are shown in the window starting from this timestamp
+#. * until the ending timestamp of journal.
+#: ../src/gl-searchpopover.c:687
+#, c-format
+msgid "From %s"
+msgstr "Από %s"
+
+#. Translators: if only custom end timestamp is set, then we update
+#. * the timestamp range button label in popover to show that
+#. * logs are shown in the window upto this timestamp
+#. * with the starting timestamp being the current time.
+#: ../src/gl-searchpopover.c:700
+#, c-format
+msgid "Until %s"
+msgstr "Μέχρι %s"
+
+#. Translators: date format for the start date entry
+#. * and start date button label in the custom range submenu,
+#. * showing the day of month in decimal number, full month
+#. * name as string, the year as a decimal number including the century.
+#. Translators: date format for the end date entry
+#. * and end date button label in the custom range submenu,
+#. * showing the day of month in decimal number, full month
+#. * name as string, the year as a decimal number including the century.
+#: ../src/gl-searchpopover.c:737 ../src/gl-searchpopover.c:1104
+msgid "%e %B %Y"
+msgstr "%e %B %Y"
+
+#: ../src/gl-searchpopover.c:875
+#, c-format
+msgid "AM"
+msgstr "Π.M."
+
+#: ../src/gl-searchpopover.c:879
+#, c-format
+msgid "PM"
+msgstr "M.M."
+
+#. Translators: timestamp format for the custom start time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 12-hour format.
+#. Translators: timestamp format for the custom end time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 12-hour format.
+#: ../src/gl-searchpopover.c:987 ../src/gl-searchpopover.c:1226
+msgid "%I:%M:%S %p"
+msgstr "%l:%M:%S %p"
+
+#. Translators: timestamp format for the custom start time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 24-hour format.
+#. Translators: timestamp format for the custom end time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 24-hour format.
+#: ../src/gl-searchpopover.c:994 ../src/gl-searchpopover.c:1233
+msgid "%T"
+msgstr "%T"
 
 #. Translators: timestamp format for events on the
 #. * current day, showing the time with seconds in
@@ -336,23 +571,23 @@ msgstr "%e %b %Y %H:%M"
 msgid "%s – %s"
 msgstr "%s – %s"
 
-#: ../src/gl-window.c:186
+#: ../src/gl-window.c:181
 msgid "Save logs"
 msgstr "Αποθήκευσης καταγραφών"
 
-#: ../src/gl-window.c:189
+#: ../src/gl-window.c:184
 msgid "_Cancel"
 msgstr "Ακύρω_ση"
 
-#: ../src/gl-window.c:190
+#: ../src/gl-window.c:185
 msgid "_Save"
 msgstr "_Αποθήκευση"
 
-#: ../src/gl-window.c:195
+#: ../src/gl-window.c:190
 msgid "log messages"
 msgstr "καταγραφή μηνυμάτων"
 
-#: ../src/gl-window.c:248
+#: ../src/gl-window.c:243
 msgid "Unable to export log messages to a file"
 msgstr "Αδυναμία εξαγωγής των καταγραφών σε αρχείο"
 
