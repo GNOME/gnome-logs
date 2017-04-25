@@ -1,3 +1,12 @@
+GNOME Logs 3.25.1
+=================
+
+* avoid some deprecated GTK+ API
+* increase default window size to 1200*780
+* updates to Korean, Hungarian, German, Slovak, Spanish, Lithuanian,
+  Norwegian bokmål, Polish, Latvian, Greek and Serbian translations
+* add Croatian translation
+
 GNOME Logs 3.24.0
 =================
 
