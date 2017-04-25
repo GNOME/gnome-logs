@@ -74,8 +74,8 @@ on_help (GSimpleAction *action,
     application = GTK_APPLICATION (user_data);
     parent = gtk_application_get_active_window (application);
 
-    gtk_show_uri (gtk_window_get_screen (parent), "help:gnome-logs",
-                  GDK_CURRENT_TIME, &error);
+    gtk_show_uri_on_window (parent, "help:gnome-logs",
+                            GDK_CURRENT_TIME, &error);
 
     if (error)
     {
