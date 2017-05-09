@@ -85,7 +85,15 @@ gl_journal_model_fetch_idle (gpointer user_data)
         {
             model->n_entries_to_fetch--;
             g_ptr_array_add (model->entries, entry);
-            g_list_model_items_changed (G_LIST_MODEL (model), last, 0, 1);
+
+            if (model->query->order == GL_SORT_ORDER_ASCENDING_TIME)
+            {
+                g_list_model_items_changed (G_LIST_MODEL (model), 0, 0, 1);
+            }
+            else
+            {
+                g_list_model_items_changed (G_LIST_MODEL (model), last, 0, 1);
+            }
         }
     }
     else
@@ -134,8 +142,6 @@ gl_journal_model_get_property (GObject    *object,
         g_assert_not_reached ();
     }
 }
-
-
 
 static void
 gl_journal_model_stop_idle (GlJournalModel *model)
@@ -191,7 +197,22 @@ gl_journal_model_get_item (GListModel *list,
     GlJournalModel *model = GL_JOURNAL_MODEL (list);
 
     if (position < model->entries->len)
-        return g_object_ref (g_ptr_array_index (model->entries, position));
+    {
+        if (model->query->order == GL_SORT_ORDER_ASCENDING_TIME &&
+            model->entries->len)
+        {
+            guint last = model->entries->len;
+
+            /* read the array in reverse direction */
+            return g_object_ref (g_ptr_array_index (model->entries,
+                                                    (last - 1) - position));
+        }
+        else
+        {
+            return g_object_ref (g_ptr_array_index (model->entries, position));
+        }
+
+    }
 
     return NULL;
 }
@@ -279,6 +300,12 @@ void
 gl_query_set_search_type (GlQuery *query, GlQuerySearchType search_type)
 {
     query->search_type = search_type;
+}
+
+void
+gl_query_set_sort_order (GlQuery *query, GlSortOrder order)
+{
+    query->order = order;
 }
 
 static gchar *

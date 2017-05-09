@@ -21,6 +21,8 @@
 
 #include <gio/gio.h>
 
+#include "gl-application.h"
+
 typedef enum
 {
     GL_QUERY_SEARCH_TYPE_SUBSTRING,
@@ -32,6 +34,7 @@ typedef struct GlQuery
 {
     GPtrArray *queryitems;   /* array of GlQueryItem structs */
     GlQuerySearchType search_type;    /* indicates if search field is passed as exact match */
+    GlSortOrder order; /* whether to iterate through journal in ascending or descending timestamp order */
     guint64 start_timestamp;
     guint64 end_timestamp;
 } GlQuery;
@@ -70,5 +73,8 @@ gchar *                 gl_journal_model_get_boot_time                  (GlJourn
 
 void                    gl_query_set_search_type                        (GlQuery *query,
                                                                          GlQuerySearchType search_type);
+
+void                    gl_query_set_sort_order                         (GlQuery *query,
+                                                                         GlSortOrder order);
 
 #endif
