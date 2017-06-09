@@ -39,7 +39,7 @@ struct _GlEventViewDetail
 
 typedef struct
 {
-    GlJournalEntry *entry;
+    GlRowEntry *entry;
     GlUtilClockFormat clock_format;
     GtkWidget *grid;
     GtkWidget *comm_image;
@@ -71,6 +71,7 @@ gl_event_view_detail_create_detail (GlEventViewDetail *detail)
 {
     GlEventViewDetailPrivate *priv;
     GlJournalEntry *entry;
+    GlRowEntry *row_entry;
     gchar *str;
     gchar *str_field;
     gchar *str_message;
@@ -79,7 +80,8 @@ gl_event_view_detail_create_detail (GlEventViewDetail *detail)
 
     priv = gl_event_view_detail_get_instance_private (detail);
 
-    entry = priv->entry;
+    row_entry = priv->entry;
+    entry = gl_row_entry_get_journal_entry (row_entry);
 
     /* Force LTR direction also for RTL languages */
     gtk_widget_set_direction (priv->grid, GTK_TEXT_DIR_LTR);
@@ -427,8 +429,8 @@ gl_event_view_detail_class_init (GlEventViewDetailClass *klass)
                                                            G_PARAM_STATIC_STRINGS);
 
     obj_properties[PROP_ENTRY] = g_param_spec_object ("entry", "Entry",
-                                                      "Journal entry for this detailed view",
-                                                      GL_TYPE_JOURNAL_ENTRY,
+                                                      "Row entry for this detailed view",
+                                                      GL_TYPE_ROW_ENTRY,
                                                       G_PARAM_READWRITE |
                                                       G_PARAM_CONSTRUCT_ONLY |
                                                       G_PARAM_STATIC_STRINGS);
@@ -485,7 +487,7 @@ gl_event_view_detail_init (GlEventViewDetail *detail)
 }
 
 GtkWidget *
-gl_event_view_detail_new (GlJournalEntry *entry,
+gl_event_view_detail_new (GlRowEntry *entry,
                           GlUtilClockFormat clock_format)
 {
     return g_object_new (GL_TYPE_EVENT_VIEW_DETAIL, "entry", entry,

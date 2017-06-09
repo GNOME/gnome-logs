@@ -24,6 +24,7 @@
 G_BEGIN_DECLS
 
 #include "gl-journal.h"
+#include "gl-journal-model.h"
 #include "gl-util.h"
 
 /*
@@ -43,8 +44,8 @@ typedef enum
 #define GL_TYPE_EVENT_VIEW_ROW (gl_event_view_row_get_type ())
 G_DECLARE_FINAL_TYPE (GlEventViewRow, gl_event_view_row, GL, EVENT_VIEW_ROW, GtkListBoxRow)
 
-GtkWidget * gl_event_view_row_new (GlJournalEntry *entry, GlUtilClockFormat clock_format, GlEventViewRowCategory category);
-GlJournalEntry * gl_event_view_row_get_entry (GlEventViewRow *row);
+GtkWidget * gl_event_view_row_new (GlRowEntry *entry, GlUtilClockFormat clock_format, GlEventViewRowCategory category);
+GlRowEntry * gl_event_view_row_get_entry (GlEventViewRow *row);
 const gchar * gl_event_view_row_get_command_line (GlEventViewRow *row);
 const gchar * gl_event_view_row_get_message (GlEventViewRow *row);
 guint64 gl_event_view_row_get_timestamp (GlEventViewRow *row);

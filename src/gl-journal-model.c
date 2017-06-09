@@ -89,6 +89,7 @@ gl_journal_model_fetch_idle (gpointer user_data)
 {
     GlJournalModel *model = user_data;
     GlJournalEntry *entry;
+    GlRowEntry *row_entry;
     guint last;
 
     g_assert (model->n_entries_to_fetch > 0);
@@ -99,7 +100,11 @@ gl_journal_model_fetch_idle (gpointer user_data)
         if (search_in_entry (entry, model))
         {
             model->n_entries_to_fetch--;
-            g_ptr_array_add (model->entries, entry);
+
+            row_entry = gl_row_entry_new ();
+            row_entry->journal_entry = entry;
+
+            g_ptr_array_add (model->entries, row_entry);
 
             if (model->query->order == GL_SORT_ORDER_ASCENDING_TIME)
             {
@@ -194,7 +199,7 @@ gl_journal_model_dispose (GObject *object)
 static GType
 gl_journal_model_get_item_type (GListModel *list)
 {
-  return GL_TYPE_JOURNAL_ENTRY;
+  return GL_TYPE_ROW_ENTRY;
 }
 
 static guint

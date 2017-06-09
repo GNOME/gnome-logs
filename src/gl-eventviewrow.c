@@ -43,7 +43,7 @@ typedef struct
 {
     GlEventViewRowCategory category;
     GlUtilClockFormat clock_format;
-    GlJournalEntry *entry;
+    GlRowEntry *entry;
     GtkWidget *category_label;
     GtkWidget *message_label;
     GtkWidget *time_label;
@@ -57,30 +57,45 @@ const gchar *
 gl_event_view_row_get_command_line (GlEventViewRow *row)
 {
     GlEventViewRowPrivate *priv;
+    GlRowEntry *row_entry;
+    GlJournalEntry *entry;
 
     priv = gl_event_view_row_get_instance_private (row);
 
-    return gl_journal_entry_get_command_line (priv->entry);
+    row_entry = priv->entry;
+    entry = gl_row_entry_get_journal_entry (row_entry);
+
+    return gl_journal_entry_get_command_line (entry);
 }
 
 guint64
 gl_event_view_row_get_timestamp (GlEventViewRow *row)
 {
     GlEventViewRowPrivate *priv;
+    GlRowEntry *row_entry;
+    GlJournalEntry *entry;
 
     priv = gl_event_view_row_get_instance_private (row);
 
-    return gl_journal_entry_get_timestamp (priv->entry);
+    row_entry = priv->entry;
+    entry = gl_row_entry_get_journal_entry (row_entry);
+
+    return gl_journal_entry_get_timestamp (entry);
 }
 
 const gchar *
 gl_event_view_row_get_message (GlEventViewRow *row)
 {
     GlEventViewRowPrivate *priv;
+    GlRowEntry *row_entry;
+    GlJournalEntry *entry;
 
     priv = gl_event_view_row_get_instance_private (row);
 
-    return gl_journal_entry_get_message (priv->entry);
+    row_entry = priv->entry;
+    entry = gl_row_entry_get_journal_entry (row_entry);
+
+    return gl_journal_entry_get_message (entry);
 }
 
 GtkWidget *
@@ -257,14 +272,16 @@ gl_event_view_row_constructed (GObject *object)
     gboolean rtl;
     GlEventViewRowCategory category;
     GlUtilClockFormat tmp_clock_format;
-    GlJournalEntry *tmp_entry;
+    GlRowEntry *tmp_entry;
     GlJournalEntry *entry;
+    GlRowEntry *row_entry;
     GDateTime *now;
     GlEventViewRow *row = GL_EVENT_VIEW_ROW (object);
     GlEventViewRowPrivate *priv;
 
     priv = gl_event_view_row_get_instance_private (row);
-    entry = priv->entry;
+    row_entry = priv->entry;
+    entry = gl_row_entry_get_journal_entry (row_entry);
 
     rtl = (gtk_widget_get_default_direction () == GTK_TEXT_DIR_RTL);
 
@@ -374,8 +391,8 @@ gl_event_view_row_class_init (GlEventViewRowClass *klass)
                                                            G_PARAM_STATIC_STRINGS);
 
     obj_properties[PROP_ENTRY] = g_param_spec_object ("entry", "Entry",
-                                                      "Journal entry for this row",
-                                                      GL_TYPE_JOURNAL_ENTRY,
+                                                      "Row entry for this row",
+                                                      GL_TYPE_ROW_ENTRY,
                                                       G_PARAM_READWRITE |
                                                       G_PARAM_CONSTRUCT_ONLY |
                                                       G_PARAM_STATIC_STRINGS);
@@ -391,7 +408,7 @@ gl_event_view_row_init (GlEventViewRow *row)
      * at _init() time the construct-only properties have not been set. */
 }
 
-GlJournalEntry *
+GlRowEntry *
 gl_event_view_row_get_entry (GlEventViewRow *row)
 {
     GlEventViewRowPrivate *priv;
@@ -404,7 +421,7 @@ gl_event_view_row_get_entry (GlEventViewRow *row)
 }
 
 GtkWidget *
-gl_event_view_row_new (GlJournalEntry *entry,
+gl_event_view_row_new (GlRowEntry *entry,
                        GlUtilClockFormat clock_format,
                        GlEventViewRowCategory category)
 {

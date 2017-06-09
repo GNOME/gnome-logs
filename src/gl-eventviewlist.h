@@ -23,6 +23,7 @@
 
 #include "gl-application.h"
 #include "gl-journal.h"
+#include "gl-journal-model.h"
 
 G_BEGIN_DECLS
 
@@ -30,7 +31,7 @@ G_BEGIN_DECLS
 G_DECLARE_FINAL_TYPE (GlEventViewList, gl_event_view_list, GL, EVENT_VIEW_LIST, GtkListBox)
 
 GtkWidget * gl_event_view_list_new (void);
-GlJournalEntry *gl_event_view_list_get_detail_entry (GlEventViewList *view);
+GlRowEntry *gl_event_view_list_get_detail_entry (GlEventViewList *view);
 gboolean gl_event_view_list_handle_search_event (GlEventViewList *view,
                                                  GAction *action,
                                                  GdkEvent *event);

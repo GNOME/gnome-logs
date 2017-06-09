@@ -41,7 +41,7 @@ struct _GlEventViewList
 typedef struct
 {
     GlJournalModel *journal_model;
-    GlJournalEntry *entry;
+    GlRowEntry *entry;
     GlUtilClockFormat clock_format;
     GtkListBox *entries_box;
     GtkSizeGroup *category_sizegroup;
@@ -189,7 +189,7 @@ on_listbox_row_activated (GtkListBox *listbox,
     }
 }
 
-GlJournalEntry *
+GlRowEntry *
 gl_event_view_list_get_detail_entry (GlEventViewList *view)
 {
     GlEventViewListPrivate *priv;

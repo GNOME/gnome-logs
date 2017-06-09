@@ -47,7 +47,7 @@ struct _GlEventView
 typedef struct
 {
     GtkWidget *events;
-    GlJournalEntry *entry;
+    GlRowEntry *entry;
     GlUtilClockFormat clock_format;
     GlEventViewMode mode;
 } GlEventViewPrivate;
