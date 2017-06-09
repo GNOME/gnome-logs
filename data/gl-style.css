@@ -33,3 +33,19 @@
     padding-top: 0px;
     padding-bottom: 0px;
 }
+
+.compressed-entries-label {
+    background-color: #d4d4d4;
+    font-size: small;
+    border-radius: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.compressed-row {
+    background-color: #f9f9f9;
+}
+
+.compressed-row-header {
+    background-color: #f0f0f0;
+}

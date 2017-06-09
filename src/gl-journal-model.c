@@ -35,7 +35,7 @@ struct _GlRowEntry
     GlRowEntryType row_type;
 
     /* Number of compressed entries represented by
-     * a compressed entries header
+     * a header
      */
     guint compressed_entries;
 };
@@ -55,12 +55,18 @@ struct _GlJournalModel
     guint n_entries_to_fetch;
     gboolean fetched_all;
     guint idle_source;
+
+    guint compressed_entries_counter;
 };
 
 static void gl_journal_model_interface_init (GListModelInterface *iface);
 static GPtrArray *tokenize_search_string (gchar *search_text);
 static gboolean search_in_entry (GlJournalEntry *entry, GlJournalModel *model);
 static gboolean gl_query_check_journal_end (GlQuery *query, GlJournalEntry *entry);
+static gboolean gl_row_entry_check_message_similarity (GlRowEntry *current_row_entry,
+                                                       GlRowEntry *prev_row_entry);
+static void gl_journal_model_add_header (GlJournalModel *model);
+
 
 G_DEFINE_TYPE (GlRowEntry, gl_row_entry, G_TYPE_OBJECT);
 
@@ -99,11 +105,59 @@ gl_journal_model_fetch_idle (gpointer user_data)
     {
         if (search_in_entry (entry, model))
         {
-            model->n_entries_to_fetch--;
-
             row_entry = gl_row_entry_new ();
             row_entry->journal_entry = entry;
 
+            if (last > 0)
+            {
+                GlRowEntry *prev_row_entry = g_ptr_array_index (model->entries, last - 1);
+
+                if (gl_row_entry_check_message_similarity (row_entry,
+                                                           prev_row_entry))
+                {
+
+                    /* Previously similar messages were detected */
+                    if (prev_row_entry->row_type == GL_ROW_ENTRY_TYPE_COMPRESSED)
+                    {
+
+                        model->compressed_entries_counter++;
+                        row_entry->row_type = GL_ROW_ENTRY_TYPE_COMPRESSED;
+                    }
+                    /* First time a similar group of messages is detected */
+                    else
+                    {
+
+                        model->compressed_entries_counter = model->compressed_entries_counter + 2;
+                        prev_row_entry->row_type = GL_ROW_ENTRY_TYPE_COMPRESSED;
+
+                        if (model->query->order == GL_SORT_ORDER_ASCENDING_TIME)
+                        {
+                            g_list_model_items_changed (G_LIST_MODEL (model), 0, 1, 1);
+                        }
+                        else
+                        {
+                            g_list_model_items_changed (G_LIST_MODEL (model), last - 1, 1, 1);
+                        }
+
+                        row_entry->row_type = GL_ROW_ENTRY_TYPE_COMPRESSED;
+                    }
+                }
+                else
+                {
+
+                    /* Add a compressed row header if a group of compressed row entries
+                     * was detected. */
+                    gl_journal_model_add_header (model);
+
+                    /* Reset the count of compressed entries */
+                    model->compressed_entries_counter = 0;
+
+                    model->n_entries_to_fetch--;
+
+                }
+            }
+
+            last = model->entries->len;
             g_ptr_array_add (model->entries, row_entry);
 
             if (model->query->order == GL_SORT_ORDER_ASCENDING_TIME)
@@ -120,6 +174,10 @@ gl_journal_model_fetch_idle (gpointer user_data)
     {
         model->fetched_all = TRUE;
         model->n_entries_to_fetch = 0;
+
+        /* If the last read entry was in a compressed group
+         * then add a row header representing that group. */
+        gl_journal_model_add_header (model);
     }
 
     if (model->n_entries_to_fetch > 0)
@@ -421,6 +479,9 @@ gl_journal_model_process_query (GlJournalModel *model)
     gl_journal_set_matches (model->journal, category_matches);
 
     gl_journal_set_start_position (model->journal, model->query->start_timestamp);
+
+    /* Reset the count of compressed entries */
+    model->compressed_entries_counter = 0;
 
     /* Start re-population of the journal */
     gl_journal_model_fetch_more_entries (model, FALSE);
@@ -1115,4 +1176,139 @@ gl_row_entry_class_init (GlRowEntryClass *class)
   GObjectClass *object_class = G_OBJECT_CLASS (class);
 
   object_class->finalize = gl_row_entry_finalize;
+}
+
+
+/**
+ * gl_row_entry_check_message_similarity:
+ * @current_row_entry: a #GlRowEntry
+ * @prev_row_entry: a #GlRowEntry
+ *
+ * Compares two adjacent row entries for grouping them under a
+ * common compressed row header. Returns %TRUE if their messages
+ * have same first word or if they have been sent by the same
+ * sending process.
+ */
+static gboolean
+gl_row_entry_check_message_similarity (GlRowEntry *current_row_entry,
+                                       GlRowEntry *prev_row_entry)
+{
+    GlJournalEntry *current_entry;
+    GlJournalEntry *prev_entry;
+    const gchar *current_entry_message;
+    const gchar *prev_entry_message;
+    const gchar *current_entry_sender;
+    const gchar *prev_entry_sender;
+    const gchar *first_whitespace_index;
+    GString *current_entry_word;
+    GString *prev_entry_word;
+    gboolean result;
+
+    current_entry = gl_row_entry_get_journal_entry (current_row_entry);
+    prev_entry = gl_row_entry_get_journal_entry (prev_row_entry);
+
+    current_entry_message = gl_journal_entry_get_message (current_entry);
+    prev_entry_message = gl_journal_entry_get_message (prev_entry);
+
+    current_entry_sender = gl_journal_entry_get_command_line (current_entry);
+    prev_entry_sender = gl_journal_entry_get_command_line (prev_entry);
+
+    current_entry_word = g_string_new (NULL);
+    prev_entry_word = g_string_new (NULL);
+
+    /* Get the position of first whitespace in the messages of the adjacent
+     * journal entries and copy all the characters before that position
+     * into a new string buffer. */
+    first_whitespace_index = strchr (current_entry_message, ' ');
+
+    g_string_append_len (current_entry_word, current_entry_message,
+                         first_whitespace_index - current_entry_message);
+
+    first_whitespace_index = strchr (prev_entry_message, ' ');
+
+    g_string_append_len (prev_entry_word, prev_entry_message,
+                        first_whitespace_index - prev_entry_message);
+
+    result = FALSE;
+
+    /* Check for similarity criteria */
+    if (g_string_equal (current_entry_word, prev_entry_word))
+    {
+        result = TRUE;
+    }
+    else if (current_entry_sender && prev_entry_sender)
+    {
+        if (g_strcmp0 (current_entry_sender, prev_entry_sender) == 0)
+        {
+            result = TRUE;
+        }
+    }
+
+    g_string_free (current_entry_word, TRUE);
+    g_string_free (prev_entry_word, TRUE);
+
+    return result;
+}
+
+/**
+ * gl_journal_model_add_header:
+ * @model: a #GlJournalModel
+ *
+ * Adds a compressed row header to the @model, which represents
+ * a group of compressed row entries. Depending upon the sorting
+ * order, the compressed row header is inserted in the @model
+ * so that it will always appear before the compressed entries
+ * represented by it in the view.
+ */
+static void
+gl_journal_model_add_header (GlJournalModel *model)
+{
+    guint last;
+    last = model->entries->len;
+
+    /* A group of compressed row entries is detected. */
+    if (model->compressed_entries_counter >= 2)
+    {
+        GlJournalEntry *prev_entry;
+        GlRowEntry *prev_row_entry;
+        GlRowEntry *header;
+
+        /* Get the row entry from the compressed entries group, whose
+         * journal entry details will be stored in the compressed row
+         * header. */
+        if (model->query->order == GL_SORT_ORDER_ASCENDING_TIME)
+        {
+            prev_row_entry = g_ptr_array_index (model->entries, last - 1);
+        }
+        else
+        {
+            prev_row_entry = g_ptr_array_index (model->entries,
+                                                last - model->compressed_entries_counter);
+        }
+
+        prev_entry = prev_row_entry->journal_entry;
+
+        /* Create the compressed row header */
+        header = gl_row_entry_new ();
+        header->journal_entry = g_object_ref (prev_entry);
+        header->row_type = GL_ROW_ENTRY_TYPE_HEADER;
+        header->compressed_entries = model->compressed_entries_counter;
+
+        /* Insert it at a appropriate positon in the model */
+        if (model->query->order == GL_SORT_ORDER_ASCENDING_TIME)
+        {
+            g_ptr_array_add (model->entries, header);
+            g_list_model_items_changed (G_LIST_MODEL (model), 0, 0, 1);
+        }
+        else
+        {
+            g_ptr_array_insert (model->entries,
+                                last - model->compressed_entries_counter,
+                                header);
+
+            g_list_model_items_changed (G_LIST_MODEL (model),
+                                        last - model->compressed_entries_counter,
+                                        0, 1);
+        }
+    }
 }

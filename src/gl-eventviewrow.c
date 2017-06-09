@@ -336,8 +336,45 @@ gl_event_view_row_constructed (GObject *object)
                              PANGO_ELLIPSIZE_END);
     gtk_label_set_xalign (GTK_LABEL (priv->message_label), 0);
     gtk_label_set_single_line_mode (GTK_LABEL (priv->message_label), TRUE);
-    gtk_grid_attach (GTK_GRID (grid), priv->message_label,
-                     1, 0, 1, 1);
+
+    if (gl_row_entry_get_row_type (row_entry) == GL_ROW_ENTRY_TYPE_HEADER)
+    {
+        guint compressed_entries;
+        GtkWidget *message_box;
+        GtkWidget *compressed_entries_label;
+        gchar *compressed_entries_string;
+
+        message_box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 10);
+
+        gtk_box_pack_start (GTK_BOX (message_box),
+                            priv->message_label,
+                            TRUE, TRUE, 2);
+
+        compressed_entries = gl_row_entry_get_compressed_entries (row_entry);
+        compressed_entries_string = g_strdup_printf ("%d", compressed_entries);
+
+        compressed_entries_label = gtk_label_new (compressed_entries_string);
+
+        gtk_widget_set_direction (compressed_entries_label, GTK_TEXT_DIR_LTR);
+        context = gtk_widget_get_style_context (GTK_WIDGET (compressed_entries_label));
+        gtk_style_context_add_class (context, "compressed-entries-label");
+        gtk_widget_set_halign (compressed_entries_label, GTK_ALIGN_START);
+        gtk_label_set_xalign (GTK_LABEL (compressed_entries_label), 0);
+
+        gtk_box_pack_start (GTK_BOX (message_box),
+                            compressed_entries_label,
+                            TRUE, TRUE, 0);
+
+        gtk_grid_attach (GTK_GRID (grid), message_box,
+                         1, 0, 1, 1);
+
+        g_free (compressed_entries_string);
+    }
+    else
+    {
+        gtk_grid_attach (GTK_GRID (grid), priv->message_label,
+                         1, 0, 1, 1);
+    }
 
     now = g_date_time_new_now_local ();
     time = gl_util_timestamp_to_display (gl_journal_entry_get_timestamp (entry),
@@ -362,6 +399,25 @@ gl_event_view_row_constructed (GObject *object)
     gtk_widget_show_all (GTK_WIDGET (row));
 
     G_OBJECT_CLASS (gl_event_view_row_parent_class)->constructed (object);
+}
+
+/* Hide the rows to be compressed */
+static void
+on_parent_set (GtkWidget *widget,
+               GtkWidget *old_parent,
+               gpointer   user_data)
+{
+    GlEventViewRow *row = GL_EVENT_VIEW_ROW (user_data);
+    GlEventViewRowPrivate *priv;
+
+    priv = gl_event_view_row_get_instance_private (row);
+
+    /* Execute only if the parent was not set earlier at all */
+    if (old_parent == NULL &&
+        gl_row_entry_get_row_type (priv->entry) == GL_ROW_ENTRY_TYPE_COMPRESSED)
+    {
+        gtk_widget_hide (widget);
+    }
 }
 
 static void
@@ -406,6 +462,9 @@ gl_event_view_row_init (GlEventViewRow *row)
 {
     /* The widgets are initialized in gl_event_view_row_constructed (), because
      * at _init() time the construct-only properties have not been set. */
+
+    g_signal_connect (row, "parent-set",
+                      G_CALLBACK (on_parent_set), row);
 }
 
 GlRowEntry *

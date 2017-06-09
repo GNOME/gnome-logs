@@ -137,6 +137,7 @@ listbox_update_header_func (GtkListBoxRow *row,
                             gpointer user_data)
 {
     GtkWidget *current;
+    GlRowEntry *row_entry;
 
     if (before == NULL)
     {
@@ -146,11 +147,16 @@ listbox_update_header_func (GtkListBoxRow *row,
 
     current = gtk_list_box_row_get_header (row);
 
-    if (current == NULL)
+    row_entry = gl_event_view_row_get_entry (GL_EVENT_VIEW_ROW (row));
+
+    if (! (gl_row_entry_get_row_type (row_entry) == GL_ROW_ENTRY_TYPE_COMPRESSED))
     {
-        current = gtk_separator_new (GTK_ORIENTATION_HORIZONTAL);
-        gtk_widget_show (current);
-        gtk_list_box_row_set_header (row, current);
+        if (current == NULL)
+        {
+            current = gtk_separator_new (GTK_ORIENTATION_HORIZONTAL);
+            gtk_widget_show (current);
+            gtk_list_box_row_set_header (row, current);
+        }
     }
 }
 
@@ -162,30 +168,71 @@ on_listbox_row_activated (GtkListBox *listbox,
                           GlEventViewList *view)
 {
     GlEventViewListPrivate *priv;
-    GtkWidget *toplevel;
 
     priv = gl_event_view_list_get_instance_private (view);
     priv->entry = gl_event_view_row_get_entry (GL_EVENT_VIEW_ROW (row));
 
-    toplevel = gtk_widget_get_toplevel (GTK_WIDGET (view));
-
-    if (gtk_widget_is_toplevel (toplevel))
+    if (gl_row_entry_get_row_type (priv->entry) == GL_ROW_ENTRY_TYPE_HEADER)
     {
-        GAction *mode;
-        GEnumClass *eclass;
-        GEnumValue *evalue;
+        guint compressed_entries;
+        gint header_row_index;
+        gint index;
 
-        mode = g_action_map_lookup_action (G_ACTION_MAP (toplevel), "view-mode");
-        eclass = g_type_class_ref (GL_TYPE_EVENT_VIEW_MODE);
-        evalue = g_enum_get_value (eclass, GL_EVENT_VIEW_MODE_DETAIL);
+        compressed_entries = gl_row_entry_get_compressed_entries (priv->entry);
+        header_row_index = gtk_list_box_row_get_index (row);
 
-        g_action_activate (mode, g_variant_new_string (evalue->value_nick));
+        for (index = header_row_index + 1; compressed_entries != 0; index++)
+        {
+            GtkListBoxRow *compressed_row;
+            GtkStyleContext *context;
 
-        g_type_class_unref (eclass);
+            compressed_row = gtk_list_box_get_row_at_index (GTK_LIST_BOX (priv->entries_box),
+                                                            index);
+
+            context = gtk_widget_get_style_context (GTK_WIDGET (compressed_row));
+            gtk_style_context_add_class (context, "compressed-row");
+
+            context = gtk_widget_get_style_context (GTK_WIDGET (row));
+
+            /* Toggle the visibility */
+            if (gtk_widget_get_visible (GTK_WIDGET (compressed_row)))
+            {
+                gtk_widget_hide (GTK_WIDGET (compressed_row));
+                gtk_style_context_remove_class (context, "compressed-row-header");
+            }
+            else
+            {
+                gtk_widget_show (GTK_WIDGET (compressed_row));
+                gtk_style_context_add_class (context, "compressed-row-header");
+            }
+
+            compressed_entries--;
+        }
     }
     else
     {
-        g_debug ("Widget not in toplevel window, not switching toolbar mode");
+        GtkWidget *toplevel;
+
+        toplevel = gtk_widget_get_toplevel (GTK_WIDGET (view));
+
+        if (gtk_widget_is_toplevel (toplevel))
+        {
+            GAction *mode;
+            GEnumClass *eclass;
+            GEnumValue *evalue;
+
+            mode = g_action_map_lookup_action (G_ACTION_MAP (toplevel), "view-mode");
+            eclass = g_type_class_ref (GL_TYPE_EVENT_VIEW_MODE);
+            evalue = g_enum_get_value (eclass, GL_EVENT_VIEW_MODE_DETAIL);
+
+            g_action_activate (mode, g_variant_new_string (evalue->value_nick));
+
+            g_type_class_unref (eclass);
+        }
+        else
+        {
+            g_debug ("Widget not in toplevel window, not switching toolbar mode");
+        }
     }
 }
 
@@ -308,7 +355,6 @@ gl_event_list_view_create_row_widget (gpointer item,
                                       gpointer user_data)
 {
     GtkWidget *rtn;
-    GtkWidget *message_label;
     GtkWidget *time_label;
     GlCategoryList *list;
     GlCategoryListFilter filter;
@@ -338,11 +384,8 @@ gl_event_list_view_create_row_widget (gpointer item,
                                      GL_EVENT_VIEW_ROW_CATEGORY_NONE);
     }
 
-    message_label = gl_event_view_row_get_message_label (GL_EVENT_VIEW_ROW (rtn));
     time_label = gl_event_view_row_get_time_label (GL_EVENT_VIEW_ROW (rtn));
 
-    gtk_size_group_add_widget (GTK_SIZE_GROUP (priv->message_sizegroup),
-                               message_label);
     gtk_size_group_add_widget (GTK_SIZE_GROUP (priv->time_sizegroup),
                                time_label);
 
