@@ -27,6 +27,19 @@ typedef struct GlQueryItem
     GlQuerySearchType search_type;
 } GlQueryItem;
 
+struct _GlRowEntry
+{
+    GObject parent_instance;
+
+    GlJournalEntry *journal_entry;
+    GlRowEntryType row_type;
+
+    /* Number of compressed entries represented by
+     * a compressed entries header
+     */
+    guint compressed_entries;
+};
+
 struct _GlJournalModel
 {
     GObject parent_instance;
@@ -48,6 +61,8 @@ static void gl_journal_model_interface_init (GListModelInterface *iface);
 static GPtrArray *tokenize_search_string (gchar *search_text);
 static gboolean search_in_entry (GlJournalEntry *entry, GlJournalModel *model);
 static gboolean gl_query_check_journal_end (GlQuery *query, GlJournalEntry *entry);
+
+G_DEFINE_TYPE (GlRowEntry, gl_row_entry, G_TYPE_OBJECT);
 
 G_DEFINE_TYPE_WITH_CODE (GlJournalModel, gl_journal_model, G_TYPE_OBJECT,
                          G_IMPLEMENT_INTERFACE (G_TYPE_LIST_MODEL, gl_journal_model_interface_init))
@@ -1043,4 +1058,56 @@ gl_journal_model_fetch_more_entries (GlJournalModel *model,
         model->idle_source = g_idle_add_full (G_PRIORITY_LOW, gl_journal_model_fetch_idle, model, NULL);
         g_object_notify_by_pspec (G_OBJECT (model), properties[PROP_LOADING]);
     }
+}
+
+GlRowEntry *
+gl_row_entry_new (void)
+{
+    return g_object_new (GL_TYPE_ROW_ENTRY, NULL);
+}
+
+GlJournalEntry *
+gl_row_entry_get_journal_entry (GlRowEntry *entry)
+{
+    g_return_val_if_fail (GL_IS_ROW_ENTRY (entry), NULL);
+
+    return entry->journal_entry;
+}
+
+GlRowEntryType
+gl_row_entry_get_row_type (GlRowEntry *entry)
+{
+    return entry->row_type;
+}
+
+guint
+gl_row_entry_get_compressed_entries (GlRowEntry *entry)
+{
+    return entry->compressed_entries;
+}
+
+static void
+gl_row_entry_init (GlRowEntry *entry)
+{
+    entry->journal_entry = NULL;
+    entry->row_type = GL_ROW_ENTRY_TYPE_UNCOMPRESSED;
+    entry->compressed_entries = 0;
+}
+
+static void
+gl_row_entry_finalize (GObject *object)
+{
+  GlRowEntry *row_entry = GL_ROW_ENTRY (object);
+
+  g_clear_object (&row_entry->journal_entry);
+
+  G_OBJECT_CLASS (gl_row_entry_parent_class)->finalize (object);
+}
+
+static void
+gl_row_entry_class_init (GlRowEntryClass *class)
+{
+  GObjectClass *object_class = G_OBJECT_CLASS (class);
+
+  object_class->finalize = gl_row_entry_finalize;
 }

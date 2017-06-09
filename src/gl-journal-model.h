@@ -22,12 +22,20 @@
 #include <gio/gio.h>
 
 #include "gl-application.h"
+#include "gl-journal.h"
 
 typedef enum
 {
     GL_QUERY_SEARCH_TYPE_SUBSTRING,
     GL_QUERY_SEARCH_TYPE_EXACT
 } GlQuerySearchType;
+
+typedef enum
+{
+    GL_ROW_ENTRY_TYPE_UNCOMPRESSED,
+    GL_ROW_ENTRY_TYPE_COMPRESSED,
+    GL_ROW_ENTRY_TYPE_HEADER
+} GlRowEntryType;
 
 /* Resultant query passed to journal model from eventviewlist */
 typedef struct GlQuery
@@ -39,12 +47,17 @@ typedef struct GlQuery
     guint64 end_timestamp;
 } GlQuery;
 
+#define GL_TYPE_ROW_ENTRY gl_row_entry_get_type()
+G_DECLARE_FINAL_TYPE (GlRowEntry, gl_row_entry, GL, ROW_ENTRY, GObject)
+
 #define GL_TYPE_JOURNAL_MODEL gl_journal_model_get_type()
 G_DECLARE_FINAL_TYPE (GlJournalModel, gl_journal_model, GL, JOURNAL_MODEL, GObject)
 
 GlJournalModel *        gl_journal_model_new                            (void);
 
 GlQuery *               gl_query_new                                    (void);
+
+GlRowEntry *            gl_row_entry_new                                (void);
 
 void                    gl_journal_model_take_query                     (GlJournalModel *model,
                                                                          GlQuery *query);
@@ -76,5 +89,11 @@ void                    gl_query_set_search_type                        (GlQuery
 
 void                    gl_query_set_sort_order                         (GlQuery *query,
                                                                          GlSortOrder order);
+
+GlJournalEntry *        gl_row_entry_get_journal_entry                  (GlRowEntry *entry);
+
+GlRowEntryType          gl_row_entry_get_row_type                       (GlRowEntry *entry);
+
+guint                   gl_row_entry_get_compressed_entries             (GlRowEntry *entry);
 
 #endif
