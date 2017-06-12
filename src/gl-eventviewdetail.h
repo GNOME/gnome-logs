@@ -28,7 +28,7 @@ G_BEGIN_DECLS
 #include "gl-util.h"
 
 #define GL_TYPE_EVENT_VIEW_DETAIL (gl_event_view_detail_get_type ())
-G_DECLARE_FINAL_TYPE (GlEventViewDetail, gl_event_view_detail, GL, EVENT_VIEW_DETAIL, GtkBin)
+G_DECLARE_FINAL_TYPE (GlEventViewDetail, gl_event_view_detail, GL, EVENT_VIEW_DETAIL, GtkPopover)
 
 GtkWidget * gl_event_view_detail_new (GlRowEntry *result, GlUtilClockFormat clock_format);
 

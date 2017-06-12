@@ -1,70 +1,58 @@
 <interface domain="gnome-logs">
-    <template class="GlEventViewDetail" parent="GtkBin">
-        <property name="visible">True</property>
+    <template class="GlEventViewDetail" parent="GtkPopover">
+        <!-- The popover size is set such that it does not go beyond the window -->
+         <property name="width-request">600</property>
+         <property name="height-request">300</property>
+         <property name="can_focus">False</property>
         <child>
             <object class="GtkScrolledWindow">
                 <property name="visible">True</property>
-                <property name="expand">True</property>
+                <property name="hexpand">True</property>
+                <property name="vexpand">True</property>
+                <property name="can_focus">False</property>
                 <child>
                     <object class="GtkGrid" id="grid">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <child>
-                            <object class="GtkBox" id="top_box">
-                                <property name="visible">True</property>
+                            <object class="GtkLabel" id="comm_field_label">
+                                <property name="visible">False</property>
                                 <property name="can_focus">False</property>
-                                <child>
-                                    <object class="GtkBox" id="comm_box">
-                                        <property name="visible">True</property>
-                                        <property name="can_focus">False</property>
-                                        <property name="spacing">12</property>
-                                        <child>
-                                            <object class="GtkImage" id="comm_image">
-                                                <property name="visible">False</property>
-                                                <property name="no_show_all">True</property>
-                                                <property name="can_focus">False</property>
-                                            </object>
-                                        </child>
-                                        <child>
-                                            <object class="GtkLabel" id="comm_label">
-                                                <property name="visible">True</property>
-                                                <property name="can_focus">False</property>
-                                                <property name="halign">start</property>
-                                                <style>
-                                                    <class name="detail-comm"/>
-                                                </style>
-                                            </object>
-                                            <packing>
-                                                <property name="pack_type">end</property>
-                                            </packing>
-                                        </child>
-                                    </object>
-                                </child>
-                                <child>
-                                    <object class="GtkLabel" id="time_label">
-                                        <property name="visible">True</property>
-                                        <property name="can_focus">False</property>
-                                        <property name="halign">end</property>
-                                        <property name="hexpand">True</property>
-                                        <property name="selectable">True</property>
-                                        <style>
-                                            <class name="detail-time"/>
-                                        </style>
-                                    </object>
-                                </child>
+                                <property name="halign">end</property>
+                                <property name="label" translatable="yes">Sender</property>
+                                <style>
+                                    <class name="detail-field-label"/>
+                                    <class name="dim-label"/>
+                                </style>
                             </object>
                             <packing>
                                 <property name="left_attach">0</property>
                                 <property name="top_attach">0</property>
-                                <property name="width">2</property>
                             </packing>
                         </child>
                         <child>
-                            <object class="GtkLabel" id="message_field_label">
+                            <object class="GtkLabel" id="comm_label">
+                                <property name="visible">False</property>
+                                <property name="can_focus">False</property>
+                                <property name="halign">start</property>
+                                <property name="hexpand">True</property>
+                                <property name="selectable">True</property>
+                                <style>
+                                    <class name="detail-comm"/>
+                                    <class name="event-monospace"/>
+                                </style>
+                            </object>
+                            <packing>
+                                <property name="left_attach">1</property>
+                                <property name="top_attach">0</property>
+                            </packing>
+                        </child>
+                        <child>
+                            <object class="GtkLabel" id="time_field_label">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="halign">end</property>
-                                <property name="label" translatable="yes">Message</property>
+                                <property name="label" translatable="yes">Time</property>
                                 <style>
                                     <class name="detail-field-label"/>
                                     <class name="dim-label"/>
@@ -76,21 +64,56 @@
                             </packing>
                         </child>
                         <child>
-                            <object class="GtkLabel" id="message_label">
+                            <object class="GtkLabel" id="time_label">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="halign">start</property>
                                 <property name="hexpand">True</property>
-                                <property name="wrap">True</property>
                                 <property name="selectable">True</property>
                                 <style>
-                                    <class name="detail-message"/>
-                                    <class name="event-monospace"/>
+                                    <class name="detail-time"/>
                                 </style>
                             </object>
                             <packing>
                                 <property name="left_attach">1</property>
                                 <property name="top_attach">1</property>
+                            </packing>
+                        </child>
+                        <child>
+                            <object class="GtkLabel" id="message_field_label">
+                                <property name="visible">True</property>
+                                <property name="no_show_all">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="halign">end</property>
+                                <property name="valign">baseline</property>
+                                <property name="label" translatable="yes">Message</property>
+                                <style>
+                                    <class name="detail-field-label"/>
+                                    <class name="dim-label"/>
+                                </style>
+                            </object>
+                            <packing>
+                                <property name="left_attach">0</property>
+                                <property name="top_attach">2</property>
+                            </packing>
+                        </child>
+                        <child>
+                            <object class="GtkLabel" id="message_label">
+                                <property name="visible">True</property>
+                                <property name="no_show_all">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="halign">start</property>
+                                <property name="valign">baseline</property>
+                                <property name="selectable">True</property>
+                                <property name="wrap">True</property>
+                                <property name="xalign">0</property>
+                                <style>
+                                    <class name="detail-message"/>
+                                </style>
+                            </object>
+                            <packing>
+                                <property name="left_attach">1</property>
+                                <property name="top_attach">2</property>
                             </packing>
                         </child>
                         <child>
@@ -107,7 +130,7 @@
                             </object>
                             <packing>
                                 <property name="left_attach">0</property>
-                                <property name="top_attach">2</property>
+                                <property name="top_attach">3</property>
                             </packing>
                         </child>
                         <child>
@@ -118,12 +141,12 @@
                                 <property name="halign">start</property>
                                 <property name="selectable">True</property>
                                 <style>
-                                    <class name="detail-kernel_device"/>
+                                    <class name="detail-audit_session"/>
                                 </style>
                             </object>
                             <packing>
                                 <property name="left_attach">1</property>
-                                <property name="top_attach">2</property>
+                                <property name="top_attach">3</property>
                             </packing>
                         </child>
                         <child>
@@ -140,7 +163,7 @@
                             </object>
                             <packing>
                                 <property name="left_attach">0</property>
-                                <property name="top_attach">3</property>
+                                <property name="top_attach">4</property>
                             </packing>
                         </child>
                         <child>
@@ -156,12 +179,13 @@
                             </object>
                             <packing>
                                 <property name="left_attach">1</property>
-                                <property name="top_attach">3</property>
+                                <property name="top_attach">4</property>
                             </packing>
                         </child>
                         <child>
                             <object class="GtkLabel" id="priority_field_label">
                                 <property name="visible">True</property>
+                                <property name="no_show_all">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="halign">end</property>
                                 <property name="label" translatable="yes">Priority</property>
@@ -172,12 +196,13 @@
                             </object>
                             <packing>
                                 <property name="left_attach">0</property>
-                                <property name="top_attach">4</property>
+                                <property name="top_attach">5</property>
                             </packing>
                         </child>
                         <child>
                             <object class="GtkLabel" id="priority_label">
                                 <property name="visible">True</property>
+                                <property name="no_show_all">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="halign">start</property>
                                 <property name="selectable">True</property>
@@ -187,7 +212,7 @@
                             </object>
                             <packing>
                                 <property name="left_attach">1</property>
-                                <property name="top_attach">4</property>
+                                <property name="top_attach">5</property>
                             </packing>
                         </child>
                         <child>
@@ -196,6 +221,7 @@
                                 <property name="no_show_all">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="halign">end</property>
+                                <property name="valign">baseline</property>
                                 <property name="label" translatable="yes">Subject</property>
                                 <style>
                                     <class name="detail-field-label"/>
@@ -204,7 +230,7 @@
                             </object>
                             <packing>
                                 <property name="left_attach">0</property>
-                                <property name="top_attach">5</property>
+                                <property name="top_attach">6</property>
                             </packing>
                         </child>
                         <child>
@@ -213,7 +239,10 @@
                                 <property name="no_show_all">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="halign">start</property>
+                                <property name="valign">baseline</property>
                                 <property name="selectable">True</property>
+                                <property name="wrap">True</property>
+                                <property name="xalign">0</property>
                                 <style>
                                     <class name="detail-subject"/>
                                     <class name="event-monospace"/>
@@ -221,7 +250,7 @@
                             </object>
                             <packing>
                                 <property name="left_attach">1</property>
-                                <property name="top_attach">5</property>
+                                <property name="top_attach">6</property>
                             </packing>
                         </child>
                         <child>
@@ -238,7 +267,7 @@
                             </object>
                             <packing>
                                 <property name="left_attach">0</property>
-                                <property name="top_attach">6</property>
+                                <property name="top_attach">7</property>
                             </packing>
                         </child>
                         <child>
@@ -255,7 +284,7 @@
                             </object>
                             <packing>
                                 <property name="left_attach">1</property>
-                                <property name="top_attach">6</property>
+                                <property name="top_attach">7</property>
                             </packing>
                         </child>
                         <child>
@@ -264,6 +293,7 @@
                                 <property name="no_show_all">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="halign">end</property>
+                                <property name="valign">baseline</property>
                                 <property name="label" translatable="yes">Support</property>
                                 <style>
                                     <class name="detail-field-label"/>
@@ -272,7 +302,7 @@
                             </object>
                             <packing>
                                 <property name="left_attach">0</property>
-                                <property name="top_attach">7</property>
+                                <property name="top_attach">8</property>
                             </packing>
                         </child>
                         <child>
@@ -281,7 +311,10 @@
                                 <property name="no_show_all">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="halign">start</property>
+                                <property name="valign">baseline</property>
                                 <property name="selectable">True</property>
+                                <property name="wrap">True</property>
+                                <property name="xalign">0</property>
                                 <style>
                                     <class name="detail-support"/>
                                     <class name="event-monospace"/>
@@ -289,7 +322,7 @@
                             </object>
                             <packing>
                                 <property name="left_attach">1</property>
-                                <property name="top_attach">7</property>
+                                <property name="top_attach">8</property>
                             </packing>
                         </child>
                         <child>
@@ -306,9 +339,9 @@
                             </object>
                             <packing>
                                 <property name="left_attach">0</property>
-                                <property name="top_attach">8</property>
+                                <property name="top_attach">9</property>
                             </packing>
-		                </child>
+                        </child>
                         <child>
                             <object class="GtkLabel" id="documentation_label">
                                 <property name="visible">False</property>
@@ -323,7 +356,7 @@
                             </object>
                             <packing>
                                 <property name="left_attach">1</property>
-                                <property name="top_attach">8</property>
+                                <property name="top_attach">9</property>
                             </packing>
                         </child>
                         <child>
@@ -332,13 +365,14 @@
                                 <property name="can_focus">False</property>
                                 <property name="halign">start</property>
                                 <property name="selectable">True</property>
+                                <property name="wrap">True</property>
                                 <style>
                                     <class name="detail-message"/>
                                 </style>
                             </object>
                             <packing>
                                 <property name="left_attach">0</property>
-                                <property name="top_attach">9</property>
+                                <property name="top_attach">10</property>
                                 <property name="width">2</property>
                             </packing>
                         </child>

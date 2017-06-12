@@ -34,7 +34,7 @@ enum
 struct _GlEventViewDetail
 {
     /*< private >*/
-    GtkBin parent_instance;
+    GtkPopover parent_instance;
 };
 
 typedef struct
@@ -42,7 +42,7 @@ typedef struct
     GlRowEntry *entry;
     GlUtilClockFormat clock_format;
     GtkWidget *grid;
-    GtkWidget *comm_image;
+    GtkWidget *comm_field_label;
     GtkWidget *comm_label;
     GtkWidget *time_label;
     GtkWidget *message_label;
@@ -62,7 +62,7 @@ typedef struct
     GtkWidget *detailed_message_label;
 } GlEventViewDetailPrivate;
 
-G_DEFINE_TYPE_WITH_PRIVATE (GlEventViewDetail, gl_event_view_detail, GTK_TYPE_BIN)
+G_DEFINE_TYPE_WITH_PRIVATE (GlEventViewDetail, gl_event_view_detail, GTK_TYPE_POPOVER)
 
 static GParamSpec *obj_properties[N_PROPERTIES] = { NULL, };
 
@@ -97,31 +97,9 @@ gl_event_view_detail_create_detail (GlEventViewDetail *detail)
 
     if (gl_journal_entry_get_command_line (entry))
     {
-        /* Command-line, look for a desktop file. */
-        GDesktopAppInfo *desktop;
-
-        /* TODO: Use g_desktop_app_info_search? */
-        str = g_strconcat (gl_journal_entry_get_command_line (entry), ".desktop", NULL);
-        desktop = g_desktop_app_info_new (str);
-        g_free (str);
-
-        if (desktop)
-        {
-            GIcon *icon;
-
-            icon = g_app_info_get_icon (G_APP_INFO (desktop));
-            gtk_image_set_from_gicon (GTK_IMAGE (priv->comm_image),
-                                      icon, GTK_ICON_SIZE_DIALOG);
-            gtk_widget_show (priv->comm_image);
-            gtk_label_set_text (GTK_LABEL (priv->comm_label),
-                                g_app_info_get_name (G_APP_INFO (desktop)));
-
-            g_object_unref (desktop);
-        }
-        else
-        {
-            gtk_label_set_text (GTK_LABEL (priv->comm_label), gl_journal_entry_get_command_line (entry));
-        }
+        gtk_label_set_text (GTK_LABEL (priv->comm_label), gl_journal_entry_get_command_line (entry));
+        gtk_widget_show (priv->comm_field_label);
+        gtk_widget_show (priv->comm_label);
     }
 
     now = g_date_time_new_now_local ();
@@ -443,7 +421,7 @@ gl_event_view_detail_class_init (GlEventViewDetailClass *klass)
     gtk_widget_class_bind_template_child_private (widget_class, GlEventViewDetail,
                                                   grid);
     gtk_widget_class_bind_template_child_private (widget_class, GlEventViewDetail,
-                                                  comm_image);
+                                                  comm_field_label);
     gtk_widget_class_bind_template_child_private (widget_class, GlEventViewDetail,
                                                   comm_label);
     gtk_widget_class_bind_template_child_private (widget_class, GlEventViewDetail,

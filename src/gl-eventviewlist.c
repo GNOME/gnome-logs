@@ -211,28 +211,12 @@ on_listbox_row_activated (GtkListBox *listbox,
     }
     else
     {
-        GtkWidget *toplevel;
+        GtkWidget *event_detail_popover;
 
-        toplevel = gtk_widget_get_toplevel (GTK_WIDGET (view));
+        event_detail_popover = gl_event_view_detail_new (priv->entry, priv->clock_format);
+        gtk_popover_set_relative_to (GTK_POPOVER (event_detail_popover), GTK_WIDGET (row));
 
-        if (gtk_widget_is_toplevel (toplevel))
-        {
-            GAction *mode;
-            GEnumClass *eclass;
-            GEnumValue *evalue;
-
-            mode = g_action_map_lookup_action (G_ACTION_MAP (toplevel), "view-mode");
-            eclass = g_type_class_ref (GL_TYPE_EVENT_VIEW_MODE);
-            evalue = g_enum_get_value (eclass, GL_EVENT_VIEW_MODE_DETAIL);
-
-            g_action_activate (mode, g_variant_new_string (evalue->value_nick));
-
-            g_type_class_unref (eclass);
-        }
-        else
-        {
-            g_debug ("Widget not in toplevel window, not switching toolbar mode");
-        }
+        gtk_widget_show (event_detail_popover);
     }
 }
 

@@ -8,12 +8,7 @@
     padding-right: 30px;
 }
 
-.detail-comm {
-    font-weight: bold;
-    padding: 10px;
-}
-
-.detail-audit_session, .detail-kernel_device, .detail-message, .detail-priority, .detail-time, .detail-subject, .detail-definedby, .detail-support, .detail-documentation, .detail-message {
+.detail-comm, .detail-audit_session, .detail-kernel_device, .detail-message, .detail-priority, .detail-time, .detail-subject, .detail-definedby, .detail-support, .detail-documentation {
     padding: 10px;
 }
 

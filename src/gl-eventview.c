@@ -173,50 +173,6 @@ gl_event_view_set_sort_order (GlEventView *view,
 }
 
 static void
-on_notify_mode (GlEventView *view,
-                GParamSpec *pspec,
-                gpointer user_data)
-{
-    GlEventViewPrivate *priv;
-    GtkStack *stack;
-    GtkWidget *detail;
-
-    priv = gl_event_view_get_instance_private (view);
-    stack = GTK_STACK (view);
-
-    switch (priv->mode)
-    {
-        case GL_EVENT_VIEW_MODE_LIST:
-            {
-                GtkWidget *child;
-
-                child = gtk_stack_get_child_by_name (stack, "detail");
-
-                if (child)
-                {
-                    gtk_container_remove (GTK_CONTAINER (stack), child);
-                }
-
-                gtk_stack_set_visible_child (stack, priv->events);
-            }
-            break;
-        case GL_EVENT_VIEW_MODE_DETAIL:
-            {
-                gl_event_view_show_detail (view);
-                detail = gl_event_view_detail_new (priv->entry,
-                                                   priv->clock_format);
-                gtk_widget_show_all (detail);
-                gtk_stack_add_named (stack, detail, "detail");
-                gtk_stack_set_visible_child_name (stack, "detail");
-            }
-            break;
-        default:
-            g_assert_not_reached ();
-            break;
-    }
-}
-
-static void
 gl_event_view_get_property (GObject *object,
                             guint prop_id,
                             GValue *value,
@@ -296,9 +252,6 @@ gl_event_view_init (GlEventView *view)
     priv->clock_format = g_settings_get_enum (settings, CLOCK_FORMAT);
 
     g_object_unref (settings);
-
-    g_signal_connect (view, "notify::mode", G_CALLBACK (on_notify_mode),
-                      NULL);
 }
 
 void
