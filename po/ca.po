@@ -127,7 +127,7 @@ msgstr "Què"
 
 #: ../data/gl-searchpopover.ui.h:5
 msgid "Select Journal Field…"
-msgstr "Seleccionant diari de camp..."
+msgstr "Seleccioneu diari de camp..."
 
 #. When [log entries to be shown for a given timestamp range]
 #: ../data/gl-searchpopover.ui.h:7
@@ -136,7 +136,7 @@ msgstr "Quan"
 
 #: ../data/gl-searchpopover.ui.h:8
 msgid "Show Logs from…"
-msgstr "Mostra el Logs des de..."
+msgstr "Mostra els registres des de..."
 
 #: ../data/gl-searchpopover.ui.h:9
 msgid "Select Timestamp Range of the Log Entries to be shown"
@@ -182,7 +182,7 @@ msgstr "Seleccioneu una data d'inici"
 
 #: ../data/gl-searchpopover.ui.h:19 ../src/gl-searchpopover.c:503
 msgid "Select Start Date…"
-msgstr "Seleccionant una data d'inici..."
+msgstr "Seleccioneu una data d'inici..."
 
 #: ../data/gl-searchpopover.ui.h:20
 msgid "22 January 2016 or 1/22/2016"
@@ -194,7 +194,7 @@ msgstr "Seleccioneu hora d'inici"
 
 #: ../data/gl-searchpopover.ui.h:22 ../src/gl-searchpopover.c:504
 msgid "Select Start Time…"
-msgstr "Seleccionant hora d'inici..."
+msgstr "Seleccioneu hora d'inici..."
 
 #: ../data/gl-searchpopover.ui.h:23
 msgid "Hr"
@@ -278,7 +278,7 @@ msgstr "La totalitat del diari"
 
 #: ../data/gl-searchpopover.ui.h:46
 msgid "Set Custom Range…"
-msgstr "Personalitzant l'abast de l'ajust..."
+msgstr "Estableix interval personalitzat..."
 
 #: ../data/gl-window.ui.h:1
 msgid "Help"
@@ -292,7 +292,7 @@ msgstr "General"
 #: ../data/help-overlay.ui.h:2
 msgctxt "shortcut window"
 msgid "Open a new window"
-msgstr "Obre una nova finestra"
+msgstr "Obre una finestra nova"
 
 #: ../data/help-overlay.ui.h:3
 msgctxt "shortcut window"
@@ -319,7 +319,7 @@ msgstr "_Ajuda"
 
 #: ../data/menus.ui.h:3
 msgid "Keyboard Shortcuts"
-msgstr "Accés directe al teclat"
+msgstr "Dreceres de teclat"
 
 #: ../data/menus.ui.h:4
 msgid "_About"
@@ -343,7 +343,7 @@ msgid ""
 "Logs shows events from the systemd journal, and sorts them into categories, "
 "such as hardware and applications."
 msgstr ""
-"Logs mostra els esdeveniments del diari systemd i els ordena per categories "
+"El Registres mostra els esdeveniments del diari systemd i els ordena per categories "
 "com el maquinari i les aplicacions."
 
 #: ../data/org.gnome.Logs.appdata.xml.in.h:4
@@ -588,11 +588,11 @@ msgstr "No s'ha pogut exportar els missatges del registre a un fitxer"
 
 #: ../src/gl-window.c:474 ../src/gl-window.c:505
 msgid "Unable to read system logs"
-msgstr "No s'ha pogut llegir els registres del sistema"
+msgstr "No s'han pogut llegir els registres del sistema"
 
 #: ../src/gl-window.c:488
 msgid "Unable to read user logs"
-msgstr "No s'ha pogut llegir els registres d'usuari"
+msgstr "No s'han pogut llegir els registres d'usuari"
 
 #: ../src/gl-window.c:520
 msgid "No logs available"
