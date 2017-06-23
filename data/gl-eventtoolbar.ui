@@ -4,23 +4,6 @@
         <property name="show-close-button">True</property>
         <property name="visible">True</property>
         <child>
-            <object class="GtkButton" id="back_button">
-                <property name="tooltip-text" translatable="yes">Go back to the event view</property>
-                <property name="valign">center</property>
-                <signal name="clicked" handler="on_gl_event_toolbar_back_button_clicked" object="GlEventToolbar" swapped="yes"/>
-                <style>
-                    <class name="image-button"/>
-                </style>
-                <child>
-                    <object class="GtkImage" id="go_back_icon">
-                        <property name="icon-name">go-previous-symbolic</property>
-                        <property name="icon-size">1</property>
-                        <property name="visible">True</property>
-                    </object>
-                </child>
-            </object>
-        </child>
-        <child>
             <object class="GtkButton" id="output_button">
                 <property name="action-name">win.export</property>
                 <property name="tooltip-text" translatable="yes">Export logs to a file</property>

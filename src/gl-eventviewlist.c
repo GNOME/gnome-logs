@@ -25,7 +25,6 @@
 #include "gl-categorylist.h"
 #include "gl-enums.h"
 #include "gl-eventtoolbar.h"
-#include "gl-eventview.h"
 #include "gl-eventviewdetail.h"
 #include "gl-eventviewrow.h"
 #include "gl-journal-model.h"

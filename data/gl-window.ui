@@ -41,7 +41,7 @@
                     </object>
                 </child>
                 <child>
-                    <object class="GlEventView" id="event">
+                    <object class="GlEventViewList" id="event_list">
                         <property name="visible">True</property>
                     </object>
                 </child>

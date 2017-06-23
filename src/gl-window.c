@@ -22,7 +22,6 @@
 
 #include "gl-categorylist.h"
 #include "gl-eventtoolbar.h"
-#include "gl-eventview.h"
 #include "gl-eventviewlist.h"
 #include "gl-enums.h"
 #include "gl-util.h"
@@ -36,7 +35,7 @@ struct _GlWindow
 typedef struct
 {
     GtkWidget *event_toolbar;
-    GtkWidget *event;
+    GtkWidget *event_list;
     GtkWidget *info_bar;
 } GlWindowPrivate;
 
@@ -77,89 +76,19 @@ on_close (GSimpleAction *action,
 }
 
 static void
-on_toolbar_mode (GSimpleAction *action,
-                 GVariant *variant,
-                 gpointer user_data)
-{
-    GlWindowPrivate *priv;
-    const gchar *mode;
-    GEnumClass *eclass;
-    GEnumValue *evalue;
-    GAction *search;
-
-    priv = gl_window_get_instance_private (GL_WINDOW (user_data));
-    mode = g_variant_get_string (variant, NULL);
-    eclass = g_type_class_ref (GL_TYPE_EVENT_TOOLBAR_MODE);
-    evalue = g_enum_get_value_by_nick (eclass, mode);
-    search = g_action_map_lookup_action (G_ACTION_MAP (user_data), "search");
-
-    if (evalue->value == GL_EVENT_TOOLBAR_MODE_LIST)
-    {
-        /* Switch the event view back to list mode if the back button is
-         * clicked. */
-        GlEventView *view;
-
-        view = GL_EVENT_VIEW (priv->event);
-
-        gl_event_view_set_mode (view, GL_EVENT_VIEW_MODE_LIST);
-
-        g_simple_action_set_enabled (G_SIMPLE_ACTION (search), TRUE);
-    }
-
-    g_simple_action_set_state (action, variant);
-
-    g_type_class_unref (eclass);
-}
-
-static void
-on_view_mode (GSimpleAction *action,
-              GVariant *variant,
-              gpointer user_data)
-{
-    GlWindowPrivate *priv;
-    const gchar *mode;
-    GlEventToolbar *toolbar;
-    GlEventView *event;
-    GEnumClass *eclass;
-    GEnumValue *evalue;
-
-    priv = gl_window_get_instance_private (GL_WINDOW (user_data));
-    mode = g_variant_get_string (variant, NULL);
-    event = GL_EVENT_VIEW (priv->event);
-    toolbar = GL_EVENT_TOOLBAR (priv->event_toolbar);
-    eclass = g_type_class_ref (GL_TYPE_EVENT_VIEW_MODE);
-    evalue = g_enum_get_value_by_nick (eclass, mode);
-
-    switch (evalue->value)
-    {
-        case GL_EVENT_VIEW_MODE_LIST:
-            gl_event_toolbar_set_mode (toolbar, GL_EVENT_TOOLBAR_MODE_LIST);
-            break;
-        case GL_EVENT_VIEW_MODE_DETAIL:
-            gl_event_toolbar_set_mode (toolbar, GL_EVENT_TOOLBAR_MODE_DETAIL);
-            gl_event_view_set_mode (event, GL_EVENT_VIEW_MODE_DETAIL);
-            break;
-    }
-
-    g_simple_action_set_state (action, variant);
-
-    g_type_class_unref (eclass);
-}
-
-static void
 on_search (GSimpleAction *action,
            GVariant *variant,
            gpointer user_data)
 {
     gboolean state;
     GlWindowPrivate *priv;
-    GlEventView *view;
+    GlEventViewList *event_list;
 
     state = g_variant_get_boolean (variant);
     priv = gl_window_get_instance_private (GL_WINDOW (user_data));
-    view = GL_EVENT_VIEW (priv->event);
+    event_list = GL_EVENT_VIEW_LIST (priv->event_list);
 
-    gl_event_view_set_search_mode (view, state);
+    gl_event_view_list_set_search_mode (event_list, state);
 
     g_simple_action_set_state (action, variant);
 }
@@ -170,13 +99,13 @@ on_export (GSimpleAction *action,
            gpointer user_data)
 {
     GlWindowPrivate *priv;
-    GlEventView *event;
+    GlEventViewList *event_list;
     GtkFileChooser *file_chooser;
     GtkWidget *dialog;
     gint res;
 
     priv = gl_window_get_instance_private (GL_WINDOW (user_data));
-    event = GL_EVENT_VIEW (priv->event);
+    event_list = GL_EVENT_VIEW_LIST (priv->event_list);
 
     dialog = gtk_file_chooser_dialog_new (_("Save logs"),
                                           GTK_WINDOW (user_data),
@@ -199,7 +128,7 @@ on_export (GSimpleAction *action,
         GError *error = NULL;
         GtkWidget *error_dialog;
 
-        file_content = gl_event_view_get_output_logs (event);
+        file_content = gl_event_view_list_get_output_logs (event_list);
         output_file = gtk_file_chooser_get_file (file_chooser);
         file_ostream = g_file_replace (output_file, NULL, TRUE,
                                        G_FILE_CREATE_NONE, NULL, &error);
@@ -259,20 +188,20 @@ on_view_boot (GSimpleAction *action,
               gpointer user_data)
 {
     GlWindowPrivate *priv;
-    GlEventView *event;
+    GlEventViewList *event_list;
     GlEventToolbar *toolbar;
     gchar *current_boot;
     const gchar *boot_match;
 
     priv = gl_window_get_instance_private (GL_WINDOW (user_data));
-    event = GL_EVENT_VIEW (priv->event);
+    event_list = GL_EVENT_VIEW_LIST (priv->event_list);
     toolbar = GL_EVENT_TOOLBAR (priv->event_toolbar);
 
     boot_match = g_variant_get_string (variant, NULL);
 
-    gl_event_view_view_boot (event, boot_match);
+    gl_event_view_list_view_boot (event_list, boot_match);
 
-    current_boot = gl_event_view_get_boot_time (event, boot_match);
+    current_boot = gl_event_view_list_get_boot_time (event_list, boot_match);
     if (current_boot == NULL)
     {
         g_debug ("Error fetching the time using boot_match");
@@ -291,51 +220,17 @@ on_gl_window_key_press_event (GlWindow *window,
                               gpointer user_data)
 {
     GlWindowPrivate *priv;
-    GlEventView *view;
+    GlEventViewList *event_list;
     GAction *action;
-    GVariant *variant;
-    const gchar *mode;
-    GEnumClass *eclass;
-    GEnumValue *evalue;
 
     priv = gl_window_get_instance_private (window);
     action = g_action_map_lookup_action (G_ACTION_MAP (window), "search");
-    view = GL_EVENT_VIEW (priv->event);
+    event_list = GL_EVENT_VIEW_LIST (priv->event_list);
 
-    if (gl_event_view_handle_search_event (view, action, event) == GDK_EVENT_STOP)
+    if (gl_event_view_list_handle_search_event (event_list, action, event) == GDK_EVENT_STOP)
     {
         return GDK_EVENT_STOP;
     }
-
-    action = g_action_map_lookup_action (G_ACTION_MAP (window), "view-mode");
-    variant = g_action_get_state (action);
-    mode = g_variant_get_string (variant, NULL);
-    eclass = g_type_class_ref (GL_TYPE_EVENT_VIEW_MODE);
-    evalue = g_enum_get_value_by_nick (eclass, mode);
-
-    g_variant_unref (variant);
-
-    switch (evalue->value)
-    {
-        case GL_EVENT_VIEW_MODE_LIST:
-            break; /* Ignored, as there is no back button. */
-        case GL_EVENT_VIEW_MODE_DETAIL:
-            if (gl_event_toolbar_handle_back_button_event (GL_EVENT_TOOLBAR (priv->event_toolbar),
-                                                           (GdkEventKey*)event)
-                == GDK_EVENT_STOP)
-            {
-                GlEventView *view;
-
-                view = GL_EVENT_VIEW (priv->event);
-                gl_event_view_set_mode (view, GL_EVENT_VIEW_MODE_LIST);
-                g_type_class_unref (eclass);
-
-                return GDK_EVENT_STOP;
-            }
-            break;
-    }
-
-    g_type_class_unref (eclass);
 
     return GDK_EVENT_PROPAGATE;
 }
@@ -369,19 +264,17 @@ gl_window_set_sort_order (GlWindow *window,
                           GlSortOrder sort_order)
 {
     GlWindowPrivate *priv;
-    GlEventView *event;
+    GlEventViewList *event_list;
 
     g_return_if_fail (GL_WINDOW (window));
 
     priv = gl_window_get_instance_private (window);
-    event = GL_EVENT_VIEW (priv->event);
+    event_list = GL_EVENT_VIEW_LIST (priv->event_list);
 
-    gl_event_view_set_sort_order (event, sort_order);
+    gl_event_view_list_set_sort_order (event_list, sort_order);
 }
 
 static GActionEntry actions[] = {
-    { "view-mode", on_action_radio, "s", "'list'", on_view_mode },
-    { "toolbar-mode", on_action_radio, "s", "'list'", on_toolbar_mode },
     { "search", on_action_toggle, NULL, "false", on_search },
     { "view-boot", on_action_radio, "s", "''", on_view_boot },
     { "export", on_export },
@@ -398,7 +291,7 @@ gl_window_class_init (GlWindowClass *klass)
     gtk_widget_class_bind_template_child_private (widget_class, GlWindow,
                                                   event_toolbar);
     gtk_widget_class_bind_template_child_private (widget_class, GlWindow,
-                                                  event);
+                                                  event_list);
     gtk_widget_class_bind_template_child_private (widget_class, GlWindow,
                                                   info_bar);
 
@@ -415,7 +308,7 @@ gl_window_init (GlWindow *window)
     GdkScreen *screen;
     GlWindowPrivate *priv;
     GlEventToolbar *toolbar;
-    GlEventView *event;
+    GlEventViewList *event_list;
     GAction *action_view_boot;
     GArray *boot_ids;
     GlJournalStorage storage_type;
@@ -426,10 +319,10 @@ gl_window_init (GlWindow *window)
     gtk_widget_init_template (GTK_WIDGET (window));
 
     priv = gl_window_get_instance_private (window);
-    event = GL_EVENT_VIEW (priv->event);
+    event_list = GL_EVENT_VIEW_LIST (priv->event_list);
     toolbar = GL_EVENT_TOOLBAR (priv->event_toolbar);
 
-    boot_ids = gl_event_view_get_boot_ids (event);
+    boot_ids = gl_event_view_list_get_boot_ids (event_list);
 
     g_action_map_add_action_entries (G_ACTION_MAP (window), actions,
                                      G_N_ELEMENTS (actions), window);

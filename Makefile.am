@@ -27,7 +27,6 @@ gnome_logs_SOURCES = \
 	src/gl-application.c \
 	src/gl-categorylist.c \
 	src/gl-eventtoolbar.c \
-	src/gl-eventview.c \
 	src/gl-eventviewdetail.c \
 	src/gl-eventviewlist.c \
 	src/gl-searchpopover.c \
@@ -49,7 +48,6 @@ enum_data = \
 gnome_logs_enum_headers = \
 	$(srcdir)/src/gl-categorylist.h \
 	$(srcdir)/src/gl-eventtoolbar.h \
-	$(srcdir)/src/gl-eventview.h \
 	$(srcdir)/src/gl-eventviewrow.h \
 	$(srcdir)/src/gl-util.h \
 	$(srcdir)/src/gl-searchpopover.h \
@@ -59,7 +57,6 @@ noinst_gnome_logs_headers = \
 	src/gl-application.h \
 	src/gl-categorylist.h \
 	src/gl-eventtoolbar.h \
-	src/gl-eventview.h \
 	src/gl-eventviewdetail.h \
 	src/gl-eventviewlist.h \
 	src/gl-searchpopover.h \

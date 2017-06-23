@@ -2,7 +2,6 @@
 <gresources>
   <gresource prefix='/org/gnome/Logs'>
     <file preprocess='xml-stripblanks'>gl-categorylist.ui</file>
-    <file preprocess='xml-stripblanks'>gl-eventview.ui</file>
     <file preprocess="xml-stripblanks">gl-eventviewlist.ui</file>
     <file preprocess='xml-stripblanks'>gl-eventtoolbar.ui</file>
     <file preprocess='xml-stripblanks'>gl-eventviewdetail.ui</file>

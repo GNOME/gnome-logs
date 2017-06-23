@@ -23,7 +23,6 @@
 
 #include "gl-categorylist.h"
 #include "gl-eventtoolbar.h"
-#include "gl-eventview.h"
 #include "gl-eventviewlist.h"
 #include "gl-util.h"
 #include "gl-window.h"
@@ -214,7 +213,6 @@ gl_application_startup (GApplication *application)
     gl_window_get_type ();
     gl_category_list_get_type ();
     gl_event_toolbar_get_type ();
-    gl_event_view_get_type ();
     gl_event_view_list_get_type ();
 }
 
