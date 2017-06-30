@@ -393,9 +393,6 @@ gl_event_view_row_constructed (GObject *object)
     g_free (time);
     g_object_unref (tmp_entry);
 
-    gtk_widget_set_tooltip_text (GTK_WIDGET (row),
-                                 gl_journal_entry_get_message (entry));
-
     gtk_widget_show_all (GTK_WIDGET (row));
 
     G_OBJECT_CLASS (gl_event_view_row_parent_class)->constructed (object);
