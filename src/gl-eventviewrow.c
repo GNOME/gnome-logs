@@ -108,6 +108,16 @@ gl_event_view_row_get_category_label (GlEventViewRow *row)
     return priv->category_label;
 }
 
+GtkWidget *
+gl_event_view_row_get_time_label (GlEventViewRow *row)
+{
+    GlEventViewRowPrivate *priv;
+
+    priv = gl_event_view_row_get_instance_private (row);
+
+    return priv->time_label;
+}
+
 static void
 gl_event_view_row_finalize (GObject *object)
 {

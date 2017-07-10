@@ -17,6 +17,7 @@
  */
 
 #include "gl-eventviewdetail.h"
+#include "gl-eventviewrow.h"
 
 #include <gio/gdesktopappinfo.h>
 #include <glib/gi18n.h>
@@ -322,6 +323,33 @@ gl_event_view_detail_create_detail (GlEventViewDetail *detail)
 }
 
 static void
+gl_event_view_detail_popover_closed (GtkPopover *popover,
+                                     gpointer user_data)
+{
+    GtkWidget *row;
+    GtkWidget *category_label;
+    GtkWidget *time_label;
+    GtkStyleContext *context;
+
+    row = gtk_popover_get_relative_to (popover);
+
+    context = gtk_widget_get_style_context (row);
+    gtk_style_context_remove_class (context, "popover-activated-row");
+
+    category_label = gl_event_view_row_get_category_label (GL_EVENT_VIEW_ROW (row));
+
+    if (category_label)
+    {
+        context = gtk_widget_get_style_context (category_label);
+        gtk_style_context_add_class (context, "dim-label");
+    }
+
+    time_label = gl_event_view_row_get_time_label (GL_EVENT_VIEW_ROW (row));
+    context = gtk_widget_get_style_context (time_label);
+    gtk_style_context_add_class (context, "dim-label");
+}
+
+static void
 gl_event_view_detail_finalize (GObject *object)
 {
     GlEventViewDetail *detail = GL_EVENT_VIEW_DETAIL (object);
@@ -456,6 +484,9 @@ gl_event_view_detail_class_init (GlEventViewDetailClass *klass)
                                                   documentation_label);
     gtk_widget_class_bind_template_child_private (widget_class, GlEventViewDetail,
                                                   detailed_message_label);
+
+    gtk_widget_class_bind_template_callback (widget_class,
+                                             gl_event_view_detail_popover_closed);
 }
 
 static void

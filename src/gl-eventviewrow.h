@@ -50,6 +50,7 @@ const gchar * gl_event_view_row_get_command_line (GlEventViewRow *row);
 const gchar * gl_event_view_row_get_message (GlEventViewRow *row);
 guint64 gl_event_view_row_get_timestamp (GlEventViewRow *row);
 GtkWidget * gl_event_view_row_get_category_label (GlEventViewRow *row);
+GtkWidget * gl_event_view_row_get_time_label (GlEventViewRow *row);
 
 G_END_DECLS
 

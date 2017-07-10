@@ -155,6 +155,18 @@ listbox_update_header_func (GtkListBoxRow *row,
             gtk_list_box_row_set_header (row, current);
         }
     }
+
+    row_entry = gl_event_view_row_get_entry (GL_EVENT_VIEW_ROW (before));
+
+    if (gl_row_entry_get_row_type (row_entry) == GL_ROW_ENTRY_TYPE_HEADER)
+    {
+        if (current == NULL)
+        {
+            current = gtk_separator_new (GTK_ORIENTATION_HORIZONTAL);
+            gtk_widget_show (current);
+            gtk_list_box_row_set_header (row, current);
+        }
+    }
 }
 
 
@@ -174,6 +186,13 @@ on_listbox_row_activated (GtkListBox *listbox,
         guint compressed_entries;
         gint header_row_index;
         gint index;
+        gboolean rows_expanded;
+        GtkStyleContext *context;
+        GtkListBoxRow *first_border_row;
+        GtkListBoxRow *last_border_row;
+        GtkWidget *row_separator;
+
+        rows_expanded = FALSE;
 
         compressed_entries = gl_row_entry_get_compressed_entries (priv->entry);
         header_row_index = gtk_list_box_row_get_index (row);
@@ -181,7 +200,6 @@ on_listbox_row_activated (GtkListBox *listbox,
         for (index = header_row_index + 1; compressed_entries != 0; index++)
         {
             GtkListBoxRow *compressed_row;
-            GtkStyleContext *context;
 
             compressed_row = gtk_list_box_get_row_at_index (GTK_LIST_BOX (priv->entries_box),
                                                             index);
@@ -189,31 +207,147 @@ on_listbox_row_activated (GtkListBox *listbox,
             context = gtk_widget_get_style_context (GTK_WIDGET (compressed_row));
             gtk_style_context_add_class (context, "compressed-row");
 
-            context = gtk_widget_get_style_context (GTK_WIDGET (row));
-
             /* Toggle the visibility */
             if (gtk_widget_get_visible (GTK_WIDGET (compressed_row)))
             {
                 gtk_widget_hide (GTK_WIDGET (compressed_row));
-                gtk_style_context_remove_class (context, "compressed-row-header");
+                rows_expanded = FALSE;
             }
             else
             {
                 gtk_widget_show (GTK_WIDGET (compressed_row));
-                gtk_style_context_add_class (context, "compressed-row-header");
+                rows_expanded = TRUE;
             }
 
             compressed_entries--;
+        }
+
+        first_border_row = gtk_list_box_get_row_at_index (GTK_LIST_BOX (priv->entries_box),
+                                                          header_row_index + 1);
+
+        last_border_row = gtk_list_box_get_row_at_index (GTK_LIST_BOX (priv->entries_box),
+                                                         index);
+
+        context = gtk_widget_get_style_context (GTK_WIDGET (row));
+
+        /* Set background color of group separator */
+        if (rows_expanded)
+        {
+            gtk_style_context_add_class (context, "compressed-row-header");
+
+            row_separator = gtk_list_box_row_get_header (row);
+
+            if (row_separator)
+            {
+                context = gtk_widget_get_style_context (row_separator);
+                gtk_style_context_add_class (context, "compressed-rows-group-separator");
+            }
+
+            row_separator = gtk_list_box_row_get_header (first_border_row);
+
+            context = gtk_widget_get_style_context (row_separator);
+            gtk_style_context_add_class (context, "compressed-rows-group-separator");
+
+            if (last_border_row)
+            {
+                row_separator = gtk_list_box_row_get_header (last_border_row);
+                context = gtk_widget_get_style_context (row_separator);
+                gtk_style_context_add_class (context, "compressed-rows-group-separator");
+            }
+        }
+        else
+        {
+            gtk_style_context_remove_class (context, "compressed-row-header");
+
+            row_separator = gtk_list_box_row_get_header (row);
+
+            if (row_separator)
+            {
+                GlRowEntry *previous_row_entry;
+                GtkListBoxRow *previous_row;
+
+                previous_row = gtk_list_box_get_row_at_index (GTK_LIST_BOX (priv->entries_box),
+                                                              header_row_index - 1);
+
+
+                previous_row_entry = gl_event_view_row_get_entry (GL_EVENT_VIEW_ROW (previous_row));
+
+                 /* Check if previous row is part of a compressed group and is visible */
+                if (gl_row_entry_get_row_type (previous_row_entry) == GL_ROW_ENTRY_TYPE_COMPRESSED)
+                {
+
+
+                    /* If not visible, remove the style class from it's separator */
+                    if (!gtk_widget_get_visible (GTK_WIDGET (previous_row)))
+                    {
+                        context = gtk_widget_get_style_context (row_separator);
+                        gtk_style_context_remove_class (context, "compressed-rows-group-separator");
+                    }
+                }
+                else
+                {
+                    context = gtk_widget_get_style_context (row_separator);
+                    gtk_style_context_remove_class (context, "compressed-rows-group-separator");
+                }
+            }
+
+            if (last_border_row)
+            {
+                GlRowEntry *border_row_entry;
+
+                border_row_entry = gl_event_view_row_get_entry (GL_EVENT_VIEW_ROW (last_border_row));
+
+                /* Check if this border row is a compressed header row and is expanded */
+                if (gl_row_entry_get_row_type (border_row_entry) == GL_ROW_ENTRY_TYPE_HEADER)
+                {
+                    GtkListBoxRow *next_row;
+
+                    next_row = gtk_list_box_get_row_at_index (GTK_LIST_BOX (priv->entries_box),
+                                                              index + 1);
+
+                    /* If not expanded, remove the style class from it's separator */
+                    if (!gtk_widget_get_visible (GTK_WIDGET (next_row)))
+                    {
+                        row_separator = gtk_list_box_row_get_header (last_border_row);
+                        context = gtk_widget_get_style_context (row_separator);
+                        gtk_style_context_remove_class (context, "compressed-rows-group-separator");
+                    }
+                }
+                else
+                {
+                    row_separator = gtk_list_box_row_get_header (last_border_row);
+                    context = gtk_widget_get_style_context (row_separator);
+                    gtk_style_context_remove_class (context, "compressed-rows-group-separator");
+                }
+            }
         }
     }
     else
     {
         GtkWidget *event_detail_popover;
+        GtkWidget *category_label;
+        GtkWidget *time_label;
+        GtkStyleContext *context;
 
         event_detail_popover = gl_event_view_detail_new (priv->entry, priv->clock_format);
         gtk_popover_set_relative_to (GTK_POPOVER (event_detail_popover), GTK_WIDGET (row));
 
-        gtk_widget_show (event_detail_popover);
+        category_label = gl_event_view_row_get_category_label (GL_EVENT_VIEW_ROW (row));
+
+        if (category_label)
+        {
+            context = gtk_widget_get_style_context (category_label);
+            gtk_style_context_remove_class (context, "dim-label");
+        }
+
+        time_label = gl_event_view_row_get_time_label (GL_EVENT_VIEW_ROW (row));
+        context = gtk_widget_get_style_context (time_label);
+        gtk_style_context_remove_class (context, "dim-label");
+
+        context = gtk_widget_get_style_context (GTK_WIDGET (row));
+        gtk_style_context_add_class (context, "popover-activated-row");
+
+        gtk_popover_popup (GTK_POPOVER (event_detail_popover));
     }
 }
 

@@ -1,9 +1,11 @@
 <interface domain="gnome-logs">
     <template class="GlEventViewDetail" parent="GtkPopover">
         <!-- The popover size is set such that it does not go beyond the window -->
-         <property name="width-request">600</property>
-         <property name="height-request">300</property>
-         <property name="can_focus">False</property>
+        <property name="width-request">600</property>
+        <property name="height-request">300</property>
+        <property name="can_focus">False</property>
+        <property name="transitions-enabled">True</property>
+        <signal name="closed" handler="gl_event_view_detail_popover_closed"/>
         <child>
             <object class="GtkScrolledWindow">
                 <property name="visible">True</property>
@@ -14,6 +16,8 @@
                     <object class="GtkGrid" id="grid">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
+                        <property name="column-spacing">12</property>
+                        <property name="margin">12</property>
                         <child>
                             <object class="GtkLabel" id="comm_field_label">
                                 <property name="visible">False</property>
@@ -39,7 +43,6 @@
                                 <property name="selectable">True</property>
                                 <style>
                                     <class name="detail-comm"/>
-                                    <class name="event-monospace"/>
                                 </style>
                             </object>
                             <packing>
@@ -245,7 +248,6 @@
                                 <property name="xalign">0</property>
                                 <style>
                                     <class name="detail-subject"/>
-                                    <class name="event-monospace"/>
                                 </style>
                             </object>
                             <packing>
@@ -279,7 +281,6 @@
                                 <property name="selectable">True</property>
                                 <style>
                                     <class name="detail-definedby"/>
-                                    <class name="event-monospace"/>
                                 </style>
                             </object>
                             <packing>
@@ -317,7 +318,6 @@
                                 <property name="xalign">0</property>
                                 <style>
                                     <class name="detail-support"/>
-                                    <class name="event-monospace"/>
                                 </style>
                             </object>
                             <packing>
@@ -351,7 +351,6 @@
                                 <property name="selectable">True</property>
                                 <style>
                                     <class name="detail-documentation"/>
-                                    <class name="event-monospace"/>
                                 </style>
                             </object>
                             <packing>
