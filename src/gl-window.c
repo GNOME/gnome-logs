@@ -41,6 +41,9 @@ typedef struct
 
 G_DEFINE_TYPE_WITH_PRIVATE (GlWindow, gl_window, GTK_TYPE_APPLICATION_WINDOW)
 
+static const gchar SETTINGS_SCHEMA[] = "org.gnome.Logs";
+static const gchar IGNORE_WARNING[] = "ignore-warning";
+
 static void
 on_action_radio (GSimpleAction *action,
                  GVariant *variant,
@@ -259,6 +262,24 @@ on_help_button_clicked (GlWindow *window,
     gtk_widget_hide (priv->info_bar);
 }
 
+static void
+on_ignore_button_clicked (GlWindow *window,
+                          gint response_id,
+                          gpointer user_data)
+{
+    GlWindowPrivate *priv;
+    GSettings *settings;
+
+    priv = gl_window_get_instance_private (GL_WINDOW (window));
+
+    settings = g_settings_new (SETTINGS_SCHEMA);
+    g_settings_set_boolean (settings, IGNORE_WARNING, TRUE);
+
+    gtk_widget_hide (priv->info_bar);
+
+    g_object_unref (settings);
+}
+
 void
 gl_window_set_sort_order (GlWindow *window,
                           GlSortOrder sort_order)
@@ -299,6 +320,8 @@ gl_window_class_init (GlWindowClass *klass)
                                              on_gl_window_key_press_event);
     gtk_widget_class_bind_template_callback (widget_class,
                                              on_help_button_clicked);
+    gtk_widget_class_bind_template_callback (widget_class,
+                                             on_ignore_button_clicked);
 }
 
 static void
@@ -315,6 +338,8 @@ gl_window_init (GlWindow *window)
     GlJournalBootID *boot_id;
     gchar *boot_match;
     GVariant *variant;
+    GSettings *settings;
+    gboolean ignore;
 
     gtk_widget_init_template (GTK_WIDGET (window));
 
@@ -352,6 +377,16 @@ gl_window_init (GlWindow *window)
     gtk_style_context_add_provider_for_screen (screen,
                                                GTK_STYLE_PROVIDER (provider),
                                                GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
+
+    settings = g_settings_new (SETTINGS_SCHEMA);
+    ignore = g_settings_get_boolean (settings, IGNORE_WARNING);
+    /* Don't show info_bar again if users have ever ignored the warning. */
+    if (ignore)
+    {
+        g_object_unref (provider);
+        g_object_unref (settings);
+        return;
+    }
 
     /* Show warnings based on storage type. */
     storage_type = gl_util_journal_storage_type ();
@@ -424,6 +459,7 @@ gl_window_init (GlWindow *window)
     }
 
     g_object_unref (provider);
+    g_object_unref (settings);
 }
 
 GtkWidget *
