@@ -1,3 +1,14 @@
+GNOME Logs 3.25.4
+=================
+
+* moving sorting to GlJournalModel from Pranav Ganorkar
+* event compression related fixes from Pranav Ganorkar
+* removing GlEventView type and displaying detailed event information in
+  popover from Pranav Ganorkar
+* removed tooltip for each row and size group for widgets in each row
+* add Polish help translation
+* updates to Catalan, Friulian and Indonesian translations
+
 GNOME Logs 3.25.1
 =================
 
