@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2017-03-19 16:18+0000\n"
-"PO-Revision-Date: 2017-03-19 21:29+0500\n"
+"POT-Creation-Date: 2017-06-29 07:58+0000\n"
+"PO-Revision-Date: 2017-07-27 17:23+0500\n"
 "Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
 "Language-Team: Kazakh <kk@li.org>\n"
 "Language: kk\n"
@@ -34,19 +34,19 @@ msgstr "Жұлдызшалы"
 msgid "All"
 msgstr "Барлығы"
 
-#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:202
+#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:217
 msgid "Applications"
 msgstr "Қолданбалар"
 
-#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:211
+#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:226
 msgid "System"
 msgstr "Жүйе"
 
-#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:215
+#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:230
 msgid "Security"
 msgstr "Қауіпсіздік"
 
-#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:207
+#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:222
 msgid "Hardware"
 msgstr "Құрылғылар"
 
@@ -59,50 +59,54 @@ msgid "Usage"
 msgstr "Қолданылу"
 
 #: ../data/gl-eventtoolbar.ui.h:1
-msgid "Go back to the event view"
-msgstr "Оқиға көрінісіне қайтып оралу"
-
-#: ../data/gl-eventtoolbar.ui.h:2
 msgid "Export logs to a file"
 msgstr "Логтарды файлға экспорттау"
 
-#: ../data/gl-eventtoolbar.ui.h:3
+#: ../data/gl-eventtoolbar.ui.h:2
 msgid "Choose the boot from which to view logs"
 msgstr "Қай жүктелудің логтарын қарау керектігін таңдаңыз"
 
-#: ../data/gl-eventtoolbar.ui.h:4
+#: ../data/gl-eventtoolbar.ui.h:3
 msgid "Search all the logs of the current category"
 msgstr "Ағымдағы санаттың барлық логтарынан іздеу"
 
-#: ../data/gl-eventviewdetail.ui.h:1 ../data/gl-searchpopover.ui.h:35
+#: ../data/gl-eventviewdetail.ui.h:1
+msgid "Sender"
+msgstr "Жіберуші"
+
+#: ../data/gl-eventviewdetail.ui.h:2
+msgid "Time"
+msgstr "Уақыт"
+
+#: ../data/gl-eventviewdetail.ui.h:3 ../data/gl-searchpopover.ui.h:35
 msgid "Message"
 msgstr "Хабарлама"
 
-#: ../data/gl-eventviewdetail.ui.h:2 ../data/gl-searchpopover.ui.h:39
+#: ../data/gl-eventviewdetail.ui.h:4 ../data/gl-searchpopover.ui.h:39
 msgid "Audit Session"
 msgstr "Аудит сессиясы"
 
-#: ../data/gl-eventviewdetail.ui.h:3 ../data/gl-searchpopover.ui.h:38
+#: ../data/gl-eventviewdetail.ui.h:5 ../data/gl-searchpopover.ui.h:38
 msgid "Kernel Device"
 msgstr "Ядро құрылғысы"
 
-#: ../data/gl-eventviewdetail.ui.h:4
+#: ../data/gl-eventviewdetail.ui.h:6
 msgid "Priority"
 msgstr "Приоритеті"
 
-#: ../data/gl-eventviewdetail.ui.h:5
+#: ../data/gl-eventviewdetail.ui.h:7
 msgid "Subject"
 msgstr "Тақырыбы"
 
-#: ../data/gl-eventviewdetail.ui.h:6
+#: ../data/gl-eventviewdetail.ui.h:8
 msgid "Defined By"
 msgstr "Анықталған"
 
-#: ../data/gl-eventviewdetail.ui.h:7
+#: ../data/gl-eventviewdetail.ui.h:9
 msgid "Support"
 msgstr "Қолдау"
 
-#: ../data/gl-eventviewdetail.ui.h:8
+#: ../data/gl-eventviewdetail.ui.h:10
 msgid "Documentation"
 msgstr "Құжаттама"
 
@@ -350,7 +354,7 @@ msgstr ""
 "Логтар көмегімен сіз іздеу сөзін енгізу арқылы іздей аласыз, ал, оқиға "
 "туралы көбірек білу үшін, оған шерте аласыз."
 
-#: ../data/org.gnome.Logs.desktop.in.h:1 ../src/gl-eventtoolbar.c:124
+#: ../data/org.gnome.Logs.desktop.in.h:1 ../src/gl-eventtoolbar.c:114
 msgid "Logs"
 msgstr "Логтар"
 
@@ -371,30 +375,30 @@ msgstr "Оқиғалар көрінісінде тізім жолдарын қа
 msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr "Таңдалған түрі үшін тізім жолдарын өсу не кему ретімен сұрыптау"
 
-#: ../src/gl-application.c:110
+#: ../src/gl-application.c:109
 msgid "translator-credits"
 msgstr "Baurzhan Muftakhidinov <baurthefirst@gmail.com>"
 
-#: ../src/gl-application.c:111
+#: ../src/gl-application.c:110
 msgid "View and search logs"
 msgstr "Жүйелік журналдарды қарау және олардан іздеу"
 
-#: ../src/gl-application.c:245
+#: ../src/gl-application.c:243
 msgid "Print version information and exit"
 msgstr "Нұсқа ақпаратын шығару және шығу"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
-#: ../src/gl-eventtoolbar.c:115
+#: ../src/gl-eventtoolbar.c:105
 msgid "Boot"
 msgstr "Жүктелу"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventviewlist.c:296
+#: ../src/gl-eventviewlist.c:326
 msgid "No results"
 msgstr "Нәтижелері жоқ"
 
-#: ../src/gl-eventviewrow.c:219
+#: ../src/gl-eventviewrow.c:234
 msgid "Other"
 msgstr "Басқа"
 
@@ -558,37 +562,40 @@ msgstr "%b %e %Y %H:%M"
 msgid "%s – %s"
 msgstr "%s – %s"
 
-#: ../src/gl-window.c:181
+#: ../src/gl-window.c:110
 msgid "Save logs"
 msgstr "Логтарды сақтау"
 
-#: ../src/gl-window.c:184
+#: ../src/gl-window.c:113
 msgid "_Cancel"
 msgstr "Ба_с тарту"
 
-#: ../src/gl-window.c:185
+#: ../src/gl-window.c:114
 msgid "_Save"
 msgstr "_сақтау"
 
-#: ../src/gl-window.c:190
+#: ../src/gl-window.c:119
 msgid "log messages"
 msgstr "лог хабарламары"
 
-#: ../src/gl-window.c:243
+#: ../src/gl-window.c:172
 msgid "Unable to export log messages to a file"
 msgstr "Лог хабарламаларын файлға экспорттау мүмкін емес"
 
-#: ../src/gl-window.c:474 ../src/gl-window.c:505
+#: ../src/gl-window.c:367 ../src/gl-window.c:398
 msgid "Unable to read system logs"
 msgstr "Жүйелік логтарды оқу мүмкін емес"
 
-#: ../src/gl-window.c:488
+#: ../src/gl-window.c:381
 msgid "Unable to read user logs"
 msgstr "Пайдаланушы логтарын оқу мүмкін емес"
 
-#: ../src/gl-window.c:520
+#: ../src/gl-window.c:413
 msgid "No logs available"
 msgstr "Қолжетерлік логтар жоқ"
+
+#~ msgid "Go back to the event view"
+#~ msgstr "Оқиға көрінісіне қайтып оралу"
 
 #~ msgid "Search the displayed logs"
 #~ msgstr "Көрсетілген логтардан іздеу"
