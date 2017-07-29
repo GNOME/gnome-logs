@@ -8,8 +8,9 @@ msgstr ""
 "Project-Id-Version: gnome-logs gnome-3-24\n"
 "Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2017-04-10 13:18+0000\n"
-"PO-Revision-Date: 2017-04-11 18:00+0200\n"
+"POT-Creation-Date: 2017-06-29 07:58+0000\n"
+"PO-Revision-Date: 2017-07-29 19:11+0200\n"
+"Last-Translator: gogo <trebelnik2@gmail.com>\n"
 "Language-Team: Croatian <hr@li.org>\n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
@@ -17,8 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"Last-Translator: gogo <trebelnik2@gmail.com>\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"X-Generator: Poedit 2.0.3\n"
 
 #: ../data/gl-categorylist.ui.h:1
 msgid "Important"
@@ -36,19 +36,19 @@ msgstr "Sa zvjezdicom"
 msgid "All"
 msgstr "Svi"
 
-#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:202
+#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:217
 msgid "Applications"
 msgstr "Aplikacije"
 
-#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:211
+#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:226
 msgid "System"
 msgstr "Sustav"
 
-#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:215
+#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:230
 msgid "Security"
 msgstr "Sigurnost"
 
-#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:207
+#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:222
 msgid "Hardware"
 msgstr "Hardver"
 
@@ -61,50 +61,54 @@ msgid "Usage"
 msgstr "Upotreba"
 
 #: ../data/gl-eventtoolbar.ui.h:1
-msgid "Go back to the event view"
-msgstr "Idi natrag na pregled događaja"
-
-#: ../data/gl-eventtoolbar.ui.h:2
 msgid "Export logs to a file"
 msgstr "Izvezi zapise u datoteku"
 
-#: ../data/gl-eventtoolbar.ui.h:3
+#: ../data/gl-eventtoolbar.ui.h:2
 msgid "Choose the boot from which to view logs"
 msgstr "Odaberite zapis pokretanje računala za prikaz"
 
-#: ../data/gl-eventtoolbar.ui.h:4
+#: ../data/gl-eventtoolbar.ui.h:3
 msgid "Search all the logs of the current category"
 msgstr "Pretraži sve zapise trenutne kategorije"
 
-#: ../data/gl-eventviewdetail.ui.h:1 ../data/gl-searchpopover.ui.h:35
+#: ../data/gl-eventviewdetail.ui.h:1
+msgid "Sender"
+msgstr "Pošiljatelj"
+
+#: ../data/gl-eventviewdetail.ui.h:2
+msgid "Time"
+msgstr "Vrijeme"
+
+#: ../data/gl-eventviewdetail.ui.h:3 ../data/gl-searchpopover.ui.h:35
 msgid "Message"
 msgstr "Poruka"
 
-#: ../data/gl-eventviewdetail.ui.h:2 ../data/gl-searchpopover.ui.h:39
+#: ../data/gl-eventviewdetail.ui.h:4 ../data/gl-searchpopover.ui.h:39
 msgid "Audit Session"
 msgstr "Revizija sesije"
 
-#: ../data/gl-eventviewdetail.ui.h:3 ../data/gl-searchpopover.ui.h:38
+#: ../data/gl-eventviewdetail.ui.h:5 ../data/gl-searchpopover.ui.h:38
 msgid "Kernel Device"
 msgstr "Uređaj kernela"
 
-#: ../data/gl-eventviewdetail.ui.h:4
+#: ../data/gl-eventviewdetail.ui.h:6
 msgid "Priority"
 msgstr "Prioritet"
 
-#: ../data/gl-eventviewdetail.ui.h:5
+#: ../data/gl-eventviewdetail.ui.h:7
 msgid "Subject"
 msgstr "Predmet"
 
-#: ../data/gl-eventviewdetail.ui.h:6
+#: ../data/gl-eventviewdetail.ui.h:8
 msgid "Defined By"
 msgstr "Odredio"
 
-#: ../data/gl-eventviewdetail.ui.h:7
+#: ../data/gl-eventviewdetail.ui.h:9
 msgid "Support"
 msgstr "Podrška"
 
-#: ../data/gl-eventviewdetail.ui.h:8
+#: ../data/gl-eventviewdetail.ui.h:10
 msgid "Documentation"
 msgstr "Dokumentacija"
 
@@ -114,7 +118,7 @@ msgstr "Odaberite mogućnosti filtriranja polje dnevnika i vremenskog razdoblja"
 
 #: ../data/gl-searchpopover.ui.h:1
 msgid "Select a Journal Field to filter the Logs according to it"
-msgstr "Odaberite polje dnevnika i vremenskog razdoblja za filtriranje zapisa "
+msgstr "Odaberite polje dnevnika i vremenskog razdoblja za filtriranje zapisa"
 
 #: ../data/gl-searchpopover.ui.h:2
 msgid "All Available Fields"
@@ -127,7 +131,7 @@ msgstr "Što"
 
 #: ../data/gl-searchpopover.ui.h:5
 msgid "Select Journal Field…"
-msgstr "Odaberi polje dnevnika..."
+msgstr "Odaberi polje dnevnika…"
 
 #. When [log entries to be shown for a given timestamp range]
 #: ../data/gl-searchpopover.ui.h:7
@@ -136,7 +140,7 @@ msgstr "Kada"
 
 #: ../data/gl-searchpopover.ui.h:8
 msgid "Show Logs from…"
-msgstr "Prikaži zapise od..."
+msgstr "Prikaži zapise od…"
 
 #: ../data/gl-searchpopover.ui.h:9
 msgid "Select Timestamp Range of the Log Entries to be shown"
@@ -172,7 +176,7 @@ msgstr "Natrag"
 
 #: ../data/gl-searchpopover.ui.h:17
 msgid "Show Logs Starting From…"
-msgstr "Prikaži zapise od..."
+msgstr "Prikaži zapise od…"
 
 #: ../data/gl-searchpopover.ui.h:18
 msgid "Select a start date"
@@ -180,7 +184,7 @@ msgstr "Odaberi vrijeme pokretanja"
 
 #: ../data/gl-searchpopover.ui.h:19 ../src/gl-searchpopover.c:503
 msgid "Select Start Date…"
-msgstr "Odaberi vrijeme pokretanja..."
+msgstr "Odaberi vrijeme pokretanja…"
 
 #: ../data/gl-searchpopover.ui.h:20
 msgid "22 January 2016 or 1/22/2016"
@@ -192,7 +196,7 @@ msgstr "Odaberi vrijeme pokretanja"
 
 #: ../data/gl-searchpopover.ui.h:22 ../src/gl-searchpopover.c:504
 msgid "Select Start Time…"
-msgstr "Odaberi vrijeme pokretanja..."
+msgstr "Odaberi vrijeme pokretanja…"
 
 #: ../data/gl-searchpopover.ui.h:23
 msgid "Hr"
@@ -212,7 +216,7 @@ msgstr "AM/PM"
 
 #: ../data/gl-searchpopover.ui.h:27
 msgid "Until…"
-msgstr "Do..."
+msgstr "Do…"
 
 #: ../data/gl-searchpopover.ui.h:28
 msgid "Select an end date"
@@ -220,7 +224,7 @@ msgstr "Odaberi vrijeme završetka"
 
 #: ../data/gl-searchpopover.ui.h:29 ../src/gl-searchpopover.c:521
 msgid "Select End Date…"
-msgstr "Odaberi vrijeme završetka..."
+msgstr "Odaberi vrijeme završetka…"
 
 #: ../data/gl-searchpopover.ui.h:30
 msgid "Select end time"
@@ -228,7 +232,7 @@ msgstr "Odaberi vrijeme završetka"
 
 #: ../data/gl-searchpopover.ui.h:31 ../src/gl-searchpopover.c:522
 msgid "Select End Time…"
-msgstr "Odaberi vrijeme završetka..."
+msgstr "Odaberi vrijeme završetka…"
 
 #: ../data/gl-searchpopover.ui.h:32
 msgid "PID"
@@ -276,7 +280,7 @@ msgstr "Cjelokupni dnevnik"
 
 #: ../data/gl-searchpopover.ui.h:46
 msgid "Set Custom Range…"
-msgstr "Postavi prilagođeni raspon..."
+msgstr "Postavi prilagođeni raspon…"
 
 #: ../data/gl-window.ui.h:1
 msgid "Help"
@@ -352,7 +356,7 @@ msgstr ""
 "Korištenjem Zapisa možete pretražiti svoje zapise upisivanjem izraza "
 "pretrage i vidjeti opširnije informacije o svakom događaju klikom na njega."
 
-#: ../data/org.gnome.Logs.desktop.in.h:1 ../src/gl-eventtoolbar.c:124
+#: ../data/org.gnome.Logs.desktop.in.h:1 ../src/gl-eventtoolbar.c:114
 msgid "Logs"
 msgstr "Zapisi"
 
@@ -373,32 +377,32 @@ msgstr "Kako razvrstati popis redaka u popisu događaja"
 msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr "Razvrstaj popis redaka rastući ili padajući za odabrane vrste"
 
-#: ../src/gl-application.c:110
+#: ../src/gl-application.c:109
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
 "  gogo https://launchpad.net/~trebelnik-stefina"
 
-#: ../src/gl-application.c:111
+#: ../src/gl-application.c:110
 msgid "View and search logs"
 msgstr "Pogledaj i pretraži zapise"
 
-#: ../src/gl-application.c:245
+#: ../src/gl-application.c:243
 msgid "Print version information and exit"
 msgstr "Ispiši podatke o inačici i izađi"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
-#: ../src/gl-eventtoolbar.c:115
+#: ../src/gl-eventtoolbar.c:105
 msgid "Boot"
 msgstr "Pokretanje"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventviewlist.c:296
+#: ../src/gl-eventviewlist.c:326
 msgid "No results"
 msgstr "Nema rezultata"
 
-#: ../src/gl-eventviewrow.c:219
+#: ../src/gl-eventviewrow.c:234
 msgid "Other"
 msgstr "Ostalo"
 
@@ -562,34 +566,37 @@ msgstr "%b %e %Y %H:%M"
 msgid "%s – %s"
 msgstr "%s – %s"
 
-#: ../src/gl-window.c:181
+#: ../src/gl-window.c:110
 msgid "Save logs"
 msgstr "Spremi zapise"
 
-#: ../src/gl-window.c:184
+#: ../src/gl-window.c:113
 msgid "_Cancel"
 msgstr "_Odustani"
 
-#: ../src/gl-window.c:185
+#: ../src/gl-window.c:114
 msgid "_Save"
 msgstr "_Spremi"
 
-#: ../src/gl-window.c:190
+#: ../src/gl-window.c:119
 msgid "log messages"
 msgstr "poruka zapisa"
 
-#: ../src/gl-window.c:243
+#: ../src/gl-window.c:172
 msgid "Unable to export log messages to a file"
 msgstr "Nemoguć izvoz poruka zapisa u datoteku"
 
-#: ../src/gl-window.c:474 ../src/gl-window.c:505
+#: ../src/gl-window.c:367 ../src/gl-window.c:398
 msgid "Unable to read system logs"
 msgstr "Nemoguće čitanje zapisa sustava"
 
-#: ../src/gl-window.c:488
+#: ../src/gl-window.c:381
 msgid "Unable to read user logs"
 msgstr "Nemoguće čitanje zapisa korinika"
 
-#: ../src/gl-window.c:520
+#: ../src/gl-window.c:413
 msgid "No logs available"
 msgstr "Nema dostupnih zapisa"
+
+#~ msgid "Go back to the event view"
+#~ msgstr "Idi natrag na pregled događaja"
