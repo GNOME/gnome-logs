@@ -45,8 +45,6 @@ typedef struct
     GlUtilClockFormat clock_format;
     GtkListBox *entries_box;
     GtkSizeGroup *category_sizegroup;
-    GtkSizeGroup *message_sizegroup;
-    GtkSizeGroup *time_sizegroup;
     GtkWidget *categories;
     GtkWidget *event_search;
     GtkWidget *event_scrolled;
@@ -308,8 +306,6 @@ gl_event_list_view_create_row_widget (gpointer item,
                                       gpointer user_data)
 {
     GtkWidget *rtn;
-    GtkWidget *message_label;
-    GtkWidget *time_label;
     GlCategoryList *list;
     GlCategoryListFilter filter;
     GlEventViewList *view = user_data;
@@ -337,14 +333,6 @@ gl_event_list_view_create_row_widget (gpointer item,
                                      priv->clock_format,
                                      GL_EVENT_VIEW_ROW_CATEGORY_NONE);
     }
-
-    message_label = gl_event_view_row_get_message_label (GL_EVENT_VIEW_ROW (rtn));
-    time_label = gl_event_view_row_get_time_label (GL_EVENT_VIEW_ROW (rtn));
-
-    gtk_size_group_add_widget (GTK_SIZE_GROUP (priv->message_sizegroup),
-                               message_label);
-    gtk_size_group_add_widget (GTK_SIZE_GROUP (priv->time_sizegroup),
-                               time_label);
 
     return rtn;
 }
@@ -910,8 +898,6 @@ gl_event_view_list_finalize (GObject *object)
     g_clear_object (&priv->journal_model);
     g_clear_pointer (&priv->search_text, g_free);
     g_object_unref (priv->category_sizegroup);
-    g_object_unref (priv->message_sizegroup);
-    g_object_unref (priv->time_sizegroup);
 }
 
 static void
@@ -957,8 +943,6 @@ gl_event_view_list_init (GlEventViewList *view)
     priv->search_text = NULL;
     priv->boot_match = NULL;
     priv->category_sizegroup = gtk_size_group_new (GTK_SIZE_GROUP_HORIZONTAL);
-    priv->message_sizegroup = gtk_size_group_new (GTK_SIZE_GROUP_HORIZONTAL);
-    priv->time_sizegroup = gtk_size_group_new (GTK_SIZE_GROUP_HORIZONTAL);
 
     categories = GL_CATEGORY_LIST (priv->categories);
 
