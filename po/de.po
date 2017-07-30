@@ -11,8 +11,8 @@ msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2017-03-19 16:18+0000\n"
-"PO-Revision-Date: 2017-03-21 19:40+0100\n"
+"POT-Creation-Date: 2017-07-29 17:12+0000\n"
+"PO-Revision-Date: 2017-07-30 21:37+0200\n"
 "Last-Translator: Mario Blättermann <mario.blaettermann@gmail.com>\n"
 "Language-Team: Deutsch <gnome-de@gnome.org>\n"
 "Language: de\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.12\n"
+"X-Generator: Poedit 2.0.3\n"
 
 #: ../data/gl-categorylist.ui.h:1
 msgid "Important"
@@ -38,19 +38,19 @@ msgstr "Markiert"
 msgid "All"
 msgstr "Alle"
 
-#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:202
+#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:207
 msgid "Applications"
 msgstr "Anwendungen"
 
-#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:211
+#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:216
 msgid "System"
 msgstr "System"
 
-#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:215
+#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:220
 msgid "Security"
 msgstr "Sicherheit"
 
-#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:207
+#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:212
 msgid "Hardware"
 msgstr "Hardware"
 
@@ -63,50 +63,54 @@ msgid "Usage"
 msgstr "Verwendung"
 
 #: ../data/gl-eventtoolbar.ui.h:1
-msgid "Go back to the event view"
-msgstr "Zurück zur Ereignisansicht"
-
-#: ../data/gl-eventtoolbar.ui.h:2
 msgid "Export logs to a file"
 msgstr "Protokoll in eine Datei exportieren"
 
-#: ../data/gl-eventtoolbar.ui.h:3
+#: ../data/gl-eventtoolbar.ui.h:2
 msgid "Choose the boot from which to view logs"
 msgstr "Wählen Sie den Start, von dem Sie Protokolle sehen möchten"
 
-#: ../data/gl-eventtoolbar.ui.h:4
+#: ../data/gl-eventtoolbar.ui.h:3
 msgid "Search all the logs of the current category"
 msgstr "Alle Protokolle der aktuellen Kategorie durchsuchen"
 
-#: ../data/gl-eventviewdetail.ui.h:1 ../data/gl-searchpopover.ui.h:35
+#: ../data/gl-eventviewdetail.ui.h:1
+msgid "Sender"
+msgstr "Absender"
+
+#: ../data/gl-eventviewdetail.ui.h:2
+msgid "Time"
+msgstr "Uhrzeit"
+
+#: ../data/gl-eventviewdetail.ui.h:3 ../data/gl-searchpopover.ui.h:35
 msgid "Message"
 msgstr "Meldung"
 
-#: ../data/gl-eventviewdetail.ui.h:2 ../data/gl-searchpopover.ui.h:39
+#: ../data/gl-eventviewdetail.ui.h:4 ../data/gl-searchpopover.ui.h:39
 msgid "Audit Session"
 msgstr "Prüfsitzung"
 
-#: ../data/gl-eventviewdetail.ui.h:3 ../data/gl-searchpopover.ui.h:38
+#: ../data/gl-eventviewdetail.ui.h:5 ../data/gl-searchpopover.ui.h:38
 msgid "Kernel Device"
 msgstr "Kernel-Gerät"
 
-#: ../data/gl-eventviewdetail.ui.h:4
+#: ../data/gl-eventviewdetail.ui.h:6
 msgid "Priority"
 msgstr "Priorität"
 
-#: ../data/gl-eventviewdetail.ui.h:5
+#: ../data/gl-eventviewdetail.ui.h:7
 msgid "Subject"
 msgstr "Betreff"
 
-#: ../data/gl-eventviewdetail.ui.h:6
+#: ../data/gl-eventviewdetail.ui.h:8
 msgid "Defined By"
 msgstr "Definiert durch"
 
-#: ../data/gl-eventviewdetail.ui.h:7
+#: ../data/gl-eventviewdetail.ui.h:9
 msgid "Support"
 msgstr "Unterstützung"
 
-#: ../data/gl-eventviewdetail.ui.h:8
+#: ../data/gl-eventviewdetail.ui.h:10
 msgid "Documentation"
 msgstr "Dokumentation"
 
@@ -361,7 +365,7 @@ msgstr ""
 "Schlagwortes durchsuchen und detaillierte Informationen über die einzelnen "
 "Ereignisse ansehen."
 
-#: ../data/org.gnome.Logs.desktop.in.h:1 ../src/gl-eventtoolbar.c:124
+#: ../data/org.gnome.Logs.desktop.in.h:1 ../src/gl-eventtoolbar.c:114
 msgid "Logs"
 msgstr "Protokolle"
 
@@ -386,7 +390,7 @@ msgstr ""
 "Legt fest, ob Zeilen in auf- oder absteigender Reihenfolge für den "
 "ausgewählten Typ sortiert werden"
 
-#: ../src/gl-application.c:110
+#: ../src/gl-application.c:109
 msgid "translator-credits"
 msgstr ""
 "David Lüder <davidl-dev@gmx-topmail.de>\n"
@@ -395,26 +399,26 @@ msgstr ""
 "Christian Kirbach <christian.kirbach@gmail.com>\n"
 "Mario Blättermann <mario.blaettermann@gmail.com>"
 
-#: ../src/gl-application.c:111
+#: ../src/gl-application.c:110
 msgid "View and search logs"
 msgstr "Protokoll ansehen und durchsuchen"
 
-#: ../src/gl-application.c:245
+#: ../src/gl-application.c:243
 msgid "Print version information and exit"
 msgstr "Versionsinformationen anzeigen und beenden"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
-#: ../src/gl-eventtoolbar.c:115
+#: ../src/gl-eventtoolbar.c:105
 msgid "Boot"
 msgstr "Systemstart"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventviewlist.c:296
+#: ../src/gl-eventviewlist.c:458
 msgid "No results"
 msgstr "Keine Ergebnisse gefunden"
 
-#: ../src/gl-eventviewrow.c:219
+#: ../src/gl-eventviewrow.c:224
 msgid "Other"
 msgstr "Andere"
 
@@ -578,40 +582,34 @@ msgstr "%e. %b %Y %H:%M"
 msgid "%s – %s"
 msgstr "%s – %s"
 
-#: ../src/gl-window.c:181
+#: ../src/gl-window.c:110
 msgid "Save logs"
 msgstr "Protokoll speichern"
 
-#: ../src/gl-window.c:184
+#: ../src/gl-window.c:113
 msgid "_Cancel"
 msgstr "Abbre_chen"
 
-#: ../src/gl-window.c:185
+#: ../src/gl-window.c:114
 msgid "_Save"
 msgstr "_Speichern"
 
-#: ../src/gl-window.c:190
+#: ../src/gl-window.c:119
 msgid "log messages"
 msgstr "Protokollmeldungen"
 
-#: ../src/gl-window.c:243
+#: ../src/gl-window.c:172
 msgid "Unable to export log messages to a file"
 msgstr "Protokollmeldungen konnten nicht in eine Datei exportiert werden"
 
-#: ../src/gl-window.c:474 ../src/gl-window.c:505
+#: ../src/gl-window.c:367 ../src/gl-window.c:398
 msgid "Unable to read system logs"
 msgstr "Systemprotokoll konnte nicht gelesen werden"
 
-#: ../src/gl-window.c:488
+#: ../src/gl-window.c:381
 msgid "Unable to read user logs"
 msgstr "Benutzerprotokoll konnte nicht gelesen werden"
 
-#: ../src/gl-window.c:520
+#: ../src/gl-window.c:413
 msgid "No logs available"
 msgstr "Keine Protokolle verfügbar"
-
-#~ msgid "Search the displayed logs"
-#~ msgstr "Angezeigte Protokolle durchsuchen"
-
-#~ msgid "Not implemented"
-#~ msgstr "Nicht implementiert"
