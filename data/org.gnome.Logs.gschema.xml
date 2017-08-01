@@ -3,7 +3,7 @@
   <schema id="org.gnome.Logs" path="/org/gnome/logs/">
     <key name="ignore-warning" type="b">
       <summary>Ignore warning</summary>
-      <description>Whether to ignore the warning that says you don't have sufficient permission to view logs. If ignored, the warning won't show up again.</description>
+      <description>Whether to ignore the warning that says you don’t have sufficient permission to view logs. If ignored, the warning won’t show up again.</description>
       <default>false</default>
     </key>
     <key name="sort-order" enum="org.gnome.Logs.GlSortOrder">
