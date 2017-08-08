@@ -1,3 +1,14 @@
+GNOME Logs 3.25.90
+==================
+
+* add a Ignore button to info bar
+* various event compression UI improvements from Pranav Ganorkar
+* translatable string improvement from Piotr Drąg
+* require GTK+ 3.22 to build from Jeremy Bicha
+* add Malayalam translation
+* updates to Spanish, Kazakh, Croatian, German, Slovenian, Croatian,
+  Hungarian and Spanish translations
+
 GNOME Logs 3.25.4
 =================
 
