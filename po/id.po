@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2017-06-29 07:58+0000\n"
-"PO-Revision-Date: 2017-07-03 14:10+0700\n"
+"POT-Creation-Date: 2017-08-01 14:25+0000\n"
+"PO-Revision-Date: 2017-08-02 10:47+0700\n"
 "Last-Translator: Kukuh Syafaat <syafaatkukuh@gmail.com>\n"
 "Language-Team: Indonesian <gnome@i15n.org>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.2\n"
+"X-Generator: Poedit 2.0.3\n"
 
 #: ../data/gl-categorylist.ui.h:1
 msgid "Important"
@@ -34,19 +34,19 @@ msgstr "Dibintangi"
 msgid "All"
 msgstr "Semua"
 
-#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:217
+#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:207
 msgid "Applications"
 msgstr "Aplikasi"
 
-#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:226
+#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:216
 msgid "System"
 msgstr "Sistem"
 
-#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:230
+#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:220
 msgid "Security"
 msgstr "Keamanan"
 
-#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:222
+#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:212
 msgid "Hardware"
 msgstr "Perangkat Keras"
 
@@ -284,6 +284,10 @@ msgstr "Atur Rentang Kustom..."
 msgid "Help"
 msgstr "Bantuan"
 
+#: ../data/gl-window.ui.h:2
+msgid "Ignore"
+msgstr "Abaikan"
+
 #: ../data/help-overlay.ui.h:1
 msgctxt "shortcut window"
 msgid "General"
@@ -369,10 +373,23 @@ msgid "log;journal;debug;error;"
 msgstr "log;jurnal;awakutu;galat;"
 
 #: ../data/org.gnome.Logs.gschema.xml.h:1
+msgid "Ignore warning"
+msgstr "Abaikan peringatan"
+
+#: ../data/org.gnome.Logs.gschema.xml.h:2
+msgid ""
+"Whether to ignore the warning that says you don’t have sufficient permission "
+"to view logs. If ignored, the warning won’t show up again."
+msgstr ""
+"Apakah mengabaikan peringatan yang mengatakan bahwa Anda tidak memiliki "
+"cukup izin untuk melihat log. Jika diabaikan, peringatan tidak akan muncul "
+"lagi."
+
+#: ../data/org.gnome.Logs.gschema.xml.h:3
 msgid "How to sort list rows in the event view list"
 msgstr "Bagaimana mengurut baris daftar dalam daftar tilikan kejadian"
 
-#: ../data/org.gnome.Logs.gschema.xml.h:2
+#: ../data/org.gnome.Logs.gschema.xml.h:4
 msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr "Urutkan baris daftar arah naik atau turun bagi tipe yang dipilih"
 
@@ -397,11 +414,11 @@ msgstr "Boot"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventviewlist.c:326
+#: ../src/gl-eventviewlist.c:458
 msgid "No results"
 msgstr "Tiada hasil"
 
-#: ../src/gl-eventviewrow.c:234
+#: ../src/gl-eventviewrow.c:224
 msgid "Other"
 msgstr "Lainnya"
 
@@ -565,35 +582,35 @@ msgstr "%b %e %Y %H:%M"
 msgid "%s – %s"
 msgstr "%s – %s"
 
-#: ../src/gl-window.c:110
+#: ../src/gl-window.c:113
 msgid "Save logs"
 msgstr "Simpan log"
 
-#: ../src/gl-window.c:113
+#: ../src/gl-window.c:116
 msgid "_Cancel"
 msgstr "_Batal"
 
-#: ../src/gl-window.c:114
+#: ../src/gl-window.c:117
 msgid "_Save"
 msgstr "_Simpan"
 
-#: ../src/gl-window.c:119
+#: ../src/gl-window.c:122
 msgid "log messages"
 msgstr "pesan log"
 
-#: ../src/gl-window.c:172
+#: ../src/gl-window.c:175
 msgid "Unable to export log messages to a file"
 msgstr "Tidak bisa mengekspor pesan log ke berkas"
 
-#: ../src/gl-window.c:367 ../src/gl-window.c:398
+#: ../src/gl-window.c:402 ../src/gl-window.c:433
 msgid "Unable to read system logs"
 msgstr "Tidak bisa membaca log system"
 
-#: ../src/gl-window.c:381
+#: ../src/gl-window.c:416
 msgid "Unable to read user logs"
 msgstr "Tidak bisa membaca log pengguna"
 
-#: ../src/gl-window.c:413
+#: ../src/gl-window.c:448
 msgid "No logs available"
 msgstr "Tidak ada log yang tersedia"
 
