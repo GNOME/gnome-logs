@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2017-08-02 09:54+0200\n"
-"PO-Revision-Date: 2017-08-02 10:03+0200\n"
+"POT-Creation-Date: 2017-08-09 16:51+0200\n"
+"PO-Revision-Date: 2017-08-09 16:51+0200\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian <gnome-si@googlegroups.com>\n"
 "Language: sl\n"
@@ -39,19 +39,19 @@ msgstr "Zaznamovano"
 msgid "All"
 msgstr "Vse"
 
-#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:207
+#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:182
 msgid "Applications"
 msgstr "Programi"
 
-#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:216
+#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:191
 msgid "System"
 msgstr "Sistem"
 
-#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:220
+#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:195
 msgid "Security"
 msgstr "Varnost"
 
-#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:212
+#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:187
 msgid "Hardware"
 msgstr "Strojna oprema"
 
@@ -64,54 +64,50 @@ msgid "Usage"
 msgstr "Uporaba"
 
 #: ../data/gl-eventtoolbar.ui.h:1
+msgid "Go back to the event view"
+msgstr "Vrni se na pogled dogodkov"
+
+#: ../data/gl-eventtoolbar.ui.h:2
 msgid "Export logs to a file"
 msgstr "Izvozi dnevniški izpis v datoteko"
 
-#: ../data/gl-eventtoolbar.ui.h:2
+#: ../data/gl-eventtoolbar.ui.h:3
 msgid "Choose the boot from which to view logs"
 msgstr "Izberite zagonski disk, za katerega želite pregledati dnevnik."
 
-#: ../data/gl-eventtoolbar.ui.h:3
+#: ../data/gl-eventtoolbar.ui.h:4
 msgid "Search all the logs of the current category"
 msgstr "Iskanje vseh dnevnikov v trenutni kategoriji"
 
-#: ../data/gl-eventviewdetail.ui.h:1
-msgid "Sender"
-msgstr "Pošiljatelj"
-
-#: ../data/gl-eventviewdetail.ui.h:2
-msgid "Time"
-msgstr "Čas"
-
-#: ../data/gl-eventviewdetail.ui.h:3 ../data/gl-searchpopover.ui.h:35
+#: ../data/gl-eventviewdetail.ui.h:1 ../data/gl-searchpopover.ui.h:35
 msgid "Message"
 msgstr "Sporočilo"
 
-#: ../data/gl-eventviewdetail.ui.h:4 ../data/gl-searchpopover.ui.h:39
+#: ../data/gl-eventviewdetail.ui.h:2 ../data/gl-searchpopover.ui.h:39
 msgid "Audit Session"
 msgstr "Seja prisluha"
 
-#: ../data/gl-eventviewdetail.ui.h:5 ../data/gl-searchpopover.ui.h:38
+#: ../data/gl-eventviewdetail.ui.h:3 ../data/gl-searchpopover.ui.h:38
 msgid "Kernel Device"
 msgstr "Naprava jedra"
 
-#: ../data/gl-eventviewdetail.ui.h:6
+#: ../data/gl-eventviewdetail.ui.h:4
 msgid "Priority"
 msgstr "Prednost"
 
-#: ../data/gl-eventviewdetail.ui.h:7
+#: ../data/gl-eventviewdetail.ui.h:5
 msgid "Subject"
 msgstr "Zadeva"
 
-#: ../data/gl-eventviewdetail.ui.h:8
+#: ../data/gl-eventviewdetail.ui.h:6
 msgid "Defined By"
 msgstr "Določeno z"
 
-#: ../data/gl-eventviewdetail.ui.h:9
+#: ../data/gl-eventviewdetail.ui.h:7
 msgid "Support"
 msgstr "Podpora"
 
-#: ../data/gl-eventviewdetail.ui.h:10
+#: ../data/gl-eventviewdetail.ui.h:8
 msgid "Documentation"
 msgstr "Dokumentacija"
 
@@ -254,7 +250,6 @@ msgid "Process Name"
 msgstr "Ime opravila"
 
 #: ../data/gl-searchpopover.ui.h:37
-#| msgid "System"
 msgid "Systemd Unit"
 msgstr "Enota Systemd"
 
@@ -289,10 +284,6 @@ msgstr "Določi obseg po meri ..."
 #: ../data/gl-window.ui.h:1
 msgid "Help"
 msgstr "Pomoč"
-
-#: ../data/gl-window.ui.h:2
-msgid "Ignore"
-msgstr "Prezri"
 
 #: ../data/help-overlay.ui.h:1
 msgctxt "shortcut window"
@@ -364,7 +355,7 @@ msgstr ""
 "Program omogoča preiskovanje dnevnikov z vpisom iskalnega niza in pregled "
 "podrobnosti vsakega dogodka."
 
-#: ../data/org.gnome.Logs.desktop.in.h:1 ../src/gl-eventtoolbar.c:114
+#: ../data/org.gnome.Logs.desktop.in.h:1 ../src/gl-eventtoolbar.c:124
 msgid "Logs"
 msgstr "Dnevniki"
 
@@ -379,49 +370,37 @@ msgstr ""
 "dnevnik;razhroščevanje;hrošči;napaka;napake;težave;težava;problem;problemi;"
 
 #: ../data/org.gnome.Logs.gschema.xml.h:1
-msgid "Ignore warning"
-msgstr "Prezri opozorilo"
-
-#: ../data/org.gnome.Logs.gschema.xml.h:2
-msgid ""
-"Whether to ignore the warning that says you don’t have sufficient permission "
-"to view logs. If ignored, the warning won’t show up again."
-msgstr ""
-"Ali naj bo opozorilo, ki zahteva ustrezna dovoljenja za prikaz dnevnika, "
-"prezrto. V tem primeru sporočilo ne bo več prikazano."
-
-#: ../data/org.gnome.Logs.gschema.xml.h:3
 msgid "How to sort list rows in the event view list"
 msgstr "Kako razvrstiti vrstice seznama v pogledu seznama dogodkov"
 
-#: ../data/org.gnome.Logs.gschema.xml.h:4
+#: ../data/org.gnome.Logs.gschema.xml.h:2
 msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr "Razvrščanje vrstic naraščajoče oziroma padajoče za izbrano vrsto"
 
-#: ../src/gl-application.c:109
+#: ../src/gl-application.c:110
 msgid "translator-credits"
 msgstr "Martin Srebotnjak <miles@filmsi.net>"
 
-#: ../src/gl-application.c:110
+#: ../src/gl-application.c:111
 msgid "View and search logs"
 msgstr "Pokaži in preišči dnevnike"
 
-#: ../src/gl-application.c:243
+#: ../src/gl-application.c:245
 msgid "Print version information and exit"
 msgstr "Izpiši podatke o različici in končaj"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
-#: ../src/gl-eventtoolbar.c:105
+#: ../src/gl-eventtoolbar.c:115
 msgid "Boot"
 msgstr "Zagoni"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventviewlist.c:458
+#: ../src/gl-eventviewlist.c:294
 msgid "No results"
 msgstr "Ni najdenih zadetkov"
 
-#: ../src/gl-eventviewrow.c:224
+#: ../src/gl-eventviewrow.c:199
 msgid "Other"
 msgstr "Drugo"
 
@@ -472,7 +451,6 @@ msgstr "PM"
 #. * label in the custom range submenu, showing the time with seconds
 #. * in 12-hour format.
 #: ../src/gl-searchpopover.c:987 ../src/gl-searchpopover.c:1226
-#| msgid "%l:%M:%S %p"
 msgid "%I:%M:%S %p"
 msgstr "%I:%M:%S %p"
 
@@ -586,40 +564,56 @@ msgstr "%b %e %Y %H:%M"
 msgid "%s – %s"
 msgstr "%s – %s"
 
-#: ../src/gl-window.c:113
+#: ../src/gl-window.c:181
 msgid "Save logs"
 msgstr "Shrani dnevnike"
 
-#: ../src/gl-window.c:116
+#: ../src/gl-window.c:184
 msgid "_Cancel"
 msgstr "Pre_kliči"
 
-#: ../src/gl-window.c:117
+#: ../src/gl-window.c:185
 msgid "_Save"
 msgstr "_Shrani"
 
-#: ../src/gl-window.c:122
+#: ../src/gl-window.c:190
 msgid "log messages"
 msgstr "dnevniška sporočila"
 
-#: ../src/gl-window.c:175
+#: ../src/gl-window.c:243
 msgid "Unable to export log messages to a file"
 msgstr "Ni mogoče izvoziti dnevniških sporočil v datoteko"
 
-#: ../src/gl-window.c:402 ../src/gl-window.c:433
+#: ../src/gl-window.c:474 ../src/gl-window.c:505
 msgid "Unable to read system logs"
 msgstr "Ni mogoče prebrati sistemskega dnevnika"
 
-#: ../src/gl-window.c:416
+#: ../src/gl-window.c:488
 msgid "Unable to read user logs"
 msgstr "Ni mogoče prebrati uporabniškega dnevnika"
 
-#: ../src/gl-window.c:448
+#: ../src/gl-window.c:520
 msgid "No logs available"
 msgstr "Ni shranjenih dnevnikov"
 
-#~ msgid "Go back to the event view"
-#~ msgstr "Vrni se na pogled dogodkov"
+#~ msgid "Sender"
+#~ msgstr "Pošiljatelj"
+
+#~ msgid "Time"
+#~ msgstr "Čas"
+
+#~ msgid "Ignore"
+#~ msgstr "Prezri"
+
+#~ msgid "Ignore warning"
+#~ msgstr "Prezri opozorilo"
+
+#~ msgid ""
+#~ "Whether to ignore the warning that says you don’t have sufficient "
+#~ "permission to view logs. If ignored, the warning won’t show up again."
+#~ msgstr ""
+#~ "Ali naj bo opozorilo, ki zahteva ustrezna dovoljenja za prikaz dnevnika, "
+#~ "prezrto. V tem primeru sporočilo ne bo več prikazano."
 
 #~ msgid "Search the displayed logs"
 #~ msgstr "Išči po prikazanih zapisih dnevnika"
