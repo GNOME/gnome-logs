@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs-help\n"
-"POT-Creation-Date: 2017-04-25 03:10+0000\n"
-"PO-Revision-Date: 2017-05-22 21:58+0200\n"
+"POT-Creation-Date: 2017-08-09 20:13+0000\n"
+"PO-Revision-Date: 2017-08-11 04:11+0200\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <community-poland@mozilla.org>\n"
 "Language: pl\n"
@@ -29,13 +29,13 @@ msgstr ""
 #: C/index.page:7
 msgctxt "text"
 msgid "Logs help"
-msgstr "Pomoc przeglądarki dzienników"
+msgstr "Dzienniki"
 
 #. (itstool) path: info/title
 #: C/index.page:8
 msgctxt "link"
 msgid "Logs help"
-msgstr "Pomoc przeglądarki dzienników"
+msgstr "Dzienniki"
 
 #. (itstool) path: info/desc
 #: C/index.page:13
@@ -88,8 +88,8 @@ msgid ""
 "detailed information about each event by clicking on it."
 msgstr ""
 "Za pomocą tego programu można przeszukiwać dzienniki przez wpisanie "
-"wyszukiwanego terminu i wyświetlać szczegółowe informacje o każdym "
-"zdarzeniu przez kliknięcie na nie."
+"wyszukiwanego terminu i wyświetlać szczegółowe informacje o każdym zdarzeniu "
+"przez kliknięcie na nie."
 
 #. (itstool) path: page/media
 #. This is a reference to an external file such as an image or video. When
