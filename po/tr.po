@@ -5,22 +5,23 @@
 # Hongis_3 <hongis1982@gmail.com>, 2014.
 # Gökhan Gurbetoğlu <ggurbet@gmail.com>, 2014.
 # Muhammet Kara <muhammetk@gmail.com>, 2014, 2015, 2016.
+# Emin Tufan Çetin <etcetin@gmail.com>, 2017.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-11-10 12:49+0000\n"
-"PO-Revision-Date: 2017-01-27 00:36+0300\n"
-"Last-Translator: Osman Karagöz <osmank3@gmail.com>\n"
-"Language-Team: Türkçe <gnome-turk@gnome.org>\n"
+"POT-Creation-Date: 2017-08-01 14:25+0000\n"
+"PO-Revision-Date: 2017-08-16 12:38+0300\n"
+"Last-Translator: Emin Tufan Çetin <etcetin@gmail.com>\n"
+"Language-Team: Turkish <gnome-turk@gnome.org>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Gtranslator 2.91.6\n"
 
 #: ../data/gl-categorylist.ui.h:1
 msgid "Important"
@@ -38,19 +39,19 @@ msgstr "Yıldızlı"
 msgid "All"
 msgstr "Tümü"
 
-#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:202
+#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:207
 msgid "Applications"
 msgstr "Uygulamalar"
 
-#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:211
+#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:216
 msgid "System"
 msgstr "Sistem"
 
-#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:215
+#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:220
 msgid "Security"
 msgstr "Güvenlik"
 
-#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:207
+#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:212
 msgid "Hardware"
 msgstr "Donanım"
 
@@ -63,56 +64,60 @@ msgid "Usage"
 msgstr "Kullanım"
 
 #: ../data/gl-eventtoolbar.ui.h:1
-msgid "Go back to the event view"
-msgstr "Olay görünümüne geri dön"
-
-#: ../data/gl-eventtoolbar.ui.h:2
 msgid "Export logs to a file"
 msgstr "Günlükleri dosyaya aktar"
 
-#: ../data/gl-eventtoolbar.ui.h:3
+#: ../data/gl-eventtoolbar.ui.h:2
 msgid "Choose the boot from which to view logs"
-msgstr "Günlük kayıtlarının görüntüleneceği önyüklemeyi seçin"
+msgstr "Günlük kayıtlarının görüntüleneceği önyüklemeyi seç"
 
-#: ../data/gl-eventtoolbar.ui.h:4
+#: ../data/gl-eventtoolbar.ui.h:3
 msgid "Search all the logs of the current category"
 msgstr "Geçerli kategorideki tüm günlüklerde arama yap"
 
-#: ../data/gl-eventviewdetail.ui.h:1 ../data/gl-searchpopover.ui.h:32
+#: ../data/gl-eventviewdetail.ui.h:1
+msgid "Sender"
+msgstr "Gönderen"
+
+#: ../data/gl-eventviewdetail.ui.h:2
+msgid "Time"
+msgstr "Zaman"
+
+#: ../data/gl-eventviewdetail.ui.h:3 ../data/gl-searchpopover.ui.h:35
 msgid "Message"
 msgstr "Mesaj"
 
-#: ../data/gl-eventviewdetail.ui.h:2 ../data/gl-searchpopover.ui.h:36
+#: ../data/gl-eventviewdetail.ui.h:4 ../data/gl-searchpopover.ui.h:39
 msgid "Audit Session"
 msgstr "Denetim Oturumu"
 
-#: ../data/gl-eventviewdetail.ui.h:3 ../data/gl-searchpopover.ui.h:35
+#: ../data/gl-eventviewdetail.ui.h:5 ../data/gl-searchpopover.ui.h:38
 msgid "Kernel Device"
 msgstr "Çekirdek (Kernel) Aygıtı"
 
-#: ../data/gl-eventviewdetail.ui.h:4
+#: ../data/gl-eventviewdetail.ui.h:6
 msgid "Priority"
 msgstr "Öncelik"
 
-#: ../data/gl-eventviewdetail.ui.h:5
+#: ../data/gl-eventviewdetail.ui.h:7
 msgid "Subject"
 msgstr "Konu"
 
-#: ../data/gl-eventviewdetail.ui.h:6
+#: ../data/gl-eventviewdetail.ui.h:8
 msgid "Defined By"
 msgstr "Tanımlayan"
 
-#: ../data/gl-eventviewdetail.ui.h:7
+#: ../data/gl-eventviewdetail.ui.h:9
 msgid "Support"
 msgstr "Destek"
 
-#: ../data/gl-eventviewdetail.ui.h:8
+#: ../data/gl-eventviewdetail.ui.h:10
 msgid "Documentation"
 msgstr "Belgelendirme"
 
 #: ../data/gl-eventviewlist.ui.h:1
 msgid "Select journal field and timestamp range filtering options"
-msgstr "Seçenekleri süzmek için zaman damgası aralığı ve günlük alanı seçin"
+msgstr "Seçenekleri süzmek için zaman damgası aralığı ve günlük alanı seç"
 
 #: ../data/gl-searchpopover.ui.h:1
 msgid "Select a Journal Field to filter the Logs according to it"
@@ -120,163 +125,173 @@ msgstr "Kayıtları Süzmek için Günlük Alanı Seç"
 
 #: ../data/gl-searchpopover.ui.h:2
 msgid "All Available Fields"
-msgstr "Mevcut Alanlar"
+msgstr "Tüm Uygun Alanlar"
 
-#: ../data/gl-searchpopover.ui.h:3
+#. Translators: What [journal fields to search in]
+#: ../data/gl-searchpopover.ui.h:4
 msgid "What"
 msgstr "Ne"
 
-#: ../data/gl-searchpopover.ui.h:4
+#: ../data/gl-searchpopover.ui.h:5
 msgid "Select Journal Field…"
 msgstr "Günlük Alanı Seç…"
 
-#: ../data/gl-searchpopover.ui.h:5
+#. When [log entries to be shown for a given timestamp range]
+#: ../data/gl-searchpopover.ui.h:7
 msgid "When"
 msgstr "Ne Zaman"
 
-#: ../data/gl-searchpopover.ui.h:6
+#: ../data/gl-searchpopover.ui.h:8
 msgid "Show Logs from…"
 msgstr "Kayıtları göster…"
 
-#: ../data/gl-searchpopover.ui.h:7
+#: ../data/gl-searchpopover.ui.h:9
 msgid "Select Timestamp Range of the Log Entries to be shown"
 msgstr "Gösterilecek Kayıt Girdileri için Zaman Damgası Aralığı Seç"
 
-#: ../data/gl-searchpopover.ui.h:8 ../src/gl-searchpopover.c:1303
+#: ../data/gl-searchpopover.ui.h:10 ../src/gl-searchpopover.c:1303
 msgid "Current Boot"
-msgstr "Mevcut Önyükleme"
+msgstr "Geçerli Önyükleme"
 
-#: ../data/gl-searchpopover.ui.h:9
+#: ../data/gl-searchpopover.ui.h:11
 msgid "Search Type"
-msgstr "Ara Türü"
+msgstr "Tür Ara"
 
-#: ../data/gl-searchpopover.ui.h:10
+#: ../data/gl-searchpopover.ui.h:12
 msgid "Substring"
 msgstr "Altyazı"
 
-#: ../data/gl-searchpopover.ui.h:11
+#: ../data/gl-searchpopover.ui.h:13
 msgid "Match in any part of the string"
-msgstr "Kelimenin herhangi bir yerini eşleştir"
+msgstr "Sözcüğün herhangi bir yerini eşleştir"
 
-#: ../data/gl-searchpopover.ui.h:12
+#: ../data/gl-searchpopover.ui.h:14
 msgid "Exact"
 msgstr "Tam"
 
-#: ../data/gl-searchpopover.ui.h:13
+#: ../data/gl-searchpopover.ui.h:15
 msgid "Match complete string only"
-msgstr "Sadece tüm kelimeyi eşleştir"
+msgstr "Yalnızca tüm kelimeyi eşleştir"
 
-#: ../data/gl-searchpopover.ui.h:14
+#: ../data/gl-searchpopover.ui.h:16
 msgid "Back"
 msgstr "Geri"
 
-#: ../data/gl-searchpopover.ui.h:15
+#: ../data/gl-searchpopover.ui.h:17
 msgid "Show Logs Starting From…"
 msgstr "Kayıtları göstermeye başla…"
 
-#: ../data/gl-searchpopover.ui.h:16
+#: ../data/gl-searchpopover.ui.h:18
 msgid "Select a start date"
-msgstr "Başlangıç tarihi seçin"
+msgstr "Başlangıç tarihi seç"
 
-#: ../data/gl-searchpopover.ui.h:17 ../src/gl-searchpopover.c:503
+#: ../data/gl-searchpopover.ui.h:19 ../src/gl-searchpopover.c:503
 msgid "Select Start Date…"
 msgstr "Başlangıç Tarihi Seç…"
 
-#: ../data/gl-searchpopover.ui.h:18
+#: ../data/gl-searchpopover.ui.h:20
+msgid "22 January 2016 or 1/22/2016"
+msgstr "22 Ocak 2016 veya 1/22/2016"
+
+#: ../data/gl-searchpopover.ui.h:21
 msgid "Select start time"
 msgstr "Başlangıç saati seç"
 
-#: ../data/gl-searchpopover.ui.h:19 ../src/gl-searchpopover.c:504
+#: ../data/gl-searchpopover.ui.h:22 ../src/gl-searchpopover.c:504
 msgid "Select Start Time…"
 msgstr "Başlangıç Saati Seç…"
 
-#: ../data/gl-searchpopover.ui.h:20
+#: ../data/gl-searchpopover.ui.h:23
 msgid "Hr"
 msgstr "Sa"
 
-#: ../data/gl-searchpopover.ui.h:21
+#: ../data/gl-searchpopover.ui.h:24
 msgid "Min"
 msgstr "Dk"
 
-#: ../data/gl-searchpopover.ui.h:22
+#: ../data/gl-searchpopover.ui.h:25
 msgid "Sec"
 msgstr "Sn"
 
-#: ../data/gl-searchpopover.ui.h:23
+#: ../data/gl-searchpopover.ui.h:26
 msgid "AM/PM"
 msgstr "ÖÖ/ÖS"
 
-#: ../data/gl-searchpopover.ui.h:24
+#: ../data/gl-searchpopover.ui.h:27
 msgid "Until…"
 msgstr "İtibaren…"
 
-#: ../data/gl-searchpopover.ui.h:25
+#: ../data/gl-searchpopover.ui.h:28
 msgid "Select an end date"
 msgstr "Bitiş tarihi seç"
 
-#: ../data/gl-searchpopover.ui.h:26 ../src/gl-searchpopover.c:521
+#: ../data/gl-searchpopover.ui.h:29 ../src/gl-searchpopover.c:521
 msgid "Select End Date…"
 msgstr "Bitiş Tarihi Seç…"
 
-#: ../data/gl-searchpopover.ui.h:27
+#: ../data/gl-searchpopover.ui.h:30
 msgid "Select end time"
 msgstr "Bitiş saati seç"
 
-#: ../data/gl-searchpopover.ui.h:28 ../src/gl-searchpopover.c:522
+#: ../data/gl-searchpopover.ui.h:31 ../src/gl-searchpopover.c:522
 msgid "Select End Time…"
 msgstr "Bitiş Saati Seç…"
 
-#: ../data/gl-searchpopover.ui.h:29
+#: ../data/gl-searchpopover.ui.h:32
 msgid "PID"
 msgstr "PID"
 
-#: ../data/gl-searchpopover.ui.h:30
+#: ../data/gl-searchpopover.ui.h:33
 msgid "UID"
 msgstr "UID"
 
-#: ../data/gl-searchpopover.ui.h:31
+#: ../data/gl-searchpopover.ui.h:34
 msgid "GID"
 msgstr "GID"
 
-#: ../data/gl-searchpopover.ui.h:33
+#: ../data/gl-searchpopover.ui.h:36
 msgid "Process Name"
 msgstr "Süreç İsmi"
 
-#: ../data/gl-searchpopover.ui.h:34
+#: ../data/gl-searchpopover.ui.h:37
 msgid "Systemd Unit"
 msgstr "Systemd Birimi"
 
-#: ../data/gl-searchpopover.ui.h:37
+#: ../data/gl-searchpopover.ui.h:40
 msgid "Executable Path"
 msgstr "Çalıştırılabilir Konum"
 
-#: ../data/gl-searchpopover.ui.h:38
+#: ../data/gl-searchpopover.ui.h:41
 msgid "Previous Boot"
 msgstr "Önceki Önyükleme"
 
-#: ../data/gl-searchpopover.ui.h:39
+#: ../data/gl-searchpopover.ui.h:42
 msgid "Today"
 msgstr "Bugün"
 
-#: ../data/gl-searchpopover.ui.h:40
+#: ../data/gl-searchpopover.ui.h:43
 msgid "Yesterday"
 msgstr "Dün"
 
-#: ../data/gl-searchpopover.ui.h:41
+#: ../data/gl-searchpopover.ui.h:44
 msgid "Last 3 days"
 msgstr "Son 3 gün"
 
-#: ../data/gl-searchpopover.ui.h:42
+#: ../data/gl-searchpopover.ui.h:45
 msgid "Entire Journal"
 msgstr "Tüm Günlük"
 
-#: ../data/gl-searchpopover.ui.h:43
+#: ../data/gl-searchpopover.ui.h:46
 msgid "Set Custom Range…"
 msgstr "Özel Aralık Ayarla…"
 
 #: ../data/gl-window.ui.h:1
 msgid "Help"
 msgstr "Yardım"
+
+#: ../data/gl-window.ui.h:2
+msgid "Ignore"
+msgstr "Yok say"
 
 #: ../data/help-overlay.ui.h:1
 msgctxt "shortcut window"
@@ -349,7 +364,7 @@ msgstr ""
 "ve her olayın üzerine tıklayarak hakkındaki ayrıntılı bilgileri "
 "görüntüleyebilirsiniz."
 
-#: ../data/org.gnome.Logs.desktop.in.h:1 ../src/gl-eventtoolbar.c:124
+#: ../data/org.gnome.Logs.desktop.in.h:1 ../src/gl-eventtoolbar.c:114
 msgid "Logs"
 msgstr "Günlükler"
 
@@ -363,39 +378,51 @@ msgid "log;journal;debug;error;"
 msgstr "log;kayıt;journal;günlük;dergi;debug;hata ayıklama;error;hata;"
 
 #: ../data/org.gnome.Logs.gschema.xml.h:1
+msgid "Ignore warning"
+msgstr "Uyarıyı yok say"
+
+#: ../data/org.gnome.Logs.gschema.xml.h:2
+msgid ""
+"Whether to ignore the warning that says you don’t have sufficient permission "
+"to view logs. If ignored, the warning won’t show up again."
+msgstr ""
+"Günlükleri görmek için yeterli izniniz olmadığını söyleyen uyarının yok "
+"sayılıp sayılmayacağı. Eğer yok sayılırsa, uyarı yeniden çıkmayacak."
+
+#: ../data/org.gnome.Logs.gschema.xml.h:3
 msgid "How to sort list rows in the event view list"
 msgstr "Olay görüntüleme listesinde liste satırlarının nasıl sıralanacağı"
 
-#: ../data/org.gnome.Logs.gschema.xml.h:2
+#: ../data/org.gnome.Logs.gschema.xml.h:4
 msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr "Seçili tür için liste satırlarını artan ya da azalan düzende sırala"
 
-#: ../src/gl-application.c:110
+#: ../src/gl-application.c:109
 msgid "translator-credits"
 msgstr ""
 "Yusuf YILMAZ\n"
 "Muhammet Kara <muhammetk@gmail.com>"
 
-#: ../src/gl-application.c:111
+#: ../src/gl-application.c:110
 msgid "View and search logs"
-msgstr "Günlükleri görüntüleyin ve arayın"
+msgstr "Günlükleri görüntüle ve ara"
 
-#: ../src/gl-application.c:245
+#: ../src/gl-application.c:243
 msgid "Print version information and exit"
 msgstr "Sürüm bilgilerini yazdır ve çık"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
-#: ../src/gl-eventtoolbar.c:115
+#: ../src/gl-eventtoolbar.c:105
 msgid "Boot"
 msgstr "Önyükleme"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventviewlist.c:296
+#: ../src/gl-eventviewlist.c:458
 msgid "No results"
 msgstr "Sonuç yok"
 
-#: ../src/gl-eventviewrow.c:219
+#: ../src/gl-eventviewrow.c:224
 msgid "Other"
 msgstr "Diğer"
 
@@ -406,7 +433,7 @@ msgstr "Diğer"
 #: ../src/gl-searchpopover.c:687
 #, c-format
 msgid "From %s"
-msgstr "%s'den"
+msgstr "%s’den"
 
 #. Translators: if only custom end timestamp is set, then we update
 #. * the timestamp range button label in popover to show that
@@ -415,7 +442,7 @@ msgstr "%s'den"
 #: ../src/gl-searchpopover.c:700
 #, c-format
 msgid "Until %s"
-msgstr "%s'e"
+msgstr "%s’e"
 
 #. Translators: date format for the start date entry
 #. * and start date button label in the custom range submenu,
@@ -559,37 +586,40 @@ msgstr "%e %b %Y %H:%M"
 msgid "%s – %s"
 msgstr "%s – %s"
 
-#: ../src/gl-window.c:186
+#: ../src/gl-window.c:113
 msgid "Save logs"
 msgstr "Günlükleri kaydet"
 
-#: ../src/gl-window.c:189
+#: ../src/gl-window.c:116
 msgid "_Cancel"
 msgstr "_İptal"
 
-#: ../src/gl-window.c:190
+#: ../src/gl-window.c:117
 msgid "_Save"
 msgstr "_Kaydet"
 
-#: ../src/gl-window.c:195
+#: ../src/gl-window.c:122
 msgid "log messages"
 msgstr "günlük iletileri"
 
-#: ../src/gl-window.c:248
+#: ../src/gl-window.c:175
 msgid "Unable to export log messages to a file"
 msgstr "Günlük iletileri dosyaya aktarılamadı"
 
-#: ../src/gl-window.c:479 ../src/gl-window.c:510
+#: ../src/gl-window.c:402 ../src/gl-window.c:433
 msgid "Unable to read system logs"
 msgstr "Sistem günlükleri okunamadı"
 
-#: ../src/gl-window.c:493
+#: ../src/gl-window.c:416
 msgid "Unable to read user logs"
 msgstr "Kullanıcı günlükleri okunamadı"
 
-#: ../src/gl-window.c:525
+#: ../src/gl-window.c:448
 msgid "No logs available"
-msgstr "Mevcut kayıt yok"
+msgstr "Kullanılabilir kayıt yok"
+
+#~ msgid "Go back to the event view"
+#~ msgstr "Olay görünümüne geri dön"
 
 #~ msgid "Search the displayed logs"
 #~ msgstr "Görüntülenen günlükleri ara"
