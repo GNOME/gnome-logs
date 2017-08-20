@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2017-06-29 07:58+0000\n"
-"PO-Revision-Date: 2017-07-27 17:23+0500\n"
+"POT-Creation-Date: 2017-08-09 20:13+0000\n"
+"PO-Revision-Date: 2017-08-20 21:49+0500\n"
 "Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
 "Language-Team: Kazakh <kk@li.org>\n"
 "Language: kk\n"
@@ -34,19 +34,19 @@ msgstr "Жұлдызшалы"
 msgid "All"
 msgstr "Барлығы"
 
-#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:217
+#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:207
 msgid "Applications"
 msgstr "Қолданбалар"
 
-#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:226
+#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:216
 msgid "System"
 msgstr "Жүйе"
 
-#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:230
+#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:220
 msgid "Security"
 msgstr "Қауіпсіздік"
 
-#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:222
+#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:212
 msgid "Hardware"
 msgstr "Құрылғылар"
 
@@ -284,6 +284,10 @@ msgstr "Таңдауыңызша ауқымды орнату…"
 msgid "Help"
 msgstr "Көмек"
 
+#: ../data/gl-window.ui.h:2
+msgid "Ignore"
+msgstr "Елемеу"
+
 #: ../data/help-overlay.ui.h:1
 msgctxt "shortcut window"
 msgid "General"
@@ -368,10 +372,22 @@ msgid "log;journal;debug;error;"
 msgstr "log;journal;debug;error;лог;журнал;жөндеу;қате;"
 
 #: ../data/org.gnome.Logs.gschema.xml.h:1
+msgid "Ignore warning"
+msgstr "Ескертуді елемеу"
+
+#: ../data/org.gnome.Logs.gschema.xml.h:2
+msgid ""
+"Whether to ignore the warning that says you don’t have sufficient permission "
+"to view logs. If ignored, the warning won’t show up again."
+msgstr ""
+"Сізде логтарды қарауға құқықтарыңыз жетпейді деген ескертуді елемеу керек "
+"пе. Елемейтін болсаңыз, ол ескерту келесіде көрсетілмейтін болады."
+
+#: ../data/org.gnome.Logs.gschema.xml.h:3
 msgid "How to sort list rows in the event view list"
 msgstr "Оқиғалар көрінісінде тізім жолдарын қалай сұрыптау керек"
 
-#: ../data/org.gnome.Logs.gschema.xml.h:2
+#: ../data/org.gnome.Logs.gschema.xml.h:4
 msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr "Таңдалған түрі үшін тізім жолдарын өсу не кему ретімен сұрыптау"
 
@@ -394,11 +410,11 @@ msgstr "Жүктелу"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventviewlist.c:326
+#: ../src/gl-eventviewlist.c:458
 msgid "No results"
 msgstr "Нәтижелері жоқ"
 
-#: ../src/gl-eventviewrow.c:234
+#: ../src/gl-eventviewrow.c:224
 msgid "Other"
 msgstr "Басқа"
 
@@ -562,35 +578,35 @@ msgstr "%b %e %Y %H:%M"
 msgid "%s – %s"
 msgstr "%s – %s"
 
-#: ../src/gl-window.c:110
+#: ../src/gl-window.c:113
 msgid "Save logs"
 msgstr "Логтарды сақтау"
 
-#: ../src/gl-window.c:113
+#: ../src/gl-window.c:116
 msgid "_Cancel"
 msgstr "Ба_с тарту"
 
-#: ../src/gl-window.c:114
+#: ../src/gl-window.c:117
 msgid "_Save"
 msgstr "_сақтау"
 
-#: ../src/gl-window.c:119
+#: ../src/gl-window.c:122
 msgid "log messages"
 msgstr "лог хабарламары"
 
-#: ../src/gl-window.c:172
+#: ../src/gl-window.c:175
 msgid "Unable to export log messages to a file"
 msgstr "Лог хабарламаларын файлға экспорттау мүмкін емес"
 
-#: ../src/gl-window.c:367 ../src/gl-window.c:398
+#: ../src/gl-window.c:402 ../src/gl-window.c:433
 msgid "Unable to read system logs"
 msgstr "Жүйелік логтарды оқу мүмкін емес"
 
-#: ../src/gl-window.c:381
+#: ../src/gl-window.c:416
 msgid "Unable to read user logs"
 msgstr "Пайдаланушы логтарын оқу мүмкін емес"
 
-#: ../src/gl-window.c:413
+#: ../src/gl-window.c:448
 msgid "No logs available"
 msgstr "Қолжетерлік логтар жоқ"
 
