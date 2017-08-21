@@ -11,8 +11,8 @@ msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2017-07-29 17:12+0000\n"
-"PO-Revision-Date: 2017-07-30 21:37+0200\n"
+"POT-Creation-Date: 2017-08-09 20:13+0000\n"
+"PO-Revision-Date: 2017-08-21 10:18+0200\n"
 "Last-Translator: Mario Blättermann <mario.blaettermann@gmail.com>\n"
 "Language-Team: Deutsch <gnome-de@gnome.org>\n"
 "Language: de\n"
@@ -294,6 +294,10 @@ msgstr "Bereich wählen …"
 msgid "Help"
 msgstr "Hilfe"
 
+#: ../data/gl-window.ui.h:2
+msgid "Ignore"
+msgstr "Ignorieren"
+
 #: ../data/help-overlay.ui.h:1
 msgctxt "shortcut window"
 msgid "General"
@@ -378,13 +382,27 @@ msgstr "Protokollbetrachter"
 msgid "log;journal;debug;error;"
 msgstr "log;journal;debug;error;Protokoll;Fehler;Fehlersuche;"
 
-# gsettings-Schema
 #: ../data/org.gnome.Logs.gschema.xml.h:1
+msgid "Ignore warning"
+msgstr "Warnung ignorieren"
+
+#: ../data/org.gnome.Logs.gschema.xml.h:2
+#, fuzzy
+msgid ""
+"Whether to ignore the warning that says you don’t have sufficient permission "
+"to view logs. If ignored, the warning won’t show up again."
+msgstr ""
+"Legt fest, ob die Warnung ignoriert werden soll, die auf unzureichende "
+"Berechtigungen zum Betrachten von Protokollen verweist. Wenn Sie diese "
+"ignorieren, wird die Warnung nicht erneut angezeigt."
+
+# gsettings-Schema
+#: ../data/org.gnome.Logs.gschema.xml.h:3
 msgid "How to sort list rows in the event view list"
 msgstr "Legt fest, wie Zeilen in der Ereignisansicht sortiert werden"
 
 # gsettings-Schema
-#: ../data/org.gnome.Logs.gschema.xml.h:2
+#: ../data/org.gnome.Logs.gschema.xml.h:4
 msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr ""
 "Legt fest, ob Zeilen in auf- oder absteigender Reihenfolge für den "
@@ -582,34 +600,34 @@ msgstr "%e. %b %Y %H:%M"
 msgid "%s – %s"
 msgstr "%s – %s"
 
-#: ../src/gl-window.c:110
+#: ../src/gl-window.c:113
 msgid "Save logs"
 msgstr "Protokoll speichern"
 
-#: ../src/gl-window.c:113
+#: ../src/gl-window.c:116
 msgid "_Cancel"
 msgstr "Abbre_chen"
 
-#: ../src/gl-window.c:114
+#: ../src/gl-window.c:117
 msgid "_Save"
 msgstr "_Speichern"
 
-#: ../src/gl-window.c:119
+#: ../src/gl-window.c:122
 msgid "log messages"
 msgstr "Protokollmeldungen"
 
-#: ../src/gl-window.c:172
+#: ../src/gl-window.c:175
 msgid "Unable to export log messages to a file"
 msgstr "Protokollmeldungen konnten nicht in eine Datei exportiert werden"
 
-#: ../src/gl-window.c:367 ../src/gl-window.c:398
+#: ../src/gl-window.c:402 ../src/gl-window.c:433
 msgid "Unable to read system logs"
 msgstr "Systemprotokoll konnte nicht gelesen werden"
 
-#: ../src/gl-window.c:381
+#: ../src/gl-window.c:416
 msgid "Unable to read user logs"
 msgstr "Benutzerprotokoll konnte nicht gelesen werden"
 
-#: ../src/gl-window.c:413
+#: ../src/gl-window.c:448
 msgid "No logs available"
 msgstr "Keine Protokolle verfügbar"
