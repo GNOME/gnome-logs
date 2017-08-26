@@ -6,8 +6,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-19 17:34+0100\n"
+"Report-Msgid-Bugs-To: "
+"https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-logs&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2017-08-01 14:25+0000\n"
 "PO-Revision-Date: 2017-03-20 00:09+0100\n"
 "Last-Translator: Ask Hjorth Larsen <asklarsen@gmail.com>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
@@ -37,19 +38,19 @@ msgstr "Stjernemarkeret"
 msgid "All"
 msgstr "Alle"
 
-#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:202
+#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:207
 msgid "Applications"
 msgstr "Programmer"
 
-#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:211
+#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:216
 msgid "System"
 msgstr "System"
 
-#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:215
+#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:220
 msgid "Security"
 msgstr "Sikkerhed"
 
-#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:207
+#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:212
 msgid "Hardware"
 msgstr "Hardware"
 
@@ -62,50 +63,54 @@ msgid "Usage"
 msgstr "Forbrug"
 
 #: ../data/gl-eventtoolbar.ui.h:1
-msgid "Go back to the event view"
-msgstr "Gå tilbage til begivenhedsoversigten"
-
-#: ../data/gl-eventtoolbar.ui.h:2
 msgid "Export logs to a file"
 msgstr "Eksportér logge til en fil"
 
-#: ../data/gl-eventtoolbar.ui.h:3
+#: ../data/gl-eventtoolbar.ui.h:2
 msgid "Choose the boot from which to view logs"
 msgstr "Vælg hvilken opstart der skal vises log fra"
 
-#: ../data/gl-eventtoolbar.ui.h:4
+#: ../data/gl-eventtoolbar.ui.h:3
 msgid "Search all the logs of the current category"
 msgstr "Søg i alle loggene for den nuværende kategori"
 
-#: ../data/gl-eventviewdetail.ui.h:1 ../data/gl-searchpopover.ui.h:35
+#: ../data/gl-eventviewdetail.ui.h:1
+msgid "Sender"
+msgstr ""
+
+#: ../data/gl-eventviewdetail.ui.h:2
+msgid "Time"
+msgstr ""
+
+#: ../data/gl-eventviewdetail.ui.h:3 ../data/gl-searchpopover.ui.h:35
 msgid "Message"
 msgstr "Meddelelse"
 
-#: ../data/gl-eventviewdetail.ui.h:2 ../data/gl-searchpopover.ui.h:39
+#: ../data/gl-eventviewdetail.ui.h:4 ../data/gl-searchpopover.ui.h:39
 msgid "Audit Session"
 msgstr "Kontrolsession"
 
-#: ../data/gl-eventviewdetail.ui.h:3 ../data/gl-searchpopover.ui.h:38
+#: ../data/gl-eventviewdetail.ui.h:5 ../data/gl-searchpopover.ui.h:38
 msgid "Kernel Device"
 msgstr "Kerneenhed"
 
-#: ../data/gl-eventviewdetail.ui.h:4
+#: ../data/gl-eventviewdetail.ui.h:6
 msgid "Priority"
 msgstr "Prioritet"
 
-#: ../data/gl-eventviewdetail.ui.h:5
+#: ../data/gl-eventviewdetail.ui.h:7
 msgid "Subject"
 msgstr "Emne"
 
-#: ../data/gl-eventviewdetail.ui.h:6
+#: ../data/gl-eventviewdetail.ui.h:8
 msgid "Defined By"
 msgstr "Defineret af"
 
-#: ../data/gl-eventviewdetail.ui.h:7
+#: ../data/gl-eventviewdetail.ui.h:9
 msgid "Support"
 msgstr "Støtte"
 
-#: ../data/gl-eventviewdetail.ui.h:8
+#: ../data/gl-eventviewdetail.ui.h:10
 msgid "Documentation"
 msgstr "Dokumentation"
 
@@ -283,6 +288,10 @@ msgstr "Angiv brugerindstillet interval …"
 msgid "Help"
 msgstr "Hjælp"
 
+#: ../data/gl-window.ui.h:2
+msgid "Ignore"
+msgstr ""
+
 #: ../data/help-overlay.ui.h:1
 msgctxt "shortcut window"
 msgid "General"
@@ -353,7 +362,7 @@ msgstr ""
 "Med Logge kan du søge i dine logge ved at skrive et søgebegreb, og vise "
 "detaljerede oplysninger om hver begivenhed ved at klikke på den."
 
-#: ../data/org.gnome.Logs.desktop.in.h:1 ../src/gl-eventtoolbar.c:124
+#: ../data/org.gnome.Logs.desktop.in.h:1 ../src/gl-eventtoolbar.c:114
 msgid "Logs"
 msgstr "Logge"
 
@@ -367,14 +376,25 @@ msgid "log;journal;debug;error;"
 msgstr "log;journal;fejlsøgning;fejlsøg;debug;fejl;"
 
 #: ../data/org.gnome.Logs.gschema.xml.h:1
+msgid "Ignore warning"
+msgstr ""
+
+#: ../data/org.gnome.Logs.gschema.xml.h:2
+msgid ""
+"Whether to ignore the warning that says you don’t have sufficient permission "
+"to view logs. If ignored, the warning won’t show up again."
+msgstr ""
+
+#: ../data/org.gnome.Logs.gschema.xml.h:3
 msgid "How to sort list rows in the event view list"
 msgstr "Hvordan listerækker skal sorteres i begivenhedsoversigten"
 
-#: ../data/org.gnome.Logs.gschema.xml.h:2
+#: ../data/org.gnome.Logs.gschema.xml.h:4
 msgid "Sort list rows in ascending or descending order for the selected type"
-msgstr "Sortér listerækker i stigende eller faldende orden for den valgte type"
+msgstr ""
+"Sortér listerækker i stigende eller faldende orden for den valgte type"
 
-#: ../src/gl-application.c:110
+#: ../src/gl-application.c:109
 msgid "translator-credits"
 msgstr ""
 "Ask Hjorth Larsen\n"
@@ -383,26 +403,26 @@ msgstr ""
 "Dansk-gruppen <dansk@dansk-gruppen.dk>\n"
 "Mere info: http://www.dansk-gruppen.dk"
 
-#: ../src/gl-application.c:111
+#: ../src/gl-application.c:110
 msgid "View and search logs"
 msgstr "Vis og søg i logge"
 
-#: ../src/gl-application.c:245
+#: ../src/gl-application.c:243
 msgid "Print version information and exit"
 msgstr "Udskriv versionsoplysninger og afslut"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
-#: ../src/gl-eventtoolbar.c:115
+#: ../src/gl-eventtoolbar.c:105
 msgid "Boot"
 msgstr "Opstart"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventviewlist.c:296
+#: ../src/gl-eventviewlist.c:458
 msgid "No results"
 msgstr "Ingen resultater"
 
-#: ../src/gl-eventviewrow.c:219
+#: ../src/gl-eventviewrow.c:224
 msgid "Other"
 msgstr "Andre"
 
@@ -566,37 +586,42 @@ msgstr "%e. %b %Y %H:%M"
 msgid "%s – %s"
 msgstr "%s – %s"
 
-#: ../src/gl-window.c:181
+#: ../src/gl-window.c:113
 msgid "Save logs"
 msgstr "Gem logge"
 
-#: ../src/gl-window.c:184
+#: ../src/gl-window.c:116
 msgid "_Cancel"
 msgstr "_Annullér"
 
-#: ../src/gl-window.c:185
+#: ../src/gl-window.c:117
 msgid "_Save"
 msgstr "_Gem"
 
-#: ../src/gl-window.c:190
+#: ../src/gl-window.c:122
 msgid "log messages"
 msgstr "logmeddelelser"
 
-#: ../src/gl-window.c:243
+#: ../src/gl-window.c:175
 msgid "Unable to export log messages to a file"
 msgstr "Kunne ikke eksportere logmeddelelser til en fil"
 
-#: ../src/gl-window.c:474 ../src/gl-window.c:505
+#: ../src/gl-window.c:402 ../src/gl-window.c:433
 msgid "Unable to read system logs"
 msgstr "Kunne ikke læse systemlogge"
 
-#: ../src/gl-window.c:488
+#: ../src/gl-window.c:416
 msgid "Unable to read user logs"
 msgstr "Kunne ikke læse brugerlogge"
 
-#: ../src/gl-window.c:520
+#: ../src/gl-window.c:448
 msgid "No logs available"
 msgstr "Ingen tilgængelige logge"
 
+#~ msgid "Go back to the event view"
+#~ msgstr "Gå tilbage til begivenhedsoversigten"
+
 #~ msgid "Search the displayed logs"
 #~ msgstr "Søg i de viste logge"
+
+
