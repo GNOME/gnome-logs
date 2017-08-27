@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-l"
 "ogs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2017-04-08 14:12+0000\n"
-"PO-Revision-Date: 2017-04-09 12:53+0200\n"
+"POT-Creation-Date: 2017-08-01 14:25+0000\n"
+"PO-Revision-Date: 2017-08-27 23:52+0200\n"
 "Last-Translator: Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>\n"
 "Language-Team: Latvian <lata-l10n@googlegroups.com>\n"
 "Language: lv\n"
@@ -35,19 +35,19 @@ msgstr "Atzīmēti"
 msgid "All"
 msgstr "Visi"
 
-#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:202
+#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:207
 msgid "Applications"
 msgstr "Lietotnes"
 
-#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:211
+#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:216
 msgid "System"
 msgstr "Sistēma"
 
-#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:215
+#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:220
 msgid "Security"
 msgstr "Drošība"
 
-#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:207
+#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:212
 msgid "Hardware"
 msgstr "Aparatūra"
 
@@ -60,50 +60,54 @@ msgid "Usage"
 msgstr "Izmantojums"
 
 #: ../data/gl-eventtoolbar.ui.h:1
-msgid "Go back to the event view"
-msgstr "Atgriezties pie notikumu skata"
-
-#: ../data/gl-eventtoolbar.ui.h:2
 msgid "Export logs to a file"
 msgstr "Eksportēt žurnālus uz datni"
 
-#: ../data/gl-eventtoolbar.ui.h:3
+#: ../data/gl-eventtoolbar.ui.h:2
 msgid "Choose the boot from which to view logs"
 msgstr "Izvēlieties sistēmas ielādi, kurai skatīt žurnālus"
 
-#: ../data/gl-eventtoolbar.ui.h:4
+#: ../data/gl-eventtoolbar.ui.h:3
 msgid "Search all the logs of the current category"
 msgstr "Meklēt visos žurnālos šajā kategorijā"
 
-#: ../data/gl-eventviewdetail.ui.h:1 ../data/gl-searchpopover.ui.h:35
+#: ../data/gl-eventviewdetail.ui.h:1
+msgid "Sender"
+msgstr "Sūtītājs"
+
+#: ../data/gl-eventviewdetail.ui.h:2
+msgid "Time"
+msgstr "Laiks"
+
+#: ../data/gl-eventviewdetail.ui.h:3 ../data/gl-searchpopover.ui.h:35
 msgid "Message"
 msgstr "Ziņojums"
 
-#: ../data/gl-eventviewdetail.ui.h:2 ../data/gl-searchpopover.ui.h:39
+#: ../data/gl-eventviewdetail.ui.h:4 ../data/gl-searchpopover.ui.h:39
 msgid "Audit Session"
 msgstr "Audita sesija"
 
-#: ../data/gl-eventviewdetail.ui.h:3 ../data/gl-searchpopover.ui.h:38
+#: ../data/gl-eventviewdetail.ui.h:5 ../data/gl-searchpopover.ui.h:38
 msgid "Kernel Device"
 msgstr "Kodola ierīce"
 
-#: ../data/gl-eventviewdetail.ui.h:4
+#: ../data/gl-eventviewdetail.ui.h:6
 msgid "Priority"
 msgstr "Prioritāte"
 
-#: ../data/gl-eventviewdetail.ui.h:5
+#: ../data/gl-eventviewdetail.ui.h:7
 msgid "Subject"
 msgstr "Temats"
 
-#: ../data/gl-eventviewdetail.ui.h:6
+#: ../data/gl-eventviewdetail.ui.h:8
 msgid "Defined By"
 msgstr "Noteica"
 
-#: ../data/gl-eventviewdetail.ui.h:7
+#: ../data/gl-eventviewdetail.ui.h:9
 msgid "Support"
 msgstr "Atbalsts"
 
-#: ../data/gl-eventviewdetail.ui.h:8
+#: ../data/gl-eventviewdetail.ui.h:10
 msgid "Documentation"
 msgstr "Dokumentācija"
 
@@ -282,6 +286,10 @@ msgstr "Iestatīt pielāgotu diapazonu…"
 msgid "Help"
 msgstr "Palīdzība"
 
+#: ../data/gl-window.ui.h:2
+msgid "Ignore"
+msgstr "Ignorēt"
+
 #: ../data/help-overlay.ui.h:1
 msgctxt "shortcut window"
 msgid "General"
@@ -352,7 +360,7 @@ msgstr ""
 "Izmantojot “Žurnālus” jūs varat meklēt savos žurnālos, rakstot meklējamo "
 "tekstu un skatot detalizēto informāciju par katru notikumu, uz tā uzspiežot."
 
-#: ../data/org.gnome.Logs.desktop.in.h:1 ../src/gl-eventtoolbar.c:124
+#: ../data/org.gnome.Logs.desktop.in.h:1 ../src/gl-eventtoolbar.c:114
 msgid "Logs"
 msgstr "Žurnāli"
 
@@ -366,37 +374,49 @@ msgid "log;journal;debug;error;"
 msgstr "žurnāls;atkļūdot;kļūda;"
 
 #: ../data/org.gnome.Logs.gschema.xml.h:1
+msgid "Ignore warning"
+msgstr "Ignorēt brīdinājums"
+
+#: ../data/org.gnome.Logs.gschema.xml.h:2
+msgid ""
+"Whether to ignore the warning that says you don’t have sufficient permission "
+"to view logs. If ignored, the warning won’t show up again."
+msgstr ""
+"Vai ignorēt brīdinājumus, kas saka, ka jums nav pietiekamu tiesību skatīt"
+" žurnālus. Ja tiek ignorēts, brīdinājumi vairs neparādīsies."
+
+#: ../data/org.gnome.Logs.gschema.xml.h:3
 msgid "How to sort list rows in the event view list"
 msgstr "Kā kārtot saraksta rindas notikumu skatīšanas sarakstā"
 
-#: ../data/org.gnome.Logs.gschema.xml.h:2
+#: ../data/org.gnome.Logs.gschema.xml.h:4
 msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr "Kārtot saraksta rindas augošā vai dilstošā secībā izvēlētajam tipam"
 
-#: ../src/gl-application.c:110
+#: ../src/gl-application.c:109
 msgid "translator-credits"
 msgstr "Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>"
 
-#: ../src/gl-application.c:111
+#: ../src/gl-application.c:110
 msgid "View and search logs"
 msgstr "Katīt un meklēt žurnālos"
 
-#: ../src/gl-application.c:245
+#: ../src/gl-application.c:243
 msgid "Print version information and exit"
 msgstr "Parādīt informāciju par versiju un iziet"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
-#: ../src/gl-eventtoolbar.c:115
+#: ../src/gl-eventtoolbar.c:105
 msgid "Boot"
 msgstr "Sistēmas ielāde"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventviewlist.c:296
+#: ../src/gl-eventviewlist.c:458
 msgid "No results"
 msgstr "Nav rezultātu"
 
-#: ../src/gl-eventviewrow.c:219
+#: ../src/gl-eventviewrow.c:224
 msgid "Other"
 msgstr "Cits"
 
@@ -560,37 +580,40 @@ msgstr "%e. %b, %Y., %H.%M.%S"
 msgid "%s – %s"
 msgstr "%s – %s"
 
-#: ../src/gl-window.c:181
+#: ../src/gl-window.c:113
 msgid "Save logs"
 msgstr "Saglabāt žurnālus"
 
-#: ../src/gl-window.c:184
+#: ../src/gl-window.c:116
 msgid "_Cancel"
 msgstr "At_celt"
 
-#: ../src/gl-window.c:185
+#: ../src/gl-window.c:117
 msgid "_Save"
 msgstr "_Saglabāt"
 
-#: ../src/gl-window.c:190
+#: ../src/gl-window.c:122
 msgid "log messages"
 msgstr "žurnāla ieraksti"
 
-#: ../src/gl-window.c:243
+#: ../src/gl-window.c:175
 msgid "Unable to export log messages to a file"
 msgstr "Neizdevās eksportēt žurnāla ierakstus datnē"
 
-#: ../src/gl-window.c:474 ../src/gl-window.c:505
+#: ../src/gl-window.c:402 ../src/gl-window.c:433
 msgid "Unable to read system logs"
 msgstr "Neizdevās nolasīt sistēmas žurnālus"
 
-#: ../src/gl-window.c:488
+#: ../src/gl-window.c:416
 msgid "Unable to read user logs"
 msgstr "Neizdevās nolasīt lietotāja žurnālus"
 
-#: ../src/gl-window.c:520
+#: ../src/gl-window.c:448
 msgid "No logs available"
 msgstr "Nav pieejamu žurnālu"
+
+#~ msgid "Go back to the event view"
+#~ msgstr "Atgriezties pie notikumu skata"
 
 #~ msgid "Search the displayed logs"
 #~ msgstr "Meklēt attēlotajos žurnālos"
