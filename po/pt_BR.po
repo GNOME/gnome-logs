@@ -1,25 +1,25 @@
 # Brazilian Portuguese translation for gnome-logs.
 # Copyright (C) 2016 gnome-logs's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-logs package.
-# Enrico Nicoletto <liverig@gmail.com>, 2013, 2014, 2015.
 # Gustavo Maruqes <gutodisse@gmail.com>, 2015, 2016.
 # Fábio Nogueira <fnogueira@gnome.org>, 2016.
 # Rafael Fontenelle <rafaelff@gnome.org>, 2014, 2016, 2017.
+# Enrico Nicoletto <liverig@gmail.com>, 2013, 2014, 2015, 2017.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2017-03-19 16:18+0000\n"
-"PO-Revision-Date: 2017-03-20 07:08-0200\n"
-"Last-Translator: Rafael Fontenelle <rafaelff@gnome.org>\n"
+"POT-Creation-Date: 2017-08-01 14:25+0000\n"
+"PO-Revision-Date: 2017-08-31 13:21-0300\n"
+"Last-Translator: Enrico Nicoletto <liverig@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Virtaal 1.0.0-beta1\n"
+"X-Generator: Poedit 2.0.3\n"
 "X-Project-Style: gnome\n"
 
 #: ../data/gl-categorylist.ui.h:1
@@ -38,19 +38,19 @@ msgstr "Marcados com estrelas"
 msgid "All"
 msgstr "Todos"
 
-#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:202
+#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:207
 msgid "Applications"
 msgstr "Aplicativos"
 
-#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:211
+#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:216
 msgid "System"
 msgstr "Sistema"
 
-#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:215
+#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:220
 msgid "Security"
 msgstr "Segurança"
 
-#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:207
+#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:212
 msgid "Hardware"
 msgstr "Hardware"
 
@@ -63,50 +63,54 @@ msgid "Usage"
 msgstr "Utilização"
 
 #: ../data/gl-eventtoolbar.ui.h:1
-msgid "Go back to the event view"
-msgstr "Retorna à visão de eventos"
-
-#: ../data/gl-eventtoolbar.ui.h:2
 msgid "Export logs to a file"
 msgstr "Exporta registros para um arquivo"
 
-#: ../data/gl-eventtoolbar.ui.h:3
+#: ../data/gl-eventtoolbar.ui.h:2
 msgid "Choose the boot from which to view logs"
 msgstr "Escolhe a inicialização desejada para ver os registros"
 
-#: ../data/gl-eventtoolbar.ui.h:4
+#: ../data/gl-eventtoolbar.ui.h:3
 msgid "Search all the logs of the current category"
-msgstr "Pesquisa todos os logs da categoria atual"
+msgstr "Pesquisa todos os registros (logs) da categoria atual"
 
-#: ../data/gl-eventviewdetail.ui.h:1 ../data/gl-searchpopover.ui.h:35
+#: ../data/gl-eventviewdetail.ui.h:1
+msgid "Sender"
+msgstr "Remetente"
+
+#: ../data/gl-eventviewdetail.ui.h:2
+msgid "Time"
+msgstr "Tempo"
+
+#: ../data/gl-eventviewdetail.ui.h:3 ../data/gl-searchpopover.ui.h:35
 msgid "Message"
 msgstr "Mensagem"
 
-#: ../data/gl-eventviewdetail.ui.h:2 ../data/gl-searchpopover.ui.h:39
+#: ../data/gl-eventviewdetail.ui.h:4 ../data/gl-searchpopover.ui.h:39
 msgid "Audit Session"
 msgstr "Sessão de auditoria"
 
-#: ../data/gl-eventviewdetail.ui.h:3 ../data/gl-searchpopover.ui.h:38
+#: ../data/gl-eventviewdetail.ui.h:5 ../data/gl-searchpopover.ui.h:38
 msgid "Kernel Device"
 msgstr "Dispositivo de kernel"
 
-#: ../data/gl-eventviewdetail.ui.h:4
+#: ../data/gl-eventviewdetail.ui.h:6
 msgid "Priority"
 msgstr "Prioridade"
 
-#: ../data/gl-eventviewdetail.ui.h:5
+#: ../data/gl-eventviewdetail.ui.h:7
 msgid "Subject"
 msgstr "Assunto"
 
-#: ../data/gl-eventviewdetail.ui.h:6
+#: ../data/gl-eventviewdetail.ui.h:8
 msgid "Defined By"
 msgstr "Definido por"
 
-#: ../data/gl-eventviewdetail.ui.h:7
+#: ../data/gl-eventviewdetail.ui.h:9
 msgid "Support"
 msgstr "Suporte"
 
-#: ../data/gl-eventviewdetail.ui.h:8
+#: ../data/gl-eventviewdetail.ui.h:10
 msgid "Documentation"
 msgstr "Documentação"
 
@@ -289,6 +293,10 @@ msgstr "Definir intervalo personalizado…"
 msgid "Help"
 msgstr "Ajuda"
 
+#: ../data/gl-window.ui.h:2
+msgid "Ignore"
+msgstr "Ignorar"
+
 #: ../data/help-overlay.ui.h:1
 msgctxt "shortcut window"
 msgid "General"
@@ -361,7 +369,7 @@ msgstr ""
 "termo de pesquisa e poderá ver informações detalhadas sobre cada evento ao "
 "clicar neles."
 
-#: ../data/org.gnome.Logs.desktop.in.h:1 ../src/gl-eventtoolbar.c:124
+#: ../data/org.gnome.Logs.desktop.in.h:1 ../src/gl-eventtoolbar.c:114
 msgid "Logs"
 msgstr "Logs"
 
@@ -375,43 +383,55 @@ msgid "log;journal;debug;error;"
 msgstr "registro;registros;log;journal;depuração;debug;erro;"
 
 #: ../data/org.gnome.Logs.gschema.xml.h:1
-msgid "How to sort list rows in the event view list"
-msgstr ""
-"Como classificar a lista de linhas na lista de visualização de eventos."
+msgid "Ignore warning"
+msgstr "Ignorar aviso"
 
 #: ../data/org.gnome.Logs.gschema.xml.h:2
+msgid ""
+"Whether to ignore the warning that says you don’t have sufficient permission "
+"to view logs. If ignored, the warning won’t show up again."
+msgstr ""
+"Se deve, ou não, ignorar os avisos que lhe informam que você não possui "
+"permissões suficientes para visualizar os registros (logs). Caso seja "
+"ignorado, o aviso não será mostrado novamente."
+
+#: ../data/org.gnome.Logs.gschema.xml.h:3
+msgid "How to sort list rows in the event view list"
+msgstr "Como classificar a lista de linhas na lista de visualização de eventos"
+
+#: ../data/org.gnome.Logs.gschema.xml.h:4
 msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr ""
 "Classifica as linhas da lista em ordem crescente ou decrescente para o tipo "
-"selecionado."
+"selecionado"
 
-#: ../src/gl-application.c:110
+#: ../src/gl-application.c:109
 msgid "translator-credits"
 msgstr ""
-"Enrico Nicoletto <liverig@gmail.com>, 2013, 2014, 2015.\n"
+"Enrico Nicoletto <liverig@gmail.com>, 2013, 2014, 2015, 2017.\n"
 "Gustavo Marques <gutodisse@gmail.com>, 2015.\n"
 "Fábio Nogueira <fnogueira@gnome.org>, 2016."
 
-#: ../src/gl-application.c:111
+#: ../src/gl-application.c:110
 msgid "View and search logs"
 msgstr "Veja e pesquise registros"
 
-#: ../src/gl-application.c:245
+#: ../src/gl-application.c:243
 msgid "Print version information and exit"
 msgstr "Exibe informação da versão e sai"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
-#: ../src/gl-eventtoolbar.c:115
+#: ../src/gl-eventtoolbar.c:105
 msgid "Boot"
 msgstr "Inicialização"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventviewlist.c:296
+#: ../src/gl-eventviewlist.c:458
 msgid "No results"
 msgstr "Nenhum resultado"
 
-#: ../src/gl-eventviewrow.c:219
+#: ../src/gl-eventviewrow.c:224
 msgid "Other"
 msgstr "Outro"
 
@@ -575,37 +595,40 @@ msgstr "%e de %b de %Y, %H:%M"
 msgid "%s – %s"
 msgstr "%s – %s"
 
-#: ../src/gl-window.c:181
+#: ../src/gl-window.c:113
 msgid "Save logs"
 msgstr "Salvar registros"
 
-#: ../src/gl-window.c:184
+#: ../src/gl-window.c:116
 msgid "_Cancel"
 msgstr "_Cancelar"
 
-#: ../src/gl-window.c:185
+#: ../src/gl-window.c:117
 msgid "_Save"
 msgstr "_Salvar"
 
-#: ../src/gl-window.c:190
+#: ../src/gl-window.c:122
 msgid "log messages"
 msgstr "mensagens de registro"
 
-#: ../src/gl-window.c:243
+#: ../src/gl-window.c:175
 msgid "Unable to export log messages to a file"
 msgstr "Não é possível exportar as mensagens de registro para um arquivo"
 
-#: ../src/gl-window.c:474 ../src/gl-window.c:505
+#: ../src/gl-window.c:402 ../src/gl-window.c:433
 msgid "Unable to read system logs"
 msgstr "Não é possível ler as mensagens de registros do sistema"
 
-#: ../src/gl-window.c:488
+#: ../src/gl-window.c:416
 msgid "Unable to read user logs"
 msgstr "Não é possível ler as mensagens de registros do usuário"
 
-#: ../src/gl-window.c:520
+#: ../src/gl-window.c:448
 msgid "No logs available"
 msgstr "Não há registros disponíveis"
+
+#~ msgid "Go back to the event view"
+#~ msgstr "Retorna à visão de eventos"
 
 #~ msgid "Search the displayed logs"
 #~ msgstr "Pesquisar entre os registros exibidos"
