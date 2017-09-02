@@ -1,16 +1,16 @@
 # List of source files containing translatable strings.
 # Please keep this file sorted alphabetically.
-[type: gettext/glade]data/gl-categorylist.ui
-[type: gettext/glade]data/gl-eventtoolbar.ui
-[type: gettext/glade]data/gl-eventviewdetail.ui
-[type: gettext/glade]data/gl-eventviewlist.ui
-[type: gettext/glade]data/gl-searchpopover.ui
-[type: gettext/glade]data/gl-window.ui
-[type: gettext/glade]data/help-overlay.ui
-[type: gettext/glade]data/menus.ui
+data/gl-categorylist.ui
+data/gl-eventtoolbar.ui
+data/gl-eventviewdetail.ui
+data/gl-eventviewlist.ui
+data/gl-searchpopover.ui
+data/gl-window.ui
+data/help-overlay.ui
+data/menus.ui
 data/org.gnome.Logs.appdata.xml.in
 data/org.gnome.Logs.desktop.in
-[type: gettext/gsettings]data/org.gnome.Logs.gschema.xml
+data/org.gnome.Logs.gschema.xml
 src/gl-application.c
 src/gl-eventtoolbar.c
 src/gl-eventviewdetail.c

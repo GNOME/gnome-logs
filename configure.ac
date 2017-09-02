@@ -31,7 +31,8 @@ AS_IF([test "x$GLIB_MKENUMS" = "x"],
 AC_SUBST([GLIB_COMPILE_RESOURCES], [`$PKG_CONFIG --variable glib_compile_resources gio-2.0`])
 
 dnl Internationalization
-IT_PROG_INTLTOOL([0.50.0])
+AM_GNU_GETTEXT([external])
+AM_GNU_GETTEXT_VERSION([0.19.8])
 AC_SUBST([GETTEXT_PACKAGE], [AC_PACKAGE_TARNAME])
 AC_DEFINE_UNQUOTED([GETTEXT_PACKAGE], ["$GETTEXT_PACKAGE"], [gettext package name])
 

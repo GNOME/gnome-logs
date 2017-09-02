@@ -75,16 +75,18 @@ nodist_gnome_logs_headers = \
 	$(AM_V_at)touch $@
 
 @APPSTREAM_XML_RULES@
-@INTLTOOL_XML_RULE@
 appstream_in_files = data/org.gnome.Logs.appdata.xml.in
 $(appstream_in_files:.appdata.xml.in=.appdata.xml): data/.dstamp
 appstream_XML = $(appstream_in_files:.appdata.xml.in=.appdata.xml)
+$(appstream_XML): $(appstream_in_files)
+	$(AM_V_GEN) $(MSGFMT) --xml --template $< -d $(top_srcdir)/po -o $@
 
-@INTLTOOL_DESKTOP_RULE@
 desktopdir = $(datadir)/applications
 desktop_in_files = data/org.gnome.Logs.desktop.in
 $(desktop_in_files:.desktop.in=.desktop): data/.dstamp
 desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
+$(desktop_DATA): $(desktop_in_files)
+	$(AM_V_GEN) $(MSGFMT) --desktop --template $< -d $(top_srcdir)/po -o $@
 
 data/org.gnome.Logs.service: data/org.gnome.Logs.service.in
 	$(AM_V_GEN)$(SED) -e "s|[@]bindir[@]|$(bindir)|" $< > $@
