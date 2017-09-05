@@ -2,25 +2,26 @@
 # Copyright (C) 2014-2017 gnome-logs's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-logs package.
 #
-# Jérôme Sirgue  <jsirgue@free.fr>, 2014
-# Alexandre Franke <alexandre.franke@gmail.com>, 2015
-# José Fournier <jaaf64@zoraldia.com>, 2017
 #
+# Jérôme Sirgue  <jsirgue@free.fr>, 2014.
+# Alexandre Franke <alexandre.franke@gmail.com>, 2015.
+# José Fournier <jaaf64@zoraldia.com>, 2017.
+# Jean-Baptiste Holcroft <jean-baptiste@holcroft.fr>, 2017.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
-"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2017-03-19 16:18+0000\n"
-"PO-Revision-Date: 2017-03-20 00:00+0100\n"
-"Last-Translator: José Fournier <jaaf64@zoraldia.com>\n"
-"Language-Team: French <gnomefr@traduc.org>\n"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-l"
+"ogs&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2017-08-01 14:25+0000\n"
+"PO-Revision-Date: 2017-09-05 12:26+0100\n"
+"Last-Translator: Jean-Baptiste Holcroft <jean-baptiste@holcroft.fr>\n"
+"Language-Team: French <traduc@traduc.org>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Lokalize 2.0\n"
 
 #: ../data/gl-categorylist.ui.h:1
 msgid "Important"
@@ -38,19 +39,19 @@ msgstr "Favoris"
 msgid "All"
 msgstr "Tous"
 
-#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:202
+#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:207
 msgid "Applications"
 msgstr "Applications"
 
-#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:211
+#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:216
 msgid "System"
 msgstr "Système"
 
-#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:215
+#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:220
 msgid "Security"
 msgstr "Sécurité"
 
-#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:207
+#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:212
 msgid "Hardware"
 msgstr "Matériel"
 
@@ -63,50 +64,54 @@ msgid "Usage"
 msgstr "Utilisation"
 
 #: ../data/gl-eventtoolbar.ui.h:1
-msgid "Go back to the event view"
-msgstr "Retourner à la liste des événements"
-
-#: ../data/gl-eventtoolbar.ui.h:2
 msgid "Export logs to a file"
 msgstr "Exporter les journaux dans un fichier"
 
-#: ../data/gl-eventtoolbar.ui.h:3
+#: ../data/gl-eventtoolbar.ui.h:2
 msgid "Choose the boot from which to view logs"
 msgstr "Sélectionnez le démarrage dont vous voulez voir le journal"
 
-#: ../data/gl-eventtoolbar.ui.h:4
+#: ../data/gl-eventtoolbar.ui.h:3
 msgid "Search all the logs of the current category"
 msgstr "Chercher dans tous les journaux de la catégorie actuelle"
 
-#: ../data/gl-eventviewdetail.ui.h:1 ../data/gl-searchpopover.ui.h:35
+#: ../data/gl-eventviewdetail.ui.h:1
+msgid "Sender"
+msgstr "Émetteur"
+
+#: ../data/gl-eventviewdetail.ui.h:2
+msgid "Time"
+msgstr "Heure"
+
+#: ../data/gl-eventviewdetail.ui.h:3 ../data/gl-searchpopover.ui.h:35
 msgid "Message"
 msgstr "Message"
 
-#: ../data/gl-eventviewdetail.ui.h:2 ../data/gl-searchpopover.ui.h:39
+#: ../data/gl-eventviewdetail.ui.h:4 ../data/gl-searchpopover.ui.h:39
 msgid "Audit Session"
-msgstr "Session d'audit"
+msgstr "Session d’audit"
 
-#: ../data/gl-eventviewdetail.ui.h:3 ../data/gl-searchpopover.ui.h:38
+#: ../data/gl-eventviewdetail.ui.h:5 ../data/gl-searchpopover.ui.h:38
 msgid "Kernel Device"
 msgstr "Périphérique noyau"
 
-#: ../data/gl-eventviewdetail.ui.h:4
+#: ../data/gl-eventviewdetail.ui.h:6
 msgid "Priority"
 msgstr "Priorité"
 
-#: ../data/gl-eventviewdetail.ui.h:5
+#: ../data/gl-eventviewdetail.ui.h:7
 msgid "Subject"
 msgstr "Objet"
 
-#: ../data/gl-eventviewdetail.ui.h:6
+#: ../data/gl-eventviewdetail.ui.h:8
 msgid "Defined By"
 msgstr "Défini par"
 
-#: ../data/gl-eventviewdetail.ui.h:7
+#: ../data/gl-eventviewdetail.ui.h:9
 msgid "Support"
 msgstr "Prise en charge"
 
-#: ../data/gl-eventviewdetail.ui.h:8
+#: ../data/gl-eventviewdetail.ui.h:10
 msgid "Documentation"
 msgstr "Documentation"
 
@@ -192,11 +197,11 @@ msgstr "22 janvier 2016 ou 22/01/2016"
 
 #: ../data/gl-searchpopover.ui.h:21
 msgid "Select start time"
-msgstr "Choisir l'heure de début"
+msgstr "Choisir l’heure de début"
 
 #: ../data/gl-searchpopover.ui.h:22 ../src/gl-searchpopover.c:504
 msgid "Select Start Time…"
-msgstr "Choisir l'heure de début…"
+msgstr "Choisir l’heure de début…"
 
 #: ../data/gl-searchpopover.ui.h:23
 msgid "Hr"
@@ -216,7 +221,7 @@ msgstr "a.m./p.m."
 
 #: ../data/gl-searchpopover.ui.h:27
 msgid "Until…"
-msgstr "Jusqu'au…"
+msgstr "Jusqu’au…"
 
 #: ../data/gl-searchpopover.ui.h:28
 msgid "Select an end date"
@@ -228,11 +233,11 @@ msgstr "Choisir la date de fin…"
 
 #: ../data/gl-searchpopover.ui.h:30
 msgid "Select end time"
-msgstr "Choisir l'heure de fin"
+msgstr "Choisir l’heure de fin"
 
 #: ../data/gl-searchpopover.ui.h:31 ../src/gl-searchpopover.c:522
 msgid "Select End Time…"
-msgstr "Choisir l'heure de fin…"
+msgstr "Choisir l’heure de fin…"
 
 #: ../data/gl-searchpopover.ui.h:32
 msgid "PID"
@@ -256,7 +261,7 @@ msgstr "Unité Systemd"
 
 #: ../data/gl-searchpopover.ui.h:40
 msgid "Executable Path"
-msgstr "Chemin de l'exécutable"
+msgstr "Chemin de l’exécutable"
 
 #: ../data/gl-searchpopover.ui.h:41
 msgid "Previous Boot"
@@ -264,7 +269,7 @@ msgstr "Démarrage précédent"
 
 #: ../data/gl-searchpopover.ui.h:42
 msgid "Today"
-msgstr "Aujourd'hui"
+msgstr "Aujourd’hui"
 
 #: ../data/gl-searchpopover.ui.h:43
 msgid "Yesterday"
@@ -285,6 +290,10 @@ msgstr "Définir un intervalle de temps personnalisé…"
 #: ../data/gl-window.ui.h:1
 msgid "Help"
 msgstr "Aide"
+
+#: ../data/gl-window.ui.h:2
+msgid "Ignore"
+msgstr "Ignorer"
 
 #: ../data/help-overlay.ui.h:1
 msgctxt "shortcut window"
@@ -357,7 +366,7 @@ msgstr ""
 "terme et visualiser des informations détaillées à propos de chaque événement "
 "en cliquant dessus."
 
-#: ../data/org.gnome.Logs.desktop.in.h:1 ../src/gl-eventtoolbar.c:124
+#: ../data/org.gnome.Logs.desktop.in.h:1 ../src/gl-eventtoolbar.c:114
 msgid "Logs"
 msgstr "Journaux"
 
@@ -371,42 +380,56 @@ msgid "log;journal;debug;error;"
 msgstr "log;journal;journaux;debug;erreur;"
 
 #: ../data/org.gnome.Logs.gschema.xml.h:1
+msgid "Ignore warning"
+msgstr "Ignorer l’avertissement"
+
+#: ../data/org.gnome.Logs.gschema.xml.h:2
+msgid ""
+"Whether to ignore the warning that says you don’t have sufficient permission "
+"to view logs. If ignored, the warning won’t show up again."
+msgstr ""
+"Indique s’il faut ignorer l’avertissement disant que vous n’avez pas les"
+" droits "
+"suffisants pour lire les journaux. Si ignoré, l’avertissement n’apparaîtra"
+" plus."
+
+#: ../data/org.gnome.Logs.gschema.xml.h:3
 msgid "How to sort list rows in the event view list"
 msgstr "Comment trier les lignes dans la liste des événements"
 
-#: ../data/org.gnome.Logs.gschema.xml.h:2
+#: ../data/org.gnome.Logs.gschema.xml.h:4
 msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr ""
 "Trier les lignes de la liste par ordre croissant ou décroissant pour le type "
 "sélectionné"
 
-#: ../src/gl-application.c:110
+#: ../src/gl-application.c:109
 msgid "translator-credits"
 msgstr ""
 "Jérôme Sirgue <jsirgue@free.fr>\n"
 "Alexandre Franke <alexandre.franke@gmail.com>\n"
 "José Fournier <jaaf64@zoraldia.com>"
 
-#: ../src/gl-application.c:111
+#: ../src/gl-application.c:110
 msgid "View and search logs"
 msgstr "Visualiser et rechercher dans les journaux"
 
-#: ../src/gl-application.c:245
+#: ../src/gl-application.c:243
 msgid "Print version information and exit"
 msgstr "Afficher les informations sur la version et quitter."
 
 #. Translators: Boot refers to a single run (or bootup) of the system
-#: ../src/gl-eventtoolbar.c:115
+#: ../src/gl-eventtoolbar.c:105
 msgid "Boot"
 msgstr "Démarrage"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventviewlist.c:296
+#: ../src/gl-eventviewlist.c:458
 msgid "No results"
 msgstr "Aucun résultat."
 
-#: ../src/gl-eventviewrow.c:219
+#: ../src/gl-eventviewrow.c:224
 msgid "Other"
 msgstr "Autre"
 
@@ -426,7 +449,7 @@ msgstr "À partir du %s"
 #: ../src/gl-searchpopover.c:700
 #, c-format
 msgid "Until %s"
-msgstr "Jusqu'au %s"
+msgstr "Jusqu’au %s"
 
 #. Translators: date format for the start date entry
 #. * and start date button label in the custom range submenu,
@@ -570,34 +593,37 @@ msgstr "%e %b %Y %H:%M"
 msgid "%s – %s"
 msgstr "%s – %s"
 
-#: ../src/gl-window.c:181
+#: ../src/gl-window.c:113
 msgid "Save logs"
 msgstr "Enregistrer les journaux"
 
-#: ../src/gl-window.c:184
+#: ../src/gl-window.c:116
 msgid "_Cancel"
 msgstr "A_nnuler"
 
-#: ../src/gl-window.c:185
+#: ../src/gl-window.c:117
 msgid "_Save"
 msgstr "_Enregistrer"
 
-#: ../src/gl-window.c:190
+#: ../src/gl-window.c:122
 msgid "log messages"
 msgstr "messages de journal"
 
-#: ../src/gl-window.c:243
+#: ../src/gl-window.c:175
 msgid "Unable to export log messages to a file"
-msgstr "Impossible d'exporter les messages de journalisation dans un fichier"
+msgstr "Impossible d’exporter les messages de journalisation dans un fichier"
 
-#: ../src/gl-window.c:474 ../src/gl-window.c:505
+#: ../src/gl-window.c:402 ../src/gl-window.c:433
 msgid "Unable to read system logs"
 msgstr "Impossible de lire les journaux systèmes"
 
-#: ../src/gl-window.c:488
+#: ../src/gl-window.c:416
 msgid "Unable to read user logs"
 msgstr "Impossible de lire les journaux utilisateurs"
 
-#: ../src/gl-window.c:520
+#: ../src/gl-window.c:448
 msgid "No logs available"
 msgstr "Aucun journal disponible"
+
+#~ msgid "Go back to the event view"
+#~ msgstr "Retourner à la liste des événements"
