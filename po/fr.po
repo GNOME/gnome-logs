@@ -10,10 +10,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
-"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-l"
-"ogs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2017-08-01 14:25+0000\n"
-"PO-Revision-Date: 2017-09-05 12:26+0100\n"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"logs&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2017-09-05 10:44+0000\n"
+"PO-Revision-Date: 2017-09-08 12:26+0100\n"
 "Last-Translator: Jean-Baptiste Holcroft <jean-baptiste@holcroft.fr>\n"
 "Language-Team: French <traduc@traduc.org>\n"
 "Language: fr\n"
@@ -342,7 +342,7 @@ msgstr "_Quitter"
 
 #: ../data/org.gnome.Logs.appdata.xml.in.h:1
 msgid "GNOME Logs"
-msgstr "Journaux GNOME"
+msgstr "Journaux de GNOME"
 
 #: ../data/org.gnome.Logs.appdata.xml.in.h:2
 #: ../data/org.gnome.Logs.desktop.in.h:3
@@ -388,10 +388,9 @@ msgid ""
 "Whether to ignore the warning that says you don’t have sufficient permission "
 "to view logs. If ignored, the warning won’t show up again."
 msgstr ""
-"Indique s’il faut ignorer l’avertissement disant que vous n’avez pas les"
-" droits "
-"suffisants pour lire les journaux. Si ignoré, l’avertissement n’apparaîtra"
-" plus."
+"Indique s’il faut ignorer l’avertissement disant que vous n’avez pas les "
+"droits suffisants pour lire les journaux. Si ignoré, l’avertissement "
+"n’apparaîtra plus."
 
 #: ../data/org.gnome.Logs.gschema.xml.h:3
 msgid "How to sort list rows in the event view list"
