@@ -7,10 +7,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2017-01-21 14:38+0000\n"
-"PO-Revision-Date: 2017-02-20 17:46+0100\n"
+"POT-Creation-Date: 2017-08-01 14:25+0000\n"
+"PO-Revision-Date: 2017-08-27 20:44+0200\n"
 "Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@zundan.com>\n"
 "Language-Team: Basque <librezale@librezale.eus>\n"
 "Language: eu\n"
@@ -36,19 +36,19 @@ msgstr "Gogokoak"
 msgid "All"
 msgstr "Denak"
 
-#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:202
+#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:207
 msgid "Applications"
 msgstr "Aplikazioak"
 
-#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:211
+#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:216
 msgid "System"
 msgstr "Sistema"
 
-#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:215
+#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:220
 msgid "Security"
 msgstr "Segurtasuna"
 
-#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:207
+#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:212
 msgid "Hardware"
 msgstr "Hardwarea"
 
@@ -61,57 +61,62 @@ msgid "Usage"
 msgstr "Erabilera"
 
 #: ../data/gl-eventtoolbar.ui.h:1
-msgid "Go back to the event view"
-msgstr "Itzuli gertaeren ikuspegira"
-
-#: ../data/gl-eventtoolbar.ui.h:2
 msgid "Export logs to a file"
 msgstr "Esportatu erregistroak fitxategi batera"
 
-#: ../data/gl-eventtoolbar.ui.h:3
+#: ../data/gl-eventtoolbar.ui.h:2
 msgid "Choose the boot from which to view logs"
 msgstr "Aukeratu abioa (haren egunkariak ikusteko)"
 
-#: ../data/gl-eventtoolbar.ui.h:4
+#: ../data/gl-eventtoolbar.ui.h:3
 msgid "Search all the logs of the current category"
 msgstr "Bilatu uneko kategoriaren erregistro guztiak"
 
-#: ../data/gl-eventviewdetail.ui.h:1 ../data/gl-searchpopover.ui.h:32
+#: ../data/gl-eventviewdetail.ui.h:1
+msgid "Sender"
+msgstr "Bidaltzailea"
+
+#: ../data/gl-eventviewdetail.ui.h:2
+msgid "Time"
+msgstr "Ordua"
+
+#: ../data/gl-eventviewdetail.ui.h:3 ../data/gl-searchpopover.ui.h:35
 msgid "Message"
 msgstr "Mezua"
 
-#: ../data/gl-eventviewdetail.ui.h:2 ../data/gl-searchpopover.ui.h:36
+#: ../data/gl-eventviewdetail.ui.h:4 ../data/gl-searchpopover.ui.h:39
 msgid "Audit Session"
 msgstr "Ikuskatze-saioa"
 
-#: ../data/gl-eventviewdetail.ui.h:3 ../data/gl-searchpopover.ui.h:35
+#: ../data/gl-eventviewdetail.ui.h:5 ../data/gl-searchpopover.ui.h:38
 msgid "Kernel Device"
 msgstr "Nukleoaren gailua"
 
-#: ../data/gl-eventviewdetail.ui.h:4
+#: ../data/gl-eventviewdetail.ui.h:6
 msgid "Priority"
 msgstr "Lehentasuna"
 
-#: ../data/gl-eventviewdetail.ui.h:5
+#: ../data/gl-eventviewdetail.ui.h:7
 msgid "Subject"
 msgstr "Gaia"
 
-#: ../data/gl-eventviewdetail.ui.h:6
+#: ../data/gl-eventviewdetail.ui.h:8
 msgid "Defined By"
 msgstr "Honek definituta"
 
-#: ../data/gl-eventviewdetail.ui.h:7
+#: ../data/gl-eventviewdetail.ui.h:9
 msgid "Support"
 msgstr "Euskarria"
 
-#: ../data/gl-eventviewdetail.ui.h:8
+#: ../data/gl-eventviewdetail.ui.h:10
 msgid "Documentation"
 msgstr "Dokumentazioa"
 
 #: ../data/gl-eventviewlist.ui.h:1
 msgid "Select journal field and timestamp range filtering options"
 msgstr ""
-"Hautatu egunkariaren eremua eta denbora-zigiluaren barrutia iragazteko aukerak"
+"Hautatu egunkariaren eremua eta denbora-zigiluaren barrutia iragazteko "
+"aukerak"
 
 #: ../data/gl-searchpopover.ui.h:1
 msgid "Select a Journal Field to filter the Logs according to it"
@@ -121,166 +126,172 @@ msgstr "Hautatu egunkariaren eremua horren arabera erregistroak iragazteko"
 msgid "All Available Fields"
 msgstr "Eremu erabilgarri guztiak"
 
-#: ../data/gl-searchpopover.ui.h:3
+#. Translators: What [journal fields to search in]
+#: ../data/gl-searchpopover.ui.h:4
 msgid "What"
 msgstr "Zer"
 
-#: ../data/gl-searchpopover.ui.h:4
+#: ../data/gl-searchpopover.ui.h:5
 msgid "Select Journal Field…"
 msgstr "Hautatu egunkariaren eremua…"
 
-#: ../data/gl-searchpopover.ui.h:5
+#. When [log entries to be shown for a given timestamp range]
+#: ../data/gl-searchpopover.ui.h:7
 msgid "When"
 msgstr "Noiz"
 
-#: ../data/gl-searchpopover.ui.h:6
+#: ../data/gl-searchpopover.ui.h:8
 msgid "Show Logs from…"
 msgstr "Erakutsi _egunkariak noiztik…"
 
-#: ../data/gl-searchpopover.ui.h:7
+#: ../data/gl-searchpopover.ui.h:9
 msgid "Select Timestamp Range of the Log Entries to be shown"
 msgstr "Hautatu denbora-zigiluaren barrutia erregistroen sarrerak erakusteko"
 
-#: ../data/gl-searchpopover.ui.h:8 ../src/gl-searchpopover.c:1303
+#: ../data/gl-searchpopover.ui.h:10 ../src/gl-searchpopover.c:1303
 msgid "Current Boot"
 msgstr "Uneko abioa"
 
-#: ../data/gl-searchpopover.ui.h:9
-#| msgctxt "shortcut window"
-#| msgid "Search"
+#: ../data/gl-searchpopover.ui.h:11
 msgid "Search Type"
 msgstr "Bilaketa-mota "
 
-#: ../data/gl-searchpopover.ui.h:10
+#: ../data/gl-searchpopover.ui.h:12
 msgid "Substring"
 msgstr "Azpi-katea"
 
-#: ../data/gl-searchpopover.ui.h:11
+#: ../data/gl-searchpopover.ui.h:13
 msgid "Match in any part of the string"
 msgstr "Bat etorri katearen edozer zatirekin"
 
-#: ../data/gl-searchpopover.ui.h:12
+#: ../data/gl-searchpopover.ui.h:14
 msgid "Exact"
 msgstr "Zehatza"
 
-#: ../data/gl-searchpopover.ui.h:13
+#: ../data/gl-searchpopover.ui.h:15
 msgid "Match complete string only"
 msgstr "Bat etorri kate osoarekin soilik"
 
-#: ../data/gl-searchpopover.ui.h:14
+#: ../data/gl-searchpopover.ui.h:16
 msgid "Back"
 msgstr "Itzuli"
 
-#: ../data/gl-searchpopover.ui.h:15
+#: ../data/gl-searchpopover.ui.h:17
 msgid "Show Logs Starting From…"
 msgstr "Erakutsi erregistroak noiztik hasiz…"
 
-#: ../data/gl-searchpopover.ui.h:16
+#: ../data/gl-searchpopover.ui.h:18
 msgid "Select a start date"
 msgstr "Hautatu hasierako data"
 
-#: ../data/gl-searchpopover.ui.h:17 ../src/gl-searchpopover.c:503
+#: ../data/gl-searchpopover.ui.h:19 ../src/gl-searchpopover.c:503
 msgid "Select Start Date…"
 msgstr "Hautatu hasierako data…"
 
-#: ../data/gl-searchpopover.ui.h:18
+#: ../data/gl-searchpopover.ui.h:20
+#, fuzzy
+msgid "22 January 2016 or 1/22/2016"
+msgstr "22 January 2016 edo 1/22/2016"
+
+#: ../data/gl-searchpopover.ui.h:21
 msgid "Select start time"
 msgstr "Hautatu hasierako ordua"
 
-#: ../data/gl-searchpopover.ui.h:19 ../src/gl-searchpopover.c:504
+#: ../data/gl-searchpopover.ui.h:22 ../src/gl-searchpopover.c:504
 msgid "Select Start Time…"
 msgstr "Hautatu hasierako ordua…"
 
-#: ../data/gl-searchpopover.ui.h:20
+#: ../data/gl-searchpopover.ui.h:23
 msgid "Hr"
 msgstr "Or"
 
-#: ../data/gl-searchpopover.ui.h:21
+#: ../data/gl-searchpopover.ui.h:24
 msgid "Min"
 msgstr "Min"
 
-#: ../data/gl-searchpopover.ui.h:22
-#| msgctxt "shortcut window"
-#| msgid "Search"
+#: ../data/gl-searchpopover.ui.h:25
 msgid "Sec"
 msgstr "Seg"
 
-#: ../data/gl-searchpopover.ui.h:23
+#: ../data/gl-searchpopover.ui.h:26
 msgid "AM/PM"
 msgstr "AM/PM"
 
-#: ../data/gl-searchpopover.ui.h:24
+#: ../data/gl-searchpopover.ui.h:27
 msgid "Until…"
 msgstr "Arte…"
 
-#: ../data/gl-searchpopover.ui.h:25
+#: ../data/gl-searchpopover.ui.h:28
 msgid "Select an end date"
 msgstr "Hautatu amaierako data"
 
-#: ../data/gl-searchpopover.ui.h:26 ../src/gl-searchpopover.c:521
+#: ../data/gl-searchpopover.ui.h:29 ../src/gl-searchpopover.c:521
 msgid "Select End Date…"
 msgstr "Hautatu amaierako data…"
 
-#: ../data/gl-searchpopover.ui.h:27
+#: ../data/gl-searchpopover.ui.h:30
 msgid "Select end time"
 msgstr "Hautatu amaierako ordua"
 
-#: ../data/gl-searchpopover.ui.h:28 ../src/gl-searchpopover.c:522
+#: ../data/gl-searchpopover.ui.h:31 ../src/gl-searchpopover.c:522
 msgid "Select End Time…"
 msgstr "Hautatu amaierako ordua…"
 
-#: ../data/gl-searchpopover.ui.h:29
+#: ../data/gl-searchpopover.ui.h:32
 msgid "PID"
 msgstr "PIDa"
 
-#: ../data/gl-searchpopover.ui.h:30
+#: ../data/gl-searchpopover.ui.h:33
 msgid "UID"
 msgstr "UIDa"
 
-#: ../data/gl-searchpopover.ui.h:31
+#: ../data/gl-searchpopover.ui.h:34
 msgid "GID"
 msgstr "GIDa"
 
-#: ../data/gl-searchpopover.ui.h:33
+#: ../data/gl-searchpopover.ui.h:36
 msgid "Process Name"
 msgstr "Prozesuaren izena"
 
-#: ../data/gl-searchpopover.ui.h:34
-#| msgid "System"
+#: ../data/gl-searchpopover.ui.h:37
 msgid "Systemd Unit"
 msgstr "Systemd unitatea"
 
-#: ../data/gl-searchpopover.ui.h:37
+#: ../data/gl-searchpopover.ui.h:40
 msgid "Executable Path"
 msgstr "Exekutagarriaren bide-izena"
 
-#: ../data/gl-searchpopover.ui.h:38
+#: ../data/gl-searchpopover.ui.h:41
 msgid "Previous Boot"
 msgstr "Aurreko abioa"
 
-#: ../data/gl-searchpopover.ui.h:39
+#: ../data/gl-searchpopover.ui.h:42
 msgid "Today"
 msgstr "Gaur"
 
-#: ../data/gl-searchpopover.ui.h:40
+#: ../data/gl-searchpopover.ui.h:43
 msgid "Yesterday"
 msgstr "Atzo"
 
-#: ../data/gl-searchpopover.ui.h:41
+#: ../data/gl-searchpopover.ui.h:44
 msgid "Last 3 days"
 msgstr "Azken 3 egun"
 
-#: ../data/gl-searchpopover.ui.h:42
+#: ../data/gl-searchpopover.ui.h:45
 msgid "Entire Journal"
 msgstr "Egunkari osoa"
 
-#: ../data/gl-searchpopover.ui.h:43
+#: ../data/gl-searchpopover.ui.h:46
 msgid "Set Custom Range…"
 msgstr "Ezarri barruti pertsonalizatua…"
 
 #: ../data/gl-window.ui.h:1
 msgid "Help"
 msgstr "Laguntza"
+
+#: ../data/gl-window.ui.h:2
+msgid "Ignore"
+msgstr "Ez ikusi egin"
 
 #: ../data/help-overlay.ui.h:1
 msgctxt "shortcut window"
@@ -352,7 +363,7 @@ msgstr ""
 "Logs erabiltzean erregistroak bila ditzakezu, eta gertaera bakoitzaren "
 "informazio xehea ikus dezakezu haren gainean klik eginez gero."
 
-#: ../data/org.gnome.Logs.desktop.in.h:1 ../src/gl-eventtoolbar.c:124
+#: ../data/org.gnome.Logs.desktop.in.h:1 ../src/gl-eventtoolbar.c:114
 msgid "Logs"
 msgstr "Egunkariak"
 
@@ -366,37 +377,50 @@ msgid "log;journal;debug;error;"
 msgstr "erregistroa;egunkaria;arazketa;errorea;"
 
 #: ../data/org.gnome.Logs.gschema.xml.h:1
+msgid "Ignore warning"
+msgstr "Ez ikusi egin abisuari"
+
+#: ../data/org.gnome.Logs.gschema.xml.h:2
+msgid ""
+"Whether to ignore the warning that says you don’t have sufficient permission "
+"to view logs. If ignored, the warning won’t show up again."
+msgstr ""
+"Egunkariak ikusteko nahikoa baimen ez dituzula buruz jakinarazten zaituen "
+"abisuari ez ikusi egon edo ez. Ez ikusi egiten badiozu, abisua ez zaizu "
+"berriro agertuko."
+
+#: ../data/org.gnome.Logs.gschema.xml.h:3
 msgid "How to sort list rows in the event view list"
 msgstr "Nola ordenatu errenkadak gertaeren ikuspegiaren zerrendan"
 
-#: ../data/org.gnome.Logs.gschema.xml.h:2
+#: ../data/org.gnome.Logs.gschema.xml.h:4
 msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr "Ordenatu hautatutako motaren errenkadak gorantz edo beherantz"
 
-#: ../src/gl-application.c:110
+#: ../src/gl-application.c:109
 msgid "translator-credits"
 msgstr "Iñaki Larrañaga Murgoitio <dooteo@zundan.com>"
 
-#: ../src/gl-application.c:111
+#: ../src/gl-application.c:110
 msgid "View and search logs"
 msgstr "Ikusi eta bilatu erregistroak"
 
-#: ../src/gl-application.c:245
+#: ../src/gl-application.c:243
 msgid "Print version information and exit"
 msgstr "Erakutsi bertsioaren informazioa eta irten"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
-#: ../src/gl-eventtoolbar.c:115
+#: ../src/gl-eventtoolbar.c:105
 msgid "Boot"
 msgstr "Abioa"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventviewlist.c:296
+#: ../src/gl-eventviewlist.c:458
 msgid "No results"
 msgstr "Ez dago emaitzarik"
 
-#: ../src/gl-eventviewrow.c:219
+#: ../src/gl-eventviewrow.c:224
 msgid "Other"
 msgstr "Bestelakoa"
 
@@ -447,7 +471,6 @@ msgstr "PM"
 #. * label in the custom range submenu, showing the time with seconds
 #. * in 12-hour format.
 #: ../src/gl-searchpopover.c:987 ../src/gl-searchpopover.c:1226
-#| msgid "%l:%M:%S %p"
 msgid "%I:%M:%S %p"
 msgstr "%I:%M:%S %p"
 
@@ -561,37 +584,40 @@ msgstr "%Y.eko %b(a)ren  %ean, %H:%M"
 msgid "%s – %s"
 msgstr "%s – %s"
 
-#: ../src/gl-window.c:181
+#: ../src/gl-window.c:113
 msgid "Save logs"
 msgstr "Gorde erregistroak"
 
-#: ../src/gl-window.c:184
+#: ../src/gl-window.c:116
 msgid "_Cancel"
 msgstr "_Utzi"
 
-#: ../src/gl-window.c:185
+#: ../src/gl-window.c:117
 msgid "_Save"
 msgstr "_Gorde"
 
-#: ../src/gl-window.c:190
+#: ../src/gl-window.c:122
 msgid "log messages"
 msgstr "egunkariko mezuak"
 
-#: ../src/gl-window.c:243
+#: ../src/gl-window.c:175
 msgid "Unable to export log messages to a file"
 msgstr "Ezin dira egunkariaren mezuak fitxategi batera esportatu"
 
-#: ../src/gl-window.c:474 ../src/gl-window.c:505
+#: ../src/gl-window.c:402 ../src/gl-window.c:433
 msgid "Unable to read system logs"
 msgstr "Ezin dira sistemaren egunkariak irakurri"
 
-#: ../src/gl-window.c:488
+#: ../src/gl-window.c:416
 msgid "Unable to read user logs"
 msgstr "Ezin dira erabiltzailearen egunkariak irakurri"
 
-#: ../src/gl-window.c:520
+#: ../src/gl-window.c:448
 msgid "No logs available"
 msgstr "Ez dago erregistrorik eskuragarri"
+
+#~ msgid "Go back to the event view"
+#~ msgstr "Itzuli gertaeren ikuspegira"
 
 #~ msgid "Search the displayed logs"
 #~ msgstr "Bilatu bistaratutako erregistroak"
