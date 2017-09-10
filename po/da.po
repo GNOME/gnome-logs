@@ -6,10 +6,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
-"Report-Msgid-Bugs-To: "
-"https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2017-08-01 14:25+0000\n"
-"PO-Revision-Date: 2017-03-20 00:09+0100\n"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"logs&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2017-08-26 17:12+0000\n"
+"PO-Revision-Date: 2017-08-29 06:11+0200\n"
 "Last-Translator: Ask Hjorth Larsen <asklarsen@gmail.com>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "Language: da\n"
@@ -76,11 +76,11 @@ msgstr "Søg i alle loggene for den nuværende kategori"
 
 #: ../data/gl-eventviewdetail.ui.h:1
 msgid "Sender"
-msgstr ""
+msgstr "Afsender"
 
 #: ../data/gl-eventviewdetail.ui.h:2
 msgid "Time"
-msgstr ""
+msgstr "Tid"
 
 #: ../data/gl-eventviewdetail.ui.h:3 ../data/gl-searchpopover.ui.h:35
 msgid "Message"
@@ -290,7 +290,7 @@ msgstr "Hjælp"
 
 #: ../data/gl-window.ui.h:2
 msgid "Ignore"
-msgstr ""
+msgstr "Ignorér"
 
 #: ../data/help-overlay.ui.h:1
 msgctxt "shortcut window"
@@ -377,13 +377,13 @@ msgstr "log;journal;fejlsøgning;fejlsøg;debug;fejl;"
 
 #: ../data/org.gnome.Logs.gschema.xml.h:1
 msgid "Ignore warning"
-msgstr ""
+msgstr "Ignorér advarsel"
 
 #: ../data/org.gnome.Logs.gschema.xml.h:2
 msgid ""
 "Whether to ignore the warning that says you don’t have sufficient permission "
 "to view logs. If ignored, the warning won’t show up again."
-msgstr ""
+msgstr "Om advarslen om at du ikke har tilladelse til at se logge, skal ignoreres."
 
 #: ../data/org.gnome.Logs.gschema.xml.h:3
 msgid "How to sort list rows in the event view list"
@@ -391,8 +391,7 @@ msgstr "Hvordan listerækker skal sorteres i begivenhedsoversigten"
 
 #: ../data/org.gnome.Logs.gschema.xml.h:4
 msgid "Sort list rows in ascending or descending order for the selected type"
-msgstr ""
-"Sortér listerækker i stigende eller faldende orden for den valgte type"
+msgstr "Sortér listerækker i stigende eller faldende orden for den valgte type"
 
 #: ../src/gl-application.c:109
 msgid "translator-credits"
@@ -623,5 +622,3 @@ msgstr "Ingen tilgængelige logge"
 
 #~ msgid "Search the displayed logs"
 #~ msgstr "Søg i de viste logge"
-
-
