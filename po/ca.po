@@ -2,13 +2,14 @@
 # Copyright (C) 2014 gnome-logs's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-logs package.
 # Pau Iranzo <paugnu@gmail.com>, 2014.
+# Jordi Serratosa <jordis@softcatala.cat>, 2017.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2017-08-31 16:23+0000\n"
+"POT-Creation-Date: 2017-09-07 07:10+0000\n"
 "PO-Revision-Date: 2017-09-01 20:34+0200\n"
 "Last-Translator: David <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <gnome@llistes.softcatala.org>\n"
@@ -174,11 +175,11 @@ msgstr "Coincideix només amb la cadena completa"
 
 #: ../data/gl-searchpopover.ui.h:16
 msgid "Back"
-msgstr "Darrera"
+msgstr "Enrere"
 
 #: ../data/gl-searchpopover.ui.h:17
 msgid "Show Logs Starting From…"
-msgstr "Mostrant registres que comencen des de..."
+msgstr "Mostra els registres començant des de…"
 
 #: ../data/gl-searchpopover.ui.h:18
 msgid "Select a start date"
@@ -186,7 +187,7 @@ msgstr "Seleccioneu una data d'inici"
 
 #: ../data/gl-searchpopover.ui.h:19 ../src/gl-searchpopover.c:503
 msgid "Select Start Date…"
-msgstr "Seleccioneu una data d'inici..."
+msgstr "Seleccioneu una data d'inici…"
 
 #: ../data/gl-searchpopover.ui.h:20
 msgid "22 January 2016 or 1/22/2016"
@@ -198,7 +199,7 @@ msgstr "Seleccioneu hora d'inici"
 
 #: ../data/gl-searchpopover.ui.h:22 ../src/gl-searchpopover.c:504
 msgid "Select Start Time…"
-msgstr "Seleccioneu hora d'inici..."
+msgstr "Seleccioneu hora d'inici…"
 
 #: ../data/gl-searchpopover.ui.h:23
 msgid "Hr"
@@ -218,7 +219,7 @@ msgstr "AM/PM"
 
 #: ../data/gl-searchpopover.ui.h:27
 msgid "Until…"
-msgstr "Fins..."
+msgstr "Fins…"
 
 #: ../data/gl-searchpopover.ui.h:28
 msgid "Select an end date"
@@ -226,7 +227,7 @@ msgstr "Seleccioneu una data de finalització"
 
 #: ../data/gl-searchpopover.ui.h:29 ../src/gl-searchpopover.c:521
 msgid "Select End Date…"
-msgstr "Seleccionant una data de finalització..."
+msgstr "Seleccioneu una data de finalització…"
 
 #: ../data/gl-searchpopover.ui.h:30
 msgid "Select end time"
@@ -234,7 +235,7 @@ msgstr "Seleccioneu una hora de finalització"
 
 #: ../data/gl-searchpopover.ui.h:31 ../src/gl-searchpopover.c:522
 msgid "Select End Time…"
-msgstr "Seleccionant una hora de finalització..."
+msgstr "Seleccioneu una hora de finalització…"
 
 #: ../data/gl-searchpopover.ui.h:32
 msgid "PID"
@@ -588,7 +589,7 @@ msgstr "%s – %s"
 
 #: ../src/gl-window.c:113
 msgid "Save logs"
-msgstr "Guarda els registres"
+msgstr "Desa els registres"
 
 #: ../src/gl-window.c:116
 msgid "_Cancel"
@@ -596,7 +597,7 @@ msgstr "_Cancel·la"
 
 #: ../src/gl-window.c:117
 msgid "_Save"
-msgstr "_Guarda"
+msgstr "_Desa"
 
 #: ../src/gl-window.c:122
 msgid "log messages"
@@ -604,7 +605,7 @@ msgstr "Registre de missatges"
 
 #: ../src/gl-window.c:175
 msgid "Unable to export log messages to a file"
-msgstr "No s'ha pogut exportar els missatges del registre a un fitxer"
+msgstr "No s'han pogut exportar els missatges del registre a un fitxer"
 
 #: ../src/gl-window.c:402 ../src/gl-window.c:433
 msgid "Unable to read system logs"
