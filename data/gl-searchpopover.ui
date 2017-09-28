@@ -75,7 +75,7 @@
                                                 <signal name="row-activated" handler="on_parameter_treeview_row_activated"/>
                                                 <child>
                                                     <object class="GtkTreeViewColumn" id="parameter-column">
-                                                        <property name="title">Parameters</property>
+                                                        <property name="title" translatable="yes">Parameters</property>
                                                         <property name="visible">True</property>
                                                         <child>
                                                             <object class="GtkCellRendererText" id="test-renderer"/>
@@ -248,7 +248,7 @@
                                                 <signal name="row-activated" handler="on_range_treeview_row_activated"/>
                                                 <child>
                                                     <object class="GtkTreeViewColumn" id="range-column">
-                                                        <property name="title">Parameters</property>
+                                                        <property name="title" translatable="yes">Parameters</property>
                                                         <property name="visible">True</property>
                                                         <child>
                                                             <object class="GtkCellRendererText" id="range-text-renderer"/>
