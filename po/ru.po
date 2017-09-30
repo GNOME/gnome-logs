@@ -10,9 +10,9 @@ msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2017-03-19 16:18+0000\n"
-"PO-Revision-Date: 2017-03-21 00:24+0300\n"
-"Last-Translator: Stas Solovey <whats_up@tut.by>\n"
+"POT-Creation-Date: 2017-09-26 08:55+0000\n"
+"PO-Revision-Date: 2017-09-30 13:29+0400\n"
+"Last-Translator: Yuri Myasoedov <ymyasoedov@yandex.ru>\n"
 "Language-Team: Русский <gnome-cyr@gnome.org>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Poedit 2.0.2\n"
 
 #: ../data/gl-categorylist.ui.h:1
 msgid "Important"
@@ -38,19 +38,19 @@ msgstr "Избранные"
 msgid "All"
 msgstr "Все"
 
-#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:202
+#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:207
 msgid "Applications"
 msgstr "Приложения"
 
-#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:211
+#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:216
 msgid "System"
 msgstr "Система"
 
-#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:215
+#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:220
 msgid "Security"
 msgstr "Безопасность"
 
-#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:207
+#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:212
 msgid "Hardware"
 msgstr "Оборудование"
 
@@ -63,50 +63,54 @@ msgid "Usage"
 msgstr "Использование"
 
 #: ../data/gl-eventtoolbar.ui.h:1
-msgid "Go back to the event view"
-msgstr "Вернуться к просмотру событий"
-
-#: ../data/gl-eventtoolbar.ui.h:2
 msgid "Export logs to a file"
 msgstr "Экспортировать журналы в файл"
 
-#: ../data/gl-eventtoolbar.ui.h:3
+#: ../data/gl-eventtoolbar.ui.h:2
 msgid "Choose the boot from which to view logs"
 msgstr "Выберите загрузку, для которой хотите просмотреть журналы"
 
-#: ../data/gl-eventtoolbar.ui.h:4
+#: ../data/gl-eventtoolbar.ui.h:3
 msgid "Search all the logs of the current category"
 msgstr "Искать все журналы текущей категории"
 
-#: ../data/gl-eventviewdetail.ui.h:1 ../data/gl-searchpopover.ui.h:35
+#: ../data/gl-eventviewdetail.ui.h:1
+msgid "Sender"
+msgstr "Отправитель"
+
+#: ../data/gl-eventviewdetail.ui.h:2
+msgid "Time"
+msgstr "Время"
+
+#: ../data/gl-eventviewdetail.ui.h:3 ../data/gl-searchpopover.ui.h:35
 msgid "Message"
 msgstr "Сообщение"
 
-#: ../data/gl-eventviewdetail.ui.h:2 ../data/gl-searchpopover.ui.h:39
+#: ../data/gl-eventviewdetail.ui.h:4 ../data/gl-searchpopover.ui.h:39
 msgid "Audit Session"
 msgstr "Сеанс аудита"
 
-#: ../data/gl-eventviewdetail.ui.h:3 ../data/gl-searchpopover.ui.h:38
+#: ../data/gl-eventviewdetail.ui.h:5 ../data/gl-searchpopover.ui.h:38
 msgid "Kernel Device"
 msgstr "Устройство"
 
-#: ../data/gl-eventviewdetail.ui.h:4
+#: ../data/gl-eventviewdetail.ui.h:6
 msgid "Priority"
 msgstr "Приоритет"
 
-#: ../data/gl-eventviewdetail.ui.h:5
+#: ../data/gl-eventviewdetail.ui.h:7
 msgid "Subject"
 msgstr "Тема"
 
-#: ../data/gl-eventviewdetail.ui.h:6
+#: ../data/gl-eventviewdetail.ui.h:8
 msgid "Defined By"
 msgstr "Определено"
 
-#: ../data/gl-eventviewdetail.ui.h:7
+#: ../data/gl-eventviewdetail.ui.h:9
 msgid "Support"
 msgstr "Поддержка"
 
-#: ../data/gl-eventviewdetail.ui.h:8
+#: ../data/gl-eventviewdetail.ui.h:10
 msgid "Documentation"
 msgstr "Документация"
 
@@ -284,6 +288,10 @@ msgstr "Указать другой диапазон…"
 msgid "Help"
 msgstr "Справка"
 
+#: ../data/gl-window.ui.h:2
+msgid "Ignore"
+msgstr "Игнорировать"
+
 #: ../data/help-overlay.ui.h:1
 msgctxt "shortcut window"
 msgid "General"
@@ -354,7 +362,7 @@ msgstr ""
 "С помощью приложения «Журналы» вы можете выполнять поиск по журналам и "
 "просматривать подробную информацию о событиях."
 
-#: ../data/org.gnome.Logs.desktop.in.h:1 ../src/gl-eventtoolbar.c:124
+#: ../data/org.gnome.Logs.desktop.in.h:1 ../src/gl-eventtoolbar.c:114
 msgid "Logs"
 msgstr "Журналы"
 
@@ -368,41 +376,53 @@ msgid "log;journal;debug;error;"
 msgstr "логи;журнал;debug;ошибка;отладка;"
 
 #: ../data/org.gnome.Logs.gschema.xml.h:1
+msgid "Ignore warning"
+msgstr "Игнорировать предупреждения"
+
+#: ../data/org.gnome.Logs.gschema.xml.h:2
+msgid ""
+"Whether to ignore the warning that says you don’t have sufficient permission "
+"to view logs. If ignored, the warning won’t show up again."
+msgstr ""
+"Игнорировать ли предупреждения о недостаточности прав для просмотра "
+"журналов. Если игнорируется, то предупреждения не будут показываться."
+
+#: ../data/org.gnome.Logs.gschema.xml.h:3
 msgid "How to sort list rows in the event view list"
 msgstr "Как сортировать список строк в списке просмотра событий"
 
-#: ../data/org.gnome.Logs.gschema.xml.h:2
+#: ../data/org.gnome.Logs.gschema.xml.h:4
 msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr ""
 "Сортировать список строк в порядке возрастания или убывания для выбранного "
 "типа"
 
-#: ../src/gl-application.c:110
+#: ../src/gl-application.c:109
 msgid "translator-credits"
 msgstr ""
 "Станислав Соловей <whats_up@tut.by>, 2014-2017\n"
 "Юрий Мясоедов <ymyasoedov@yandex.ru>, 2015-2017"
 
-#: ../src/gl-application.c:111
+#: ../src/gl-application.c:110
 msgid "View and search logs"
 msgstr "Просмотр и поиск событий"
 
-#: ../src/gl-application.c:245
+#: ../src/gl-application.c:243
 msgid "Print version information and exit"
 msgstr "Показать информацию о версии и выйти"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
-#: ../src/gl-eventtoolbar.c:115
+#: ../src/gl-eventtoolbar.c:105
 msgid "Boot"
 msgstr "Загрузка"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventviewlist.c:296
+#: ../src/gl-eventviewlist.c:458
 msgid "No results"
 msgstr "Результаты отсутствуют"
 
-#: ../src/gl-eventviewrow.c:219
+#: ../src/gl-eventviewrow.c:224
 msgid "Other"
 msgstr "Другое"
 
@@ -574,37 +594,40 @@ msgstr "%e %b. %Y, %H:%M"
 msgid "%s – %s"
 msgstr "%s – %s"
 
-#: ../src/gl-window.c:181
+#: ../src/gl-window.c:113
 msgid "Save logs"
 msgstr "Сохранить журналы"
 
-#: ../src/gl-window.c:184
+#: ../src/gl-window.c:116
 msgid "_Cancel"
 msgstr "_Отменить"
 
-#: ../src/gl-window.c:185
+#: ../src/gl-window.c:117
 msgid "_Save"
 msgstr "_Сохранить"
 
-#: ../src/gl-window.c:190
+#: ../src/gl-window.c:122
 msgid "log messages"
 msgstr "Сообщения журнала"
 
-#: ../src/gl-window.c:243
+#: ../src/gl-window.c:175
 msgid "Unable to export log messages to a file"
 msgstr "Не удалось экспортировать сообщения журнала в файл"
 
-#: ../src/gl-window.c:474 ../src/gl-window.c:505
+#: ../src/gl-window.c:402 ../src/gl-window.c:433
 msgid "Unable to read system logs"
 msgstr "Не удалось прочитать системные журналы"
 
-#: ../src/gl-window.c:488
+#: ../src/gl-window.c:416
 msgid "Unable to read user logs"
 msgstr "Не удалось прочитать пользовательские журналы"
 
-#: ../src/gl-window.c:520
+#: ../src/gl-window.c:448
 msgid "No logs available"
 msgstr "Нет доступных журналов"
+
+#~ msgid "Go back to the event view"
+#~ msgstr "Вернуться к просмотру событий"
 
 #~ msgid "Search the displayed logs"
 #~ msgstr "Поиск по журналам"
