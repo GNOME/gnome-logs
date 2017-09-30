@@ -1,22 +1,22 @@
 # Persian translation for gnome-logs.
 # Copyright (C) 2014 gnome-logs's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-logs package.
-# Arash Mousavi <mousavi.arash@gmail.com>, 2014, 2015, 2016.
+# Arash Mousavi <mousavi.arash@gmail.com>, 2014, 2015, 2016, 2017.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs gnome-3-14\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-08-10 10:34+0000\n"
-"PO-Revision-Date: 2016-09-13 13:01+0430\n"
+"POT-Creation-Date: 2017-09-26 08:55+0000\n"
+"PO-Revision-Date: 2017-09-30 19:36+0330\n"
 "Last-Translator: Arash Mousavi <mousavi.arash@gmail.com>\n"
 "Language-Team: Persian <fa@li.org>\n"
 "Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.9\n"
+"X-Generator: Poedit 2.0.4\n"
 
 #: ../data/gl-categorylist.ui.h:1
 msgid "Important"
@@ -34,19 +34,19 @@ msgstr "ستاره‌دار"
 msgid "All"
 msgstr "همه"
 
-#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:202
+#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:207
 msgid "Applications"
 msgstr "برنامه‌ها"
 
-#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:211
+#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:216
 msgid "System"
 msgstr "سیستم"
 
-#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:215
+#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:220
 msgid "Security"
 msgstr "امنیت"
 
-#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:207
+#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:212
 msgid "Hardware"
 msgstr "سخت‌افزار"
 
@@ -59,56 +59,234 @@ msgid "Usage"
 msgstr "استفاده"
 
 #: ../data/gl-eventtoolbar.ui.h:1
-msgid "Go back to the event view"
-msgstr "برگشتن به نما رویداد"
-
-#: ../data/gl-eventtoolbar.ui.h:2
 msgid "Export logs to a file"
 msgstr "صادر کردن وقایع به یک پرونده"
 
-#: ../data/gl-eventtoolbar.ui.h:3
+#: ../data/gl-eventtoolbar.ui.h:2
 msgid "Choose the boot from which to view logs"
 msgstr "یک بوت را برای نمایش وقایع‌اش انتخاب کنید"
 
-#: ../data/gl-eventtoolbar.ui.h:4
+#: ../data/gl-eventtoolbar.ui.h:3
 msgid "Search all the logs of the current category"
 msgstr "جست‌وجو تمام وقایع در دسته‌بندی فعلی"
 
 #: ../data/gl-eventviewdetail.ui.h:1
+msgid "Sender"
+msgstr "ارسال کننده"
+
+#: ../data/gl-eventviewdetail.ui.h:2
+msgid "Time"
+msgstr "ساعت"
+
+#: ../data/gl-eventviewdetail.ui.h:3 ../data/gl-searchpopover.ui.h:35
 msgid "Message"
 msgstr "پیام"
 
-#: ../data/gl-eventviewdetail.ui.h:2
+#: ../data/gl-eventviewdetail.ui.h:4 ../data/gl-searchpopover.ui.h:39
 msgid "Audit Session"
 msgstr "بازرسی نشست"
 
-#: ../data/gl-eventviewdetail.ui.h:3
+#: ../data/gl-eventviewdetail.ui.h:5 ../data/gl-searchpopover.ui.h:38
 msgid "Kernel Device"
 msgstr "دستگاه هسته"
 
-#: ../data/gl-eventviewdetail.ui.h:4
+#: ../data/gl-eventviewdetail.ui.h:6
 msgid "Priority"
 msgstr "الویت"
 
-#: ../data/gl-eventviewdetail.ui.h:5
+#: ../data/gl-eventviewdetail.ui.h:7
 msgid "Subject"
 msgstr "عنوان"
 
-#: ../data/gl-eventviewdetail.ui.h:6
+#: ../data/gl-eventviewdetail.ui.h:8
 msgid "Defined By"
 msgstr "تعریف شده توسط"
 
-#: ../data/gl-eventviewdetail.ui.h:7
+#: ../data/gl-eventviewdetail.ui.h:9
 msgid "Support"
 msgstr "پشتیبانی"
 
-#: ../data/gl-eventviewdetail.ui.h:8
+#: ../data/gl-eventviewdetail.ui.h:10
 msgid "Documentation"
 msgstr "مستندات"
+
+#: ../data/gl-eventviewlist.ui.h:1
+msgid "Select journal field and timestamp range filtering options"
+msgstr "Select journal field and timestamp range filtering options"
+
+#: ../data/gl-searchpopover.ui.h:1
+msgid "Select a Journal Field to filter the Logs according to it"
+msgstr "Select a Journal Field to filter the Logs according to it"
+
+#: ../data/gl-searchpopover.ui.h:2
+msgid "All Available Fields"
+msgstr "تمام فیلدهای موجود"
+
+#. Translators: What [journal fields to search in]
+#: ../data/gl-searchpopover.ui.h:4
+msgid "What"
+msgstr "چی"
+
+#: ../data/gl-searchpopover.ui.h:5
+msgid "Select Journal Field…"
+msgstr "انتخاب فیلد Journal…"
+
+#. When [log entries to be shown for a given timestamp range]
+#: ../data/gl-searchpopover.ui.h:7
+msgid "When"
+msgstr "چه زمانی"
+
+#: ../data/gl-searchpopover.ui.h:8
+msgid "Show Logs from…"
+msgstr "نمایش وقایع از…"
+
+#: ../data/gl-searchpopover.ui.h:9
+msgid "Select Timestamp Range of the Log Entries to be shown"
+msgstr "Select Timestamp Range of the Log Entries to be shown"
+
+#: ../data/gl-searchpopover.ui.h:10 ../src/gl-searchpopover.c:1303
+msgid "Current Boot"
+msgstr "ورود فعلی"
+
+#: ../data/gl-searchpopover.ui.h:11
+msgid "Search Type"
+msgstr "نوع جست‌وجو"
+
+#: ../data/gl-searchpopover.ui.h:12
+msgid "Substring"
+msgstr "بخشی از رشته"
+
+#: ../data/gl-searchpopover.ui.h:13
+msgid "Match in any part of the string"
+msgstr "تطبیق با هر قسمتی از رشته"
+
+#: ../data/gl-searchpopover.ui.h:14
+msgid "Exact"
+msgstr "کاملا منطبق"
+
+#: ../data/gl-searchpopover.ui.h:15
+msgid "Match complete string only"
+msgstr "تطبیق با تمام رشته"
+
+#: ../data/gl-searchpopover.ui.h:16
+msgid "Back"
+msgstr "برگشت"
+
+#: ../data/gl-searchpopover.ui.h:17
+msgid "Show Logs Starting From…"
+msgstr "شروع نمایش وقایع از…"
+
+#: ../data/gl-searchpopover.ui.h:18
+msgid "Select a start date"
+msgstr "انتخاب یک تاریخ شروع"
+
+#: ../data/gl-searchpopover.ui.h:19 ../src/gl-searchpopover.c:503
+msgid "Select Start Date…"
+msgstr "انتخاب شروع تاریخ…"
+
+#: ../data/gl-searchpopover.ui.h:20
+msgid "22 January 2016 or 1/22/2016"
+msgstr "22 January 2016 یا 1/22/2016"
+
+#: ../data/gl-searchpopover.ui.h:21
+msgid "Select start time"
+msgstr "انتخاب تاریخ شروع"
+
+#: ../data/gl-searchpopover.ui.h:22 ../src/gl-searchpopover.c:504
+msgid "Select Start Time…"
+msgstr "انتخاب تاریخ شروع…"
+
+#: ../data/gl-searchpopover.ui.h:23
+msgid "Hr"
+msgstr "ساعت"
+
+#: ../data/gl-searchpopover.ui.h:24
+msgid "Min"
+msgstr "دقیقه"
+
+#: ../data/gl-searchpopover.ui.h:25
+msgid "Sec"
+msgstr "ثانیه"
+
+#: ../data/gl-searchpopover.ui.h:26
+msgid "AM/PM"
+msgstr "صبح/بعدازظهر"
+
+#: ../data/gl-searchpopover.ui.h:27
+msgid "Until…"
+msgstr "تا…"
+
+#: ../data/gl-searchpopover.ui.h:28
+msgid "Select an end date"
+msgstr "انتخاب یک تاریخ پایان"
+
+#: ../data/gl-searchpopover.ui.h:29 ../src/gl-searchpopover.c:521
+msgid "Select End Date…"
+msgstr "انتخاب تاریخ پایان…"
+
+#: ../data/gl-searchpopover.ui.h:30
+msgid "Select end time"
+msgstr "انتخاب ساعت پایان"
+
+#: ../data/gl-searchpopover.ui.h:31 ../src/gl-searchpopover.c:522
+msgid "Select End Time…"
+msgstr "انتخاب ساعت پایان…"
+
+#: ../data/gl-searchpopover.ui.h:32
+msgid "PID"
+msgstr "PID"
+
+#: ../data/gl-searchpopover.ui.h:33
+msgid "UID"
+msgstr "UID"
+
+#: ../data/gl-searchpopover.ui.h:34
+msgid "GID"
+msgstr "GID"
+
+#: ../data/gl-searchpopover.ui.h:36
+msgid "Process Name"
+msgstr "نام پروسه"
+
+#: ../data/gl-searchpopover.ui.h:37
+msgid "Systemd Unit"
+msgstr "واحد سیستم"
+
+#: ../data/gl-searchpopover.ui.h:40
+msgid "Executable Path"
+msgstr "مکان قابل اجرا"
+
+#: ../data/gl-searchpopover.ui.h:41
+msgid "Previous Boot"
+msgstr "اجرای قبلی"
+
+#: ../data/gl-searchpopover.ui.h:42
+msgid "Today"
+msgstr "امروز"
+
+#: ../data/gl-searchpopover.ui.h:43
+msgid "Yesterday"
+msgstr "دیروز"
+
+#: ../data/gl-searchpopover.ui.h:44
+msgid "Last 3 days"
+msgstr "۳ روز پیش"
+
+#: ../data/gl-searchpopover.ui.h:45
+msgid "Entire Journal"
+msgstr "تمام Journal"
+
+#: ../data/gl-searchpopover.ui.h:46
+msgid "Set Custom Range…"
+msgstr "تنظیم بازه سفارشی…"
 
 #: ../data/gl-window.ui.h:1
 msgid "Help"
 msgstr "راهنما"
+
+#: ../data/gl-window.ui.h:2
+msgid "Ignore"
+msgstr "نادیده گرفتن"
 
 #: ../data/help-overlay.ui.h:1
 msgctxt "shortcut window"
@@ -180,7 +358,7 @@ msgstr ""
 "با استفاده از رویدادها می‌توانید وقایع خود را با تایپ کردن آنها جست‌وجو کنید و "
 "جزئیات اطلاعات مربوط به هر رویداد را با کلیک کردن بر روی آن ببینید."
 
-#: ../data/org.gnome.Logs.desktop.in.h:1 ../src/gl-eventtoolbar.c:124
+#: ../data/org.gnome.Logs.desktop.in.h:1 ../src/gl-eventtoolbar.c:114
 msgid "Logs"
 msgstr "تاریخچه‌وقایع"
 
@@ -194,39 +372,111 @@ msgid "log;journal;debug;error;"
 msgstr "وقایع;رفع اشکال;خطا;log;journal;debug;error;"
 
 #: ../data/org.gnome.Logs.gschema.xml.h:1
+msgid "Ignore warning"
+msgstr "نادیده گرفتن هشدار"
+
+#: ../data/org.gnome.Logs.gschema.xml.h:2
+msgid ""
+"Whether to ignore the warning that says you don’t have sufficient permission "
+"to view logs. If ignored, the warning won’t show up again."
+msgstr ""
+"Whether to ignore the warning that says you don’t have sufficient permission "
+"to view logs. If ignored, the warning won’t show up again."
+
+#: ../data/org.gnome.Logs.gschema.xml.h:3
 msgid "How to sort list rows in the event view list"
 msgstr "چگونگی ترتیب فهرست ردیف‌ها در فهرست نمای رویدادها"
 
-#: ../data/org.gnome.Logs.gschema.xml.h:2
+#: ../data/org.gnome.Logs.gschema.xml.h:4
 msgid "Sort list rows in ascending or descending order for the selected type"
-msgstr "مرتب کردن ردیف‌های فهرست بصورت نزولی یا صعودی "
+msgstr "مرتب کردن ردیف‌های فهرست بصورت نزولی یا صعودی"
 
-#: ../src/gl-application.c:110
+#: ../src/gl-application.c:109
 msgid "translator-credits"
 msgstr "آرش موسوی <mousavi.arash@gmail.com>"
 
-#: ../src/gl-application.c:111
+#: ../src/gl-application.c:110
 msgid "View and search logs"
 msgstr "نمایش و جست‌وجو وقایع"
 
-#: ../src/gl-application.c:239
+#: ../src/gl-application.c:243
 msgid "Print version information and exit"
 msgstr "چاپ اطلاعات نسخه و خروج"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
-#: ../src/gl-eventtoolbar.c:115
+#: ../src/gl-eventtoolbar.c:105
 msgid "Boot"
 msgstr "بوت"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventviewlist.c:290
+#: ../src/gl-eventviewlist.c:458
 msgid "No results"
 msgstr "بدون نتیجه"
 
-#: ../src/gl-eventviewrow.c:219
+#: ../src/gl-eventviewrow.c:224
 msgid "Other"
 msgstr "متفرقه"
+
+#. Translators: if only custom start timestamp is set, then we update
+#. * the timestamp range button label in popover to show that
+#. * logs are shown in the window starting from this timestamp
+#. * until the ending timestamp of journal.
+#: ../src/gl-searchpopover.c:687
+#, c-format
+msgid "From %s"
+msgstr "از %s"
+
+#. Translators: if only custom end timestamp is set, then we update
+#. * the timestamp range button label in popover to show that
+#. * logs are shown in the window upto this timestamp
+#. * with the starting timestamp being the current time.
+#: ../src/gl-searchpopover.c:700
+#, c-format
+msgid "Until %s"
+msgstr "تا %s"
+
+#. Translators: date format for the start date entry
+#. * and start date button label in the custom range submenu,
+#. * showing the day of month in decimal number, full month
+#. * name as string, the year as a decimal number including the century.
+#. Translators: date format for the end date entry
+#. * and end date button label in the custom range submenu,
+#. * showing the day of month in decimal number, full month
+#. * name as string, the year as a decimal number including the century.
+#: ../src/gl-searchpopover.c:737 ../src/gl-searchpopover.c:1104
+msgid "%e %B %Y"
+msgstr "%e %OB %OY"
+
+#: ../src/gl-searchpopover.c:875
+#, c-format
+msgid "AM"
+msgstr "صبح"
+
+#: ../src/gl-searchpopover.c:879
+#, c-format
+msgid "PM"
+msgstr "بعدازظهر"
+
+#. Translators: timestamp format for the custom start time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 12-hour format.
+#. Translators: timestamp format for the custom end time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 12-hour format.
+#: ../src/gl-searchpopover.c:987 ../src/gl-searchpopover.c:1226
+msgid "%I:%M:%S %p"
+msgstr "%OI:%OM:%OS %p"
+
+#. Translators: timestamp format for the custom start time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 24-hour format.
+#. Translators: timestamp format for the custom end time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 24-hour format.
+#: ../src/gl-searchpopover.c:994 ../src/gl-searchpopover.c:1233
+msgid "%T"
+msgstr "%T"
 
 #. Translators: timestamp format for events on the
 #. * current day, showing the time with seconds in
@@ -328,37 +578,40 @@ msgstr "%b %e %Y %OH:%OM"
 msgid "%s – %s"
 msgstr "%s – %s"
 
-#: ../src/gl-window.c:186
+#: ../src/gl-window.c:113
 msgid "Save logs"
 msgstr "ذخیره وقایع"
 
-#: ../src/gl-window.c:189
+#: ../src/gl-window.c:116
 msgid "_Cancel"
 msgstr "_انصراف"
 
-#: ../src/gl-window.c:190
+#: ../src/gl-window.c:117
 msgid "_Save"
 msgstr "_ذخیره"
 
-#: ../src/gl-window.c:195
+#: ../src/gl-window.c:122
 msgid "log messages"
 msgstr "پیام‌های وقایع"
 
-#: ../src/gl-window.c:248
+#: ../src/gl-window.c:175
 msgid "Unable to export log messages to a file"
 msgstr "امکان صادر کردن وقایع به یک پرونده نبود"
 
-#: ../src/gl-window.c:474 ../src/gl-window.c:505
+#: ../src/gl-window.c:402 ../src/gl-window.c:433
 msgid "Unable to read system logs"
 msgstr "امکان خواندن وقایع سیستم نبود"
 
-#: ../src/gl-window.c:488
+#: ../src/gl-window.c:416
 msgid "Unable to read user logs"
 msgstr "امکان خواندن وقایع کاربر نبود"
 
-#: ../src/gl-window.c:520
+#: ../src/gl-window.c:448
 msgid "No logs available"
 msgstr "هیچ وقایعی در دسترس نیست"
+
+#~ msgid "Go back to the event view"
+#~ msgstr "برگشتن به نما رویداد"
 
 #~ msgid "Search the displayed logs"
 #~ msgstr "جست‌وجو وقایع نمایش داده شده"
