@@ -2,35 +2,22 @@
 # Copyright (C) 2014 gnome-logs's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-logs package.
 # Pau Iranzo <paugnu@gmail.com>, 2014.
+# Jordi Serratosa <jordis@softcatala.cat>, 2017.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-05-09 01:06+0200\n"
-"PO-Revision-Date: 2014-03-09 09:10+0100\n"
-"Last-Translator: Pau Iranzo <paugnu@gmail.com>\n"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"logs&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2017-09-26 08:55+0000\n"
+"PO-Revision-Date: 2017-09-01 20:34+0200\n"
+"Last-Translator: Xavi Ivars <xavi.ivars@gmail.com>\n"
 "Language-Team: Catalan <gnome@llistes.softcatala.org>\n"
-"Language: ca@valencia\n"
+"Language: ca-valencia\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-
-#: ../data/appmenu.ui.h:1
-msgid "_New Window"
-msgstr "Finestra _nova"
-
-#: ../data/appmenu.ui.h:2
-msgid "_Help"
-msgstr "_Ajuda"
-
-#: ../data/appmenu.ui.h:3
-msgid "_About"
-msgstr "_Quant a"
-
-#: ../data/appmenu.ui.h:4
-msgid "_Quit"
-msgstr "I_x"
+"X-Generator: Poedit 1.8.11\n"
 
 #: ../data/gl-categorylist.ui.h:1
 msgid "Important"
@@ -48,19 +35,19 @@ msgstr "Destacat"
 msgid "All"
 msgstr "Totes"
 
-#: ../data/gl-categorylist.ui.h:5
+#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:207
 msgid "Applications"
 msgstr "Aplicacions"
 
-#: ../data/gl-categorylist.ui.h:6
+#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:216
 msgid "System"
 msgstr "Sistema"
 
-#: ../data/gl-categorylist.ui.h:7
+#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:220
 msgid "Security"
 msgstr "Seguretat"
 
-#: ../data/gl-categorylist.ui.h:8
+#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:212
 msgid "Hardware"
 msgstr "Maquinari"
 
@@ -73,122 +60,570 @@ msgid "Usage"
 msgstr "Utilització"
 
 #: ../data/gl-eventtoolbar.ui.h:1
-msgid "Logs"
-msgstr "Registres"
+msgid "Export logs to a file"
+msgstr "Exporta registres a un fitxer"
 
 #: ../data/gl-eventtoolbar.ui.h:2
-msgid "Go back to the event view"
-msgstr "Vés arrere a la visualització d'esdeveniment"
+msgid "Choose the boot from which to view logs"
+msgstr "Trieu l'arrencada des del qual veure els vostres registres"
 
 #: ../data/gl-eventtoolbar.ui.h:3
-msgid "Search the displayed logs"
-msgstr "Cerqueu els registres mostrats"
+msgid "Search all the logs of the current category"
+msgstr "Busca tots els registres de la categoria actual"
 
-#: ../data/gnome-logs.appdata.xml.in.h:1
+#: ../data/gl-eventviewdetail.ui.h:1
+msgid "Sender"
+msgstr "Remitent"
+
+#: ../data/gl-eventviewdetail.ui.h:2
+msgid "Time"
+msgstr "Hora"
+
+#: ../data/gl-eventviewdetail.ui.h:3 ../data/gl-searchpopover.ui.h:35
+msgid "Message"
+msgstr "Missatge"
+
+#: ../data/gl-eventviewdetail.ui.h:4 ../data/gl-searchpopover.ui.h:39
+msgid "Audit Session"
+msgstr "Audita la sessió"
+
+#: ../data/gl-eventviewdetail.ui.h:5 ../data/gl-searchpopover.ui.h:38
+msgid "Kernel Device"
+msgstr "Dispositiu del nucli"
+
+#: ../data/gl-eventviewdetail.ui.h:6
+msgid "Priority"
+msgstr "Prioritat"
+
+#: ../data/gl-eventviewdetail.ui.h:7
+msgid "Subject"
+msgstr "Tema"
+
+#: ../data/gl-eventviewdetail.ui.h:8
+msgid "Defined By"
+msgstr "Definit per"
+
+#: ../data/gl-eventviewdetail.ui.h:9
+msgid "Support"
+msgstr "Suport"
+
+#: ../data/gl-eventviewdetail.ui.h:10
+msgid "Documentation"
+msgstr "Documentació"
+
+#: ../data/gl-eventviewlist.ui.h:1
+msgid "Select journal field and timestamp range filtering options"
+msgstr ""
+"Seleccioneu diari de camp i abast de la marca de temps de les opcions de "
+"filtrat"
+
+#: ../data/gl-searchpopover.ui.h:1
+msgid "Select a Journal Field to filter the Logs according to it"
+msgstr "Seleccioneu un diari de camp per filtrar els registres d'acord amb ell"
+
+#: ../data/gl-searchpopover.ui.h:2
+msgid "All Available Fields"
+msgstr "Tots els camps disponibles"
+
+#. Translators: What [journal fields to search in]
+#: ../data/gl-searchpopover.ui.h:4
+msgid "What"
+msgstr "Què"
+
+#: ../data/gl-searchpopover.ui.h:5
+msgid "Select Journal Field…"
+msgstr "Seleccioneu diari de camp..."
+
+#. When [log entries to be shown for a given timestamp range]
+#: ../data/gl-searchpopover.ui.h:7
+msgid "When"
+msgstr "Quan"
+
+#: ../data/gl-searchpopover.ui.h:8
+msgid "Show Logs from…"
+msgstr "Mostra els registres des de..."
+
+#: ../data/gl-searchpopover.ui.h:9
+msgid "Select Timestamp Range of the Log Entries to be shown"
+msgstr ""
+"Seleccioneu abast de la marca de temps de les entrades del registre que es "
+"mostrarà"
+
+#: ../data/gl-searchpopover.ui.h:10 ../src/gl-searchpopover.c:1303
+msgid "Current Boot"
+msgstr "Inici actual"
+
+#: ../data/gl-searchpopover.ui.h:11
+msgid "Search Type"
+msgstr "Tipus de busca"
+
+#: ../data/gl-searchpopover.ui.h:12
+msgid "Substring"
+msgstr "Subcadena"
+
+#: ../data/gl-searchpopover.ui.h:13
+msgid "Match in any part of the string"
+msgstr "Coincideix en qualsevol part de la cadena"
+
+#: ../data/gl-searchpopover.ui.h:14
+msgid "Exact"
+msgstr "Exacte"
+
+#: ../data/gl-searchpopover.ui.h:15
+msgid "Match complete string only"
+msgstr "Coincideix només amb la cadena completa"
+
+#: ../data/gl-searchpopover.ui.h:16
+msgid "Back"
+msgstr "Arrere"
+
+#: ../data/gl-searchpopover.ui.h:17
+msgid "Show Logs Starting From…"
+msgstr "Mostra els registres començant des de…"
+
+#: ../data/gl-searchpopover.ui.h:18
+msgid "Select a start date"
+msgstr "Seleccioneu una data d'inici"
+
+#: ../data/gl-searchpopover.ui.h:19 ../src/gl-searchpopover.c:503
+msgid "Select Start Date…"
+msgstr "Seleccioneu una data d'inici…"
+
+#: ../data/gl-searchpopover.ui.h:20
+msgid "22 January 2016 or 1/22/2016"
+msgstr "22 de gener de 2016 o 1/22/2016"
+
+#: ../data/gl-searchpopover.ui.h:21
+msgid "Select start time"
+msgstr "Seleccioneu hora d'inici"
+
+#: ../data/gl-searchpopover.ui.h:22 ../src/gl-searchpopover.c:504
+msgid "Select Start Time…"
+msgstr "Seleccioneu hora d'inici…"
+
+#: ../data/gl-searchpopover.ui.h:23
+msgid "Hr"
+msgstr "Hora"
+
+#: ../data/gl-searchpopover.ui.h:24
+msgid "Min"
+msgstr "Minut"
+
+#: ../data/gl-searchpopover.ui.h:25
+msgid "Sec"
+msgstr "Segon"
+
+#: ../data/gl-searchpopover.ui.h:26
+msgid "AM/PM"
+msgstr "AM/PM"
+
+#: ../data/gl-searchpopover.ui.h:27
+msgid "Until…"
+msgstr "Fins…"
+
+#: ../data/gl-searchpopover.ui.h:28
+msgid "Select an end date"
+msgstr "Seleccioneu una data de finalització"
+
+#: ../data/gl-searchpopover.ui.h:29 ../src/gl-searchpopover.c:521
+msgid "Select End Date…"
+msgstr "Seleccioneu una data de finalització…"
+
+#: ../data/gl-searchpopover.ui.h:30
+msgid "Select end time"
+msgstr "Seleccioneu una hora de finalització"
+
+#: ../data/gl-searchpopover.ui.h:31 ../src/gl-searchpopover.c:522
+msgid "Select End Time…"
+msgstr "Seleccioneu una hora de finalització…"
+
+#: ../data/gl-searchpopover.ui.h:32
+msgid "PID"
+msgstr "PID"
+
+#: ../data/gl-searchpopover.ui.h:33
+msgid "UID"
+msgstr "UID"
+
+#: ../data/gl-searchpopover.ui.h:34
+msgid "GID"
+msgstr "GID"
+
+#: ../data/gl-searchpopover.ui.h:36
+msgid "Process Name"
+msgstr "Nom del procés"
+
+#: ../data/gl-searchpopover.ui.h:37
+msgid "Systemd Unit"
+msgstr "Unitat de Systemd"
+
+#: ../data/gl-searchpopover.ui.h:40
+msgid "Executable Path"
+msgstr "Camí d'execució"
+
+#: ../data/gl-searchpopover.ui.h:41
+msgid "Previous Boot"
+msgstr "Inici previ"
+
+#: ../data/gl-searchpopover.ui.h:42
+msgid "Today"
+msgstr "Hui"
+
+#: ../data/gl-searchpopover.ui.h:43
+msgid "Yesterday"
+msgstr "Ahir"
+
+#: ../data/gl-searchpopover.ui.h:44
+msgid "Last 3 days"
+msgstr "Últims 3 dies"
+
+#: ../data/gl-searchpopover.ui.h:45
+msgid "Entire Journal"
+msgstr "La totalitat del diari"
+
+#: ../data/gl-searchpopover.ui.h:46
+msgid "Set Custom Range…"
+msgstr "Estableix interval personalitzat..."
+
+#: ../data/gl-window.ui.h:1
+msgid "Help"
+msgstr "Ajuda"
+
+#: ../data/gl-window.ui.h:2
+msgid "Ignore"
+msgstr "Ignora"
+
+#: ../data/help-overlay.ui.h:1
+msgctxt "shortcut window"
+msgid "General"
+msgstr "General"
+
+#: ../data/help-overlay.ui.h:2
+msgctxt "shortcut window"
+msgid "Open a new window"
+msgstr "Obri una finestra nova"
+
+#: ../data/help-overlay.ui.h:3
+msgctxt "shortcut window"
+msgid "Close a window"
+msgstr "Tanca la finestra"
+
+#: ../data/help-overlay.ui.h:4
+msgctxt "shortcut window"
+msgid "Search"
+msgstr "Busca"
+
+#: ../data/help-overlay.ui.h:5
+msgctxt "shortcut window"
+msgid "Find"
+msgstr "Troba"
+
+#: ../data/menus.ui.h:1
+msgid "_New Window"
+msgstr "Finestra _nova"
+
+#: ../data/menus.ui.h:2
+msgid "_Help"
+msgstr "_Ajuda"
+
+#: ../data/menus.ui.h:3
+msgid "Keyboard Shortcuts"
+msgstr "Dreceres de teclat"
+
+#: ../data/menus.ui.h:4
+msgid "_About"
+msgstr "_Quant a"
+
+#: ../data/menus.ui.h:5
+msgid "_Quit"
+msgstr "I_x"
+
+#: ../data/org.gnome.Logs.appdata.xml.in.h:1
+msgid "GNOME Logs"
+msgstr "Registres del GNOME"
+
+#: ../data/org.gnome.Logs.appdata.xml.in.h:2
+#: ../data/org.gnome.Logs.desktop.in.h:3
+msgid "View detailed event logs for the system"
+msgstr "Mostra els registres detallats d'esdeveniments del sistema"
+
+#: ../data/org.gnome.Logs.appdata.xml.in.h:3
 msgid ""
 "Logs shows events from the systemd journal, and sorts them into categories, "
 "such as hardware and applications."
 msgstr ""
-"El Logs mostra els esdeveniments del diari systemd i els ordena per "
-"categories com maquinari i aplicacions."
+"El Registres mostra els esdeveniments del diari systemd i els ordena per "
+"categories com el maquinari i les aplicacions."
 
-#: ../data/gnome-logs.appdata.xml.in.h:2
+#: ../data/org.gnome.Logs.appdata.xml.in.h:4
 msgid ""
 "Using Logs you can search your logs by typing a search term, and view "
 "detailed information about each event by clicking on it."
 msgstr ""
-"Amb el Logs podeu cercar els vostres registres teclejant un terme de cerca i "
+"Amb el Logs podeu buscar els vostres registres teclejant un terme de busca i "
 "veure la informació detallada sobre cada esdeveniment fent-hi clic."
 
-#: ../data/gnome-logs.desktop.in.h:1
+#: ../data/org.gnome.Logs.desktop.in.h:1 ../src/gl-eventtoolbar.c:114
+msgid "Logs"
+msgstr "Registres"
+
+#: ../data/org.gnome.Logs.desktop.in.h:2
 msgid "Log Viewer"
 msgstr "Visualitzador de registres"
 
-#: ../data/gnome-logs.desktop.in.h:2
-msgid "View detailed event logs for the system"
-msgstr "Mostra els registres detallats d'esdeveniments del sistema"
-
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: ../data/gnome-logs.desktop.in.h:4
+#: ../data/org.gnome.Logs.desktop.in.h:5
 msgid "log;journal;debug;error;"
 msgstr "registre;diari;depuració;error;"
 
-#: ../src/gl-application.c:99
+#: ../data/org.gnome.Logs.gschema.xml.h:1
+msgid "Ignore warning"
+msgstr "Ignora l'avís"
+
+#: ../data/org.gnome.Logs.gschema.xml.h:2
+msgid ""
+"Whether to ignore the warning that says you don’t have sufficient permission "
+"to view logs. If ignored, the warning won’t show up again."
+msgstr ""
+"Si s'ha d'ignorar l'avís que vos diu que no teniu els permisos suficients per "
+"veure registres. Si s'ignora, l'avís no es tornarà a mostrar."
+
+#: ../data/org.gnome.Logs.gschema.xml.h:3
+msgid "How to sort list rows in the event view list"
+msgstr ""
+"Com classificar les files de la llista a la visualització de la llista "
+"d'esdeveniments"
+
+#: ../data/org.gnome.Logs.gschema.xml.h:4
+msgid "Sort list rows in ascending or descending order for the selected type"
+msgstr ""
+"Classifica la llista de files en orde ascendent o descendent segons el "
+"tipus seleccionat"
+
+#: ../src/gl-application.c:109
 msgid "translator-credits"
 msgstr "Pau Iranzo <pau.iranzo@softcatala.org>"
 
-#: ../src/gl-application.c:100
+#: ../src/gl-application.c:110
 msgid "View and search logs"
-msgstr "Visualitza i cerca registres"
+msgstr "Visualitza i busca registres"
 
-#: ../src/gl-application.c:222
+#: ../src/gl-application.c:243
 msgid "Print version information and exit"
 msgstr "Mostra la informació de la versió i ix"
 
+#. Translators: Boot refers to a single run (or bootup) of the system
+#: ../src/gl-eventtoolbar.c:105
+msgid "Boot"
+msgstr "Arrancada"
+
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventview.c:217
+#: ../src/gl-eventviewlist.c:458
 msgid "No results"
 msgstr "Cap resultat"
 
-#: ../src/gl-eventview.c:604 ../src/gl-eventview.c:614
-#: ../src/gl-eventview.c:745 ../src/gl-eventview.c:755
-msgid "Not implemented"
-msgstr "Sense implementar"
+#: ../src/gl-eventviewrow.c:224
+msgid "Other"
+msgstr "Altre"
 
-#: ../src/gl-eventviewdetail.c:140
-msgid "Message"
-msgstr "Missatge"
+#. Translators: if only custom start timestamp is set, then we update
+#. * the timestamp range button label in popover to show that
+#. * logs are shown in the window starting from this timestamp
+#. * until the ending timestamp of journal.
+#: ../src/gl-searchpopover.c:687
+#, c-format
+msgid "From %s"
+msgstr "Des de %s"
 
-#. TODO: Give a user-friendly representation of the priority.
-#: ../src/gl-eventviewdetail.c:161
-msgid "Priority"
-msgstr "Prioritat"
+#. Translators: if only custom end timestamp is set, then we update
+#. * the timestamp range button label in popover to show that
+#. * logs are shown in the window upto this timestamp
+#. * with the starting timestamp being the current time.
+#: ../src/gl-searchpopover.c:700
+#, c-format
+msgid "Until %s"
+msgstr "Fins %s"
 
-#: ../src/gl-eventviewdetail.c:189
-msgid "Kernel Device"
-msgstr "Dispositiu del nucli"
+#. Translators: date format for the start date entry
+#. * and start date button label in the custom range submenu,
+#. * showing the day of month in decimal number, full month
+#. * name as string, the year as a decimal number including the century.
+#. Translators: date format for the end date entry
+#. * and end date button label in the custom range submenu,
+#. * showing the day of month in decimal number, full month
+#. * name as string, the year as a decimal number including the century.
+#: ../src/gl-searchpopover.c:737 ../src/gl-searchpopover.c:1104
+msgid "%e %B %Y"
+msgstr "%e %B %Y"
 
-#: ../src/gl-eventviewdetail.c:209
-msgid "Audit Session"
-msgstr "Audita la sessió"
+#: ../src/gl-searchpopover.c:875
+#, c-format
+msgid "AM"
+msgstr "AM"
 
-#. Translators: timestamp format for events on the current
-#. * day, showing the time in 12-hour format.
-#: ../src/gl-util.c:95
+#: ../src/gl-searchpopover.c:879
+#, c-format
+msgid "PM"
+msgstr "PM"
+
+#. Translators: timestamp format for the custom start time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 12-hour format.
+#. Translators: timestamp format for the custom end time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 12-hour format.
+#: ../src/gl-searchpopover.c:987 ../src/gl-searchpopover.c:1226
+msgid "%I:%M:%S %p"
+msgstr "%I:%M:%S %p"
+
+#. Translators: timestamp format for the custom start time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 24-hour format.
+#. Translators: timestamp format for the custom end time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 24-hour format.
+#: ../src/gl-searchpopover.c:994 ../src/gl-searchpopover.c:1233
+msgid "%T"
+msgstr "%T"
+
+#. Translators: timestamp format for events on the
+#. * current day, showing the time with seconds in
+#. * 12-hour format.
+#: ../src/gl-util.c:148
+msgid "%l:%M:%S %p"
+msgstr "%l:%M:%S %p"
+
+#. Translators: timestamp format for events on the
+#. * current day, showing the time without seconds in
+#. * 12-hour format.
+#: ../src/gl-util.c:155
 msgid "%l:%M %p"
 msgstr "%l:%M %p"
 
-#. Translators: timestamp format for events in the current
-#. * year, showing the abbreviated month name, day of the
-#. * month and the time in 12-hour format.
-#: ../src/gl-util.c:101
+#. Translators: timestamp format for events in
+#. * the current year, showing the abbreviated
+#. * month name, day of the month and the time
+#. * with seconds in 12-hour format.
+#: ../src/gl-util.c:166
+msgid "%b %e %l:%M:%S %p"
+msgstr "%b %e %l:%M:%S %p"
+
+#. Translators: timestamp format for events in the
+#. * current year, showing the abbreviated month name,
+#. * day of the month and the time without seconds in
+#. * 12-hour format.
+#: ../src/gl-util.c:174
 msgid "%b %e %l:%M %p"
 msgstr "%b %e %l:%M %p"
 
-#. Translators: timestamp format for events in a different
-#. * year, showing the abbreviated month name, day of the
-#. * month, year and the time in 12-hour format.
-#: ../src/gl-util.c:107
+#. Translators: timestamp format for events in
+#. * a different year, showing the abbreviated
+#. * month name, day of the month, year and the
+#. * time with seconds in 12-hour format.
+#: ../src/gl-util.c:185
+msgid "%b %e %Y %l:%M:%S %p"
+msgstr "%b %e %Y %l:%M:%S %p"
+
+#. Translators: timestamp format for events in
+#. * a different year, showing the abbreviated
+#. * month name day of the month, year and the
+#. * time without seconds in 12-hour format.
+#: ../src/gl-util.c:194
 msgid "%b %e %Y %l:%M %p"
 msgstr "%b %e %Y %l:%M %p"
 
-#. Translators: timestamp format for events on the current
-#. * day, showing the time in 24-hour format.
-#: ../src/gl-util.c:120
+#. Translators: timestamp format for events on the
+#. * current day, showing the time with seconds in
+#. * 24-hour format.
+#: ../src/gl-util.c:211
+msgid "%H:%M:%S"
+msgstr "%H:%M:%S"
+
+#. Translators: timestamp format for events on the
+#. * current day, showing the time without seconds in
+#. * 24-hour format.
+#: ../src/gl-util.c:218
 msgid "%H:%M"
 msgstr "%H:%M"
 
-#. Translators: timestamp format for events in the current
-#. * year, showing the abbreviated month name, day of the
-#. * month and the time in 24-hour format.
-#: ../src/gl-util.c:126
+#. Translators: timestamp format for events in the
+#. * current year, showing the abbreviated month name,
+#. * day of the month and the time with seconds in
+#. * 24-hour format.
+#: ../src/gl-util.c:228
+msgid "%b %e %H:%M:%S"
+msgstr "%b %e %H:%M:%S"
+
+#. Translators: timestamp format for events in the
+#. * current year, showing the abbreviated month name,
+#. * day of the month and the time without seconds in
+#. * 24-hour format.
+#: ../src/gl-util.c:236
 msgid "%b %e %H:%M"
 msgstr "%b %e %H:%M"
 
-#. Translators: timestamp format for events in a different
-#. * year, showing the abbreviated month name, day of the
-#. * month, year and the time in 24-hour format.
-#: ../src/gl-util.c:132
+#. Translators: timestamp format for events in
+#. * a different year, showing the abbreviated
+#. * month name, day of the month, year and the
+#. * time with seconds in 24-hour format.
+#: ../src/gl-util.c:247
+msgid "%b %e %Y %H:%M:%S"
+msgstr "%b %e %Y %H:%M:%S"
+
+#. Translators: timestamp format for events in a
+#. * different year, showing the abbreviated month name,
+#. * day of the month, year and the time without seconds
+#. * in 24-hour format.
+#: ../src/gl-util.c:255
 msgid "%b %e %Y %H:%M"
 msgstr "%b %e %Y %H:%M"
+
+#. Transltors: the first string is the earliest timestamp of the boot,
+#. * and the second string is the newest timestamp. An example string might
+#. * be '08:10 - 08:30'
+#: ../src/gl-util.c:319
+#, c-format
+msgid "%s – %s"
+msgstr "%s – %s"
+
+#: ../src/gl-window.c:113
+msgid "Save logs"
+msgstr "Guarda els registres"
+
+#: ../src/gl-window.c:116
+msgid "_Cancel"
+msgstr "_Cancel·la"
+
+#: ../src/gl-window.c:117
+msgid "_Save"
+msgstr "Al_ça"
+
+#: ../src/gl-window.c:122
+msgid "log messages"
+msgstr "Registre de missatges"
+
+#: ../src/gl-window.c:175
+msgid "Unable to export log messages to a file"
+msgstr "No s'han pogut exportar els missatges del registre a un fitxer"
+
+#: ../src/gl-window.c:402 ../src/gl-window.c:433
+msgid "Unable to read system logs"
+msgstr "No s'han pogut llegir els registres del sistema"
+
+#: ../src/gl-window.c:416
+msgid "Unable to read user logs"
+msgstr "No s'han pogut llegir els registres d'usuari"
+
+#: ../src/gl-window.c:448
+msgid "No logs available"
+msgstr "No hi ha registres disponibles"
+
+#~ msgid "Go back to the event view"
+#~ msgstr "Vés enrere a la visualització d'esdeveniment"
+
+#~ msgid "Search the displayed logs"
+#~ msgstr "Cerqueu els registres mostrats"
+
+#~ msgid "Not implemented"
+#~ msgstr "Sense implementar"
