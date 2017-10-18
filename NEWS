@@ -1,3 +1,13 @@
+GNOME Logs 3.27.1
+=================
+
+* migration from intltool to gettext from Niels De Graef
+* updated po/Makevars and translator comment in .desktop file from Piotr Drąg
+* marking missing strings for translation from Piotr Drąg
+* updates to Polish and French help screenshots
+* updates to Dutch, Spanish, Greek, Russian, Persian, Catalan (Valencian)
+  and Nepali translations
+
 GNOME Logs 3.26.0
 =================
 
