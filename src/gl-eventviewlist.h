@@ -38,6 +38,8 @@ gboolean gl_event_view_list_handle_search_event (GlEventViewList *view,
 void gl_event_view_list_set_search_mode (GlEventViewList *view, gboolean state);
 void gl_event_view_list_set_sort_order (GlEventViewList *view, GlSortOrder  sort_order);
 void gl_event_view_list_view_boot (GlEventViewList *view, const gchar *match);
+GtkWidget * gl_event_view_list_get_category_list (GlEventViewList *view);
+const gchar * gl_event_view_list_get_boot_match (GlEventViewList *view);
 GArray * gl_event_view_list_get_boot_ids (GlEventViewList *view);
 gchar * gl_event_view_list_get_output_logs (GlEventViewList *view);
 gchar * gl_event_view_list_get_boot_time (GlEventViewList *view,

@@ -42,9 +42,30 @@ typedef struct
 
 G_DEFINE_TYPE_WITH_PRIVATE (GlEventToolbar, gl_event_toolbar, GTK_TYPE_HEADER_BAR)
 
+static void
+gl_event_toolbar_update_boot_menu_label (GlEventToolbar *toolbar,
+                                         const gchar *latest_boot)
+{
+    GlEventToolbarPrivate *priv;
+    GMenuModel *boot_menu;
+    GMenuModel *section;
+    GMenuItem *menu_item;
+
+    priv = gl_event_toolbar_get_instance_private (toolbar);
+
+    boot_menu = gtk_menu_button_get_menu_model (GTK_MENU_BUTTON (priv->menu_button));
+    section = g_menu_model_get_item_link (boot_menu, 0, "section");
+    menu_item = g_menu_item_new_from_model (section, 0);
+    g_menu_item_set_label (menu_item, latest_boot);
+
+    g_menu_remove (G_MENU (section), 0);
+    g_menu_insert_item (G_MENU (section), 0, menu_item);
+}
+
 void
 gl_event_toolbar_change_current_boot (GlEventToolbar *toolbar,
-                                      const gchar *current_boot)
+                                      const gchar *current_boot,
+                                      const gchar *latest_boot)
 {
     GlEventToolbarPrivate *priv;
 
@@ -52,6 +73,8 @@ gl_event_toolbar_change_current_boot (GlEventToolbar *toolbar,
 
     /* set text to priv->current_boot */
     gtk_label_set_text (GTK_LABEL (priv->current_boot), current_boot);
+
+    gl_event_toolbar_update_boot_menu_label (toolbar, latest_boot);
 }
 
 void

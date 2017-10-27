@@ -42,7 +42,8 @@ G_DECLARE_FINAL_TYPE (GlEventToolbar, gl_event_toolbar, GL, EVENT_TOOLBAR, GtkHe
 GtkWidget * gl_event_toolbar_new (void);
 void gl_event_toolbar_add_boots (GlEventToolbar *toolbar, GArray *boot_ids);
 void gl_event_toolbar_change_current_boot (GlEventToolbar *toolbar,
-                                           const gchar *current_boot);
+                                           const gchar *current_boot,
+                                           const gchar *latest_boot);
 
 G_END_DECLS
 
