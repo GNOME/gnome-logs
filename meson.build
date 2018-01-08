@@ -11,7 +11,23 @@ gl_datadir = join_paths(gl_prefix, get_option('datadir'))
 gl_mandir = join_paths(gl_prefix, get_option('mandir'), 'man1')
 gl_pkgdatadir = join_paths(gl_datadir, gl_name)
 
-#TODO add debug arguments
+# warning cflags
+warning_cflags = [
+    '-Wall',
+    '-Wstrict-prototypes',
+    '-Wnested-externs',
+    '-Werror=missing-prototypes',
+    '-Werror=implicit-function-declaration',
+    '-Werror=pointer-arith',
+    '-Werror=init-self',
+    '-Werror=format-security',
+    '-Werror=format=2',
+    '-Werror=missing-include-dirs',
+    '-Werror=return-type'
+]
+c_compiler = meson.get_compiler('c')
+supported_warning_cflags = c_compiler.get_supported_arguments(warning_cflags)
+add_global_arguments(supported_warning_cflags, language : 'c')
 
 config_h = configuration_data()
 
