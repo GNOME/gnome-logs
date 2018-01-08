@@ -1,3 +1,11 @@
+GNOME Logs 3.27.4
+=================
+
+* add meson build system
+* add missing LINGUAS file
+* add warning cflags support in meson
+* updates to Spanish, Serbian and Swedish translations
+
 GNOME Logs 3.27.3
 =================
 
