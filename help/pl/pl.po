@@ -1,13 +1,13 @@
 # Polish translation for gnome-logs help.
 # Copyright © 2017 the gnome-logs authors.
-# This file is distributed under the same license as the gnome-logs package.
+# This file is distributed under the same license as the gnome-logs help.
 # Piotr Drąg <piotrdrag@gmail.com>, 2017.
 # Aviary.pl <community-poland@mozilla.org>, 2017.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs-help\n"
-"POT-Creation-Date: 2017-08-09 20:13+0000\n"
+"POT-Creation-Date: 2018-01-03 15:59+0000\n"
 "PO-Revision-Date: 2017-08-11 04:11+0200\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <community-poland@mozilla.org>\n"
