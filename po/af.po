@@ -1,0 +1,613 @@
+# Afrikaans translation for gnome-logs.
+# Copyright (C) 2018 gnome-logs's COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-logs package.
+# Pieter Schalk Schoeman <pieter@sonbesie.co.za>, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-logs gnome-3-26\n"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"logs&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2018-02-02 07:15+0000\n"
+"PO-Revision-Date: 2018-02-10 11:07+0200\n"
+"Language-Team: Afrikaans <translate-discuss-af@lists.sourceforge.net>\n"
+"Language: af\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: Pieter Schalk Schoeman <pieter@sonbesie.co.za>\n"
+"X-Generator: Poedit 2.0.3\n"
+
+#: ../data/gl-categorylist.ui.h:1
+msgid "Important"
+msgstr "Belangrik"
+
+#: ../data/gl-categorylist.ui.h:2
+msgid "Alerts"
+msgstr "Waarskuwing"
+
+#: ../data/gl-categorylist.ui.h:3
+msgid "Starred"
+msgstr "Gemerk"
+
+#: ../data/gl-categorylist.ui.h:4
+msgid "All"
+msgstr "Alles"
+
+#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:207
+msgid "Applications"
+msgstr "Toepassings"
+
+#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:216
+msgid "System"
+msgstr "Stelsel"
+
+#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:220
+msgid "Security"
+msgstr "Sekuriteit"
+
+#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:212
+msgid "Hardware"
+msgstr "Hardeware"
+
+#: ../data/gl-categorylist.ui.h:9
+msgid "Updates"
+msgstr "Bywerkings"
+
+#: ../data/gl-categorylist.ui.h:10
+msgid "Usage"
+msgstr "Gebruik"
+
+#: ../data/gl-eventtoolbar.ui.h:1
+msgid "Export logs to a file"
+msgstr "Voer joernaal inskrywings na 'n lêer uit"
+
+#: ../data/gl-eventtoolbar.ui.h:2
+msgid "Choose the boot from which to view logs"
+msgstr "Kies die opwarmpunt vanwaar u joernaal inskrywings wil sien"
+
+#: ../data/gl-eventtoolbar.ui.h:3
+msgid "Search all the logs of the current category"
+msgstr "Soek deur al die joernaal inskrywings in die huidige kategorie"
+
+#: ../data/gl-eventviewdetail.ui.h:1
+msgid "Sender"
+msgstr "Sender"
+
+#: ../data/gl-eventviewdetail.ui.h:2
+msgid "Time"
+msgstr "Tyd"
+
+#: ../data/gl-eventviewdetail.ui.h:3 ../data/gl-searchpopover.ui.h:35
+msgid "Message"
+msgstr "Boodskap"
+
+#: ../data/gl-eventviewdetail.ui.h:4 ../data/gl-searchpopover.ui.h:39
+msgid "Audit Session"
+msgstr "Oudit sessie"
+
+#: ../data/gl-eventviewdetail.ui.h:5 ../data/gl-searchpopover.ui.h:38
+msgid "Kernel Device"
+msgstr "Kerntoestel"
+
+#: ../data/gl-eventviewdetail.ui.h:6
+msgid "Priority"
+msgstr "Prioriteit"
+
+#: ../data/gl-eventviewdetail.ui.h:7
+msgid "Subject"
+msgstr "Onderwerp"
+
+#: ../data/gl-eventviewdetail.ui.h:8
+msgid "Defined By"
+msgstr "Gedefinieer deur"
+
+#: ../data/gl-eventviewdetail.ui.h:9
+msgid "Support"
+msgstr "Ondersteun"
+
+#: ../data/gl-eventviewdetail.ui.h:10
+msgid "Documentation"
+msgstr "Dokumentasie"
+
+#: ../data/gl-eventviewlist.ui.h:1
+msgid "Select journal field and timestamp range filtering options"
+msgstr "Kies 'n joernaalveld asook die tydsomvang"
+
+#: ../data/gl-searchpopover.ui.h:1
+msgid "Select a Journal Field to filter the Logs according to it"
+msgstr "Kies 'n joernaalveld om inskrywings daarvolgens te filtreer"
+
+#: ../data/gl-searchpopover.ui.h:2
+msgid "All Available Fields"
+msgstr "Alle beskikbare velde"
+
+#. Translators: What [journal fields to search in]
+#: ../data/gl-searchpopover.ui.h:4
+msgid "What"
+msgstr "Wat"
+
+#: ../data/gl-searchpopover.ui.h:5
+msgid "Select Journal Field…"
+msgstr "Kies 'n joernaalveld…"
+
+#. When [log entries to be shown for a given timestamp range]
+#: ../data/gl-searchpopover.ui.h:7
+msgid "When"
+msgstr "Wanneer"
+
+#: ../data/gl-searchpopover.ui.h:8
+msgid "Show Logs from…"
+msgstr "Vertoon joernaal inskrywings vanaf…"
+
+#: ../data/gl-searchpopover.ui.h:9
+msgid "Select Timestamp Range of the Log Entries to be shown"
+msgstr "Kies 'n tydsomvang vir die joernaal inskrywings om te vertoon"
+
+#: ../data/gl-searchpopover.ui.h:10 ../src/gl-searchpopover.c:1303
+msgid "Current Boot"
+msgstr "Huidige opwarmpunt"
+
+#: ../data/gl-searchpopover.ui.h:11
+msgid "Search Type"
+msgstr "Soek tipe"
+
+#: ../data/gl-searchpopover.ui.h:12
+msgid "Substring"
+msgstr "Substring"
+
+#: ../data/gl-searchpopover.ui.h:13
+msgid "Match in any part of the string"
+msgstr "Soek vir die string as deel van enige woord"
+
+#: ../data/gl-searchpopover.ui.h:14
+msgid "Exact"
+msgstr "Presies"
+
+#: ../data/gl-searchpopover.ui.h:15
+msgid "Match complete string only"
+msgstr "Soek slegs vir die presiese string"
+
+#: ../data/gl-searchpopover.ui.h:16
+msgid "Back"
+msgstr "Terug"
+
+#: ../data/gl-searchpopover.ui.h:17
+msgid "Show Logs Starting From…"
+msgstr "Vertoon inskrywings vanaf…"
+
+#: ../data/gl-searchpopover.ui.h:18
+msgid "Select a start date"
+msgstr "Kies 'n begindatum"
+
+#: ../data/gl-searchpopover.ui.h:19 ../src/gl-searchpopover.c:503
+msgid "Select Start Date…"
+msgstr "Kies 'n begindatum…"
+
+#: ../data/gl-searchpopover.ui.h:20
+msgid "22 January 2016 or 1/22/2016"
+msgstr "22 Januarie 2018 of 1/22/2018"
+
+#: ../data/gl-searchpopover.ui.h:21
+msgid "Select start time"
+msgstr "Kies 'n begin tyd"
+
+#: ../data/gl-searchpopover.ui.h:22 ../src/gl-searchpopover.c:504
+msgid "Select Start Time…"
+msgstr "Kies 'n begin tyd…"
+
+#: ../data/gl-searchpopover.ui.h:23
+msgid "Hr"
+msgstr "Ure"
+
+#: ../data/gl-searchpopover.ui.h:24
+msgid "Min"
+msgstr "Min"
+
+#: ../data/gl-searchpopover.ui.h:25
+msgid "Sec"
+msgstr "s"
+
+#: ../data/gl-searchpopover.ui.h:26
+msgid "AM/PM"
+msgstr "VM/NM"
+
+#: ../data/gl-searchpopover.ui.h:27
+msgid "Until…"
+msgstr "Tot…"
+
+#: ../data/gl-searchpopover.ui.h:28
+msgid "Select an end date"
+msgstr "Kies 'n einddatum"
+
+#: ../data/gl-searchpopover.ui.h:29 ../src/gl-searchpopover.c:521
+msgid "Select End Date…"
+msgstr "Kies 'n einddatum…"
+
+#: ../data/gl-searchpopover.ui.h:30
+msgid "Select end time"
+msgstr "Kies 'n eindtyd"
+
+#: ../data/gl-searchpopover.ui.h:31 ../src/gl-searchpopover.c:522
+msgid "Select End Time…"
+msgstr "Kies 'n eindtyd…"
+
+#: ../data/gl-searchpopover.ui.h:32
+msgid "PID"
+msgstr "PID"
+
+#: ../data/gl-searchpopover.ui.h:33
+msgid "UID"
+msgstr "UID"
+
+#: ../data/gl-searchpopover.ui.h:34
+msgid "GID"
+msgstr "GID"
+
+#: ../data/gl-searchpopover.ui.h:36
+msgid "Process Name"
+msgstr "Prosesnaam"
+
+#: ../data/gl-searchpopover.ui.h:37
+msgid "Systemd Unit"
+msgstr "Systemd-eenheid"
+
+#: ../data/gl-searchpopover.ui.h:40
+msgid "Executable Path"
+msgstr "Uitvoerbare roete"
+
+#: ../data/gl-searchpopover.ui.h:41
+msgid "Previous Boot"
+msgstr "Vorige opwarmpunt"
+
+#: ../data/gl-searchpopover.ui.h:42
+msgid "Today"
+msgstr "Vandag"
+
+#: ../data/gl-searchpopover.ui.h:43
+msgid "Yesterday"
+msgstr "Gister"
+
+#: ../data/gl-searchpopover.ui.h:44
+msgid "Last 3 days"
+msgstr "Vorige drie dae"
+
+#: ../data/gl-searchpopover.ui.h:45
+msgid "Entire Journal"
+msgstr "Volledige joernaal"
+
+#: ../data/gl-searchpopover.ui.h:46
+msgid "Set Custom Range…"
+msgstr "Stel 'n pasgemaakte omvang…"
+
+#: ../data/gl-window.ui.h:1
+msgid "Help"
+msgstr "Hulp"
+
+#: ../data/gl-window.ui.h:2
+msgid "Ignore"
+msgstr "Ignoreer"
+
+#: ../data/help-overlay.ui.h:1
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Algemeen"
+
+#: ../data/help-overlay.ui.h:2
+msgctxt "shortcut window"
+msgid "Open a new window"
+msgstr "Open 'n nuwe venster"
+
+#: ../data/help-overlay.ui.h:3
+msgctxt "shortcut window"
+msgid "Close a window"
+msgstr "Sluit 'n venster"
+
+#: ../data/help-overlay.ui.h:4
+msgctxt "shortcut window"
+msgid "Search"
+msgstr "Soek"
+
+#: ../data/help-overlay.ui.h:5
+msgctxt "shortcut window"
+msgid "Find"
+msgstr "Vind"
+
+#: ../data/menus.ui.h:1
+msgid "_New Window"
+msgstr "_Nuwe venster"
+
+#: ../data/menus.ui.h:2
+msgid "_Help"
+msgstr "_Hulp"
+
+#: ../data/menus.ui.h:3
+msgid "Keyboard Shortcuts"
+msgstr "Sleutelbordkortpaaie"
+
+#: ../data/menus.ui.h:4
+msgid "_About"
+msgstr "_Aangaande"
+
+#: ../data/menus.ui.h:5
+msgid "_Quit"
+msgstr "_Sluit af"
+
+#: ../data/org.gnome.Logs.appdata.xml.in.h:1
+msgid "GNOME Logs"
+msgstr "GNOME-Joernale"
+
+#: ../data/org.gnome.Logs.appdata.xml.in.h:2
+#: ../data/org.gnome.Logs.desktop.in.h:3
+msgid "View detailed event logs for the system"
+msgstr "Vertoon gedetailleerde gebeurtenis-joernale vir die stelsel"
+
+#: ../data/org.gnome.Logs.appdata.xml.in.h:3
+msgid ""
+"Logs shows events from the systemd journal, and sorts them into categories, "
+"such as hardware and applications."
+msgstr ""
+"Joernale vertoon gesorteerde gebeurtenisse vanaf die systemd-joernaal in "
+"kategorie soos hardeware en toepassings."
+
+#: ../data/org.gnome.Logs.appdata.xml.in.h:4
+msgid ""
+"Using Logs you can search your logs by typing a search term, and view "
+"detailed information about each event by clicking on it."
+msgstr ""
+"Joernale laat u toe om vir inskrywings met behulp van 'n soekterm te soek, "
+"asook om gedetailleerde inligting van elke inskrywing te vertoon deur daarop "
+"te klik."
+
+#: ../data/org.gnome.Logs.desktop.in.h:1 ../src/gl-eventtoolbar.c:114
+msgid "Logs"
+msgstr "Joernale"
+
+#: ../data/org.gnome.Logs.desktop.in.h:2
+msgid "Log Viewer"
+msgstr "Joernaalvertoner"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: ../data/org.gnome.Logs.desktop.in.h:5
+msgid "log;journal;debug;error;"
+msgstr "inskrywing;joernaal;ontfout;fout;"
+
+#: ../data/org.gnome.Logs.gschema.xml.h:1
+msgid "Ignore warning"
+msgstr "Ignoreer waarskuwing"
+
+#: ../data/org.gnome.Logs.gschema.xml.h:2
+msgid ""
+"Whether to ignore the warning that says you don’t have sufficient permission "
+"to view logs. If ignored, the warning won’t show up again."
+msgstr ""
+"Of die waarskuwing wat lui dat u nie die nodige regte het om joernaal "
+"inskrywings te lees nie geïgnoreer moet word. Indien ja, sal die waarskuwing "
+"nie weer vertoon word nie."
+
+#: ../data/org.gnome.Logs.gschema.xml.h:3
+msgid "How to sort list rows in the event view list"
+msgstr "Hoe om lysrye in die gebeurtenis lys te sorteer"
+
+#: ../data/org.gnome.Logs.gschema.xml.h:4
+msgid "Sort list rows in ascending or descending order for the selected type"
+msgstr "Sorteer lysrye in stygende of dalende volgorde vir die gekose tipe"
+
+#: ../src/gl-application.c:109
+msgid "translator-credits"
+msgstr "Pieter Schoeman"
+
+#: ../src/gl-application.c:110
+msgid "View and search logs"
+msgstr "Vertoon en soek deur joernaal inskrywings"
+
+#: ../src/gl-application.c:243
+msgid "Print version information and exit"
+msgstr "Druk weergawe-inligting en sluit af"
+
+#. Translators: Boot refers to a single run (or bootup) of the system
+#: ../src/gl-eventtoolbar.c:105
+msgid "Boot"
+msgstr "Opwarm"
+
+#. Translators: Shown when there are no (zero) results in the current
+#. * view.
+#: ../src/gl-eventviewlist.c:458
+msgid "No results"
+msgstr "Geen resultate"
+
+#: ../src/gl-eventviewrow.c:224
+msgid "Other"
+msgstr "Ander"
+
+#. Translators: if only custom start timestamp is set, then we update
+#. * the timestamp range button label in popover to show that
+#. * logs are shown in the window starting from this timestamp
+#. * until the ending timestamp of journal.
+#: ../src/gl-searchpopover.c:687
+#, c-format
+msgid "From %s"
+msgstr "Van %s"
+
+#. Translators: if only custom end timestamp is set, then we update
+#. * the timestamp range button label in popover to show that
+#. * logs are shown in the window upto this timestamp
+#. * with the starting timestamp being the current time.
+#: ../src/gl-searchpopover.c:700
+#, c-format
+msgid "Until %s"
+msgstr "Tot %s"
+
+#. Translators: date format for the start date entry
+#. * and start date button label in the custom range submenu,
+#. * showing the day of month in decimal number, full month
+#. * name as string, the year as a decimal number including the century.
+#. Translators: date format for the end date entry
+#. * and end date button label in the custom range submenu,
+#. * showing the day of month in decimal number, full month
+#. * name as string, the year as a decimal number including the century.
+#: ../src/gl-searchpopover.c:737 ../src/gl-searchpopover.c:1104
+msgid "%e %B %Y"
+msgstr "%e %B %Y"
+
+#: ../src/gl-searchpopover.c:875
+#, c-format
+msgid "AM"
+msgstr "VM"
+
+#: ../src/gl-searchpopover.c:879
+#, c-format
+msgid "PM"
+msgstr "NM"
+
+#. Translators: timestamp format for the custom start time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 12-hour format.
+#. Translators: timestamp format for the custom end time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 12-hour format.
+#: ../src/gl-searchpopover.c:987 ../src/gl-searchpopover.c:1226
+msgid "%I:%M:%S %p"
+msgstr "%I:%M:%S %p"
+
+#. Translators: timestamp format for the custom start time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 24-hour format.
+#. Translators: timestamp format for the custom end time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 24-hour format.
+#: ../src/gl-searchpopover.c:994 ../src/gl-searchpopover.c:1233
+msgid "%T"
+msgstr "%T"
+
+#. Translators: timestamp format for events on the
+#. * current day, showing the time with seconds in
+#. * 12-hour format.
+#: ../src/gl-util.c:148
+msgid "%l:%M:%S %p"
+msgstr "%l:%M:%S %p"
+
+#. Translators: timestamp format for events on the
+#. * current day, showing the time without seconds in
+#. * 12-hour format.
+#: ../src/gl-util.c:155
+msgid "%l:%M %p"
+msgstr "%l:%M %p"
+
+#. Translators: timestamp format for events in
+#. * the current year, showing the abbreviated
+#. * month name, day of the month and the time
+#. * with seconds in 12-hour format.
+#: ../src/gl-util.c:166
+msgid "%b %e %l:%M:%S %p"
+msgstr "%b %e %l:%M:%S %p"
+
+#. Translators: timestamp format for events in the
+#. * current year, showing the abbreviated month name,
+#. * day of the month and the time without seconds in
+#. * 12-hour format.
+#: ../src/gl-util.c:174
+msgid "%b %e %l:%M %p"
+msgstr "%b %e %l:%M %p"
+
+#. Translators: timestamp format for events in
+#. * a different year, showing the abbreviated
+#. * month name, day of the month, year and the
+#. * time with seconds in 12-hour format.
+#: ../src/gl-util.c:185
+msgid "%b %e %Y %l:%M:%S %p"
+msgstr "%b %e %Y %l:%M:%S %p"
+
+#. Translators: timestamp format for events in
+#. * a different year, showing the abbreviated
+#. * month name day of the month, year and the
+#. * time without seconds in 12-hour format.
+#: ../src/gl-util.c:194
+msgid "%b %e %Y %l:%M %p"
+msgstr "%b %e %Y %l:%M %p"
+
+#. Translators: timestamp format for events on the
+#. * current day, showing the time with seconds in
+#. * 24-hour format.
+#: ../src/gl-util.c:211
+msgid "%H:%M:%S"
+msgstr "%H:%M:%S"
+
+#. Translators: timestamp format for events on the
+#. * current day, showing the time without seconds in
+#. * 24-hour format.
+#: ../src/gl-util.c:218
+msgid "%H:%M"
+msgstr "%H:%M"
+
+#. Translators: timestamp format for events in the
+#. * current year, showing the abbreviated month name,
+#. * day of the month and the time with seconds in
+#. * 24-hour format.
+#: ../src/gl-util.c:228
+msgid "%b %e %H:%M:%S"
+msgstr "%b %e %H:%M:%S"
+
+#. Translators: timestamp format for events in the
+#. * current year, showing the abbreviated month name,
+#. * day of the month and the time without seconds in
+#. * 24-hour format.
+#: ../src/gl-util.c:236
+msgid "%b %e %H:%M"
+msgstr "%b %e %H:%M"
+
+#. Translators: timestamp format for events in
+#. * a different year, showing the abbreviated
+#. * month name, day of the month, year and the
+#. * time with seconds in 24-hour format.
+#: ../src/gl-util.c:247
+msgid "%b %e %Y %H:%M:%S"
+msgstr "%b %e %Y %H:%M:%S"
+
+#. Translators: timestamp format for events in a
+#. * different year, showing the abbreviated month name,
+#. * day of the month, year and the time without seconds
+#. * in 24-hour format.
+#: ../src/gl-util.c:255
+msgid "%b %e %Y %H:%M"
+msgstr "%b %e %Y %H:%M"
+
+#. Transltors: the first string is the earliest timestamp of the boot,
+#. * and the second string is the newest timestamp. An example string might
+#. * be '08:10 - 08:30'
+#: ../src/gl-util.c:319
+#, c-format
+msgid "%s – %s"
+msgstr "%s – %s"
+
+#: ../src/gl-window.c:113
+msgid "Save logs"
+msgstr "Stoor joernaal inskrywings"
+
+#: ../src/gl-window.c:116
+msgid "_Cancel"
+msgstr "_Kanselleer"
+
+#: ../src/gl-window.c:117
+msgid "_Save"
+msgstr "_Stoor"
+
+#: ../src/gl-window.c:122
+msgid "log messages"
+msgstr "joernaal boodskappe"
+
+#: ../src/gl-window.c:175
+msgid "Unable to export log messages to a file"
+msgstr "Kan nie joernaal boodskappe na 'n lêer afvoer nie"
+
+#: ../src/gl-window.c:402 ../src/gl-window.c:433
+msgid "Unable to read system logs"
+msgstr "Kan nie stelselinskrywings lees nie"
+
+#: ../src/gl-window.c:416
+msgid "Unable to read user logs"
+msgstr "Kan nie gebruikersinskrywings lees nie"
+
+#: ../src/gl-window.c:448
+msgid "No logs available"
+msgstr "Geen inskrywings beskikbaar nie"
