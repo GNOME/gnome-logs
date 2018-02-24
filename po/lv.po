@@ -1,14 +1,14 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>, 2014, 2016, 2017.
+# Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>, 2014, 2016, 2017, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-l"
 "ogs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2017-08-01 14:25+0000\n"
-"PO-Revision-Date: 2017-08-27 23:52+0200\n"
+"POT-Creation-Date: 2018-01-03 15:59+0000\n"
+"PO-Revision-Date: 2018-02-24 20:13+0200\n"
 "Last-Translator: Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>\n"
 "Language-Team: Latvian <lata-l10n@googlegroups.com>\n"
 "Language: lv\n"
@@ -19,332 +19,336 @@ msgstr ""
 " 2);\n"
 "X-Generator: Lokalize 2.0\n"
 
-#: ../data/gl-categorylist.ui.h:1
+#: data/gl-categorylist.ui:15
 msgid "Important"
 msgstr "Svarīgi"
 
-#: ../data/gl-categorylist.ui.h:2
+#: data/gl-categorylist.ui:30
 msgid "Alerts"
 msgstr "Brīdinājumi"
 
-#: ../data/gl-categorylist.ui.h:3
+#: data/gl-categorylist.ui:45
 msgid "Starred"
 msgstr "Atzīmēti"
 
-#: ../data/gl-categorylist.ui.h:4
+#: data/gl-categorylist.ui:60
 msgid "All"
 msgstr "Visi"
 
-#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:207
+#: data/gl-categorylist.ui:75 src/gl-eventviewrow.c:207
 msgid "Applications"
 msgstr "Lietotnes"
 
-#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:216
+#: data/gl-categorylist.ui:90 src/gl-eventviewrow.c:216
 msgid "System"
 msgstr "Sistēma"
 
-#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:220
+#: data/gl-categorylist.ui:105 src/gl-eventviewrow.c:220
 msgid "Security"
 msgstr "Drošība"
 
-#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:212
+#: data/gl-categorylist.ui:120 src/gl-eventviewrow.c:212
 msgid "Hardware"
 msgstr "Aparatūra"
 
-#: ../data/gl-categorylist.ui.h:9
+#: data/gl-categorylist.ui:135
 msgid "Updates"
 msgstr "Atjauninājumi"
 
-#: ../data/gl-categorylist.ui.h:10
+#: data/gl-categorylist.ui:150
 msgid "Usage"
 msgstr "Izmantojums"
 
-#: ../data/gl-eventtoolbar.ui.h:1
+#: data/gl-eventtoolbar.ui:9
 msgid "Export logs to a file"
 msgstr "Eksportēt žurnālus uz datni"
 
-#: ../data/gl-eventtoolbar.ui.h:2
+#: data/gl-eventtoolbar.ui:30
 msgid "Choose the boot from which to view logs"
 msgstr "Izvēlieties sistēmas ielādi, kurai skatīt žurnālus"
 
-#: ../data/gl-eventtoolbar.ui.h:3
+#: data/gl-eventtoolbar.ui:42
 msgid "Search all the logs of the current category"
 msgstr "Meklēt visos žurnālos šajā kategorijā"
 
-#: ../data/gl-eventviewdetail.ui.h:1
+#: data/gl-eventviewdetail.ui:26
 msgid "Sender"
 msgstr "Sūtītājs"
 
-#: ../data/gl-eventviewdetail.ui.h:2
+#: data/gl-eventviewdetail.ui:58
 msgid "Time"
 msgstr "Laiks"
 
-#: ../data/gl-eventviewdetail.ui.h:3 ../data/gl-searchpopover.ui.h:35
+#: data/gl-eventviewdetail.ui:92 data/gl-searchpopover.ui:1052
 msgid "Message"
 msgstr "Ziņojums"
 
-#: ../data/gl-eventviewdetail.ui.h:4 ../data/gl-searchpopover.ui.h:39
+#: data/gl-eventviewdetail.ui:128 data/gl-searchpopover.ui:1072
 msgid "Audit Session"
 msgstr "Audita sesija"
 
-#: ../data/gl-eventviewdetail.ui.h:5 ../data/gl-searchpopover.ui.h:38
+#: data/gl-eventviewdetail.ui:161 data/gl-searchpopover.ui:1067
 msgid "Kernel Device"
 msgstr "Kodola ierīce"
 
-#: ../data/gl-eventviewdetail.ui.h:6
+#: data/gl-eventviewdetail.ui:194
 msgid "Priority"
 msgstr "Prioritāte"
 
-#: ../data/gl-eventviewdetail.ui.h:7
+#: data/gl-eventviewdetail.ui:228
 msgid "Subject"
 msgstr "Temats"
 
-#: ../data/gl-eventviewdetail.ui.h:8
+#: data/gl-eventviewdetail.ui:264
 msgid "Defined By"
 msgstr "Noteica"
 
-#: ../data/gl-eventviewdetail.ui.h:9
+#: data/gl-eventviewdetail.ui:298
 msgid "Support"
 msgstr "Atbalsts"
 
-#: ../data/gl-eventviewdetail.ui.h:10
+#: data/gl-eventviewdetail.ui:334
 msgid "Documentation"
 msgstr "Dokumentācija"
 
-#: ../data/gl-eventviewlist.ui.h:1
+#: data/gl-eventviewlist.ui:43
 msgid "Select journal field and timestamp range filtering options"
 msgstr ""
 "Izvēlieties žurnāla lauku un laika spiedogu diapazonu filtrēšanas opcijas"
 
-#: ../data/gl-searchpopover.ui.h:1
+#: data/gl-searchpopover.ui:26
 msgid "Select a Journal Field to filter the Logs according to it"
 msgstr "Izvēlieties žurnāla lauku, lai pēc tiem filtrētu žurnālu"
 
-#: ../data/gl-searchpopover.ui.h:2
+#: data/gl-searchpopover.ui:35 data/gl-searchpopover.ui:1028
 msgid "All Available Fields"
 msgstr "Visi pieejamie lauki"
 
+#: data/gl-searchpopover.ui:78 data/gl-searchpopover.ui:251
+msgid "Parameters"
+msgstr "Parametri"
+
 #. Translators: What [journal fields to search in]
-#: ../data/gl-searchpopover.ui.h:4
+#: data/gl-searchpopover.ui:115
 msgid "What"
 msgstr "Kas"
 
-#: ../data/gl-searchpopover.ui.h:5
+#: data/gl-searchpopover.ui:130
 msgid "Select Journal Field…"
 msgstr "Izvēlieties žurnāla lauku…"
 
 #. When [log entries to be shown for a given timestamp range]
-#: ../data/gl-searchpopover.ui.h:7
+#: data/gl-searchpopover.ui:155
 msgid "When"
 msgstr "Kad"
 
-#: ../data/gl-searchpopover.ui.h:8
+#: data/gl-searchpopover.ui:170
 msgid "Show Logs from…"
 msgstr "Rādīt žurnālus no…"
 
-#: ../data/gl-searchpopover.ui.h:9
+#: data/gl-searchpopover.ui:199
 msgid "Select Timestamp Range of the Log Entries to be shown"
 msgstr "Izvēlieties rādāmo žurnāla ierakstu laika spiedoga diapazonu"
 
-#: ../data/gl-searchpopover.ui.h:10 ../src/gl-searchpopover.c:1303
+#: data/gl-searchpopover.ui:208 data/gl-searchpopover.ui:1091
+#: src/gl-searchpopover.c:1303
 msgid "Current Boot"
 msgstr "Pašreizējā sistēmas ielāde"
 
-#: ../data/gl-searchpopover.ui.h:11
+#: data/gl-searchpopover.ui:293
 msgid "Search Type"
 msgstr "Meklēšanas tips"
 
-#: ../data/gl-searchpopover.ui.h:12
+#: data/gl-searchpopover.ui:310
 msgid "Substring"
 msgstr "Apakšvirkne"
 
-#: ../data/gl-searchpopover.ui.h:13
+#: data/gl-searchpopover.ui:314
 msgid "Match in any part of the string"
 msgstr "Sakrīt jebkurā virknes vietā"
 
-#: ../data/gl-searchpopover.ui.h:14
+#: data/gl-searchpopover.ui:328
 msgid "Exact"
 msgstr "Precīzi"
 
-#: ../data/gl-searchpopover.ui.h:15
+#: data/gl-searchpopover.ui:332
 msgid "Match complete string only"
 msgstr "Sakrīt tikai visa virkne"
 
-#: ../data/gl-searchpopover.ui.h:16
+#: data/gl-searchpopover.ui:379
 msgid "Back"
 msgstr "Atpakaļ"
 
-#: ../data/gl-searchpopover.ui.h:17
+#: data/gl-searchpopover.ui:397
 msgid "Show Logs Starting From…"
 msgstr "Rādīt žurnālus sākot no…"
 
-#: ../data/gl-searchpopover.ui.h:18
+#: data/gl-searchpopover.ui:419
 msgid "Select a start date"
 msgstr "Izvēlieties sākuma datumu"
 
-#: ../data/gl-searchpopover.ui.h:19 ../src/gl-searchpopover.c:503
+#: data/gl-searchpopover.ui:428 src/gl-searchpopover.c:503
 msgid "Select Start Date…"
 msgstr "Izvēlieties sākuma datumu…"
 
-#: ../data/gl-searchpopover.ui.h:20
+#: data/gl-searchpopover.ui:459 data/gl-searchpopover.ui:763
 msgid "22 January 2016 or 1/22/2016"
 msgstr "22 janvāris 2016 vai 1/22/2016"
 
-#: ../data/gl-searchpopover.ui.h:21
+#: data/gl-searchpopover.ui:504
 msgid "Select start time"
 msgstr "Izvēlieties sākuma laiku"
 
-#: ../data/gl-searchpopover.ui.h:22 ../src/gl-searchpopover.c:504
+#: data/gl-searchpopover.ui:513 src/gl-searchpopover.c:504
 msgid "Select Start Time…"
 msgstr "Izvēlieties sākuma laiku…"
 
-#: ../data/gl-searchpopover.ui.h:23
+#: data/gl-searchpopover.ui:550 data/gl-searchpopover.ui:857
 msgid "Hr"
 msgstr "St"
 
-#: ../data/gl-searchpopover.ui.h:24
+#: data/gl-searchpopover.ui:585 data/gl-searchpopover.ui:892
 msgid "Min"
 msgstr "Min"
 
-#: ../data/gl-searchpopover.ui.h:25
+#: data/gl-searchpopover.ui:620 data/gl-searchpopover.ui:927
 msgid "Sec"
 msgstr "Sek"
 
-#: ../data/gl-searchpopover.ui.h:26
+#: data/gl-searchpopover.ui:655 data/gl-searchpopover.ui:962
 msgid "AM/PM"
 msgstr "AM/PM"
 
-#: ../data/gl-searchpopover.ui.h:27
+#: data/gl-searchpopover.ui:701
 msgid "Until…"
 msgstr "Līdz…"
 
-#: ../data/gl-searchpopover.ui.h:28
+#: data/gl-searchpopover.ui:723
 msgid "Select an end date"
 msgstr "Izvēlieties beigu datumu"
 
-#: ../data/gl-searchpopover.ui.h:29 ../src/gl-searchpopover.c:521
+#: data/gl-searchpopover.ui:732 src/gl-searchpopover.c:521
 msgid "Select End Date…"
 msgstr "Izvēlieties beigu datumu…"
 
-#: ../data/gl-searchpopover.ui.h:30
+#: data/gl-searchpopover.ui:811
 msgid "Select end time"
 msgstr "Izvēlieties beigu laiku"
 
-#: ../data/gl-searchpopover.ui.h:31 ../src/gl-searchpopover.c:522
+#: data/gl-searchpopover.ui:820 src/gl-searchpopover.c:522
 msgid "Select End Time…"
 msgstr "Izvēlieties beigu laiku…"
 
-#: ../data/gl-searchpopover.ui.h:32
+#: data/gl-searchpopover.ui:1037
 msgid "PID"
 msgstr "PID"
 
-#: ../data/gl-searchpopover.ui.h:33
+#: data/gl-searchpopover.ui:1042
 msgid "UID"
 msgstr "UID"
 
-#: ../data/gl-searchpopover.ui.h:34
+#: data/gl-searchpopover.ui:1047
 msgid "GID"
 msgstr "GID"
 
-#: ../data/gl-searchpopover.ui.h:36
+#: data/gl-searchpopover.ui:1057
 msgid "Process Name"
 msgstr "Procesa nosaukums"
 
-#: ../data/gl-searchpopover.ui.h:37
+#: data/gl-searchpopover.ui:1062
 msgid "Systemd Unit"
 msgstr "Systemd vienums"
 
-#: ../data/gl-searchpopover.ui.h:40
+#: data/gl-searchpopover.ui:1077
 msgid "Executable Path"
 msgstr "Izpildāmā ceļš"
 
-#: ../data/gl-searchpopover.ui.h:41
+#: data/gl-searchpopover.ui:1096
 msgid "Previous Boot"
 msgstr "Iepriekšējā sistēmas ielāde"
 
-#: ../data/gl-searchpopover.ui.h:42
+#: data/gl-searchpopover.ui:1105
 msgid "Today"
 msgstr "Šodien"
 
-#: ../data/gl-searchpopover.ui.h:43
+#: data/gl-searchpopover.ui:1110
 msgid "Yesterday"
 msgstr "Vakar"
 
-#: ../data/gl-searchpopover.ui.h:44
+#: data/gl-searchpopover.ui:1115
 msgid "Last 3 days"
 msgstr "Pēdējās 3 dienās"
 
-#: ../data/gl-searchpopover.ui.h:45
+#: data/gl-searchpopover.ui:1124
 msgid "Entire Journal"
 msgstr "Viss žurnāls"
 
-#: ../data/gl-searchpopover.ui.h:46
+#: data/gl-searchpopover.ui:1133
 msgid "Set Custom Range…"
 msgstr "Iestatīt pielāgotu diapazonu…"
 
-#: ../data/gl-window.ui.h:1
+#: data/gl-window.ui:31
 msgid "Help"
 msgstr "Palīdzība"
 
-#: ../data/gl-window.ui.h:2
+#: data/gl-window.ui:39
 msgid "Ignore"
 msgstr "Ignorēt"
 
-#: ../data/help-overlay.ui.h:1
+#: data/help-overlay.ui:8
 msgctxt "shortcut window"
 msgid "General"
 msgstr "Vispārēji"
 
-#: ../data/help-overlay.ui.h:2
+#: data/help-overlay.ui:13
 msgctxt "shortcut window"
 msgid "Open a new window"
 msgstr "Atvērt jaunu logu"
 
-#: ../data/help-overlay.ui.h:3
+#: data/help-overlay.ui:20
 msgctxt "shortcut window"
 msgid "Close a window"
 msgstr "Aizvērt logu"
 
-#: ../data/help-overlay.ui.h:4
+#: data/help-overlay.ui:28
 msgctxt "shortcut window"
 msgid "Search"
 msgstr "Meklēt"
 
-#: ../data/help-overlay.ui.h:5
+#: data/help-overlay.ui:33
 msgctxt "shortcut window"
 msgid "Find"
 msgstr "Meklēt"
 
-#: ../data/menus.ui.h:1
+#: data/menus.ui:6
 msgid "_New Window"
 msgstr "Jau_ns logs"
 
-#: ../data/menus.ui.h:2
+#: data/menus.ui:13
 msgid "_Help"
 msgstr "_Palīdzība"
 
-#: ../data/menus.ui.h:3
+#: data/menus.ui:17
 msgid "Keyboard Shortcuts"
 msgstr "Tastatūras saīsnes"
 
-#: ../data/menus.ui.h:4
+#: data/menus.ui:21
 msgid "_About"
 msgstr "P_ar"
 
-#: ../data/menus.ui.h:5
+#: data/menus.ui:26
 msgid "_Quit"
 msgstr "_Iziet"
 
-#: ../data/org.gnome.Logs.appdata.xml.in.h:1
+#: data/org.gnome.Logs.appdata.xml.in:7
 msgid "GNOME Logs"
 msgstr "GNOME žurnāli"
 
-#: ../data/org.gnome.Logs.appdata.xml.in.h:2
-#: ../data/org.gnome.Logs.desktop.in.h:3
+#: data/org.gnome.Logs.appdata.xml.in:8 data/org.gnome.Logs.desktop.in:5
 msgid "View detailed event logs for the system"
 msgstr "Skatīt detalizētu informāciju par žurnāliem datorā"
 
-#: ../data/org.gnome.Logs.appdata.xml.in.h:3
+#: data/org.gnome.Logs.appdata.xml.in:10
 msgid ""
 "Logs shows events from the systemd journal, and sorts them into categories, "
 "such as hardware and applications."
@@ -352,7 +356,7 @@ msgstr ""
 "Žurnāli rāda notikumus no systemd žurnāla un kārto tos kategorijās, "
 "piemēram, aparatūra un lietotnes."
 
-#: ../data/org.gnome.Logs.appdata.xml.in.h:4
+#: data/org.gnome.Logs.appdata.xml.in:12
 msgid ""
 "Using Logs you can search your logs by typing a search term, and view "
 "detailed information about each event by clicking on it."
@@ -360,63 +364,68 @@ msgstr ""
 "Izmantojot “Žurnālus” jūs varat meklēt savos žurnālos, rakstot meklējamo "
 "tekstu un skatot detalizēto informāciju par katru notikumu, uz tā uzspiežot."
 
-#: ../data/org.gnome.Logs.desktop.in.h:1 ../src/gl-eventtoolbar.c:114
+#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:137
 msgid "Logs"
 msgstr "Žurnāli"
 
-#: ../data/org.gnome.Logs.desktop.in.h:2
+#: data/org.gnome.Logs.desktop.in:4
 msgid "Log Viewer"
 msgstr "Žurnālu skatītājs"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: ../data/org.gnome.Logs.desktop.in.h:5
+#: data/org.gnome.Logs.desktop.in:7
 msgid "log;journal;debug;error;"
 msgstr "žurnāls;atkļūdot;kļūda;"
 
-#: ../data/org.gnome.Logs.gschema.xml.h:1
+#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
+#: data/org.gnome.Logs.desktop.in:12
+msgid "gnome-logs"
+msgstr "gnome-logs"
+
+#: data/org.gnome.Logs.gschema.xml:5
 msgid "Ignore warning"
 msgstr "Ignorēt brīdinājums"
 
-#: ../data/org.gnome.Logs.gschema.xml.h:2
+#: data/org.gnome.Logs.gschema.xml:6
 msgid ""
 "Whether to ignore the warning that says you don’t have sufficient permission "
 "to view logs. If ignored, the warning won’t show up again."
 msgstr ""
-"Vai ignorēt brīdinājumus, kas saka, ka jums nav pietiekamu tiesību skatīt"
-" žurnālus. Ja tiek ignorēts, brīdinājumi vairs neparādīsies."
+"Vai ignorēt brīdinājumus, kas saka, ka jums nav pietiekamu tiesību skatīt "
+"žurnālus. Ja tiek ignorēts, brīdinājumi vairs neparādīsies."
 
-#: ../data/org.gnome.Logs.gschema.xml.h:3
+#: data/org.gnome.Logs.gschema.xml:10
 msgid "How to sort list rows in the event view list"
 msgstr "Kā kārtot saraksta rindas notikumu skatīšanas sarakstā"
 
-#: ../data/org.gnome.Logs.gschema.xml.h:4
+#: data/org.gnome.Logs.gschema.xml:11
 msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr "Kārtot saraksta rindas augošā vai dilstošā secībā izvēlētajam tipam"
 
-#: ../src/gl-application.c:109
+#: src/gl-application.c:109
 msgid "translator-credits"
 msgstr "Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>"
 
-#: ../src/gl-application.c:110
+#: src/gl-application.c:110
 msgid "View and search logs"
 msgstr "Katīt un meklēt žurnālos"
 
-#: ../src/gl-application.c:243
+#: src/gl-application.c:243
 msgid "Print version information and exit"
 msgstr "Parādīt informāciju par versiju un iziet"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
-#: ../src/gl-eventtoolbar.c:105
+#: src/gl-eventtoolbar.c:128
 msgid "Boot"
 msgstr "Sistēmas ielāde"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventviewlist.c:458
+#: src/gl-eventviewlist.c:478
 msgid "No results"
 msgstr "Nav rezultātu"
 
-#: ../src/gl-eventviewrow.c:224
+#: src/gl-eventviewrow.c:224
 msgid "Other"
 msgstr "Cits"
 
@@ -424,7 +433,7 @@ msgstr "Cits"
 #. * the timestamp range button label in popover to show that
 #. * logs are shown in the window starting from this timestamp
 #. * until the ending timestamp of journal.
-#: ../src/gl-searchpopover.c:687
+#: src/gl-searchpopover.c:687
 #, c-format
 msgid "From %s"
 msgstr "No %s"
@@ -433,7 +442,7 @@ msgstr "No %s"
 #. * the timestamp range button label in popover to show that
 #. * logs are shown in the window upto this timestamp
 #. * with the starting timestamp being the current time.
-#: ../src/gl-searchpopover.c:700
+#: src/gl-searchpopover.c:700
 #, c-format
 msgid "Until %s"
 msgstr "Līdz %s"
@@ -446,17 +455,15 @@ msgstr "Līdz %s"
 #. * and end date button label in the custom range submenu,
 #. * showing the day of month in decimal number, full month
 #. * name as string, the year as a decimal number including the century.
-#: ../src/gl-searchpopover.c:737 ../src/gl-searchpopover.c:1104
+#: src/gl-searchpopover.c:737 src/gl-searchpopover.c:1104
 msgid "%e %B %Y"
 msgstr "%e. %B, %Y."
 
-#: ../src/gl-searchpopover.c:875
-#, c-format
+#: src/gl-searchpopover.c:875
 msgid "AM"
 msgstr "AM"
 
-#: ../src/gl-searchpopover.c:879
-#, c-format
+#: src/gl-searchpopover.c:879
 msgid "PM"
 msgstr "PM"
 
@@ -466,7 +473,7 @@ msgstr "PM"
 #. Translators: timestamp format for the custom end time button
 #. * label in the custom range submenu, showing the time with seconds
 #. * in 12-hour format.
-#: ../src/gl-searchpopover.c:987 ../src/gl-searchpopover.c:1226
+#: src/gl-searchpopover.c:987 src/gl-searchpopover.c:1226
 msgid "%I:%M:%S %p"
 msgstr "%H.%M.%S"
 
@@ -476,21 +483,21 @@ msgstr "%H.%M.%S"
 #. Translators: timestamp format for the custom end time button
 #. * label in the custom range submenu, showing the time with seconds
 #. * in 24-hour format.
-#: ../src/gl-searchpopover.c:994 ../src/gl-searchpopover.c:1233
+#: src/gl-searchpopover.c:994 src/gl-searchpopover.c:1233
 msgid "%T"
 msgstr "%T"
 
 #. Translators: timestamp format for events on the
 #. * current day, showing the time with seconds in
 #. * 12-hour format.
-#: ../src/gl-util.c:148
+#: src/gl-util.c:148
 msgid "%l:%M:%S %p"
 msgstr "%H.%M.%S"
 
 #. Translators: timestamp format for events on the
 #. * current day, showing the time without seconds in
 #. * 12-hour format.
-#: ../src/gl-util.c:155
+#: src/gl-util.c:155
 msgid "%l:%M %p"
 msgstr "%H.%M"
 
@@ -498,7 +505,7 @@ msgstr "%H.%M"
 #. * the current year, showing the abbreviated
 #. * month name, day of the month and the time
 #. * with seconds in 12-hour format.
-#: ../src/gl-util.c:166
+#: src/gl-util.c:166
 msgid "%b %e %l:%M:%S %p"
 msgstr "%e. %b, %H.%M.%S"
 
@@ -506,7 +513,7 @@ msgstr "%e. %b, %H.%M.%S"
 #. * current year, showing the abbreviated month name,
 #. * day of the month and the time without seconds in
 #. * 12-hour format.
-#: ../src/gl-util.c:174
+#: src/gl-util.c:174
 msgid "%b %e %l:%M %p"
 msgstr "%e. %b, %H.%M"
 
@@ -514,7 +521,7 @@ msgstr "%e. %b, %H.%M"
 #. * a different year, showing the abbreviated
 #. * month name, day of the month, year and the
 #. * time with seconds in 12-hour format.
-#: ../src/gl-util.c:185
+#: src/gl-util.c:185
 msgid "%b %e %Y %l:%M:%S %p"
 msgstr "%e. %b, %Y., %H.%M.%S"
 
@@ -522,21 +529,21 @@ msgstr "%e. %b, %Y., %H.%M.%S"
 #. * a different year, showing the abbreviated
 #. * month name day of the month, year and the
 #. * time without seconds in 12-hour format.
-#: ../src/gl-util.c:194
+#: src/gl-util.c:194
 msgid "%b %e %Y %l:%M %p"
 msgstr "%e. %b, %Y., %H.%M.%S"
 
 #. Translators: timestamp format for events on the
 #. * current day, showing the time with seconds in
 #. * 24-hour format.
-#: ../src/gl-util.c:211
+#: src/gl-util.c:211
 msgid "%H:%M:%S"
 msgstr "%H.%M.%S"
 
 #. Translators: timestamp format for events on the
 #. * current day, showing the time without seconds in
 #. * 24-hour format.
-#: ../src/gl-util.c:218
+#: src/gl-util.c:218
 msgid "%H:%M"
 msgstr "%H.%M"
 
@@ -544,7 +551,7 @@ msgstr "%H.%M"
 #. * current year, showing the abbreviated month name,
 #. * day of the month and the time with seconds in
 #. * 24-hour format.
-#: ../src/gl-util.c:228
+#: src/gl-util.c:228
 msgid "%b %e %H:%M:%S"
 msgstr "%e. %b, %H.%M.%S"
 
@@ -552,7 +559,7 @@ msgstr "%e. %b, %H.%M.%S"
 #. * current year, showing the abbreviated month name,
 #. * day of the month and the time without seconds in
 #. * 24-hour format.
-#: ../src/gl-util.c:236
+#: src/gl-util.c:236
 msgid "%b %e %H:%M"
 msgstr "%e. %b, %H.%M"
 
@@ -560,7 +567,7 @@ msgstr "%e. %b, %H.%M"
 #. * a different year, showing the abbreviated
 #. * month name, day of the month, year and the
 #. * time with seconds in 24-hour format.
-#: ../src/gl-util.c:247
+#: src/gl-util.c:247
 msgid "%b %e %Y %H:%M:%S"
 msgstr "%e. %b, %Y., %H.%M.%S"
 
@@ -568,47 +575,47 @@ msgstr "%e. %b, %Y., %H.%M.%S"
 #. * different year, showing the abbreviated month name,
 #. * day of the month, year and the time without seconds
 #. * in 24-hour format.
-#: ../src/gl-util.c:255
+#: src/gl-util.c:255
 msgid "%b %e %Y %H:%M"
 msgstr "%e. %b, %Y., %H.%M.%S"
 
 #. Transltors: the first string is the earliest timestamp of the boot,
 #. * and the second string is the newest timestamp. An example string might
 #. * be '08:10 - 08:30'
-#: ../src/gl-util.c:319
+#: src/gl-util.c:319
 #, c-format
 msgid "%s – %s"
 msgstr "%s – %s"
 
-#: ../src/gl-window.c:113
+#: src/gl-window.c:113
 msgid "Save logs"
 msgstr "Saglabāt žurnālus"
 
-#: ../src/gl-window.c:116
+#: src/gl-window.c:116
 msgid "_Cancel"
 msgstr "At_celt"
 
-#: ../src/gl-window.c:117
+#: src/gl-window.c:117
 msgid "_Save"
 msgstr "_Saglabāt"
 
-#: ../src/gl-window.c:122
+#: src/gl-window.c:122
 msgid "log messages"
 msgstr "žurnāla ieraksti"
 
-#: ../src/gl-window.c:175
+#: src/gl-window.c:175
 msgid "Unable to export log messages to a file"
 msgstr "Neizdevās eksportēt žurnāla ierakstus datnē"
 
-#: ../src/gl-window.c:402 ../src/gl-window.c:433
+#: src/gl-window.c:439 src/gl-window.c:470
 msgid "Unable to read system logs"
 msgstr "Neizdevās nolasīt sistēmas žurnālus"
 
-#: ../src/gl-window.c:416
+#: src/gl-window.c:453
 msgid "Unable to read user logs"
 msgstr "Neizdevās nolasīt lietotāja žurnālus"
 
-#: ../src/gl-window.c:448
+#: src/gl-window.c:485
 msgid "No logs available"
 msgstr "Nav pieejamu žurnālu"
 
