@@ -1,14 +1,14 @@
 # Scottish Gaelic translation for gnome-logs.
 # Copyright (C) 2016 gnome-logs's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-logs package.
-# GunChleoc <fios@foramnagaidhlig.net>, 2016, 2017.
+# GunChleoc <fios@foramnagaidhlig.net>, 2016, 2017, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs gnome-3-20\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-09-20 05:47+0000\n"
-"PO-Revision-Date: 2017-03-07 09:56+0100\n"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product"
+"=gnome-logs&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2017-09-26 08:55+0000\n"
+"PO-Revision-Date: 2018-03-02 10:22+0100\n"
 "Last-Translator: GunChleoc <fios@foramnagaidhlig.net>\n"
 "Language-Team: Fòram na Gàidhlig\n"
 "Language: gd\n"
@@ -36,19 +36,19 @@ msgstr "Rionnag"
 msgid "All"
 msgstr "Na h-uile"
 
-#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:202
+#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:207
 msgid "Applications"
 msgstr "Aplacaidean"
 
-#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:211
+#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:216
 msgid "System"
 msgstr "Siostam"
 
-#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:215
+#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:220
 msgid "Security"
 msgstr "Tèarainteachd"
 
-#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:207
+#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:212
 msgid "Hardware"
 msgstr "Bathar-cruaidh"
 
@@ -61,56 +61,242 @@ msgid "Usage"
 msgstr "Cleachdadh"
 
 #: ../data/gl-eventtoolbar.ui.h:1
-msgid "Go back to the event view"
-msgstr "Till gu sealladh nan tachartas"
-
-#: ../data/gl-eventtoolbar.ui.h:2
 msgid "Export logs to a file"
 msgstr "Às-phortaich na logaichean gu faidhle"
 
-#: ../data/gl-eventtoolbar.ui.h:3
+#: ../data/gl-eventtoolbar.ui.h:2
 msgid "Choose the boot from which to view logs"
 msgstr "Tagh am bùtadh on a thèid na logaichean a shealltainn"
 
-#: ../data/gl-eventtoolbar.ui.h:4
+#: ../data/gl-eventtoolbar.ui.h:3
 msgid "Search all the logs of the current category"
 msgstr "Lorg sna logaichean uile a tha san roinn-seòrsa làithreach"
 
 #: ../data/gl-eventviewdetail.ui.h:1
+msgid "Sender"
+msgstr "Seòladair"
+
+#: ../data/gl-eventviewdetail.ui.h:2
+msgid "Time"
+msgstr "Àm"
+
+#: ../data/gl-eventviewdetail.ui.h:3 ../data/gl-searchpopover.ui.h:35
 msgid "Message"
 msgstr "Teachdaireachd"
 
-#: ../data/gl-eventviewdetail.ui.h:2
+#: ../data/gl-eventviewdetail.ui.h:4 ../data/gl-searchpopover.ui.h:39
 msgid "Audit Session"
 msgstr "Sgrùdadh an t-seisein"
 
-#: ../data/gl-eventviewdetail.ui.h:3
+#: ../data/gl-eventviewdetail.ui.h:5 ../data/gl-searchpopover.ui.h:38
 msgid "Kernel Device"
 msgstr "Uidheam an eitein"
 
-#: ../data/gl-eventviewdetail.ui.h:4
+#: ../data/gl-eventviewdetail.ui.h:6
 msgid "Priority"
 msgstr "Prìomhachas"
 
-#: ../data/gl-eventviewdetail.ui.h:5
+#: ../data/gl-eventviewdetail.ui.h:7
 msgid "Subject"
 msgstr "Cuspair"
 
-#: ../data/gl-eventviewdetail.ui.h:6
+#: ../data/gl-eventviewdetail.ui.h:8
 msgid "Defined By"
-msgstr "'Ga mhìneachadh le"
+msgstr "’Ga mhìneachadh le"
 
-#: ../data/gl-eventviewdetail.ui.h:7
+#: ../data/gl-eventviewdetail.ui.h:9
 msgid "Support"
 msgstr "Taic"
 
-#: ../data/gl-eventviewdetail.ui.h:8
+#: ../data/gl-eventviewdetail.ui.h:10
 msgid "Documentation"
 msgstr "Docamaideadh"
+
+#: ../data/gl-eventviewlist.ui.h:1
+msgid "Select journal field and timestamp range filtering options"
+msgstr ""
+"Tagh roghainnean criathraidh air raon an leabhair-aithris agus rainse nan "
+"stampaichean-tìde"
+
+#: ../data/gl-searchpopover.ui.h:1
+msgid "Select a Journal Field to filter the Logs according to it"
+msgstr "Tagh raon an leabhair-aithris gus na logaichean a chriathradh dha rèir"
+
+#: ../data/gl-searchpopover.ui.h:2
+msgid "All Available Fields"
+msgstr "a h-uile raon a tha ri fhaighinn"
+
+#. Translators: What [journal fields to search in]
+#: ../data/gl-searchpopover.ui.h:4
+msgid "What"
+msgstr "Dè"
+
+#: ../data/gl-searchpopover.ui.h:5
+msgid "Select Journal Field…"
+msgstr "Tagh raon an leabhair-aithris…"
+
+#. When [log entries to be shown for a given timestamp range]
+#: ../data/gl-searchpopover.ui.h:7
+msgid "When"
+msgstr "Cuin"
+
+#: ../data/gl-searchpopover.ui.h:8
+msgid "Show Logs from…"
+msgstr "Seall na logaichean o chionn…"
+
+#: ../data/gl-searchpopover.ui.h:9
+msgid "Select Timestamp Range of the Log Entries to be shown"
+msgstr ""
+"Tagh rainse nan stampaichean-tìde airson innteartan an loga ri an sealltainn"
+
+#: ../data/gl-searchpopover.ui.h:10 ../src/gl-searchpopover.c:1303
+msgid "Current Boot"
+msgstr "Am bùtadh làithreach"
+
+#: ../data/gl-searchpopover.ui.h:11
+#| msgctxt "shortcut window"
+#| msgid "Search"
+msgid "Search Type"
+msgstr "Seòrsa an luirg"
+
+#: ../data/gl-searchpopover.ui.h:12
+msgid "Substring"
+msgstr "Fo-shreang"
+
+#: ../data/gl-searchpopover.ui.h:13
+msgid "Match in any part of the string"
+msgstr "Maidsich pàirt sam bith dhen t-sreang"
+
+#: ../data/gl-searchpopover.ui.h:14
+msgid "Exact"
+msgstr "Pongail"
+
+#: ../data/gl-searchpopover.ui.h:15
+msgid "Match complete string only"
+msgstr "Na maidsich ach an t-sreang shlàn"
+
+#: ../data/gl-searchpopover.ui.h:16
+msgid "Back"
+msgstr "Air ais"
+
+#: ../data/gl-searchpopover.ui.h:17
+msgid "Show Logs Starting From…"
+msgstr "Seall na logaichean o chionn…"
+
+#: ../data/gl-searchpopover.ui.h:18
+msgid "Select a start date"
+msgstr "Tagh ceann-là tòiseachaidh"
+
+#: ../data/gl-searchpopover.ui.h:19 ../src/gl-searchpopover.c:503
+msgid "Select Start Date…"
+msgstr "Tagh ceann-là tòiseachaidh…"
+
+#: ../data/gl-searchpopover.ui.h:20
+msgid "22 January 2016 or 1/22/2016"
+msgstr "22 dhen Fhaoilleach 2016 no 1/22/2016"
+
+#: ../data/gl-searchpopover.ui.h:21
+msgid "Select start time"
+msgstr "Tagh àm tòiseachaidh"
+
+#: ../data/gl-searchpopover.ui.h:22 ../src/gl-searchpopover.c:504
+msgid "Select Start Time…"
+msgstr "Tagh àm tòiseachaidh…"
+
+#: ../data/gl-searchpopover.ui.h:23
+msgid "Hr"
+msgstr "Uair"
+
+#: ../data/gl-searchpopover.ui.h:24
+msgid "Min"
+msgstr "Mion"
+
+#: ../data/gl-searchpopover.ui.h:25
+#| msgctxt "shortcut window"
+#| msgid "Search"
+msgid "Sec"
+msgstr "Diog"
+
+#: ../data/gl-searchpopover.ui.h:26
+msgid "AM/PM"
+msgstr "m/f"
+
+#: ../data/gl-searchpopover.ui.h:27
+msgid "Until…"
+msgstr "Gu ruige…"
+
+#: ../data/gl-searchpopover.ui.h:28
+msgid "Select an end date"
+msgstr "Tagh ceann-là crìochnachaidh"
+
+#: ../data/gl-searchpopover.ui.h:29 ../src/gl-searchpopover.c:521
+msgid "Select End Date…"
+msgstr "Tagh ceann-là crìochnachaidh…"
+
+#: ../data/gl-searchpopover.ui.h:30
+msgid "Select end time"
+msgstr "Tagh àm crìochnachaidh"
+
+#: ../data/gl-searchpopover.ui.h:31 ../src/gl-searchpopover.c:522
+msgid "Select End Time…"
+msgstr "Tagh àm crìochnachaidh…"
+
+#: ../data/gl-searchpopover.ui.h:32
+msgid "PID"
+msgstr "PID"
+
+#: ../data/gl-searchpopover.ui.h:33
+msgid "UID"
+msgstr "UID"
+
+#: ../data/gl-searchpopover.ui.h:34
+msgid "GID"
+msgstr "GID"
+
+#: ../data/gl-searchpopover.ui.h:36
+msgid "Process Name"
+msgstr "Ainm a’ phròiseis"
+
+#: ../data/gl-searchpopover.ui.h:37
+#| msgid "System"
+msgid "Systemd Unit"
+msgstr "Aonad systemd"
+
+#: ../data/gl-searchpopover.ui.h:40
+msgid "Executable Path"
+msgstr "Slighe an fhaidhle so-ghnìomhaichte"
+
+#: ../data/gl-searchpopover.ui.h:41
+msgid "Previous Boot"
+msgstr "Am bùtadh roimhe"
+
+#: ../data/gl-searchpopover.ui.h:42
+msgid "Today"
+msgstr "An-diugh"
+
+#: ../data/gl-searchpopover.ui.h:43
+msgid "Yesterday"
+msgstr "An-dè"
+
+#: ../data/gl-searchpopover.ui.h:44
+msgid "Last 3 days"
+msgstr "Na 3 làithean seo chaidh"
+
+#: ../data/gl-searchpopover.ui.h:45
+msgid "Entire Journal"
+msgstr "An leabhar-aithris air fad"
+
+#: ../data/gl-searchpopover.ui.h:46
+msgid "Set Custom Range…"
+msgstr "Suidhich rainse ghnàthaichte…"
 
 #: ../data/gl-window.ui.h:1
 msgid "Help"
 msgstr "Cobhair"
+
+#: ../data/gl-window.ui.h:2
+msgid "Ignore"
+msgstr "Leig seachad"
 
 #: ../data/help-overlay.ui.h:1
 msgctxt "shortcut window"
@@ -147,7 +333,7 @@ msgstr "Cob_hair"
 
 #: ../data/menus.ui.h:3
 msgid "Keyboard Shortcuts"
-msgstr "Ath-ghoiridean a' mheur-chlàir"
+msgstr "Ath-ghoiridean a’ mheur-chlàir"
 
 #: ../data/menus.ui.h:4
 msgid "_About"
@@ -171,19 +357,20 @@ msgid ""
 "Logs shows events from the systemd journal, and sorts them into categories, "
 "such as hardware and applications."
 msgstr ""
-"Seallaidh Logaichean na tachartasan on leabhar-latha systemd agus "
-"seòrsaichidh e ann an roinnean-seòrsa iad, can bathar-cruaidh is aplacaidean."
+"Seallaidh Logaichean na tachartasan on leabhar-aithris systemd agus "
+"seòrsaichidh e ann an roinnean-seòrsa iad, can bathar-cruaidh is "
+"aplacaidean."
 
 #: ../data/org.gnome.Logs.appdata.xml.in.h:4
 msgid ""
 "Using Logs you can search your logs by typing a search term, and view "
 "detailed information about each event by clicking on it."
 msgstr ""
-"Le taic Logaichean, 's urrainn dhut lorg sna logaichean agad le facal-luirg "
-"agus mion-fhiosrachadh a shealltainn air gach tachartas 's tu a' briogadh "
+"Le taic Logaichean, ’s urrainn dhut lorg sna logaichean agad le facal-luirg "
+"agus mion-fhiosrachadh a shealltainn air gach tachartas ’s tu a’ briogadh "
 "air."
 
-#: ../data/org.gnome.Logs.desktop.in.h:1 ../src/gl-eventtoolbar.c:124
+#: ../data/org.gnome.Logs.desktop.in.h:1 ../src/gl-eventtoolbar.c:114
 msgid "Logs"
 msgstr "Logaichean"
 
@@ -195,46 +382,120 @@ msgstr "Sealladair logaichean"
 #: ../data/org.gnome.Logs.desktop.in.h:5
 msgid "log;journal;debug;error;"
 msgstr ""
-"log;journal;debug;error;loga;logaichean;leabhar-latha;leabhar-là;dì-bhugaich;"
-"dì-bhugachadh;mearachd;"
+"log;journal;debug;error;loga;logaichean;leabhar-latha;leabhar-là;leabhar-"
+"aithris;dì-bhugaich;dì-bhugachadh;mearachd;"
 
 #: ../data/org.gnome.Logs.gschema.xml.h:1
+msgid "Ignore warning"
+msgstr "Leig seachad an rabhadh"
+
+#: ../data/org.gnome.Logs.gschema.xml.h:2
+msgid ""
+"Whether to ignore the warning that says you don’t have sufficient permission "
+"to view logs. If ignored, the warning won’t show up again."
+msgstr ""
+"Co-dhiù an dèid gus nach dèid an rabhadh a leigeil seachad a dh’innseas nach "
+"eil ceadan gu leòr agad gus logaichean a shealltainn. Ma leigeas tu seo "
+"seachad, chan fhaic thu an rabhadh seo a-rithist."
+
+#: ../data/org.gnome.Logs.gschema.xml.h:3
 msgid "How to sort list rows in the event view list"
 msgstr ""
 "Mar a thèid ràghan an liosta a sheòrsachadh air liosta sealladh nan tachartas"
 
-#: ../data/org.gnome.Logs.gschema.xml.h:2
+#: ../data/org.gnome.Logs.gschema.xml.h:4
 msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr ""
-"Seòrsaich ràghan na liosta a' dìreadh no a' tèarnadh airson an t-seòrsa a "
+"Seòrsaich ràghan na liosta a’ dìreadh no a’ tèarnadh airson an t-seòrsa a "
 "thagh thu"
 
-#: ../src/gl-application.c:110
+#: ../src/gl-application.c:109
 msgid "translator-credits"
 msgstr "GunChleoc <fios@foramnagaidhlig.net>"
 
-#: ../src/gl-application.c:111
+#: ../src/gl-application.c:110
 msgid "View and search logs"
 msgstr "Seall is lorg sna logaichean"
 
-#: ../src/gl-application.c:239
+#: ../src/gl-application.c:243
 msgid "Print version information and exit"
 msgstr "Clò-bhuail fiosrachadh an tionndaidh is fàg an-seo"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
-#: ../src/gl-eventtoolbar.c:115
+#: ../src/gl-eventtoolbar.c:105
 msgid "Boot"
 msgstr "Bùtadh"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventviewlist.c:290
+#: ../src/gl-eventviewlist.c:458
 msgid "No results"
 msgstr "Chan eil toradh ann"
 
-#: ../src/gl-eventviewrow.c:219
+#: ../src/gl-eventviewrow.c:224
 msgid "Other"
 msgstr "Eile"
+
+#. Translators: if only custom start timestamp is set, then we update
+#. * the timestamp range button label in popover to show that
+#. * logs are shown in the window starting from this timestamp
+#. * until the ending timestamp of journal.
+#: ../src/gl-searchpopover.c:687
+#, c-format
+msgid "From %s"
+msgstr "O chionn %s"
+
+#. Translators: if only custom end timestamp is set, then we update
+#. * the timestamp range button label in popover to show that
+#. * logs are shown in the window upto this timestamp
+#. * with the starting timestamp being the current time.
+#: ../src/gl-searchpopover.c:700
+#, c-format
+msgid "Until %s"
+msgstr "Gu ruige %s"
+
+#. Translators: date format for the start date entry
+#. * and start date button label in the custom range submenu,
+#. * showing the day of month in decimal number, full month
+#. * name as string, the year as a decimal number including the century.
+#. Translators: date format for the end date entry
+#. * and end date button label in the custom range submenu,
+#. * showing the day of month in decimal number, full month
+#. * name as string, the year as a decimal number including the century.
+#: ../src/gl-searchpopover.c:737 ../src/gl-searchpopover.c:1104
+msgid "%e %B %Y"
+msgstr "%e %B %Y"
+
+#: ../src/gl-searchpopover.c:875
+#, c-format
+msgid "AM"
+msgstr "m"
+
+#: ../src/gl-searchpopover.c:879
+#, c-format
+msgid "PM"
+msgstr "f"
+
+#. Translators: timestamp format for the custom start time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 12-hour format.
+#. Translators: timestamp format for the custom end time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 12-hour format.
+#: ../src/gl-searchpopover.c:987 ../src/gl-searchpopover.c:1226
+#| msgid "%l:%M:%S %p"
+msgid "%I:%M:%S %p"
+msgstr "%I:%M:%S %P"
+
+#. Translators: timestamp format for the custom start time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 24-hour format.
+#. Translators: timestamp format for the custom end time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 24-hour format.
+#: ../src/gl-searchpopover.c:994 ../src/gl-searchpopover.c:1233
+msgid "%T"
+msgstr "%T"
 
 #. Translators: timestamp format for events on the
 #. * current day, showing the time with seconds in
@@ -336,37 +597,40 @@ msgstr "%e %b %Y %H:%M"
 msgid "%s – %s"
 msgstr "%s – %s"
 
-#: ../src/gl-window.c:186
+#: ../src/gl-window.c:113
 msgid "Save logs"
 msgstr "Sàbhail na logaichean"
 
-#: ../src/gl-window.c:189
+#: ../src/gl-window.c:116
 msgid "_Cancel"
 msgstr "S_guir dheth"
 
-#: ../src/gl-window.c:190
+#: ../src/gl-window.c:117
 msgid "_Save"
 msgstr "_Sàbhail"
 
-#: ../src/gl-window.c:195
+#: ../src/gl-window.c:122
 msgid "log messages"
 msgstr "teachdaireachdan loga"
 
-#: ../src/gl-window.c:248
+#: ../src/gl-window.c:175
 msgid "Unable to export log messages to a file"
 msgstr "Cha deach leinn na teachdaireachdan loga às-phortadh gu faidhle"
 
-#: ../src/gl-window.c:479 ../src/gl-window.c:510
+#: ../src/gl-window.c:402 ../src/gl-window.c:433
 msgid "Unable to read system logs"
-msgstr "Cha b' urrainn dhuinn logaichean an t-siostaim a leughadh"
+msgstr "Cha b’ urrainn dhuinn logaichean an t-siostaim a leughadh"
 
-#: ../src/gl-window.c:493
+#: ../src/gl-window.c:416
 msgid "Unable to read user logs"
-msgstr "Cha b' urrainn dhuinn logaichean a' chleachdaiche a leughadh"
+msgstr "Cha b’ urrainn dhuinn logaichean a’ chleachdaiche a leughadh"
 
-#: ../src/gl-window.c:525
+#: ../src/gl-window.c:448
 msgid "No logs available"
 msgstr "Chan eil loga ri fhaighinn"
+
+#~ msgid "Go back to the event view"
+#~ msgstr "Till gu sealladh nan tachartas"
 
 #~ msgid "Search the displayed logs"
 #~ msgstr "Lorg sna logaichean a tha 'gan sealltainn"
