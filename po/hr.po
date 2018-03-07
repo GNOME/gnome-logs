@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: gnome-logs gnome-3-24\n"
 "Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2017-09-28 11:35+0000\n"
-"PO-Revision-Date: 2017-11-09 17:55+0100\n"
+"POT-Creation-Date: 2018-03-02 10:23+0000\n"
+"PO-Revision-Date: 2018-03-07 15:32+0100\n"
 "Last-Translator: gogo <trebelnik2@gmail.com>\n"
 "Language-Team: Croatian <hr@li.org>\n"
 "Language: hr\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Poedit 2.0.4\n"
+"X-Generator: Poedit 2.0.6\n"
 
 #: data/gl-categorylist.ui:15
 msgid "Important"
@@ -289,7 +289,7 @@ msgstr "Postavi prilagođeni raspon…"
 
 #: data/gl-window.ui:31
 msgid "Help"
-msgstr "Pomoć"
+msgstr "Priručnik"
 
 #: data/gl-window.ui:39
 msgid "Ignore"
@@ -326,7 +326,7 @@ msgstr "_Novi prozor"
 
 #: data/menus.ui:13
 msgid "_Help"
-msgstr "_Pomoć"
+msgstr "_Priručnik"
 
 #: data/menus.ui:17
 msgid "Keyboard Shortcuts"
@@ -364,7 +364,7 @@ msgstr ""
 "Korištenjem Zapisa možete pretražiti svoje zapise upisivanjem izraza "
 "pretrage i vidjeti opširnije informacije o svakom događaju klikom na njega."
 
-#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:114
+#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:137
 msgid "Logs"
 msgstr "Zapisi"
 
@@ -417,13 +417,13 @@ msgid "Print version information and exit"
 msgstr "Ispiši podatke o inačici i izađi"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
-#: src/gl-eventtoolbar.c:105
+#: src/gl-eventtoolbar.c:128
 msgid "Boot"
 msgstr "Pokretanje"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: src/gl-eventviewlist.c:458
+#: src/gl-eventviewlist.c:478
 msgid "No results"
 msgstr "Nema rezultata"
 
@@ -609,15 +609,15 @@ msgstr "poruka zapisa"
 msgid "Unable to export log messages to a file"
 msgstr "Nemoguć izvoz poruka zapisa u datoteku"
 
-#: src/gl-window.c:402 src/gl-window.c:433
+#: src/gl-window.c:439 src/gl-window.c:470
 msgid "Unable to read system logs"
 msgstr "Nemoguće čitanje zapisa sustava"
 
-#: src/gl-window.c:416
+#: src/gl-window.c:453
 msgid "Unable to read user logs"
 msgstr "Nemoguće čitanje zapisa korinika"
 
-#: src/gl-window.c:448
+#: src/gl-window.c:485
 msgid "No logs available"
 msgstr "Nema dostupnih zapisa"
 
