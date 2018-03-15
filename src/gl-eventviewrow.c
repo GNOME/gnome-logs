@@ -370,7 +370,17 @@ gl_event_view_row_constructed (GObject *object)
     time = gl_util_timestamp_to_display (gl_journal_entry_get_timestamp (entry),
                                          now, priv->clock_format, FALSE);
     g_date_time_unref (now);
-    priv->time_label = gtk_label_new (time);
+
+    if (gl_journal_entry_get_display_time_label (entry))
+    {
+        priv->time_label = gtk_label_new (time);
+    }
+    else
+    {
+	/* Blank space is necessary to avoid message_label to extend in place of time_label. */
+        priv->time_label = gtk_label_new ("      ");
+    }
+
     context = gtk_widget_get_style_context (GTK_WIDGET (priv->time_label));
     gtk_style_context_add_class (context, "dim-label");
     gtk_style_context_add_class (context, "event-monospace");

@@ -43,6 +43,7 @@ struct _GlJournalEntry
   gchar *gid;
   gchar *systemd_unit;
   gchar *executable_path;
+  gboolean display_time_label;
 };
 
 G_DEFINE_TYPE (GlJournalEntry, gl_journal_entry, G_TYPE_OBJECT);
@@ -574,6 +575,8 @@ _gl_journal_query_entry (GlJournal *self)
         g_clear_error (&error);
     }
 
+    entry->display_time_label = TRUE;
+
     return entry;
 
 out:
@@ -867,4 +870,20 @@ gl_journal_entry_get_executable_path (GlJournalEntry *entry)
   g_return_val_if_fail (GL_IS_JOURNAL_ENTRY (entry), NULL);
 
   return entry->executable_path;
+}
+
+gboolean
+gl_journal_entry_get_display_time_label (GlJournalEntry *entry)
+{
+  g_return_val_if_fail (GL_IS_JOURNAL_ENTRY (entry), FALSE);
+
+  return entry->display_time_label;
+}
+
+void
+gl_journal_entry_set_display_time_label (GlJournalEntry *entry, gboolean value)
+{
+  g_return_if_fail (GL_IS_JOURNAL_ENTRY (entry));
+
+  entry->display_time_label = value;
 }

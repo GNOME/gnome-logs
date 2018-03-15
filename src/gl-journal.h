@@ -92,6 +92,8 @@ const gchar *           gl_journal_entry_get_pid                        (GlJourn
 const gchar *           gl_journal_entry_get_gid                        (GlJournalEntry *entry);
 const gchar *           gl_journal_entry_get_systemd_unit               (GlJournalEntry *entry);
 const gchar *           gl_journal_entry_get_executable_path            (GlJournalEntry *entry);
+gboolean                gl_journal_entry_get_display_time_label         (GlJournalEntry *entry);
+void                    gl_journal_entry_set_display_time_label         (GlJournalEntry *entry, gboolean value);
 
 G_END_DECLS
 

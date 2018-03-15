@@ -18,6 +18,7 @@
 
 #include "gl-journal-model.h"
 #include "gl-journal.h"
+#include "gl-util.h"
 
 /* Details of match fields */
 typedef struct GlQueryItem
@@ -110,6 +111,11 @@ gl_journal_model_fetch_idle (gpointer user_data)
 
             if (last > 0)
             {
+		GlJournalEntry *previous_entry;
+                gchar *previous_entry_time_label;
+                gchar *current_entry_time_label;
+                GDateTime *now;
+
                 GlRowEntry *prev_row_entry = g_ptr_array_index (model->entries, last - 1);
 
                 if (gl_row_entry_check_message_similarity (row_entry,
@@ -155,6 +161,30 @@ gl_journal_model_fetch_idle (gpointer user_data)
                     model->n_entries_to_fetch--;
 
                 }
+
+		previous_entry = gl_row_entry_get_journal_entry (prev_row_entry);
+
+		now = g_date_time_new_now_local ();
+
+                previous_entry_time_label = gl_util_timestamp_to_display (gl_journal_entry_get_timestamp (previous_entry),
+                                                                          now, GL_UTIL_CLOCK_FORMAT_24HR, FALSE);
+
+                current_entry_time_label = gl_util_timestamp_to_display (gl_journal_entry_get_timestamp (entry),
+                                                                         now, GL_UTIL_CLOCK_FORMAT_24HR, FALSE);
+
+                /* TODO: Timestamp should be compared directly in future. */
+                if (g_strcmp0 (previous_entry_time_label, current_entry_time_label) == 0)
+                {
+                    gl_journal_entry_set_display_time_label (entry, FALSE);
+		}
+                else
+		{
+                    gl_journal_entry_set_display_time_label (entry, TRUE);
+		}
+
+                g_free (previous_entry_time_label);
+                g_free (current_entry_time_label);
+                g_date_time_unref (now);
             }
 
             last = model->entries->len;
