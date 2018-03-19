@@ -195,9 +195,9 @@ on_view_boot (GSimpleAction *action,
     GlEventToolbar *toolbar;
     GArray *boot_ids;
     GlJournalBootID *boot_id;
-    gchar *current_boot;
     const gchar *boot_match;
-    const gchar *latest_boot;
+    gchar *current_boot;
+    gchar *latest_boot;
 
     priv = gl_window_get_instance_private (GL_WINDOW (user_data));
     event_list = GL_EVENT_VIEW_LIST (priv->event_list);
@@ -224,6 +224,7 @@ on_view_boot (GSimpleAction *action,
     g_simple_action_set_state (action, variant);
 
     g_free (current_boot);
+    g_free (latest_boot);
 }
 
 static void

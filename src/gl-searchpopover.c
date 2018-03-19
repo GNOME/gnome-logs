@@ -1002,6 +1002,8 @@ start_time_spinbox_value_changed (GtkSpinButton *spin_button,
 
     g_object_notify_by_pspec (G_OBJECT (popover),
                               obj_properties[PROP_JOURNAL_TIMESTAMP_RANGE]);
+
+    g_free (button_label);
 }
 
 static void
@@ -1241,6 +1243,8 @@ end_time_spinbox_value_changed (GtkSpinButton *spin_button,
 
     g_object_notify_by_pspec (G_OBJECT (popover),
                               obj_properties[PROP_JOURNAL_TIMESTAMP_RANGE]);
+
+    g_free (button_label);
 }
 
 static void
