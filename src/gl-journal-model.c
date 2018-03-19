@@ -66,6 +66,7 @@ static gboolean gl_query_check_journal_end (GlQuery *query, GlJournalEntry *entr
 static gboolean gl_row_entry_check_message_similarity (GlRowEntry *current_row_entry,
                                                        GlRowEntry *prev_row_entry);
 static void gl_journal_model_add_header (GlJournalModel *model);
+static void gl_query_free (GlQuery *query);
 
 
 G_DEFINE_TYPE (GlRowEntry, gl_row_entry, G_TYPE_OBJECT);
@@ -238,6 +239,11 @@ gl_journal_model_dispose (GObject *object)
     GlJournalModel *model = GL_JOURNAL_MODEL (object);
 
     gl_journal_model_stop_idle (model);
+
+    if (model->query)
+    {
+        gl_query_free (model->query);
+    }
 
     if (model->entries)
     {
