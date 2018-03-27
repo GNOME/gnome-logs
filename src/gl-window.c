@@ -144,8 +144,14 @@ on_export (GSimpleAction *action,
             g_clear_error (&error);
         }
 
-        g_output_stream_write (G_OUTPUT_STREAM (file_ostream), file_content,
-                               strlen (file_content), NULL, &error);
+        /* Check against NULL pointer to avoid a crash when exporting and there
+         * are no log entries. */
+        if (file_content != NULL)
+        {
+            g_output_stream_write (G_OUTPUT_STREAM (file_ostream), file_content,
+                                   strlen (file_content), NULL, &error);
+        }
+
         if (error != NULL)
         {
             have_error = TRUE;
