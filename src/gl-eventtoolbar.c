@@ -60,6 +60,8 @@ gl_event_toolbar_update_boot_menu_label (GlEventToolbar *toolbar,
 
     g_menu_remove (G_MENU (section), 0);
     g_menu_insert_item (G_MENU (section), 0, menu_item);
+
+    g_object_unref (menu_item);
 }
 
 void
