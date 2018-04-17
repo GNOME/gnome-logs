@@ -1,3 +1,11 @@
+GNOME Logs 3.29.1
+=================
+
+* only show similar timestamps once from ankritisachan
+* various memory leak fixes
+* exporting blank journal crash fix from H00ly666
+* updates to Russian and Polish translations
+
 GNOME Logs 3.28.0
 =================
 
