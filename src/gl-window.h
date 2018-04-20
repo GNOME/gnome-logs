@@ -30,6 +30,8 @@ G_DECLARE_FINAL_TYPE (GlWindow, gl_window, GL, WINDOW, GtkApplicationWindow)
 
 GtkWidget * gl_window_new (GtkApplication *application);
 void gl_window_set_sort_order (GlWindow *window, GlSortOrder sort_order);
+void disable_export (GlWindow *window);
+void enable_export (GlWindow *window);
 
 G_END_DECLS
 

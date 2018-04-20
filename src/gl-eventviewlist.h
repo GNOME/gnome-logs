@@ -44,6 +44,7 @@ GArray * gl_event_view_list_get_boot_ids (GlEventViewList *view);
 gchar * gl_event_view_list_get_output_logs (GlEventViewList *view);
 gchar * gl_event_view_list_get_boot_time (GlEventViewList *view,
                                           const gchar *boot_match);
+GlJournalModel * gl_event_view_list_get_journal_model (GlEventViewList *view);
 
 G_END_DECLS
 

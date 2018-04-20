@@ -64,6 +64,16 @@ static const gchar SETTINGS_SCHEMA[] = "org.gnome.Logs";
 static const gchar CLOCK_FORMAT[] = "clock-format";
 static const gchar SORT_ORDER[] = "sort-order";
 
+GlJournalModel *
+gl_event_view_list_get_journal_model (GlEventViewList *view)
+{
+    GlEventViewListPrivate *priv;
+
+    priv = gl_event_view_list_get_instance_private (view);
+
+    return priv->journal_model;
+}
+
 GtkWidget *
 gl_event_view_list_get_category_list (GlEventViewList *view)
 {

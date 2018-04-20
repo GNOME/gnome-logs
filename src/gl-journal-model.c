@@ -58,7 +58,22 @@ struct _GlJournalModel
     guint idle_source;
 
     guint compressed_entries_counter;
+
+    /* export variable is used to identify when total number of entries,
+     * to display, changes from 0 to a non zero number and only then
+     * emit 'ENABLE_EXPORT'signal once instead of emitting it repeatedly
+     * when new entries are continuously added */
+    gboolean export;
 };
+
+enum
+{
+    DISABLE_EXPORT,
+    ENABLE_EXPORT,
+    LAST_SIGNAL
+};
+
+static guint signals[LAST_SIGNAL] = { 0 };
 
 static void gl_journal_model_interface_init (GListModelInterface *iface);
 static GPtrArray *tokenize_search_string (gchar *search_text);
@@ -103,6 +118,18 @@ gl_journal_model_fetch_idle (gpointer user_data)
     g_assert (model->n_entries_to_fetch > 0);
 
     last = model->entries->len;
+
+    if (last == 0)
+    {
+        model->export = FALSE;
+        g_signal_emit (model, signals[DISABLE_EXPORT], 0);
+    }
+    else if (last > 0 && model->export == FALSE)
+    {
+        model->export = TRUE;
+        g_signal_emit (model, signals[ENABLE_EXPORT], 0);
+    }
+
     if ((entry = gl_journal_previous (model->journal)) && gl_query_check_journal_end (model->query, entry))
     {
         if (search_in_entry (entry, model))
@@ -229,6 +256,7 @@ gl_journal_model_init (GlJournalModel *model)
     model->batch_size = 50;
     model->journal = gl_journal_new ();
     model->entries = g_ptr_array_new_with_free_func (g_object_unref);
+    model->export = FALSE;
 
     gl_journal_model_fetch_more_entries (model, FALSE);
 }
@@ -344,6 +372,27 @@ gl_journal_model_class_init (GlJournalModelClass *class)
                                                      G_PARAM_READABLE | default_flags);
 
     g_object_class_install_properties (object_class, N_PROPERTIES, properties);
+
+    signals[DISABLE_EXPORT] = g_signal_new ("disable-export",
+					    G_TYPE_FROM_CLASS (class),
+					    G_SIGNAL_RUN_LAST,
+					    0,
+					    NULL,
+					    NULL,
+					    NULL,
+					    G_TYPE_NONE,
+					    0);
+
+    signals[ENABLE_EXPORT]  = g_signal_new ("enable-export",
+					    G_TYPE_FROM_CLASS (class),
+					    G_SIGNAL_RUN_LAST,
+					    0,
+					    NULL,
+					    NULL,
+					    NULL,
+					    G_TYPE_NONE,
+					    0);
+
 }
 
 static void

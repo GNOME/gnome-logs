@@ -363,6 +363,26 @@ gl_window_class_init (GlWindowClass *klass)
                                              on_ignore_button_clicked);
 }
 
+void
+disable_export (GlWindow *window)
+{
+    GAction *action_export;
+
+    action_export = g_action_map_lookup_action (G_ACTION_MAP (window),
+                                                "export");
+    g_simple_action_set_enabled (G_SIMPLE_ACTION (action_export), FALSE);
+}
+
+void
+enable_export (GlWindow *window)
+{
+    GAction *action_export;
+
+    action_export = g_action_map_lookup_action (G_ACTION_MAP (window),
+                                                "export");
+    g_simple_action_set_enabled (G_SIMPLE_ACTION (action_export), TRUE);
+}
+
 static void
 gl_window_init (GlWindow *window)
 {
@@ -380,6 +400,7 @@ gl_window_init (GlWindow *window)
     GVariant *variant;
     GSettings *settings;
     gboolean ignore;
+    GlJournalModel *model;
 
     gtk_widget_init_template (GTK_WIDGET (window));
 
@@ -409,6 +430,13 @@ gl_window_init (GlWindow *window)
     categories = gl_event_view_list_get_category_list (event_list);
     g_signal_connect (GL_CATEGORY_LIST (categories), "notify::category",
                       G_CALLBACK (on_category_list_changed), window);
+
+    model = gl_event_view_list_get_journal_model (event_list);
+
+    g_signal_connect_swapped (model, "disable_export",
+                              G_CALLBACK (disable_export), window);
+    g_signal_connect_swapped (model, "enable_export",
+                              G_CALLBACK (enable_export), window);
 
     provider = gtk_css_provider_new ();
     g_signal_connect (provider, "parsing-error",
