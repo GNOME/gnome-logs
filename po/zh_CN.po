@@ -2,21 +2,22 @@
 # Copyright (C) 2013 gnome-logs's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-logs package.
 # eternalhui <www.eternalhui@gmail.com>, 2013.
+# Jeff Bai <jeffbai@aosc.xyz>, 2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-03-25 22:18+0000\n"
-"PO-Revision-Date: 2015-05-03 15:02+0800\n"
-"Last-Translator: YunQiang Su <wzssyqa@gmail.com>\n"
+"POT-Creation-Date: 2015-11-08 09:19+0000\n"
+"PO-Revision-Date: 2015-11-08 14:18-0700\n"
+"Last-Translator: Jeff Bai <jeffbai@aosc.xyz>\n"
 "Language-Team: Chinese (China) <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.7.6\n"
+"X-Generator: Poedit 1.8.5\n"
 
 #: ../data/gl-categorylist.ui.h:1
 msgid "Important"
@@ -34,19 +35,19 @@ msgstr "已加星标"
 msgid "All"
 msgstr "全部"
 
-#: ../data/gl-categorylist.ui.h:5
+#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:197
 msgid "Applications"
 msgstr "应用程序"
 
-#: ../data/gl-categorylist.ui.h:6
+#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:206
 msgid "System"
 msgstr "系统"
 
-#: ../data/gl-categorylist.ui.h:7
+#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:210
 msgid "Security"
 msgstr "安全"
 
-#: ../data/gl-categorylist.ui.h:8
+#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:202
 msgid "Hardware"
 msgstr "硬件"
 
@@ -58,17 +59,19 @@ msgstr "更新"
 msgid "Usage"
 msgstr "使用"
 
-#. Name and summary taken from the desktop file.
-#: ../data/gl-eventtoolbar.ui.h:1 ../data/org.gnome.Logs.appdata.xml.in.h:2
-#: ../data/org.gnome.Logs.desktop.in.h:1
-msgid "Logs"
-msgstr "日志"
-
-#: ../data/gl-eventtoolbar.ui.h:2
+#: ../data/gl-eventtoolbar.ui.h:1
 msgid "Go back to the event view"
 msgstr "返回事件视图"
 
+#: ../data/gl-eventtoolbar.ui.h:2
+msgid "Export logs to a file"
+msgstr "将日志导出到文件"
+
 #: ../data/gl-eventtoolbar.ui.h:3
+msgid "Choose the boot from which to view logs"
+msgstr "选择某次引导以查看其日志"
+
+#: ../data/gl-eventtoolbar.ui.h:4
 msgid "Search the displayed logs"
 msgstr "搜索显示的日志"
 
@@ -104,6 +107,10 @@ msgstr "支持"
 msgid "Documentation"
 msgstr "文档"
 
+#: ../data/gl-window.ui.h:1
+msgid "Help"
+msgstr "帮助"
+
 #: ../data/menus.ui.h:1
 msgid "_New Window"
 msgstr "新窗口(_N)"
@@ -119,6 +126,12 @@ msgstr "关于(_A)"
 #: ../data/menus.ui.h:4
 msgid "_Quit"
 msgstr "退出(_Q)"
+
+#. Name and summary taken from the desktop file.
+#: ../data/org.gnome.Logs.appdata.xml.in.h:2
+#: ../data/org.gnome.Logs.desktop.in.h:1 ../src/gl-eventtoolbar.c:126
+msgid "Logs"
+msgstr "日志"
 
 #: ../data/org.gnome.Logs.appdata.xml.in.h:3
 #: ../data/org.gnome.Logs.desktop.in.h:3
@@ -156,63 +169,108 @@ msgstr "如何在事件查看列别中对行列表排序"
 msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr "根据选择的类型以升序或降序排列列表行"
 
-#: ../src/gl-application.c:103
+#: ../src/gl-application.c:110
 msgid "translator-credits"
 msgstr "eternalhui <www.eternalhui@gmail.com>, 2013"
 
-#: ../src/gl-application.c:104
+#: ../src/gl-application.c:111
 msgid "View and search logs"
 msgstr "查看和搜索日志"
 
-#: ../src/gl-application.c:231
+#: ../src/gl-application.c:238
 msgid "Print version information and exit"
 msgstr "打印版本信息并退出"
 
+#. Translators: Boot refers to a single run (or bootup) of the system
+#: ../src/gl-eventtoolbar.c:117
+msgid "Boot"
+msgstr "单次引导"
+
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventviewlist.c:288
+#: ../src/gl-eventviewlist.c:651
 msgid "No results"
 msgstr "无结果"
 
+#: ../src/gl-eventviewrow.c:214
+msgid "Other"
+msgstr "其他"
+
 #. Translators: timestamp format for events on the current
 #. * day, showing the time in 12-hour format.
-#: ../src/gl-util.c:138
+#: ../src/gl-util.c:144
 msgid "%l:%M %p"
 msgstr "%p %H:%M"
 
 #. Translators: timestamp format for events in the current
 #. * year, showing the abbreviated month name, day of the
 #. * month and the time in 12-hour format.
-#: ../src/gl-util.c:144
+#: ../src/gl-util.c:150
 msgid "%b %e %l:%M %p"
 msgstr "%b %p %H:%M"
 
 #. Translators: timestamp format for events in a different
 #. * year, showing the abbreviated month name, day of the
 #. * month, year and the time in 12-hour format.
-#: ../src/gl-util.c:150
+#: ../src/gl-util.c:156
 msgid "%b %e %Y %l:%M %p"
 msgstr "%Y%b %p %H:%M"
 
 #. Translators: timestamp format for events on the current
 #. * day, showing the time in 24-hour format.
-#: ../src/gl-util.c:163
+#: ../src/gl-util.c:169
 msgid "%H:%M"
 msgstr "%H:%M"
 
 #. Translators: timestamp format for events in the current
 #. * year, showing the abbreviated month name, day of the
 #. * month and the time in 24-hour format.
-#: ../src/gl-util.c:169
+#: ../src/gl-util.c:175
 msgid "%b %e %H:%M"
 msgstr "%b %H:%M"
 
 #. Translators: timestamp format for events in a different
 #. * year, showing the abbreviated month name, day of the
 #. * month, year and the time in 24-hour format.
-#: ../src/gl-util.c:175
+#: ../src/gl-util.c:181
 msgid "%b %e %Y %H:%M"
 msgstr "%Y%b %H:%M"
+
+#. Transltors: the first string is the earliest timestamp of the boot,
+#. * and the second string is the newest timestamp. An example string might
+#. * be '08:10 - 08:30'
+#: ../src/gl-util.c:244
+#, c-format
+msgid "%s – %s"
+msgstr "%s 至 %s"
+
+#: ../src/gl-window.c:186
+msgid "Save logs"
+msgstr "保存日志"
+
+#: ../src/gl-window.c:189
+msgid "_Cancel"
+msgstr "取消(_C)"
+
+#: ../src/gl-window.c:190
+msgid "_Save"
+msgstr "保存(_S)"
+
+#: ../src/gl-window.c:195
+msgid "log messages"
+msgstr "日志消息"
+
+#: ../src/gl-window.c:248
+msgid "Unable to export log messages to a file"
+msgstr "无法将日志消息导出到文件"
+
+#: ../src/gl-window.c:467
+msgid "Unable to read system logs"
+msgstr "无法读取系统日志"
+
+#: ../src/gl-window.c:481
+msgid "Unable to read user logs"
+msgstr "无法读取用户日志"
 
 #~ msgid "Not implemented"
 #~ msgstr "未实现"
