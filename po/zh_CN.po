@@ -1,343 +1,361 @@
 # Chinese (China) translation for gnome-logs.
-# Copyright (C) 2013 gnome-logs's COPYRIGHT HOLDER
+# Copyright (C) 2013--2018 gnome-logs's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-logs package.
 # eternalhui <www.eternalhui@gmail.com>, 2013.
 # Jeff Bai <jeffbai@aosc.xyz>, 2015, 2016.
-# Dingzhong Chen <wsxy162@gmail.com>, 2016.
+# Dingzhong Chen <wsxy162@@gmail.com>, 2016, 2018.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2017-01-05 14:00+0000\n"
-"PO-Revision-Date: 2017-01-21 22:54+0800\n"
-"Last-Translator: Jeff Bai <jeffbai@aosc.xyz>\n"
+"POT-Creation-Date: 2018-04-21 02:20+0000\n"
+"PO-Revision-Date: 2018-03-03 23:13+0800\n"
+"Last-Translator: Dingzhong Chen <wsxy162@@gmail.com>\n"
 "Language-Team: Chinese (China) <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Gtranslator 2.91.7\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../data/gl-categorylist.ui.h:1
+#: data/gl-categorylist.ui:15
 msgid "Important"
 msgstr "重要"
 
-#: ../data/gl-categorylist.ui.h:2
+#: data/gl-categorylist.ui:30
 msgid "Alerts"
 msgstr "警告"
 
-#: ../data/gl-categorylist.ui.h:3
+#: data/gl-categorylist.ui:45
 msgid "Starred"
 msgstr "已加星标"
 
-#: ../data/gl-categorylist.ui.h:4
+#: data/gl-categorylist.ui:60
 msgid "All"
 msgstr "全部"
 
-#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:202
+#: data/gl-categorylist.ui:75 src/gl-eventviewrow.c:207
 msgid "Applications"
 msgstr "应用程序"
 
-#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:211
+#: data/gl-categorylist.ui:90 src/gl-eventviewrow.c:216
 msgid "System"
 msgstr "系统"
 
-#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:215
+#: data/gl-categorylist.ui:105 src/gl-eventviewrow.c:220
 msgid "Security"
 msgstr "安全"
 
-#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:207
+#: data/gl-categorylist.ui:120 src/gl-eventviewrow.c:212
 msgid "Hardware"
 msgstr "硬件"
 
-#: ../data/gl-categorylist.ui.h:9
+#: data/gl-categorylist.ui:135
 msgid "Updates"
 msgstr "更新"
 
-#: ../data/gl-categorylist.ui.h:10
+#: data/gl-categorylist.ui:150
 msgid "Usage"
 msgstr "使用"
 
-#: ../data/gl-eventtoolbar.ui.h:1
-msgid "Go back to the event view"
-msgstr "返回事件视图"
-
-#: ../data/gl-eventtoolbar.ui.h:2
+#: data/gl-eventtoolbar.ui:9
 msgid "Export logs to a file"
 msgstr "将日志导出到文件"
 
-#: ../data/gl-eventtoolbar.ui.h:3
+#: data/gl-eventtoolbar.ui:30
 msgid "Choose the boot from which to view logs"
 msgstr "选择某次引导以查看其日志"
 
-#: ../data/gl-eventtoolbar.ui.h:4
+#: data/gl-eventtoolbar.ui:42
 msgid "Search all the logs of the current category"
 msgstr "在当前类别中的所有日志中搜索"
 
-#: ../data/gl-eventviewdetail.ui.h:1 ../data/gl-searchpopover.ui.h:32
+#: data/gl-eventviewdetail.ui:26
+msgid "Sender"
+msgstr "发送方"
+
+#: data/gl-eventviewdetail.ui:58
+msgid "Time"
+msgstr "时间"
+
+#: data/gl-eventviewdetail.ui:92 data/gl-searchpopover.ui:1052
 msgid "Message"
 msgstr "消息"
 
-#: ../data/gl-eventviewdetail.ui.h:2 ../data/gl-searchpopover.ui.h:36
+#: data/gl-eventviewdetail.ui:128 data/gl-searchpopover.ui:1072
 msgid "Audit Session"
 msgstr "审查会话"
 
-#: ../data/gl-eventviewdetail.ui.h:3 ../data/gl-searchpopover.ui.h:35
+#: data/gl-eventviewdetail.ui:161 data/gl-searchpopover.ui:1067
 msgid "Kernel Device"
 msgstr "内核设备"
 
-#: ../data/gl-eventviewdetail.ui.h:4
+#: data/gl-eventviewdetail.ui:194
 msgid "Priority"
 msgstr "优先级"
 
-#: ../data/gl-eventviewdetail.ui.h:5
+#: data/gl-eventviewdetail.ui:228
 msgid "Subject"
 msgstr "主题"
 
-#: ../data/gl-eventviewdetail.ui.h:6
+#: data/gl-eventviewdetail.ui:264
 msgid "Defined By"
 msgstr "定义由"
 
-#: ../data/gl-eventviewdetail.ui.h:7
+#: data/gl-eventviewdetail.ui:298
 msgid "Support"
 msgstr "支持"
 
-#: ../data/gl-eventviewdetail.ui.h:8
+#: data/gl-eventviewdetail.ui:334
 msgid "Documentation"
 msgstr "文档"
 
-#: ../data/gl-eventviewlist.ui.h:1
+#: data/gl-eventviewlist.ui:43
 msgid "Select journal field and timestamp range filtering options"
 msgstr "选择日志区域及时间戳范围作为筛选选项"
 
-#: ../data/gl-searchpopover.ui.h:1
+#: data/gl-searchpopover.ui:26
 msgid "Select a Journal Field to filter the Logs according to it"
 msgstr "选择日志区域以据此筛选日志"
 
-#: ../data/gl-searchpopover.ui.h:2
+#: data/gl-searchpopover.ui:35 data/gl-searchpopover.ui:1028
 msgid "All Available Fields"
 msgstr "全部可用区域"
 
-#: ../data/gl-searchpopover.ui.h:3
+#: data/gl-searchpopover.ui:78 data/gl-searchpopover.ui:251
+msgid "Parameters"
+msgstr "参数"
+
+#. Translators: What [journal fields to search in]
+#: data/gl-searchpopover.ui:115
 msgid "What"
 msgstr "类型"
 
-#: ../data/gl-searchpopover.ui.h:4
+#: data/gl-searchpopover.ui:130
 msgid "Select Journal Field…"
-msgstr "选择日志区域"
+msgstr "选择日志区域…"
 
-#: ../data/gl-searchpopover.ui.h:5
+#. When [log entries to be shown for a given timestamp range]
+#: data/gl-searchpopover.ui:155
 msgid "When"
 msgstr "时间"
 
-#: ../data/gl-searchpopover.ui.h:6
+#: data/gl-searchpopover.ui:170
 msgid "Show Logs from…"
 msgstr "显示自此时间的日志…"
 
-#: ../data/gl-searchpopover.ui.h:7
+#: data/gl-searchpopover.ui:199
 msgid "Select Timestamp Range of the Log Entries to be shown"
 msgstr "选择要显示的日志条目的时间戳范围"
 
-#: ../data/gl-searchpopover.ui.h:8 ../src/gl-searchpopover.c:1303
+#: data/gl-searchpopover.ui:208 data/gl-searchpopover.ui:1091
+#: src/gl-searchpopover.c:1309
 msgid "Current Boot"
 msgstr "本次引导"
 
-#: ../data/gl-searchpopover.ui.h:9
+#: data/gl-searchpopover.ui:293
 msgid "Search Type"
 msgstr "搜索类型"
 
-#: ../data/gl-searchpopover.ui.h:10
+#: data/gl-searchpopover.ui:310
 msgid "Substring"
 msgstr "子字符串"
 
-#: ../data/gl-searchpopover.ui.h:11
+#: data/gl-searchpopover.ui:314
 msgid "Match in any part of the string"
 msgstr "匹配字串的任何部分"
 
-#: ../data/gl-searchpopover.ui.h:12
+#: data/gl-searchpopover.ui:328
 msgid "Exact"
 msgstr "精确"
 
-#: ../data/gl-searchpopover.ui.h:13
+#: data/gl-searchpopover.ui:332
 msgid "Match complete string only"
 msgstr "仅全字串匹配"
 
-#: ../data/gl-searchpopover.ui.h:14
+#: data/gl-searchpopover.ui:379
 msgid "Back"
 msgstr "返回"
 
-#: ../data/gl-searchpopover.ui.h:15
+#: data/gl-searchpopover.ui:397
 msgid "Show Logs Starting From…"
 msgstr "显示自此时间的日志…"
 
-#: ../data/gl-searchpopover.ui.h:16
+#: data/gl-searchpopover.ui:419
 msgid "Select a start date"
 msgstr "选择起始日期"
 
-#: ../data/gl-searchpopover.ui.h:17 ../src/gl-searchpopover.c:503
+#: data/gl-searchpopover.ui:428 src/gl-searchpopover.c:503
 msgid "Select Start Date…"
 msgstr "选择起始日期…"
 
-#: ../data/gl-searchpopover.ui.h:18
+#: data/gl-searchpopover.ui:459 data/gl-searchpopover.ui:763
+msgid "22 January 2016 or 1/22/2016"
+msgstr "2016年1月22日 或 2016-01-22"
+
+#: data/gl-searchpopover.ui:504
 msgid "Select start time"
 msgstr "选择起始时间"
 
-#: ../data/gl-searchpopover.ui.h:19 ../src/gl-searchpopover.c:504
+#: data/gl-searchpopover.ui:513 src/gl-searchpopover.c:504
 msgid "Select Start Time…"
 msgstr "选择起始时间…"
 
-#: ../data/gl-searchpopover.ui.h:20
+#: data/gl-searchpopover.ui:550 data/gl-searchpopover.ui:857
 msgid "Hr"
 msgstr "时"
 
-#: ../data/gl-searchpopover.ui.h:21
+#: data/gl-searchpopover.ui:585 data/gl-searchpopover.ui:892
 msgid "Min"
 msgstr "分"
 
-#: ../data/gl-searchpopover.ui.h:22
+#: data/gl-searchpopover.ui:620 data/gl-searchpopover.ui:927
 msgid "Sec"
 msgstr "秒"
 
-#: ../data/gl-searchpopover.ui.h:23
+#: data/gl-searchpopover.ui:655 data/gl-searchpopover.ui:962
 msgid "AM/PM"
 msgstr "上午/下午"
 
-#: ../data/gl-searchpopover.ui.h:24
+#: data/gl-searchpopover.ui:701
 msgid "Until…"
 msgstr "到…"
 
-#: ../data/gl-searchpopover.ui.h:25
+#: data/gl-searchpopover.ui:723
 msgid "Select an end date"
 msgstr "设置结束日期"
 
-#: ../data/gl-searchpopover.ui.h:26 ../src/gl-searchpopover.c:521
+#: data/gl-searchpopover.ui:732 src/gl-searchpopover.c:521
 msgid "Select End Date…"
 msgstr "设置结束日期…"
 
-#: ../data/gl-searchpopover.ui.h:27
+#: data/gl-searchpopover.ui:811
 msgid "Select end time"
 msgstr "设置结束时间"
 
-#: ../data/gl-searchpopover.ui.h:28 ../src/gl-searchpopover.c:522
+#: data/gl-searchpopover.ui:820 src/gl-searchpopover.c:522
 msgid "Select End Time…"
 msgstr "设置结束时间…"
 
-#: ../data/gl-searchpopover.ui.h:29
+#: data/gl-searchpopover.ui:1037
 msgid "PID"
 msgstr "PID"
 
-#: ../data/gl-searchpopover.ui.h:30
+#: data/gl-searchpopover.ui:1042
 msgid "UID"
 msgstr "UID"
 
-#: ../data/gl-searchpopover.ui.h:31
+#: data/gl-searchpopover.ui:1047
 msgid "GID"
 msgstr "GID"
 
-#: ../data/gl-searchpopover.ui.h:33
+#: data/gl-searchpopover.ui:1057
 msgid "Process Name"
 msgstr "进程名"
 
-#: ../data/gl-searchpopover.ui.h:34
+#: data/gl-searchpopover.ui:1062
 msgid "Systemd Unit"
 msgstr "Systemd 单元"
 
-#: ../data/gl-searchpopover.ui.h:37
+#: data/gl-searchpopover.ui:1077
 msgid "Executable Path"
 msgstr "可执行路径"
 
-#: ../data/gl-searchpopover.ui.h:38
+#: data/gl-searchpopover.ui:1096
 msgid "Previous Boot"
 msgstr "上次引导"
 
-#: ../data/gl-searchpopover.ui.h:39
+#: data/gl-searchpopover.ui:1105
 msgid "Today"
 msgstr "今天"
 
-#: ../data/gl-searchpopover.ui.h:40
+#: data/gl-searchpopover.ui:1110
 msgid "Yesterday"
 msgstr "昨天"
 
-#: ../data/gl-searchpopover.ui.h:41
+#: data/gl-searchpopover.ui:1115
 msgid "Last 3 days"
 msgstr "近三天"
 
-#: ../data/gl-searchpopover.ui.h:42
+#: data/gl-searchpopover.ui:1124
 msgid "Entire Journal"
 msgstr "整个日志"
 
-#: ../data/gl-searchpopover.ui.h:43
+#: data/gl-searchpopover.ui:1133
 msgid "Set Custom Range…"
 msgstr "设置自定义范围…"
 
-#: ../data/gl-window.ui.h:1
+#: data/gl-window.ui:31
 msgid "Help"
 msgstr "帮助"
 
-#: ../data/help-overlay.ui.h:1
+#: data/gl-window.ui:39
+msgid "Ignore"
+msgstr "忽略"
+
+#: data/help-overlay.ui:8
 msgctxt "shortcut window"
 msgid "General"
 msgstr "通用"
 
-#: ../data/help-overlay.ui.h:2
+#: data/help-overlay.ui:13
 msgctxt "shortcut window"
 msgid "Open a new window"
 msgstr "打开新窗口"
 
-#: ../data/help-overlay.ui.h:3
+#: data/help-overlay.ui:20
 msgctxt "shortcut window"
 msgid "Close a window"
 msgstr "关闭此窗口"
 
-#: ../data/help-overlay.ui.h:4
+#: data/help-overlay.ui:28
 msgctxt "shortcut window"
 msgid "Search"
 msgstr "搜索"
 
-#: ../data/help-overlay.ui.h:5
+#: data/help-overlay.ui:33
 msgctxt "shortcut window"
 msgid "Find"
 msgstr "查找"
 
-#: ../data/menus.ui.h:1
+#: data/menus.ui:6
 msgid "_New Window"
 msgstr "新窗口(_N)"
 
-#: ../data/menus.ui.h:2
+#: data/menus.ui:13
 msgid "_Help"
 msgstr "帮助(_H)"
 
-#: ../data/menus.ui.h:3
+#: data/menus.ui:17
 msgid "Keyboard Shortcuts"
 msgstr "键盘快捷键"
 
-#: ../data/menus.ui.h:4
+#: data/menus.ui:21
 msgid "_About"
 msgstr "关于(_A)"
 
-#: ../data/menus.ui.h:5
+#: data/menus.ui:26
 msgid "_Quit"
 msgstr "退出(_Q)"
 
-#: ../data/org.gnome.Logs.appdata.xml.in.h:1
+#: data/org.gnome.Logs.appdata.xml.in:7
 msgid "GNOME Logs"
 msgstr "GNOME 日志"
 
-#: ../data/org.gnome.Logs.appdata.xml.in.h:2
-#: ../data/org.gnome.Logs.desktop.in.h:3
+#: data/org.gnome.Logs.appdata.xml.in:8 data/org.gnome.Logs.desktop.in:5
 msgid "View detailed event logs for the system"
 msgstr "查看系统详细的事件日志"
 
-#: ../data/org.gnome.Logs.appdata.xml.in.h:3
+#: data/org.gnome.Logs.appdata.xml.in:10
 msgid ""
 "Logs shows events from the systemd journal, and sorts them into categories, "
 "such as hardware and applications."
 msgstr "日志查看器 显示来自 systemd 的日志并按“硬件”、“应用程序”等进行分类。"
 
-#: ../data/org.gnome.Logs.appdata.xml.in.h:4
+#: data/org.gnome.Logs.appdata.xml.in:12
 msgid ""
 "Using Logs you can search your logs by typing a search term, and view "
 "detailed information about each event by clicking on it."
@@ -345,54 +363,69 @@ msgstr ""
 "使用 日志查看器 时您可以输入条件在日志中搜索，点击某个事件可以查看它的详细信"
 "息。"
 
-#: ../data/org.gnome.Logs.desktop.in.h:1 ../src/gl-eventtoolbar.c:124
+#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:139
 msgid "Logs"
 msgstr "日志"
 
-#: ../data/org.gnome.Logs.desktop.in.h:2
+#: data/org.gnome.Logs.desktop.in:4
 msgid "Log Viewer"
 msgstr "日志查看器"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: ../data/org.gnome.Logs.desktop.in.h:5
+#: data/org.gnome.Logs.desktop.in:7
 msgid "log;journal;debug;error;"
 msgstr "log;journal;debug;error;日志;记录;调试;错误;"
 
-#: ../data/org.gnome.Logs.gschema.xml.h:1
+#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
+#: data/org.gnome.Logs.desktop.in:12
+msgid "gnome-logs"
+msgstr "gnome-logs"
+
+#: data/org.gnome.Logs.gschema.xml:5
+msgid "Ignore warning"
+msgstr "忽略警告"
+
+#: data/org.gnome.Logs.gschema.xml:6
+msgid ""
+"Whether to ignore the warning that says you don’t have sufficient permission "
+"to view logs. If ignored, the warning won’t show up again."
+msgstr "是否忽略提示您没有足够权限查看日志的警告。如果忽略，警告不会再显示。"
+
+#: data/org.gnome.Logs.gschema.xml:10
 msgid "How to sort list rows in the event view list"
 msgstr "如何在事件查看列别中对行列表排序"
 
-#: ../data/org.gnome.Logs.gschema.xml.h:2
+#: data/org.gnome.Logs.gschema.xml:11
 msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr "根据选择的类型以升序或降序排列列表行"
 
-#: ../src/gl-application.c:110
+#: src/gl-application.c:109
 msgid "translator-credits"
 msgstr ""
 "eternalhui <www.eternalhui@gmail.com>, 2013\n"
-"Dingzhong Chen <wsxy162@gmail.com>, 2016\n"
-"Jeff Bai <jeffbai@aosc.xyz>, 2015, 2016, 2017"
+"Jeff Bai <jeffbai@aosc.xyz>, 2015, 2016, 2017\n"
+"Dingzhong Chen <wsxy162@gmail.com>, 2016, 2018"
 
-#: ../src/gl-application.c:111
+#: src/gl-application.c:110
 msgid "View and search logs"
 msgstr "查看和搜索日志"
 
-#: ../src/gl-application.c:245
+#: src/gl-application.c:243
 msgid "Print version information and exit"
 msgstr "打印版本信息并退出"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
-#: ../src/gl-eventtoolbar.c:115
+#: src/gl-eventtoolbar.c:130
 msgid "Boot"
 msgstr "单次引导"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventviewlist.c:296
+#: src/gl-eventviewlist.c:488
 msgid "No results"
 msgstr "无结果"
 
-#: ../src/gl-eventviewrow.c:219
+#: src/gl-eventviewrow.c:224
 msgid "Other"
 msgstr "其他"
 
@@ -400,7 +433,7 @@ msgstr "其他"
 #. * the timestamp range button label in popover to show that
 #. * logs are shown in the window starting from this timestamp
 #. * until the ending timestamp of journal.
-#: ../src/gl-searchpopover.c:687
+#: src/gl-searchpopover.c:687
 #, c-format
 msgid "From %s"
 msgstr "从 %s"
@@ -409,7 +442,7 @@ msgstr "从 %s"
 #. * the timestamp range button label in popover to show that
 #. * logs are shown in the window upto this timestamp
 #. * with the starting timestamp being the current time.
-#: ../src/gl-searchpopover.c:700
+#: src/gl-searchpopover.c:700
 #, c-format
 msgid "Until %s"
 msgstr "至 %s"
@@ -422,17 +455,15 @@ msgstr "至 %s"
 #. * and end date button label in the custom range submenu,
 #. * showing the day of month in decimal number, full month
 #. * name as string, the year as a decimal number including the century.
-#: ../src/gl-searchpopover.c:737 ../src/gl-searchpopover.c:1104
+#: src/gl-searchpopover.c:737 src/gl-searchpopover.c:1107
 msgid "%e %B %Y"
 msgstr "%Y年%-m月%-e日"
 
-#: ../src/gl-searchpopover.c:875
-#, c-format
+#: src/gl-searchpopover.c:875
 msgid "AM"
 msgstr "上午"
 
-#: ../src/gl-searchpopover.c:879
-#, c-format
+#: src/gl-searchpopover.c:879
 msgid "PM"
 msgstr "下午"
 
@@ -442,9 +473,9 @@ msgstr "下午"
 #. Translators: timestamp format for the custom end time button
 #. * label in the custom range submenu, showing the time with seconds
 #. * in 12-hour format.
-#: ../src/gl-searchpopover.c:987 ../src/gl-searchpopover.c:1226
+#: src/gl-searchpopover.c:987 src/gl-searchpopover.c:1229
 msgid "%I:%M:%S %p"
-msgstr "%p%l:%M:%S"
+msgstr "%p %I:%M:%S"
 
 #. Translators: timestamp format for the custom start time button
 #. * label in the custom range submenu, showing the time with seconds
@@ -452,21 +483,21 @@ msgstr "%p%l:%M:%S"
 #. Translators: timestamp format for the custom end time button
 #. * label in the custom range submenu, showing the time with seconds
 #. * in 24-hour format.
-#: ../src/gl-searchpopover.c:994 ../src/gl-searchpopover.c:1233
+#: src/gl-searchpopover.c:994 src/gl-searchpopover.c:1236
 msgid "%T"
 msgstr "%T"
 
 #. Translators: timestamp format for events on the
 #. * current day, showing the time with seconds in
 #. * 12-hour format.
-#: ../src/gl-util.c:148
+#: src/gl-util.c:148
 msgid "%l:%M:%S %p"
 msgstr "%p %l:%M:%S"
 
 #. Translators: timestamp format for events on the
 #. * current day, showing the time without seconds in
 #. * 12-hour format.
-#: ../src/gl-util.c:155
+#: src/gl-util.c:155
 msgid "%l:%M %p"
 msgstr "%p %l:%M"
 
@@ -474,7 +505,7 @@ msgstr "%p %l:%M"
 #. * the current year, showing the abbreviated
 #. * month name, day of the month and the time
 #. * with seconds in 12-hour format.
-#: ../src/gl-util.c:166
+#: src/gl-util.c:166
 msgid "%b %e %l:%M:%S %p"
 msgstr "%-m月%-e日 %p %l:%M:%S"
 
@@ -482,7 +513,7 @@ msgstr "%-m月%-e日 %p %l:%M:%S"
 #. * current year, showing the abbreviated month name,
 #. * day of the month and the time without seconds in
 #. * 12-hour format.
-#: ../src/gl-util.c:174
+#: src/gl-util.c:174
 msgid "%b %e %l:%M %p"
 msgstr "%-m月%-e日 %p %l:%M"
 
@@ -490,7 +521,7 @@ msgstr "%-m月%-e日 %p %l:%M"
 #. * a different year, showing the abbreviated
 #. * month name, day of the month, year and the
 #. * time with seconds in 12-hour format.
-#: ../src/gl-util.c:185
+#: src/gl-util.c:185
 msgid "%b %e %Y %l:%M:%S %p"
 msgstr "%Y年%-m月%-e日 %p %l:%M:%S"
 
@@ -498,21 +529,21 @@ msgstr "%Y年%-m月%-e日 %p %l:%M:%S"
 #. * a different year, showing the abbreviated
 #. * month name day of the month, year and the
 #. * time without seconds in 12-hour format.
-#: ../src/gl-util.c:194
+#: src/gl-util.c:194
 msgid "%b %e %Y %l:%M %p"
 msgstr "%Y年%-m月%-e日 %p %l:%M"
 
 #. Translators: timestamp format for events on the
 #. * current day, showing the time with seconds in
 #. * 24-hour format.
-#: ../src/gl-util.c:211
+#: src/gl-util.c:211
 msgid "%H:%M:%S"
 msgstr "%H:%M:%S"
 
 #. Translators: timestamp format for events on the
 #. * current day, showing the time without seconds in
 #. * 24-hour format.
-#: ../src/gl-util.c:218
+#: src/gl-util.c:218
 msgid "%H:%M"
 msgstr "%H:%M"
 
@@ -520,15 +551,15 @@ msgstr "%H:%M"
 #. * current year, showing the abbreviated month name,
 #. * day of the month and the time with seconds in
 #. * 24-hour format.
-#: ../src/gl-util.c:228
+#: src/gl-util.c:228
 msgid "%b %e %H:%M:%S"
-msgstr "%-m月%-e日 %H:%M:%"
+msgstr "%-m月%-e日 %H:%M:%S"
 
 #. Translators: timestamp format for events in the
 #. * current year, showing the abbreviated month name,
 #. * day of the month and the time without seconds in
 #. * 24-hour format.
-#: ../src/gl-util.c:236
+#: src/gl-util.c:236
 msgid "%b %e %H:%M"
 msgstr "%-m月%-e日 %H:%M"
 
@@ -536,7 +567,7 @@ msgstr "%-m月%-e日 %H:%M"
 #. * a different year, showing the abbreviated
 #. * month name, day of the month, year and the
 #. * time with seconds in 24-hour format.
-#: ../src/gl-util.c:247
+#: src/gl-util.c:247
 msgid "%b %e %Y %H:%M:%S"
 msgstr "%Y年%-m月%-e日 %H:%M:%S"
 
@@ -544,49 +575,52 @@ msgstr "%Y年%-m月%-e日 %H:%M:%S"
 #. * different year, showing the abbreviated month name,
 #. * day of the month, year and the time without seconds
 #. * in 24-hour format.
-#: ../src/gl-util.c:255
+#: src/gl-util.c:255
 msgid "%b %e %Y %H:%M"
 msgstr "%Y年%-m月%-e日 %H:%M"
 
 #. Transltors: the first string is the earliest timestamp of the boot,
 #. * and the second string is the newest timestamp. An example string might
 #. * be '08:10 - 08:30'
-#: ../src/gl-util.c:319
+#: src/gl-util.c:319
 #, c-format
 msgid "%s – %s"
 msgstr "%s 至 %s"
 
-#: ../src/gl-window.c:181
+#: src/gl-window.c:113
 msgid "Save logs"
 msgstr "保存日志"
 
-#: ../src/gl-window.c:184
+#: src/gl-window.c:116
 msgid "_Cancel"
 msgstr "取消(_C)"
 
-#: ../src/gl-window.c:185
+#: src/gl-window.c:117
 msgid "_Save"
 msgstr "保存(_S)"
 
-#: ../src/gl-window.c:190
+#: src/gl-window.c:122
 msgid "log messages"
 msgstr "日志消息"
 
-#: ../src/gl-window.c:243
+#: src/gl-window.c:181
 msgid "Unable to export log messages to a file"
 msgstr "无法将日志消息导出到文件"
 
-#: ../src/gl-window.c:474 ../src/gl-window.c:505
+#: src/gl-window.c:474 src/gl-window.c:505
 msgid "Unable to read system logs"
 msgstr "无法读取系统日志"
 
-#: ../src/gl-window.c:488
+#: src/gl-window.c:488
 msgid "Unable to read user logs"
 msgstr "无法读取用户日志"
 
-#: ../src/gl-window.c:520
+#: src/gl-window.c:520
 msgid "No logs available"
 msgstr "无可用的日志"
+
+#~ msgid "Go back to the event view"
+#~ msgstr "返回事件视图"
 
 #~ msgid "Search the displayed logs"
 #~ msgstr "搜索显示的日志"
