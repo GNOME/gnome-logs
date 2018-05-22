@@ -387,7 +387,7 @@ msgstr "καταγραφή;ημερολόγιο;αποσφαλμάτωση;σφ�
 #. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
 #: data/org.gnome.Logs.desktop.in:12
 msgid "gnome-logs"
-msgstr "καταγραφές-gnome"
+msgstr "gnome-logs"
 
 #: data/org.gnome.Logs.gschema.xml:5
 msgid "Ignore warning"
