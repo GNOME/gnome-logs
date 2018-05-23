@@ -2,5 +2,5 @@ GNOME Logs is a log viewer for the systemd journal
 
 https://wiki.gnome.org/Apps/Logs
 
-It depends on GTK+ 3.10 or above, itstool and libsystemd-journal at build time,
+It depends on GTK+ 3.22.0 or above, itstool and libsystemd-journal at build time,
 and gsettings-desktop-schemas at runtime.
