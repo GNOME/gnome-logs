@@ -1,5 +1,16 @@
 ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
 
+EXTRA_DIST = \
+	meson.build \
+	meson_options.txt \
+	meson_post_install.py \
+	data/meson.build \
+	data/icons/meson.build \
+	help/meson.build \
+	po/meson.build \
+	src/meson.build \
+	tests/meson.build
+
 AM_DISTCHECK_CONFIGURE_FLAGS = \
 	--enable-appstream-util \
 	--enable-tests
