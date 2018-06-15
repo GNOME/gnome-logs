@@ -18,7 +18,7 @@ i18n.merge_file(
     output : 'org.gnome.Logs.appdata.xml',
     po_dir : 'po',
     install : true,
-    install_dir : join_paths(gl_datadir, 'appdata')
+    install_dir : join_paths(gl_datadir, 'metainfo')
 )
 
 service_conf = configuration_data()
