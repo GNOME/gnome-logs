@@ -88,7 +88,7 @@ configure_file(
 if logs_enable_man
     custom_target('gl-manfile',
         input : 'gnome-logs.xml',
-        output : 'gnoem-logs.1',
+        output : 'gnome-logs.1',
         install : true,
         install_dir : gl_mandir,
         command : [
