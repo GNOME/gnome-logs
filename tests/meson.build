@@ -19,14 +19,4 @@ if logs_enable_tests
         dependencies : gl_deps
     )
     test('test-gl-util', selftest, env : tests_env)
-
-    #TODO: run test_SCRIPT too
-
-    # basictest target
-    run_target('basictest',
-        command : [
-            'env', tests_env,
-            join_paths(meson.source_root(), 'tests/basic.py')
-        ]
-    )
 endif

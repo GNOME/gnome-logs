@@ -83,23 +83,11 @@ if get_option('tests')
     else
         have_desktop_file_validate = false
     endif
-
-    py_module = 'dogtail'
-    message('checking for python module ' + py_module + '...')
-    result = run_command('echo', ['"import ' + py_module + '"| python - &>/dev/null'])
-    if result.returncode() != 0
-        message('not found')
-        have_dogtail = false
-    else
-        message('found')
-        have_dogtail = true
-    endif
 else
     have_desktop_file_validate = false
-    have_dogtail = false
 endif
 
-if have_desktop_file_validate == true and have_dogtail == true
+if have_desktop_file_validate == true
     testing_utilities = true
 else
     testing_utilities = false
