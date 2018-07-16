@@ -107,6 +107,24 @@ typedef enum
 
 static GParamSpec *properties[N_PROPERTIES];
 
+/* add the new log messages into the model */
+static void
+on_new_entry_added (GlJournal *journal,
+                    GlJournalEntry *entry,
+                    gpointer user_data)
+{
+    GlJournalModel *model;
+
+    model = GL_JOURNAL_MODEL (user_data);
+    
+    GlRowEntry *row_entry;
+    row_entry = gl_row_entry_new ();
+    row_entry->journal_entry = entry;
+
+    g_ptr_array_add (model->entries, row_entry);
+    g_list_model_items_changed (G_LIST_MODEL (model), 0, 0, 1);
+}
+
 static gboolean
 gl_journal_model_fetch_idle (gpointer user_data)
 {
@@ -257,6 +275,9 @@ gl_journal_model_init (GlJournalModel *model)
     model->journal = gl_journal_new ();
     model->entries = g_ptr_array_new_with_free_func (g_object_unref);
     model->export = FALSE;
+    
+    g_signal_connect (model->journal, "entry-added",
+                      G_CALLBACK (on_new_entry_added), model);
 
     gl_journal_model_fetch_more_entries (model, FALSE);
 }
