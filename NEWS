@@ -1,3 +1,13 @@
+GNOME Logs 3.29.4
+=================
+
+* disable exporting logs when there are none from ankritisachan
+* update GTK+ requirement in README
+* various fixes in meson build system
+* fix typo in meson build system from Bjørn Lie
+* dropped dogtail test case
+* updates to Chinese (China), Greek and Romanian translations
+
 GNOME Logs 3.29.1
 =================
 
