@@ -122,7 +122,13 @@ on_new_entry_added (GlJournal *journal,
     row_entry->journal_entry = entry;
 
     g_ptr_array_add (model->entries, row_entry);
+    printf("&&&%s\n%lu\n",gl_journal_entry_get_message(entry),                                             gl_journal_entry_get_timestamp(entry));
+
+
     g_list_model_items_changed (G_LIST_MODEL (model), 0, 0, 1);
+    
+    g_ptr_array_free (model->entries, TRUE);
+    model->entries = g_ptr_array_new_with_free_func (g_object_unref);
 }
 
 static gboolean

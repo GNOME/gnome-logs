@@ -333,8 +333,8 @@ on_journal_changed (gint fd,
                            g_strerror (-ret));
             }
             g_free (priv->cursor_last);
-
-            sd_journal_previous (priv->journal);
+            
+            sd_journal_next (priv->journal);
 
             ret = sd_journal_next (priv->journal);
             if (ret < 0)
@@ -364,7 +364,6 @@ on_journal_changed (gint fd,
                     entry = _gl_journal_query_entry (self);
                     /* sent the signal and the new entry to gl-journal-moudle,c */
                     g_signal_emit (self, entries_signal, 0, entry);
-                    
                     priv->cursor_last = g_strdup (entry->cursor);
 
                     ret = sd_journal_next (priv->journal);
