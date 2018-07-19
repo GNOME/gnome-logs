@@ -120,9 +120,15 @@ on_new_entry_added (GlJournal *journal,
     GlRowEntry *row_entry;
     row_entry = gl_row_entry_new ();
     row_entry->journal_entry = entry;
-
+    /* it must free at first. */
+    g_ptr_array_free (model->entries, TRUE);
+    model->entries = g_ptr_array_new_with_free_func (g_object_unref);
+    
     g_ptr_array_add (model->entries, row_entry);
     g_list_model_items_changed (G_LIST_MODEL (model), 0, 0, 1);
+    
+  //  g_ptr_array_free (model->entries, TRUE);
+  //  model->entries = g_ptr_array_new_with_free_func (g_object_unref);
 }
 
 static gboolean

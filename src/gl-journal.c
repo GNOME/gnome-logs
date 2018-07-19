@@ -53,9 +53,10 @@ typedef struct
     sd_journal *journal;
     gint fd;
     guint source_id;
+    /* set count to initialize cursor_last */
+    gint count;
     /* set cursor to remember which entry was read last time */
     gchar *cursor_last;
-    gchar *cursor_current;
     gchar **mandatory_fields;
     GArray *boot_ids;
 } GlJournalPrivate;
@@ -307,6 +308,8 @@ on_journal_changed (gint fd,
     gint ret;
     GlJournalEntry *entry;
     GlJournalPrivate *priv = gl_journal_get_instance_private (self);
+    
+    priv->count++;
 
     ret = sd_journal_process (priv->journal);
 
@@ -317,78 +320,44 @@ on_journal_changed (gint fd,
             break;
         case SD_JOURNAL_APPEND:
             g_debug ("New journal entries added");
-
-            entry = _gl_journal_query_entry (self);
-            if(NULL == entry)
+            //initialize cursor_last to tail once.    
+            if(priv->count == 1)
             {
-                break;
+                sd_journal_seek_tail(priv->journal);
             }
-
-            priv->cursor_current = g_strdup (entry->cursor);
-
-            ret = sd_journal_seek_cursor (priv->journal, priv->cursor_last);
-            if (ret < 0)
+            
+            if(priv->cursor_last != NULL)
             {
-                g_warning ("Error seeking cursor string: %s",
-                           g_strerror (-ret));
-            }
-            g_free (priv->cursor_last);
-
-            sd_journal_previous (priv->journal);
-
-            ret = sd_journal_next (priv->journal);
-            if (ret < 0)
-            {
-                g_warning ("Error advancing the read pointer in the journal: %s",
-                           g_strerror (-ret));
-            }
-            /* when meet the end of journal */
-            else if (ret == 0)
-            {
-                priv->cursor_last = g_strdup (entry->cursor);
-
-                ret = sd_journal_seek_cursor (priv->journal,
-                                              priv->cursor_current);
+                ret = sd_journal_seek_cursor(priv->journal, priv->cursor_last);
                 if (ret < 0)
                 {
                     g_warning ("Error seeking cursor string: %s",
-                               g_strerror (-ret));
+                                g_strerror (-ret));
                 }
-                g_free (priv->cursor_current);
-
-                sd_journal_next (priv->journal);
-                break;
             }
-            else
-            {
-                    entry = _gl_journal_query_entry (self);
-                    /* sent the signal and the new entry to gl-journal-moudle,c */
-                    g_signal_emit (self, entries_signal, 0, entry);
-                    
+            //firstly, I use only one ,but a bad result,
+            //so I add again. it works.
+            sd_journal_next(priv->journal);
+            ret = sd_journal_next(priv->journal);
+            //because  a single "append" signal can indicate one or more newly added entries
+            while (ret > 0)
+            {      
+                entry = _gl_journal_query_entry (self);
+        
+                /* sent the signal and the new entry to gl-journal-moudle,c */
+                g_signal_emit (self, entries_signal, 0, entry);
+
+                ret = sd_journal_next(priv->journal);
+                if(ret < 0)
+                {
+                    g_warning ("Error advancing the read pointer in the journal: %s",
+                                g_strerror (-ret));   
+                }
+                /* when meet the end of journal */
+                else if(ret == 0)
+                {
                     priv->cursor_last = g_strdup (entry->cursor);
-
-                    ret = sd_journal_next (priv->journal);
-                    if (ret < 0)
-                    {
-                        g_warning ("Error advancing the read pointer in the journal: %s",
-                                   g_strerror (-ret));
-                    }
-                    else if (ret == 0)
-                    {
-                        gint r;
-
-                        priv->cursor_last = g_strdup (entry->cursor);
-                        r = sd_journal_seek_cursor (priv->journal,
-                                                    priv->cursor_current);
-                        if (r < 0)
-                        {
-                            g_warning ("Error seeking cursor string: %s",
-                                       g_strerror (-r));
-                        }
-                        g_free (priv->cursor_current);
-
-                        sd_journal_next (priv->journal);
-                    }
+                }
             }
             break;
         case SD_JOURNAL_INVALIDATE:
