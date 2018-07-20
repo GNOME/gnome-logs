@@ -116,19 +116,58 @@ on_new_entry_added (GlJournal *journal,
     GlJournalModel *model;
 
     model = GL_JOURNAL_MODEL (user_data);
-    
+
     GlRowEntry *row_entry;
     row_entry = gl_row_entry_new ();
     row_entry->journal_entry = entry;
     /* it must free at first. */
+    gint  last = model->entries->len;
+
     g_ptr_array_free (model->entries, TRUE);
     model->entries = g_ptr_array_new_with_free_func (g_object_unref);
-    
+
     g_ptr_array_add (model->entries, row_entry);
     g_list_model_items_changed (G_LIST_MODEL (model), 0, 0, 1);
-    
-  //  g_ptr_array_free (model->entries, TRUE);
-  //  model->entries = g_ptr_array_new_with_free_func (g_object_unref);
+
+    printf("model->query->search_type= %u\n order = %u\n start_timestamp=%lu\n end_timestamp=%lu\n"
+           , model->query->search_type,model->query->order,model->query->start_timestamp,model->query->end_timestamp);
+
+
+    GlRowEntry *prev_row_entry = g_ptr_array_index (model->entries, last - 1);
+
+    g_ptr_array_free (model->entries, TRUE);
+    model->entries = g_ptr_array_new_with_free_func (g_object_unref);
+
+    if (gl_row_entry_check_message_similarity (row_entry, prev_row_entry))
+    {
+        printf("similarity\n");
+        if (prev_row_entry->row_type == GL_ROW_ENTRY_TYPE_COMPRESSED)
+        {
+
+            model->compressed_entries_counter++;
+            row_entry->row_type = GL_ROW_ENTRY_TYPE_COMPRESSED;
+        }
+
+        else
+        {
+            model->compressed_entries_counter = model->compressed_entries_counter + 2;
+            prev_row_entry->row_type = GL_ROW_ENTRY_TYPE_COMPRESSED;
+
+            if (model->query->order == GL_SORT_ORDER_ASCENDING_TIME)
+            {
+                g_list_model_items_changed (G_LIST_MODEL (model), 0, 1, 1);
+            }
+            row_entry->row_type = GL_ROW_ENTRY_TYPE_COMPRESSED;
+        }
+        //should add more.
+    }
+
+    else
+    {
+        g_ptr_array_add (model->entries, row_entry);
+        g_list_model_items_changed (G_LIST_MODEL (model), 0, 0, 1);
+    }
+
 }
 
 static gboolean
@@ -163,7 +202,7 @@ gl_journal_model_fetch_idle (gpointer user_data)
 
             if (last > 0)
             {
-		GlJournalEntry *previous_entry;
+                GlJournalEntry *previous_entry;
                 gchar *previous_entry_time_label;
                 gchar *current_entry_time_label;
                 GDateTime *now;
@@ -214,9 +253,9 @@ gl_journal_model_fetch_idle (gpointer user_data)
 
                 }
 
-		previous_entry = gl_row_entry_get_journal_entry (prev_row_entry);
+                previous_entry = gl_row_entry_get_journal_entry (prev_row_entry);
 
-		now = g_date_time_new_now_local ();
+                now = g_date_time_new_now_local ();
 
                 previous_entry_time_label = gl_util_timestamp_to_display (gl_journal_entry_get_timestamp (previous_entry),
                                                                           now, GL_UTIL_CLOCK_FORMAT_24HR, FALSE);
@@ -228,11 +267,11 @@ gl_journal_model_fetch_idle (gpointer user_data)
                 if (g_strcmp0 (previous_entry_time_label, current_entry_time_label) == 0)
                 {
                     gl_journal_entry_set_display_time_label (entry, FALSE);
-		}
+                }
                 else
-		{
+                {
                     gl_journal_entry_set_display_time_label (entry, TRUE);
-		}
+                }
 
                 g_free (previous_entry_time_label);
                 g_free (current_entry_time_label);
@@ -281,7 +320,7 @@ gl_journal_model_init (GlJournalModel *model)
     model->journal = gl_journal_new ();
     model->entries = g_ptr_array_new_with_free_func (g_object_unref);
     model->export = FALSE;
-    
+
     g_signal_connect (model->journal, "entry-added",
                       G_CALLBACK (on_new_entry_added), model);
 
@@ -550,7 +589,7 @@ populate_substring_matches (GlQueryItem *queryitem, GPtrArray *matches)
     }
 }
 
-/* Get exact matches from the query object */
+/* Get substring matches from the query object */
 static GPtrArray *
 gl_query_get_substring_matches (GlQuery *query)
 {
@@ -1150,7 +1189,7 @@ search_in_entry (GlJournalEntry *entry,
 
     search_matches = gl_query_get_substring_matches (model->query);
 
-    /* Check if there is atleast one substring queryitem */
+    /* Check if there is at least one substring queryitem */
     if (search_matches->len)
     {
         /* Get search text from a search match */
