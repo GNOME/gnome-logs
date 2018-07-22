@@ -310,7 +310,10 @@ on_journal_changed (gint fd,
     GlJournalPrivate *priv = gl_journal_get_instance_private (self);
 
     ret = sd_journal_process (priv->journal);
-
+    /*
+    gint i;
+    const gchar * const * query = (const gchar * const *) priv->mandatory_fields;
+    */
     switch (ret)
     {
         case SD_JOURNAL_NOP:
@@ -319,6 +322,17 @@ on_journal_changed (gint fd,
         case SD_JOURNAL_APPEND:
             g_debug ("New journal entries added");
 
+            /* if the new entry's category is not match against to mandatory_fields
+             *so should  break here, I think  it  will
+             *solve the problem add new entries twice when change category
+             *entry = _gl_journal_query_entry(self);
+
+            why the query[0] is NULL;
+                for (i = 1; query[i]; i++)
+                {
+                    printf("mandatory_fields = %s\n" , query[i]);
+                }
+            */
             /* initialize cursor_last to tail once. */
             if (priv->flag == FALSE)
             {

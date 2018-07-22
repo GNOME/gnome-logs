@@ -122,16 +122,13 @@ on_new_entry_added (GlJournal *journal,
     row_entry->journal_entry = entry;
 
     gint  last = model->entries->len;
-    /* it must free at first. */
-    g_ptr_array_free (model->entries, TRUE);
-    model->entries = g_ptr_array_new_with_free_func (g_object_unref);
-
     printf("model->query->search_type= %u\n order = %u\n start_timestamp=%lu\n end_timestamp=%lu\n"
            , model->query->search_type,model->query->order,model->query->start_timestamp,model->query->end_timestamp);
 
-
+    printf("last=%d",last);
     GlRowEntry *prev_row_entry = g_ptr_array_index (model->entries, last - 1);
 
+    /* it must free at first. now will get a segment fault */
     g_ptr_array_free (model->entries, TRUE);
     model->entries = g_ptr_array_new_with_free_func (g_object_unref);
 
@@ -149,18 +146,21 @@ on_new_entry_added (GlJournal *journal,
         {
             model->compressed_entries_counter = model->compressed_entries_counter + 2;
             prev_row_entry->row_type = GL_ROW_ENTRY_TYPE_COMPRESSED;
-
-            if (model->query->order == GL_SORT_ORDER_ASCENDING_TIME)
-            {
-                g_list_model_items_changed (G_LIST_MODEL (model), 0, 1, 1);
-            }
             row_entry->row_type = GL_ROW_ENTRY_TYPE_COMPRESSED;
+
         }
-        //should add more.
+        //remove the prev_row_entry,set a header
+        g_list_model_items_changed (G_LIST_MODEL (model), 1, 1, 0);
+        g_ptr_array_add (model->entries, row_entry);
+        gl_journal_model_add_header (model);
     }
 
     else
     {
+
+        model->compressed_entries_counter = 1;
+        row_entry->row_type = GL_ROW_ENTRY_TYPE_UNCOMPRESSED;
+
         g_ptr_array_add (model->entries, row_entry);
         g_list_model_items_changed (G_LIST_MODEL (model), 0, 0, 1);
     }
@@ -241,7 +241,6 @@ gl_journal_model_fetch_idle (gpointer user_data)
                     /* Add a compressed row header if a group of compressed row entries
                      * was detected. */
                     gl_journal_model_add_header (model);
-
                     /* Reset the count of compressed entries */
                     model->compressed_entries_counter = 0;
 
@@ -615,7 +614,7 @@ gl_journal_model_process_query (GlJournalModel *model)
 
         /* Get the search match string */
         search_match = g_ptr_array_index (category_matches, category_matches->len - 1);
-
+        printf("search_match = %s \n",search_match);
         field_value_pos = strchr (search_match, '=');
 
         /* If it has invalid string value remove it from the matches */
