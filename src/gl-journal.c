@@ -65,6 +65,11 @@ G_DEFINE_TYPE_WITH_PRIVATE (GlJournal, gl_journal, G_TYPE_OBJECT)
 
 static guint entries_signal;
 static GlJournalEntry * _gl_journal_query_entry (GlJournal *self);
+static gboolean
+gl_journal_query_match (sd_journal          *journal,
+                        const gchar * const *query);
+GlJournalEntry *
+gl_journal_next (GlJournal *journal);
 
 static void
 gl_journal_update_latest_timestamp (GlJournal *journal)
@@ -309,11 +314,10 @@ on_journal_changed (gint fd,
     GlJournalEntry *entry;
     GlJournalPrivate *priv = gl_journal_get_instance_private (self);
 
+    entry = g_object_new (GL_TYPE_JOURNAL_ENTRY, NULL);
+
     ret = sd_journal_process (priv->journal);
-    /*
-    gint i;
-    const gchar * const * query = (const gchar * const *) priv->mandatory_fields;
-    */
+
     switch (ret)
     {
         case SD_JOURNAL_NOP:
@@ -321,57 +325,33 @@ on_journal_changed (gint fd,
             break;
         case SD_JOURNAL_APPEND:
             g_debug ("New journal entries added");
+            // the cursor_last initialize ,
+            sd_journal_next (priv->journal);
+            ret = sd_journal_get_cursor (priv->journal, &entry->cursor);
 
-            /* if the new entry's category is not match against to mandatory_fields
-             *so should  break here, I think  it  will
-             *solve the problem add new entries twice when change category
-             *entry = _gl_journal_query_entry(self);
-
-            why the query[0] is NULL;
-                for (i = 1; query[i]; i++)
-                {
-                    printf("mandatory_fields = %s\n" , query[i]);
-                }
-            */
-            /* initialize cursor_last to tail once. */
-            if (priv->flag == FALSE)
+            if (ret < 0)
             {
-                sd_journal_seek_tail(priv->journal);
-                priv->flag = TRUE;
+                g_warning ("Error getting cursor for current journal entry: %s",
+                    g_strerror (-ret));
             }
 
-            if (priv->cursor_last != NULL)
-            {
-                ret = sd_journal_seek_cursor(priv->journal, priv->cursor_last);
-                if (ret < 0)
-                {
-                    g_warning ("Error seeking cursor string: %s",
-                                g_strerror (-ret));
-                }
-            }
-            //firstly, I use only one ,but a bad result,
-            //so I add again. it works.
-            sd_journal_next(priv->journal);
-            ret = sd_journal_next(priv->journal);
-            /* because  a single "append" signal can indicate one or more newly added entries */
-            while (ret > 0)
-            {
-                entry = _gl_journal_query_entry (self);
+            priv->cursor_last = g_strdup (entry->cursor);
+            ret = sd_journal_seek_cursor (priv->journal, priv->cursor_last);
 
+            if (ret < 0)
+            {
+                g_warning ("Error seeking cursor for current journal entry%s",
+                    g_strerror (-ret));
+            }
+
+            /* maybe something wrong in reading new entry */
+            while(1)
+            {
+                entry = gl_journal_next (self);
+                if(entry == NULL)
+                    break;
                 /* sent the signal and the new entry to gl-journal-moudle,c */
                 g_signal_emit (self, entries_signal, 0, entry);
-
-                ret = sd_journal_next(priv->journal);
-                if(ret < 0)
-                {
-                    g_warning ("Error advancing the read pointer in the journal: %s",
-                                g_strerror (-ret));
-                }
-                /* when meet the end of journal */
-                else if(ret == 0)
-                {
-                    priv->cursor_last = g_strdup (entry->cursor);
-                }
             }
             break;
         case SD_JOURNAL_INVALIDATE:
@@ -771,6 +751,35 @@ gl_journal_set_start_position (GlJournal *journal,
             g_warning ("Error seeking to start of systemd journal: %s", g_strerror (-r));
         }
     }
+}
+
+
+GlJournalEntry *
+gl_journal_next (GlJournal *journal)
+{
+    GlJournalPrivate *priv = gl_journal_get_instance_private (journal);
+    gint r;
+    GlJournalEntry *entry;
+    entry = g_object_new (GL_TYPE_JOURNAL_ENTRY, NULL);
+    r = sd_journal_next (priv->journal);
+    if (r < 0)
+    {
+        g_warning ("Failed to fetch previous log entry: %s", g_strerror (-r));
+        return NULL;
+    }
+
+    if (r == 0) /* end */
+        return NULL;
+    /* store cursor every time*/
+    sd_journal_get_cursor(priv->journal, &entry->cursor);
+    priv->cursor_last = g_strdup(entry->cursor);
+    printf("cursor_last = %s\n",priv->cursor_last);
+
+    /* filter this one out because of a non-existent field */
+    if (!gl_journal_query_match (priv->journal, (const gchar * const *) priv->mandatory_fields))
+        return gl_journal_next (journal);
+
+    return _gl_journal_query_entry (journal);
 }
 
 GlJournalEntry *

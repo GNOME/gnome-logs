@@ -70,7 +70,8 @@ enum
 {
     DISABLE_EXPORT,
     ENABLE_EXPORT,
-    LAST_SIGNAL
+    LAST_SIGNAL,
+    CHANGED,
 };
 
 static guint signals[LAST_SIGNAL] = { 0 };
@@ -107,6 +108,16 @@ typedef enum
 
 static GParamSpec *properties[N_PROPERTIES];
 
+static void
+row_entry_notify (GlJournal  *model,
+                  GParamSpec  *pspec,
+                  GlRowEntry *row_entry)
+{
+  g_assert ((model));
+
+  g_signal_emit (model, signals [CHANGED], 0);
+}
+
 /* add the new log messages into the model */
 static void
 on_new_entry_added (GlJournal *journal,
@@ -122,16 +133,10 @@ on_new_entry_added (GlJournal *journal,
     row_entry->journal_entry = entry;
 
     gint  last = model->entries->len;
-    printf("model->query->search_type= %u\n order = %u\n start_timestamp=%lu\n end_timestamp=%lu\n"
-           , model->query->search_type,model->query->order,model->query->start_timestamp,model->query->end_timestamp);
 
-    printf("last=%d",last);
     GlRowEntry *prev_row_entry = g_ptr_array_index (model->entries, last - 1);
 
     /* it must free at first. now will get a segment fault */
-    g_ptr_array_free (model->entries, TRUE);
-    model->entries = g_ptr_array_new_with_free_func (g_object_unref);
-
     if (gl_row_entry_check_message_similarity (row_entry, prev_row_entry))
     {
         printf("similarity\n");
@@ -158,10 +163,15 @@ on_new_entry_added (GlJournal *journal,
     else
     {
 
-        model->compressed_entries_counter = 1;
+        model->compressed_entries_counter = 0;
         row_entry->row_type = GL_ROW_ENTRY_TYPE_UNCOMPRESSED;
-
-        g_ptr_array_add (model->entries, row_entry);
+        /* firstly do some expriments here. if does work,change before */
+        g_signal_connect_object (row_entry,
+                                 "notify",
+                                 G_CALLBACK (row_entry_notify),
+                                 model,
+                                 G_CONNECT_SWAPPED);
+        g_ptr_array_add (model->entries, g_object_ref (row_entry));
         g_list_model_items_changed (G_LIST_MODEL (model), 0, 0, 1);
     }
 }
@@ -454,6 +464,15 @@ gl_journal_model_class_init (GlJournalModelClass *class)
 					    G_TYPE_NONE,
 					    0);
 
+    signals [CHANGED] = g_signal_new ("changed",
+                        G_TYPE_FROM_CLASS (class),
+                        G_SIGNAL_RUN_LAST,
+                        0,
+                        NULL,
+                        NULL,
+                        NULL,
+                        G_TYPE_NONE,
+                        0);
 }
 
 static void
