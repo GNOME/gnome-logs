@@ -70,8 +70,7 @@ enum
 {
     DISABLE_EXPORT,
     ENABLE_EXPORT,
-    LAST_SIGNAL,
-    CHANGED,
+    LAST_SIGNAL
 };
 
 static guint signals[LAST_SIGNAL] = { 0 };
@@ -108,16 +107,6 @@ typedef enum
 
 static GParamSpec *properties[N_PROPERTIES];
 
-static void
-row_entry_notify (GlJournal  *model,
-                  GParamSpec  *pspec,
-                  GlRowEntry *row_entry)
-{
-  g_assert ((model));
-
-  g_signal_emit (model, signals [CHANGED], 0);
-}
-
 /* add the new log messages into the model */
 static void
 on_new_entry_added (GlJournal *journal,
@@ -133,11 +122,14 @@ on_new_entry_added (GlJournal *journal,
     row_entry->journal_entry = entry;
 
     gint  last = model->entries->len;
+        /* bec the new code to merge not work,  so  use them only have a  view */
+        g_ptr_array_free (model->entries, TRUE);
+        model->entries = g_ptr_array_new_with_free_func (g_object_unref);
+        g_ptr_array_add (model->entries, g_object_ref (row_entry));
+        g_list_model_items_changed (G_LIST_MODEL (model), 0, 0, 1);
 
-    GlRowEntry *prev_row_entry = g_ptr_array_index (model->entries, last - 1);
-
-    /* it must free at first. now will get a segment fault */
-    if (gl_row_entry_check_message_similarity (row_entry, prev_row_entry))
+    // GlRowEntry *prev_row_entry = g_ptr_array_index (model->entries, last - 1);
+    /*if (gl_row_entry_check_message_similarity (row_entry, prev_row_entry))
     {
         printf("similarity\n");
         if (prev_row_entry->row_type == GL_ROW_ENTRY_TYPE_COMPRESSED)
@@ -151,6 +143,16 @@ on_new_entry_added (GlJournal *journal,
         {
             model->compressed_entries_counter = model->compressed_entries_counter + 2;
             prev_row_entry->row_type = GL_ROW_ENTRY_TYPE_COMPRESSED;
+
+            if (model->query->order == GL_SORT_ORDER_ASCENDING_TIME)
+            {
+                g_list_model_items_changed (G_LIST_MODEL (model), 0, 1, 1);
+            }
+            else
+            {
+                g_list_model_items_changed (G_LIST_MODEL (model), last - 1, 1, 1);
+            }
+
             row_entry->row_type = GL_ROW_ENTRY_TYPE_COMPRESSED;
 
         }
@@ -165,17 +167,10 @@ on_new_entry_added (GlJournal *journal,
 
         model->compressed_entries_counter = 0;
         row_entry->row_type = GL_ROW_ENTRY_TYPE_UNCOMPRESSED;
-        /* firstly do some expriments here. if does work,change before */
-        g_signal_connect_object (row_entry,
-                                 "notify",
-                                 G_CALLBACK (row_entry_notify),
-                                 model,
-                                 G_CONNECT_SWAPPED);
         g_ptr_array_add (model->entries, g_object_ref (row_entry));
         g_list_model_items_changed (G_LIST_MODEL (model), 0, 0, 1);
-    }
+    }*/
 }
-
 static gboolean
 gl_journal_model_fetch_idle (gpointer user_data)
 {
@@ -464,15 +459,6 @@ gl_journal_model_class_init (GlJournalModelClass *class)
 					    G_TYPE_NONE,
 					    0);
 
-    signals [CHANGED] = g_signal_new ("changed",
-                        G_TYPE_FROM_CLASS (class),
-                        G_SIGNAL_RUN_LAST,
-                        0,
-                        NULL,
-                        NULL,
-                        NULL,
-                        G_TYPE_NONE,
-                        0);
 }
 
 static void
@@ -633,7 +619,6 @@ gl_journal_model_process_query (GlJournalModel *model)
 
         /* Get the search match string */
         search_match = g_ptr_array_index (category_matches, category_matches->len - 1);
-        printf("search_match = %s \n",search_match);
         field_value_pos = strchr (search_match, '=');
 
         /* If it has invalid string value remove it from the matches */
@@ -713,7 +698,6 @@ gl_journal_model_take_query (GlJournalModel *model,
 
     /* Start processing the new query */
     gl_journal_model_process_query (model);
-
 
 }
 
