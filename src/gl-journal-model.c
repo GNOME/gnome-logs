@@ -171,6 +171,7 @@ on_new_entry_added (GlJournal *journal,
         g_list_model_items_changed (G_LIST_MODEL (model), 0, 0, 1);
     }*/
 }
+
 static gboolean
 gl_journal_model_fetch_idle (gpointer user_data)
 {
@@ -618,6 +619,7 @@ gl_journal_model_process_query (GlJournalModel *model)
         gchar *field_value_pos;
 
         /* Get the search match string */
+        
         search_match = g_ptr_array_index (category_matches, category_matches->len - 1);
         field_value_pos = strchr (search_match, '=');
 
