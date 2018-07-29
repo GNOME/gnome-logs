@@ -64,7 +64,6 @@ typedef struct
 G_DEFINE_TYPE_WITH_PRIVATE (GlJournal, gl_journal, G_TYPE_OBJECT)
 
 static guint entries_signal;
-
 static GlJournalEntry *_gl_journal_query_entry (GlJournal *self);
 
 static void
@@ -326,7 +325,7 @@ on_journal_changed (gint fd,
             if (ret < 0)
             {
                 g_warning ("Error seeking to end of systemd journal: %s", g_strerror (-ret));
-            } 
+            }
             ret = sd_journal_previous(priv->journal);
 
             if (ret < 0)
@@ -345,7 +344,6 @@ on_journal_changed (gint fd,
             /* iterate between cursor_new_last and cursor_last */
             while(ret == 0)
             {
-
 
                 ret = sd_journal_test_cursor (priv->journal, priv->cursor_last);
 
@@ -367,7 +365,7 @@ on_journal_changed (gint fd,
                     break;
                 }
 
-                /* sent the signal and the new entry to gl-journal-model.c */
+                /* send the signal and the new entry to gl-journal-model.c */
                 g_signal_emit (self, entries_signal, 0, entry);
                 sd_journal_previous(priv->journal);
             }
@@ -375,7 +373,7 @@ on_journal_changed (gint fd,
             g_free(priv->cursor_last);
             priv->cursor_last = g_strdup (priv->cursor_new_last);
             g_free(priv->cursor_new_last);
-            
+
             break;
         case SD_JOURNAL_INVALIDATE:
             g_debug ("Journal files added or removed");
@@ -409,7 +407,6 @@ gl_journal_finalize (GObject *object)
         g_free (boot_id->boot_match);
     }
     g_array_free (priv->boot_ids, TRUE);
-    g_free (priv->cursor_last);
 }
 
 static void
