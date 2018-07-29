@@ -114,41 +114,40 @@ on_new_entry_added (GlJournal *journal,
                     GlJournalEntry *entry,
                     gpointer user_data)
 {
-    GlJournalModel *model;
-
-    model = GL_JOURNAL_MODEL (user_data);
-
-    GlRowEntry *row_entry;
-    row_entry = gl_row_entry_new ();
-    row_entry->journal_entry = entry;
-
-    gint  last = model->entries->len;
+    gint last;
+    GlJournalModel *model = user_data;
     GlJournalEntry *previous_entry;
+    GlRowEntry *prev_row_entry;
+    GlRowEntry *row_entry;
     gchar *previous_entry_time_label;
     gchar *current_entry_time_label;
     GDateTime *now;
-    /* the latest is in 0 */
-    GlRowEntry *prev_row_entry = g_ptr_array_index (model->entries, 0);
+
+    row_entry = gl_row_entry_new ();
+    row_entry->journal_entry = entry;
+
+    last = model->entries->len;
+
+    prev_row_entry = g_ptr_array_index (model->entries, 0);
 
     if (gl_row_entry_check_message_similarity (row_entry,
                                                prev_row_entry))
     {
         /* Previously similar messages were detected */
-        // if don't expand header , will be okay, try a lot but not solved ,please help me.
+        //here  has something wrong , please help me.
         if (prev_row_entry->row_type == GL_ROW_ENTRY_TYPE_HEADER)
         {
 
-            prev_row_entry->row_type = GL_ROW_ENTRY_TYPE_COMPRESSED;
             prev_row_entry->journal_entry = g_object_ref (row_entry->journal_entry);
+            prev_row_entry->row_type = GL_ROW_ENTRY_TYPE_COMPRESSED;
 
-            g_list_model_items_changed (G_LIST_MODEL (model), 0, 1, 1);
+            g_list_model_items_changed (G_LIST_MODEL (model), 0, 0, 1);
 
             row_entry->row_type = GL_ROW_ENTRY_TYPE_HEADER;
             row_entry->compressed_entries = model->compressed_entries_counter;
 
             model->compressed_entries_counter = prev_row_entry->compressed_entries;
             model->compressed_entries_counter++;
-
         }
         /* First time a similar group of messages is detected */
         else
@@ -172,8 +171,8 @@ on_new_entry_added (GlJournal *journal,
     {
         /* Add a compressed row header if a group of compressed row entries
          * was detected. */
-        /* add a new header */
         gl_journal_model_add_header_for_new (model);
+
         /* Reset the count of compressed entries */
         model->compressed_entries_counter = 0;
 
@@ -248,7 +247,7 @@ gl_journal_model_fetch_idle (gpointer user_data)
 
             if (last > 0)
             {
-                GlJournalEntry *previous_entry;
+               GlJournalEntry *previous_entry;
                 gchar *previous_entry_time_label;
                 gchar *current_entry_time_label;
                 GDateTime *now;
@@ -291,6 +290,7 @@ gl_journal_model_fetch_idle (gpointer user_data)
                     /* Add a compressed row header if a group of compressed row entries
                      * was detected. */
                     gl_journal_model_add_header (model);
+
                     /* Reset the count of compressed entries */
                     model->compressed_entries_counter = 0;
 
@@ -298,9 +298,9 @@ gl_journal_model_fetch_idle (gpointer user_data)
 
                 }
 
-                previous_entry = gl_row_entry_get_journal_entry (prev_row_entry);
+               previous_entry = gl_row_entry_get_journal_entry (prev_row_entry);
 
-                now = g_date_time_new_now_local ();
+               now = g_date_time_new_now_local ();
 
                 previous_entry_time_label = gl_util_timestamp_to_display (gl_journal_entry_get_timestamp (previous_entry),
                                                                           now, GL_UTIL_CLOCK_FORMAT_24HR, FALSE);
@@ -312,11 +312,11 @@ gl_journal_model_fetch_idle (gpointer user_data)
                 if (g_strcmp0 (previous_entry_time_label, current_entry_time_label) == 0)
                 {
                     gl_journal_entry_set_display_time_label (entry, FALSE);
-                }
+               }
                 else
-                {
+               {
                     gl_journal_entry_set_display_time_label (entry, TRUE);
-                }
+               }
 
                 g_free (previous_entry_time_label);
                 g_free (current_entry_time_label);
@@ -634,7 +634,7 @@ populate_substring_matches (GlQueryItem *queryitem, GPtrArray *matches)
     }
 }
 
-/* Get substring matches from the query object */
+/* Get exact matches from the query object */
 static GPtrArray *
 gl_query_get_substring_matches (GlQuery *query)
 {
@@ -663,7 +663,6 @@ gl_journal_model_process_query (GlJournalModel *model)
         gchar *field_value_pos;
 
         /* Get the search match string */
-
         search_match = g_ptr_array_index (category_matches, category_matches->len - 1);
 
         field_value_pos = strchr (search_match, '=');
