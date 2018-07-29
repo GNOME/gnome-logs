@@ -787,7 +787,7 @@ gl_journal_set_start_position (GlJournal *journal,
         r = sd_journal_get_cursor (priv->journal, &priv->cursor_last);
         if (r < 0)
         {
-            g_warning ("Error get cursor for current journal entry%s",
+            g_warning ("Error getting cursor for current journal entry%s",
                        g_strerror (-r));
         }
     }

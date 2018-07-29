@@ -108,7 +108,7 @@ typedef enum
 
 static GParamSpec *properties[N_PROPERTIES];
 
-/* add the new log messages into the model */
+/* Add the new log messages into the model */
 static void
 on_new_entry_added (GlJournal *journal,
                     GlJournalEntry *entry,
@@ -138,16 +138,17 @@ on_new_entry_added (GlJournal *journal,
         if (prev_row_entry->row_type == GL_ROW_ENTRY_TYPE_HEADER)
         {
 
+            model->compressed_entries_counter = prev_row_entry->compressed_entries;
+            model->compressed_entries_counter++;
+
             prev_row_entry->journal_entry = g_object_ref (row_entry->journal_entry);
             prev_row_entry->row_type = GL_ROW_ENTRY_TYPE_COMPRESSED;
+            prev_row_entry->compressed_entries = 0;
 
-            g_list_model_items_changed (G_LIST_MODEL (model), 0, 0, 1);
+            g_list_model_items_changed (G_LIST_MODEL (model), 0, 1, 1);
 
             row_entry->row_type = GL_ROW_ENTRY_TYPE_HEADER;
             row_entry->compressed_entries = model->compressed_entries_counter;
-
-            model->compressed_entries_counter = prev_row_entry->compressed_entries;
-            model->compressed_entries_counter++;
         }
         /* First time a similar group of messages is detected */
         else
