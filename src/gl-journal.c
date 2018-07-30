@@ -55,8 +55,6 @@ typedef struct
     guint source_id;
     /* Set cursor_last to remember which entry was read last time */
     gchar *cursor_last;
-    /* Set cursor_new_last to store current end of journal */
-    gchar *cursor_new_last;
     gchar **mandatory_fields;
     GArray *boot_ids;
 } GlJournalPrivate;
@@ -321,42 +319,97 @@ on_journal_changed (gint fd,
             g_debug ("New journal entries added");
 
             /* New message added, so should seek to the end of journal */
-            ret = sd_journal_seek_tail (priv->journal);
+        //    ret = sd_journal_seek_tail (priv->journal);
+        //    if (ret < 0)
+        //    {
+        //        g_warning ("Error seeking to end of systemd journal: %s",
+        //                   g_strerror (-ret));
+        //    }
+
+        //    ret = sd_journal_previous (priv->journal);
+        //    if (ret < 0)
+        //    {
+        //        g_warning ("Error retreating the read pointer in the journal: %s",
+        //                   g_strerror (-ret));
+        //    }
+
+        //    ret = sd_journal_get_cursor (priv->journal, &priv->cursor_new_last);
+        //    if (ret < 0)
+        //    {
+        //        g_warning ("Error get cursor for current journal entry%s",
+        //                   g_strerror (-ret));
+        //    }
+
+        //    /* Iterate between cursor_new_last and cursor_last */
+        //    while (ret == 0)
+        //    {
+        //        ret = sd_journal_test_cursor (priv->journal, priv->cursor_last);
+        //        if (ret < 0)
+        //        {
+        //            g_warning ("Error testing cursor string: %s", g_strerror (-ret));
+        //            break;
+        //        }
+        //        /* Go back to cursor_last has been detected */
+        //        else if (ret > 0)
+        //        {
+        //            break;
+        //        }
+
+        //        entry = _gl_journal_query_entry (self);
+        //        if (entry == NULL)
+        //        {
+        //            break;
+        //        }
+
+        //        /* Send the signal and the new entry to gl-journal-model.c */
+        //        g_signal_emit (self, entries_signal, 0, entry);
+
+        //        r = sd_journal_previous(priv->journal);
+        //        if (r < 0)
+        //        {
+        //             g_warning ("Error retreating the read pointer in the journal: %s",
+        //                        g_strerror (-r));
+        //        }
+        //    }
+
+        //    g_free (priv->cursor_last);
+        //    priv->cursor_last = g_strdup (priv->cursor_new_last);
+        //    g_free (priv->cursor_new_last);
+            
+            sd_journal_seek_cursor (priv->journal, priv->cursor_last);
             if (ret < 0)
             {
-                g_warning ("Error seeking to end of systemd journal: %s",
+                g_warning ("Error seeking to cursor of journal: %s",
                            g_strerror (-ret));
             }
 
-            ret = sd_journal_previous (priv->journal);
-            if (ret < 0)
+            ret = sd_journal_next (priv->journal);
+            if(ret < 0)
             {
-                g_warning ("Error retreating the read pointer in the journal: %s",
+                g_warning ("Error advancing the read pointer in the journal: %s",
                            g_strerror (-ret));
+                break;
             }
-
-            ret = sd_journal_get_cursor (priv->journal, &priv->cursor_new_last);
-            if (ret < 0)
+            if(ret == 0)
             {
-                g_warning ("Error get cursor for current journal entry%s",
+                g_debug ("Meeting the end of journal");
+                break;
+            }
+            
+            ret = sd_journal_next (priv->journal);
+            if(ret < 0)
+            {    
+                g_warning ("Error advancing the read pointer in the journal: %s",
                            g_strerror (-ret));
+                break;
             }
-
-            /* Iterate between cursor_new_last and cursor_last */
-            while (ret == 0)
+            if(ret == 0)
             {
-                ret = sd_journal_test_cursor (priv->journal, priv->cursor_last);
-                if (ret < 0)
-                {
-                    g_warning ("Error testing cursor string: %s", g_strerror (-ret));
-                    break;
-                }
-                /* Go back to cursor_last has been detected */
-                else if (ret > 0)
-                {
-                    break;
-                }
-
+                g_debug ("Meeting the end of journal");
+                break;
+            }
+            while (ret > 0)
+            {
                 entry = _gl_journal_query_entry (self);
                 if (entry == NULL)
                 {
@@ -366,17 +419,23 @@ on_journal_changed (gint fd,
                 /* Send the signal and the new entry to gl-journal-model.c */
                 g_signal_emit (self, entries_signal, 0, entry);
 
-                r = sd_journal_previous(priv->journal);
-                if (r < 0)
+                ret = sd_journal_next (priv->journal);
+                if (ret < 0)
                 {
-                     g_warning ("Error retreating the read pointer in the journal: %s",
-                                g_strerror (-r));
+                    g_warning ("Error advancing the read pointer in the journal: %s",
+                               g_strerror (-ret));
+                    break;
                 }
-            }
+                if (ret == 0)
+                {
+                    printf("meet end in loop\n");
+                    break;
+                }
 
+            }
+            
             g_free (priv->cursor_last);
-            priv->cursor_last = g_strdup (priv->cursor_new_last);
-            g_free (priv->cursor_new_last);
+            priv->cursor_last = g_strdup (entry->cursor);
 
             break;
         case SD_JOURNAL_INVALIDATE:

@@ -47,6 +47,8 @@ struct _GlJournalModel
 
     guint batch_size;
 
+    gboolean new_adding;
+
     GlJournal *journal;
     GPtrArray *entries;
 
@@ -85,6 +87,9 @@ static void gl_journal_model_add_header_for_new (GlJournalModel *model);
 static void gl_journal_model_add_header (GlJournalModel *model);
 static void gl_query_free (GlQuery *query);
 
+static void
+gl_journal_model_process_add (GlJournalModel *model,
+                              GlRowEntry *row_entry);
 
 G_DEFINE_TYPE (GlRowEntry, gl_row_entry, G_TYPE_OBJECT);
 
@@ -110,72 +115,221 @@ static GParamSpec *properties[N_PROPERTIES];
 
 /* Add the new log messages into the model */
 static void
-on_new_entry_added (GlJournal *journal,
-                    GlJournalEntry *entry,
+on_new_entry_added (GlJournalEntry *entry,
                     gpointer user_data)
 {
-    gint last;
-    GlJournalModel *model = user_data;
-    GlJournalEntry *previous_entry;
-    GlRowEntry *prev_row_entry;
+  
     GlRowEntry *row_entry;
-    gchar *previous_entry_time_label;
-    gchar *current_entry_time_label;
-    GDateTime *now;
+    GlJournalModel *model = user_data;
+   
+    model->new_adding = TRUE;
 
     row_entry = gl_row_entry_new ();
     row_entry->journal_entry = entry;
+    gl_journal_model_process_add (model, row_entry);
+
+  //   gint last;
+  //   GlJournalModel *model = user_data;
+  //   GlJournalEntry *previous_entry;
+  //   GlRowEntry *prev_row_entry;
+  //   GlRowEntry *row_entry;
+  //   gchar *previous_entry_time_label;
+  //   gchar *current_entry_time_label;
+  //   GDateTime *now;
+  // 
+  //   row_entry = gl_row_entry_new ();
+  //   row_entry->journal_entry = entry;
+  //   printf("***%s\n",gl_journal_entry_get_message(entry));
+  //   last = model->entries->len;
+  // 
+  //   prev_row_entry = g_ptr_array_index (model->entries, 0);
+  // 
+  //   if (gl_row_entry_check_message_similarity (row_entry,
+  //                                              prev_row_entry))
+  //   {
+  //       /* Previously similar messages were detected */
+  //       //here  has something wrong , please help me.
+  //       if (prev_row_entry->row_type == GL_ROW_ENTRY_TYPE_HEADER)
+  //       {
+  // 
+  //           model->compressed_entries_counter = prev_row_entry->compressed_entries;
+  // 
+  //           prev_row_entry->journal_entry = g_object_ref (row_entry->journal_entry);
+  //           prev_row_entry->row_type = GL_ROW_ENTRY_TYPE_COMPRESSED;
+  //           prev_row_entry->compressed_entries = 0;
+  //           model->compressed_entries_counter++;
+  // 
+  //           g_list_model_items_changed (G_LIST_MODEL (model), 0, 1, 1);
+  // 
+  //           //model->compressed_entries_counter++;
+  //           row_entry->row_type = GL_ROW_ENTRY_TYPE_HEADER;
+  //           row_entry->compressed_entries = model->compressed_entries_counter;
+  //       }
+  //       /* First time a similar group of messages is detected */
+  //       else
+  //       {
+  //           model->compressed_entries_counter = model->compressed_entries_counter + 2;
+  //           prev_row_entry->row_type = GL_ROW_ENTRY_TYPE_COMPRESSED;
+  // 
+  //           if (model->query->order == GL_SORT_ORDER_ASCENDING_TIME)
+  //           {
+  //               g_list_model_items_changed (G_LIST_MODEL (model), last - 1, 1, 1);
+  //           }
+  //           else
+  //           {
+  //               g_list_model_items_changed (G_LIST_MODEL (model), 0, 1, 1);
+  //           }
+  // 
+  //           row_entry->row_type = GL_ROW_ENTRY_TYPE_COMPRESSED;
+  //       }
+  //   }
+  //   else if (model->compressed_entries_counter != 0)
+  //   {
+  //       /* Add a compressed row header if a group of compressed row entries
+  //        * was detected. */
+  //       gl_journal_model_add_header_for_new (model);
+  // 
+  //       /* Reset the count of compressed entries */
+  //       model->compressed_entries_counter = 0;
+  // 
+  //   }
+  // 
+  //   previous_entry = gl_row_entry_get_journal_entry (prev_row_entry);
+  // 
+  //   now = g_date_time_new_now_local ();
+  // 
+  //   previous_entry_time_label = gl_util_timestamp_to_display (gl_journal_entry_get_timestamp (previous_entry),
+  //                                                             now, GL_UTIL_CLOCK_FORMAT_24HR, FALSE);
+  // 
+  //   current_entry_time_label = gl_util_timestamp_to_display (gl_journal_entry_get_timestamp (entry),
+  //                                                            now, GL_UTIL_CLOCK_FORMAT_24HR, FALSE);
+  // 
+  //   /* TODO: Timestamp should be compared directly in future. */
+  //   if (g_strcmp0 (previous_entry_time_label, current_entry_time_label) == 0)
+  //   {
+  //       gl_journal_entry_set_display_time_label (entry, FALSE);
+  //   }
+  //   else
+  //   {
+  //       gl_journal_entry_set_display_time_label (entry, TRUE);
+  //   }
+  //       gl_journal_entry_set_display_time_label (entry, TRUE);
+  // 
+  //   g_free (previous_entry_time_label);
+  //  g_free (current_entry_time_label);
+  //  g_date_time_unref (now);
+
+  //  last = model->entries->len;
+  //  g_ptr_array_insert (model->entries, 0, g_object_ref(row_entry));
+
+  //  if (model->query->order == GL_SORT_ORDER_ASCENDING_TIME)
+  //  {
+  //      g_list_model_items_changed (G_LIST_MODEL (model), last, 0, 1);
+  //  }
+  //  else
+  //  {
+  //      g_list_model_items_changed (G_LIST_MODEL (model), 0, 0, 1);
+  //  }
+}
+static void
+gl_journal_model_process_add (GlJournalModel *model,
+                              GlRowEntry *row_entry)
+{
+    GlJournalEntry *entry = row_entry->journal_entry;
+
+    GlRowEntry *prev_row_entry;
+    GlJournalEntry *previous_entry;
+    gchar *previous_entry_time_label;
+    gchar *current_entry_time_label;
+    GDateTime *now;
+    gint last;
 
     last = model->entries->len;
 
-    prev_row_entry = g_ptr_array_index (model->entries, 0);
-
+    if(model->new_adding == TRUE)
+    {
+        prev_row_entry = g_ptr_array_index (model->entries, 0);
+    }
+    else
+    {
+        prev_row_entry = g_ptr_array_index (model->entries, last - 1);
+    }
+    
     if (gl_row_entry_check_message_similarity (row_entry,
                                                prev_row_entry))
     {
+
         /* Previously similar messages were detected */
-        //here  has something wrong , please help me.
-        if (prev_row_entry->row_type == GL_ROW_ENTRY_TYPE_HEADER)
+        if (prev_row_entry->row_type == GL_ROW_ENTRY_TYPE_COMPRESSED
+            || prev_row_entry->row_type == GL_ROW_ENTRY_TYPE_HEADER)
         {
+            if(model->new_adding == TRUE)
+            {
 
-            model->compressed_entries_counter = prev_row_entry->compressed_entries;
-            model->compressed_entries_counter++;
-
-            prev_row_entry->journal_entry = g_object_ref (row_entry->journal_entry);
-            prev_row_entry->row_type = GL_ROW_ENTRY_TYPE_COMPRESSED;
-            prev_row_entry->compressed_entries = 0;
-
-            g_list_model_items_changed (G_LIST_MODEL (model), 0, 1, 1);
-
-            row_entry->row_type = GL_ROW_ENTRY_TYPE_HEADER;
-            row_entry->compressed_entries = model->compressed_entries_counter;
+                model->compressed_entries_counter = prev_row_entry->compressed_entries;
+     
+                prev_row_entry->journal_entry = g_object_ref (row_entry->journal_entry);
+                prev_row_entry->row_type = GL_ROW_ENTRY_TYPE_COMPRESSED;
+                prev_row_entry->compressed_entries = 0;
+     
+                g_list_model_items_changed (G_LIST_MODEL (model), 0, 1, 1);
+     
+                row_entry->row_type = GL_ROW_ENTRY_TYPE_HEADER;
+                row_entry->compressed_entries = model->compressed_entries_counter;
+            }
+            else
+            {
+                row_entry->row_type = GL_ROW_ENTRY_TYPE_COMPRESSED;
+            }
+                model->compressed_entries_counter++;
         }
         /* First time a similar group of messages is detected */
         else
         {
+
             model->compressed_entries_counter = model->compressed_entries_counter + 2;
             prev_row_entry->row_type = GL_ROW_ENTRY_TYPE_COMPRESSED;
 
             if (model->query->order == GL_SORT_ORDER_ASCENDING_TIME)
             {
-                g_list_model_items_changed (G_LIST_MODEL (model), last - 1, 1, 1);
+                if(model->new_adding == TRUE)
+                {
+                    g_list_model_items_changed (G_LIST_MODEL (model), last - 1, 1, 1);
+                }
+                else
+                {
+                    g_list_model_items_changed (G_LIST_MODEL (model), 0, 1, 1);
+                }
             }
             else
             {
-                g_list_model_items_changed (G_LIST_MODEL (model), 0, 1, 1);
+                if(model->new_adding == TRUE)
+                {
+                    g_list_model_items_changed (G_LIST_MODEL (model), 0, 1, 1);
+                }
+                else
+                {
+                    g_list_model_items_changed (G_LIST_MODEL (model), last - 1, 1, 1);
+                }
             }
 
             row_entry->row_type = GL_ROW_ENTRY_TYPE_COMPRESSED;
         }
     }
-    else if (model->compressed_entries_counter != 0)
+    else
     {
+
         /* Add a compressed row header if a group of compressed row entries
          * was detected. */
         gl_journal_model_add_header_for_new (model);
 
         /* Reset the count of compressed entries */
         model->compressed_entries_counter = 0;
+        
+        if (model->new_adding == FALSE)
+        {
+            model->n_entries_to_fetch--;
+        }
 
     }
 
@@ -204,18 +358,39 @@ on_new_entry_added (GlJournal *journal,
     g_date_time_unref (now);
 
     last = model->entries->len;
-    g_ptr_array_insert (model->entries, 0, g_object_ref(row_entry));
-
-    if (model->query->order == GL_SORT_ORDER_ASCENDING_TIME)
+    
+    if(model->new_adding == TRUE)
     {
-        g_list_model_items_changed (G_LIST_MODEL (model), last, 0, 1);
+        g_ptr_array_insert (model->entries, 0, row_entry);   
     }
     else
     {
-        g_list_model_items_changed (G_LIST_MODEL (model), 0, 0, 1);
+        g_ptr_array_add (model->entries, row_entry);
+    }
+
+    if (model->query->order == GL_SORT_ORDER_ASCENDING_TIME)
+    {
+        if(model->new_adding == TRUE)
+        {
+            g_list_model_items_changed (G_LIST_MODEL (model), last, 0, 1);
+        }
+        else
+        {
+            g_list_model_items_changed (G_LIST_MODEL (model), 0, 0, 1);
+        }
+    }
+    else
+    {
+        if(model->new_adding == TRUE)
+        {
+            g_list_model_items_changed (G_LIST_MODEL (model), 0, 0, 1);
+        }
+        else
+        {
+            g_list_model_items_changed (G_LIST_MODEL (model), last, 0, 1);
+        }
     }
 }
-
 static gboolean
 gl_journal_model_fetch_idle (gpointer user_data)
 {
@@ -476,7 +651,7 @@ gl_journal_model_class_init (GlJournalModelClass *class)
 {
     GObjectClass *object_class = G_OBJECT_CLASS (class);
     GParamFlags default_flags = G_PARAM_STATIC_STRINGS | G_PARAM_EXPLICIT_NOTIFY;
-
+    
     object_class->dispose = gl_journal_model_dispose;
     object_class->get_property = gl_journal_model_get_property;
 
@@ -1527,12 +1702,27 @@ gl_journal_model_add_header_for_new (GlJournalModel *model)
          * journal entry details will be stored in the compressed row
          * header. */
         if (model->query->order == GL_SORT_ORDER_ASCENDING_TIME)
-        {
-            prev_row_entry = g_ptr_array_index (model->entries, last - 1);
+        { 
+            if(model->new_adding == TRUE)
+            {
+                prev_row_entry = g_ptr_array_index (model->entries, last - 1);
+            }
+            else
+            {
+                prev_row_entry = g_ptr_array_index (model->entries, last - 1);
+
+            }
         }
         else
         {
-            prev_row_entry = g_ptr_array_index (model->entries, 0);
+            if(model->new_adding == TRUE)
+            {
+                prev_row_entry = g_ptr_array_index (model->entries, 0);
+            }
+            else
+            {
+                prev_row_entry = g_ptr_array_index (model->entries, last - 1);
+            }
         }
 
         prev_entry = prev_row_entry->journal_entry;
@@ -1546,13 +1736,34 @@ gl_journal_model_add_header_for_new (GlJournalModel *model)
         /* Insert it at a appropriate positon in the model */
         if (model->query->order == GL_SORT_ORDER_ASCENDING_TIME)
         {
-            g_ptr_array_insert (model->entries, last -model->compressed_entries_counter, header);
-            g_list_model_items_changed (G_LIST_MODEL (model), 0, 0, 1);
+            if(model->new_adding == TRUE)
+            {
+                g_ptr_array_insert (model->entries, last - model->compressed_entries_counter, header);
+                g_list_model_items_changed (G_LIST_MODEL (model), 0, 0, 1);
+            }
+            else
+            {
+                g_ptr_array_add (model->entries, header);
+                g_list_model_items_changed (G_LIST_MODEL (model), 0, 0, 1);
+            }
         }
         else
         {
-            g_ptr_array_insert (model->entries, 0, header);
-            g_list_model_items_changed (G_LIST_MODEL (model), 0, 0, 1);
+            if(model->new_adding == TRUE)
+            {
+                g_ptr_array_insert (model->entries, 0, header);
+                g_list_model_items_changed (G_LIST_MODEL (model), 0, 0, 1);
+            }
+            else
+            {
+                g_ptr_array_insert (model->entries,
+                                    last - model->compressed_entries_counter,
+                                    header);
+
+                g_list_model_items_changed (G_LIST_MODEL (model),
+                                            last - model->compressed_entries_counter,
+                                            0, 1);
+            }
         }
     }
 }
