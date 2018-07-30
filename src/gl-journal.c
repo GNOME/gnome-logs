@@ -332,10 +332,10 @@ on_journal_changed (gint fd,
                            g_strerror (-ret));
                 break;
             }
-            /* Meet ent of journal */
+            /* Meet the ent of the journal */
             if (ret == 0)
             {
-                g_debug ("Meeting the end of journal");
+                g_warning ("Meet the end of the journal");
                 break;
             }
 
@@ -348,7 +348,7 @@ on_journal_changed (gint fd,
             }
             if (ret == 0)
             {
-                g_debug ("Meeting the end of journal");
+                g_warning ("Meet the end of the journal");
                 break;
             }
 
@@ -360,7 +360,7 @@ on_journal_changed (gint fd,
                     break;
                 }
 
-                /* Emits signal and send the new entry to gl-journal-model.c */
+                /* Emit the signal and send the new entry to gl-journal-model.c */
                 g_signal_emit (self, entries_signal, 0, entry);
 
                 ret = sd_journal_next (priv->journal);
@@ -372,6 +372,7 @@ on_journal_changed (gint fd,
                 }
                 if (ret == 0)
                 {
+                    g_warning ("Meet the end of the journal");
                     break;
                 }
 
@@ -713,7 +714,7 @@ gl_journal_set_matches (GlJournal *journal,
 {
     GlJournalPrivate *priv = gl_journal_get_instance_private (journal);
     GPtrArray *mandatory_fields;
-    int r;
+    gint r;
     gint i;
 
     g_return_if_fail (matches != NULL);

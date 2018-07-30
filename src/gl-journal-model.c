@@ -87,9 +87,7 @@ static gboolean gl_row_entry_check_message_similarity (GlRowEntry *current_row_e
 static void gl_journal_model_add_header (GlJournalModel *model);
 static void gl_query_free (GlQuery *query);
 
-static void
-gl_journal_model_process_add (GlJournalModel *model,
-                              GlRowEntry *row_entry);
+static void gl_journal_model_process_add (GlJournalModel *model, GlRowEntry *row_entry);
 
 G_DEFINE_TYPE (GlRowEntry, gl_row_entry, G_TYPE_OBJECT);
 
@@ -122,6 +120,7 @@ on_new_entry_added (GlJournal *journal,
     GlJournalModel *model = user_data;
     GlRowEntry *row_entry;
 
+    /* new_adding is TRUE, representing adding a new entry */
     model->new_adding = TRUE;
     row_entry = gl_row_entry_new ();
     row_entry->journal_entry = entry;
@@ -139,7 +138,7 @@ gl_journal_model_process_add (GlJournalModel *model,
 
     last = model->entries->len;
 
-    if(last > 0)
+    if (last > 0)
     {
         GlJournalEntry *entry = row_entry->journal_entry;
         GlJournalEntry *previous_entry;
@@ -162,8 +161,8 @@ gl_journal_model_process_add (GlJournalModel *model,
         {
 
             /* Previously similar messages were detected */
-            if ((prev_row_entry->row_type == GL_ROW_ENTRY_TYPE_COMPRESSED && model->new_adding != TRUE)
-                || prev_row_entry->row_type == GL_ROW_ENTRY_TYPE_HEADER)
+            if (prev_row_entry->row_type == GL_ROW_ENTRY_TYPE_HEADER
+                || (prev_row_entry->row_type == GL_ROW_ENTRY_TYPE_COMPRESSED && model->new_adding != TRUE))
             {
                 if (model->new_adding == TRUE)
                 {
@@ -1467,7 +1466,7 @@ gl_journal_model_add_header (GlJournalModel *model)
          * header. */
         if (model->query->order == GL_SORT_ORDER_ASCENDING_TIME)
         {
-            if(model->new_adding == TRUE)
+            if (model->new_adding == TRUE)
             {
                 prev_row_entry = g_ptr_array_index (model->entries,
                                                     last - model->compressed_entries_counter);
@@ -1480,7 +1479,7 @@ gl_journal_model_add_header (GlJournalModel *model)
         }
         else
         {
-            if(model->new_adding == TRUE)
+            if (model->new_adding == TRUE)
             {
                 prev_row_entry = g_ptr_array_index (model->entries, 0);
             }
@@ -1502,7 +1501,7 @@ gl_journal_model_add_header (GlJournalModel *model)
         /* Insert it at a appropriate positon in the model */
         if (model->query->order == GL_SORT_ORDER_ASCENDING_TIME)
         {
-            if(model->new_adding == TRUE)
+            if (model->new_adding == TRUE)
             {
                 g_ptr_array_insert (model->entries,
                                     last - model->compressed_entries_counter,
@@ -1520,7 +1519,7 @@ gl_journal_model_add_header (GlJournalModel *model)
         }
         else
         {
-            if(model->new_adding == TRUE)
+            if (model->new_adding == TRUE)
             {
                 g_ptr_array_insert (model->entries, 0, header);
                 g_list_model_items_changed (G_LIST_MODEL (model), 0, 0, 1);
