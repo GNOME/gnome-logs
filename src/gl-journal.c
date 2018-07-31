@@ -332,7 +332,7 @@ on_journal_changed (gint fd,
                            g_strerror (-ret));
                 break;
             }
-            /* Meet the ent of the journal */
+            /* Meet the end of the journal */
             if (ret == 0)
             {
                 g_warning ("Meet the end of the journal");
@@ -348,7 +348,7 @@ on_journal_changed (gint fd,
             }
             if (ret == 0)
             {
-                g_warning ("Meet the end of the journal");
+                g_debug ("Meet the end of the journal");
                 break;
             }
 
@@ -372,10 +372,15 @@ on_journal_changed (gint fd,
                 }
                 if (ret == 0)
                 {
-                    g_warning ("Meet the end of the journal");
+                    g_debug ("Meet the end of the journal");
                     break;
                 }
 
+            }
+
+            if(entry == NULL)
+            {
+                break;
             }
 
             g_free (priv->cursor_last);
@@ -790,7 +795,7 @@ gl_journal_set_start_position (GlJournal *journal,
         r = sd_journal_get_cursor (priv->journal, &priv->cursor_last);
         if (r < 0)
         {
-            g_warning ("Error getting cursor for current journal entry%s",
+            g_warning ("Error getting cursor for current journal entry: %s",
                        g_strerror (-r));
         }
     }
