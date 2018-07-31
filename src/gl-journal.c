@@ -53,11 +53,17 @@ typedef struct
     sd_journal *journal;
     gint fd;
     guint source_id;
+    /* Set cursor_last to store which
+     * entry was read last time */
+    gchar *cursor_last;
     gchar **mandatory_fields;
     GArray *boot_ids;
 } GlJournalPrivate;
 
 G_DEFINE_TYPE_WITH_PRIVATE (GlJournal, gl_journal, G_TYPE_OBJECT)
+
+static guint entries_signal;
+static GlJournalEntry *_gl_journal_query_entry (GlJournal *self);
 
 static void
 gl_journal_update_latest_timestamp (GlJournal *journal)
@@ -299,6 +305,7 @@ on_journal_changed (gint fd,
                     GlJournal *self)
 {
     gint ret;
+    GlJournalEntry *entry;
     GlJournalPrivate *priv = gl_journal_get_instance_private (self);
 
     ret = sd_journal_process (priv->journal);
@@ -310,6 +317,75 @@ on_journal_changed (gint fd,
             break;
         case SD_JOURNAL_APPEND:
             g_debug ("New journal entries added");
+
+            sd_journal_seek_cursor (priv->journal, priv->cursor_last);
+            if (ret < 0)
+            {
+                g_warning ("Error seeking to cursor of journal: %s",
+                           g_strerror (-ret));
+            }
+
+            ret = sd_journal_next (priv->journal);
+            if (ret < 0)
+            {
+                g_warning ("Error advancing the read pointer in the journal: %s",
+                           g_strerror (-ret));
+                break;
+            }
+            /* Meet the end of the journal */
+            else if (ret == 0)
+            {
+                g_warning ("Meet the end of the journal");
+                break;
+            }
+
+            ret = sd_journal_next (priv->journal);
+            if (ret < 0)
+            {
+                g_warning ("Error advancing the read pointer in the journal: %s",
+                           g_strerror (-ret));
+                break;
+            }
+            else if (ret == 0)
+            {
+                g_debug ("Meet the end of the journal");
+                break;
+            }
+
+            while (ret > 0)
+            {
+                entry = _gl_journal_query_entry (self);
+                if (entry == NULL)
+                {
+                    break;
+                }
+
+                /* Emit the signal and send the new entry to gl-journal-model.c */
+                g_signal_emit (self, entries_signal, 0, entry);
+
+                ret = sd_journal_next (priv->journal);
+                if (ret < 0)
+                {
+                    g_warning ("Error advancing the read pointer in the journal: %s",
+                               g_strerror (-ret));
+                    break;
+                }
+                else if (ret == 0)
+                {
+                    g_debug ("Meet the end of the journal");
+                    break;
+                }
+
+            }
+
+            if(entry == NULL)
+            {
+                break;
+            }
+
+            g_free (priv->cursor_last);
+            priv->cursor_last = g_strdup (entry->cursor);
+
             break;
         case SD_JOURNAL_INVALIDATE:
             g_debug ("Journal files added or removed");
@@ -351,6 +427,11 @@ gl_journal_class_init (GlJournalClass *klass)
     GObjectClass *gobject_class = G_OBJECT_CLASS (klass);
 
     gobject_class->finalize = gl_journal_finalize;
+    /* Define entries_signal here and make it be a static signal */
+    entries_signal = g_signal_new ("entry-added", G_OBJECT_CLASS_TYPE (klass),
+                                   G_SIGNAL_RUN_LAST | G_SIGNAL_ACTION,
+                                   0, NULL, NULL, NULL,
+                                   G_TYPE_NONE, 1, GL_TYPE_JOURNAL_ENTRY);
 }
 
 static void
@@ -638,7 +719,7 @@ gl_journal_set_matches (GlJournal *journal,
 {
     GlJournalPrivate *priv = gl_journal_get_instance_private (journal);
     GPtrArray *mandatory_fields;
-    int r;
+    gint r;
     gint i;
 
     g_return_if_fail (matches != NULL);
@@ -701,6 +782,21 @@ gl_journal_set_start_position (GlJournal *journal,
         if (r < 0)
         {
             g_warning ("Error seeking to start of systemd journal: %s", g_strerror (-r));
+        }
+
+        r = sd_journal_previous (priv->journal);
+        if (r < 0)
+        {
+            g_warning ("Error retreating the read pointer in the journal: %s",
+                       g_strerror (-r));
+        }
+
+        /* Initialize cursor_last */
+        r = sd_journal_get_cursor (priv->journal, &priv->cursor_last);
+        if (r < 0)
+        {
+            g_warning ("Error getting cursor for current journal entry: %s",
+                       g_strerror (-r));
         }
     }
 }
