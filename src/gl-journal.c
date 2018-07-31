@@ -333,7 +333,7 @@ on_journal_changed (gint fd,
                 break;
             }
             /* Meet the end of the journal */
-            if (ret == 0)
+            else if (ret == 0)
             {
                 g_warning ("Meet the end of the journal");
                 break;
@@ -346,7 +346,7 @@ on_journal_changed (gint fd,
                            g_strerror (-ret));
                 break;
             }
-            if (ret == 0)
+            else if (ret == 0)
             {
                 g_debug ("Meet the end of the journal");
                 break;
@@ -370,7 +370,7 @@ on_journal_changed (gint fd,
                                g_strerror (-ret));
                     break;
                 }
-                if (ret == 0)
+                else if (ret == 0)
                 {
                     g_debug ("Meet the end of the journal");
                     break;
