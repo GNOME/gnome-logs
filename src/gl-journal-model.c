@@ -618,6 +618,11 @@ gl_journal_model_process_query (GlJournalModel *model)
 
     /* Set the exact matches first */
     category_matches = gl_query_get_exact_matches (model->query);
+    /* Check against 0 to avoid a crash */
+    if (category_matches->len == 0)
+    {
+        return;
+    }
 
     /* Get the search string of the exact match field */
     if (model->query->search_type == GL_QUERY_SEARCH_TYPE_EXACT)
