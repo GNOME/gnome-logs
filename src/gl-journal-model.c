@@ -132,6 +132,7 @@ gl_journal_model_handle_add_entry (GlJournalModel *model,
                                    GlRowEntry *row_entry,
                                    gboolean new_adding)
 {
+    gboolean add_new_header = FALSE;
     gint last;
 
     last = model->entries->len;
@@ -155,22 +156,24 @@ gl_journal_model_handle_add_entry (GlJournalModel *model,
 
             /* Previously similar messages were detected */
             if (prev_row_entry->row_type == GL_ROW_ENTRY_TYPE_HEADER
-                || (prev_row_entry->row_type == GL_ROW_ENTRY_TYPE_COMPRESSED && new_adding == FALSE))
+                || (prev_row_entry->row_type == GL_ROW_ENTRY_TYPE_COMPRESSED))
             {
                 if (new_adding)
                 {
-
-                    model->compressed_entries_counter = prev_row_entry->compressed_entries;
-                    model->compressed_entries_counter++;
-
+                    row_entry->row_type = GL_ROW_ENTRY_TYPE_HEADER;
+                    row_entry->compressed_entries = prev_row_entry->compressed_entries + 1;
+                    g_object_unref (prev_row_entry->journal_entry);
                     prev_row_entry->journal_entry = g_object_ref (row_entry->journal_entry);
                     prev_row_entry->row_type = GL_ROW_ENTRY_TYPE_COMPRESSED;
                     prev_row_entry->compressed_entries = 0;
 
-                    g_list_model_items_changed (G_LIST_MODEL (model), 0, 1, 1);
+                    if (model->query->order == GL_SORT_ORDER_ASCENDING_TIME)
+                        g_list_model_items_changed (G_LIST_MODEL (model), last - 1, 1, 1);
+                    else
+                        g_list_model_items_changed (G_LIST_MODEL (model), 0,
+                                                    row_entry->compressed_entries,
+                                                    row_entry->compressed_entries);
 
-                    row_entry->row_type = GL_ROW_ENTRY_TYPE_HEADER;
-                    row_entry->compressed_entries = model->compressed_entries_counter;
                 }
                 else
                 {
@@ -199,6 +202,11 @@ gl_journal_model_handle_add_entry (GlJournalModel *model,
                 }
 
                 row_entry->row_type = GL_ROW_ENTRY_TYPE_COMPRESSED;
+
+                if(new_adding)
+                {
+                    add_new_header = TRUE;
+                }
             }
         }
         else if (model->compressed_entries_counter != 0)
@@ -227,6 +235,7 @@ gl_journal_model_handle_add_entry (GlJournalModel *model,
 
         current_entry_time_label = gl_util_timestamp_to_display (gl_journal_entry_get_timestamp (entry),
                                                                  now, GL_UTIL_CLOCK_FORMAT_24HR, FALSE);
+
 
         /* TODO: Timestamp should be compared directly in future. */
         if (g_strcmp0 (previous_entry_time_label, current_entry_time_label) == 0)
@@ -260,6 +269,12 @@ gl_journal_model_handle_add_entry (GlJournalModel *model,
         new_adding
         ? g_list_model_items_changed (G_LIST_MODEL (model), 0, 0, 1)
         : g_list_model_items_changed (G_LIST_MODEL (model), last, 0, 1);
+    }
+
+    if(add_new_header)
+    {
+        gl_journal_model_add_header(model, new_adding);
+        model->compressed_entries_counter = 0;
     }
 }
 
@@ -618,6 +633,7 @@ gl_journal_model_process_query (GlJournalModel *model)
 
     /* Set the exact matches first */
     category_matches = gl_query_get_exact_matches (model->query);
+
     /* Check against 0 to avoid a crash */
     if (category_matches->len == 0)
     {
@@ -629,8 +645,8 @@ gl_journal_model_process_query (GlJournalModel *model)
     {
         gchar *search_match;
         gchar *field_value_pos;
-
         /* Get the search match string */
+
         search_match = g_ptr_array_index (category_matches, category_matches->len - 1);
 
         field_value_pos = strchr (search_match, '=');
