@@ -386,8 +386,6 @@ enable_export (GlWindow *window)
 static void
 gl_window_init (GlWindow *window)
 {
-    GtkCssProvider *provider;
-    GdkScreen *screen;
     GlWindowPrivate *priv;
     GlEventToolbar *toolbar;
     GlEventViewList *event_list;
@@ -438,24 +436,11 @@ gl_window_init (GlWindow *window)
     g_signal_connect_swapped (model, "enable_export",
                               G_CALLBACK (enable_export), window);
 
-    provider = gtk_css_provider_new ();
-    g_signal_connect (provider, "parsing-error",
-                      G_CALLBACK (gl_util_on_css_provider_parsing_error),
-                      NULL);
-    gtk_css_provider_load_from_resource (provider,
-                                         "/org/gnome/Logs/gl-style.css");
-
-    screen = gdk_screen_get_default ();
-    gtk_style_context_add_provider_for_screen (screen,
-                                               GTK_STYLE_PROVIDER (provider),
-                                               GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
-
     settings = g_settings_new (SETTINGS_SCHEMA);
     ignore = g_settings_get_boolean (settings, IGNORE_WARNING);
     /* Don't show info_bar again if users have ever ignored the warning. */
     if (ignore)
     {
-        g_object_unref (provider);
         g_object_unref (settings);
         return;
     }
@@ -530,7 +515,6 @@ gl_window_init (GlWindow *window)
             g_assert_not_reached ();
     }
 
-    g_object_unref (provider);
     g_object_unref (settings);
 }
 
