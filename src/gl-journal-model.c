@@ -1082,6 +1082,11 @@ calculate_match (GlJournalEntry *entry,
                         break;
                     }
 
+                    if (j + 2 >= match_count)
+                    {
+                        break;
+                    }
+
                     match_stack[j] = match_stack[j + 2];
                     match_stack[j + 2] = -1;
                 }
@@ -1101,6 +1106,11 @@ calculate_match (GlJournalEntry *entry,
 
                 for (j = i; j < match_count - 2; j++)
                 {
+                    if (j + 4 >= match_count)
+                    {
+                        break;
+                    }
+
                     match_stack[j] = match_stack[j + 2];
                     match_stack[j + 2] = -1;
                 }
