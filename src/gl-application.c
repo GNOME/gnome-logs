@@ -199,11 +199,28 @@ static GActionEntry actions[] = {
 static void
 gl_application_startup (GApplication *application)
 {
+    GtkCssProvider *provider;
+    GdkScreen *screen;
+
     g_action_map_add_action_entries (G_ACTION_MAP (application), actions,
                                      G_N_ELEMENTS (actions), application);
 
     /* Calls gtk_init() with no arguments. */
     G_APPLICATION_CLASS (gl_application_parent_class)->startup (application);
+
+    /* Application-specific CSS overrides are global to all windows,
+     * and should therefore be set on the (global) screen only once. */
+    provider = gtk_css_provider_new ();
+    g_signal_connect (provider, "parsing-error",
+                      G_CALLBACK (gl_util_on_css_provider_parsing_error),
+                      NULL);
+    gtk_css_provider_load_from_resource (provider,
+                                         "/org/gnome/Logs/gl-style.css");
+
+    screen = gdk_screen_get_default ();
+    gtk_style_context_add_provider_for_screen (screen,
+                                               GTK_STYLE_PROVIDER (provider),
+                                               GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
 
     /* gtk_init() calls setlocale(), so gettext must be called after that. */
     g_set_application_name (_(PACKAGE_NAME));
@@ -214,6 +231,8 @@ gl_application_startup (GApplication *application)
     gl_category_list_get_type ();
     gl_event_toolbar_get_type ();
     gl_event_view_list_get_type ();
+
+    g_object_unref (provider);
 }
 
 static void
