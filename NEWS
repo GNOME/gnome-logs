@@ -1,3 +1,10 @@
+GNOME Logs 3.30.0
+=================
+
+* install AppData XML to metainfo from Bjørn Lie
+* Update MSGID_BUGS_ADDRESS in po/Makevars from Piotr Drąg
+* updates to Belarusian and Korean translations
+
 GNOME Logs 3.29.4
 =================
 
