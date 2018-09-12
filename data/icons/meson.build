@@ -1,12 +1,6 @@
 apps_icons = [
-  ['16x16', 'gnome-logs.png'],
-  ['22x22', 'gnome-logs.png'],
-  ['24x24', 'gnome-logs.png'],
-  ['32x32', 'gnome-logs.png'],
-  ['48x48', 'gnome-logs.png'],
-  ['256x256', 'gnome-logs.png'],
-  ['512x512', 'gnome-logs.png'],
-  ['symbolic', 'gnome-logs-symbolic.svg']
+  ['scalable', 'org.gnome.Logs.svg'],
+  ['symbolic', 'org.gnome.Logs-symbolic.svg']
 ]
 
 foreach icon: apps_icons
