@@ -41,8 +41,7 @@ resource_data = files(
     'gl-eventviewdetail.ui',
     'gl-searchpopover.ui',
     'gl-window.ui',
-    'help-overlay.ui',
-    'menus.ui'
+    'help-overlay.ui'
 )
 
 gresource = files('org.gnome.Logs.gresource.xml')
