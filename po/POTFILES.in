@@ -7,7 +7,6 @@ data/gl-eventviewlist.ui
 data/gl-searchpopover.ui
 data/gl-window.ui
 data/help-overlay.ui
-data/menus.ui
 data/org.gnome.Logs.appdata.xml.in
 data/org.gnome.Logs.desktop.in
 data/org.gnome.Logs.gschema.xml
