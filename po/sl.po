@@ -3,24 +3,22 @@
 # This file is distributed under the same license as the gnome-logs package.
 #
 # Martin Srebotnjak <miles@filmsi.net>, 2013–2015.
-# Matej Urbančič <mateju@svn.gnome.org>, 2015–2017
+# Matej Urbančič <mateju@svn.gnome.org>, 2015–2018
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
-"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2017-11-02 08:21+0000\n"
-"PO-Revision-Date: 2017-11-02 19:52+0100\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
+"POT-Creation-Date: 2018-10-11 10:46+0000\n"
+"PO-Revision-Date: 2018-10-25 18:41+0200\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian <gnome-si@googlegroups.com>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
-"X-Generator: Poedit 2.0.4\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n%100==4 ? 3 : 0);\n"
+"X-Generator: Poedit 2.1.1\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
 #: data/gl-categorylist.ui:15
@@ -63,15 +61,35 @@ msgstr "Posodobitve"
 msgid "Usage"
 msgstr "Uporaba"
 
-#: data/gl-eventtoolbar.ui:9
+#: data/gl-eventtoolbar.ui:6
+msgid "_New Window"
+msgstr "_Novo okno"
+
+#: data/gl-eventtoolbar.ui:13
+msgid "_Help"
+msgstr "Pomo_č"
+
+#: data/gl-eventtoolbar.ui:17
+msgid "Keyboard Shortcuts"
+msgstr "Tipkovne bližnjice"
+
+#: data/gl-eventtoolbar.ui:21
+msgid "_About"
+msgstr "_O programu"
+
+#: data/gl-eventtoolbar.ui:26
+msgid "_Quit"
+msgstr "_Končaj"
+
+#: data/gl-eventtoolbar.ui:58
 msgid "Export logs to a file"
 msgstr "Izvozi dnevniški izpis v datoteko"
 
-#: data/gl-eventtoolbar.ui:30
+#: data/gl-eventtoolbar.ui:79
 msgid "Choose the boot from which to view logs"
 msgstr "Izberite zagonski disk, za katerega želite pregledati dnevnik."
 
-#: data/gl-eventtoolbar.ui:42
+#: data/gl-eventtoolbar.ui:91
 msgid "Search all the logs of the current category"
 msgstr "Iskanje vseh dnevnikov v trenutni kategoriji"
 
@@ -154,7 +172,7 @@ msgid "Select Timestamp Range of the Log Entries to be shown"
 msgstr "Izbor obsega časovnega žiga za prikaz vpisov v dnevnik"
 
 #: data/gl-searchpopover.ui:208 data/gl-searchpopover.ui:1091
-#: src/gl-searchpopover.c:1303
+#: src/gl-searchpopover.c:1309
 msgid "Current Boot"
 msgstr "Trenutni zagon sistema"
 
@@ -323,26 +341,6 @@ msgctxt "shortcut window"
 msgid "Find"
 msgstr "Najdi"
 
-#: data/menus.ui:6
-msgid "_New Window"
-msgstr "_Novo okno"
-
-#: data/menus.ui:13
-msgid "_Help"
-msgstr "Pomo_č"
-
-#: data/menus.ui:17
-msgid "Keyboard Shortcuts"
-msgstr "Tipkovne bližnjice"
-
-#: data/menus.ui:21
-msgid "_About"
-msgstr "_O programu"
-
-#: data/menus.ui:26
-msgid "_Quit"
-msgstr "_Končaj"
-
 #: data/org.gnome.Logs.appdata.xml.in:7
 msgid "GNOME Logs"
 msgstr "Dnevniki GNOME"
@@ -367,7 +365,7 @@ msgstr ""
 "Program omogoča preiskovanje dnevnikov z vpisom iskalnega niza in pregled "
 "podrobnosti vsakega dogodka."
 
-#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:137
+#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:139
 msgid "Logs"
 msgstr "Dnevniki"
 
@@ -383,8 +381,9 @@ msgstr ""
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
 #: data/org.gnome.Logs.desktop.in:12
-msgid "gnome-logs"
-msgstr "gnome-logs"
+#| msgid "gnome-logs"
+msgid "org.gnome.Logs"
+msgstr "org.gnome.Logs"
 
 #: data/org.gnome.Logs.gschema.xml:5
 msgid "Ignore warning"
@@ -419,13 +418,13 @@ msgid "Print version information and exit"
 msgstr "Izpiši podatke o različici in končaj"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
-#: src/gl-eventtoolbar.c:128
+#: src/gl-eventtoolbar.c:130
 msgid "Boot"
 msgstr "Zagoni"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: src/gl-eventviewlist.c:478
+#: src/gl-eventviewlist.c:488
 msgid "No results"
 msgstr "Ni najdenih zadetkov"
 
@@ -459,7 +458,7 @@ msgstr "Do %s"
 #. * and end date button label in the custom range submenu,
 #. * showing the day of month in decimal number, full month
 #. * name as string, the year as a decimal number including the century.
-#: src/gl-searchpopover.c:737 src/gl-searchpopover.c:1104
+#: src/gl-searchpopover.c:737 src/gl-searchpopover.c:1107
 msgid "%e %B %Y"
 msgstr "%e %B %Y"
 
@@ -477,7 +476,7 @@ msgstr "PM"
 #. Translators: timestamp format for the custom end time button
 #. * label in the custom range submenu, showing the time with seconds
 #. * in 12-hour format.
-#: src/gl-searchpopover.c:987 src/gl-searchpopover.c:1226
+#: src/gl-searchpopover.c:987 src/gl-searchpopover.c:1229
 msgid "%I:%M:%S %p"
 msgstr "%I:%M:%S %p"
 
@@ -487,7 +486,7 @@ msgstr "%I:%M:%S %p"
 #. Translators: timestamp format for the custom end time button
 #. * label in the custom range submenu, showing the time with seconds
 #. * in 24-hour format.
-#: src/gl-searchpopover.c:994 src/gl-searchpopover.c:1233
+#: src/gl-searchpopover.c:994 src/gl-searchpopover.c:1236
 msgid "%T"
 msgstr "%T"
 
@@ -607,19 +606,19 @@ msgstr "_Shrani"
 msgid "log messages"
 msgstr "dnevniška sporočila"
 
-#: src/gl-window.c:175
+#: src/gl-window.c:181
 msgid "Unable to export log messages to a file"
 msgstr "Ni mogoče izvoziti dnevniških sporočil v datoteko"
 
-#: src/gl-window.c:439 src/gl-window.c:470
+#: src/gl-window.c:474 src/gl-window.c:505
 msgid "Unable to read system logs"
 msgstr "Ni mogoče prebrati sistemskega dnevnika"
 
-#: src/gl-window.c:453
+#: src/gl-window.c:488
 msgid "Unable to read user logs"
 msgstr "Ni mogoče prebrati uporabniškega dnevnika"
 
-#: src/gl-window.c:485
+#: src/gl-window.c:520
 msgid "No logs available"
 msgstr "Ni shranjenih dnevnikov"
 
