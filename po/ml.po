@@ -11,10 +11,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2017-08-01 14:25+0000\n"
-"PO-Revision-Date: 2017-08-06 11:17+0530\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
+"POT-Creation-Date: 2018-09-12 16:08+0000\n"
+"PO-Revision-Date: 2018-11-04 23:44+0800\n"
 "Last-Translator: Anish Sheela <aneesh.nl@gmail.com>\n"
 "Language-Team: Swatantra Malayalam Computing <discuss@lists.smc.org.in>\n"
 "Language: ml\n"
@@ -22,408 +21,413 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Virtaal 0.7.1\n"
+"X-Generator: Poedit 2.0.6\n"
 "X-Project-Style: gnome\n"
 
-#: ../data/gl-categorylist.ui.h:1
+#: data/gl-categorylist.ui:15
 msgid "Important"
 msgstr "പ്രധാനപ്പെട്ടത്"
 
-#: ../data/gl-categorylist.ui.h:2
+#: data/gl-categorylist.ui:30
 msgid "Alerts"
 msgstr "മുന്നറിയിപ്പുകൾ"
 
-#: ../data/gl-categorylist.ui.h:3
+#: data/gl-categorylist.ui:45
 msgid "Starred"
 msgstr "അടയാളപ്പെടുത്തിയത്"
 
-#: ../data/gl-categorylist.ui.h:4
+#: data/gl-categorylist.ui:60
 msgid "All"
 msgstr "എല്ലാം"
 
-#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:207
+#: data/gl-categorylist.ui:75 src/gl-eventviewrow.c:207
 msgid "Applications"
 msgstr "പ്രയോഗങ്ങൾ"
 
-#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:216
+#: data/gl-categorylist.ui:90 src/gl-eventviewrow.c:216
 msgid "System"
 msgstr "സിസ്റ്റം"
 
-#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:220
+#: data/gl-categorylist.ui:105 src/gl-eventviewrow.c:220
 msgid "Security"
 msgstr "സുരക്ഷ"
 
-#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:212
+#: data/gl-categorylist.ui:120 src/gl-eventviewrow.c:212
 msgid "Hardware"
 msgstr "ഹാര്‍ഡ്‍വെയ‍ർ"
 
-#: ../data/gl-categorylist.ui.h:9
+#: data/gl-categorylist.ui:135
 msgid "Updates"
 msgstr "പരിഷ്കരണങ്ങള്‍"
 
-#: ../data/gl-categorylist.ui.h:10
+#: data/gl-categorylist.ui:150
 msgid "Usage"
 msgstr "ഉപയോഗം"
 
-#: ../data/gl-eventtoolbar.ui.h:1
+#: data/gl-eventtoolbar.ui:9
 msgid "Export logs to a file"
 msgstr "ലോഗ് ഫയലിലേക്ക് എക്സ്പോർട്ട് ചെയ്യുക"
 
-#: ../data/gl-eventtoolbar.ui.h:2
+#: data/gl-eventtoolbar.ui:30
 msgid "Choose the boot from which to view logs"
 msgstr "ലോഗുകള്‍ കാണുന്നതിനുള്ള ബൂട്ട് തിരഞ്ഞെടുക്കുക"
 
-#: ../data/gl-eventtoolbar.ui.h:3
+#: data/gl-eventtoolbar.ui:42
 msgid "Search all the logs of the current category"
 msgstr "ഈ വിഭാഗത്തിലെ എല്ലാ ലോഗുകളിലും തിരയുക"
 
-#: ../data/gl-eventviewdetail.ui.h:1
+#: data/gl-eventviewdetail.ui:26
 msgid "Sender"
 msgstr "അയച്ച ആള്‍"
 
-#: ../data/gl-eventviewdetail.ui.h:2
+#: data/gl-eventviewdetail.ui:58
 msgid "Time"
 msgstr "സമയം"
 
-#: ../data/gl-eventviewdetail.ui.h:3 ../data/gl-searchpopover.ui.h:35
+#: data/gl-eventviewdetail.ui:92 data/gl-searchpopover.ui:1052
 msgid "Message"
 msgstr "സന്ദേശം"
 
-#: ../data/gl-eventviewdetail.ui.h:4 ../data/gl-searchpopover.ui.h:39
+#: data/gl-eventviewdetail.ui:128 data/gl-searchpopover.ui:1072
 msgid "Audit Session"
 msgstr "ഓഡിറ്റ് സെഷന്‍"
 
-#: ../data/gl-eventviewdetail.ui.h:5 ../data/gl-searchpopover.ui.h:38
+#: data/gl-eventviewdetail.ui:161 data/gl-searchpopover.ui:1067
 msgid "Kernel Device"
 msgstr "കെർണല്‍ ഉപകരണം"
 
-#: ../data/gl-eventviewdetail.ui.h:6
+#: data/gl-eventviewdetail.ui:194
 msgid "Priority"
 msgstr "മുൻഗണന"
 
-#: ../data/gl-eventviewdetail.ui.h:7
+#: data/gl-eventviewdetail.ui:228
 msgid "Subject"
 msgstr "വിഷയം"
 
-#: ../data/gl-eventviewdetail.ui.h:8
+#: data/gl-eventviewdetail.ui:264
 msgid "Defined By"
 msgstr "നിര്‍വ്വചിച്ചത്"
 
-#: ../data/gl-eventviewdetail.ui.h:9
+#: data/gl-eventviewdetail.ui:298
 msgid "Support"
 msgstr "പിന്തുണ"
 
-#: ../data/gl-eventviewdetail.ui.h:10
+#: data/gl-eventviewdetail.ui:334
 msgid "Documentation"
 msgstr "രേഖപ്പെടുത്തല്‍"
 
-#: ../data/gl-eventviewlist.ui.h:1
+#: data/gl-eventviewlist.ui:43
 msgid "Select journal field and timestamp range filtering options"
 msgstr "ജേര്‍ണല്‍ ഫീല്‍ഡും ടൈം സ്റ്റാമ്പ് റേഞ്ച് ഫില്‍റ്ററിംഗ് ഓപ്ഷന്‍സും തിരഞ്ഞെടുക്കുക"
 
-#: ../data/gl-searchpopover.ui.h:1
+#: data/gl-searchpopover.ui:26
 msgid "Select a Journal Field to filter the Logs according to it"
 msgstr "ഇതു സംബന്ധിച്ച ലോഗുകളെ ഫില്‍റ്റര്‍ ചെയ്യുന്നതിനുള്ള ജേര്‍ണല്‍ ഫീല്‍ഡ് തിരഞ്ഞെടുക്കുക"
 
-#: ../data/gl-searchpopover.ui.h:2
+#: data/gl-searchpopover.ui:35 data/gl-searchpopover.ui:1028
 msgid "All Available Fields"
 msgstr "ലഭ്യമായ എല്ലാ മേഖലകളും"
 
+#: data/gl-searchpopover.ui:78 data/gl-searchpopover.ui:251
+msgid "Parameters"
+msgstr "പരാമീറ്ററുകള്‍"
+
 #. Translators: What [journal fields to search in]
-#: ../data/gl-searchpopover.ui.h:4
+#: data/gl-searchpopover.ui:115
 msgid "What"
 msgstr "എന്ത്"
 
-#: ../data/gl-searchpopover.ui.h:5
+#: data/gl-searchpopover.ui:130
 msgid "Select Journal Field…"
 msgstr "ജേർണല്‍ ഫീൽഡ് തിരഞ്ഞെടുക്കുക"
 
 #. When [log entries to be shown for a given timestamp range]
-#: ../data/gl-searchpopover.ui.h:7
+#: data/gl-searchpopover.ui:155
 msgid "When"
 msgstr "എപ്പോള്‍ "
 
-#: ../data/gl-searchpopover.ui.h:8
+#: data/gl-searchpopover.ui:170
 msgid "Show Logs from…"
 msgstr "ഇവിടെ നിന്നുള്ള ലോഗുകള്‍ കാണിക്കുക…"
 
-#: ../data/gl-searchpopover.ui.h:9
+#: data/gl-searchpopover.ui:199
 msgid "Select Timestamp Range of the Log Entries to be shown"
 msgstr "കാണിക്കേണ്ട ലോഗിന്റെ ടൈംസ്സാമ്പ് പരിധി തിരഞ്ഞെടുക്കുക"
 
-#: ../data/gl-searchpopover.ui.h:10 ../src/gl-searchpopover.c:1303
+#: data/gl-searchpopover.ui:208 data/gl-searchpopover.ui:1091 src/gl-searchpopover.c:1309
 msgid "Current Boot"
 msgstr "ഇപ്പോൾ ഉള്ള ബൂട്ട്"
 
-#: ../data/gl-searchpopover.ui.h:11
+#: data/gl-searchpopover.ui:293
 msgid "Search Type"
 msgstr "തിരയേണ്ട ഇനം"
 
-#: ../data/gl-searchpopover.ui.h:12
+#: data/gl-searchpopover.ui:310
 msgid "Substring"
 msgstr "ഉപശൃംഖല"
 
-#: ../data/gl-searchpopover.ui.h:13
+#: data/gl-searchpopover.ui:314
 msgid "Match in any part of the string"
 msgstr "ശൃംഖലയുടെ ഏതെങ്കിലും ഭാഗവുമായി പൊരുത്തപ്പെടുത്തുക"
 
-#: ../data/gl-searchpopover.ui.h:14
+#: data/gl-searchpopover.ui:328
 msgid "Exact"
 msgstr "കൃത്യമായ"
 
-#: ../data/gl-searchpopover.ui.h:15
+#: data/gl-searchpopover.ui:332
 msgid "Match complete string only"
 msgstr "പൂർണ്ണമായ ശൃംഖലയുമായി മാത്രം പൊരുത്തപ്പെടുത്തുക "
 
-#: ../data/gl-searchpopover.ui.h:16
+#: data/gl-searchpopover.ui:379
 msgid "Back"
 msgstr "തിരികെ പോകുക"
 
-#: ../data/gl-searchpopover.ui.h:17
+#: data/gl-searchpopover.ui:397
 msgid "Show Logs Starting From…"
 msgstr "…ല്‍ തുടങ്ങുന്ന ലോഗുകള്‍ കാണിക്കുക"
 
-#: ../data/gl-searchpopover.ui.h:18
+#: data/gl-searchpopover.ui:419
 msgid "Select a start date"
 msgstr "തുടങ്ങേണ്ട ഒരു തീയതി തിരഞ്ഞെടുക്കുക"
 
-#: ../data/gl-searchpopover.ui.h:19 ../src/gl-searchpopover.c:503
+#: data/gl-searchpopover.ui:428 src/gl-searchpopover.c:503
 msgid "Select Start Date…"
 msgstr "തുടങ്ങേണ്ട തീയതി തിരഞ്ഞെടുക്കുക…"
 
-#: ../data/gl-searchpopover.ui.h:20
+#: data/gl-searchpopover.ui:459 data/gl-searchpopover.ui:763
 msgid "22 January 2016 or 1/22/2016"
 msgstr "22 ജനുവരി 2016 അല്ലെങ്കിൽ 1/22/2016"
 
-#: ../data/gl-searchpopover.ui.h:21
+#: data/gl-searchpopover.ui:504
 msgid "Select start time"
 msgstr "തുടങ്ങേണ്ട സമയം തിരഞ്ഞെടുക്കുക"
 
-#: ../data/gl-searchpopover.ui.h:22 ../src/gl-searchpopover.c:504
+#: data/gl-searchpopover.ui:513 src/gl-searchpopover.c:504
 msgid "Select Start Time…"
 msgstr "തുടങ്ങേണ്ട തീയതി തിരഞ്ഞെടുക്കുക…"
 
-#: ../data/gl-searchpopover.ui.h:23
+#: data/gl-searchpopover.ui:550 data/gl-searchpopover.ui:857
 msgid "Hr"
 msgstr "മണി"
 
-#: ../data/gl-searchpopover.ui.h:24
+#: data/gl-searchpopover.ui:585 data/gl-searchpopover.ui:892
 msgid "Min"
 msgstr "മിനി."
 
-#: ../data/gl-searchpopover.ui.h:25
+#: data/gl-searchpopover.ui:620 data/gl-searchpopover.ui:927
 msgid "Sec"
 msgstr "നിമി."
 
-#: ../data/gl-searchpopover.ui.h:26
+#: data/gl-searchpopover.ui:655 data/gl-searchpopover.ui:962
 msgid "AM/PM"
 msgstr "രാവി/വൈകു"
 
-#: ../data/gl-searchpopover.ui.h:27
+#: data/gl-searchpopover.ui:701
 msgid "Until…"
 msgstr "വരെ"
 
-#: ../data/gl-searchpopover.ui.h:28
+#: data/gl-searchpopover.ui:723
 msgid "Select an end date"
 msgstr "അവസാനതീയതി തിരഞ്ഞെടുക്കുക"
 
-#: ../data/gl-searchpopover.ui.h:29 ../src/gl-searchpopover.c:521
+#: data/gl-searchpopover.ui:732 src/gl-searchpopover.c:521
 msgid "Select End Date…"
 msgstr "അവസാനതീയതി തിരഞ്ഞെടുക്കുക"
 
-#: ../data/gl-searchpopover.ui.h:30
+#: data/gl-searchpopover.ui:811
 msgid "Select end time"
 msgstr "അവസാനത്തെ സമയം തിരഞ്ഞെടുക്കുക"
 
-#: ../data/gl-searchpopover.ui.h:31 ../src/gl-searchpopover.c:522
+#: data/gl-searchpopover.ui:820 src/gl-searchpopover.c:522
 msgid "Select End Time…"
 msgstr "അവസാനത്തെ സമയം തിരഞ്ഞെടുക്കുക"
 
-#: ../data/gl-searchpopover.ui.h:32
+#: data/gl-searchpopover.ui:1037
 msgid "PID"
 msgstr "പിഐഡി"
 
-#: ../data/gl-searchpopover.ui.h:33
+#: data/gl-searchpopover.ui:1042
 msgid "UID"
 msgstr "യുഐഡി"
 
-#: ../data/gl-searchpopover.ui.h:34
+#: data/gl-searchpopover.ui:1047
 msgid "GID"
 msgstr "ജിഐഡി"
 
-#: ../data/gl-searchpopover.ui.h:36
+#: data/gl-searchpopover.ui:1057
 msgid "Process Name"
 msgstr "പ്രോസസ്സിന്റെ പേര്"
 
-#: ../data/gl-searchpopover.ui.h:37
+#: data/gl-searchpopover.ui:1062
 msgid "Systemd Unit"
 msgstr "സിസ്റ്റംഡി യൂണിറ്റ്"
 
-#: ../data/gl-searchpopover.ui.h:40
+#: data/gl-searchpopover.ui:1077
 msgid "Executable Path"
 msgstr "എക്സിക്യൂട്ടബിള്‍ പാത്ത്"
 
-#: ../data/gl-searchpopover.ui.h:41
+#: data/gl-searchpopover.ui:1096
 msgid "Previous Boot"
 msgstr "മുൻ ബൂട്ട്"
 
-#: ../data/gl-searchpopover.ui.h:42
+#: data/gl-searchpopover.ui:1105
 msgid "Today"
 msgstr "ഇന്ന്"
 
-#: ../data/gl-searchpopover.ui.h:43
+#: data/gl-searchpopover.ui:1110
 msgid "Yesterday"
 msgstr "ഇന്നലെ"
 
-#: ../data/gl-searchpopover.ui.h:44
+#: data/gl-searchpopover.ui:1115
 msgid "Last 3 days"
 msgstr "അവസാനത്തെ 3 ദിവസങ്ങള്‍"
 
-#: ../data/gl-searchpopover.ui.h:45
+#: data/gl-searchpopover.ui:1124
 msgid "Entire Journal"
 msgstr "സമഗ്രമായ ജേ‍ർണൽ"
 
-#: ../data/gl-searchpopover.ui.h:46
+#: data/gl-searchpopover.ui:1133
 msgid "Set Custom Range…"
 msgstr "ഇഷ്ടാനുസരണം പരിധി തീരുമാനിക്കുക"
 
-#: ../data/gl-window.ui.h:1
+#: data/gl-window.ui:31
 msgid "Help"
 msgstr "സഹായം"
 
-#: ../data/gl-window.ui.h:2
+#: data/gl-window.ui:39
 msgid "Ignore"
 msgstr "അവഗണിക്കുക"
 
-#: ../data/help-overlay.ui.h:1
+#: data/help-overlay.ui:8
 msgctxt "shortcut window"
 msgid "General"
 msgstr "പൊതുവായ "
 
-#: ../data/help-overlay.ui.h:2
+#: data/help-overlay.ui:13
 msgctxt "shortcut window"
 msgid "Open a new window"
 msgstr "പുതിയ ജാലകം തുറക്കുക "
 
-#: ../data/help-overlay.ui.h:3
+#: data/help-overlay.ui:20
 msgctxt "shortcut window"
 msgid "Close a window"
 msgstr "ജാലകം അടക്കുക "
 
-#: ../data/help-overlay.ui.h:4
+#: data/help-overlay.ui:28
 msgctxt "shortcut window"
 msgid "Search"
 msgstr "തിരയുക "
 
-#: ../data/help-overlay.ui.h:5
+#: data/help-overlay.ui:33
 msgctxt "shortcut window"
 msgid "Find"
 msgstr "കണ്ടുപിടിക്കുക "
 
-#: ../data/menus.ui.h:1
+#: data/menus.ui:6
 msgid "_New Window"
 msgstr "പുതി_യ ജാലകം"
 
-#: ../data/menus.ui.h:2
+#: data/menus.ui:13
 msgid "_Help"
 msgstr "_സഹായം"
 
-#: ../data/menus.ui.h:3
+#: data/menus.ui:17
 msgid "Keyboard Shortcuts"
 msgstr "കീബോര്‍ഡിനുള്ള കുറുക്കുവഴികള്‍"
 
-#: ../data/menus.ui.h:4
+#: data/menus.ui:21
 msgid "_About"
 msgstr "സം_ബന്ധിച്ച് "
 
-#: ../data/menus.ui.h:5
+#: data/menus.ui:26
 msgid "_Quit"
 msgstr "പുറത്ത് ക_ടക്കുക"
 
-#: ../data/org.gnome.Logs.appdata.xml.in.h:1
+#: data/org.gnome.Logs.appdata.xml.in:7
 msgid "GNOME Logs"
 msgstr "ഗ്നോം ലോഗുകള്‍"
 
-#: ../data/org.gnome.Logs.appdata.xml.in.h:2
-#: ../data/org.gnome.Logs.desktop.in.h:3
+#: data/org.gnome.Logs.appdata.xml.in:8 data/org.gnome.Logs.desktop.in:5
 msgid "View detailed event logs for the system"
 msgstr "സിസ്റ്റത്തിന്റെ വിശദമായ ഇവന്റ് ലോഗ് പ്രദര്‍ശിപ്പിക്കുക"
 
-#: ../data/org.gnome.Logs.appdata.xml.in.h:3
+#: data/org.gnome.Logs.appdata.xml.in:10
 msgid ""
-"Logs shows events from the systemd journal, and sorts them into categories, "
-"such as hardware and applications."
+"Logs shows events from the systemd journal, and sorts them into categories, such as hardware and "
+"applications."
 msgstr ""
-"സിസ്റ്റംഡി ജേര്‍ണലില്‍ നിന്നുള്ള ഇവന്റ് ലോഗുകളെ പ്രദര്‍ശിപ്പിക്കുക,ഹാര്‍ഡ്‍വെയര്‍ ആപ്ലിക്കേഷന്‍ "
-"എന്നിവപോലെ വിഭാഗങ്ങളായി തരംതിരിക്കുക"
+"സിസ്റ്റംഡി ജേര്‍ണലില്‍ നിന്നുള്ള ഇവന്റ് ലോഗുകളെ പ്രദര്‍ശിപ്പിക്കുക,ഹാര്‍ഡ്‍വെയര്‍ ആപ്ലിക്കേഷന്‍ എന്നിവപോലെ വിഭാഗങ്ങളായി "
+"തരംതിരിക്കുക"
 
-#: ../data/org.gnome.Logs.appdata.xml.in.h:4
+#: data/org.gnome.Logs.appdata.xml.in:12
 msgid ""
-"Using Logs you can search your logs by typing a search term, and view "
-"detailed information about each event by clicking on it."
+"Using Logs you can search your logs by typing a search term, and view detailed information about "
+"each event by clicking on it."
 msgstr ""
-"ലോഗുകള്‍ ഉപയോഗിച്ച് തിരച്ചില്‍ വാക്ക് നല്‍കി നിങ്ങള്‍ക്ക് ലോഗുകള്‍ തിരയാം, ഓരോ സന്ദര്‍ഭത്തിന്റെയും "
-"വിശദവിവരം അതില്‍ ക്ലിക്ക് ചെയ്തു കാണാം"
+"ലോഗുകള്‍ ഉപയോഗിച്ച് തിരച്ചില്‍ വാക്ക് നല്‍കി നിങ്ങള്‍ക്ക് ലോഗുകള്‍ തിരയാം, ഓരോ സന്ദര്‍ഭത്തിന്റെയും വിശദവിവരം അതില്‍ ക്ലിക്ക് ചെയ്തു "
+"കാണാം"
 
-#: ../data/org.gnome.Logs.desktop.in.h:1 ../src/gl-eventtoolbar.c:114
+#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:139
 msgid "Logs"
 msgstr "ലോഗുകള്‍"
 
-#: ../data/org.gnome.Logs.desktop.in.h:2
+#: data/org.gnome.Logs.desktop.in:4
 msgid "Log Viewer"
 msgstr "ലോഗ് ദര്‍ശിനി"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: ../data/org.gnome.Logs.desktop.in.h:5
+#: data/org.gnome.Logs.desktop.in:7
 msgid "log;journal;debug;error;"
 msgstr "log;journal;debug;error;"
 
-#: ../data/org.gnome.Logs.gschema.xml.h:1
+#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
+#: data/org.gnome.Logs.desktop.in:12
+msgid "gnome-logs"
+msgstr "gnome-logs"
+
+#: data/org.gnome.Logs.gschema.xml:5
 msgid "Ignore warning"
 msgstr "മുന്നറിയിപ്പ് അവഗണിക്കുക"
 
-#: ../data/org.gnome.Logs.gschema.xml.h:2
+#: data/org.gnome.Logs.gschema.xml:6
 msgid ""
-"Whether to ignore the warning that says you don’t have sufficient permission "
-"to view logs. If ignored, the warning won’t show up again."
+"Whether to ignore the warning that says you don’t have sufficient permission to view logs. If "
+"ignored, the warning won’t show up again."
 msgstr ""
-"നിങ്ങള്‍ക്ക് ലോഗ് കാണാന്‍ മതിയായ അനുവാദം അല്ല എന്ന മുന്നറിയിപ്പ് അവഗണിക്കണോ "
-"എന്ന്. അവഗണിച്ചാല്‍ ഇത് വീണ്ടും കാണിക്കില്ല"
+"നിങ്ങള്‍ക്ക് ലോഗ് കാണാന്‍ മതിയായ അനുവാദം അല്ല എന്ന മുന്നറിയിപ്പ് അവഗണിക്കണോ എന്ന്. അവഗണിച്ചാല്‍ ഇത് വീണ്ടും കാണിക്കില്ല"
 
-#: ../data/org.gnome.Logs.gschema.xml.h:3
+#: data/org.gnome.Logs.gschema.xml:10
 msgid "How to sort list rows in the event view list"
 msgstr "ഇവന്‍റ് വ്യൂ ലിസ്റ്റിലെ വരികളെ എങ്ങനെ ക്രമപ്പെടുത്താം"
 
-#: ../data/org.gnome.Logs.gschema.xml.h:4
+#: data/org.gnome.Logs.gschema.xml:11
 msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr "തിരഞ്ഞെടുത്ത തരത്തിന്റെ പട്ടികയുടെ വരികളെ ആരോഹണത്തിലോ അവരോഹണത്തിലോ ക്രമപ്പെടുത്തുക."
 
-#: ../src/gl-application.c:109
+#: src/gl-application.c:109
 msgid "translator-credits"
-msgstr ""
-"മല്ലിക എസ്, രാജീവ്.വി, വിനോദ് കുമാര്‍ കെ.പി, സൂര്യ പി, അര്‍ച്ചന രാജു, ശബന, "
-"അനീഷ് ഷീല"
+msgstr "മല്ലിക എസ്, രാജീവ്.വി, വിനോദ് കുമാര്‍ കെ.പി, സൂര്യ പി, അര്‍ച്ചന രാജു, ശബന, അനീഷ് ഷീല"
 
-#: ../src/gl-application.c:110
+#: src/gl-application.c:110
 msgid "View and search logs"
 msgstr "ലോഗുകള്‍ കാണുക, തിരയുക"
 
-#: ../src/gl-application.c:243
+#: src/gl-application.c:243
 msgid "Print version information and exit"
 msgstr "പതിപ്പ് വിവരങ്ങള്‍ അച്ചടിക്കുക, പുറത്തുകടക്കുക"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
-#: ../src/gl-eventtoolbar.c:105
+#: src/gl-eventtoolbar.c:130
 msgid "Boot"
 msgstr "ബൂട്ട്"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventviewlist.c:458
+#: src/gl-eventviewlist.c:488
 msgid "No results"
 msgstr "ഫലങ്ങള്‍ ലഭ്യമല്ല"
 
-#: ../src/gl-eventviewrow.c:224
+#: src/gl-eventviewrow.c:224
 msgid "Other"
 msgstr "മറ്റുള്ളവ"
 
@@ -431,7 +435,7 @@ msgstr "മറ്റുള്ളവ"
 #. * the timestamp range button label in popover to show that
 #. * logs are shown in the window starting from this timestamp
 #. * until the ending timestamp of journal.
-#: ../src/gl-searchpopover.c:687
+#: src/gl-searchpopover.c:687
 #, c-format
 msgid "From %s"
 msgstr "%s ല്‍ നിന്നും"
@@ -440,7 +444,7 @@ msgstr "%s ല്‍ നിന്നും"
 #. * the timestamp range button label in popover to show that
 #. * logs are shown in the window upto this timestamp
 #. * with the starting timestamp being the current time.
-#: ../src/gl-searchpopover.c:700
+#: src/gl-searchpopover.c:700
 #, c-format
 msgid "Until %s"
 msgstr "%s വരെ"
@@ -453,17 +457,15 @@ msgstr "%s വരെ"
 #. * and end date button label in the custom range submenu,
 #. * showing the day of month in decimal number, full month
 #. * name as string, the year as a decimal number including the century.
-#: ../src/gl-searchpopover.c:737 ../src/gl-searchpopover.c:1104
+#: src/gl-searchpopover.c:737 src/gl-searchpopover.c:1107
 msgid "%e %B %Y"
 msgstr "%e %B %Y"
 
-#: ../src/gl-searchpopover.c:875
-#, c-format
+#: src/gl-searchpopover.c:875
 msgid "AM"
 msgstr "രാവി."
 
-#: ../src/gl-searchpopover.c:879
-#, c-format
+#: src/gl-searchpopover.c:879
 msgid "PM"
 msgstr "വൈകു."
 
@@ -473,7 +475,7 @@ msgstr "വൈകു."
 #. Translators: timestamp format for the custom end time button
 #. * label in the custom range submenu, showing the time with seconds
 #. * in 12-hour format.
-#: ../src/gl-searchpopover.c:987 ../src/gl-searchpopover.c:1226
+#: src/gl-searchpopover.c:987 src/gl-searchpopover.c:1229
 msgid "%I:%M:%S %p"
 msgstr "%I:%M:%S %p"
 
@@ -483,21 +485,21 @@ msgstr "%I:%M:%S %p"
 #. Translators: timestamp format for the custom end time button
 #. * label in the custom range submenu, showing the time with seconds
 #. * in 24-hour format.
-#: ../src/gl-searchpopover.c:994 ../src/gl-searchpopover.c:1233
+#: src/gl-searchpopover.c:994 src/gl-searchpopover.c:1236
 msgid "%T"
 msgstr "%T"
 
 #. Translators: timestamp format for events on the
 #. * current day, showing the time with seconds in
 #. * 12-hour format.
-#: ../src/gl-util.c:148
+#: src/gl-util.c:148
 msgid "%l:%M:%S %p"
 msgstr "%l:%M:%S %p"
 
 #. Translators: timestamp format for events on the
 #. * current day, showing the time without seconds in
 #. * 12-hour format.
-#: ../src/gl-util.c:155
+#: src/gl-util.c:155
 msgid "%l:%M %p"
 msgstr "%l:%M %p"
 
@@ -505,7 +507,7 @@ msgstr "%l:%M %p"
 #. * the current year, showing the abbreviated
 #. * month name, day of the month and the time
 #. * with seconds in 12-hour format.
-#: ../src/gl-util.c:166
+#: src/gl-util.c:166
 msgid "%b %e %l:%M:%S %p"
 msgstr "%b %e %l:%M:%S %p"
 
@@ -513,7 +515,7 @@ msgstr "%b %e %l:%M:%S %p"
 #. * current year, showing the abbreviated month name,
 #. * day of the month and the time without seconds in
 #. * 12-hour format.
-#: ../src/gl-util.c:174
+#: src/gl-util.c:174
 msgid "%b %e %l:%M %p"
 msgstr "%b %e %l:%M %p"
 
@@ -521,7 +523,7 @@ msgstr "%b %e %l:%M %p"
 #. * a different year, showing the abbreviated
 #. * month name, day of the month, year and the
 #. * time with seconds in 12-hour format.
-#: ../src/gl-util.c:185
+#: src/gl-util.c:185
 msgid "%b %e %Y %l:%M:%S %p"
 msgstr "%b %e %Y %l:%M:%S %p"
 
@@ -529,21 +531,21 @@ msgstr "%b %e %Y %l:%M:%S %p"
 #. * a different year, showing the abbreviated
 #. * month name day of the month, year and the
 #. * time without seconds in 12-hour format.
-#: ../src/gl-util.c:194
+#: src/gl-util.c:194
 msgid "%b %e %Y %l:%M %p"
 msgstr "%b %e %Y %l:%M %p"
 
 #. Translators: timestamp format for events on the
 #. * current day, showing the time with seconds in
 #. * 24-hour format.
-#: ../src/gl-util.c:211
+#: src/gl-util.c:211
 msgid "%H:%M:%S"
 msgstr "%H:%M:%S"
 
 #. Translators: timestamp format for events on the
 #. * current day, showing the time without seconds in
 #. * 24-hour format.
-#: ../src/gl-util.c:218
+#: src/gl-util.c:218
 msgid "%H:%M"
 msgstr "%H:%M"
 
@@ -551,7 +553,7 @@ msgstr "%H:%M"
 #. * current year, showing the abbreviated month name,
 #. * day of the month and the time with seconds in
 #. * 24-hour format.
-#: ../src/gl-util.c:228
+#: src/gl-util.c:228
 msgid "%b %e %H:%M:%S"
 msgstr "%b %e %H:%M:%S"
 
@@ -559,7 +561,7 @@ msgstr "%b %e %H:%M:%S"
 #. * current year, showing the abbreviated month name,
 #. * day of the month and the time without seconds in
 #. * 24-hour format.
-#: ../src/gl-util.c:236
+#: src/gl-util.c:236
 msgid "%b %e %H:%M"
 msgstr "%b %e %H:%M"
 
@@ -567,7 +569,7 @@ msgstr "%b %e %H:%M"
 #. * a different year, showing the abbreviated
 #. * month name, day of the month, year and the
 #. * time with seconds in 24-hour format.
-#: ../src/gl-util.c:247
+#: src/gl-util.c:247
 msgid "%b %e %Y %H:%M:%S"
 msgstr "%b %e %Y %H:%M:%S"
 
@@ -575,47 +577,47 @@ msgstr "%b %e %Y %H:%M:%S"
 #. * different year, showing the abbreviated month name,
 #. * day of the month, year and the time without seconds
 #. * in 24-hour format.
-#: ../src/gl-util.c:255
+#: src/gl-util.c:255
 msgid "%b %e %Y %H:%M"
 msgstr "%b %e %Y %H:%M"
 
 #. Transltors: the first string is the earliest timestamp of the boot,
 #. * and the second string is the newest timestamp. An example string might
 #. * be '08:10 - 08:30'
-#: ../src/gl-util.c:319
+#: src/gl-util.c:319
 #, c-format
 msgid "%s – %s"
 msgstr "%s – %s"
 
-#: ../src/gl-window.c:113
+#: src/gl-window.c:113
 msgid "Save logs"
 msgstr "ലോഗുകള്‍ സൂക്ഷിക്കുക"
 
-#: ../src/gl-window.c:116
+#: src/gl-window.c:116
 msgid "_Cancel"
 msgstr "_റദ്ദാക്കുക"
 
-#: ../src/gl-window.c:117
+#: src/gl-window.c:117
 msgid "_Save"
 msgstr "സൂക്ഷിക്കു_ക"
 
-#: ../src/gl-window.c:122
+#: src/gl-window.c:122
 msgid "log messages"
 msgstr "ലോഗ് സന്ദേശങ്ങള്‍"
 
-#: ../src/gl-window.c:175
+#: src/gl-window.c:181
 msgid "Unable to export log messages to a file"
 msgstr "ലോഗ് സന്ദേശങ്ങള്‍ ഫയലിലേയ്ക്ക് എക്സ്പോര്‍ട്ട് ചെയ്യാന്‍ കഴിയില്ല"
 
-#: ../src/gl-window.c:402 ../src/gl-window.c:433
+#: src/gl-window.c:474 src/gl-window.c:505
 msgid "Unable to read system logs"
 msgstr "സിസ്റ്റം ലോഗുകള്‍ വായിക്കാന്‍ കഴിയില്ല"
 
-#: ../src/gl-window.c:416
+#: src/gl-window.c:488
 msgid "Unable to read user logs"
 msgstr "യൂസര്‍ലോഗുകള്‍ വായിക്കാന്‍ കഴിയില്ല"
 
-#: ../src/gl-window.c:448
+#: src/gl-window.c:520
 msgid "No logs available"
 msgstr "ലോഗുകള്‍ ഒന്നും ലഭ്യമല്ല"
 
