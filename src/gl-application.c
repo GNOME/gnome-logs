@@ -116,17 +116,6 @@ on_about (GSimpleAction *action,
 }
 
 static void
-on_quit (GSimpleAction *action,
-         GVariant *parameter,
-         gpointer user_data)
-{
-    GApplication *application;
-
-    application = G_APPLICATION (user_data);
-    g_application_quit (application);
-}
-
-static void
 on_sort_order_changed (GSettings *settings,
                        const gchar *key,
                        GlApplication *application)
@@ -192,8 +181,7 @@ on_monospace_font_name_changed (GSettings *settings,
 static GActionEntry actions[] = {
     { "new-window", on_new_window },
     { "help", on_help },
-    { "about", on_about },
-    { "quit", on_quit }
+    { "about", on_about }
 };
 
 static void
