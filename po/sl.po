@@ -9,15 +9,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2018-10-11 10:46+0000\n"
-"PO-Revision-Date: 2018-10-25 18:41+0200\n"
+"POT-Creation-Date: 2018-11-26 20:04+0000\n"
+"PO-Revision-Date: 2018-12-01 21:59+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian <gnome-si@googlegroups.com>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n%100==4 ? 3 : 0);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
+"%100==4 ? 3 : 0);\n"
 "X-Generator: Poedit 2.1.1\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
@@ -65,31 +66,27 @@ msgstr "Uporaba"
 msgid "_New Window"
 msgstr "_Novo okno"
 
-#: data/gl-eventtoolbar.ui:13
-msgid "_Help"
-msgstr "Pomo_č"
-
-#: data/gl-eventtoolbar.ui:17
+#: data/gl-eventtoolbar.ui:12
 msgid "Keyboard Shortcuts"
 msgstr "Tipkovne bližnjice"
 
+#: data/gl-eventtoolbar.ui:17
+msgid "_Help"
+msgstr "Pomo_č"
+
 #: data/gl-eventtoolbar.ui:21
-msgid "_About"
+msgid "_About Logs"
 msgstr "_O programu"
 
-#: data/gl-eventtoolbar.ui:26
-msgid "_Quit"
-msgstr "_Končaj"
-
-#: data/gl-eventtoolbar.ui:58
+#: data/gl-eventtoolbar.ui:53
 msgid "Export logs to a file"
 msgstr "Izvozi dnevniški izpis v datoteko"
 
-#: data/gl-eventtoolbar.ui:79
+#: data/gl-eventtoolbar.ui:74
 msgid "Choose the boot from which to view logs"
 msgstr "Izberite zagonski disk, za katerega želite pregledati dnevnik."
 
-#: data/gl-eventtoolbar.ui:91
+#: data/gl-eventtoolbar.ui:86
 msgid "Search all the logs of the current category"
 msgstr "Iskanje vseh dnevnikov v trenutni kategoriji"
 
@@ -381,7 +378,6 @@ msgstr ""
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
 #: data/org.gnome.Logs.desktop.in:12
-#| msgid "gnome-logs"
 msgid "org.gnome.Logs"
 msgstr "org.gnome.Logs"
 
@@ -413,7 +409,7 @@ msgstr "Martin Srebotnjak <miles@filmsi.net>"
 msgid "View and search logs"
 msgstr "Pokaži in preišči dnevnike"
 
-#: src/gl-application.c:243
+#: src/gl-application.c:231
 msgid "Print version information and exit"
 msgstr "Izpiši podatke o različici in končaj"
 
@@ -621,6 +617,9 @@ msgstr "Ni mogoče prebrati uporabniškega dnevnika"
 #: src/gl-window.c:520
 msgid "No logs available"
 msgstr "Ni shranjenih dnevnikov"
+
+#~ msgid "_Quit"
+#~ msgstr "_Končaj"
 
 #~ msgid "Go back to the event view"
 #~ msgstr "Vrni se na pogled dogodkov"
