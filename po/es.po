@@ -2,15 +2,14 @@
 # Copyright (C) 2013 gnome-logs's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-logs package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# Daniel Mustieles <daniel.mustieles@gmail.com>, 2013-2017, 2017.
+# Daniel Mustieles <daniel.mustieles@gmail.com>, 2013-2017, 2017, 2018.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
-"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2017-09-28 11:35+0000\n"
-"PO-Revision-Date: 2017-12-14 12:51+0100\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
+"POT-Creation-Date: 2018-11-12 06:01+0000\n"
+"PO-Revision-Date: 2018-12-04 15:49+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: es <gnome-es-list@gnome.org>\n"
 "Language: es\n"
@@ -18,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Gtranslator 2.91.6\n"
+"X-Generator: Gtranslator 2.91.7\n"
 
 #: data/gl-categorylist.ui:15
 msgid "Important"
@@ -60,15 +59,32 @@ msgstr "Actualizaciones"
 msgid "Usage"
 msgstr "Uso"
 
-#: data/gl-eventtoolbar.ui:9
+#: data/gl-eventtoolbar.ui:6
+msgid "_New Window"
+msgstr "Ventana _nueva"
+
+#: data/gl-eventtoolbar.ui:12
+msgid "Keyboard Shortcuts"
+msgstr "Atajos del teclado"
+
+#: data/gl-eventtoolbar.ui:17
+msgid "_Help"
+msgstr "_Ayuda"
+
+#: data/gl-eventtoolbar.ui:21
+#| msgid "_About"
+msgid "_About Logs"
+msgstr "_Acerca de Registros"
+
+#: data/gl-eventtoolbar.ui:53
 msgid "Export logs to a file"
 msgstr "Exportar registros a un archivo"
 
-#: data/gl-eventtoolbar.ui:30
+#: data/gl-eventtoolbar.ui:74
 msgid "Choose the boot from which to view logs"
 msgstr "Eliga el arranque del que quiere ver los registros"
 
-#: data/gl-eventtoolbar.ui:42
+#: data/gl-eventtoolbar.ui:86
 msgid "Search all the logs of the current category"
 msgstr "Buscar todos los registros de la categoría actual"
 
@@ -154,7 +170,7 @@ msgstr ""
 "Seleccionar rango de marca de tiempo de las entradas del registro que mostrar"
 
 #: data/gl-searchpopover.ui:208 data/gl-searchpopover.ui:1091
-#: src/gl-searchpopover.c:1303
+#: src/gl-searchpopover.c:1309
 msgid "Current Boot"
 msgstr "Arranque actual"
 
@@ -323,26 +339,6 @@ msgctxt "shortcut window"
 msgid "Find"
 msgstr "Buscar"
 
-#: data/menus.ui:6
-msgid "_New Window"
-msgstr "Ventana _nueva"
-
-#: data/menus.ui:13
-msgid "_Help"
-msgstr "_Ayuda"
-
-#: data/menus.ui:17
-msgid "Keyboard Shortcuts"
-msgstr "Atajos del teclado"
-
-#: data/menus.ui:21
-msgid "_About"
-msgstr "_Acerca de"
-
-#: data/menus.ui:26
-msgid "_Quit"
-msgstr "_Salir"
-
 #: data/org.gnome.Logs.appdata.xml.in:7
 msgid "GNOME Logs"
 msgstr "Registros de GNOME"
@@ -367,7 +363,7 @@ msgstr ""
 "Al usar Registros puede buscar en sus registros escribiendo un término de "
 "búsqueda y ver información detallada sobre cada evento al pulsar sobre él."
 
-#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:114
+#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:139
 msgid "Logs"
 msgstr "Registros"
 
@@ -382,8 +378,9 @@ msgstr "registro;diario;depurar;error;"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
 #: data/org.gnome.Logs.desktop.in:12
-msgid "gnome-logs"
-msgstr "gnome-logs"
+#| msgid "gnome-logs"
+msgid "org.gnome.Logs"
+msgstr "org.gnome.Logs"
 
 #: data/org.gnome.Logs.gschema.xml:5
 msgid "Ignore warning"
@@ -416,18 +413,18 @@ msgstr "Daniel Mustieles <daniel.mustieles@gmail.com>, 2013-2016"
 msgid "View and search logs"
 msgstr "Ver y buscar registros"
 
-#: src/gl-application.c:243
+#: src/gl-application.c:231
 msgid "Print version information and exit"
 msgstr "Mostrar información de la versión y salir"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
-#: src/gl-eventtoolbar.c:105
+#: src/gl-eventtoolbar.c:130
 msgid "Boot"
 msgstr "Arranque"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: src/gl-eventviewlist.c:458
+#: src/gl-eventviewlist.c:488
 msgid "No results"
 msgstr "No hay resultados"
 
@@ -461,7 +458,7 @@ msgstr "Hasta %s"
 #. * and end date button label in the custom range submenu,
 #. * showing the day of month in decimal number, full month
 #. * name as string, the year as a decimal number including the century.
-#: src/gl-searchpopover.c:737 src/gl-searchpopover.c:1104
+#: src/gl-searchpopover.c:737 src/gl-searchpopover.c:1107
 msgid "%e %B %Y"
 msgstr "%e %B %Y"
 
@@ -479,7 +476,7 @@ msgstr "PM"
 #. Translators: timestamp format for the custom end time button
 #. * label in the custom range submenu, showing the time with seconds
 #. * in 12-hour format.
-#: src/gl-searchpopover.c:987 src/gl-searchpopover.c:1226
+#: src/gl-searchpopover.c:987 src/gl-searchpopover.c:1229
 msgid "%I:%M:%S %p"
 msgstr "%I:%M:%S %p"
 
@@ -489,7 +486,7 @@ msgstr "%I:%M:%S %p"
 #. Translators: timestamp format for the custom end time button
 #. * label in the custom range submenu, showing the time with seconds
 #. * in 24-hour format.
-#: src/gl-searchpopover.c:994 src/gl-searchpopover.c:1233
+#: src/gl-searchpopover.c:994 src/gl-searchpopover.c:1236
 msgid "%T"
 msgstr "%T"
 
@@ -609,21 +606,24 @@ msgstr "_Guardar"
 msgid "log messages"
 msgstr "mensajes de registro"
 
-#: src/gl-window.c:175
+#: src/gl-window.c:181
 msgid "Unable to export log messages to a file"
 msgstr "No se puede exportar el registro de mensajes a un archivo"
 
-#: src/gl-window.c:402 src/gl-window.c:433
+#: src/gl-window.c:474 src/gl-window.c:505
 msgid "Unable to read system logs"
 msgstr "No se pueden leer los registros del sistema"
 
-#: src/gl-window.c:416
+#: src/gl-window.c:488
 msgid "Unable to read user logs"
 msgstr "No se pueden leer los registros del usuario"
 
-#: src/gl-window.c:448
+#: src/gl-window.c:520
 msgid "No logs available"
 msgstr "No hay registros disponibles"
+
+#~ msgid "_Quit"
+#~ msgstr "_Salir"
 
 #~ msgid "Go back to the event view"
 #~ msgstr "Volver a la vista de eventos"
