@@ -7,21 +7,22 @@
 # Alexandre Franke <alexandre.franke@gmail.com>, 2015.
 # José Fournier <jaaf64@zoraldia.com>, 2017.
 # Jean-Baptiste Holcroft <jean-baptiste@holcroft.fr>, 2017.
+# Charles Monzat <charles.monzat@numericable.fr>, 2018.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
-"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2018-01-03 15:59+0000\n"
-"PO-Revision-Date: 2018-02-27 11:03+0100\n"
-"Last-Translator: Guillaume Bernard <associations@guillaume-bernard.fr>\n"
-"Language-Team: French <traduc@traduc.org>\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
+"POT-Creation-Date: 2018-09-12 16:08+0000\n"
+"PO-Revision-Date: 2018-11-21 12:31+0100\n"
+"Last-Translator: Charles Monzat <charles.monzat@numericable.fr>\n"
+"Language-Team: français <gnomefr@traduc.org>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 2.0.3\n"
+"X-Generator: Gtranslator 3.30.0\n"
 
 #: data/gl-categorylist.ui:15
 msgid "Important"
@@ -119,7 +120,7 @@ msgstr "Documentation"
 msgid "Select journal field and timestamp range filtering options"
 msgstr ""
 "Choisir les options de filtrage « champ de journal » et « intervalle de  "
-"temps » "
+"temps »"
 
 #: data/gl-searchpopover.ui:26
 msgid "Select a Journal Field to filter the Logs according to it"
@@ -156,7 +157,7 @@ msgid "Select Timestamp Range of the Log Entries to be shown"
 msgstr "Choisir un intervalle de temps des entrées de journal à afficher"
 
 #: data/gl-searchpopover.ui:208 data/gl-searchpopover.ui:1091
-#: src/gl-searchpopover.c:1303
+#: src/gl-searchpopover.c:1309
 msgid "Current Boot"
 msgstr "Démarrage courant"
 
@@ -366,11 +367,11 @@ msgid ""
 "Using Logs you can search your logs by typing a search term, and view "
 "detailed information about each event by clicking on it."
 msgstr ""
-"Avec Journaux vous pouvez rechercher dans les journaux en saisissant un "
+"Avec Journaux, vous pouvez rechercher dans les journaux en saisissant un "
 "terme et visualiser des informations détaillées à propos de chaque événement "
 "en cliquant dessus."
 
-#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:137
+#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:139
 msgid "Logs"
 msgstr "Journaux"
 
@@ -427,13 +428,13 @@ msgid "Print version information and exit"
 msgstr "Afficher les informations sur la version et quitter."
 
 #. Translators: Boot refers to a single run (or bootup) of the system
-#: src/gl-eventtoolbar.c:128
+#: src/gl-eventtoolbar.c:130
 msgid "Boot"
 msgstr "Démarrage"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: src/gl-eventviewlist.c:478
+#: src/gl-eventviewlist.c:488
 msgid "No results"
 msgstr "Aucun résultat."
 
@@ -467,7 +468,7 @@ msgstr "Jusqu’au %s"
 #. * and end date button label in the custom range submenu,
 #. * showing the day of month in decimal number, full month
 #. * name as string, the year as a decimal number including the century.
-#: src/gl-searchpopover.c:737 src/gl-searchpopover.c:1104
+#: src/gl-searchpopover.c:737 src/gl-searchpopover.c:1107
 msgid "%e %B %Y"
 msgstr "%e %B %Y"
 
@@ -485,7 +486,7 @@ msgstr "p.m."
 #. Translators: timestamp format for the custom end time button
 #. * label in the custom range submenu, showing the time with seconds
 #. * in 12-hour format.
-#: src/gl-searchpopover.c:987 src/gl-searchpopover.c:1226
+#: src/gl-searchpopover.c:987 src/gl-searchpopover.c:1229
 msgid "%I:%M:%S %p"
 msgstr "%I:%M:%S %p"
 
@@ -495,7 +496,7 @@ msgstr "%I:%M:%S %p"
 #. Translators: timestamp format for the custom end time button
 #. * label in the custom range submenu, showing the time with seconds
 #. * in 24-hour format.
-#: src/gl-searchpopover.c:994 src/gl-searchpopover.c:1233
+#: src/gl-searchpopover.c:994 src/gl-searchpopover.c:1236
 msgid "%T"
 msgstr "%T"
 
@@ -615,19 +616,19 @@ msgstr "_Enregistrer"
 msgid "log messages"
 msgstr "messages de journal"
 
-#: src/gl-window.c:175
+#: src/gl-window.c:181
 msgid "Unable to export log messages to a file"
 msgstr "Impossible d’exporter les messages de journalisation dans un fichier"
 
-#: src/gl-window.c:439 src/gl-window.c:470
+#: src/gl-window.c:474 src/gl-window.c:505
 msgid "Unable to read system logs"
 msgstr "Impossible de lire les journaux systèmes"
 
-#: src/gl-window.c:453
+#: src/gl-window.c:488
 msgid "Unable to read user logs"
 msgstr "Impossible de lire les journaux utilisateurs"
 
-#: src/gl-window.c:485
+#: src/gl-window.c:520
 msgid "No logs available"
 msgstr "Aucun journal disponible"
 
