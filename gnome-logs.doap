@@ -10,7 +10,7 @@
   Filter logs by category and importance to get the information you want. Use
   the integrated search to get more relevant results.</description>
   <homepage rdf:resource="https://wiki.gnome.org/Apps/Logs" />
-  <bug-database rdf:resource="https://bugzilla.gnome.org/browse.cgi?product=gnome-logs" />
+  <bug-database rdf:resource="https://gitlab.gnome.org/GNOME/gnome-logs/issues/" />
   <category rdf:resource="http://api.gnome.org/doap-extensions#apps" />
   <repository>
     <GitRepository>
