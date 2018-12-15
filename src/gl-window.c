@@ -402,6 +402,13 @@ gl_window_init (GlWindow *window)
     gboolean ignore;
     GlJournalModel *model;
 
+    /* Ensure these types that are used by the template have been
+     * registered before calling gtk_widget_init_template().
+     */
+    g_type_ensure(GL_TYPE_CATEGORY_LIST);
+    g_type_ensure(GL_TYPE_EVENT_TOOLBAR);
+    g_type_ensure(GL_TYPE_EVENT_VIEW_LIST);
+
     gtk_widget_init_template (GTK_WIDGET (window));
 
     priv = gl_window_get_instance_private (window);
