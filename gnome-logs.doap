@@ -14,8 +14,8 @@
   <category rdf:resource="http://api.gnome.org/doap-extensions#apps" />
   <repository>
     <GitRepository>
-      <location rdf:resource="git://git.gnome.org/gnome-logs" />
-      <browse rdf:resource="https://git.gnome.org/browse/gnome-logs/" />
+      <location rdf:resource="https://gitlab.gnome.org/GNOME/gnome-logs.git" />
+      <browse rdf:resource="https://gitlab.gnome.org/GNOME/gnome-logs" />
     </GitRepository>
   </repository>
   <programming-language>C</programming-language>
