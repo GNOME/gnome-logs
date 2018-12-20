@@ -110,7 +110,7 @@ on_about (GSimpleAction *action,
                            "comments", _("View and search logs"),
                            "copyright", "Copyright © 2013–2015 Red Hat, Inc.\nCopyright © 2014-2015 Jonathan Kang",
                            "license-type", GTK_LICENSE_GPL_3_0,
-                           "logo-icon-name", PACKAGE_TARNAME,
+                           "logo-icon-name", "org.gnome.Logs",
                            "version", PACKAGE_VERSION,
                            "website", PACKAGE_URL, NULL);
 }
