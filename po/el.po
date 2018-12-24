@@ -7,10 +7,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
-"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2018-01-03 15:59+0000\n"
-"PO-Revision-Date: 2018-02-16 22:10+0200\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
+"POT-Creation-Date: 2018-11-12 06:01+0000\n"
+"PO-Revision-Date: 2018-12-24 14:17+0200\n"
 "Last-Translator: Efstathios Iosifidis <iosifidis@opensuse.org>\n"
 "Language-Team: Ελληνικά <>\n"
 "Language: el\n"
@@ -18,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Gtranslator 2.91.7\n"
+"X-Generator: Poedit 2.0.7\n"
 "X-Project-Style: gnome\n"
 
 #: data/gl-categorylist.ui:15
@@ -61,15 +60,31 @@ msgstr "Ενημερώσεις"
 msgid "Usage"
 msgstr "Χρήση"
 
-#: data/gl-eventtoolbar.ui:9
+#: data/gl-eventtoolbar.ui:6
+msgid "_New Window"
+msgstr "_Νέο παράθυρο"
+
+#: data/gl-eventtoolbar.ui:12
+msgid "Keyboard Shortcuts"
+msgstr "Συντομεύσεις πληκτρολογίου"
+
+#: data/gl-eventtoolbar.ui:17
+msgid "_Help"
+msgstr "_Βοήθεια"
+
+#: data/gl-eventtoolbar.ui:21
+msgid "_About Logs"
+msgstr "_Περί του Καταγραφές"
+
+#: data/gl-eventtoolbar.ui:53
 msgid "Export logs to a file"
 msgstr "Εξαγωγή καταγραφών σε αρχείο"
 
-#: data/gl-eventtoolbar.ui:30
+#: data/gl-eventtoolbar.ui:74
 msgid "Choose the boot from which to view logs"
 msgstr "Επιλέξτε μια εκκίνηση συστήματος για να δείτε τις καταγραφές"
 
-#: data/gl-eventtoolbar.ui:42
+#: data/gl-eventtoolbar.ui:86
 msgid "Search all the logs of the current category"
 msgstr "Αναζήτηση όλων των εγγραφών της τρεχουσας κατηγορίας"
 
@@ -157,7 +172,7 @@ msgstr ""
 "Επιλέξτε το εύρος χρονικής σήμανσης για τις καταγραφές που θα εμφανιστούν"
 
 #: data/gl-searchpopover.ui:208 data/gl-searchpopover.ui:1091
-#: src/gl-searchpopover.c:1303
+#: src/gl-searchpopover.c:1309
 msgid "Current Boot"
 msgstr "Τρέχουσα εκκίνηση"
 
@@ -326,26 +341,6 @@ msgctxt "shortcut window"
 msgid "Find"
 msgstr "Εύρεση"
 
-#: data/menus.ui:6
-msgid "_New Window"
-msgstr "_Νέο παράθυρο"
-
-#: data/menus.ui:13
-msgid "_Help"
-msgstr "_Βοήθεια"
-
-#: data/menus.ui:17
-msgid "Keyboard Shortcuts"
-msgstr "Συντομεύσεις πληκτρολογίου"
-
-#: data/menus.ui:21
-msgid "_About"
-msgstr "_Περί"
-
-#: data/menus.ui:26
-msgid "_Quit"
-msgstr "Έ_ξοδος"
-
 #: data/org.gnome.Logs.appdata.xml.in:7
 msgid "GNOME Logs"
 msgstr "Καταγραφές GNOME"
@@ -371,7 +366,7 @@ msgstr ""
 "καταγραφών πληκτρολογώντας έναν όρο αναζήτησης και να προβάλετε λεπτομερείς "
 "πληροφορίες για κάθε συμβάν πατώντας πάνω του."
 
-#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:137
+#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:139
 msgid "Logs"
 msgstr "Καταγραφές"
 
@@ -386,8 +381,8 @@ msgstr "καταγραφή;ημερολόγιο;αποσφαλμάτωση;σφ�
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
 #: data/org.gnome.Logs.desktop.in:12
-msgid "gnome-logs"
-msgstr "gnome-logs"
+msgid "org.gnome.Logs"
+msgstr "org.gnome.Logs"
 
 #: data/org.gnome.Logs.gschema.xml:5
 msgid "Ignore warning"
@@ -425,18 +420,18 @@ msgstr ""
 msgid "View and search logs"
 msgstr "Δείτε και ψάξτε καταγραφές"
 
-#: src/gl-application.c:243
+#: src/gl-application.c:231
 msgid "Print version information and exit"
 msgstr "Προβολή πληροφοριών έκδοσης και έξοδος"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
-#: src/gl-eventtoolbar.c:128
+#: src/gl-eventtoolbar.c:130
 msgid "Boot"
 msgstr "Εκκίνηση"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: src/gl-eventviewlist.c:478
+#: src/gl-eventviewlist.c:488
 msgid "No results"
 msgstr "Χωρίς αποτελέσματα"
 
@@ -470,7 +465,7 @@ msgstr "Μέχρι %s"
 #. * and end date button label in the custom range submenu,
 #. * showing the day of month in decimal number, full month
 #. * name as string, the year as a decimal number including the century.
-#: src/gl-searchpopover.c:737 src/gl-searchpopover.c:1104
+#: src/gl-searchpopover.c:737 src/gl-searchpopover.c:1107
 msgid "%e %B %Y"
 msgstr "%e %B %Y"
 
@@ -488,7 +483,7 @@ msgstr "M.M."
 #. Translators: timestamp format for the custom end time button
 #. * label in the custom range submenu, showing the time with seconds
 #. * in 12-hour format.
-#: src/gl-searchpopover.c:987 src/gl-searchpopover.c:1226
+#: src/gl-searchpopover.c:987 src/gl-searchpopover.c:1229
 msgid "%I:%M:%S %p"
 msgstr "%l:%M:%S %p"
 
@@ -498,7 +493,7 @@ msgstr "%l:%M:%S %p"
 #. Translators: timestamp format for the custom end time button
 #. * label in the custom range submenu, showing the time with seconds
 #. * in 24-hour format.
-#: src/gl-searchpopover.c:994 src/gl-searchpopover.c:1233
+#: src/gl-searchpopover.c:994 src/gl-searchpopover.c:1236
 msgid "%T"
 msgstr "%T"
 
@@ -618,21 +613,24 @@ msgstr "_Αποθήκευση"
 msgid "log messages"
 msgstr "καταγραφή μηνυμάτων"
 
-#: src/gl-window.c:175
+#: src/gl-window.c:181
 msgid "Unable to export log messages to a file"
 msgstr "Αδυναμία εξαγωγής των καταγραφών σε αρχείο"
 
-#: src/gl-window.c:439 src/gl-window.c:470
+#: src/gl-window.c:474 src/gl-window.c:505
 msgid "Unable to read system logs"
 msgstr "Αδυναμία ανάγνωσης καταγραφών του συστήματος"
 
-#: src/gl-window.c:453
+#: src/gl-window.c:488
 msgid "Unable to read user logs"
 msgstr "Αδυναμία ανάγνωσης καταγραφών του χρήστη"
 
-#: src/gl-window.c:485
+#: src/gl-window.c:520
 msgid "No logs available"
 msgstr "Δεν υπάρχουν εγγραφές"
+
+#~ msgid "_Quit"
+#~ msgstr "Έ_ξοδος"
 
 #~ msgid "Go back to the event view"
 #~ msgstr "Επιστροφή στην προβολή συμβάντων"
