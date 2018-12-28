@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2018-09-12 12:37+0000\n"
-"PO-Revision-Date: 2018-09-12 17:26+0200\n"
+"POT-Creation-Date: 2018-12-05 09:48+0000\n"
+"PO-Revision-Date: 2018-12-28 12:02+0100\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.1.1\n"
+"X-Generator: Poedit 2.2\n"
 
 #: data/gl-categorylist.ui:15
 msgid "Important"
@@ -58,15 +58,31 @@ msgstr "Uppdateringar"
 msgid "Usage"
 msgstr "Användning"
 
-#: data/gl-eventtoolbar.ui:9
+#: data/gl-eventtoolbar.ui:6
+msgid "_New Window"
+msgstr "_Nytt fönster"
+
+#: data/gl-eventtoolbar.ui:12
+msgid "Keyboard Shortcuts"
+msgstr "Tangentbordsgenvägar"
+
+#: data/gl-eventtoolbar.ui:17
+msgid "_Help"
+msgstr "_Hjälp"
+
+#: data/gl-eventtoolbar.ui:21
+msgid "_About Logs"
+msgstr "_Om Loggar"
+
+#: data/gl-eventtoolbar.ui:53
 msgid "Export logs to a file"
 msgstr "Exportera loggar till en fil"
 
-#: data/gl-eventtoolbar.ui:30
+#: data/gl-eventtoolbar.ui:74
 msgid "Choose the boot from which to view logs"
 msgstr "Välj uppstarten från vilken loggar ska visas"
 
-#: data/gl-eventtoolbar.ui:42
+#: data/gl-eventtoolbar.ui:86
 msgid "Search all the logs of the current category"
 msgstr "Sök alla loggar för den aktuella kategorin"
 
@@ -318,26 +334,6 @@ msgctxt "shortcut window"
 msgid "Find"
 msgstr "Sök"
 
-#: data/menus.ui:6
-msgid "_New Window"
-msgstr "_Nytt fönster"
-
-#: data/menus.ui:13
-msgid "_Help"
-msgstr "_Hjälp"
-
-#: data/menus.ui:17
-msgid "Keyboard Shortcuts"
-msgstr "Tangentbordsgenvägar"
-
-#: data/menus.ui:21
-msgid "_About"
-msgstr "_Om"
-
-#: data/menus.ui:26
-msgid "_Quit"
-msgstr "_Avsluta"
-
 #: data/org.gnome.Logs.appdata.xml.in:7
 msgid "GNOME Logs"
 msgstr "GNOME Loggar"
@@ -377,7 +373,6 @@ msgstr "logg;journal;debug;avlusning;fel;felsökning;"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
 #: data/org.gnome.Logs.desktop.in:12
-#| msgid "gnome-logs"
 msgid "org.gnome.Logs"
 msgstr "org.gnome.Logs"
 
@@ -415,7 +410,7 @@ msgstr ""
 msgid "View and search logs"
 msgstr "Visa och sök igenom loggar"
 
-#: src/gl-application.c:243
+#: src/gl-application.c:231
 msgid "Print version information and exit"
 msgstr "Skriv ut versionsinformation och avsluta"
 
@@ -623,6 +618,9 @@ msgstr "Kan ej läsa användarloggar"
 #: src/gl-window.c:520
 msgid "No logs available"
 msgstr "Inga loggar tillgängliga"
+
+#~ msgid "_Quit"
+#~ msgstr "_Avsluta"
 
 #~ msgid "Go back to the event view"
 #~ msgstr "Gå tillbaka till händelsevyn"
