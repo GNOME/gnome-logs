@@ -1,3 +1,12 @@
+GNOME Logs 3.31.4
+=================
+
+* updated DOAP file from Andre Klapper
+* code clean up
+* replacing *_get_type() with g_type_ensure()
+* fix app icon not showing in about dialog
+* updates to Greek, Friulian, Swedish and Turkish translations
+
 GNOME Logs 3.31.3
 =================
 
