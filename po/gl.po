@@ -1,22 +1,22 @@
 # English translations for PACKAGE package.
 # Copyright (C) 2013 THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# Fran Dieguez <frandieguez@gnome.org>, 2013, 2014, 2015, 2016, 2017, 2018.
+# Fran Dieguez <frandieguez@gnome.org>, 2013-2019.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs\n"
-"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2018-01-03 15:59+0000\n"
-"PO-Revision-Date: 2018-02-17 13:58+0200\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
+"POT-Creation-Date: 2018-11-12 06:01+0000\n"
+"PO-Revision-Date: 2019-01-29 00:04+0100\n"
 "Last-Translator: Fran Dieguez <frandieguez@gnome.org>\n"
-"Language-Team: Galician\n"
+"Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Virtaal 0.7.1\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"X-Generator: Gtranslator 3.30.0\n"
 "X-Project-Style: gnome\n"
 
 #: data/gl-categorylist.ui:15
@@ -59,15 +59,32 @@ msgstr "Actualizacións"
 msgid "Usage"
 msgstr "Uso"
 
-#: data/gl-eventtoolbar.ui:9
+#: data/gl-eventtoolbar.ui:6
+msgid "_New Window"
+msgstr "_Nova xanela"
+
+#: data/gl-eventtoolbar.ui:12
+msgid "Keyboard Shortcuts"
+msgstr "Atallos de teclado"
+
+#: data/gl-eventtoolbar.ui:17
+msgid "_Help"
+msgstr "_Axuda"
+
+#: data/gl-eventtoolbar.ui:21
+#| msgid "_About"
+msgid "_About Logs"
+msgstr "_Sobre Rexistros"
+
+#: data/gl-eventtoolbar.ui:53
 msgid "Export logs to a file"
 msgstr "Exportar rexistros a un ficheiro"
 
-#: data/gl-eventtoolbar.ui:30
+#: data/gl-eventtoolbar.ui:74
 msgid "Choose the boot from which to view logs"
 msgstr "Escoller o arrinque desde o que quere ver rexistros"
 
-#: data/gl-eventtoolbar.ui:42
+#: data/gl-eventtoolbar.ui:86
 msgid "Search all the logs of the current category"
 msgstr "Buscar en todos os rexistros da categoría actual"
 
@@ -152,7 +169,7 @@ msgid "Select Timestamp Range of the Log Entries to be shown"
 msgstr "Seleccionar un rango de marcas nas que mostrar as entradas do rexistro"
 
 #: data/gl-searchpopover.ui:208 data/gl-searchpopover.ui:1091
-#: src/gl-searchpopover.c:1303
+#: src/gl-searchpopover.c:1309
 msgid "Current Boot"
 msgstr "Arrinque actual"
 
@@ -321,26 +338,6 @@ msgctxt "shortcut window"
 msgid "Find"
 msgstr "Buscar"
 
-#: data/menus.ui:6
-msgid "_New Window"
-msgstr "_Nova xanela"
-
-#: data/menus.ui:13
-msgid "_Help"
-msgstr "_Axuda"
-
-#: data/menus.ui:17
-msgid "Keyboard Shortcuts"
-msgstr "Atallos de teclado"
-
-#: data/menus.ui:21
-msgid "_About"
-msgstr "_Sobre"
-
-#: data/menus.ui:26
-msgid "_Quit"
-msgstr "_Saír"
-
 #: data/org.gnome.Logs.appdata.xml.in:7
 msgid "GNOME Logs"
 msgstr "Rexistros de GNOME"
@@ -365,7 +362,7 @@ msgstr ""
 "Ao usar Rexistros pode buscar nos seus rexistros escribindo na caixa de "
 "busca, e ver información detallada sobre cada evento premendo nel."
 
-#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:137
+#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:139
 msgid "Logs"
 msgstr "Rexistros"
 
@@ -380,8 +377,9 @@ msgstr "rexistro;diario;depuración;erro;"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
 #: data/org.gnome.Logs.desktop.in:12
-msgid "gnome-logs"
-msgstr "gnome-logs"
+#| msgid "gnome-logs"
+msgid "org.gnome.Logs"
+msgstr "org.gnome.Logs"
 
 #: data/org.gnome.Logs.gschema.xml:5
 msgid "Ignore warning"
@@ -413,18 +411,18 @@ msgstr "Fran Dieguez <frandieguez@gnome.org>, 2013-2017."
 msgid "View and search logs"
 msgstr "Ver e buscar rexistros"
 
-#: src/gl-application.c:243
+#: src/gl-application.c:231
 msgid "Print version information and exit"
 msgstr "Imprimir información da versión e sair"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
-#: src/gl-eventtoolbar.c:128
+#: src/gl-eventtoolbar.c:130
 msgid "Boot"
 msgstr "Arrinque"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: src/gl-eventviewlist.c:478
+#: src/gl-eventviewlist.c:488
 msgid "No results"
 msgstr "Sen resultados"
 
@@ -458,7 +456,7 @@ msgstr "Até %s"
 #. * and end date button label in the custom range submenu,
 #. * showing the day of month in decimal number, full month
 #. * name as string, the year as a decimal number including the century.
-#: src/gl-searchpopover.c:737 src/gl-searchpopover.c:1104
+#: src/gl-searchpopover.c:737 src/gl-searchpopover.c:1107
 msgid "%e %B %Y"
 msgstr "%e de %B de %Y"
 
@@ -476,7 +474,7 @@ msgstr "PM"
 #. Translators: timestamp format for the custom end time button
 #. * label in the custom range submenu, showing the time with seconds
 #. * in 12-hour format.
-#: src/gl-searchpopover.c:987 src/gl-searchpopover.c:1226
+#: src/gl-searchpopover.c:987 src/gl-searchpopover.c:1229
 msgid "%I:%M:%S %p"
 msgstr "%I:%M:%S %p"
 
@@ -486,7 +484,7 @@ msgstr "%I:%M:%S %p"
 #. Translators: timestamp format for the custom end time button
 #. * label in the custom range submenu, showing the time with seconds
 #. * in 24-hour format.
-#: src/gl-searchpopover.c:994 src/gl-searchpopover.c:1233
+#: src/gl-searchpopover.c:994 src/gl-searchpopover.c:1236
 msgid "%T"
 msgstr "%T"
 
@@ -606,21 +604,24 @@ msgstr "_Gardar"
 msgid "log messages"
 msgstr "mensaxes de rexistro"
 
-#: src/gl-window.c:175
+#: src/gl-window.c:181
 msgid "Unable to export log messages to a file"
 msgstr "Non foi posíbel exportar os mensaxes de rexistro a un ficheiro"
 
-#: src/gl-window.c:439 src/gl-window.c:470
+#: src/gl-window.c:474 src/gl-window.c:505
 msgid "Unable to read system logs"
 msgstr "Non foi posíbel ler os rexistros do sistema"
 
-#: src/gl-window.c:453
+#: src/gl-window.c:488
 msgid "Unable to read user logs"
 msgstr "Non foi posíbel ler os rexistros do usuario"
 
-#: src/gl-window.c:485
+#: src/gl-window.c:520
 msgid "No logs available"
 msgstr "Non hai rexistros dispoñíbeis"
+
+#~ msgid "_Quit"
+#~ msgstr "_Saír"
 
 #~ msgid "Go back to the event view"
 #~ msgstr "Volver á vista de eventos"
