@@ -6,17 +6,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
-"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2017-09-28 11:35+0000\n"
-"PO-Revision-Date: 2017-11-03 12:58+0700\n"
-"Last-Translator: Kukuh Syafaat <syafaatkukuh@gmail.com>\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
+"POT-Creation-Date: 2018-11-12 06:01+0000\n"
+"PO-Revision-Date: 2019-01-06 20:56+0700\n"
+"Last-Translator: Kukuh Syafaat <kukuhsyafaat@gnome.org>\n"
 "Language-Team: Indonesian <gnome@i15n.org>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.3\n"
+"X-Generator: Poedit 2.0.6\n"
 
 #: data/gl-categorylist.ui:15
 msgid "Important"
@@ -58,15 +57,31 @@ msgstr "Pemutakhiran"
 msgid "Usage"
 msgstr "Cara Pakai"
 
-#: data/gl-eventtoolbar.ui:9
+#: data/gl-eventtoolbar.ui:6
+msgid "_New Window"
+msgstr "Je_ndela Baru"
+
+#: data/gl-eventtoolbar.ui:12
+msgid "Keyboard Shortcuts"
+msgstr "Tombol Pintas"
+
+#: data/gl-eventtoolbar.ui:17
+msgid "_Help"
+msgstr "_Bantuan"
+
+#: data/gl-eventtoolbar.ui:21
+msgid "_About Logs"
+msgstr "Tent_ang Log"
+
+#: data/gl-eventtoolbar.ui:53
 msgid "Export logs to a file"
 msgstr "Ekspor log ke berkas"
 
-#: data/gl-eventtoolbar.ui:30
+#: data/gl-eventtoolbar.ui:74
 msgid "Choose the boot from which to view logs"
 msgstr "Pilih boot yang akan dilihat lognya"
 
-#: data/gl-eventtoolbar.ui:42
+#: data/gl-eventtoolbar.ui:86
 msgid "Search all the logs of the current category"
 msgstr "Cari semua log dengan kategori saat ini"
 
@@ -149,7 +164,7 @@ msgid "Select Timestamp Range of the Log Entries to be shown"
 msgstr "Pilih Rentang Timestamp dari Entri Log yang akan ditampilkan"
 
 #: data/gl-searchpopover.ui:208 data/gl-searchpopover.ui:1091
-#: src/gl-searchpopover.c:1303
+#: src/gl-searchpopover.c:1309
 msgid "Current Boot"
 msgstr "Boot Saat Ini"
 
@@ -318,29 +333,9 @@ msgctxt "shortcut window"
 msgid "Find"
 msgstr "Temukan"
 
-#: data/menus.ui:6
-msgid "_New Window"
-msgstr "Je_ndela Baru"
-
-#: data/menus.ui:13
-msgid "_Help"
-msgstr "_Bantuan"
-
-#: data/menus.ui:17
-msgid "Keyboard Shortcuts"
-msgstr "Tombol Pintas"
-
-#: data/menus.ui:21
-msgid "_About"
-msgstr "Tent_ang"
-
-#: data/menus.ui:26
-msgid "_Quit"
-msgstr "_Keluar"
-
 #: data/org.gnome.Logs.appdata.xml.in:7
 msgid "GNOME Logs"
-msgstr "GNOME Logs"
+msgstr "GNOME Log"
 
 #: data/org.gnome.Logs.appdata.xml.in:8 data/org.gnome.Logs.desktop.in:5
 msgid "View detailed event logs for the system"
@@ -351,7 +346,7 @@ msgid ""
 "Logs shows events from the systemd journal, and sorts them into categories, "
 "such as hardware and applications."
 msgstr ""
-"Logs menampilkan peristiwa dari jurnal systemd, dan memilah mereka ke dalam "
+"Log menampilkan peristiwa dari jurnal systemd, dan memilah mereka ke dalam "
 "kategori-kategori, seperti perangkat keras dan aplikasi"
 
 #: data/org.gnome.Logs.appdata.xml.in:12
@@ -359,11 +354,11 @@ msgid ""
 "Using Logs you can search your logs by typing a search term, and view "
 "detailed information about each event by clicking on it."
 msgstr ""
-"Memakai Logs Anda dapat mencari catatan log Anda dengan mengetikkan istilah "
+"Memakai Log Anda dapat mencari catatan log Anda dengan mengetikkan istilah "
 "yang ingin dicari, dan melihat informasi terrinci tentang setiap kejadian "
 "dengan mengkliknya."
 
-#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:114
+#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:139
 msgid "Logs"
 msgstr "Log"
 
@@ -378,8 +373,8 @@ msgstr "log;jurnal;awakutu;galat;"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
 #: data/org.gnome.Logs.desktop.in:12
-msgid "gnome-logs"
-msgstr "gnome-logs"
+msgid "org.gnome.Logs"
+msgstr "org.gnome.Logs"
 
 #: data/org.gnome.Logs.gschema.xml:5
 msgid "Ignore warning"
@@ -406,24 +401,24 @@ msgstr "Urutkan baris daftar arah naik atau turun bagi tipe yang dipilih"
 msgid "translator-credits"
 msgstr ""
 "Andika Triwidada <andika@gmail.com>, 2013, 2014, 2016.\n"
-"Kukuh Syafaat <syafaatkukuh@gmail.com>, 2017."
+"Kukuh Syafaat <kukuhsyafaat@gnome.org>, 2017, 2019."
 
 #: src/gl-application.c:110
 msgid "View and search logs"
 msgstr "Tilik dan cari log"
 
-#: src/gl-application.c:243
+#: src/gl-application.c:231
 msgid "Print version information and exit"
 msgstr "Cetak informasi versi dan keluar"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
-#: src/gl-eventtoolbar.c:105
+#: src/gl-eventtoolbar.c:130
 msgid "Boot"
 msgstr "Boot"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: src/gl-eventviewlist.c:458
+#: src/gl-eventviewlist.c:488
 msgid "No results"
 msgstr "Tiada hasil"
 
@@ -457,7 +452,7 @@ msgstr "Sampai %s"
 #. * and end date button label in the custom range submenu,
 #. * showing the day of month in decimal number, full month
 #. * name as string, the year as a decimal number including the century.
-#: src/gl-searchpopover.c:737 src/gl-searchpopover.c:1104
+#: src/gl-searchpopover.c:737 src/gl-searchpopover.c:1107
 msgid "%e %B %Y"
 msgstr "%e %B %Y"
 
@@ -475,7 +470,7 @@ msgstr "PM"
 #. Translators: timestamp format for the custom end time button
 #. * label in the custom range submenu, showing the time with seconds
 #. * in 12-hour format.
-#: src/gl-searchpopover.c:987 src/gl-searchpopover.c:1226
+#: src/gl-searchpopover.c:987 src/gl-searchpopover.c:1229
 msgid "%I:%M:%S %p"
 msgstr "%I:%M:%S %p"
 
@@ -485,7 +480,7 @@ msgstr "%I:%M:%S %p"
 #. Translators: timestamp format for the custom end time button
 #. * label in the custom range submenu, showing the time with seconds
 #. * in 24-hour format.
-#: src/gl-searchpopover.c:994 src/gl-searchpopover.c:1233
+#: src/gl-searchpopover.c:994 src/gl-searchpopover.c:1236
 msgid "%T"
 msgstr "%T"
 
@@ -605,21 +600,24 @@ msgstr "_Simpan"
 msgid "log messages"
 msgstr "pesan log"
 
-#: src/gl-window.c:175
+#: src/gl-window.c:181
 msgid "Unable to export log messages to a file"
 msgstr "Tidak bisa mengekspor pesan log ke berkas"
 
-#: src/gl-window.c:402 src/gl-window.c:433
+#: src/gl-window.c:474 src/gl-window.c:505
 msgid "Unable to read system logs"
-msgstr "Tidak bisa membaca log system"
+msgstr "Tidak bisa membaca log sistem"
 
-#: src/gl-window.c:416
+#: src/gl-window.c:488
 msgid "Unable to read user logs"
 msgstr "Tidak bisa membaca log pengguna"
 
-#: src/gl-window.c:448
+#: src/gl-window.c:520
 msgid "No logs available"
 msgstr "Tidak ada log yang tersedia"
+
+#~ msgid "_Quit"
+#~ msgstr "_Keluar"
 
 #~ msgid "Go back to the event view"
 #~ msgstr "Kembali ke tilikan kejadian"
