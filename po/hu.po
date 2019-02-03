@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2018-11-12 06:01+0000\n"
-"PO-Revision-Date: 2019-01-27 17:14+0100\n"
+"POT-Creation-Date: 2019-01-27 16:15+0000\n"
+"PO-Revision-Date: 2019-02-03 15:42+0100\n"
 "Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
 "Language-Team: Hungarian <gnome-hu-list at gnome dot org>\n"
 "Language: hu\n"
@@ -129,7 +129,7 @@ msgstr "Támogatás"
 msgid "Documentation"
 msgstr "Dokumentáció"
 
-#: data/gl-eventviewlist.ui:43
+#: data/gl-eventviewlist.ui:42
 msgid "Select journal field and timestamp range filtering options"
 msgstr ""
 "Válassza ki a naplómező- és az időbélyeg-tartomány szűrési beállításait"
@@ -305,11 +305,11 @@ msgstr "Teljes napló"
 msgid "Set Custom Range…"
 msgstr "Egyéni tartomány megadása…"
 
-#: data/gl-window.ui:31
+#: data/gl-window.ui:26
 msgid "Help"
 msgstr "Súgó"
 
-#: data/gl-window.ui:39
+#: data/gl-window.ui:34
 msgid "Ignore"
 msgstr "Kihagyás"
 
@@ -412,7 +412,7 @@ msgstr ""
 msgid "View and search logs"
 msgstr "Naplók megtekintése és keresése"
 
-#: src/gl-application.c:231
+#: src/gl-application.c:225
 msgid "Print version information and exit"
 msgstr "Verzióinformációk kiírása és kilépés"
 
@@ -459,7 +459,7 @@ msgstr "Eddig: %s"
 #. * name as string, the year as a decimal number including the century.
 #: src/gl-searchpopover.c:737 src/gl-searchpopover.c:1107
 msgid "%e %B %Y"
-msgstr "%Y. %B %e"
+msgstr "%Y. %B %-e."
 
 #: src/gl-searchpopover.c:875
 msgid "AM"
@@ -477,7 +477,7 @@ msgstr "du"
 #. * in 12-hour format.
 #: src/gl-searchpopover.c:987 src/gl-searchpopover.c:1229
 msgid "%I:%M:%S %p"
-msgstr "%p %I:%M:%S"
+msgstr "%H:%M:%S"
 
 #. Translators: timestamp format for the custom start time button
 #. * label in the custom range submenu, showing the time with seconds
@@ -494,14 +494,14 @@ msgstr "%T"
 #. * 12-hour format.
 #: src/gl-util.c:148
 msgid "%l:%M:%S %p"
-msgstr "%p %l:%M:%S"
+msgstr "%H:%M:%S"
 
 #. Translators: timestamp format for events on the
 #. * current day, showing the time without seconds in
 #. * 12-hour format.
 #: src/gl-util.c:155
 msgid "%l:%M %p"
-msgstr "%p %l:%M"
+msgstr "%H:%M"
 
 #. Translators: timestamp format for events in
 #. * the current year, showing the abbreviated
@@ -509,7 +509,7 @@ msgstr "%p %l:%M"
 #. * with seconds in 12-hour format.
 #: src/gl-util.c:166
 msgid "%b %e %l:%M:%S %p"
-msgstr "%b %e. %p %l:%M:%S"
+msgstr "%b. %-e. %H:%M:%S"
 
 #. Translators: timestamp format for events in the
 #. * current year, showing the abbreviated month name,
@@ -517,7 +517,7 @@ msgstr "%b %e. %p %l:%M:%S"
 #. * 12-hour format.
 #: src/gl-util.c:174
 msgid "%b %e %l:%M %p"
-msgstr "%b %e. %p %l:%M"
+msgstr "%b. %-e. %H:%M"
 
 #. Translators: timestamp format for events in
 #. * a different year, showing the abbreviated
@@ -525,7 +525,7 @@ msgstr "%b %e. %p %l:%M"
 #. * time with seconds in 12-hour format.
 #: src/gl-util.c:185
 msgid "%b %e %Y %l:%M:%S %p"
-msgstr "%Y. %b %e. %p %l:%M:%S"
+msgstr "%Y. %b. %-e. %H:%M:%S"
 
 #. Translators: timestamp format for events in
 #. * a different year, showing the abbreviated
@@ -533,7 +533,7 @@ msgstr "%Y. %b %e. %p %l:%M:%S"
 #. * time without seconds in 12-hour format.
 #: src/gl-util.c:194
 msgid "%b %e %Y %l:%M %p"
-msgstr "%Y. %b %e. %p %l.%M"
+msgstr "%Y. %b. %-e. %H:%M"
 
 #. Translators: timestamp format for events on the
 #. * current day, showing the time with seconds in
@@ -555,7 +555,7 @@ msgstr "%H:%M"
 #. * 24-hour format.
 #: src/gl-util.c:228
 msgid "%b %e %H:%M:%S"
-msgstr "%b %e. %H:%M:%S"
+msgstr "%b. %-e. %H:%M:%S"
 
 #. Translators: timestamp format for events in the
 #. * current year, showing the abbreviated month name,
@@ -563,7 +563,7 @@ msgstr "%b %e. %H:%M:%S"
 #. * 24-hour format.
 #: src/gl-util.c:236
 msgid "%b %e %H:%M"
-msgstr "%b %e. %H:%M"
+msgstr "%b. %-e. %H:%M"
 
 #. Translators: timestamp format for events in
 #. * a different year, showing the abbreviated
@@ -571,7 +571,7 @@ msgstr "%b %e. %H:%M"
 #. * time with seconds in 24-hour format.
 #: src/gl-util.c:247
 msgid "%b %e %Y %H:%M:%S"
-msgstr "%Y. %b %e. %H:%M:%S"
+msgstr "%Y. %b. %-e. %H:%M:%S"
 
 #. Translators: timestamp format for events in a
 #. * different year, showing the abbreviated month name,
@@ -579,7 +579,7 @@ msgstr "%Y. %b %e. %H:%M:%S"
 #. * in 24-hour format.
 #: src/gl-util.c:255
 msgid "%b %e %Y %H:%M"
-msgstr "%Y. %b %e. %H:%M"
+msgstr "%Y. %b. %-e. %H:%M"
 
 #. Transltors: the first string is the earliest timestamp of the boot,
 #. * and the second string is the newest timestamp. An example string might
@@ -609,15 +609,15 @@ msgstr "naplóüzenetek"
 msgid "Unable to export log messages to a file"
 msgstr "Nem lehetséges a naplóüzenetek fájlba mentése"
 
-#: src/gl-window.c:474 src/gl-window.c:505
+#: src/gl-window.c:481 src/gl-window.c:512
 msgid "Unable to read system logs"
 msgstr "Nem lehetséges a rendszernaplók olvasása"
 
-#: src/gl-window.c:488
+#: src/gl-window.c:495
 msgid "Unable to read user logs"
 msgstr "Nem lehetséges a felhasználói naplók olvasása"
 
-#: src/gl-window.c:520
+#: src/gl-window.c:527
 msgid "No logs available"
 msgstr "Nincsenek elérhető naplók"
 
