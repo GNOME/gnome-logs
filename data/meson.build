@@ -78,10 +78,13 @@ install_data(
     install_dir : join_paths(gl_datadir, 'glib-2.0', 'schemas')
 )
 
+version_conf = configuration_data()
+version_conf.set('PACKAGE_VERSION', gl_version)
+
 configure_file(
     input : 'version.xml.in',
     output : 'version.xml',
-    command : ['cp', '@INPUT@', '@OUTPUT@']
+    configuration: version_conf,
 )
 
 if logs_enable_man
