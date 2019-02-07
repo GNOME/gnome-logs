@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the gnome-logs package.
 #
 # Petr Kovar <pknbe@volny.cz>, 2015.
-# Marek Černocký <marek@manet.cz>, 2013, 2014, 2015, 2016, 2017, 2018.
+# Marek Černocký <marek@manet.cz>, 2013, 2014, 2015, 2016, 2017, 2018, 2019.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2018-09-12 12:37+0000\n"
-"PO-Revision-Date: 2018-10-11 12:43+0200\n"
+"POT-Creation-Date: 2018-12-05 09:48+0000\n"
+"PO-Revision-Date: 2019-02-07 10:15+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: čeština <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -61,15 +61,31 @@ msgstr "Aktualizace"
 msgid "Usage"
 msgstr "Využití"
 
-#: data/gl-eventtoolbar.ui:9
+#: data/gl-eventtoolbar.ui:6
+msgid "_New Window"
+msgstr "_Nové okno"
+
+#: data/gl-eventtoolbar.ui:12
+msgid "Keyboard Shortcuts"
+msgstr "Klávesové zkratky"
+
+#: data/gl-eventtoolbar.ui:17
+msgid "_Help"
+msgstr "_Nápověda"
+
+#: data/gl-eventtoolbar.ui:21
+msgid "_About Logs"
+msgstr "O _aplikaci Záznamy"
+
+#: data/gl-eventtoolbar.ui:53
 msgid "Export logs to a file"
 msgstr "Exportovat záznamy do souboru"
 
-#: data/gl-eventtoolbar.ui:30
+#: data/gl-eventtoolbar.ui:74
 msgid "Choose the boot from which to view logs"
 msgstr "Zvolte zavedení systému, pro které chcete zobrazit záznamy"
 
-#: data/gl-eventtoolbar.ui:42
+#: data/gl-eventtoolbar.ui:86
 msgid "Search all the logs of the current category"
 msgstr "Prohledat všechny záznamy v aktuální kategorii"
 
@@ -321,26 +337,6 @@ msgctxt "shortcut window"
 msgid "Find"
 msgstr "Najít"
 
-#: data/menus.ui:6
-msgid "_New Window"
-msgstr "_Nové okno"
-
-#: data/menus.ui:13
-msgid "_Help"
-msgstr "_Nápověda"
-
-#: data/menus.ui:17
-msgid "Keyboard Shortcuts"
-msgstr "Klávesové zkratky"
-
-#: data/menus.ui:21
-msgid "_About"
-msgstr "O _aplikaci"
-
-#: data/menus.ui:26
-msgid "_Quit"
-msgstr "U_končit"
-
 #: data/org.gnome.Logs.appdata.xml.in:7
 msgid "GNOME Logs"
 msgstr "Záznamy GNOME"
@@ -412,7 +408,7 @@ msgstr "Marek Černocký <marek@manet.cz>"
 msgid "View and search logs"
 msgstr "Zobrazit a prohledat záznamy o provozu"
 
-#: src/gl-application.c:243
+#: src/gl-application.c:231
 msgid "Print version information and exit"
 msgstr "Vypsat informace o verzi a skončit"
 
