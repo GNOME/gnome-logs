@@ -94,8 +94,7 @@ gl_journal_update_latest_timestamp (GlJournal *journal)
         g_warning ("Error retrieving the sender timestamps: %s",
                    g_strerror (-r));
     }
-
-    if (realtime > boot_id->realtime_last)
+    else if (realtime > boot_id->realtime_last)
     {
         boot_id->realtime_last = realtime;
     }
