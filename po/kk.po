@@ -6,17 +6,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
-"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2018-01-03 15:59+0000\n"
-"PO-Revision-Date: 2018-03-03 20:09+0500\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
+"POT-Creation-Date: 2018-11-12 06:01+0000\n"
+"PO-Revision-Date: 2019-02-16 19:30+0500\n"
 "Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
 "Language-Team: Kazakh <kk@li.org>\n"
 "Language: kk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Poedit 2.2.1\n"
 
 #: data/gl-categorylist.ui:15
 msgid "Important"
@@ -58,15 +57,31 @@ msgstr "Жаңартулар"
 msgid "Usage"
 msgstr "Қолданылу"
 
-#: data/gl-eventtoolbar.ui:9
+#: data/gl-eventtoolbar.ui:6
+msgid "_New Window"
+msgstr "_Жаңа терезе"
+
+#: data/gl-eventtoolbar.ui:12
+msgid "Keyboard Shortcuts"
+msgstr "Пернетақта жарлықтары"
+
+#: data/gl-eventtoolbar.ui:17
+msgid "_Help"
+msgstr "_Көмек"
+
+#: data/gl-eventtoolbar.ui:21
+msgid "_About Logs"
+msgstr "Логтар қолданбасы тур_алы"
+
+#: data/gl-eventtoolbar.ui:53
 msgid "Export logs to a file"
 msgstr "Логтарды файлға экспорттау"
 
-#: data/gl-eventtoolbar.ui:30
+#: data/gl-eventtoolbar.ui:74
 msgid "Choose the boot from which to view logs"
 msgstr "Қай жүктелудің логтарын қарау керектігін таңдаңыз"
 
-#: data/gl-eventtoolbar.ui:42
+#: data/gl-eventtoolbar.ui:86
 msgid "Search all the logs of the current category"
 msgstr "Ағымдағы санаттың барлық логтарынан іздеу"
 
@@ -149,7 +164,7 @@ msgid "Select Timestamp Range of the Log Entries to be shown"
 msgstr "Лог жазбаларын көрсету үшін уақыт ауқымын таңдаңыз"
 
 #: data/gl-searchpopover.ui:208 data/gl-searchpopover.ui:1091
-#: src/gl-searchpopover.c:1303
+#: src/gl-searchpopover.c:1309
 msgid "Current Boot"
 msgstr "Ағымдағы жүктелу"
 
@@ -318,26 +333,6 @@ msgctxt "shortcut window"
 msgid "Find"
 msgstr "Табу"
 
-#: data/menus.ui:6
-msgid "_New Window"
-msgstr "_Жаңа терезе"
-
-#: data/menus.ui:13
-msgid "_Help"
-msgstr "_Көмек"
-
-#: data/menus.ui:17
-msgid "Keyboard Shortcuts"
-msgstr "Пернетақта жарлықтары"
-
-#: data/menus.ui:21
-msgid "_About"
-msgstr "Ос_ы туралы"
-
-#: data/menus.ui:26
-msgid "_Quit"
-msgstr "_Шығу"
-
 #: data/org.gnome.Logs.appdata.xml.in:7
 msgid "GNOME Logs"
 msgstr "GNOME логтары"
@@ -362,7 +357,7 @@ msgstr ""
 "Логтар көмегімен сіз іздеу сөзін енгізу арқылы іздей аласыз, ал, оқиға "
 "туралы көбірек білу үшін, оған шерте аласыз."
 
-#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:137
+#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:139
 msgid "Logs"
 msgstr "Логтар"
 
@@ -377,8 +372,9 @@ msgstr "log;journal;debug;error;лог;журнал;жөндеу;қате;"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
 #: data/org.gnome.Logs.desktop.in:12
-msgid "gnome-logs"
-msgstr "gnome-logs"
+#| msgid "gnome-logs"
+msgid "org.gnome.Logs"
+msgstr "org.gnome.Logs"
 
 #: data/org.gnome.Logs.gschema.xml:5
 msgid "Ignore warning"
@@ -408,18 +404,18 @@ msgstr "Baurzhan Muftakhidinov <baurthefirst@gmail.com>"
 msgid "View and search logs"
 msgstr "Жүйелік журналдарды қарау және олардан іздеу"
 
-#: src/gl-application.c:243
+#: src/gl-application.c:231
 msgid "Print version information and exit"
 msgstr "Нұсқа ақпаратын шығару және шығу"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
-#: src/gl-eventtoolbar.c:128
+#: src/gl-eventtoolbar.c:130
 msgid "Boot"
 msgstr "Жүктелу"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: src/gl-eventviewlist.c:478
+#: src/gl-eventviewlist.c:488
 msgid "No results"
 msgstr "Нәтижелері жоқ"
 
@@ -453,7 +449,7 @@ msgstr "%s дейін"
 #. * and end date button label in the custom range submenu,
 #. * showing the day of month in decimal number, full month
 #. * name as string, the year as a decimal number including the century.
-#: src/gl-searchpopover.c:737 src/gl-searchpopover.c:1104
+#: src/gl-searchpopover.c:737 src/gl-searchpopover.c:1107
 msgid "%e %B %Y"
 msgstr "%e %B %Y"
 
@@ -471,7 +467,7 @@ msgstr "PM"
 #. Translators: timestamp format for the custom end time button
 #. * label in the custom range submenu, showing the time with seconds
 #. * in 12-hour format.
-#: src/gl-searchpopover.c:987 src/gl-searchpopover.c:1226
+#: src/gl-searchpopover.c:987 src/gl-searchpopover.c:1229
 msgid "%I:%M:%S %p"
 msgstr "%I:%M:%S %p"
 
@@ -481,7 +477,7 @@ msgstr "%I:%M:%S %p"
 #. Translators: timestamp format for the custom end time button
 #. * label in the custom range submenu, showing the time with seconds
 #. * in 24-hour format.
-#: src/gl-searchpopover.c:994 src/gl-searchpopover.c:1233
+#: src/gl-searchpopover.c:994 src/gl-searchpopover.c:1236
 msgid "%T"
 msgstr "%T"
 
@@ -601,21 +597,24 @@ msgstr "_сақтау"
 msgid "log messages"
 msgstr "лог хабарламары"
 
-#: src/gl-window.c:175
+#: src/gl-window.c:181
 msgid "Unable to export log messages to a file"
 msgstr "Лог хабарламаларын файлға экспорттау мүмкін емес"
 
-#: src/gl-window.c:439 src/gl-window.c:470
+#: src/gl-window.c:474 src/gl-window.c:505
 msgid "Unable to read system logs"
 msgstr "Жүйелік логтарды оқу мүмкін емес"
 
-#: src/gl-window.c:453
+#: src/gl-window.c:488
 msgid "Unable to read user logs"
 msgstr "Пайдаланушы логтарын оқу мүмкін емес"
 
-#: src/gl-window.c:485
+#: src/gl-window.c:520
 msgid "No logs available"
 msgstr "Қолжетерлік логтар жоқ"
+
+#~ msgid "_Quit"
+#~ msgstr "_Шығу"
 
 #~ msgid "Go back to the event view"
 #~ msgstr "Оқиға көрінісіне қайтып оралу"
