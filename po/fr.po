@@ -7,22 +7,22 @@
 # Alexandre Franke <alexandre.franke@gmail.com>, 2015.
 # José Fournier <jaaf64@zoraldia.com>, 2017.
 # Jean-Baptiste Holcroft <jean-baptiste@holcroft.fr>, 2017.
-# Charles Monzat <charles.monzat@numericable.fr>, 2018.
+# Charles Monzat <charles.monzat@free.fr>, 2018-2019.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2018-09-12 16:08+0000\n"
-"PO-Revision-Date: 2018-11-21 12:31+0100\n"
-"Last-Translator: Charles Monzat <charles.monzat@numericable.fr>\n"
-"Language-Team: français <gnomefr@traduc.org>\n"
+"POT-Creation-Date: 2018-12-05 09:48+0000\n"
+"PO-Revision-Date: 2019-02-20 09:13+0100\n"
+"Last-Translator: Charles Monzat <charles.monzat@free.fr>\n"
+"Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Gtranslator 3.30.0\n"
+"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+"X-Generator: Gtranslator 3.30.1\n"
 
 #: data/gl-categorylist.ui:15
 msgid "Important"
@@ -64,15 +64,32 @@ msgstr "Mises à jour"
 msgid "Usage"
 msgstr "Utilisation"
 
-#: data/gl-eventtoolbar.ui:9
+#: data/gl-eventtoolbar.ui:6
+msgid "_New Window"
+msgstr "_Nouvelle fenêtre"
+
+#: data/gl-eventtoolbar.ui:12
+msgid "Keyboard Shortcuts"
+msgstr "Raccourcis clavier"
+
+#: data/gl-eventtoolbar.ui:17
+msgid "_Help"
+msgstr "_Aide"
+
+#: data/gl-eventtoolbar.ui:21
+#| msgid "_About"
+msgid "_About Logs"
+msgstr "À _propos de Journaux"
+
+#: data/gl-eventtoolbar.ui:53
 msgid "Export logs to a file"
 msgstr "Exporter les journaux dans un fichier"
 
-#: data/gl-eventtoolbar.ui:30
+#: data/gl-eventtoolbar.ui:74
 msgid "Choose the boot from which to view logs"
 msgstr "Sélectionnez le démarrage dont vous voulez voir le journal"
 
-#: data/gl-eventtoolbar.ui:42
+#: data/gl-eventtoolbar.ui:86
 msgid "Search all the logs of the current category"
 msgstr "Chercher dans tous les journaux de la catégorie actuelle"
 
@@ -119,7 +136,7 @@ msgstr "Documentation"
 #: data/gl-eventviewlist.ui:43
 msgid "Select journal field and timestamp range filtering options"
 msgstr ""
-"Choisir les options de filtrage « champ de journal » et « intervalle de  "
+"Choisir les options de filtrage « champ de journal » et « intervalle de "
 "temps »"
 
 #: data/gl-searchpopover.ui:26
@@ -326,40 +343,20 @@ msgctxt "shortcut window"
 msgid "Find"
 msgstr "Trouver"
 
-#: data/menus.ui:6
-msgid "_New Window"
-msgstr "_Nouvelle fenêtre"
-
-#: data/menus.ui:13
-msgid "_Help"
-msgstr "_Aide"
-
-#: data/menus.ui:17
-msgid "Keyboard Shortcuts"
-msgstr "Raccourcis clavier"
-
-#: data/menus.ui:21
-msgid "_About"
-msgstr "À _propos"
-
-#: data/menus.ui:26
-msgid "_Quit"
-msgstr "_Quitter"
-
 #: data/org.gnome.Logs.appdata.xml.in:7
 msgid "GNOME Logs"
 msgstr "Journaux de GNOME"
 
 #: data/org.gnome.Logs.appdata.xml.in:8 data/org.gnome.Logs.desktop.in:5
 msgid "View detailed event logs for the system"
-msgstr "Afficher en détail les événements du système"
+msgstr "Afficher en détail les évènements du système"
 
 #: data/org.gnome.Logs.appdata.xml.in:10
 msgid ""
 "Logs shows events from the systemd journal, and sorts them into categories, "
 "such as hardware and applications."
 msgstr ""
-"Journaux affiche les événements du journal de systemd, et les trie par "
+"Journaux affiche les évènements du journal de systemd, et les trie par "
 "catégories, telles que matériel et applications."
 
 #: data/org.gnome.Logs.appdata.xml.in:12
@@ -368,7 +365,7 @@ msgid ""
 "detailed information about each event by clicking on it."
 msgstr ""
 "Avec Journaux, vous pouvez rechercher dans les journaux en saisissant un "
-"terme et visualiser des informations détaillées à propos de chaque événement "
+"terme et visualiser des informations détaillées à propos de chaque évènement "
 "en cliquant dessus."
 
 #: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:139
@@ -386,8 +383,9 @@ msgstr "log;journal;journaux;debug;erreur;"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
 #: data/org.gnome.Logs.desktop.in:12
-msgid "gnome-logs"
-msgstr "gnome-logs"
+#| msgid "gnome-logs"
+msgid "org.gnome.Logs"
+msgstr "org.gnome.Logs"
 
 #: data/org.gnome.Logs.gschema.xml:5
 msgid "Ignore warning"
@@ -404,7 +402,7 @@ msgstr ""
 
 #: data/org.gnome.Logs.gschema.xml:10
 msgid "How to sort list rows in the event view list"
-msgstr "Comment trier les lignes dans la liste des événements"
+msgstr "Comment trier les lignes dans la liste des évènements"
 
 #: data/org.gnome.Logs.gschema.xml:11
 msgid "Sort list rows in ascending or descending order for the selected type"
@@ -423,7 +421,7 @@ msgstr ""
 msgid "View and search logs"
 msgstr "Visualiser et rechercher dans les journaux"
 
-#: src/gl-application.c:243
+#: src/gl-application.c:231
 msgid "Print version information and exit"
 msgstr "Afficher les informations sur la version et quitter."
 
@@ -631,6 +629,9 @@ msgstr "Impossible de lire les journaux utilisateurs"
 #: src/gl-window.c:520
 msgid "No logs available"
 msgstr "Aucun journal disponible"
+
+#~ msgid "_Quit"
+#~ msgstr "_Quitter"
 
 #~ msgid "Go back to the event view"
 #~ msgstr "Retourner à la liste des événements"
