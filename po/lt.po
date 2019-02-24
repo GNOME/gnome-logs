@@ -2,24 +2,23 @@
 # Copyright (C) 2014 gnome-logs's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-logs package.
 # FULL NAME <EMAIL@ADDRESS>, 2014.
-# Aurimas Černius <aurisc4@gmail.com>, 2014, 2015, 2016, 2017.
+# Aurimas Černius <aurisc4@gmail.com>, 2014-2019.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
-"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2018-02-26 18:13+0000\n"
-"PO-Revision-Date: 2018-02-28 01:35+0200\n"
-"Last-Translator: Moo\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
+"POT-Creation-Date: 2018-11-12 06:01+0000\n"
+"PO-Revision-Date: 2019-02-24 18:56+0200\n"
+"Last-Translator: Aurimas Černius <aurisc4@gmail.com>\n"
 "Language-Team: Lietuvių <gnome-lt@lists.akl.lt>\n"
 "Language: lt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
-"%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Poedit 2.0.4\n"
+"%100<10 || n%100>=20) ? 1 : 2)\n"
+"X-Generator: Gtranslator 3.30.1\n"
 
 #: data/gl-categorylist.ui:15
 msgid "Important"
@@ -61,15 +60,32 @@ msgstr "Atnaujinimai"
 msgid "Usage"
 msgstr "Naudojimas"
 
-#: data/gl-eventtoolbar.ui:9
+#: data/gl-eventtoolbar.ui:6
+msgid "_New Window"
+msgstr "_Naujas langas"
+
+#: data/gl-eventtoolbar.ui:12
+msgid "Keyboard Shortcuts"
+msgstr "Klaviatūros trumpiniai"
+
+#: data/gl-eventtoolbar.ui:17
+msgid "_Help"
+msgstr "_Žinynas"
+
+#: data/gl-eventtoolbar.ui:21
+#| msgid "_About"
+msgid "_About Logs"
+msgstr "_Apie žurnalus"
+
+#: data/gl-eventtoolbar.ui:53
 msgid "Export logs to a file"
 msgstr "Eksportuoti žurnalus į failą"
 
-#: data/gl-eventtoolbar.ui:30
+#: data/gl-eventtoolbar.ui:74
 msgid "Choose the boot from which to view logs"
 msgstr "Pasirinkite įkėlimą, iš kurio matyti žurnalus"
 
-#: data/gl-eventtoolbar.ui:42
+#: data/gl-eventtoolbar.ui:86
 msgid "Search all the logs of the current category"
 msgstr "Ieškoti visuose dabartinės kategorijos žurnaluose"
 
@@ -152,7 +168,7 @@ msgid "Select Timestamp Range of the Log Entries to be shown"
 msgstr "Pasirinkite laiko žymų rėžį, kuriam rodyti žurnalo įrašus"
 
 #: data/gl-searchpopover.ui:208 data/gl-searchpopover.ui:1091
-#: src/gl-searchpopover.c:1303
+#: src/gl-searchpopover.c:1309
 msgid "Current Boot"
 msgstr "Dabartinis paleidimas"
 
@@ -321,26 +337,6 @@ msgctxt "shortcut window"
 msgid "Find"
 msgstr "Rasti"
 
-#: data/menus.ui:6
-msgid "_New Window"
-msgstr "_Naujas langas"
-
-#: data/menus.ui:13
-msgid "_Help"
-msgstr "_Žinynas"
-
-#: data/menus.ui:17
-msgid "Keyboard Shortcuts"
-msgstr "Klaviatūros trumpiniai"
-
-#: data/menus.ui:21
-msgid "_About"
-msgstr "_Apie"
-
-#: data/menus.ui:26
-msgid "_Quit"
-msgstr "_Išeiti"
-
 #: data/org.gnome.Logs.appdata.xml.in:7
 msgid "GNOME Logs"
 msgstr "GNOME žurnalai"
@@ -365,7 +361,7 @@ msgstr ""
 "Naudodami žurnalus galite ieškoti žurnaluose įvesdami paieškos sąlygą bei "
 "matyti detalią informaciją apie kiekvieną įvykį paspaudę ant jo."
 
-#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:137
+#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:139
 msgid "Logs"
 msgstr "Žurnalai"
 
@@ -380,8 +376,9 @@ msgstr "žurnalas;derinimas;klaida;"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
 #: data/org.gnome.Logs.desktop.in:12
-msgid "gnome-logs"
-msgstr "gnome-logs"
+#| msgid "gnome-logs"
+msgid "org.gnome.Logs"
+msgstr "org.gnome.Logs"
 
 #: data/org.gnome.Logs.gschema.xml:5
 msgid "Ignore warning"
@@ -413,18 +410,18 @@ msgstr ""
 msgid "View and search logs"
 msgstr "Rodyti ir ieškoti žurnaluose"
 
-#: src/gl-application.c:243
+#: src/gl-application.c:231
 msgid "Print version information and exit"
 msgstr "Atspausdinti versijos informaciją ir išeiti"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
-#: src/gl-eventtoolbar.c:128
+#: src/gl-eventtoolbar.c:130
 msgid "Boot"
 msgstr "Įkėlimas"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: src/gl-eventviewlist.c:478
+#: src/gl-eventviewlist.c:488
 msgid "No results"
 msgstr "Nėra rezultatų"
 
@@ -458,7 +455,7 @@ msgstr "Iki %s"
 #. * and end date button label in the custom range submenu,
 #. * showing the day of month in decimal number, full month
 #. * name as string, the year as a decimal number including the century.
-#: src/gl-searchpopover.c:737 src/gl-searchpopover.c:1104
+#: src/gl-searchpopover.c:737 src/gl-searchpopover.c:1107
 msgid "%e %B %Y"
 msgstr "%Y %B %e"
 
@@ -476,7 +473,7 @@ msgstr "PM"
 #. Translators: timestamp format for the custom end time button
 #. * label in the custom range submenu, showing the time with seconds
 #. * in 12-hour format.
-#: src/gl-searchpopover.c:987 src/gl-searchpopover.c:1226
+#: src/gl-searchpopover.c:987 src/gl-searchpopover.c:1229
 msgid "%I:%M:%S %p"
 msgstr "%l:%M:%S %p"
 
@@ -486,7 +483,7 @@ msgstr "%l:%M:%S %p"
 #. Translators: timestamp format for the custom end time button
 #. * label in the custom range submenu, showing the time with seconds
 #. * in 24-hour format.
-#: src/gl-searchpopover.c:994 src/gl-searchpopover.c:1233
+#: src/gl-searchpopover.c:994 src/gl-searchpopover.c:1236
 msgid "%T"
 msgstr "%T"
 
@@ -606,21 +603,24 @@ msgstr "Įraš_yti"
 msgid "log messages"
 msgstr "žurnalo pranešimai"
 
-#: src/gl-window.c:175
+#: src/gl-window.c:181
 msgid "Unable to export log messages to a file"
 msgstr "Nepavyko eksportuoti žurnalo pranešimų į failą"
 
-#: src/gl-window.c:439 src/gl-window.c:470
+#: src/gl-window.c:474 src/gl-window.c:505
 msgid "Unable to read system logs"
 msgstr "Nepavyko perskaityti sistemos žurnalų"
 
-#: src/gl-window.c:453
+#: src/gl-window.c:488
 msgid "Unable to read user logs"
 msgstr "Nepavyko perskaityti naudotojo žurnalų"
 
-#: src/gl-window.c:485
+#: src/gl-window.c:520
 msgid "No logs available"
 msgstr "Nėra prieinamų žurnalų"
+
+#~ msgid "_Quit"
+#~ msgstr "_Išeiti"
 
 #~ msgid "Go back to the event view"
 #~ msgstr "Eiti atgal į įvykio vaizdą"
