@@ -1,17 +1,16 @@
 # Italian translation for gnome-logs.
-# Copyright (C) 2013, 2014, 2015, 2016, 2017, 2018 gnome-logs's COPYRIGHT HOLDER
+# Copyright (C) 2013, 2014, 2015, 2016, 2017, 2018, 2019 gnome-logs's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-logs package.
 # Daniele Medri <dmedri@gmail.com>, 2013.
-# Milo Casagrande <milo@milo.name>, 2014, 2015, 2016, 2017, 2018.
+# Milo Casagrande <milo@milo.name>, 2014, 2015, 2016, 2017, 2018, 2019.
 # Gianvito Cavasoli <gianvito@gmx.it>, 2016.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
-"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2018-01-03 15:59+0000\n"
-"PO-Revision-Date: 2018-02-13 10:23+0100\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
+"POT-Creation-Date: 2018-11-12 06:01+0000\n"
+"PO-Revision-Date: 2019-02-15 10:04+0100\n"
 "Last-Translator: Milo Casagrande <milo@milo.name>\n"
 "Language-Team: Italiano <gnome-it-list@gnome.org>\n"
 "Language: it\n"
@@ -19,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.0.4\n"
+"X-Generator: Poedit 2.2.1\n"
 
 #: data/gl-categorylist.ui:15
 msgid "Important"
@@ -61,15 +60,31 @@ msgstr "Aggiornamenti"
 msgid "Usage"
 msgstr "Utilizzo"
 
-#: data/gl-eventtoolbar.ui:9
+#: data/gl-eventtoolbar.ui:6
+msgid "_New Window"
+msgstr "_Nuova finestra"
+
+#: data/gl-eventtoolbar.ui:12
+msgid "Keyboard Shortcuts"
+msgstr "Scorciatoie da tastiera"
+
+#: data/gl-eventtoolbar.ui:17
+msgid "_Help"
+msgstr "A_iuto"
+
+#: data/gl-eventtoolbar.ui:21
+msgid "_About Logs"
+msgstr "_Informazioni su Registri"
+
+#: data/gl-eventtoolbar.ui:53
 msgid "Export logs to a file"
 msgstr "Esporta registri su file"
 
-#: data/gl-eventtoolbar.ui:30
+#: data/gl-eventtoolbar.ui:74
 msgid "Choose the boot from which to view logs"
 msgstr "Scegliere l'avvio di cui visualizzare i registri"
 
-#: data/gl-eventtoolbar.ui:42
+#: data/gl-eventtoolbar.ui:86
 msgid "Search all the logs of the current category"
 msgstr "Cercare tutti i registri dell'attuale categoria"
 
@@ -152,7 +167,7 @@ msgid "Select Timestamp Range of the Log Entries to be shown"
 msgstr "Seleziona intervallo temporale per le voci da mostrare"
 
 #: data/gl-searchpopover.ui:208 data/gl-searchpopover.ui:1091
-#: src/gl-searchpopover.c:1303
+#: src/gl-searchpopover.c:1309
 msgid "Current Boot"
 msgstr "Boot attuale"
 
@@ -274,7 +289,7 @@ msgstr "Oggi"
 
 #: data/gl-searchpopover.ui:1110
 msgid "Yesterday"
-msgstr "Ierir"
+msgstr "Ieri"
 
 #: data/gl-searchpopover.ui:1115
 msgid "Last 3 days"
@@ -321,26 +336,6 @@ msgctxt "shortcut window"
 msgid "Find"
 msgstr "Trova"
 
-#: data/menus.ui:6
-msgid "_New Window"
-msgstr "_Nuova finestra"
-
-#: data/menus.ui:13
-msgid "_Help"
-msgstr "A_iuto"
-
-#: data/menus.ui:17
-msgid "Keyboard Shortcuts"
-msgstr "Scorciatoie da tastiera"
-
-#: data/menus.ui:21
-msgid "_About"
-msgstr "_Informazioni"
-
-#: data/menus.ui:26
-msgid "_Quit"
-msgstr "_Esci"
-
 #: data/org.gnome.Logs.appdata.xml.in:7
 msgid "GNOME Logs"
 msgstr "Registri di GNOME"
@@ -366,7 +361,7 @@ msgstr ""
 "ricerca e visualizzare informazioni dettagliate sugli eventi facendo clic su "
 "di essi."
 
-#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:137
+#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:139
 msgid "Logs"
 msgstr "Registri"
 
@@ -381,8 +376,9 @@ msgstr "registro;log;journal;diario;debug;errore;"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
 #: data/org.gnome.Logs.desktop.in:12
-msgid "gnome-logs"
-msgstr "gnome-logs"
+#| msgid "gnome-logs"
+msgid "org.gnome.Logs"
+msgstr "org.gnome.Logs"
 
 #: data/org.gnome.Logs.gschema.xml:5
 msgid "Ignore warning"
@@ -416,18 +412,18 @@ msgstr ""
 msgid "View and search logs"
 msgstr "Visualizza e cerca registri"
 
-#: src/gl-application.c:243
+#: src/gl-application.c:231
 msgid "Print version information and exit"
 msgstr "Stampa informazioni sulla versione ed esce"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
-#: src/gl-eventtoolbar.c:128
+#: src/gl-eventtoolbar.c:130
 msgid "Boot"
 msgstr "Avvio"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: src/gl-eventviewlist.c:478
+#: src/gl-eventviewlist.c:488
 msgid "No results"
 msgstr "Nessun risultato"
 
@@ -461,7 +457,7 @@ msgstr "Fino a %s"
 #. * and end date button label in the custom range submenu,
 #. * showing the day of month in decimal number, full month
 #. * name as string, the year as a decimal number including the century.
-#: src/gl-searchpopover.c:737 src/gl-searchpopover.c:1104
+#: src/gl-searchpopover.c:737 src/gl-searchpopover.c:1107
 msgid "%e %B %Y"
 msgstr "%e %B %Y"
 
@@ -479,7 +475,7 @@ msgstr "pm"
 #. Translators: timestamp format for the custom end time button
 #. * label in the custom range submenu, showing the time with seconds
 #. * in 12-hour format.
-#: src/gl-searchpopover.c:987 src/gl-searchpopover.c:1226
+#: src/gl-searchpopover.c:987 src/gl-searchpopover.c:1229
 msgid "%I:%M:%S %p"
 msgstr "%I:%M:%S %p"
 
@@ -489,7 +485,7 @@ msgstr "%I:%M:%S %p"
 #. Translators: timestamp format for the custom end time button
 #. * label in the custom range submenu, showing the time with seconds
 #. * in 24-hour format.
-#: src/gl-searchpopover.c:994 src/gl-searchpopover.c:1233
+#: src/gl-searchpopover.c:994 src/gl-searchpopover.c:1236
 msgid "%T"
 msgstr "%T"
 
@@ -609,21 +605,18 @@ msgstr "_Salva"
 msgid "log messages"
 msgstr "messaggi del registro"
 
-#: src/gl-window.c:175
+#: src/gl-window.c:181
 msgid "Unable to export log messages to a file"
 msgstr "Impossibile esportare i messaggi del registro su file"
 
-#: src/gl-window.c:439 src/gl-window.c:470
+#: src/gl-window.c:474 src/gl-window.c:505
 msgid "Unable to read system logs"
 msgstr "Impossibile leggere i registri di sistema"
 
-#: src/gl-window.c:453
+#: src/gl-window.c:488
 msgid "Unable to read user logs"
 msgstr "Impossibile leggere i registri utente"
 
-#: src/gl-window.c:485
+#: src/gl-window.c:520
 msgid "No logs available"
 msgstr "Nessun registro disponibile"
-
-#~ msgid "Go back to the event view"
-#~ msgstr "Torna alla visualizzazione evento"
