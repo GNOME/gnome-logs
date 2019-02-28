@@ -8,10 +8,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs\n"
-"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2017-09-28 11:35+0000\n"
-"PO-Revision-Date: 2017-12-25 21:58+0100\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
+"POT-Creation-Date: 2018-11-12 06:01+0000\n"
+"PO-Revision-Date: 2019-02-28 20:52+0100\n"
 "Last-Translator: Марко М. Костић <marko.m.kostic@gmail.com>\n"
 "Language-Team: српски <gnome-sr@googlegroups.org>\n"
 "Language: sr\n"
@@ -21,7 +20,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=n==1? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Project-Style: gnome\n"
-"X-Generator: Poedit 2.0.3\n"
+"X-Generator: Poedit 2.2\n"
 
 #: data/gl-categorylist.ui:15
 msgid "Important"
@@ -63,15 +62,31 @@ msgstr "Освежења"
 msgid "Usage"
 msgstr "Употреба"
 
-#: data/gl-eventtoolbar.ui:9
+#: data/gl-eventtoolbar.ui:6
+msgid "_New Window"
+msgstr "_Нови прозор"
+
+#: data/gl-eventtoolbar.ui:12
+msgid "Keyboard Shortcuts"
+msgstr "Пречице на тастатури"
+
+#: data/gl-eventtoolbar.ui:17
+msgid "_Help"
+msgstr "По_моћ"
+
+#: data/gl-eventtoolbar.ui:21
+msgid "_About Logs"
+msgstr "_О Записницима"
+
+#: data/gl-eventtoolbar.ui:53
 msgid "Export logs to a file"
 msgstr "Извези записнике у датотеку"
 
-#: data/gl-eventtoolbar.ui:30
+#: data/gl-eventtoolbar.ui:74
 msgid "Choose the boot from which to view logs"
 msgstr "Изаберите подизање система за које желите видети записнике"
 
-#: data/gl-eventtoolbar.ui:42
+#: data/gl-eventtoolbar.ui:86
 msgid "Search all the logs of the current category"
 msgstr "Претражи све записнике у текућој категорији"
 
@@ -154,7 +169,7 @@ msgid "Select Timestamp Range of the Log Entries to be shown"
 msgstr "Изаберите опсег временске ознаке уноса записника за приказивање"
 
 #: data/gl-searchpopover.ui:208 data/gl-searchpopover.ui:1091
-#: src/gl-searchpopover.c:1303
+#: src/gl-searchpopover.c:1309
 msgid "Current Boot"
 msgstr "Тренутно подизање система"
 
@@ -324,26 +339,6 @@ msgctxt "shortcut window"
 msgid "Find"
 msgstr "Проналажење"
 
-#: data/menus.ui:6
-msgid "_New Window"
-msgstr "_Нови прозор"
-
-#: data/menus.ui:13
-msgid "_Help"
-msgstr "По_моћ"
-
-#: data/menus.ui:17
-msgid "Keyboard Shortcuts"
-msgstr "Пречице на тастатури"
-
-#: data/menus.ui:21
-msgid "_About"
-msgstr "_О програму"
-
-#: data/menus.ui:26
-msgid "_Quit"
-msgstr "_Изађи"
-
 #: data/org.gnome.Logs.appdata.xml.in:7
 msgid "GNOME Logs"
 msgstr "Гномови записници"
@@ -368,7 +363,7 @@ msgstr ""
 "Употребом Записника можете да претражујете ваше записнике уписивањем појма, "
 "и да видите опширне податке о сваком догађају кликом на њега."
 
-#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:114
+#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:139
 msgid "Logs"
 msgstr "Записници"
 
@@ -385,8 +380,8 @@ msgstr ""
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
 #: data/org.gnome.Logs.desktop.in:12
-msgid "gnome-logs"
-msgstr "gnome-logs"
+msgid "org.gnome.Logs"
+msgstr "org.gnome.Logs"
 
 #: data/org.gnome.Logs.gschema.xml:5
 msgid "Ignore warning"
@@ -420,18 +415,18 @@ msgstr ""
 msgid "View and search logs"
 msgstr "Прегледа и претражује записнике"
 
-#: src/gl-application.c:243
+#: src/gl-application.c:231
 msgid "Print version information and exit"
 msgstr "Исписује податке о издању и излази"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
-#: src/gl-eventtoolbar.c:105
+#: src/gl-eventtoolbar.c:130
 msgid "Boot"
 msgstr "Подизање система"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: src/gl-eventviewlist.c:458
+#: src/gl-eventviewlist.c:488
 msgid "No results"
 msgstr "Нема резултата"
 
@@ -465,7 +460,7 @@ msgstr "До %s"
 #. * and end date button label in the custom range submenu,
 #. * showing the day of month in decimal number, full month
 #. * name as string, the year as a decimal number including the century.
-#: src/gl-searchpopover.c:737 src/gl-searchpopover.c:1104
+#: src/gl-searchpopover.c:737 src/gl-searchpopover.c:1107
 msgid "%e %B %Y"
 msgstr "%e %B %Y"
 
@@ -483,7 +478,7 @@ msgstr "ПоП"
 #. Translators: timestamp format for the custom end time button
 #. * label in the custom range submenu, showing the time with seconds
 #. * in 12-hour format.
-#: src/gl-searchpopover.c:987 src/gl-searchpopover.c:1226
+#: src/gl-searchpopover.c:987 src/gl-searchpopover.c:1229
 msgid "%I:%M:%S %p"
 msgstr "%I:%M:%S %p"
 
@@ -493,7 +488,7 @@ msgstr "%I:%M:%S %p"
 #. Translators: timestamp format for the custom end time button
 #. * label in the custom range submenu, showing the time with seconds
 #. * in 24-hour format.
-#: src/gl-searchpopover.c:994 src/gl-searchpopover.c:1233
+#: src/gl-searchpopover.c:994 src/gl-searchpopover.c:1236
 msgid "%T"
 msgstr "%T"
 
@@ -613,21 +608,24 @@ msgstr "Сачу_вај"
 msgid "log messages"
 msgstr "поруке записника"
 
-#: src/gl-window.c:175
+#: src/gl-window.c:181
 msgid "Unable to export log messages to a file"
 msgstr "Нисам успео да извезем поруке из записника у датотеку"
 
-#: src/gl-window.c:402 src/gl-window.c:433
+#: src/gl-window.c:474 src/gl-window.c:505
 msgid "Unable to read system logs"
 msgstr "Нисам успео да прочитам системске записнике"
 
-#: src/gl-window.c:416
+#: src/gl-window.c:488
 msgid "Unable to read user logs"
 msgstr "Нисам успео да прочитам корисничке записнике"
 
-#: src/gl-window.c:448
+#: src/gl-window.c:520
 msgid "No logs available"
 msgstr "Нема доступних записника"
+
+#~ msgid "_Quit"
+#~ msgstr "_Изађи"
 
 #~ msgid "Go back to the event view"
 #~ msgstr "Вратите се на преглед догађаја"
