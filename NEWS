@@ -1,3 +1,11 @@
+GNOME Logs 3.32.0
+=================
+
+* avoid segfault when updating latest timestamp
+* updates to Finnish, Hungarian, Galician, Romanian, Indonesian, Polish, Czech,
+  Kazakh, Chinese (Taiwan), French, Dutch, Lithuanian, Brazilian Portuguese,
+  Italian, Russian, Serbian, German, Latvian, Korean and Catalan translations
+
 GNOME Logs 3.31.4
 =================
 
