@@ -103,6 +103,7 @@ else
 endif
 
 # Manpage
+have_xsltproc = false
 have_manutils = false
 if get_option('man')
     # TODO: check xsl stylesheets as well#
@@ -113,14 +114,14 @@ if get_option('man')
     else
         have_xsltproc = false
     endif
+endif
 
-    if have_xsltproc
-        have_manutils = true
-    else
-        if not get_option('disable-man')
-            error('manpage generation requested but required utilities were not found')
-            have_manutils = false
-        endif
+if have_xsltproc
+    have_manutils = true
+else
+    if get_option('man')
+        error('manpage generation requested but required utilities were not found')
+        have_manutils = false
     endif
 endif
 
