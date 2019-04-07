@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2018-11-12 06:01+0000\n"
+"POT-Creation-Date: 2019-03-26 17:01+0000\n"
 "PO-Revision-Date: 2019-02-13 11:42+0100\n"
 "Last-Translator: Alan Mortensen <alanmortensen.am@gmail.com>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
@@ -129,7 +129,7 @@ msgstr "Støtte"
 msgid "Documentation"
 msgstr "Dokumentation"
 
-#: data/gl-eventviewlist.ui:43
+#: data/gl-eventviewlist.ui:42
 msgid "Select journal field and timestamp range filtering options"
 msgstr "Vælg filterindstillinger for journalfelt og interval for tidsstempel"
 
@@ -304,11 +304,11 @@ msgstr "Hele journalen"
 msgid "Set Custom Range…"
 msgstr "Angiv brugerindstillet interval …"
 
-#: data/gl-window.ui:31
+#: data/gl-window.ui:26
 msgid "Help"
 msgstr "Hjælp"
 
-#: data/gl-window.ui:39
+#: data/gl-window.ui:34
 msgid "Ignore"
 msgstr "Ignorér"
 
@@ -374,12 +374,6 @@ msgstr "Logfremviser"
 msgid "log;journal;debug;error;"
 msgstr "log;journal;fejlsøgning;fejlsøg;debug;fejl;"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/org.gnome.Logs.desktop.in:12
-#| msgid "gnome-logs"
-msgid "org.gnome.Logs"
-msgstr "org.gnome.Logs"
-
 #: data/org.gnome.Logs.gschema.xml:5
 msgid "Ignore warning"
 msgstr "Ignorér advarsel"
@@ -397,7 +391,8 @@ msgstr "Hvordan listerækker skal sorteres i begivenhedsoversigten"
 
 #: data/org.gnome.Logs.gschema.xml:11
 msgid "Sort list rows in ascending or descending order for the selected type"
-msgstr "Sortér listerækker i stigende eller faldende orden for den valgte type"
+msgstr ""
+"Sortér listerækker i stigende eller faldende orden for den valgte type"
 
 #: src/gl-application.c:109
 msgid "translator-credits"
@@ -405,14 +400,15 @@ msgstr ""
 "Ask Hjorth Larsen\n"
 "scootergrisen\n"
 "\n"
-"Dansk-gruppen <dansk@dansk-gruppen.dk>\n"
-"Mere info: http://www.dansk-gruppen.dk"
+"Dansk-gruppen\n"
+"Websted <http://dansk-gruppen.dk>\n"
+"E-mail <dansk@dansk-gruppen.dk>"
 
 #: src/gl-application.c:110
 msgid "View and search logs"
 msgstr "Vis og søg i logge"
 
-#: src/gl-application.c:231
+#: src/gl-application.c:225
 msgid "Print version information and exit"
 msgstr "Udskriv versionsoplysninger og afslut"
 
@@ -609,17 +605,20 @@ msgstr "logmeddelelser"
 msgid "Unable to export log messages to a file"
 msgstr "Kunne ikke eksportere logmeddelelser til en fil"
 
-#: src/gl-window.c:474 src/gl-window.c:505
+#: src/gl-window.c:481 src/gl-window.c:512
 msgid "Unable to read system logs"
 msgstr "Kunne ikke læse systemlogge"
 
-#: src/gl-window.c:488
+#: src/gl-window.c:495
 msgid "Unable to read user logs"
 msgstr "Kunne ikke læse brugerlogge"
 
-#: src/gl-window.c:520
+#: src/gl-window.c:527
 msgid "No logs available"
 msgstr "Ingen tilgængelige logge"
+
+#~ msgid "org.gnome.Logs"
+#~ msgstr "org.gnome.Logs"
 
 #~ msgid "_Quit"
 #~ msgstr "_Afslut"
@@ -629,3 +628,4 @@ msgstr "Ingen tilgængelige logge"
 
 #~ msgid "Search the displayed logs"
 #~ msgstr "Søg i de viste logge"
+
