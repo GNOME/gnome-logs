@@ -1,0 +1,30 @@
+include: 'https://gitlab.gnome.org/GNOME/citemplates/raw/master/flatpak/flatpak_ci_initiative.yml'
+
+variables:
+    GIT_SUBMODULE_STRATEGY: normal
+    BUNDLE: "gnome-logs.flatpak"
+
+stages:
+    - test
+    - deploy
+
+flatpak devel:
+    image: registry.gitlab.gnome.org/gnome/gnome-runtime-images/gnome:master
+    stage: test
+    variables:
+        MANIFEST_PATH: "org.gnome.Logs.json"
+        MESON_ARGS: "-Dtests=true"
+        FLATPAK_MODULE: "gnome-logs"
+        RUNTIME_REPO: "https://sdk.gnome.org/gnome.flatpakrepo"
+        APP_ID: "org.gnome.Logs"
+    extends: .flatpak
+
+review:
+    stage: deploy
+    dependencies:
+        - 'flatpak devel'
+    extends: '.review'
+
+stop_review:
+    stage: deploy
+    extends: '.stop_review'
