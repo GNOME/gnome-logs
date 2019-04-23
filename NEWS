@@ -1,3 +1,12 @@
+GNOME Logs 3.33.1
+=================
+
+* Fixed abnormal headerbar height
+* Dropped autotools support from Jeremy Bicha
+* Fixed manpage check and version number in meson
+* Adding flatpak manifest and gitlab ci from Florian Müllner
+* Updates to Croatian and Danish translations
+
 GNOME Logs 3.32.0
 =================
 
