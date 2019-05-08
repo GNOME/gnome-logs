@@ -1,24 +1,23 @@
 # Chinese (China) translation for gnome-logs.
-# Copyright (C) 2013--2018 gnome-logs's COPYRIGHT HOLDER
+# Copyright (C) 2013--2019 gnome-logs's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-logs package.
 # eternalhui <www.eternalhui@gmail.com>, 2013.
 # Jeff Bai <jeffbai@aosc.xyz>, 2015, 2016.
-# Dingzhong Chen <wsxy162@@gmail.com>, 2016, 2018.
+# Dingzhong Chen <wsxy162@gmail.com>, 2016, 2018, 2019.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-logs master\n"
-"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2018-04-21 02:20+0000\n"
-"PO-Revision-Date: 2018-03-03 23:13+0800\n"
-"Last-Translator: Dingzhong Chen <wsxy162@@gmail.com>\n"
+"Project-Id-Version: gnome-logs 3.32\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
+"POT-Creation-Date: 2019-04-08 19:14+0000\n"
+"PO-Revision-Date: 2019-04-13 21:37+0800\n"
+"Last-Translator: Dingzhong Chen <wsxy162@gmail.com>\n"
 "Language-Team: Chinese (China) <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Gtranslator 2.91.7\n"
+"X-Generator: Poedit 2.2.1\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: data/gl-categorylist.ui:15
@@ -61,15 +60,31 @@ msgstr "更新"
 msgid "Usage"
 msgstr "使用"
 
-#: data/gl-eventtoolbar.ui:9
+#: data/gl-eventtoolbar.ui:6
+msgid "_New Window"
+msgstr "新窗口(_N)"
+
+#: data/gl-eventtoolbar.ui:12
+msgid "Keyboard Shortcuts"
+msgstr "键盘快捷键"
+
+#: data/gl-eventtoolbar.ui:17
+msgid "_Help"
+msgstr "帮助(_H)"
+
+#: data/gl-eventtoolbar.ui:21
+msgid "_About Logs"
+msgstr "关于日志(_A)"
+
+#: data/gl-eventtoolbar.ui:53
 msgid "Export logs to a file"
 msgstr "将日志导出到文件"
 
-#: data/gl-eventtoolbar.ui:30
+#: data/gl-eventtoolbar.ui:74
 msgid "Choose the boot from which to view logs"
 msgstr "选择某次引导以查看其日志"
 
-#: data/gl-eventtoolbar.ui:42
+#: data/gl-eventtoolbar.ui:86
 msgid "Search all the logs of the current category"
 msgstr "在当前类别中的所有日志中搜索"
 
@@ -113,7 +128,7 @@ msgstr "支持"
 msgid "Documentation"
 msgstr "文档"
 
-#: data/gl-eventviewlist.ui:43
+#: data/gl-eventviewlist.ui:42
 msgid "Select journal field and timestamp range filtering options"
 msgstr "选择日志区域及时间戳范围作为筛选选项"
 
@@ -288,11 +303,11 @@ msgstr "整个日志"
 msgid "Set Custom Range…"
 msgstr "设置自定义范围…"
 
-#: data/gl-window.ui:31
+#: data/gl-window.ui:26
 msgid "Help"
 msgstr "帮助"
 
-#: data/gl-window.ui:39
+#: data/gl-window.ui:34
 msgid "Ignore"
 msgstr "忽略"
 
@@ -320,26 +335,6 @@ msgstr "搜索"
 msgctxt "shortcut window"
 msgid "Find"
 msgstr "查找"
-
-#: data/menus.ui:6
-msgid "_New Window"
-msgstr "新窗口(_N)"
-
-#: data/menus.ui:13
-msgid "_Help"
-msgstr "帮助(_H)"
-
-#: data/menus.ui:17
-msgid "Keyboard Shortcuts"
-msgstr "键盘快捷键"
-
-#: data/menus.ui:21
-msgid "_About"
-msgstr "关于(_A)"
-
-#: data/menus.ui:26
-msgid "_Quit"
-msgstr "退出(_Q)"
 
 #: data/org.gnome.Logs.appdata.xml.in:7
 msgid "GNOME Logs"
@@ -376,11 +371,6 @@ msgstr "日志查看器"
 msgid "log;journal;debug;error;"
 msgstr "log;journal;debug;error;日志;记录;调试;错误;"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/org.gnome.Logs.desktop.in:12
-msgid "gnome-logs"
-msgstr "gnome-logs"
-
 #: data/org.gnome.Logs.gschema.xml:5
 msgid "Ignore warning"
 msgstr "忽略警告"
@@ -410,7 +400,7 @@ msgstr ""
 msgid "View and search logs"
 msgstr "查看和搜索日志"
 
-#: src/gl-application.c:243
+#: src/gl-application.c:225
 msgid "Print version information and exit"
 msgstr "打印版本信息并退出"
 
@@ -607,17 +597,23 @@ msgstr "日志消息"
 msgid "Unable to export log messages to a file"
 msgstr "无法将日志消息导出到文件"
 
-#: src/gl-window.c:474 src/gl-window.c:505
+#: src/gl-window.c:481 src/gl-window.c:512
 msgid "Unable to read system logs"
 msgstr "无法读取系统日志"
 
-#: src/gl-window.c:488
+#: src/gl-window.c:495
 msgid "Unable to read user logs"
 msgstr "无法读取用户日志"
 
-#: src/gl-window.c:520
+#: src/gl-window.c:527
 msgid "No logs available"
 msgstr "无可用的日志"
+
+#~ msgid "_Quit"
+#~ msgstr "退出(_Q)"
+
+#~ msgid "gnome-logs"
+#~ msgstr "gnome-logs"
 
 #~ msgid "Go back to the event view"
 #~ msgstr "返回事件视图"
