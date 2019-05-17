@@ -1,2 +1,1 @@
-option('tests', type : 'boolean', value : false, description : 'Enable support for tests run during make check')
 option('man', type : 'boolean', value : false, description : 'Enable building the man page')

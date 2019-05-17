@@ -74,34 +74,6 @@ gl_deps = [
     dependency('libsystemd')
 ]
 
-# Testing utilities
-have_desktop_file_validate = false
-if get_option('tests')
-    desktop_file_validate = find_program('desktop-file-validate', required : false)
-    if desktop_file_validate.found()
-        have_desktop_file_validate = true
-    else
-        have_desktop_file_validate = false
-    endif
-else
-    have_desktop_file_validate = false
-endif
-
-if have_desktop_file_validate == true
-    testing_utilities = true
-else
-    testing_utilities = false
-    if get_option('tests')
-        error('tests were requested but the required utilities were not found')
-    endif
-endif
-
-if testing_utilities
-    logs_enable_tests = true
-else
-    logs_enable_tests = false
-endif
-
 # Manpage
 have_xsltproc = false
 have_manutils = false

@@ -11,12 +11,10 @@ test_gl_util_sources = files(
     '../src/gl-util.c'
 )
 
-if logs_enable_tests
-    selftest = executable(
-        'test-gl-util',
-        sources : test_gl_util_sources,
-        include_directories : [top_inc, src_inc],
-        dependencies : gl_deps
-    )
-    test('test-gl-util', selftest, env : tests_env)
-endif
+selftest = executable(
+    'test-gl-util',
+    sources : test_gl_util_sources,
+    include_directories : [top_inc, src_inc],
+    dependencies : gl_deps
+)
+test('test-gl-util', selftest, env : tests_env)
