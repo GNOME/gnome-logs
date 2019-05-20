@@ -1,3 +1,9 @@
+GNOME Logs 3.33.2
+=================
+
+* removing tests option in meson build system
+* update to Chinese (China) translation
+
 GNOME Logs 3.33.1
 =================
 
