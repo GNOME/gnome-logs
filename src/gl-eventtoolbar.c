@@ -55,13 +55,17 @@ gl_event_toolbar_update_boot_menu_label (GlEventToolbar *toolbar,
 
     boot_menu = gtk_menu_button_get_menu_model (GTK_MENU_BUTTON (priv->menu_button));
     section = g_menu_model_get_item_link (boot_menu, 0, "section");
-    menu_item = g_menu_item_new_from_model (section, 0);
-    g_menu_item_set_label (menu_item, latest_boot);
 
-    g_menu_remove (G_MENU (section), 0);
-    g_menu_insert_item (G_MENU (section), 0, menu_item);
+    if (g_menu_model_get_n_items (section) < 0)
+    {
+        menu_item = g_menu_item_new_from_model (section, 0);
+        g_menu_item_set_label (menu_item, latest_boot);
 
-    g_object_unref (menu_item);
+        g_menu_remove (G_MENU (section), 0);
+        g_menu_insert_item (G_MENU (section), 0, menu_item);
+
+        g_object_unref (menu_item);
+    }
 }
 
 void
