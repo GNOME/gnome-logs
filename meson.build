@@ -36,7 +36,7 @@ set_defines = [
   # package
   ['PACKAGE', gl_name],
   ['PACKAGE_BUGREPORT', 'http://bugzilla.gnome.org/enter_bug.cgi?product=' + gl_name],
-  ['PACKAGE_NAME', gl_name],
+  ['PACKAGE_NAME', 'Logs'],
   ['PACKAGE_STRING', '@0@ @1@'.format(gl_name, gl_version)],
   ['PACKAGE_TARNAME', gl_name],
   ['PACKAGE_URL', 'https://wiki.gnome.org/Apps/Logs'],
