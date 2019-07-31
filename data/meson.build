@@ -8,7 +8,7 @@ i18n.merge_file(
     input : 'org.gnome.Logs.desktop.in',
     output : 'org.gnome.Logs.desktop',
     type : 'desktop',
-    po_dir : 'po',
+    po_dir : po_dir,
     install : true,
     install_dir : join_paths(gl_datadir, 'applications')
 )
@@ -16,7 +16,7 @@ i18n.merge_file(
 i18n.merge_file(
     input : 'org.gnome.Logs.appdata.xml.in',
     output : 'org.gnome.Logs.appdata.xml',
-    po_dir : 'po',
+    po_dir : po_dir,
     install : true,
     install_dir : join_paths(gl_datadir, 'metainfo')
 )
