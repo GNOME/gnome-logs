@@ -459,7 +459,7 @@ msgstr "Fins %s"
 #. * name as string, the year as a decimal number including the century.
 #: src/gl-searchpopover.c:737 src/gl-searchpopover.c:1107
 msgid "%e %B %Y"
-msgstr "%e %B %Y"
+msgstr "%e %B de %Y"
 
 #: src/gl-searchpopover.c:875
 msgid "AM"
@@ -509,7 +509,7 @@ msgstr "%l:%M %p"
 #. * with seconds in 12-hour format.
 #: src/gl-util.c:166
 msgid "%b %e %l:%M:%S %p"
-msgstr "%b %e %l:%M:%S %p"
+msgstr "%e %b %l:%M:%S %p"
 
 #. Translators: timestamp format for events in the
 #. * current year, showing the abbreviated month name,
@@ -517,7 +517,7 @@ msgstr "%b %e %l:%M:%S %p"
 #. * 12-hour format.
 #: src/gl-util.c:174
 msgid "%b %e %l:%M %p"
-msgstr "%b %e %l:%M %p"
+msgstr "%e %b %l:%M %p"
 
 #. Translators: timestamp format for events in
 #. * a different year, showing the abbreviated
@@ -525,7 +525,7 @@ msgstr "%b %e %l:%M %p"
 #. * time with seconds in 12-hour format.
 #: src/gl-util.c:185
 msgid "%b %e %Y %l:%M:%S %p"
-msgstr "%b %e %Y %l:%M:%S %p"
+msgstr "%e %b %Y %l:%M:%S %p"
 
 #. Translators: timestamp format for events in
 #. * a different year, showing the abbreviated
@@ -533,21 +533,21 @@ msgstr "%b %e %Y %l:%M:%S %p"
 #. * time without seconds in 12-hour format.
 #: src/gl-util.c:194
 msgid "%b %e %Y %l:%M %p"
-msgstr "%b %e %Y %l:%M %p"
+msgstr "%e %b %Y %l:%M %p"
 
 #. Translators: timestamp format for events on the
 #. * current day, showing the time with seconds in
 #. * 24-hour format.
 #: src/gl-util.c:211
 msgid "%H:%M:%S"
-msgstr "%H:%M:%S"
+msgstr "%-H:%M:%S"
 
 #. Translators: timestamp format for events on the
 #. * current day, showing the time without seconds in
 #. * 24-hour format.
 #: src/gl-util.c:218
 msgid "%H:%M"
-msgstr "%H:%M"
+msgstr "%-H:%M"
 
 #. Translators: timestamp format for events in the
 #. * current year, showing the abbreviated month name,
@@ -555,7 +555,7 @@ msgstr "%H:%M"
 #. * 24-hour format.
 #: src/gl-util.c:228
 msgid "%b %e %H:%M:%S"
-msgstr "%b %e %H:%M:%S"
+msgstr "%e %b %-H:%M:%S"
 
 #. Translators: timestamp format for events in the
 #. * current year, showing the abbreviated month name,
@@ -563,7 +563,7 @@ msgstr "%b %e %H:%M:%S"
 #. * 24-hour format.
 #: src/gl-util.c:236
 msgid "%b %e %H:%M"
-msgstr "%b %e %H:%M"
+msgstr "%e %b %-H:%M"
 
 #. Translators: timestamp format for events in
 #. * a different year, showing the abbreviated
@@ -571,7 +571,7 @@ msgstr "%b %e %H:%M"
 #. * time with seconds in 24-hour format.
 #: src/gl-util.c:247
 msgid "%b %e %Y %H:%M:%S"
-msgstr "%b %e %Y %H:%M:%S"
+msgstr "%e %b %Y %-H:%M:%S"
 
 #. Translators: timestamp format for events in a
 #. * different year, showing the abbreviated month name,
@@ -579,7 +579,7 @@ msgstr "%b %e %Y %H:%M:%S"
 #. * in 24-hour format.
 #: src/gl-util.c:255
 msgid "%b %e %Y %H:%M"
-msgstr "%b %e %Y %H:%M"
+msgstr "%e %b %Y %-H:%M"
 
 #. Transltors: the first string is the earliest timestamp of the boot,
 #. * and the second string is the newest timestamp. An example string might
