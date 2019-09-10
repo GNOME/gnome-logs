@@ -1,3 +1,11 @@
+GNOME Logs 3.34.0
+=================
+
+* Avoid segfault when updating the boot menu
+* Fix application name in about dialog
+* Fixed unfunctional translations in meson
+* updates to Basque, Friulian, Persian and Catalan translations
+
 GNOME Logs 3.33.2
 =================
 
