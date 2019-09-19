@@ -1,15 +1,16 @@
 # Japanese translation for gnome-logs.
-# Copyright (C) 2014 gnome-logs's COPYRIGHT HOLDER
+# Copyright (C) 2014-2019 gnome-logs's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-logs package.
 # Aaron Hamilton <aaron@correspondwith.me>, 2014.
+# sicklylife <translation@sicklylife.jp>, 2019.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
 "POT-Creation-Date: 2019-04-19 15:34+0000\n"
-"PO-Revision-Date: 2014-06-25 19:44+0000\n"
-"Last-Translator: Aaron Hamilton <aaron@correspondwith.me>\n"
+"PO-Revision-Date: 2019-09-19 00:00+0000\n"
+"Last-Translator: sicklylife <translation@sicklylife.jp>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
@@ -27,7 +28,7 @@ msgstr "アラート"
 
 #: data/gl-categorylist.ui:45
 msgid "Starred"
-msgstr "スター付き"
+msgstr "星付き"
 
 #: data/gl-categorylist.ui:60
 msgid "All"
@@ -63,37 +64,35 @@ msgstr "新しいウィンドウ(_N)"
 
 #: data/gl-eventtoolbar.ui:12
 msgid "Keyboard Shortcuts"
-msgstr ""
+msgstr "キーボードショートカット"
 
 #: data/gl-eventtoolbar.ui:17
 msgid "_Help"
 msgstr "ヘルプ(_H)"
 
 #: data/gl-eventtoolbar.ui:21
-#, fuzzy
-#| msgid "_About"
 msgid "_About Logs"
-msgstr "このアプリケーションについて(_A)"
+msgstr "ログについて(_A)"
 
 #: data/gl-eventtoolbar.ui:53
 msgid "Export logs to a file"
-msgstr ""
+msgstr "ログをファイルにエクスポートします"
 
 #: data/gl-eventtoolbar.ui:74
 msgid "Choose the boot from which to view logs"
-msgstr ""
+msgstr "ログを表示するブートを選択します"
 
 #: data/gl-eventtoolbar.ui:86
 msgid "Search all the logs of the current category"
-msgstr ""
+msgstr "現在のカテゴリーのすべてのログを検索します"
 
 #: data/gl-eventviewdetail.ui:26
 msgid "Sender"
-msgstr ""
+msgstr "送信者"
 
 #: data/gl-eventviewdetail.ui:58
 msgid "Time"
-msgstr ""
+msgstr "時間"
 
 #: data/gl-eventviewdetail.ui:92 data/gl-searchpopover.ui:1052
 msgid "Message"
@@ -101,7 +100,7 @@ msgstr "メッセージ"
 
 #: data/gl-eventviewdetail.ui:128 data/gl-searchpopover.ui:1072
 msgid "Audit Session"
-msgstr ""
+msgstr "監査セッション"
 
 #: data/gl-eventviewdetail.ui:161 data/gl-searchpopover.ui:1067
 msgid "Kernel Device"
@@ -121,7 +120,7 @@ msgstr ""
 
 #: data/gl-eventviewdetail.ui:298
 msgid "Support"
-msgstr ""
+msgstr "サポート"
 
 #: data/gl-eventviewdetail.ui:334
 msgid "Documentation"
@@ -129,215 +128,211 @@ msgstr ""
 
 #: data/gl-eventviewlist.ui:42
 msgid "Select journal field and timestamp range filtering options"
-msgstr ""
+msgstr "ジャーナルフィールドとタイムスタンプの範囲のフィルタリングオプションを選択してください"
 
 #: data/gl-searchpopover.ui:26
 msgid "Select a Journal Field to filter the Logs according to it"
-msgstr ""
+msgstr "ログをフィルタリングするジャーナルフィールドを選択してください"
 
 #: data/gl-searchpopover.ui:35 data/gl-searchpopover.ui:1028
 msgid "All Available Fields"
-msgstr ""
+msgstr "すべての利用可能なフィールド"
 
 #: data/gl-searchpopover.ui:78 data/gl-searchpopover.ui:251
 msgid "Parameters"
-msgstr ""
+msgstr "パラメーター"
 
 #. Translators: What [journal fields to search in]
 #: data/gl-searchpopover.ui:115
 msgid "What"
-msgstr ""
+msgstr "対象"
 
 #: data/gl-searchpopover.ui:130
 msgid "Select Journal Field…"
-msgstr ""
+msgstr "ジャーナルフィールドの選択…"
 
 #. When [log entries to be shown for a given timestamp range]
 #: data/gl-searchpopover.ui:155
 msgid "When"
-msgstr ""
+msgstr "範囲"
 
 #: data/gl-searchpopover.ui:170
 msgid "Show Logs from…"
-msgstr ""
+msgstr "表示するログの範囲…"
 
 #: data/gl-searchpopover.ui:199
 msgid "Select Timestamp Range of the Log Entries to be shown"
-msgstr ""
+msgstr "表示するログエントリーのタイムスタンプの範囲を選択してください"
 
 #: data/gl-searchpopover.ui:208 data/gl-searchpopover.ui:1091
 #: src/gl-searchpopover.c:1309
 msgid "Current Boot"
-msgstr ""
+msgstr "現在のブート"
 
 #: data/gl-searchpopover.ui:293
 msgid "Search Type"
-msgstr ""
+msgstr "検索形式"
 
 #: data/gl-searchpopover.ui:310
 msgid "Substring"
-msgstr ""
+msgstr "部分一致"
 
 #: data/gl-searchpopover.ui:314
 msgid "Match in any part of the string"
-msgstr ""
+msgstr "文字列が含まれているものを表示します"
 
 #: data/gl-searchpopover.ui:328
 msgid "Exact"
-msgstr ""
+msgstr "完全一致"
 
 #: data/gl-searchpopover.ui:332
 msgid "Match complete string only"
-msgstr ""
+msgstr "文字列が完全に一致するものを表示します"
 
 #: data/gl-searchpopover.ui:379
 msgid "Back"
-msgstr ""
+msgstr "戻る"
 
 #: data/gl-searchpopover.ui:397
 msgid "Show Logs Starting From…"
-msgstr ""
+msgstr "表示するログの起点…"
 
 #: data/gl-searchpopover.ui:419
 msgid "Select a start date"
-msgstr ""
+msgstr "起点日を選択してください"
 
 #: data/gl-searchpopover.ui:428 src/gl-searchpopover.c:503
 msgid "Select Start Date…"
-msgstr ""
+msgstr "起点日を選択…"
 
 #: data/gl-searchpopover.ui:459 data/gl-searchpopover.ui:763
 msgid "22 January 2016 or 1/22/2016"
-msgstr ""
+msgstr "2016年1月22日 または 2016/1/22"
 
 #: data/gl-searchpopover.ui:504
 msgid "Select start time"
-msgstr ""
+msgstr "起点時間を選択してください"
 
 #: data/gl-searchpopover.ui:513 src/gl-searchpopover.c:504
 msgid "Select Start Time…"
-msgstr ""
+msgstr "起点時間を選択…"
 
 #: data/gl-searchpopover.ui:550 data/gl-searchpopover.ui:857
 msgid "Hr"
-msgstr ""
+msgstr "時"
 
 #: data/gl-searchpopover.ui:585 data/gl-searchpopover.ui:892
 msgid "Min"
-msgstr ""
+msgstr "分"
 
 #: data/gl-searchpopover.ui:620 data/gl-searchpopover.ui:927
 msgid "Sec"
-msgstr ""
+msgstr "秒"
 
 #: data/gl-searchpopover.ui:655 data/gl-searchpopover.ui:962
 msgid "AM/PM"
-msgstr ""
+msgstr "午前/午後"
 
 #: data/gl-searchpopover.ui:701
 msgid "Until…"
-msgstr ""
+msgstr "終点…"
 
 #: data/gl-searchpopover.ui:723
 msgid "Select an end date"
-msgstr ""
+msgstr "終点日を選択してください"
 
 #: data/gl-searchpopover.ui:732 src/gl-searchpopover.c:521
 msgid "Select End Date…"
-msgstr ""
+msgstr "終点日を選択…"
 
 #: data/gl-searchpopover.ui:811
 msgid "Select end time"
-msgstr ""
+msgstr "終点時間を選択してください"
 
 #: data/gl-searchpopover.ui:820 src/gl-searchpopover.c:522
 msgid "Select End Time…"
-msgstr ""
+msgstr "終点時間を選択…"
 
 #: data/gl-searchpopover.ui:1037
 msgid "PID"
-msgstr ""
+msgstr "PID"
 
 #: data/gl-searchpopover.ui:1042
 msgid "UID"
-msgstr ""
+msgstr "UID"
 
 #: data/gl-searchpopover.ui:1047
 msgid "GID"
-msgstr ""
+msgstr "GID"
 
 #: data/gl-searchpopover.ui:1057
 msgid "Process Name"
-msgstr ""
+msgstr "プロセス名"
 
 #: data/gl-searchpopover.ui:1062
-#, fuzzy
-#| msgid "System"
 msgid "Systemd Unit"
-msgstr "システム"
+msgstr ""
 
 #: data/gl-searchpopover.ui:1077
 msgid "Executable Path"
-msgstr ""
+msgstr "実行パス"
 
 #: data/gl-searchpopover.ui:1096
 msgid "Previous Boot"
-msgstr ""
+msgstr "前のブート"
 
 #: data/gl-searchpopover.ui:1105
 msgid "Today"
-msgstr ""
+msgstr "今日"
 
 #: data/gl-searchpopover.ui:1110
 msgid "Yesterday"
-msgstr ""
+msgstr "昨日"
 
 #: data/gl-searchpopover.ui:1115
 msgid "Last 3 days"
-msgstr ""
+msgstr "過去 3 日"
 
 #: data/gl-searchpopover.ui:1124
 msgid "Entire Journal"
-msgstr ""
+msgstr "ジャーナル全体"
 
 #: data/gl-searchpopover.ui:1133
 msgid "Set Custom Range…"
-msgstr ""
+msgstr "範囲を指定…"
 
 #: data/gl-window.ui:26
-#, fuzzy
-#| msgid "_Help"
 msgid "Help"
-msgstr "ヘルプ(_H)"
+msgstr "ヘルプ"
 
 #: data/gl-window.ui:34
 msgid "Ignore"
-msgstr ""
+msgstr "無視"
 
 #: data/help-overlay.ui:8
 msgctxt "shortcut window"
 msgid "General"
-msgstr ""
+msgstr "全般"
 
 #: data/help-overlay.ui:13
 msgctxt "shortcut window"
 msgid "Open a new window"
-msgstr ""
+msgstr "新しいウィンドウを開く"
 
 #: data/help-overlay.ui:20
 msgctxt "shortcut window"
 msgid "Close a window"
-msgstr ""
+msgstr "ウィンドウを閉じる"
 
 #: data/help-overlay.ui:28
 msgctxt "shortcut window"
 msgid "Search"
-msgstr ""
+msgstr "検索"
 
 #: data/help-overlay.ui:33
 msgctxt "shortcut window"
 msgid "Find"
-msgstr ""
+msgstr "検索する"
 
 #: data/org.gnome.Logs.appdata.xml.in:7
 msgid "GNOME Logs"
@@ -345,7 +340,7 @@ msgstr ""
 
 #: data/org.gnome.Logs.appdata.xml.in:8 data/org.gnome.Logs.desktop.in:5
 msgid "View detailed event logs for the system"
-msgstr ""
+msgstr "システムの詳細なイベントログを表示します"
 
 #: data/org.gnome.Logs.appdata.xml.in:10
 msgid ""
@@ -365,12 +360,12 @@ msgstr "ログ"
 
 #: data/org.gnome.Logs.desktop.in:4
 msgid "Log Viewer"
-msgstr ""
+msgstr "ログビューアー"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.Logs.desktop.in:7
 msgid "log;journal;debug;error;"
-msgstr ""
+msgstr "log;journal;debug;error;ログ;ジャーナル;デバッグ;エラー;"
 
 #: data/org.gnome.Logs.gschema.xml:5
 msgid "Ignore warning"
@@ -392,30 +387,32 @@ msgstr ""
 
 #: src/gl-application.c:109
 msgid "translator-credits"
-msgstr "Aaron Hamilton <aaron@correspondwith.me>"
+msgstr ""
+"Aaron Hamilton <aaron@correspondwith.me>\n"
+"sicklylife <translation@sicklylife.jp>"
 
 #: src/gl-application.c:110
 msgid "View and search logs"
-msgstr ""
+msgstr "ログの検索と表示"
 
 #: src/gl-application.c:225
 msgid "Print version information and exit"
-msgstr "バージョンを表示する"
+msgstr "バージョン情報を表示して終了する"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
 #: src/gl-eventtoolbar.c:130
 msgid "Boot"
-msgstr ""
+msgstr "ブート"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
 #: src/gl-eventviewlist.c:488
 msgid "No results"
-msgstr "見つかりませんでした"
+msgstr "見つかりません"
 
 #: src/gl-eventviewrow.c:224
 msgid "Other"
-msgstr ""
+msgstr "その他"
 
 #. Translators: if only custom start timestamp is set, then we update
 #. * the timestamp range button label in popover to show that
@@ -424,7 +421,7 @@ msgstr ""
 #: src/gl-searchpopover.c:687
 #, c-format
 msgid "From %s"
-msgstr ""
+msgstr "%s から"
 
 #. Translators: if only custom end timestamp is set, then we update
 #. * the timestamp range button label in popover to show that
@@ -433,7 +430,7 @@ msgstr ""
 #: src/gl-searchpopover.c:700
 #, c-format
 msgid "Until %s"
-msgstr ""
+msgstr "%s まで"
 
 #. Translators: date format for the start date entry
 #. * and start date button label in the custom range submenu,
@@ -445,17 +442,17 @@ msgstr ""
 #. * name as string, the year as a decimal number including the century.
 #: src/gl-searchpopover.c:737 src/gl-searchpopover.c:1107
 msgid "%e %B %Y"
-msgstr ""
+msgstr "%Y年%B%e日"
 
 #: src/gl-searchpopover.c:875
 #, c-format
 msgid "AM"
-msgstr ""
+msgstr "午前"
 
 #: src/gl-searchpopover.c:879
 #, c-format
 msgid "PM"
-msgstr ""
+msgstr "午後"
 
 #. Translators: timestamp format for the custom start time button
 #. * label in the custom range submenu, showing the time with seconds
@@ -465,7 +462,7 @@ msgstr ""
 #. * in 12-hour format.
 #: src/gl-searchpopover.c:987 src/gl-searchpopover.c:1229
 msgid "%I:%M:%S %p"
-msgstr ""
+msgstr "%p %I:%M:%S"
 
 #. Translators: timestamp format for the custom start time button
 #. * label in the custom range submenu, showing the time with seconds
@@ -475,21 +472,21 @@ msgstr ""
 #. * in 24-hour format.
 #: src/gl-searchpopover.c:994 src/gl-searchpopover.c:1236
 msgid "%T"
-msgstr ""
+msgstr "%H:%M:%S"
 
 #. Translators: timestamp format for events on the
 #. * current day, showing the time with seconds in
 #. * 12-hour format.
 #: src/gl-util.c:148
 msgid "%l:%M:%S %p"
-msgstr ""
+msgstr "%p %l:%M:%S"
 
 #. Translators: timestamp format for events on the
 #. * current day, showing the time without seconds in
 #. * 12-hour format.
 #: src/gl-util.c:155
 msgid "%l:%M %p"
-msgstr ""
+msgstr "%p %l:%M"
 
 #. Translators: timestamp format for events in
 #. * the current year, showing the abbreviated
@@ -497,7 +494,7 @@ msgstr ""
 #. * with seconds in 12-hour format.
 #: src/gl-util.c:166
 msgid "%b %e %l:%M:%S %p"
-msgstr ""
+msgstr "%B%e日 %p %l:%M:%S"
 
 #. Translators: timestamp format for events in the
 #. * current year, showing the abbreviated month name,
@@ -505,7 +502,7 @@ msgstr ""
 #. * 12-hour format.
 #: src/gl-util.c:174
 msgid "%b %e %l:%M %p"
-msgstr ""
+msgstr "%B%e日 %p %l:%M"
 
 #. Translators: timestamp format for events in
 #. * a different year, showing the abbreviated
@@ -513,7 +510,7 @@ msgstr ""
 #. * time with seconds in 12-hour format.
 #: src/gl-util.c:185
 msgid "%b %e %Y %l:%M:%S %p"
-msgstr ""
+msgstr "%Y年%B%e日 %p %l:%M:%S"
 
 #. Translators: timestamp format for events in
 #. * a different year, showing the abbreviated
@@ -521,21 +518,21 @@ msgstr ""
 #. * time without seconds in 12-hour format.
 #: src/gl-util.c:194
 msgid "%b %e %Y %l:%M %p"
-msgstr ""
+msgstr "%Y年%B%e日 %p %l:%M"
 
 #. Translators: timestamp format for events on the
 #. * current day, showing the time with seconds in
 #. * 24-hour format.
 #: src/gl-util.c:211
 msgid "%H:%M:%S"
-msgstr ""
+msgstr "%H:%M:%S"
 
 #. Translators: timestamp format for events on the
 #. * current day, showing the time without seconds in
 #. * 24-hour format.
 #: src/gl-util.c:218
 msgid "%H:%M"
-msgstr ""
+msgstr "%H:%M"
 
 #. Translators: timestamp format for events in the
 #. * current year, showing the abbreviated month name,
@@ -543,7 +540,7 @@ msgstr ""
 #. * 24-hour format.
 #: src/gl-util.c:228
 msgid "%b %e %H:%M:%S"
-msgstr ""
+msgstr "%B%e日 %H:%M:%S"
 
 #. Translators: timestamp format for events in the
 #. * current year, showing the abbreviated month name,
@@ -551,7 +548,7 @@ msgstr ""
 #. * 24-hour format.
 #: src/gl-util.c:236
 msgid "%b %e %H:%M"
-msgstr ""
+msgstr "%B%e日 %H:%M"
 
 #. Translators: timestamp format for events in
 #. * a different year, showing the abbreviated
@@ -559,7 +556,7 @@ msgstr ""
 #. * time with seconds in 24-hour format.
 #: src/gl-util.c:247
 msgid "%b %e %Y %H:%M:%S"
-msgstr ""
+msgstr "%Y年%B%e日 %H:%M:%S"
 
 #. Translators: timestamp format for events in a
 #. * different year, showing the abbreviated month name,
@@ -567,7 +564,7 @@ msgstr ""
 #. * in 24-hour format.
 #: src/gl-util.c:255
 msgid "%b %e %Y %H:%M"
-msgstr ""
+msgstr "%Y年%B%e日 %H:%M"
 
 #. Transltors: the first string is the earliest timestamp of the boot,
 #. * and the second string is the newest timestamp. An example string might
@@ -575,41 +572,39 @@ msgstr ""
 #: src/gl-util.c:319
 #, c-format
 msgid "%s – %s"
-msgstr ""
+msgstr "%s – %s"
 
 #: src/gl-window.c:113
 msgid "Save logs"
-msgstr ""
+msgstr "ログの保存"
 
 #: src/gl-window.c:116
 msgid "_Cancel"
-msgstr ""
+msgstr "キャンセル(_C)"
 
 #: src/gl-window.c:117
 msgid "_Save"
-msgstr ""
+msgstr "保存(_S)"
 
 #: src/gl-window.c:122
-#, fuzzy
-#| msgid "Message"
 msgid "log messages"
-msgstr "メッセージ"
+msgstr "ログメッセージ"
 
 #: src/gl-window.c:181
 msgid "Unable to export log messages to a file"
-msgstr ""
+msgstr "ログメッセージをファイルにエクスポートできません"
 
 #: src/gl-window.c:481 src/gl-window.c:512
 msgid "Unable to read system logs"
-msgstr ""
+msgstr "システムログを読み取れません"
 
 #: src/gl-window.c:495
 msgid "Unable to read user logs"
-msgstr ""
+msgstr "ユーザーログを読み取れません"
 
 #: src/gl-window.c:527
 msgid "No logs available"
-msgstr ""
+msgstr "ログはありません"
 
 #~ msgid "Go back to the event view"
 #~ msgstr "イベントビューへ戻ります"
