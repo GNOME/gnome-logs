@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
 "POT-Creation-Date: 2019-04-19 15:34+0000\n"
-"PO-Revision-Date: 2019-09-19 00:00+0000\n"
+"PO-Revision-Date: 2019-09-20 19:00+0000\n"
 "Last-Translator: sicklylife <translation@sicklylife.jp>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
 "Language: ja\n"
@@ -149,7 +149,7 @@ msgstr "対象"
 
 #: data/gl-searchpopover.ui:130
 msgid "Select Journal Field…"
-msgstr "ジャーナルフィールドの選択…"
+msgstr "ジャーナルフィールドを選択…"
 
 #. When [log entries to be shown for a given timestamp range]
 #: data/gl-searchpopover.ui:155
@@ -365,7 +365,7 @@ msgstr "ログビューアー"
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.Logs.desktop.in:7
 msgid "log;journal;debug;error;"
-msgstr "log;journal;debug;error;ログ;ジャーナル;デバッグ;エラー;"
+msgstr "log;journal;debug;error;logs;ログ;ジャーナル;デバッグ;エラー;"
 
 #: data/org.gnome.Logs.gschema.xml:5
 msgid "Ignore warning"
