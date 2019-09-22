@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2019-04-19 15:34+0000\n"
-"PO-Revision-Date: 2019-09-20 19:00+0000\n"
+"POT-Creation-Date: 2019-09-20 10:28+0000\n"
+"PO-Revision-Date: 2019-09-22 18:00+0000\n"
 "Last-Translator: sicklylife <translation@sicklylife.jp>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
 "Language: ja\n"
@@ -128,7 +128,9 @@ msgstr ""
 
 #: data/gl-eventviewlist.ui:42
 msgid "Select journal field and timestamp range filtering options"
-msgstr "ジャーナルフィールドとタイムスタンプの範囲のフィルタリングオプションを選択してください"
+msgstr ""
+"ジャーナルフィールドとタイムスタンプ範囲のフィルタリングオプションを選択し"
+"てください"
 
 #: data/gl-searchpopover.ui:26
 msgid "Select a Journal Field to filter the Logs according to it"
@@ -162,7 +164,7 @@ msgstr "表示するログの範囲…"
 
 #: data/gl-searchpopover.ui:199
 msgid "Select Timestamp Range of the Log Entries to be shown"
-msgstr "表示するログエントリーのタイムスタンプの範囲を選択してください"
+msgstr "表示するログエントリーのタイムスタンプ範囲を選択してください"
 
 #: data/gl-searchpopover.ui:208 data/gl-searchpopover.ui:1091
 #: src/gl-searchpopover.c:1309
@@ -354,7 +356,7 @@ msgid ""
 "detailed information about each event by clicking on it."
 msgstr ""
 
-#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:139
+#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:143
 msgid "Logs"
 msgstr "ログ"
 
@@ -400,7 +402,7 @@ msgid "Print version information and exit"
 msgstr "バージョン情報を表示して終了する"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
-#: src/gl-eventtoolbar.c:130
+#: src/gl-eventtoolbar.c:134
 msgid "Boot"
 msgstr "ブート"
 
