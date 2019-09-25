@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2019-09-20 10:28+0000\n"
-"PO-Revision-Date: 2019-09-22 18:00+0000\n"
+"POT-Creation-Date: 2019-09-22 09:48+0000\n"
+"PO-Revision-Date: 2019-09-25 21:30+0000\n"
 "Last-Translator: sicklylife <translation@sicklylife.jp>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
 "Language: ja\n"
@@ -72,7 +72,7 @@ msgstr "ヘルプ(_H)"
 
 #: data/gl-eventtoolbar.ui:21
 msgid "_About Logs"
-msgstr "ログについて(_A)"
+msgstr "“ログ”について(_A)"
 
 #: data/gl-eventtoolbar.ui:53
 msgid "Export logs to a file"
@@ -129,8 +129,8 @@ msgstr ""
 #: data/gl-eventviewlist.ui:42
 msgid "Select journal field and timestamp range filtering options"
 msgstr ""
-"ジャーナルフィールドとタイムスタンプ範囲のフィルタリングオプションを選択し"
-"てください"
+"ジャーナルフィールドとタイムスタンプ範囲のフィルタリングオプションを選択して"
+"ください"
 
 #: data/gl-searchpopover.ui:26
 msgid "Select a Journal Field to filter the Logs according to it"
