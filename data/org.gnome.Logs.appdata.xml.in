@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright 2013, 2014 David King <davidk@gnome.org> -->
-<component type="desktop">
+<component type="desktop-application">
   <id>org.gnome.Logs.desktop</id>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0+</project_license>
@@ -17,14 +17,19 @@
       <image>http://amigadave.com/temp/gnome-logs-default.png</image>
     </screenshot>
   </screenshots>
+  <releases>
+    <release version="3.34.0" date="2019-09-10" />
+  </releases>
+  <launchable type="desktop-id">org.gnome.Logs.desktop</launchable>
   <url type="homepage">https://wiki.gnome.org/Apps/Logs</url>
-  <url type="bugtracker">https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-logs</url>
+  <url type="bugtracker">https://gitlab.gnome.org/GNOME/gnome-logs/issues/</url>
   <url type="donation">http://www.gnome.org/friends/</url>
   <url type="help">https://help.gnome.org/users/gnome-logs/stable/</url>
   <update_contact>davidk@gnome.org</update_contact>
   <project_group>GNOME</project_group>
+  <developer_name>The GNOME Project</developer_name>
+  <content_rating type="oars-1.0" />
   <kudos>
-    <kudo>AppMenu</kudo>
     <kudo>ModernToolkit</kudo>
   </kudos>
   <translation type="gettext">gnome-logs</translation>
