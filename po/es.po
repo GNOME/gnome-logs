@@ -2,22 +2,22 @@
 # Copyright (C) 2013 gnome-logs's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-logs package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# Daniel Mustieles <daniel.mustieles@gmail.com>, 2013-2017, 2017, 2018.
+# Daniel Mustieles <daniel.mustieles@gmail.com>, 2013-2019.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2018-11-12 06:01+0000\n"
-"PO-Revision-Date: 2018-12-04 15:49+0100\n"
+"POT-Creation-Date: 2019-10-09 08:34+0000\n"
+"PO-Revision-Date: 2019-10-10 12:14+0200\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
-"Language-Team: es <gnome-es-list@gnome.org>\n"
-"Language: es\n"
+"Language-Team: Spanish - Spain <gnome-es-list@gnome.org>\n"
+"Language: es_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Gtranslator 2.91.7\n"
+"X-Generator: Gtranslator 3.34.0\n"
 
 #: data/gl-categorylist.ui:15
 msgid "Important"
@@ -72,7 +72,6 @@ msgid "_Help"
 msgstr "_Ayuda"
 
 #: data/gl-eventtoolbar.ui:21
-#| msgid "_About"
 msgid "_About Logs"
 msgstr "_Acerca de Registros"
 
@@ -128,7 +127,7 @@ msgstr "Soporte"
 msgid "Documentation"
 msgstr "Documentación"
 
-#: data/gl-eventviewlist.ui:43
+#: data/gl-eventviewlist.ui:42
 msgid "Select journal field and timestamp range filtering options"
 msgstr ""
 "Seleccionar opciones de filtrado del campo del diario y rango de marca de "
@@ -306,11 +305,11 @@ msgstr "Diario completo"
 msgid "Set Custom Range…"
 msgstr "Seleccionar rango personalizado…"
 
-#: data/gl-window.ui:31
+#: data/gl-window.ui:26
 msgid "Help"
 msgstr "Ayuda"
 
-#: data/gl-window.ui:39
+#: data/gl-window.ui:34
 msgid "Ignore"
 msgstr "Ignorar"
 
@@ -363,7 +362,11 @@ msgstr ""
 "Al usar Registros puede buscar en sus registros escribiendo un término de "
 "búsqueda y ver información detallada sobre cada evento al pulsar sobre él."
 
-#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:139
+#: data/org.gnome.Logs.appdata.xml.in:30
+msgid "The GNOME Project"
+msgstr "El Proyecto GNOME"
+
+#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:143
 msgid "Logs"
 msgstr "Registros"
 
@@ -375,12 +378,6 @@ msgstr "Visor de registros"
 #: data/org.gnome.Logs.desktop.in:7
 msgid "log;journal;debug;error;"
 msgstr "registro;diario;depurar;error;"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/org.gnome.Logs.desktop.in:12
-#| msgid "gnome-logs"
-msgid "org.gnome.Logs"
-msgstr "org.gnome.Logs"
 
 #: data/org.gnome.Logs.gschema.xml:5
 msgid "Ignore warning"
@@ -413,12 +410,12 @@ msgstr "Daniel Mustieles <daniel.mustieles@gmail.com>, 2013-2016"
 msgid "View and search logs"
 msgstr "Ver y buscar registros"
 
-#: src/gl-application.c:231
+#: src/gl-application.c:225
 msgid "Print version information and exit"
 msgstr "Mostrar información de la versión y salir"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
-#: src/gl-eventtoolbar.c:130
+#: src/gl-eventtoolbar.c:134
 msgid "Boot"
 msgstr "Arranque"
 
@@ -463,10 +460,12 @@ msgid "%e %B %Y"
 msgstr "%e %B %Y"
 
 #: src/gl-searchpopover.c:875
+#, c-format
 msgid "AM"
 msgstr "AM"
 
 #: src/gl-searchpopover.c:879
+#, c-format
 msgid "PM"
 msgstr "PM"
 
@@ -610,17 +609,21 @@ msgstr "mensajes de registro"
 msgid "Unable to export log messages to a file"
 msgstr "No se puede exportar el registro de mensajes a un archivo"
 
-#: src/gl-window.c:474 src/gl-window.c:505
+#: src/gl-window.c:481 src/gl-window.c:512
 msgid "Unable to read system logs"
 msgstr "No se pueden leer los registros del sistema"
 
-#: src/gl-window.c:488
+#: src/gl-window.c:495
 msgid "Unable to read user logs"
 msgstr "No se pueden leer los registros del usuario"
 
-#: src/gl-window.c:520
+#: src/gl-window.c:527
 msgid "No logs available"
 msgstr "No hay registros disponibles"
+
+#~| msgid "gnome-logs"
+#~ msgid "org.gnome.Logs"
+#~ msgstr "org.gnome.Logs"
 
 #~ msgid "_Quit"
 #~ msgstr "_Salir"
