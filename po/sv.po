@@ -1,14 +1,14 @@
 # Swedish translation for gnome-logs.
-# Copyright © 2014-2018 gnome-logs's COPYRIGHT HOLDER
+# Copyright © 2014-2019 gnome-logs's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-logs package.
-# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2014, 2015, 2016, 2017, 2018.
+# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2014, 2015, 2016, 2017, 2018, 2019.
 # Sebastian Rasmussen <sebras@gmail.com>, 2016.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2018-12-05 09:48+0000\n"
-"PO-Revision-Date: 2018-12-28 12:02+0100\n"
+"POT-Creation-Date: 2019-10-09 08:34+0000\n"
+"PO-Revision-Date: 2019-10-11 19:16+0200\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.2\n"
+"X-Generator: Poedit 2.2.4\n"
 
 #: data/gl-categorylist.ui:15
 msgid "Important"
@@ -126,7 +126,7 @@ msgstr "Support"
 msgid "Documentation"
 msgstr "Dokumentation"
 
-#: data/gl-eventviewlist.ui:43
+#: data/gl-eventviewlist.ui:42
 msgid "Select journal field and timestamp range filtering options"
 msgstr "Välj filteralternativ för journalfält och tidsstämpelintervall"
 
@@ -301,11 +301,11 @@ msgstr "Hela journalen"
 msgid "Set Custom Range…"
 msgstr "Ställ in ett anpassat intervall…"
 
-#: data/gl-window.ui:31
+#: data/gl-window.ui:26
 msgid "Help"
 msgstr "Hjälp"
 
-#: data/gl-window.ui:39
+#: data/gl-window.ui:34
 msgid "Ignore"
 msgstr "Ignorera"
 
@@ -358,7 +358,11 @@ msgstr ""
 "Med Loggar kan du söka dina loggar genom att skriva in en sökterm. Se sedan "
 "detaljerad information om enstaka händelser genom att klicka på dem."
 
-#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:139
+#: data/org.gnome.Logs.appdata.xml.in:30
+msgid "The GNOME Project"
+msgstr "GNOME-projektet"
+
+#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:143
 msgid "Logs"
 msgstr "Loggar"
 
@@ -370,11 +374,6 @@ msgstr "Loggvisare"
 #: data/org.gnome.Logs.desktop.in:7
 msgid "log;journal;debug;error;"
 msgstr "logg;journal;debug;avlusning;fel;felsökning;"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/org.gnome.Logs.desktop.in:12
-msgid "org.gnome.Logs"
-msgstr "org.gnome.Logs"
 
 #: data/org.gnome.Logs.gschema.xml:5
 msgid "Ignore warning"
@@ -410,12 +409,12 @@ msgstr ""
 msgid "View and search logs"
 msgstr "Visa och sök igenom loggar"
 
-#: src/gl-application.c:231
+#: src/gl-application.c:225
 msgid "Print version information and exit"
 msgstr "Skriv ut versionsinformation och avsluta"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
-#: src/gl-eventtoolbar.c:130
+#: src/gl-eventtoolbar.c:134
 msgid "Boot"
 msgstr "Uppstart"
 
@@ -460,10 +459,12 @@ msgid "%e %B %Y"
 msgstr "%e %B %Y"
 
 #: src/gl-searchpopover.c:875
+#, c-format
 msgid "AM"
 msgstr "f.m."
 
 #: src/gl-searchpopover.c:879
+#, c-format
 msgid "PM"
 msgstr "e.m."
 
@@ -607,17 +608,20 @@ msgstr "loggmeddelanden"
 msgid "Unable to export log messages to a file"
 msgstr "Kan ej exportera loggmeddelanden till en fil"
 
-#: src/gl-window.c:474 src/gl-window.c:505
+#: src/gl-window.c:481 src/gl-window.c:512
 msgid "Unable to read system logs"
 msgstr "Kan ej läsa systemloggar"
 
-#: src/gl-window.c:488
+#: src/gl-window.c:495
 msgid "Unable to read user logs"
 msgstr "Kan ej läsa användarloggar"
 
-#: src/gl-window.c:520
+#: src/gl-window.c:527
 msgid "No logs available"
 msgstr "Inga loggar tillgängliga"
+
+#~ msgid "org.gnome.Logs"
+#~ msgstr "org.gnome.Logs"
 
 #~ msgid "_Quit"
 #~ msgstr "_Avsluta"
