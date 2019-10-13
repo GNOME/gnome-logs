@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2018-11-12 06:01+0000\n"
-"PO-Revision-Date: 2019-02-24 18:56+0200\n"
+"POT-Creation-Date: 2019-10-09 08:34+0000\n"
+"PO-Revision-Date: 2019-10-13 18:13+0300\n"
 "Last-Translator: Aurimas Černius <aurisc4@gmail.com>\n"
 "Language-Team: Lietuvių <gnome-lt@lists.akl.lt>\n"
 "Language: lt\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
 "%100<10 || n%100>=20) ? 1 : 2)\n"
-"X-Generator: Gtranslator 3.30.1\n"
+"X-Generator: Gtranslator 3.32.1\n"
 
 #: data/gl-categorylist.ui:15
 msgid "Important"
@@ -73,7 +73,6 @@ msgid "_Help"
 msgstr "_Žinynas"
 
 #: data/gl-eventtoolbar.ui:21
-#| msgid "_About"
 msgid "_About Logs"
 msgstr "_Apie žurnalus"
 
@@ -129,7 +128,7 @@ msgstr "Palaikymas"
 msgid "Documentation"
 msgstr "Dokumentacija"
 
-#: data/gl-eventviewlist.ui:43
+#: data/gl-eventviewlist.ui:42
 msgid "Select journal field and timestamp range filtering options"
 msgstr "Pasirinkite žurnalo lauką ir laiko žymų rėžio filtravimo parametrus"
 
@@ -304,11 +303,11 @@ msgstr "Visą žurnalą"
 msgid "Set Custom Range…"
 msgstr "Nustatyti pasirinktinį rėžį…"
 
-#: data/gl-window.ui:31
+#: data/gl-window.ui:26
 msgid "Help"
 msgstr "Žinynas"
 
-#: data/gl-window.ui:39
+#: data/gl-window.ui:34
 msgid "Ignore"
 msgstr "Nepaisyti"
 
@@ -361,7 +360,11 @@ msgstr ""
 "Naudodami žurnalus galite ieškoti žurnaluose įvesdami paieškos sąlygą bei "
 "matyti detalią informaciją apie kiekvieną įvykį paspaudę ant jo."
 
-#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:139
+#: data/org.gnome.Logs.appdata.xml.in:30
+msgid "The GNOME Project"
+msgstr "GNOME projektas"
+
+#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:143
 msgid "Logs"
 msgstr "Žurnalai"
 
@@ -373,12 +376,6 @@ msgstr "Žurnalų žiūryklė"
 #: data/org.gnome.Logs.desktop.in:7
 msgid "log;journal;debug;error;"
 msgstr "žurnalas;derinimas;klaida;"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/org.gnome.Logs.desktop.in:12
-#| msgid "gnome-logs"
-msgid "org.gnome.Logs"
-msgstr "org.gnome.Logs"
 
 #: data/org.gnome.Logs.gschema.xml:5
 msgid "Ignore warning"
@@ -410,12 +407,12 @@ msgstr ""
 msgid "View and search logs"
 msgstr "Rodyti ir ieškoti žurnaluose"
 
-#: src/gl-application.c:231
+#: src/gl-application.c:225
 msgid "Print version information and exit"
 msgstr "Atspausdinti versijos informaciją ir išeiti"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
-#: src/gl-eventtoolbar.c:130
+#: src/gl-eventtoolbar.c:134
 msgid "Boot"
 msgstr "Įkėlimas"
 
@@ -460,10 +457,12 @@ msgid "%e %B %Y"
 msgstr "%Y %B %e"
 
 #: src/gl-searchpopover.c:875
+#, c-format
 msgid "AM"
 msgstr "AM"
 
 #: src/gl-searchpopover.c:879
+#, c-format
 msgid "PM"
 msgstr "PM"
 
@@ -607,17 +606,21 @@ msgstr "žurnalo pranešimai"
 msgid "Unable to export log messages to a file"
 msgstr "Nepavyko eksportuoti žurnalo pranešimų į failą"
 
-#: src/gl-window.c:474 src/gl-window.c:505
+#: src/gl-window.c:481 src/gl-window.c:512
 msgid "Unable to read system logs"
 msgstr "Nepavyko perskaityti sistemos žurnalų"
 
-#: src/gl-window.c:488
+#: src/gl-window.c:495
 msgid "Unable to read user logs"
 msgstr "Nepavyko perskaityti naudotojo žurnalų"
 
-#: src/gl-window.c:520
+#: src/gl-window.c:527
 msgid "No logs available"
 msgstr "Nėra prieinamų žurnalų"
+
+#~| msgid "gnome-logs"
+#~ msgid "org.gnome.Logs"
+#~ msgstr "org.gnome.Logs"
 
 #~ msgid "_Quit"
 #~ msgstr "_Išeiti"
