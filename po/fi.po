@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2018-11-12 06:01+0000\n"
-"PO-Revision-Date: 2019-01-16 20:12+0200\n"
+"POT-Creation-Date: 2019-10-09 08:34+0000\n"
+"PO-Revision-Date: 2019-10-13 10:05+0300\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos+l10n@iki.fi>\n"
 "Language-Team: suomi <lokalisointi-lista@googlegroups.com>\n"
 "Language: fi\n"
@@ -127,7 +127,7 @@ msgstr "Tuki"
 msgid "Documentation"
 msgstr "Dokumentaatio"
 
-#: data/gl-eventviewlist.ui:43
+#: data/gl-eventviewlist.ui:42
 msgid "Select journal field and timestamp range filtering options"
 msgstr "Valitse lokikentän ja aikaleimavälin suodatusvalinnat"
 
@@ -302,11 +302,11 @@ msgstr "Koko lokikirja"
 msgid "Set Custom Range…"
 msgstr "Aseta mukautettu aikaväli…"
 
-#: data/gl-window.ui:31
+#: data/gl-window.ui:26
 msgid "Help"
 msgstr "Ohje"
 
-#: data/gl-window.ui:39
+#: data/gl-window.ui:34
 msgid "Ignore"
 msgstr "Ohita"
 
@@ -359,7 +359,11 @@ msgstr ""
 "Lokisovelluksen avulla voit etsiä tapahtumia lokeista, ja tarkastella "
 "yksittäisiä tapahtumia napsauttamalla niitä."
 
-#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:139
+#: data/org.gnome.Logs.appdata.xml.in:30
+msgid "The GNOME Project"
+msgstr "Gnome-projekti"
+
+#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:143
 msgid "Logs"
 msgstr "Lokit"
 
@@ -371,12 +375,6 @@ msgstr "Lokikatselin"
 #: data/org.gnome.Logs.desktop.in:7
 msgid "log;journal;debug;error;"
 msgstr "log;journal;debug;error;loki;vianetsintä;virhe;"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/org.gnome.Logs.desktop.in:12
-#| msgid "gnome-logs"
-msgid "org.gnome.Logs"
-msgstr "org.gnome.Logs"
 
 #: data/org.gnome.Logs.gschema.xml:5
 msgid "Ignore warning"
@@ -408,12 +406,12 @@ msgstr "Jiri Grönroos"
 msgid "View and search logs"
 msgstr "Katsele lokeja ja etsi lokien sisällöstä"
 
-#: src/gl-application.c:231
+#: src/gl-application.c:225
 msgid "Print version information and exit"
 msgstr "Tulosta versiotiedot ja poistu"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
-#: src/gl-eventtoolbar.c:130
+#: src/gl-eventtoolbar.c:134
 msgid "Boot"
 msgstr "Käynnistys"
 
@@ -458,10 +456,12 @@ msgid "%e %B %Y"
 msgstr "%e. %Bta %Y"
 
 #: src/gl-searchpopover.c:875
+#, c-format
 msgid "AM"
 msgstr "ap."
 
 #: src/gl-searchpopover.c:879
+#, c-format
 msgid "PM"
 msgstr "ip."
 
@@ -605,17 +605,21 @@ msgstr "lokiviestit"
 msgid "Unable to export log messages to a file"
 msgstr "Lokiviestien vieminen tiedostoon epäonnistui"
 
-#: src/gl-window.c:474 src/gl-window.c:505
+#: src/gl-window.c:481 src/gl-window.c:512
 msgid "Unable to read system logs"
 msgstr "Järjestelmälokien lukeminen ei onnistu"
 
-#: src/gl-window.c:488
+#: src/gl-window.c:495
 msgid "Unable to read user logs"
 msgstr "Käyttäjälokien lukeminen ei onnistu"
 
-#: src/gl-window.c:520
+#: src/gl-window.c:527
 msgid "No logs available"
 msgstr "Lokeja ei ole saatavilla"
+
+#~| msgid "gnome-logs"
+#~ msgid "org.gnome.Logs"
+#~ msgstr "org.gnome.Logs"
 
 #~ msgid "_Quit"
 #~ msgstr "_Lopeta"
