@@ -125,6 +125,8 @@ gl_event_view_row_finalize (GObject *object)
     GlEventViewRowPrivate *priv = gl_event_view_row_get_instance_private (row);
 
     g_clear_object (&priv->entry);
+
+    G_OBJECT_CLASS (gl_event_view_row_parent_class)->finalize (object);
 }
 
 static void

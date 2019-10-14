@@ -342,6 +342,8 @@ gl_journal_finalize (GObject *object)
         g_free (boot_id->boot_match);
     }
     g_array_free (priv->boot_ids, TRUE);
+
+    G_OBJECT_CLASS (gl_journal_parent_class)->finalize (object);
 }
 
 static void

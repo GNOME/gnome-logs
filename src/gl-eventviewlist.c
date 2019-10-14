@@ -1030,6 +1030,8 @@ gl_event_view_list_finalize (GObject *object)
     g_clear_object (&priv->journal_model);
     g_clear_pointer (&priv->search_text, g_free);
     g_object_unref (priv->category_sizegroup);
+
+    G_OBJECT_CLASS (gl_event_view_list_parent_class)->finalize (object);
 }
 
 static void

@@ -251,6 +251,8 @@ gl_application_finalize (GObject *object)
     g_clear_object (&priv->desktop);
     g_clear_object (&priv->settings);
     g_clear_pointer (&priv->monospace_font, g_free);
+
+    G_OBJECT_CLASS (gl_application_parent_class)->finalize (object);
 }
 
 static void

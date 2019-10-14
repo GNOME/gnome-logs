@@ -356,6 +356,8 @@ gl_event_view_detail_finalize (GObject *object)
     GlEventViewDetailPrivate *priv = gl_event_view_detail_get_instance_private (detail);
 
     g_clear_object (&priv->entry);
+
+    G_OBJECT_CLASS (gl_event_view_detail_parent_class)->finalize (object);
 }
 
 static void
