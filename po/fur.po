@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2019-04-19 15:34+0000\n"
-"PO-Revision-Date: 2019-07-28 09:14+0200\n"
+"POT-Creation-Date: 2019-10-09 08:34+0000\n"
+"PO-Revision-Date: 2019-10-17 16:51+0200\n"
 "Last-Translator: Fabio Tomat <f.t.public@gmail.com>\n"
 "Language-Team: Friulian <fur@li.org>\n"
 "Language: fur\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.3\n"
+"X-Generator: Poedit 2.2.4\n"
 
 #: data/gl-categorylist.ui:15
 msgid "Important"
@@ -149,7 +149,7 @@ msgstr "Ce"
 
 #: data/gl-searchpopover.ui:130
 msgid "Select Journal Field…"
-msgstr "Selezione cjamp diari..."
+msgstr "Selezione cjamp diari…"
 
 #. When [log entries to be shown for a given timestamp range]
 #: data/gl-searchpopover.ui:155
@@ -159,7 +159,7 @@ msgstr "Cuant"
 # "di" equivoco, capire come viene usato quel From...
 #: data/gl-searchpopover.ui:170
 msgid "Show Logs from…"
-msgstr "Mostre regjistris di..."
+msgstr "Mostre regjistris di…"
 
 # timestamp è giusto tradurlo così?
 #: data/gl-searchpopover.ui:199
@@ -197,7 +197,7 @@ msgstr "Indaûr"
 
 #: data/gl-searchpopover.ui:397
 msgid "Show Logs Starting From…"
-msgstr "Mostre regjistris tacant di..."
+msgstr "Mostre regjistris tacant di…"
 
 #: data/gl-searchpopover.ui:419
 msgid "Select a start date"
@@ -205,7 +205,7 @@ msgstr "Selezione une date di inizi"
 
 #: data/gl-searchpopover.ui:428 src/gl-searchpopover.c:503
 msgid "Select Start Date…"
-msgstr "Selezione date di inizi..."
+msgstr "Selezione date di inizi…"
 
 #: data/gl-searchpopover.ui:459 data/gl-searchpopover.ui:763
 msgid "22 January 2016 or 1/22/2016"
@@ -217,7 +217,7 @@ msgstr "Selezione orari di inizi"
 
 #: data/gl-searchpopover.ui:513 src/gl-searchpopover.c:504
 msgid "Select Start Time…"
-msgstr "Selezione ore di inizi..."
+msgstr "Selezione ore di inizi…"
 
 #: data/gl-searchpopover.ui:550 data/gl-searchpopover.ui:857
 msgid "Hr"
@@ -237,7 +237,7 @@ msgstr "AM/PM"
 
 #: data/gl-searchpopover.ui:701
 msgid "Until…"
-msgstr "Fintremai..."
+msgstr "Fintremai…"
 
 #: data/gl-searchpopover.ui:723
 msgid "Select an end date"
@@ -245,7 +245,7 @@ msgstr "Selezione une date di fin"
 
 #: data/gl-searchpopover.ui:732 src/gl-searchpopover.c:521
 msgid "Select End Date…"
-msgstr "Selezione date di fin..."
+msgstr "Selezione date di fin…"
 
 #: data/gl-searchpopover.ui:811
 msgid "Select end time"
@@ -253,7 +253,7 @@ msgstr "Selezione orari di fin"
 
 #: data/gl-searchpopover.ui:820 src/gl-searchpopover.c:522
 msgid "Select End Time…"
-msgstr "Selezione ore di fin..."
+msgstr "Selezione ore di fin…"
 
 #: data/gl-searchpopover.ui:1037
 msgid "PID"
@@ -301,7 +301,7 @@ msgstr "Diari intîr"
 
 #: data/gl-searchpopover.ui:1133
 msgid "Set Custom Range…"
-msgstr "Stabilìs interval personalizât..."
+msgstr "Stabilìs interval personalizât…"
 
 #: data/gl-window.ui:26
 msgid "Help"
@@ -360,7 +360,11 @@ msgstr ""
 "Tu puedis cirî tai tiei regjistris scrivint tiermins di ricercje e mostrâ "
 "informazions detaiadis sui events fasint clic su di chei."
 
-#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:139
+#: data/org.gnome.Logs.appdata.xml.in:30
+msgid "The GNOME Project"
+msgstr "Il progjet GNOME"
+
+#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:143
 msgid "Logs"
 msgstr "Regjistris"
 
@@ -406,7 +410,7 @@ msgid "Print version information and exit"
 msgstr "Stampe informazions su le version e jes"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
-#: src/gl-eventtoolbar.c:130
+#: src/gl-eventtoolbar.c:134
 msgid "Boot"
 msgstr "Inviament"
 
@@ -594,7 +598,7 @@ msgstr "_Salve"
 
 #: src/gl-window.c:122
 msgid "log messages"
-msgstr "Messaçs dal regjistri"
+msgstr "messaçs dal regjistri"
 
 #: src/gl-window.c:181
 msgid "Unable to export log messages to a file"
