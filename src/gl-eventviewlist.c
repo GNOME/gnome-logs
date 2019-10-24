@@ -689,20 +689,24 @@ query_set_day_timestamps (GlQuery *query,
     guint64 start_timestamp;
     guint64 end_timestamp;
 
-    now = g_date_time_new_now_local();
+    now = g_date_time_new_now_local ();
+    now = g_date_time_add_days (now, -start_day_offset);
 
     today_start = g_date_time_new_local (g_date_time_get_year (now),
                                          g_date_time_get_month (now),
-                                         g_date_time_get_day_of_month (now) - start_day_offset,
+                                         g_date_time_get_day_of_month (now),
                                          23,
                                          59,
                                          59.0);
 
     start_timestamp = g_date_time_to_unix (today_start) * G_USEC_PER_SEC;
 
+    now = g_date_time_new_now_local ();
+    now = g_date_time_add_days (now, -end_day_offset);
+
     today_end = g_date_time_new_local (g_date_time_get_year (now),
                                        g_date_time_get_month (now),
-                                       g_date_time_get_day_of_month (now) - end_day_offset,
+                                       g_date_time_get_day_of_month (now),
                                        0,
                                        0,
                                        0.0);
