@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2018-12-05 09:48+0000\n"
-"PO-Revision-Date: 2019-02-07 10:15+0100\n"
+"POT-Creation-Date: 2019-10-09 08:34+0000\n"
+"PO-Revision-Date: 2019-11-02 07:44+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: čeština <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -129,7 +129,7 @@ msgstr "Podpora"
 msgid "Documentation"
 msgstr "Dokumentace"
 
-#: data/gl-eventviewlist.ui:43
+#: data/gl-eventviewlist.ui:42
 msgid "Select journal field and timestamp range filtering options"
 msgstr "Vyberte volby filtrování podle polí a časového rozsahu"
 
@@ -304,11 +304,11 @@ msgstr "Celý žurnál"
 msgid "Set Custom Range…"
 msgstr "Nastavit vlastní rozsah…"
 
-#: data/gl-window.ui:31
+#: data/gl-window.ui:26
 msgid "Help"
 msgstr "Nápověda"
 
-#: data/gl-window.ui:39
+#: data/gl-window.ui:34
 msgid "Ignore"
 msgstr "Ignorovat"
 
@@ -361,7 +361,11 @@ msgstr ""
 "Díky aplikaci Záznamy můžete ve svých záznamech vyhledávat jednoduše "
 "napsáním výrazu a ke každé události si pak kliknutím zobrazit podrobnosti."
 
-#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:139
+#: data/org.gnome.Logs.appdata.xml.in:30
+msgid "The GNOME Project"
+msgstr "Projekt GNOME"
+
+#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:143
 msgid "Logs"
 msgstr "Záznamy"
 
@@ -373,11 +377,6 @@ msgstr "Prohlížeč záznamů o provozu"
 #: data/org.gnome.Logs.desktop.in:7
 msgid "log;journal;debug;error;"
 msgstr "log;záznam;protokol;evidence;žurnál;ladění;chyba;"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/org.gnome.Logs.desktop.in:12
-msgid "org.gnome.Logs"
-msgstr "org.gnome.Logs"
 
 #: data/org.gnome.Logs.gschema.xml:5
 msgid "Ignore warning"
@@ -408,12 +407,12 @@ msgstr "Marek Černocký <marek@manet.cz>"
 msgid "View and search logs"
 msgstr "Zobrazit a prohledat záznamy o provozu"
 
-#: src/gl-application.c:231
+#: src/gl-application.c:225
 msgid "Print version information and exit"
 msgstr "Vypsat informace o verzi a skončit"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
-#: src/gl-eventtoolbar.c:130
+#: src/gl-eventtoolbar.c:134
 msgid "Boot"
 msgstr "Spuštění"
 
@@ -458,10 +457,12 @@ msgid "%e %B %Y"
 msgstr "%e. %B %Y"
 
 #: src/gl-searchpopover.c:875
+#, c-format
 msgid "AM"
 msgstr "dop."
 
 #: src/gl-searchpopover.c:879
+#, c-format
 msgid "PM"
 msgstr "dop."
 
@@ -605,14 +606,14 @@ msgstr "Zprávy ze záznamu"
 msgid "Unable to export log messages to a file"
 msgstr "Nelze exportovat zprávy ze záznamů do souboru"
 
-#: src/gl-window.c:474 src/gl-window.c:505
+#: src/gl-window.c:481 src/gl-window.c:512
 msgid "Unable to read system logs"
 msgstr "Nelze přečíst systémové záznamy"
 
-#: src/gl-window.c:488
+#: src/gl-window.c:495
 msgid "Unable to read user logs"
 msgstr "Nelze přečíst uživatelské záznamy"
 
-#: src/gl-window.c:520
+#: src/gl-window.c:527
 msgid "No logs available"
 msgstr "Žádný záznam není dostupný"
