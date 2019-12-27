@@ -7,16 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2018-11-12 06:01+0000\n"
-"PO-Revision-Date: 2019-01-29 00:04+0100\n"
-"Last-Translator: Fran Dieguez <frandieguez@gnome.org>\n"
+"POT-Creation-Date: 2019-10-09 08:34+0000\n"
+"PO-Revision-Date: 2019-12-27 14:06+0100\n"
+"Last-Translator: Fran Diéguez <frandieguez@gnome.org>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"X-Generator: Gtranslator 3.30.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.2.4\n"
 "X-Project-Style: gnome\n"
 
 #: data/gl-categorylist.ui:15
@@ -37,7 +37,7 @@ msgstr "Todo"
 
 #: data/gl-categorylist.ui:75 src/gl-eventviewrow.c:207
 msgid "Applications"
-msgstr "Aplicativos"
+msgstr "Aplicacións"
 
 #: data/gl-categorylist.ui:90 src/gl-eventviewrow.c:216
 msgid "System"
@@ -72,7 +72,6 @@ msgid "_Help"
 msgstr "_Axuda"
 
 #: data/gl-eventtoolbar.ui:21
-#| msgid "_About"
 msgid "_About Logs"
 msgstr "_Sobre Rexistros"
 
@@ -128,7 +127,7 @@ msgstr "Asistencia"
 msgid "Documentation"
 msgstr "Documentación"
 
-#: data/gl-eventviewlist.ui:43
+#: data/gl-eventviewlist.ui:42
 msgid "Select journal field and timestamp range filtering options"
 msgstr ""
 "Seleccione o campo do diario e as opcions de filtrado de rango de marca de "
@@ -199,7 +198,7 @@ msgstr "Atrás"
 
 #: data/gl-searchpopover.ui:397
 msgid "Show Logs Starting From…"
-msgstr "Mostrar rexistros que comecen por&"
+msgstr "Mostrar rexistros que comecen por…"
 
 #: data/gl-searchpopover.ui:419
 msgid "Select a start date"
@@ -305,11 +304,11 @@ msgstr "Todo o diario"
 msgid "Set Custom Range…"
 msgstr "Seleccionar un rango personalizado…"
 
-#: data/gl-window.ui:31
+#: data/gl-window.ui:26
 msgid "Help"
 msgstr "Axuda"
 
-#: data/gl-window.ui:39
+#: data/gl-window.ui:34
 msgid "Ignore"
 msgstr "Ignorar"
 
@@ -362,7 +361,11 @@ msgstr ""
 "Ao usar Rexistros pode buscar nos seus rexistros escribindo na caixa de "
 "busca, e ver información detallada sobre cada evento premendo nel."
 
-#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:139
+#: data/org.gnome.Logs.appdata.xml.in:30
+msgid "The GNOME Project"
+msgstr "Proxecto GNOME"
+
+#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:143
 msgid "Logs"
 msgstr "Rexistros"
 
@@ -374,12 +377,6 @@ msgstr "Visor de rexistros"
 #: data/org.gnome.Logs.desktop.in:7
 msgid "log;journal;debug;error;"
 msgstr "rexistro;diario;depuración;erro;"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/org.gnome.Logs.desktop.in:12
-#| msgid "gnome-logs"
-msgid "org.gnome.Logs"
-msgstr "org.gnome.Logs"
 
 #: data/org.gnome.Logs.gschema.xml:5
 msgid "Ignore warning"
@@ -405,18 +402,18 @@ msgstr ""
 
 #: src/gl-application.c:109
 msgid "translator-credits"
-msgstr "Fran Dieguez <frandieguez@gnome.org>, 2013-2017."
+msgstr "Fran Diéguez <frandieguez@gnome.org>, 2013-2020."
 
 #: src/gl-application.c:110
 msgid "View and search logs"
 msgstr "Ver e buscar rexistros"
 
-#: src/gl-application.c:231
+#: src/gl-application.c:225
 msgid "Print version information and exit"
 msgstr "Imprimir información da versión e sair"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
-#: src/gl-eventtoolbar.c:130
+#: src/gl-eventtoolbar.c:134
 msgid "Boot"
 msgstr "Arrinque"
 
@@ -461,10 +458,12 @@ msgid "%e %B %Y"
 msgstr "%e de %B de %Y"
 
 #: src/gl-searchpopover.c:875
+#, c-format
 msgid "AM"
 msgstr "AM"
 
 #: src/gl-searchpopover.c:879
+#, c-format
 msgid "PM"
 msgstr "PM"
 
@@ -608,26 +607,14 @@ msgstr "mensaxes de rexistro"
 msgid "Unable to export log messages to a file"
 msgstr "Non foi posíbel exportar os mensaxes de rexistro a un ficheiro"
 
-#: src/gl-window.c:474 src/gl-window.c:505
+#: src/gl-window.c:481 src/gl-window.c:512
 msgid "Unable to read system logs"
 msgstr "Non foi posíbel ler os rexistros do sistema"
 
-#: src/gl-window.c:488
+#: src/gl-window.c:495
 msgid "Unable to read user logs"
 msgstr "Non foi posíbel ler os rexistros do usuario"
 
-#: src/gl-window.c:520
+#: src/gl-window.c:527
 msgid "No logs available"
 msgstr "Non hai rexistros dispoñíbeis"
-
-#~ msgid "_Quit"
-#~ msgstr "_Saír"
-
-#~ msgid "Go back to the event view"
-#~ msgstr "Volver á vista de eventos"
-
-#~ msgid "Search the displayed logs"
-#~ msgstr "Buscar nos rexistros mostrados"
-
-#~ msgid "Not implemented"
-#~ msgstr "Non implementado"
