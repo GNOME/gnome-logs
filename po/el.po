@@ -2,22 +2,22 @@
 # Copyright (C) 2014 gnome-logs's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-logs package.
 # Dimitris Spingos (Δημήτρης Σπίγγος) <dmtrs32@gmail.com>, 2014.
-# Efstathios Iosifidis <iosifidis@opensuse.org>, 2018.
+# Efstathios Iosifidis <iosifidis@opensuse.org>, 2018-2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2018-11-12 06:01+0000\n"
-"PO-Revision-Date: 2018-12-24 14:17+0200\n"
+"POT-Creation-Date: 2019-10-09 08:34+0000\n"
+"PO-Revision-Date: 2020-01-07 01:02+0200\n"
 "Last-Translator: Efstathios Iosifidis <iosifidis@opensuse.org>\n"
-"Language-Team: Ελληνικά <>\n"
+"Language-Team: Greek, Modern (1453-) <gnome-el-list@gnome.org>\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.0.7\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"X-Generator: Gtranslator 3.32.1\n"
 "X-Project-Style: gnome\n"
 
 #: data/gl-categorylist.ui:15
@@ -128,7 +128,7 @@ msgstr "Υποστήριξη"
 msgid "Documentation"
 msgstr "Τεκμηρίωση"
 
-#: data/gl-eventviewlist.ui:43
+#: data/gl-eventviewlist.ui:42
 msgid "Select journal field and timestamp range filtering options"
 msgstr ""
 "Επιλέξτε το πεδίο ημερολογίου και το εύρος χρονικής σήμανσης των επιλογών "
@@ -308,11 +308,11 @@ msgstr "Ολόκληρο ημερολόγιο"
 msgid "Set Custom Range…"
 msgstr "Ορισμός προσαρμοσμένου εύρους…"
 
-#: data/gl-window.ui:31
+#: data/gl-window.ui:26
 msgid "Help"
 msgstr "Βοήθεια"
 
-#: data/gl-window.ui:39
+#: data/gl-window.ui:34
 msgid "Ignore"
 msgstr "Παράβλεψη"
 
@@ -366,7 +366,11 @@ msgstr ""
 "καταγραφών πληκτρολογώντας έναν όρο αναζήτησης και να προβάλετε λεπτομερείς "
 "πληροφορίες για κάθε συμβάν πατώντας πάνω του."
 
-#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:139
+#: data/org.gnome.Logs.appdata.xml.in:30
+msgid "The GNOME Project"
+msgstr "Το έργο GNOME"
+
+#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:143
 msgid "Logs"
 msgstr "Καταγραφές"
 
@@ -378,11 +382,6 @@ msgstr "Εφαρμογή προβολής καταγραφών"
 #: data/org.gnome.Logs.desktop.in:7
 msgid "log;journal;debug;error;"
 msgstr "καταγραφή;ημερολόγιο;αποσφαλμάτωση;σφάλμα;log;journal;debug;error;"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/org.gnome.Logs.desktop.in:12
-msgid "org.gnome.Logs"
-msgstr "org.gnome.Logs"
 
 #: data/org.gnome.Logs.gschema.xml:5
 msgid "Ignore warning"
@@ -420,12 +419,12 @@ msgstr ""
 msgid "View and search logs"
 msgstr "Δείτε και ψάξτε καταγραφές"
 
-#: src/gl-application.c:231
+#: src/gl-application.c:225
 msgid "Print version information and exit"
 msgstr "Προβολή πληροφοριών έκδοσης και έξοδος"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
-#: src/gl-eventtoolbar.c:130
+#: src/gl-eventtoolbar.c:134
 msgid "Boot"
 msgstr "Εκκίνηση"
 
@@ -470,10 +469,12 @@ msgid "%e %B %Y"
 msgstr "%e %B %Y"
 
 #: src/gl-searchpopover.c:875
+#, c-format
 msgid "AM"
 msgstr "Π.M."
 
 #: src/gl-searchpopover.c:879
+#, c-format
 msgid "PM"
 msgstr "M.M."
 
@@ -617,17 +618,20 @@ msgstr "καταγραφή μηνυμάτων"
 msgid "Unable to export log messages to a file"
 msgstr "Αδυναμία εξαγωγής των καταγραφών σε αρχείο"
 
-#: src/gl-window.c:474 src/gl-window.c:505
+#: src/gl-window.c:481 src/gl-window.c:512
 msgid "Unable to read system logs"
 msgstr "Αδυναμία ανάγνωσης καταγραφών του συστήματος"
 
-#: src/gl-window.c:488
+#: src/gl-window.c:495
 msgid "Unable to read user logs"
 msgstr "Αδυναμία ανάγνωσης καταγραφών του χρήστη"
 
-#: src/gl-window.c:520
+#: src/gl-window.c:527
 msgid "No logs available"
 msgstr "Δεν υπάρχουν εγγραφές"
+
+#~ msgid "org.gnome.Logs"
+#~ msgstr "org.gnome.Logs"
 
 #~ msgid "_Quit"
 #~ msgstr "Έ_ξοδος"
