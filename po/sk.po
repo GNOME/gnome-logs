@@ -7,10 +7,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
-"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2018-01-03 15:59+0000\n"
-"PO-Revision-Date: 2018-02-26 19:12+0100\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
+"POT-Creation-Date: 2019-10-09 08:34+0000\n"
+"PO-Revision-Date: 2020-01-21 15:18+0100\n"
 "Last-Translator: Dušan Kazik <prescott66@gmail.com>\n"
 "Language-Team: slovenčina <>\n"
 "Language: sk\n"
@@ -18,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 1 : (n>=2 && n<=4) ? 2 : 0;\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Poedit 2.2.4\n"
 
 #: data/gl-categorylist.ui:15
 msgid "Important"
@@ -62,18 +61,34 @@ msgstr "Aktualizácie"
 msgid "Usage"
 msgstr "Použitie"
 
+#: data/gl-eventtoolbar.ui:6
+msgid "_New Window"
+msgstr "_Nové okno"
+
+#: data/gl-eventtoolbar.ui:12
+msgid "Keyboard Shortcuts"
+msgstr "Klávesové skratky"
+
+#: data/gl-eventtoolbar.ui:17
+msgid "_Help"
+msgstr "_Pomocník"
+
+#: data/gl-eventtoolbar.ui:21
+msgid "_About Logs"
+msgstr "_O aplikácii Záznamy"
+
 # tooltip
-#: data/gl-eventtoolbar.ui:9
+#: data/gl-eventtoolbar.ui:53
 msgid "Export logs to a file"
 msgstr "Exportuje záznamy do súboru"
 
 # tooltip
-#: data/gl-eventtoolbar.ui:30
+#: data/gl-eventtoolbar.ui:74
 msgid "Choose the boot from which to view logs"
 msgstr "Zvolí spustenie systému, z ktorého sa zobrazia záznamy"
 
 # tooltip
-#: data/gl-eventtoolbar.ui:42
+#: data/gl-eventtoolbar.ui:86
 msgid "Search all the logs of the current category"
 msgstr "Vyhľadá všetky záznamy v aktuálnej kategórii"
 
@@ -119,7 +134,7 @@ msgid "Documentation"
 msgstr "Dokumentácia"
 
 # tooltip
-#: data/gl-eventviewlist.ui:43
+#: data/gl-eventviewlist.ui:42
 msgid "Select journal field and timestamp range filtering options"
 msgstr "Vyberie voľby filtrovania podľa poľa žurnálu a časových značiek"
 
@@ -161,7 +176,7 @@ msgstr ""
 "Vyberie rozsah časových značiek položiek záznamov, ktoré budú zobrazené"
 
 #: data/gl-searchpopover.ui:208 data/gl-searchpopover.ui:1091
-#: src/gl-searchpopover.c:1303
+#: src/gl-searchpopover.c:1309
 msgid "Current Boot"
 msgstr "Aktuálne spustenie"
 
@@ -302,11 +317,11 @@ msgstr "Celý žurnál"
 msgid "Set Custom Range…"
 msgstr "Nastaviť vlastný rozsah…"
 
-#: data/gl-window.ui:31
+#: data/gl-window.ui:26
 msgid "Help"
 msgstr "Pomocník"
 
-#: data/gl-window.ui:39
+#: data/gl-window.ui:34
 msgid "Ignore"
 msgstr "Ignorovať"
 
@@ -335,26 +350,6 @@ msgctxt "shortcut window"
 msgid "Find"
 msgstr "Nájdenie"
 
-#: data/menus.ui:6
-msgid "_New Window"
-msgstr "_Nové okno"
-
-#: data/menus.ui:13
-msgid "_Help"
-msgstr "_Pomocník"
-
-#: data/menus.ui:17
-msgid "Keyboard Shortcuts"
-msgstr "Klávesové skratky"
-
-#: data/menus.ui:21
-msgid "_About"
-msgstr "_O programe"
-
-#: data/menus.ui:26
-msgid "_Quit"
-msgstr "U_končiť"
-
 #: data/org.gnome.Logs.appdata.xml.in:7
 msgid "GNOME Logs"
 msgstr "Záznamy prostredia GNOME"
@@ -380,7 +375,11 @@ msgstr ""
 "Použitím aplikácie Záznamy môžete vyhľadať zadaný výraz a kliknutím na "
 "udalosť zobraziť podrobné informácie o každej udalosti."
 
-#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:137
+#: data/org.gnome.Logs.appdata.xml.in:30
+msgid "The GNOME Project"
+msgstr "Projekt GNOME"
+
+#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:143
 msgid "Logs"
 msgstr "Záznamy"
 
@@ -394,11 +393,6 @@ msgstr "Prehliadač záznamov"
 #: data/org.gnome.Logs.desktop.in:7
 msgid "log;journal;debug;error;"
 msgstr "log;záznam;žurnál;denník;ladenie;chyba;"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/org.gnome.Logs.desktop.in:12
-msgid "gnome-logs"
-msgstr "gnome-logs"
 
 #: data/org.gnome.Logs.gschema.xml:5
 msgid "Ignore warning"
@@ -431,18 +425,18 @@ msgstr ""
 msgid "View and search logs"
 msgstr "Zobrazuje a prehľadáva záznamy"
 
-#: src/gl-application.c:243
+#: src/gl-application.c:225
 msgid "Print version information and exit"
 msgstr "Vypíše informácie o verzii a skončí"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
-#: src/gl-eventtoolbar.c:128
+#: src/gl-eventtoolbar.c:134
 msgid "Boot"
 msgstr "Spustenie"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: src/gl-eventviewlist.c:478
+#: src/gl-eventviewlist.c:488
 msgid "No results"
 msgstr "Žiadne výsledky"
 
@@ -476,15 +470,17 @@ msgstr "Do %s"
 #. * and end date button label in the custom range submenu,
 #. * showing the day of month in decimal number, full month
 #. * name as string, the year as a decimal number including the century.
-#: src/gl-searchpopover.c:737 src/gl-searchpopover.c:1104
+#: src/gl-searchpopover.c:737 src/gl-searchpopover.c:1107
 msgid "%e %B %Y"
 msgstr "%e. %B %Y"
 
 #: src/gl-searchpopover.c:875
+#, c-format
 msgid "AM"
 msgstr "Dopoludnia"
 
 #: src/gl-searchpopover.c:879
+#, c-format
 msgid "PM"
 msgstr "Popoludní"
 
@@ -494,7 +490,7 @@ msgstr "Popoludní"
 #. Translators: timestamp format for the custom end time button
 #. * label in the custom range submenu, showing the time with seconds
 #. * in 12-hour format.
-#: src/gl-searchpopover.c:987 src/gl-searchpopover.c:1226
+#: src/gl-searchpopover.c:987 src/gl-searchpopover.c:1229
 msgid "%I:%M:%S %p"
 msgstr "%k:%M:%S"
 
@@ -504,7 +500,7 @@ msgstr "%k:%M:%S"
 #. Translators: timestamp format for the custom end time button
 #. * label in the custom range submenu, showing the time with seconds
 #. * in 24-hour format.
-#: src/gl-searchpopover.c:994 src/gl-searchpopover.c:1233
+#: src/gl-searchpopover.c:994 src/gl-searchpopover.c:1236
 msgid "%T"
 msgstr "%T"
 
@@ -625,21 +621,27 @@ msgstr "_Uložiť"
 msgid "log messages"
 msgstr "správy záznamu"
 
-#: src/gl-window.c:175
+#: src/gl-window.c:181
 msgid "Unable to export log messages to a file"
 msgstr "Nie je možné exportovať správy záznamu do súboru"
 
-#: src/gl-window.c:439 src/gl-window.c:470
+#: src/gl-window.c:481 src/gl-window.c:512
 msgid "Unable to read system logs"
 msgstr "Nie je možné čítať systémové záznamy"
 
-#: src/gl-window.c:453
+#: src/gl-window.c:495
 msgid "Unable to read user logs"
 msgstr "Nie je možné čítať záznamy používateľa"
 
-#: src/gl-window.c:485
+#: src/gl-window.c:527
 msgid "No logs available"
 msgstr "Nie sú dostupné žiadne záznamy"
+
+#~ msgid "_Quit"
+#~ msgstr "U_končiť"
+
+#~ msgid "gnome-logs"
+#~ msgstr "gnome-logs"
 
 #~ msgid "Go back to the event view"
 #~ msgstr "Vráti sa do zobrazenia udalostí"
