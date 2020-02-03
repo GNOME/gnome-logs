@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs gnome-3-24\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2019-03-11 12:18+0000\n"
-"PO-Revision-Date: 2019-03-26 18:00+0100\n"
-"Last-Translator: gogo <trebelnik2@gmail.com>\n"
+"POT-Creation-Date: 2019-10-09 08:34+0000\n"
+"PO-Revision-Date: 2020-02-03 17:04+0100\n"
+"Last-Translator: gogo <linux.hr@protonmail.com>\n"
 "Language-Team: Croatian <hr@li.org>\n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
@@ -359,7 +359,11 @@ msgstr ""
 "Korištenjem Zapisa možete pretražiti svoje zapise upisivanjem izraza "
 "pretrage i vidjeti opširnije informacije o svakom događaju klikom na njega."
 
-#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:139
+#: data/org.gnome.Logs.appdata.xml.in:30
+msgid "The GNOME Project"
+msgstr "GNOME projekt"
+
+#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:143
 msgid "Logs"
 msgstr "Zapisi"
 
@@ -371,11 +375,6 @@ msgstr "Preglednik zaspisa"
 #: data/org.gnome.Logs.desktop.in:7
 msgid "log;journal;debug;error;"
 msgstr "zapis;dnevnik;otklanjanje grešaka;greška;"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/org.gnome.Logs.desktop.in:12
-msgid "org.gnome.Logs"
-msgstr "org.gnome.Logs"
 
 #: data/org.gnome.Logs.gschema.xml:5
 msgid "Ignore warning"
@@ -412,7 +411,7 @@ msgid "Print version information and exit"
 msgstr "Ispiši podatke o inačici i izađi"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
-#: src/gl-eventtoolbar.c:130
+#: src/gl-eventtoolbar.c:134
 msgid "Boot"
 msgstr "Pokretanje"
 
@@ -457,10 +456,12 @@ msgid "%e %B %Y"
 msgstr "%e %B %Y"
 
 #: src/gl-searchpopover.c:875
+#, c-format
 msgid "AM"
 msgstr "AM"
 
 #: src/gl-searchpopover.c:879
+#, c-format
 msgid "PM"
 msgstr "PM"
 
@@ -615,6 +616,9 @@ msgstr "Nemoguće čitanje zapisa korinika"
 #: src/gl-window.c:527
 msgid "No logs available"
 msgstr "Nema dostupnih zapisa"
+
+#~ msgid "org.gnome.Logs"
+#~ msgstr "org.gnome.Logs"
 
 #~ msgid "_Quit"
 #~ msgstr "_Zatvori"
