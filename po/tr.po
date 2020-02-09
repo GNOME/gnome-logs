@@ -11,9 +11,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2018-11-12 06:01+0000\n"
-"PO-Revision-Date: 2018-12-30 20:28+0200\n"
-"Last-Translator: sabri Ünal <yakushabb@gmail.com>\n"
+"POT-Creation-Date: 2019-10-09 08:34+0000\n"
+"PO-Revision-Date: 2020-02-04 20:12+0300\n"
+"Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
 "Language-Team: Türkçe <gnome-turk@gnome.org>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
@@ -130,7 +130,7 @@ msgstr "Destek"
 msgid "Documentation"
 msgstr "Belgelendirme"
 
-#: data/gl-eventviewlist.ui:43
+#: data/gl-eventviewlist.ui:42
 msgid "Select journal field and timestamp range filtering options"
 msgstr "Seçenekleri süzmek için zaman damgası aralığı ve günlük alanı seç"
 
@@ -305,11 +305,11 @@ msgstr "Tüm Günlük"
 msgid "Set Custom Range…"
 msgstr "Özel Aralık Ayarla…"
 
-#: data/gl-window.ui:31
+#: data/gl-window.ui:26
 msgid "Help"
 msgstr "Yardım"
 
-#: data/gl-window.ui:39
+#: data/gl-window.ui:34
 msgid "Ignore"
 msgstr "Yok say"
 
@@ -363,7 +363,11 @@ msgstr ""
 "ve her olayın üzerine tıklayarak hakkındaki ayrıntılı bilgileri "
 "görüntüleyebilirsiniz."
 
-#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:139
+#: data/org.gnome.Logs.appdata.xml.in:30
+msgid "The GNOME Project"
+msgstr "GNOME Projesi"
+
+#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:143
 msgid "Logs"
 msgstr "Günlükler"
 
@@ -375,11 +379,6 @@ msgstr "Günlük Görüntüleyici"
 #: data/org.gnome.Logs.desktop.in:7
 msgid "log;journal;debug;error;"
 msgstr "log;kayıt;journal;günlük;dergi;debug;hata ayıklama;error;hata;"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/org.gnome.Logs.desktop.in:12
-msgid "org.gnome.Logs"
-msgstr "org.gnome.Logs"
 
 #: data/org.gnome.Logs.gschema.xml:5
 msgid "Ignore warning"
@@ -411,12 +410,12 @@ msgstr ""
 msgid "View and search logs"
 msgstr "Günlükleri görüntüle ve ara"
 
-#: src/gl-application.c:231
+#: src/gl-application.c:225
 msgid "Print version information and exit"
 msgstr "Sürüm bilgilerini yazdır ve çık"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
-#: src/gl-eventtoolbar.c:130
+#: src/gl-eventtoolbar.c:134
 msgid "Boot"
 msgstr "Önyükleme"
 
@@ -461,10 +460,12 @@ msgid "%e %B %Y"
 msgstr "%e %B %Y"
 
 #: src/gl-searchpopover.c:875
+#, c-format
 msgid "AM"
 msgstr "ÖÖ"
 
 #: src/gl-searchpopover.c:879
+#, c-format
 msgid "PM"
 msgstr "ÖS"
 
@@ -608,17 +609,20 @@ msgstr "günlük iletileri"
 msgid "Unable to export log messages to a file"
 msgstr "Günlük iletileri dosyaya aktarılamadı"
 
-#: src/gl-window.c:474 src/gl-window.c:505
+#: src/gl-window.c:481 src/gl-window.c:512
 msgid "Unable to read system logs"
 msgstr "Sistem günlükleri okunamadı"
 
-#: src/gl-window.c:488
+#: src/gl-window.c:495
 msgid "Unable to read user logs"
 msgstr "Kullanıcı günlükleri okunamadı"
 
-#: src/gl-window.c:520
+#: src/gl-window.c:527
 msgid "No logs available"
 msgstr "Kullanılabilir günlük yok"
+
+#~ msgid "org.gnome.Logs"
+#~ msgstr "org.gnome.Logs"
 
 #~ msgid "_Quit"
 #~ msgstr "_Çıkış"
