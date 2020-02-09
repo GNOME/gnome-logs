@@ -1,7 +1,6 @@
 # French translation for gnome-logs.
-# Copyright (C) 2014-2017 gnome-logs's COPYRIGHT HOLDER
+# Copyright (C) 2014-2020 gnome-logs's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-logs package.
-#
 #
 # Jérôme Sirgue  <jsirgue@free.fr>, 2014.
 # Alexandre Franke <alexandre.franke@gmail.com>, 2015.
@@ -13,16 +12,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2018-12-05 09:48+0000\n"
-"PO-Revision-Date: 2019-02-20 09:13+0100\n"
+"POT-Creation-Date: 2019-10-09 08:34+0000\n"
+"PO-Revision-Date: 2020-02-09 10:35+0100\n"
 "Last-Translator: Charles Monzat <charles.monzat@free.fr>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1)\n"
-"X-Generator: Gtranslator 3.30.1\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: data/gl-categorylist.ui:15
 msgid "Important"
@@ -77,7 +75,6 @@ msgid "_Help"
 msgstr "_Aide"
 
 #: data/gl-eventtoolbar.ui:21
-#| msgid "_About"
 msgid "_About Logs"
 msgstr "À _propos de Journaux"
 
@@ -133,7 +130,7 @@ msgstr "Prise en charge"
 msgid "Documentation"
 msgstr "Documentation"
 
-#: data/gl-eventviewlist.ui:43
+#: data/gl-eventviewlist.ui:42
 msgid "Select journal field and timestamp range filtering options"
 msgstr ""
 "Choisir les options de filtrage « champ de journal » et « intervalle de "
@@ -310,11 +307,11 @@ msgstr "Le journal tout entier"
 msgid "Set Custom Range…"
 msgstr "Définir un intervalle de temps personnalisé…"
 
-#: data/gl-window.ui:31
+#: data/gl-window.ui:26
 msgid "Help"
 msgstr "Aide"
 
-#: data/gl-window.ui:39
+#: data/gl-window.ui:34
 msgid "Ignore"
 msgstr "Ignorer"
 
@@ -368,7 +365,11 @@ msgstr ""
 "terme et visualiser des informations détaillées à propos de chaque évènement "
 "en cliquant dessus."
 
-#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:139
+#: data/org.gnome.Logs.appdata.xml.in:30
+msgid "The GNOME Project"
+msgstr "Le projet GNOME"
+
+#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:143
 msgid "Logs"
 msgstr "Journaux"
 
@@ -380,12 +381,6 @@ msgstr "Visionneur de journaux"
 #: data/org.gnome.Logs.desktop.in:7
 msgid "log;journal;debug;error;"
 msgstr "log;journal;journaux;debug;erreur;"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/org.gnome.Logs.desktop.in:12
-#| msgid "gnome-logs"
-msgid "org.gnome.Logs"
-msgstr "org.gnome.Logs"
 
 #: data/org.gnome.Logs.gschema.xml:5
 msgid "Ignore warning"
@@ -421,12 +416,12 @@ msgstr ""
 msgid "View and search logs"
 msgstr "Visualiser et rechercher dans les journaux"
 
-#: src/gl-application.c:231
+#: src/gl-application.c:225
 msgid "Print version information and exit"
 msgstr "Afficher les informations sur la version et quitter."
 
 #. Translators: Boot refers to a single run (or bootup) of the system
-#: src/gl-eventtoolbar.c:130
+#: src/gl-eventtoolbar.c:134
 msgid "Boot"
 msgstr "Démarrage"
 
@@ -471,10 +466,12 @@ msgid "%e %B %Y"
 msgstr "%e %B %Y"
 
 #: src/gl-searchpopover.c:875
+#, c-format
 msgid "AM"
 msgstr "a.m."
 
 #: src/gl-searchpopover.c:879
+#, c-format
 msgid "PM"
 msgstr "p.m."
 
@@ -618,15 +615,15 @@ msgstr "messages de journal"
 msgid "Unable to export log messages to a file"
 msgstr "Impossible d’exporter les messages de journalisation dans un fichier"
 
-#: src/gl-window.c:474 src/gl-window.c:505
+#: src/gl-window.c:481 src/gl-window.c:512
 msgid "Unable to read system logs"
 msgstr "Impossible de lire les journaux systèmes"
 
-#: src/gl-window.c:488
+#: src/gl-window.c:495
 msgid "Unable to read user logs"
 msgstr "Impossible de lire les journaux utilisateurs"
 
-#: src/gl-window.c:520
+#: src/gl-window.c:527
 msgid "No logs available"
 msgstr "Aucun journal disponible"
 
