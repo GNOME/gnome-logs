@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2014, 2015, 2016, 2017.
-# Asier Sarasua Garmendia  <asier.sarasua@gmail.com>, 2019.
+# Asier Sarasua Garmendia  <asier.sarasua@gmail.com>, 2019, 2020.
 #
 msgid ""
 msgstr "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2019-04-19 15:34+0000\n"
-"PO-Revision-Date: 2019-07-20 10:00+0100\n"
+"POT-Creation-Date: 2019-10-09 08:34+0000\n"
+"PO-Revision-Date: 2020-02-20 10:00+0100\n"
 "Last-Translator: Asier Sarasua Garmendia <asier.sarasua@gmail.com>\n"
 "Language-Team: Basque <librezale@librezale.eus>\n"
 "Language: eu\n"
@@ -354,7 +354,11 @@ msgid ""
 "detailed information about each event by clicking on it."
 msgstr "Logs erabilita, egunkarietan bilaketak egin ditzakezu bilaketa-hitz bat idatzita , eta gertaera bakoitzaren informazio xehea ikus dezakezu haren gainean klik eginez gero."
 
-#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:139
+#: data/org.gnome.Logs.appdata.xml.in:30
+msgid "The GNOME Project"
+msgstr "GNOME proiektua"
+
+#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:143
 msgid "Logs"
 msgstr "Egunkariak"
 
@@ -387,7 +391,7 @@ msgstr "Ordenatu hautatutako motaren errenkadak gorantz edo beherantz"
 
 #: src/gl-application.c:109
 msgid "translator-credits"
-msgstr "Asier Sarasua Garmendia <asier.sarasua@gmail.com>"
+msgstr "translator-credits"
 
 #: src/gl-application.c:110
 msgid "View and search logs"
@@ -398,7 +402,7 @@ msgid "Print version information and exit"
 msgstr "Erakutsi bertsioaren informazioa eta irten"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
-#: src/gl-eventtoolbar.c:130
+#: src/gl-eventtoolbar.c:134
 msgid "Boot"
 msgstr "Abioa"
 
