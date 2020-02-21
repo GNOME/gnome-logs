@@ -24,6 +24,8 @@
 #include "gl-categorylist.h"
 #include "gl-eventtoolbar.h"
 #include "gl-eventviewlist.h"
+#include "gl-journal.h"
+#include "gl-journal-model.h"
 #include "gl-util.h"
 #include "gl-window.h"
 
@@ -35,6 +37,7 @@ struct _GlApplication
 
 typedef struct
 {
+    GlJournal *journal;
     GSettings *desktop;
     GSettings *settings;
     gchar *monospace_font;
@@ -54,10 +57,13 @@ on_new_window (GSimpleAction *action,
 {
     GtkApplication *application;
     GtkWidget *window;
+    GlApplicationPrivate *priv;
 
     application = GTK_APPLICATION (user_data);
+    priv = gl_application_get_instance_private (GL_APPLICATION (application));
 
     window = gl_window_new (GTK_APPLICATION (application));
+    gl_window_load_journal (GL_WINDOW (window), priv->journal);
     gtk_widget_show (window);
 }
 
@@ -199,24 +205,35 @@ gl_application_startup (GApplication *application)
 }
 
 static void
-gl_application_activate (GApplication *application)
+launch_window (GApplication *application)
 {
     GtkWidget *window;
     GlApplicationPrivate *priv;
     const gchar * const close_accel[] = { "<Primary>w", NULL };
     const gchar * const search_accel[] = { "<Primary>f", NULL };
 
+    priv = gl_application_get_instance_private (GL_APPLICATION (application));
+
     window = gl_window_new (GTK_APPLICATION (application));
+    gl_window_load_journal (GL_WINDOW (window), priv->journal);
     gtk_widget_show (window);
     gtk_application_set_accels_for_action (GTK_APPLICATION (application),
                                            "win.close", close_accel);
     gtk_application_set_accels_for_action (GTK_APPLICATION (application),
                                            "win.search", search_accel);
 
-    priv = gl_application_get_instance_private (GL_APPLICATION (application));
-
     on_monospace_font_name_changed (priv->desktop, DESKTOP_MONOSPACE_FONT_NAME,
                                     priv);
+}
+
+static void
+gl_application_activate (GApplication *application)
+{
+    GlApplicationPrivate *priv;
+
+    priv = gl_application_get_instance_private (GL_APPLICATION (application));
+    priv->journal = gl_journal_new (NULL);
+    launch_window (application);
 }
 
 static const GOptionEntry options[] =
@@ -240,6 +257,33 @@ gl_application_handle_local_options (GApplication *application,
 }
 
 static void
+gl_application_open (GApplication *application,
+                     GFile **files,
+                     gint n_files,
+                     const gchar *hint)
+{
+    gint i;
+    GPtrArray *array;
+    GlApplicationPrivate *priv;
+
+    priv = gl_application_get_instance_private (GL_APPLICATION (application));
+
+    array = g_ptr_array_new ();
+    for (i = 0; i < n_files; i++)
+    {
+        GFile *file;
+
+        file = files[i];
+        g_ptr_array_add (array, g_file_get_path (file));
+    }
+
+    g_ptr_array_add (array, NULL);
+
+    priv->journal = gl_journal_new (array);
+    launch_window (application);
+}
+
+static void
 gl_application_finalize (GObject *object)
 {
     GlApplication *application;
@@ -252,6 +296,8 @@ gl_application_finalize (GObject *object)
     g_clear_object (&priv->settings);
     g_clear_pointer (&priv->monospace_font, g_free);
 
+    g_clear_object (&priv->journal);
+
     G_OBJECT_CLASS (gl_application_parent_class)->finalize (object);
 }
 
@@ -261,6 +307,8 @@ gl_application_init (GlApplication *application)
     GlApplicationPrivate *priv;
     gchar *changed_font;
     GAction *action;
+
+    g_application_set_flags (G_APPLICATION (application), G_APPLICATION_HANDLES_OPEN);
 
     priv = gl_application_get_instance_private (application);
 
@@ -297,6 +345,7 @@ gl_application_class_init (GlApplicationClass *klass)
 
     app_class = G_APPLICATION_CLASS (klass);
     app_class->activate = gl_application_activate;
+    app_class->open = gl_application_open;
     app_class->startup = gl_application_startup;
     app_class->handle_local_options = gl_application_handle_local_options;
 }

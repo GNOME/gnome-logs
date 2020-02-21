@@ -383,21 +383,52 @@ enable_export (GlWindow *window)
     g_simple_action_set_enabled (G_SIMPLE_ACTION (action_export), TRUE);
 }
 
+void
+gl_window_load_journal (GlWindow *window,
+                        GlJournal *journal)
+{
+    gchar *boot_match;
+    GAction *action_view_boot;
+    GArray *boot_ids;
+    GVariant *variant;
+    GlJournalBootID *boot_id;
+    GlEventViewList *event_list;
+    GlEventToolbar *toolbar;
+    GlJournalModel *journal_model;
+    GlWindowPrivate *priv;
+
+    priv = gl_window_get_instance_private (window);
+    toolbar = GL_EVENT_TOOLBAR (priv->event_toolbar);
+    event_list = GL_EVENT_VIEW_LIST (priv->event_list);
+
+    journal_model = gl_event_view_list_get_journal_model (event_list);
+    gl_journal_model_load_journal (journal_model, journal);
+
+    boot_ids = gl_event_view_list_get_boot_ids (event_list);
+    gl_event_toolbar_add_boots (toolbar, boot_ids);
+
+    if (boot_ids->len > 0)
+    {
+        boot_id = &g_array_index (boot_ids, GlJournalBootID,
+                                  boot_ids->len - 1);
+        boot_match = boot_id->boot_match;
+
+        action_view_boot = g_action_map_lookup_action (G_ACTION_MAP (window),
+                                                       "view-boot");
+        variant = g_variant_new_string (boot_match);
+        g_action_change_state (action_view_boot, variant);
+    }
+}
+
 static void
 gl_window_init (GlWindow *window)
 {
     GtkCssProvider *provider;
     GdkScreen *screen;
     GlWindowPrivate *priv;
-    GlEventToolbar *toolbar;
     GlEventViewList *event_list;
     GtkWidget *categories;
-    GAction *action_view_boot;
-    GArray *boot_ids;
     GlJournalStorage storage_type;
-    GlJournalBootID *boot_id;
-    gchar *boot_match;
-    GVariant *variant;
     GSettings *settings;
     gboolean ignore;
     GlJournalModel *model;
@@ -413,26 +444,9 @@ gl_window_init (GlWindow *window)
 
     priv = gl_window_get_instance_private (window);
     event_list = GL_EVENT_VIEW_LIST (priv->event_list);
-    toolbar = GL_EVENT_TOOLBAR (priv->event_toolbar);
-
-    boot_ids = gl_event_view_list_get_boot_ids (event_list);
 
     g_action_map_add_action_entries (G_ACTION_MAP (window), actions,
                                      G_N_ELEMENTS (actions), window);
-
-    gl_event_toolbar_add_boots (toolbar, boot_ids);
-
-    if (boot_ids->len > 0)
-    {
-        boot_id = &g_array_index (boot_ids, GlJournalBootID,
-                                  boot_ids->len - 1);
-        boot_match = boot_id->boot_match;
-
-        action_view_boot = g_action_map_lookup_action (G_ACTION_MAP (window),
-                                                       "view-boot");
-        variant = g_variant_new_string (boot_match);
-        g_action_change_state (action_view_boot, variant);
-    }
 
     categories = gl_event_view_list_get_category_list (event_list);
     g_signal_connect (GL_CATEGORY_LIST (categories), "notify::category",

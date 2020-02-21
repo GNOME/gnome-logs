@@ -22,12 +22,14 @@
 #include <gtk/gtk.h>
 
 #include "gl-application.h"
+#include "gl-journal-model.h"
 
 G_BEGIN_DECLS
 
 #define GL_TYPE_WINDOW (gl_window_get_type ())
 G_DECLARE_FINAL_TYPE (GlWindow, gl_window, GL, WINDOW, GtkApplicationWindow)
 
+void gl_window_load_journal (GlWindow *window, GlJournal *journal);
 GtkWidget * gl_window_new (GtkApplication *application);
 void gl_window_set_sort_order (GlWindow *window, GlSortOrder sort_order);
 void disable_export (GlWindow *window);
