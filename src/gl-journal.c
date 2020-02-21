@@ -25,6 +25,13 @@
 #include <stdlib.h>
 #include <systemd/sd-journal.h>
 
+enum
+{
+    PROP_0,
+    PROP_FILES,
+    N_PROPERTIES
+};
+
 struct _GlJournalEntry
 {
   GObject parent_instance;
@@ -48,6 +55,8 @@ struct _GlJournalEntry
 
 G_DEFINE_TYPE (GlJournalEntry, gl_journal_entry, G_TYPE_OBJECT);
 
+static GParamSpec *obj_properties[N_PROPERTIES] = { NULL, };
+
 typedef struct
 {
     sd_journal *journal;
@@ -55,6 +64,7 @@ typedef struct
     guint source_id;
     gchar **mandatory_fields;
     GArray *boot_ids;
+    GPtrArray *files;
 } GlJournalPrivate;
 
 G_DEFINE_TYPE_WITH_PRIVATE (GlJournal, gl_journal, G_TYPE_OBJECT)
@@ -323,6 +333,46 @@ on_journal_changed (gint fd,
 }
 
 static void
+gl_journal_get_property (GObject *object,
+                         guint prop_id,
+                         GValue *value,
+                         GParamSpec *pspec)
+{
+    GlJournal *self = GL_JOURNAL (object);
+    GlJournalPrivate *priv = gl_journal_get_instance_private (self);
+
+    switch (prop_id)
+    {
+        case PROP_FILES:
+            g_value_set_pointer (value, priv->files);
+            break;
+        default:
+            G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
+            break;
+    }
+}
+
+static void
+gl_journal_set_property (GObject *object,
+                         guint prop_id,
+                         const GValue *value,
+                         GParamSpec *pspec)
+{
+    GlJournal *self = GL_JOURNAL (object);
+    GlJournalPrivate *priv = gl_journal_get_instance_private (self);
+
+    switch (prop_id)
+    {
+        case PROP_FILES:
+            priv->files = g_value_get_pointer (value);
+            break;
+        default:
+            G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
+            break;
+    }
+}
+
+static void
 gl_journal_finalize (GObject *object)
 {
     guint i;
@@ -347,24 +397,31 @@ gl_journal_finalize (GObject *object)
 }
 
 static void
-gl_journal_class_init (GlJournalClass *klass)
+gl_journal_constructed (GObject *object)
 {
-    GObjectClass *gobject_class = G_OBJECT_CLASS (klass);
-
-    gobject_class->finalize = gl_journal_finalize;
-}
-
-static void
-gl_journal_init (GlJournal *self)
-{
+    GlJournal *self;
     GlJournalPrivate *priv;
     sd_journal *journal;
     gint ret;
 
+    self = GL_JOURNAL (object);
     priv = gl_journal_get_instance_private (self);
 
-    ret = sd_journal_open (&journal, 0);
-    priv->journal = journal;
+    if (priv->files == NULL)
+    {
+        ret = sd_journal_open (&journal, 0);
+        priv->journal = journal;
+    }
+    else
+    {
+        gchar **paths;
+
+        paths = (gchar **) g_ptr_array_free (priv->files, FALSE);
+        ret = sd_journal_open_files (&journal, (const gchar **) paths, 0);
+        priv->journal = journal;
+
+        g_clear_pointer (&paths, g_strfreev);
+    }
 
     if (ret < 0)
     {
@@ -410,6 +467,28 @@ gl_journal_init (GlJournal *self)
     priv->boot_ids = g_array_new (FALSE, TRUE, sizeof (GlJournalBootID));
 
     gl_journal_get_boots (self);
+}
+
+static void
+gl_journal_class_init (GlJournalClass *klass)
+{
+    GObjectClass *gobject_class = G_OBJECT_CLASS (klass);
+
+    gobject_class->constructed = gl_journal_constructed;
+    gobject_class->get_property = gl_journal_get_property;
+    gobject_class->set_property = gl_journal_set_property;
+    gobject_class->finalize = gl_journal_finalize;
+
+    obj_properties[PROP_FILES] = g_param_spec_pointer ("files", "Files",
+                                                       "Journal Files",
+                                                       G_PARAM_READWRITE |
+                                                       G_PARAM_CONSTRUCT_ONLY);
+    g_object_class_install_properties (gobject_class, N_PROPERTIES, obj_properties);
+}
+
+static void
+gl_journal_init (GlJournal *self)
+{
 }
 
 static GlJournalEntry *
@@ -730,9 +809,11 @@ gl_journal_previous (GlJournal *journal)
 }
 
 GlJournal *
-gl_journal_new (void)
+gl_journal_new (GPtrArray *files)
 {
-    return g_object_new (GL_TYPE_JOURNAL, NULL);
+    return g_object_new (GL_TYPE_JOURNAL,
+                         "files", files,
+                         NULL);
 }
 
 static void

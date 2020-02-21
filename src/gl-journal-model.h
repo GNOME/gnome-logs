@@ -79,6 +79,9 @@ gboolean                gl_journal_model_get_loading                    (GlJourn
 void                    gl_journal_model_fetch_more_entries             (GlJournalModel *model,
                                                                          gboolean        all);
 
+void                    gl_journal_model_load_journal                   (GlJournalModel *model,
+                                                                         GlJournal      *journal);
+
 GArray *                gl_journal_model_get_boot_ids                   (GlJournalModel *model);
 
 gchar *                 gl_journal_model_get_boot_time                  (GlJournalModel *model,

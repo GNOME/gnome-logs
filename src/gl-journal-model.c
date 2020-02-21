@@ -254,11 +254,8 @@ static void
 gl_journal_model_init (GlJournalModel *model)
 {
     model->batch_size = 50;
-    model->journal = gl_journal_new ();
     model->entries = g_ptr_array_new_with_free_func (g_object_unref);
     model->export = FALSE;
-
-    gl_journal_model_fetch_more_entries (model, FALSE);
 }
 
 static void
@@ -309,7 +306,6 @@ gl_journal_model_dispose (GObject *object)
         model->entries = NULL;
     }
 
-    g_clear_object (&model->journal);
     if (model->token_array != NULL)
     {
         g_ptr_array_free (model->token_array, TRUE);
@@ -1209,6 +1205,14 @@ gl_journal_model_fetch_more_entries (GlJournalModel *model,
         model->idle_source = g_idle_add_full (G_PRIORITY_LOW, gl_journal_model_fetch_idle, model, NULL);
         g_object_notify_by_pspec (G_OBJECT (model), properties[PROP_LOADING]);
     }
+}
+
+void
+gl_journal_model_load_journal (GlJournalModel *model,
+                               GlJournal *journal)
+{
+    model->journal = journal;
+    gl_journal_model_fetch_more_entries (model, FALSE);
 }
 
 GlRowEntry *
