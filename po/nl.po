@@ -5,14 +5,14 @@
 # Wouter Bolsterlee <wbolster@gnome.org>, 2014.
 # Jannick Hemelhof <clone1612@me.com>, 2014.
 # Hannie Dumoleyn <hannie@ubuntu-nl.org>, 2014.
-# Nathan Follens <nthn@unseen.is>, 2015-2017, 2019.
+# Nathan Follens <nthn@unseen.is>, 2015-2017, 2019-2020.
 # Justin van Steijn <jvs@fsfe.org>, 2016, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2018-11-12 06:01+0000\n"
-"PO-Revision-Date: 2019-02-24 16:51+0100\n"
+"POT-Creation-Date: 2019-10-09 08:34+0000\n"
+"PO-Revision-Date: 2020-02-24 18:54+0100\n"
 "Last-Translator: Nathan Follens <nthn@unseen.is>\n"
 "Language-Team: Dutch <gnome-nl-list@gnome.org>\n"
 "Language: nl\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.2.1\n"
+"X-Generator: Poedit 2.3\n"
 
 #: data/gl-categorylist.ui:15
 msgid "Important"
@@ -130,7 +130,7 @@ msgstr "Ondersteuning"
 msgid "Documentation"
 msgstr "Documentatie"
 
-#: data/gl-eventviewlist.ui:43
+#: data/gl-eventviewlist.ui:42
 msgid "Select journal field and timestamp range filtering options"
 msgstr "Selecteer filteropties door logboekveld en tijdsbereik"
 
@@ -305,11 +305,11 @@ msgstr "Volledig logboek"
 msgid "Set Custom Range…"
 msgstr "Aangepast bereik instellen…"
 
-#: data/gl-window.ui:31
+#: data/gl-window.ui:26
 msgid "Help"
 msgstr "Hulp"
 
-#: data/gl-window.ui:39
+#: data/gl-window.ui:34
 msgid "Ignore"
 msgstr "Negeren"
 
@@ -362,7 +362,11 @@ msgstr ""
 "Met Logboeken kunt u gebeurtenissen doorzoeken door een zoekterm in te typen "
 "en vervolgens detailinformatie inzien door op een gebeurtenis te klikken."
 
-#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:139
+#: data/org.gnome.Logs.appdata.xml.in:30
+msgid "The GNOME Project"
+msgstr "Het Gnome-project"
+
+#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:143
 msgid "Logs"
 msgstr "Logboeken"
 
@@ -376,12 +380,6 @@ msgid "log;journal;debug;error;"
 msgstr ""
 "log;journal;debug;error;logboek;fout;meldingen;foutmeldingen;event;"
 "gebeurtenis;"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/org.gnome.Logs.desktop.in:12
-#| msgid "gnome-logs"
-msgid "org.gnome.Logs"
-msgstr "org.gnome.Logs"
 
 #: data/org.gnome.Logs.gschema.xml:5
 msgid "Ignore warning"
@@ -418,12 +416,12 @@ msgstr ""
 msgid "View and search logs"
 msgstr "Logboek inzien en doorzoeken"
 
-#: src/gl-application.c:231
+#: src/gl-application.c:225
 msgid "Print version information and exit"
 msgstr "Versie-informatie tonen en afsluiten"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
-#: src/gl-eventtoolbar.c:130
+#: src/gl-eventtoolbar.c:134
 msgid "Boot"
 msgstr "Opstartsessie"
 
@@ -468,10 +466,12 @@ msgid "%e %B %Y"
 msgstr "%e %B %Y"
 
 #: src/gl-searchpopover.c:875
+#, c-format
 msgid "AM"
 msgstr "AM"
 
 #: src/gl-searchpopover.c:879
+#, c-format
 msgid "PM"
 msgstr "PM"
 
@@ -615,17 +615,21 @@ msgstr "logboekberichten"
 msgid "Unable to export log messages to a file"
 msgstr "Kon logboekberichten niet naar bestand exporteren"
 
-#: src/gl-window.c:474 src/gl-window.c:505
+#: src/gl-window.c:481 src/gl-window.c:512
 msgid "Unable to read system logs"
 msgstr "Kon systeemlogboek niet lezen"
 
-#: src/gl-window.c:488
+#: src/gl-window.c:495
 msgid "Unable to read user logs"
 msgstr "Kon gebruikerslogboek niet lezen"
 
-#: src/gl-window.c:520
+#: src/gl-window.c:527
 msgid "No logs available"
 msgstr "Geen logboeken beschikbaar"
+
+#~| msgid "gnome-logs"
+#~ msgid "org.gnome.Logs"
+#~ msgstr "org.gnome.Logs"
 
 #~ msgid "_Quit"
 #~ msgstr "_Afsluiten"
