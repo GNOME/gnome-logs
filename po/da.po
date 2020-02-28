@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2019-03-26 17:01+0000\n"
-"PO-Revision-Date: 2019-02-13 11:42+0100\n"
+"POT-Creation-Date: 2019-10-09 08:34+0000\n"
+"PO-Revision-Date: 2020-02-26 19:16+0100\n"
 "Last-Translator: Alan Mortensen <alanmortensen.am@gmail.com>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "Language: da\n"
@@ -361,7 +361,11 @@ msgstr ""
 "Med Logge kan du søge i dine logge ved at skrive et søgebegreb, og vise "
 "detaljerede oplysninger om hver begivenhed ved at klikke på den."
 
-#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:139
+#: data/org.gnome.Logs.appdata.xml.in:30
+msgid "The GNOME Project"
+msgstr "GNOME-projektet"
+
+#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:143
 msgid "Logs"
 msgstr "Logge"
 
@@ -391,8 +395,7 @@ msgstr "Hvordan listerækker skal sorteres i begivenhedsoversigten"
 
 #: data/org.gnome.Logs.gschema.xml:11
 msgid "Sort list rows in ascending or descending order for the selected type"
-msgstr ""
-"Sortér listerækker i stigende eller faldende orden for den valgte type"
+msgstr "Sortér listerækker i stigende eller faldende orden for den valgte type"
 
 #: src/gl-application.c:109
 msgid "translator-credits"
@@ -413,7 +416,7 @@ msgid "Print version information and exit"
 msgstr "Udskriv versionsoplysninger og afslut"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
-#: src/gl-eventtoolbar.c:130
+#: src/gl-eventtoolbar.c:134
 msgid "Boot"
 msgstr "Opstart"
 
@@ -458,10 +461,12 @@ msgid "%e %B %Y"
 msgstr "%e. %B %Y"
 
 #: src/gl-searchpopover.c:875
+#, c-format
 msgid "AM"
 msgstr "AM"
 
 #: src/gl-searchpopover.c:879
+#, c-format
 msgid "PM"
 msgstr "PM"
 
@@ -628,4 +633,3 @@ msgstr "Ingen tilgængelige logge"
 
 #~ msgid "Search the displayed logs"
 #~ msgstr "Søg i de viste logge"
-
