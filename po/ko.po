@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the gnome-logs package.
 # Changwoo Ryu <cwryu@debian.org>, 2014-2016.
 # Junyoul Lim <purum@postech.ac.kr>, 2017-2018.
-# Seong-ho Cho <shcho@gnome.org>, 2016, 2017, 2019
+# Seong-ho Cho <shcho@gnome.org>, 2016-2017, 2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2018-11-12 06:01+0000\n"
-"PO-Revision-Date: 2019-03-06 20:01+0900\n"
+"POT-Creation-Date: 2019-10-09 08:34+0000\n"
+"PO-Revision-Date: 2020-02-28 13:26+0900\n"
 "Last-Translator: Seong-ho Cho <shcho@gnome.org>\n"
 "Language-Team: Korean <gnome-kr@googlegroups.com>\n"
 "Language: ko\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 2.2\n"
+"X-Generator: Poedit 2.2.4\n"
 
 #: data/gl-categorylist.ui:15
 msgid "Important"
@@ -128,7 +128,7 @@ msgstr "지원"
 msgid "Documentation"
 msgstr "문서"
 
-#: data/gl-eventviewlist.ui:43
+#: data/gl-eventviewlist.ui:42
 msgid "Select journal field and timestamp range filtering options"
 msgstr "저널 필드와 타임스탬프 범위"
 
@@ -303,11 +303,11 @@ msgstr "저널 전체"
 msgid "Set Custom Range…"
 msgstr "개별 범위 설정…"
 
-#: data/gl-window.ui:31
+#: data/gl-window.ui:26
 msgid "Help"
 msgstr "도움말"
 
-#: data/gl-window.ui:39
+#: data/gl-window.ui:34
 msgid "Ignore"
 msgstr "무시하기"
 
@@ -360,7 +360,11 @@ msgstr ""
 "검색어를 입력해서 기록을 검색할 수 있습니다. 또 이벤트를 눌러서 정보를 자세"
 "히 볼 수도 있습니다."
 
-#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:139
+#: data/org.gnome.Logs.appdata.xml.in:30
+msgid "The GNOME Project"
+msgstr "그놈 프로젝트"
+
+#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:143
 msgid "Logs"
 msgstr "기록"
 
@@ -372,12 +376,6 @@ msgstr "기록 보기"
 #: data/org.gnome.Logs.desktop.in:7
 msgid "log;journal;debug;error;"
 msgstr "log;로그;기록;journal;저널;debug;디버깅;error;오류;"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/org.gnome.Logs.desktop.in:12
-#| msgid "gnome-logs"
-msgid "org.gnome.Logs"
-msgstr "org.gnome.Logs"
 
 #: data/org.gnome.Logs.gschema.xml:5
 msgid "Ignore warning"
@@ -410,12 +408,12 @@ msgstr ""
 msgid "View and search logs"
 msgstr "기록 보기 및 검색"
 
-#: src/gl-application.c:231
+#: src/gl-application.c:225
 msgid "Print version information and exit"
 msgstr "버전 정보를 표시하고 끝납니다"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
-#: src/gl-eventtoolbar.c:130
+#: src/gl-eventtoolbar.c:134
 msgid "Boot"
 msgstr "부팅"
 
@@ -460,10 +458,12 @@ msgid "%e %B %Y"
 msgstr "%Y년 %B %e일"
 
 #: src/gl-searchpopover.c:875
+#, c-format
 msgid "AM"
 msgstr "오전"
 
 #: src/gl-searchpopover.c:879
+#, c-format
 msgid "PM"
 msgstr "오후"
 
@@ -607,17 +607,21 @@ msgstr "로그 메시지"
 msgid "Unable to export log messages to a file"
 msgstr "로그 메시지를 파일로 내보낼 수 없습니다"
 
-#: src/gl-window.c:474 src/gl-window.c:505
+#: src/gl-window.c:481 src/gl-window.c:512
 msgid "Unable to read system logs"
 msgstr "시스템 로그를 읽을 수 없습니다"
 
-#: src/gl-window.c:488
+#: src/gl-window.c:495
 msgid "Unable to read user logs"
 msgstr "사용자 로그를 읽을 수 없습니다"
 
-#: src/gl-window.c:520
+#: src/gl-window.c:527
 msgid "No logs available"
 msgstr "로그 없음"
+
+#~| msgid "gnome-logs"
+#~ msgid "org.gnome.Logs"
+#~ msgstr "org.gnome.Logs"
 
 #~ msgid "_Quit"
 #~ msgstr "끝내기(_Q)"
