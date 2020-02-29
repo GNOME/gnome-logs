@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the gnome-logs package.
 #
 # Martin Srebotnjak <miles@filmsi.net>, 2013–2015.
-# Matej Urbančič <mateju@svn.gnome.org>, 2015–2018
+# Matej Urbančič <mateju@svn.gnome.org>, 2015–2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2018-11-26 20:04+0000\n"
-"PO-Revision-Date: 2018-12-01 21:59+0100\n"
+"POT-Creation-Date: 2020-02-28 13:10+0000\n"
+"PO-Revision-Date: 2020-02-29 20:45+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian <gnome-si@googlegroups.com>\n"
 "Language: sl\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
-"X-Generator: Poedit 2.1.1\n"
+"X-Generator: Poedit 2.2.4\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
 #: data/gl-categorylist.ui:15
@@ -38,19 +38,19 @@ msgstr "Zaznamovano"
 msgid "All"
 msgstr "Vse"
 
-#: data/gl-categorylist.ui:75 src/gl-eventviewrow.c:207
+#: data/gl-categorylist.ui:75 src/gl-eventviewrow.c:209
 msgid "Applications"
 msgstr "Programi"
 
-#: data/gl-categorylist.ui:90 src/gl-eventviewrow.c:216
+#: data/gl-categorylist.ui:90 src/gl-eventviewrow.c:218
 msgid "System"
 msgstr "Sistem"
 
-#: data/gl-categorylist.ui:105 src/gl-eventviewrow.c:220
+#: data/gl-categorylist.ui:105 src/gl-eventviewrow.c:222
 msgid "Security"
 msgstr "Varnost"
 
-#: data/gl-categorylist.ui:120 src/gl-eventviewrow.c:212
+#: data/gl-categorylist.ui:120 src/gl-eventviewrow.c:214
 msgid "Hardware"
 msgstr "Strojna oprema"
 
@@ -130,7 +130,7 @@ msgstr "Podpora"
 msgid "Documentation"
 msgstr "Dokumentacija"
 
-#: data/gl-eventviewlist.ui:43
+#: data/gl-eventviewlist.ui:42
 msgid "Select journal field and timestamp range filtering options"
 msgstr "Izbor polja dnevnika in časovni obseg za filtriranje"
 
@@ -305,11 +305,11 @@ msgstr "Celoten dnevnik"
 msgid "Set Custom Range…"
 msgstr "Določi obseg po meri ..."
 
-#: data/gl-window.ui:31
+#: data/gl-window.ui:26
 msgid "Help"
 msgstr "Pomoč"
 
-#: data/gl-window.ui:39
+#: data/gl-window.ui:34
 msgid "Ignore"
 msgstr "Prezri"
 
@@ -351,8 +351,8 @@ msgid ""
 "Logs shows events from the systemd journal, and sorts them into categories, "
 "such as hardware and applications."
 msgstr ""
-"Program pokaže dogodke, ki jih je shranil systemd in jih združuje v "
-"kategorije, kot sta strojna oprema ali programi."
+"Program pokaže dogodke, shranjene prek ozadnjega programa systemd in jih "
+"združuje v kategorije, kot sta strojna oprema ali programi."
 
 #: data/org.gnome.Logs.appdata.xml.in:12
 msgid ""
@@ -362,7 +362,11 @@ msgstr ""
 "Program omogoča preiskovanje dnevnikov z vpisom iskalnega niza in pregled "
 "podrobnosti vsakega dogodka."
 
-#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:139
+#: data/org.gnome.Logs.appdata.xml.in:30
+msgid "The GNOME Project"
+msgstr "Projekt GNOME"
+
+#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:143
 msgid "Logs"
 msgstr "Dnevniki"
 
@@ -375,11 +379,7 @@ msgstr "Pregledovalnik dnevnikov"
 msgid "log;journal;debug;error;"
 msgstr ""
 "dnevnik;razhroščevanje;hrošči;napaka;napake;težave;težava;problem;problemi;"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/org.gnome.Logs.desktop.in:12
-msgid "org.gnome.Logs"
-msgstr "org.gnome.Logs"
+"log;beleženje;"
 
 #: data/org.gnome.Logs.gschema.xml:5
 msgid "Ignore warning"
@@ -403,18 +403,20 @@ msgstr "Razvrščanje vrstic naraščajoče oziroma padajoče za izbrano vrsto"
 
 #: src/gl-application.c:109
 msgid "translator-credits"
-msgstr "Martin Srebotnjak <miles@filmsi.net>"
+msgstr ""
+"Matej Urbančič <mateju@svn.gnome.org>\n"
+"Martin Srebotnjak"
 
 #: src/gl-application.c:110
 msgid "View and search logs"
 msgstr "Pokaži in preišči dnevnike"
 
-#: src/gl-application.c:231
+#: src/gl-application.c:225
 msgid "Print version information and exit"
 msgstr "Izpiši podatke o različici in končaj"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
-#: src/gl-eventtoolbar.c:130
+#: src/gl-eventtoolbar.c:134
 msgid "Boot"
 msgstr "Zagoni"
 
@@ -424,7 +426,7 @@ msgstr "Zagoni"
 msgid "No results"
 msgstr "Ni najdenih zadetkov"
 
-#: src/gl-eventviewrow.c:224
+#: src/gl-eventviewrow.c:226
 msgid "Other"
 msgstr "Drugo"
 
@@ -459,10 +461,12 @@ msgid "%e %B %Y"
 msgstr "%e %B %Y"
 
 #: src/gl-searchpopover.c:875
+#, c-format
 msgid "AM"
 msgstr "AM"
 
 #: src/gl-searchpopover.c:879
+#, c-format
 msgid "PM"
 msgstr "PM"
 
@@ -606,17 +610,20 @@ msgstr "dnevniška sporočila"
 msgid "Unable to export log messages to a file"
 msgstr "Ni mogoče izvoziti dnevniških sporočil v datoteko"
 
-#: src/gl-window.c:474 src/gl-window.c:505
+#: src/gl-window.c:481 src/gl-window.c:512
 msgid "Unable to read system logs"
 msgstr "Ni mogoče prebrati sistemskega dnevnika"
 
-#: src/gl-window.c:488
+#: src/gl-window.c:495
 msgid "Unable to read user logs"
 msgstr "Ni mogoče prebrati uporabniškega dnevnika"
 
-#: src/gl-window.c:520
+#: src/gl-window.c:527
 msgid "No logs available"
 msgstr "Ni shranjenih dnevnikov"
+
+#~ msgid "org.gnome.Logs"
+#~ msgstr "org.gnome.Logs"
 
 #~ msgid "_Quit"
 #~ msgstr "_Končaj"
