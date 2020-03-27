@@ -7,7 +7,7 @@ sources = [
 
 media = [
     'media/gnome-logs.png',
-    'media/gnome-logs-3-12.png'
+    'media/gnome-logs-3-34.png'
 ]
 
 gnome.yelp(
