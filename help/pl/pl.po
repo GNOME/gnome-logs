@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs-help\n"
-"POT-Creation-Date: 2018-01-03 15:59+0000\n"
+"POT-Creation-Date: 2020-03-27 18:35+0000\n"
 "PO-Revision-Date: 2017-08-11 04:11+0200\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <community-poland@mozilla.org>\n"
@@ -99,11 +99,11 @@ msgstr ""
 #: C/introduction.page:35
 msgctxt "_"
 msgid ""
-"external ref='media/gnome-logs-3-12.png' "
-"md5='56e83d7808cdfd80457691aff5ffc2d1'"
+"external ref='media/gnome-logs-3-34.png' "
+"md5='572ed4fda65dbaa8cd2dc56f6bce5dfb'"
 msgstr ""
-"external ref='media/gnome-logs-3-12.png' "
-"md5='56e83d7808cdfd80457691aff5ffc2d1'"
+"external ref='media/gnome-logs-3-34.png' "
+"md5='572ed4fda65dbaa8cd2dc56f6bce5dfb'"
 
 #. (itstool) path: media/p
 #: C/introduction.page:36
