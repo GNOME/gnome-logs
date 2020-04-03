@@ -21,16 +21,37 @@
                                 <property name="visible">True</property>
                             </object>
                         </child>
+                        <child>
+                            <object class="GtkShortcutsShortcut">
+                                <property name="accelerator">F1</property>
+                                <property name="title" translatable="yes" context="shortcut window">Show help</property>
+                                <property name="visible">True</property>
+                            </object>
+                        </child>
+                        <child>
+                            <object class="GtkShortcutsShortcut">
+                                <property name="accelerator">&lt;Primary&gt;question</property>
+                                <property name="title" translatable="yes" context="shortcut window">Keyboard shorcuts</property>
+                                <property name="visible">True</property>
+                            </object>
+                        </child>
                     </object>
                 </child>
                 <child>
                     <object class="GtkShortcutsGroup">
-                        <property name="title" translatable="yes" context="shortcut window">Search</property>
+                        <property name="title" translatable="yes" context="shortcut window">Application</property>
                         <property name="visible">True</property>
                         <child>
                             <object class="GtkShortcutsShortcut">
                                 <property name="accelerator">&lt;Primary&gt;f</property>
                                 <property name="title" translatable="yes" context="shortcut window">Find</property>
+                                <property name="visible">True</property>
+                            </object>
+                        </child>
+                        <child>
+                            <object class="GtkShortcutsShortcut">
+                                <property name="accelerator">&lt;Primary&gt;e</property>
+                                <property name="title" translatable="yes" context="shortcut window">Export logs to a file</property>
                                 <property name="visible">True</property>
                             </object>
                         </child>
