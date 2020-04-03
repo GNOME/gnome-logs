@@ -1,13 +1,13 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>, 2014, 2016, 2017, 2018, 2019.
+# Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>, 2014, 2016, 2017, 2018, 2019, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2018-11-12 06:01+0000\n"
-"PO-Revision-Date: 2019-03-03 12:55+0200\n"
+"POT-Creation-Date: 2020-03-27 18:35+0000\n"
+"PO-Revision-Date: 2020-04-03 23:46+0300\n"
 "Last-Translator: Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>\n"
 "Language-Team: Latvian <lata-l10n@googlegroups.com>\n"
 "Language: lv\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 :"
 " 2);\n"
-"X-Generator: Lokalize 2.0\n"
+"X-Generator: Lokalize 19.12.3\n"
 
 #: data/gl-categorylist.ui:15
 msgid "Important"
@@ -34,19 +34,19 @@ msgstr "Atzīmēti"
 msgid "All"
 msgstr "Visi"
 
-#: data/gl-categorylist.ui:75 src/gl-eventviewrow.c:207
+#: data/gl-categorylist.ui:75 src/gl-eventviewrow.c:209
 msgid "Applications"
 msgstr "Lietotnes"
 
-#: data/gl-categorylist.ui:90 src/gl-eventviewrow.c:216
+#: data/gl-categorylist.ui:90 src/gl-eventviewrow.c:218
 msgid "System"
 msgstr "Sistēma"
 
-#: data/gl-categorylist.ui:105 src/gl-eventviewrow.c:220
+#: data/gl-categorylist.ui:105 src/gl-eventviewrow.c:222
 msgid "Security"
 msgstr "Drošība"
 
-#: data/gl-categorylist.ui:120 src/gl-eventviewrow.c:212
+#: data/gl-categorylist.ui:120 src/gl-eventviewrow.c:214
 msgid "Hardware"
 msgstr "Aparatūra"
 
@@ -71,7 +71,6 @@ msgid "_Help"
 msgstr "_Palīdzība"
 
 #: data/gl-eventtoolbar.ui:21
-#| msgid "_About"
 msgid "_About Logs"
 msgstr "P_ar žurnāliem"
 
@@ -127,7 +126,7 @@ msgstr "Atbalsts"
 msgid "Documentation"
 msgstr "Dokumentācija"
 
-#: data/gl-eventviewlist.ui:43
+#: data/gl-eventviewlist.ui:42
 msgid "Select journal field and timestamp range filtering options"
 msgstr ""
 "Izvēlieties žurnāla lauku un laika spiedogu diapazonu filtrēšanas opcijas"
@@ -303,11 +302,11 @@ msgstr "Viss žurnāls"
 msgid "Set Custom Range…"
 msgstr "Iestatīt pielāgotu diapazonu…"
 
-#: data/gl-window.ui:31
+#: data/gl-window.ui:26
 msgid "Help"
 msgstr "Palīdzība"
 
-#: data/gl-window.ui:39
+#: data/gl-window.ui:34
 msgid "Ignore"
 msgstr "Ignorēt"
 
@@ -360,7 +359,11 @@ msgstr ""
 "Izmantojot “Žurnālus” jūs varat meklēt savos žurnālos, rakstot meklējamo "
 "tekstu un skatot detalizēto informāciju par katru notikumu, uz tā uzspiežot."
 
-#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:139
+#: data/org.gnome.Logs.appdata.xml.in:30
+msgid "The GNOME Project"
+msgstr "GNOME projekts"
+
+#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:143
 msgid "Logs"
 msgstr "Žurnāli"
 
@@ -372,12 +375,6 @@ msgstr "Žurnālu skatītājs"
 #: data/org.gnome.Logs.desktop.in:7
 msgid "log;journal;debug;error;"
 msgstr "žurnāls;atkļūdot;kļūda;"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/org.gnome.Logs.desktop.in:12
-#| msgid "gnome-logs"
-msgid "org.gnome.Logs"
-msgstr "org.gnome.Logs"
 
 #: data/org.gnome.Logs.gschema.xml:5
 msgid "Ignore warning"
@@ -407,12 +404,12 @@ msgstr "Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>"
 msgid "View and search logs"
 msgstr "Katīt un meklēt žurnālos"
 
-#: src/gl-application.c:231
+#: src/gl-application.c:225
 msgid "Print version information and exit"
 msgstr "Parādīt informāciju par versiju un iziet"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
-#: src/gl-eventtoolbar.c:130
+#: src/gl-eventtoolbar.c:134
 msgid "Boot"
 msgstr "Sistēmas ielāde"
 
@@ -422,7 +419,7 @@ msgstr "Sistēmas ielāde"
 msgid "No results"
 msgstr "Nav rezultātu"
 
-#: src/gl-eventviewrow.c:224
+#: src/gl-eventviewrow.c:226
 msgid "Other"
 msgstr "Cits"
 
@@ -457,10 +454,12 @@ msgid "%e %B %Y"
 msgstr "%e. %B, %Y."
 
 #: src/gl-searchpopover.c:875
+#, c-format
 msgid "AM"
 msgstr "AM"
 
 #: src/gl-searchpopover.c:879
+#, c-format
 msgid "PM"
 msgstr "PM"
 
@@ -604,17 +603,21 @@ msgstr "žurnāla ieraksti"
 msgid "Unable to export log messages to a file"
 msgstr "Neizdevās eksportēt žurnāla ierakstus datnē"
 
-#: src/gl-window.c:474 src/gl-window.c:505
+#: src/gl-window.c:481 src/gl-window.c:512
 msgid "Unable to read system logs"
 msgstr "Neizdevās nolasīt sistēmas žurnālus"
 
-#: src/gl-window.c:488
+#: src/gl-window.c:495
 msgid "Unable to read user logs"
 msgstr "Neizdevās nolasīt lietotāja žurnālus"
 
-#: src/gl-window.c:520
+#: src/gl-window.c:527
 msgid "No logs available"
 msgstr "Nav pieejamu žurnālu"
+
+#~| msgid "gnome-logs"
+#~ msgid "org.gnome.Logs"
+#~ msgstr "org.gnome.Logs"
 
 #~ msgid "_Quit"
 #~ msgstr "_Iziet"
