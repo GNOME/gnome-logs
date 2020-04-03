@@ -211,6 +211,10 @@ launch_window (GApplication *application)
     GlApplicationPrivate *priv;
     const gchar * const close_accel[] = { "<Primary>w", NULL };
     const gchar * const search_accel[] = { "<Primary>f", NULL };
+    const gchar * const export_accel[] = { "<Primary>e", NULL };
+    const gchar * const help_accel[] = { "F1", NULL };
+    const gchar * const new_window_accel[] = { "<Primary>n", NULL };
+    const gchar * const help_overlay_accel[] = { "<Primary>question", NULL };
 
     priv = gl_application_get_instance_private (GL_APPLICATION (application));
 
@@ -221,6 +225,15 @@ launch_window (GApplication *application)
                                            "win.close", close_accel);
     gtk_application_set_accels_for_action (GTK_APPLICATION (application),
                                            "win.search", search_accel);
+    gtk_application_set_accels_for_action (GTK_APPLICATION (application),
+                                           "win.export", export_accel);
+    gtk_application_set_accels_for_action (GTK_APPLICATION (application),
+                                           "app.help", help_accel);
+    gtk_application_set_accels_for_action (GTK_APPLICATION (application),
+                                           "app.new-window", new_window_accel);
+    gtk_application_set_accels_for_action (GTK_APPLICATION (application),
+                                           "win.show-help-overlay",
+                                           help_overlay_accel);
 
     on_monospace_font_name_changed (priv->desktop, DESKTOP_MONOSPACE_FONT_NAME,
                                     priv);
