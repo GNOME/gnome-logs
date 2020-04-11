@@ -1,0 +1,189 @@
+# Turkish translation for gnome-logs.
+# Copyright (C) 2020 gnome-logs's COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-logs package.
+#
+# Sabri Ünal <libreajans@gmail.com>, 2020.
+# Emin Tufan Çetin <etcetin@gmail.com>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-logs master\n"
+"POT-Creation-Date: 2020-03-27 18:35+0000\n"
+"PO-Revision-Date: 2020-04-11 19:52+0300\n"
+"Last-Translator: Emin Tufan Çetin <etcetin@gmail.com>\n"
+"Language-Team: Türkçe <gnome-turk@gnome.org>\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 2.3\n"
+
+#. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
+msgctxt "_"
+msgid "translator-credits"
+msgstr "Sabri Ünal <libreajans@gmail.com>, 2020"
+
+#. (itstool) path: info/title
+#: C/index.page:7
+msgctxt "text"
+msgid "Logs help"
+msgstr "Günlükler yardımı"
+
+#. (itstool) path: info/title
+#: C/index.page:8
+msgctxt "link"
+msgid "Logs help"
+msgstr "Günlükler yardımı"
+
+#. (itstool) path: info/desc
+#: C/index.page:13
+msgid "Browse and search through your systemd journal logs."
+msgstr "Systemd günlük kayıtlarına göz at ve içinde ara."
+
+#. (itstool) path: page/title
+#: C/index.page:16
+msgid "<_:media-1/> Logs"
+msgstr "<_:media-1/> Günlükler"
+
+#. (itstool) path: credit/name
+#: C/introduction.page:11
+msgid "David King"
+msgstr "David King"
+
+#. (itstool) path: credit/years
+#: C/introduction.page:13 C/introduction.page:18
+msgid "2014"
+msgstr "2014"
+
+#. (itstool) path: credit/name
+#: C/introduction.page:16 C/permissions.page:11
+msgid "Ekaterina Gerasimova"
+msgstr "Ekaterina Gerasimova"
+
+#. (itstool) path: info/desc
+#: C/introduction.page:23
+msgid "<app>Logs</app> is a viewer for the <sys>systemd</sys> journal."
+msgstr "<app>Günlükler</app>, <sys>systemd</sys> günlük görüntüleyicidir."
+
+#. (itstool) path: page/title
+#: C/introduction.page:27
+msgid "Introduction"
+msgstr "Giriş"
+
+#. (itstool) path: page/p
+#: C/introduction.page:29
+msgid ""
+"Logs shows events from the systemd journal, and sorts them into categories, "
+"such as hardware and applications."
+msgstr ""
+"Günlükler, systemd günlüğünden olayları gösterir ve bunları donanım ve "
+"uygulamalar gibi kategoriler olarak sıralar."
+
+#. (itstool) path: page/p
+#: C/introduction.page:32
+msgid ""
+"Using Logs you can search your logs by typing a search term, and view "
+"detailed information about each event by clicking on it."
+msgstr ""
+"Günlükleri kullanarak, arama terimi yazarak günlüklerde arama yapabilir ve "
+"her olayın üzerine tıklayarak hakkındaki ayrıntılı bilgileri "
+"görüntüleyebilirsiniz."
+
+#. (itstool) path: page/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/introduction.page:35
+msgctxt "_"
+msgid ""
+"external ref='media/gnome-logs-3-34.png' "
+"md5='572ed4fda65dbaa8cd2dc56f6bce5dfb'"
+msgstr ""
+"external ref='media/gnome-logs-3-34.png' "
+"md5='572ed4fda65dbaa8cd2dc56f6bce5dfb'"
+
+#. (itstool) path: media/p
+#: C/introduction.page:36
+msgid "Screenshot of Logs showing some journal entries."
+msgstr "Bazı günlük girdilerini gösteren Günlükler ekran görüntüsü."
+
+#. (itstool) path: p/link
+#: C/legal.xml:5
+msgid "Creative Commons Attribution-ShareAlike 3.0 Unported License"
+msgstr "Creative Commons Attribution-ShareAlike 3.0 Unported License"
+
+#. (itstool) path: license/p
+#: C/legal.xml:4
+msgid "This work is licensed under a <_:link-1/>."
+msgstr "Bu çalışma <_:link-1/> ile lisanslanmıştır."
+
+#. (itstool) path: credit/years
+#: C/permissions.page:13
+msgid "2013"
+msgstr "2013"
+
+#. (itstool) path: info/desc
+#: C/permissions.page:18
+msgid ""
+"You can read some or all of the logs, depending on which permissions you "
+"have."
+msgstr ""
+"İzinlerinize bağlı olarak günlüklerin bir bölümünü veya tümünü "
+"okuyabilirsiniz."
+
+#. (itstool) path: page/title
+#: C/permissions.page:22
+msgid "Can I view all logs?"
+msgstr "Tüm günlükleri görebilir miyim?"
+
+#. (itstool) path: page/p
+#: C/permissions.page:24
+msgid ""
+"You will be able to browse some messages that have been logged since the "
+"last reboot, depending on which permissions you have. Some of your "
+"permissions are set by your distribution, but they can be changed by your "
+"system administrator."
+msgstr ""
+"İzinlerinize bağlı olarak son yeniden başlatmadan beri günlüğe kaydedilen "
+"bazı iletilere göz atabileceksiniz. Bazı izinler dağıtımınızca belirlenir "
+"ama sistem yöneticinizce değiştirilebilir."
+
+#. (itstool) path: page/p
+#. TRANSLATORS: 'Standard' is taken from the user account type in the
+#. control panel when used in <em> or <gui> tags.
+#: C/permissions.page:30
+msgid ""
+"By default, <em href=\"help:gnome-help/user-admin-explain\">Standard</em> "
+"users are shown a limited set of logs, such as application logs and their "
+"own session logs. If you are a <gui>Standard</gui> user and do not see any "
+"logs, it is possible that your system administrator has disabled your "
+"ability to view logs."
+msgstr ""
+"Öntanımlı olarak, <em href=\"help:gnome-help/user-admin-explain\">Standart</"
+"em> kullanıcılara uygulama günlükleri ve kendi oturum günlükleri gibi "
+"sınırlı kimi günlükler gösterilir. <gui>Standart</gui> kullanıcısıysanız ve "
+"herhangi bir günlük görmüyorsanız, sistem yöneticinizin günlükleri "
+"görüntüleme yeteneğinizi devre dışı bırakmış olabilir."
+
+#. (itstool) path: page/p
+#. TRANSLATORS: 'Administrator' is taken from the user account type in the
+#. control panel when used in <em> or <gui> tags.
+#: C/permissions.page:39
+msgid ""
+"<em>Administrator</em> users will normally be able to view more sensitive "
+"logs, such as kernel logs and the logs of other users. It is possible for "
+"administrators to have different levels of access to logs, so you may not be "
+"able to view all logs. If you are an <gui>Administrator</gui> user, then "
+"only other administrators can change which logs you can access. For more "
+"information about log access permissions, <link href=\"man:systemd-journald"
+"\">see the <_:cmd-1/> man page</link>."
+msgstr ""
+"<em>Yönetici</em> kullanıcılar genellikle çekirdek ve diğer "
+"kullanıcılarınkiler gibi daha hassas günlükleri görüntüleyebilir. "
+"Yöneticilerin günlüklere başka düzeylerde erişimi olabilir, bu nedenle tüm "
+"günlükleri görüntüleyemeyebilirsiniz. <gui>Yönetici</gui> kullanıcısıysanız, "
+"yalnızca diğer yöneticiler hangi günlüklere erişebileceğinizi "
+"değiştirebilir. Günlük erişim izinleri hakkında daha çok bilgi için <link "
+"href=\"man:systemd-journald\">bakınız: <_:cmd-1/> man sayfası</link>."
