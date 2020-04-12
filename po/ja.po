@@ -1,16 +1,17 @@
 # Japanese translation for gnome-logs.
-# Copyright (C) 2014-2019 gnome-logs's COPYRIGHT HOLDER
+# Copyright (C) 2014, 2019-2020 gnome-logs's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-logs package.
 # Aaron Hamilton <aaron@correspondwith.me>, 2014.
 # sicklylife <translation@sicklylife.jp>, 2019.
+# Ryo Nakano <ryonakaknock3@gmail.com>, 2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2019-09-25 12:50+0000\n"
-"PO-Revision-Date: 2019-09-27 23:00+0000\n"
-"Last-Translator: sicklylife <translation@sicklylife.jp>\n"
+"POT-Creation-Date: 2020-04-08 02:11+0000\n"
+"PO-Revision-Date: 2020-04-11 19:53+0900\n"
+"Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
@@ -34,19 +35,19 @@ msgstr "星付き"
 msgid "All"
 msgstr "すべて"
 
-#: data/gl-categorylist.ui:75 src/gl-eventviewrow.c:207
+#: data/gl-categorylist.ui:75 src/gl-eventviewrow.c:209
 msgid "Applications"
 msgstr "アプリケーション"
 
-#: data/gl-categorylist.ui:90 src/gl-eventviewrow.c:216
+#: data/gl-categorylist.ui:90 src/gl-eventviewrow.c:218
 msgid "System"
 msgstr "システム"
 
-#: data/gl-categorylist.ui:105 src/gl-eventviewrow.c:220
+#: data/gl-categorylist.ui:105 src/gl-eventviewrow.c:222
 msgid "Security"
 msgstr "セキュリティ"
 
-#: data/gl-categorylist.ui:120 src/gl-eventviewrow.c:212
+#: data/gl-categorylist.ui:120 src/gl-eventviewrow.c:214
 msgid "Hardware"
 msgstr "ハードウェア"
 
@@ -112,7 +113,7 @@ msgstr "優先度"
 
 #: data/gl-eventviewdetail.ui:228
 msgid "Subject"
-msgstr ""
+msgstr "件名"
 
 #: data/gl-eventviewdetail.ui:264
 msgid "Defined By"
@@ -124,7 +125,7 @@ msgstr "サポート"
 
 #: data/gl-eventviewdetail.ui:334
 msgid "Documentation"
-msgstr ""
+msgstr "ドキュメンテーション"
 
 #: data/gl-eventviewlist.ui:42
 msgid "Select journal field and timestamp range filtering options"
@@ -273,7 +274,7 @@ msgstr "プロセス名"
 
 #: data/gl-searchpopover.ui:1062
 msgid "Systemd Unit"
-msgstr ""
+msgstr "Systemd ユニット"
 
 #: data/gl-searchpopover.ui:1077
 msgid "Executable Path"
@@ -338,7 +339,7 @@ msgstr "検索する"
 
 #: data/org.gnome.Logs.appdata.xml.in:7
 msgid "GNOME Logs"
-msgstr ""
+msgstr "GNOME ログ"
 
 #: data/org.gnome.Logs.appdata.xml.in:8 data/org.gnome.Logs.desktop.in:5
 msgid "View detailed event logs for the system"
@@ -349,12 +350,20 @@ msgid ""
 "Logs shows events from the systemd journal, and sorts them into categories, "
 "such as hardware and applications."
 msgstr ""
+"systemd ジャーナルに記録されたイベントを表示し、ハードウェアやアプリケーシ"
+"ョンといったカテゴリーごとに並べ替えます。"
 
 #: data/org.gnome.Logs.appdata.xml.in:12
 msgid ""
 "Using Logs you can search your logs by typing a search term, and view "
 "detailed information about each event by clicking on it."
 msgstr ""
+"特定のキーワードでログを検索できます。検索結果に表示された各イベントをク"
+"リックすると詳細な情報が表示されます。"
+
+#: data/org.gnome.Logs.appdata.xml.in:30
+msgid "The GNOME Project"
+msgstr "The GNOME Project"
 
 #: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:143
 msgid "Logs"
@@ -371,26 +380,30 @@ msgstr "log;journal;debug;error;logs;ログ;ジャーナル;デバッグ;エラ�
 
 #: data/org.gnome.Logs.gschema.xml:5
 msgid "Ignore warning"
-msgstr ""
+msgstr "警告を無視"
 
 #: data/org.gnome.Logs.gschema.xml:6
 msgid ""
 "Whether to ignore the warning that says you don’t have sufficient permission "
 "to view logs. If ignored, the warning won’t show up again."
 msgstr ""
+"ログを表示する権限がない場合の警告を無視するかどうかの設定です。無視する場合"
+"、警告は表示されなくなります。"
 
 #: data/org.gnome.Logs.gschema.xml:10
 msgid "How to sort list rows in the event view list"
-msgstr ""
+msgstr "イベント表示リストの並べ替え方法"
 
 #: data/org.gnome.Logs.gschema.xml:11
 msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr ""
+"選択した種類のリストを昇順、降順のどちらで表示するかを設定します"
 
 #: src/gl-application.c:109
 msgid "translator-credits"
 msgstr ""
 "Aaron Hamilton <aaron@correspondwith.me>\n"
+"Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "sicklylife <translation@sicklylife.jp>"
 
 #: src/gl-application.c:110
@@ -412,7 +425,7 @@ msgstr "ブート"
 msgid "No results"
 msgstr "見つかりません"
 
-#: src/gl-eventviewrow.c:224
+#: src/gl-eventviewrow.c:226
 msgid "Other"
 msgstr "その他"
 
