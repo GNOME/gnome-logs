@@ -335,16 +335,31 @@ gl_util_boot_time_to_display (guint64 realtime_first,
 GlJournalStorage
 gl_util_journal_storage_type (void)
 {
-    if (g_file_test ("/run/log/journal", G_FILE_TEST_EXISTS))
+    g_autofree gchar *run_path = NULL;
+    g_autofree gchar *var_path = NULL;
+    gchar ids[33];
+    gint ret;
+    sd_id128_t machine_id;
+
+    ret = sd_id128_get_machine (&machine_id);
+    if (ret < 0)
+    {
+        g_critical ("Error getting machine id: %s", g_strerror (-ret));
+    }
+    sd_id128_to_string (machine_id, ids);
+
+    run_path = g_build_filename ("/run/log/journal/", ids, NULL);
+    var_path = g_build_filename ("/var/log/journal/", ids, NULL);
+
+    if (g_file_test (run_path, G_FILE_TEST_EXISTS))
     {
         return GL_JOURNAL_STORAGE_VOLATILE;
     }
-    else
+    else if (g_file_test (var_path, G_FILE_TEST_EXISTS))
     {
         return GL_JOURNAL_STORAGE_PERSISTENT;
     }
-
-    if ((!g_file_test ("/run/log/journal", G_FILE_TEST_EXISTS)) && (!g_file_test ("/var/log/journal", G_FILE_TEST_EXISTS)))
+    else
     {
         return GL_JOURNAL_STORAGE_NONE;
     }
