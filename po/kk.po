@@ -1,21 +1,21 @@
 # Kazakh translation for gnome-logs.
 # Copyright (C) 2014 gnome-logs's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-logs package.
-# Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2014-2016.
+# Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2014-2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2018-11-12 06:01+0000\n"
-"PO-Revision-Date: 2019-02-16 19:30+0500\n"
+"POT-Creation-Date: 2020-06-23 08:26+0000\n"
+"PO-Revision-Date: 2020-06-25 12:21+0500\n"
 "Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
 "Language-Team: Kazakh <kk@li.org>\n"
 "Language: kk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.1\n"
+"X-Generator: Poedit 2.3.1\n"
 
 #: data/gl-categorylist.ui:15
 msgid "Important"
@@ -33,19 +33,19 @@ msgstr "Жұлдызшалы"
 msgid "All"
 msgstr "Барлығы"
 
-#: data/gl-categorylist.ui:75 src/gl-eventviewrow.c:207
+#: data/gl-categorylist.ui:75 src/gl-eventviewrow.c:209
 msgid "Applications"
 msgstr "Қолданбалар"
 
-#: data/gl-categorylist.ui:90 src/gl-eventviewrow.c:216
+#: data/gl-categorylist.ui:90 src/gl-eventviewrow.c:218
 msgid "System"
 msgstr "Жүйе"
 
-#: data/gl-categorylist.ui:105 src/gl-eventviewrow.c:220
+#: data/gl-categorylist.ui:105 src/gl-eventviewrow.c:222
 msgid "Security"
 msgstr "Қауіпсіздік"
 
-#: data/gl-categorylist.ui:120 src/gl-eventviewrow.c:212
+#: data/gl-categorylist.ui:120 src/gl-eventviewrow.c:214
 msgid "Hardware"
 msgstr "Құрылғылар"
 
@@ -125,7 +125,7 @@ msgstr "Қолдау"
 msgid "Documentation"
 msgstr "Құжаттама"
 
-#: data/gl-eventviewlist.ui:43
+#: data/gl-eventviewlist.ui:42
 msgid "Select journal field and timestamp range filtering options"
 msgstr "Журнал өрісі және уақыт ауқымы сүзгілеу опцияларын таңдаңыз"
 
@@ -300,11 +300,11 @@ msgstr "Бүкіл журнал"
 msgid "Set Custom Range…"
 msgstr "Таңдауыңызша ауқымды орнату…"
 
-#: data/gl-window.ui:31
+#: data/gl-window.ui:26
 msgid "Help"
 msgstr "Көмек"
 
-#: data/gl-window.ui:39
+#: data/gl-window.ui:34
 msgid "Ignore"
 msgstr "Елемеу"
 
@@ -357,7 +357,11 @@ msgstr ""
 "Логтар көмегімен сіз іздеу сөзін енгізу арқылы іздей аласыз, ал, оқиға "
 "туралы көбірек білу үшін, оған шерте аласыз."
 
-#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:139
+#: data/org.gnome.Logs.appdata.xml.in:30
+msgid "The GNOME Project"
+msgstr "GNOME жобасы"
+
+#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:143
 msgid "Logs"
 msgstr "Логтар"
 
@@ -369,12 +373,6 @@ msgstr "Логтар көрсетушісі"
 #: data/org.gnome.Logs.desktop.in:7
 msgid "log;journal;debug;error;"
 msgstr "log;journal;debug;error;лог;журнал;жөндеу;қате;"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/org.gnome.Logs.desktop.in:12
-#| msgid "gnome-logs"
-msgid "org.gnome.Logs"
-msgstr "org.gnome.Logs"
 
 #: data/org.gnome.Logs.gschema.xml:5
 msgid "Ignore warning"
@@ -396,20 +394,20 @@ msgstr "Оқиғалар көрінісінде тізім жолдарын қа
 msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr "Таңдалған түрі үшін тізім жолдарын өсу не кему ретімен сұрыптау"
 
-#: src/gl-application.c:109
+#: src/gl-application.c:115
 msgid "translator-credits"
 msgstr "Baurzhan Muftakhidinov <baurthefirst@gmail.com>"
 
-#: src/gl-application.c:110
+#: src/gl-application.c:116
 msgid "View and search logs"
 msgstr "Жүйелік журналдарды қарау және олардан іздеу"
 
-#: src/gl-application.c:231
+#: src/gl-application.c:242
 msgid "Print version information and exit"
 msgstr "Нұсқа ақпаратын шығару және шығу"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
-#: src/gl-eventtoolbar.c:130
+#: src/gl-eventtoolbar.c:134
 msgid "Boot"
 msgstr "Жүктелу"
 
@@ -419,7 +417,7 @@ msgstr "Жүктелу"
 msgid "No results"
 msgstr "Нәтижелері жоқ"
 
-#: src/gl-eventviewrow.c:224
+#: src/gl-eventviewrow.c:226
 msgid "Other"
 msgstr "Басқа"
 
@@ -454,10 +452,12 @@ msgid "%e %B %Y"
 msgstr "%e %B %Y"
 
 #: src/gl-searchpopover.c:875
+#, c-format
 msgid "AM"
 msgstr "AM"
 
 #: src/gl-searchpopover.c:879
+#, c-format
 msgid "PM"
 msgstr "PM"
 
@@ -601,17 +601,21 @@ msgstr "лог хабарламары"
 msgid "Unable to export log messages to a file"
 msgstr "Лог хабарламаларын файлға экспорттау мүмкін емес"
 
-#: src/gl-window.c:474 src/gl-window.c:505
+#: src/gl-window.c:495 src/gl-window.c:526
 msgid "Unable to read system logs"
 msgstr "Жүйелік логтарды оқу мүмкін емес"
 
-#: src/gl-window.c:488
+#: src/gl-window.c:509
 msgid "Unable to read user logs"
 msgstr "Пайдаланушы логтарын оқу мүмкін емес"
 
-#: src/gl-window.c:520
+#: src/gl-window.c:541
 msgid "No logs available"
 msgstr "Қолжетерлік логтар жоқ"
+
+#~| msgid "gnome-logs"
+#~ msgid "org.gnome.Logs"
+#~ msgstr "org.gnome.Logs"
 
 #~ msgid "_Quit"
 #~ msgstr "_Шығу"
