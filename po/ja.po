@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2020-06-23 08:26+0000\n"
-"PO-Revision-Date: 2020-07-18 18:54+0900\n"
+"POT-Creation-Date: 2020-07-18 10:02+0000\n"
+"PO-Revision-Date: 2020-07-18 19:42+0900\n"
 "Last-Translator: sicklylife <translation@sicklylife.jp>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
 "Language: ja\n"
@@ -134,7 +134,7 @@ msgstr ""
 
 #: data/gl-searchpopover.ui:26
 msgid "Select a Journal Field to filter the Logs according to it"
-msgstr "ログを絞り込むするジャーナルフィールドを選択してください"
+msgstr "ログを絞り込むジャーナルフィールドを選択してください"
 
 #: data/gl-searchpopover.ui:35 data/gl-searchpopover.ui:1028
 msgid "All Available Fields"
