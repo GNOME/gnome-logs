@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
 "POT-Creation-Date: 2020-06-23 08:26+0000\n"
-"PO-Revision-Date: 2020-04-11 19:53+0900\n"
-"Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
+"PO-Revision-Date: 2020-07-18 18:54+0900\n"
+"Last-Translator: sicklylife <translation@sicklylife.jp>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
@@ -81,7 +81,7 @@ msgstr "ログをファイルにエクスポートします"
 
 #: data/gl-eventtoolbar.ui:74
 msgid "Choose the boot from which to view logs"
-msgstr "ログを表示するブートを選択します"
+msgstr "ログを表示する稼動期間を選択します"
 
 #: data/gl-eventtoolbar.ui:86
 msgid "Search all the logs of the current category"
@@ -117,7 +117,7 @@ msgstr "件名"
 
 #: data/gl-eventviewdetail.ui:264
 msgid "Defined By"
-msgstr ""
+msgstr "定義"
 
 #: data/gl-eventviewdetail.ui:298
 msgid "Support"
@@ -130,16 +130,15 @@ msgstr "ドキュメンテーション"
 #: data/gl-eventviewlist.ui:42
 msgid "Select journal field and timestamp range filtering options"
 msgstr ""
-"ジャーナルフィールドとタイムスタンプ範囲のフィルタリングオプションを選択して"
-"ください"
+"ジャーナルフィールドとタイムスタンプ範囲の絞り込みオプションを選択します"
 
 #: data/gl-searchpopover.ui:26
 msgid "Select a Journal Field to filter the Logs according to it"
-msgstr "ログをフィルタリングするジャーナルフィールドを選択してください"
+msgstr "ログを絞り込むするジャーナルフィールドを選択してください"
 
 #: data/gl-searchpopover.ui:35 data/gl-searchpopover.ui:1028
 msgid "All Available Fields"
-msgstr "すべての利用可能なフィールド"
+msgstr "利用可能なフィールドすべて"
 
 #: data/gl-searchpopover.ui:78 data/gl-searchpopover.ui:251
 msgid "Parameters"
@@ -170,7 +169,7 @@ msgstr "表示するログエントリーのタイムスタンプ範囲を選択
 #: data/gl-searchpopover.ui:208 data/gl-searchpopover.ui:1091
 #: src/gl-searchpopover.c:1309
 msgid "Current Boot"
-msgstr "現在のブート"
+msgstr "現在の稼動期間"
 
 #: data/gl-searchpopover.ui:293
 msgid "Search Type"
@@ -282,7 +281,7 @@ msgstr "実行パス"
 
 #: data/gl-searchpopover.ui:1096
 msgid "Previous Boot"
-msgstr "前のブート"
+msgstr "前の稼動期間"
 
 #: data/gl-searchpopover.ui:1105
 msgid "Today"
@@ -380,7 +379,7 @@ msgstr "log;journal;debug;error;logs;ログ;ジャーナル;デバッグ;エラ�
 
 #: data/org.gnome.Logs.gschema.xml:5
 msgid "Ignore warning"
-msgstr "警告を無視"
+msgstr "警告を無視する"
 
 #: data/org.gnome.Logs.gschema.xml:6
 msgid ""
@@ -416,7 +415,7 @@ msgstr "バージョン情報を表示して終了する"
 #. Translators: Boot refers to a single run (or bootup) of the system
 #: src/gl-eventtoolbar.c:134
 msgid "Boot"
-msgstr "ブート"
+msgstr "稼動期間"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
@@ -628,6 +627,3 @@ msgstr "ログはありません"
 
 #~ msgid "_Quit"
 #~ msgstr "終了(_Q)"
-
-#~ msgid "Not implemented"
-#~ msgstr "実装されていない"
