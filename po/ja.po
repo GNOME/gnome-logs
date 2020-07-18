@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2020-04-08 02:11+0000\n"
+"POT-Creation-Date: 2020-06-23 08:26+0000\n"
 "PO-Revision-Date: 2020-04-11 19:53+0900\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
@@ -350,16 +350,16 @@ msgid ""
 "Logs shows events from the systemd journal, and sorts them into categories, "
 "such as hardware and applications."
 msgstr ""
-"systemd ジャーナルに記録されたイベントを表示し、ハードウェアやアプリケーシ"
-"ョンといったカテゴリーごとに並べ替えます。"
+"systemd ジャーナルに記録されたイベントを表示し、ハードウェアやアプリケーショ"
+"ンといったカテゴリーごとに並べ替えます。"
 
 #: data/org.gnome.Logs.appdata.xml.in:12
 msgid ""
 "Using Logs you can search your logs by typing a search term, and view "
 "detailed information about each event by clicking on it."
 msgstr ""
-"特定のキーワードでログを検索できます。検索結果に表示された各イベントをク"
-"リックすると詳細な情報が表示されます。"
+"特定のキーワードでログを検索できます。検索結果に表示された各イベントをクリッ"
+"クすると詳細な情報が表示されます。"
 
 #: data/org.gnome.Logs.appdata.xml.in:30
 msgid "The GNOME Project"
@@ -387,8 +387,8 @@ msgid ""
 "Whether to ignore the warning that says you don’t have sufficient permission "
 "to view logs. If ignored, the warning won’t show up again."
 msgstr ""
-"ログを表示する権限がない場合の警告を無視するかどうかの設定です。無視する場合"
-"、警告は表示されなくなります。"
+"ログを表示する権限がない場合の警告を無視するかどうかの設定です。無視する場"
+"合、警告は表示されなくなります。"
 
 #: data/org.gnome.Logs.gschema.xml:10
 msgid "How to sort list rows in the event view list"
@@ -396,21 +396,20 @@ msgstr "イベント表示リストの並べ替え方法"
 
 #: data/org.gnome.Logs.gschema.xml:11
 msgid "Sort list rows in ascending or descending order for the selected type"
-msgstr ""
-"選択した種類のリストを昇順、降順のどちらで表示するかを設定します"
+msgstr "選択した種類のリストを昇順、降順のどちらで表示するかを設定します"
 
-#: src/gl-application.c:109
+#: src/gl-application.c:115
 msgid "translator-credits"
 msgstr ""
 "Aaron Hamilton <aaron@correspondwith.me>\n"
 "Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "sicklylife <translation@sicklylife.jp>"
 
-#: src/gl-application.c:110
+#: src/gl-application.c:116
 msgid "View and search logs"
 msgstr "ログの検索と表示"
 
-#: src/gl-application.c:225
+#: src/gl-application.c:242
 msgid "Print version information and exit"
 msgstr "バージョン情報を表示して終了する"
 
@@ -609,15 +608,15 @@ msgstr "ログメッセージ"
 msgid "Unable to export log messages to a file"
 msgstr "ログメッセージをファイルにエクスポートできません"
 
-#: src/gl-window.c:481 src/gl-window.c:512
+#: src/gl-window.c:495 src/gl-window.c:526
 msgid "Unable to read system logs"
 msgstr "システムログを読み取れません"
 
-#: src/gl-window.c:495
+#: src/gl-window.c:509
 msgid "Unable to read user logs"
 msgstr "ユーザーログを読み取れません"
 
-#: src/gl-window.c:527
+#: src/gl-window.c:541
 msgid "No logs available"
 msgstr "ログはありません"
 
