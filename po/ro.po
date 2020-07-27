@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2019-10-09 08:34+0000\n"
-"PO-Revision-Date: 2019-10-16 11:31+0200\n"
-"Last-Translator: Daniel Șerbănescu <daniel [at] serbanescu [dot] dk>\n"
+"POT-Creation-Date: 2020-07-27 09:30+0000\n"
+"PO-Revision-Date: 2020-07-27 15:51+0300\n"
+"Last-Translator: Florentina Mușat <florentina.musat.28@gmail.com>\n"
 "Language-Team: Gnome Romanian Translation Team\n"
 "Language: ro\n"
 "MIME-Version: 1.0\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
 "20)) ? 1 : 2);;\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 2.4\n"
 "X-Project-Style: gnome\n"
 
 #: data/gl-categorylist.ui:15
@@ -37,19 +37,19 @@ msgstr "Marcate"
 msgid "All"
 msgstr "Toate"
 
-#: data/gl-categorylist.ui:75 src/gl-eventviewrow.c:207
+#: data/gl-categorylist.ui:75 src/gl-eventviewrow.c:209
 msgid "Applications"
 msgstr "Aplicații"
 
-#: data/gl-categorylist.ui:90 src/gl-eventviewrow.c:216
+#: data/gl-categorylist.ui:90 src/gl-eventviewrow.c:218
 msgid "System"
 msgstr "Sistem"
 
-#: data/gl-categorylist.ui:105 src/gl-eventviewrow.c:220
+#: data/gl-categorylist.ui:105 src/gl-eventviewrow.c:222
 msgid "Security"
 msgstr "Securitate"
 
-#: data/gl-categorylist.ui:120 src/gl-eventviewrow.c:212
+#: data/gl-categorylist.ui:120 src/gl-eventviewrow.c:214
 msgid "Hardware"
 msgstr "Hardware"
 
@@ -59,7 +59,7 @@ msgstr "Actualizări"
 
 #: data/gl-categorylist.ui:150
 msgid "Usage"
-msgstr "În uz"
+msgstr "Utilizare"
 
 #: data/gl-eventtoolbar.ui:6
 msgid "_New Window"
@@ -332,15 +332,30 @@ msgctxt "shortcut window"
 msgid "Close a window"
 msgstr "Închide o fereastră"
 
-#: data/help-overlay.ui:28
+#: data/help-overlay.ui:27
 msgctxt "shortcut window"
-msgid "Search"
-msgstr "Caută"
+msgid "Show help"
+msgstr "Arată ajutorul"
 
-#: data/help-overlay.ui:33
+#: data/help-overlay.ui:34
+msgctxt "shortcut window"
+msgid "Keyboard shortcuts"
+msgstr "Scurtături de tastatură"
+
+#: data/help-overlay.ui:42
+msgctxt "shortcut window"
+msgid "Application"
+msgstr "Aplicație"
+
+#: data/help-overlay.ui:47
 msgctxt "shortcut window"
 msgid "Find"
 msgstr "Caută"
+
+#: data/help-overlay.ui:54
+msgctxt "shortcut window"
+msgid "Export logs to a file"
+msgstr "Exportă înregistrările într-un fișier"
 
 #: data/org.gnome.Logs.appdata.xml.in:7
 msgid "GNOME Logs"
@@ -408,17 +423,18 @@ msgstr ""
 "Sortează rândurile listă în ordine ascendentă sau descendentă pentru tipul "
 "selectat"
 
-#: src/gl-application.c:109
+#: src/gl-application.c:115
 msgid "translator-credits"
 msgstr ""
 "Bogdan Mințoi <mintoi.bogdan@gmail.com> 2014\n"
-"Florentina Mușat <florentina.musat.28@gmail.com>, 2019"
+"Florentina Mușat <florentina [dot] musat [dot] 28 [at] gmail [dot] com>, "
+"2019-2020"
 
-#: src/gl-application.c:110
+#: src/gl-application.c:116
 msgid "View and search logs"
 msgstr "Vizualizare și căutare de înregistrări"
 
-#: src/gl-application.c:225
+#: src/gl-application.c:255
 msgid "Print version information and exit"
 msgstr "Afișează informații despre versiune și ieși"
 
@@ -433,7 +449,7 @@ msgstr "Inițializare de sistem"
 msgid "No results"
 msgstr "Niciun rezultat"
 
-#: src/gl-eventviewrow.c:224
+#: src/gl-eventviewrow.c:226
 msgid "Other"
 msgstr "Alta"
 
@@ -617,17 +633,21 @@ msgstr "mesaje de înregistrare"
 msgid "Unable to export log messages to a file"
 msgstr "Nu se pot exporta mesajele de înregistrare la un fișier"
 
-#: src/gl-window.c:481 src/gl-window.c:512
+#: src/gl-window.c:495 src/gl-window.c:526
 msgid "Unable to read system logs"
 msgstr "Nu se pot citi înregistrările de sistem"
 
-#: src/gl-window.c:495
+#: src/gl-window.c:509
 msgid "Unable to read user logs"
 msgstr "Nu se pot citi înregistrările de utilizator"
 
-#: src/gl-window.c:527
+#: src/gl-window.c:541
 msgid "No logs available"
 msgstr "Nu sunt înregistrări disponibile"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Search"
+#~ msgstr "Caută"
 
 #~ msgid "org.gnome.Logs"
 #~ msgstr "org.gnome.Logs"
