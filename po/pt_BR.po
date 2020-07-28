@@ -1,17 +1,17 @@
 # Brazilian Portuguese translation for gnome-logs.
-# Copyright (C) 2019 gnome-logs's COPYRIGHT HOLDER
+# Copyright (C) 2020 gnome-logs's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-logs package.
 # Gustavo Maruqes <gutodisse@gmail.com>, 2015, 2016.
 # Fábio Nogueira <fnogueira@gnome.org>, 2016.
-# Enrico Nicoletto <liverig@gmail.com>, 2013, 2014, 2015, 2017, 2018.
-# Rafael Fontenelle <rafaelff@gnome.org>, 2014-2019.
+# Enrico Nicoletto <liverig@gmail.com>, 2013-2018.
+# Rafael Fontenelle <rafaelff@gnome.org>, 2014-2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2019-10-09 08:34+0000\n"
-"PO-Revision-Date: 2019-10-12 10:05-0300\n"
+"POT-Creation-Date: 2020-07-27 09:30+0000\n"
+"PO-Revision-Date: 2020-07-28 10:18-0300\n"
 "Last-Translator: Rafael Fontenelle <rafaelff@gnome.org>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
 "Language: pt_BR\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1)\n"
-"X-Generator: Gtranslator 3.32.0\n"
+"X-Generator: Gtranslator 3.36.0\n"
 "X-Project-Style: gnome\n"
 
 #: data/gl-categorylist.ui:15
@@ -38,19 +38,19 @@ msgstr "Marcados com estrelas"
 msgid "All"
 msgstr "Todos"
 
-#: data/gl-categorylist.ui:75 src/gl-eventviewrow.c:207
+#: data/gl-categorylist.ui:75 src/gl-eventviewrow.c:209
 msgid "Applications"
 msgstr "Aplicativos"
 
-#: data/gl-categorylist.ui:90 src/gl-eventviewrow.c:216
+#: data/gl-categorylist.ui:90 src/gl-eventviewrow.c:218
 msgid "System"
 msgstr "Sistema"
 
-#: data/gl-categorylist.ui:105 src/gl-eventviewrow.c:220
+#: data/gl-categorylist.ui:105 src/gl-eventviewrow.c:222
 msgid "Security"
 msgstr "Segurança"
 
-#: data/gl-categorylist.ui:120 src/gl-eventviewrow.c:212
+#: data/gl-categorylist.ui:120 src/gl-eventviewrow.c:214
 msgid "Hardware"
 msgstr "Hardware"
 
@@ -333,15 +333,33 @@ msgctxt "shortcut window"
 msgid "Close a window"
 msgstr "Fecha uma janela"
 
-#: data/help-overlay.ui:28
+#: data/help-overlay.ui:27
 msgctxt "shortcut window"
-msgid "Search"
-msgstr "Pesquisa"
+msgid "Show help"
+msgstr "Mostra a ajuda"
 
-#: data/help-overlay.ui:33
+#: data/help-overlay.ui:34
+#| msgid "Keyboard Shortcuts"
+msgctxt "shortcut window"
+msgid "Keyboard shortcuts"
+msgstr "Atalhos de teclado"
+
+#: data/help-overlay.ui:42
+#| msgid "Applications"
+msgctxt "shortcut window"
+msgid "Application"
+msgstr "Aplicativo"
+
+#: data/help-overlay.ui:47
 msgctxt "shortcut window"
 msgid "Find"
 msgstr "Localiza"
+
+#: data/help-overlay.ui:54
+#| msgid "Export logs to a file"
+msgctxt "shortcut window"
+msgid "Export logs to a file"
+msgstr "Exporta registros para um arquivo"
 
 #: data/org.gnome.Logs.appdata.xml.in:7
 msgid "GNOME Logs"
@@ -409,18 +427,19 @@ msgstr ""
 "Classifica as linhas da lista em ordem crescente ou decrescente para o tipo "
 "selecionado"
 
-#: src/gl-application.c:109
+#: src/gl-application.c:115
 msgid "translator-credits"
 msgstr ""
 "Enrico Nicoletto <liverig@gmail.com>\n"
 "Gustavo Marques <gutodisse@gmail.com>\n"
-"Fábio Nogueira <fnogueira@gnome.org>"
+"Fábio Nogueira <fnogueira@gnome.org>\n"
+"Rafael Fontenelle <rafaelff@gnome.org>"
 
-#: src/gl-application.c:110
+#: src/gl-application.c:116
 msgid "View and search logs"
 msgstr "Veja e pesquise registros"
 
-#: src/gl-application.c:225
+#: src/gl-application.c:255
 msgid "Print version information and exit"
 msgstr "Exibe informação da versão e sai"
 
@@ -435,7 +454,7 @@ msgstr "Inicialização"
 msgid "No results"
 msgstr "Nenhum resultado"
 
-#: src/gl-eventviewrow.c:224
+#: src/gl-eventviewrow.c:226
 msgid "Other"
 msgstr "Outro"
 
@@ -619,17 +638,21 @@ msgstr "mensagens de registro"
 msgid "Unable to export log messages to a file"
 msgstr "Não é possível exportar as mensagens de registro para um arquivo"
 
-#: src/gl-window.c:481 src/gl-window.c:512
+#: src/gl-window.c:495 src/gl-window.c:526
 msgid "Unable to read system logs"
 msgstr "Não é possível ler as mensagens de registros do sistema"
 
-#: src/gl-window.c:495
+#: src/gl-window.c:509
 msgid "Unable to read user logs"
 msgstr "Não é possível ler as mensagens de registros do usuário"
 
-#: src/gl-window.c:527
+#: src/gl-window.c:541
 msgid "No logs available"
 msgstr "Não há registros disponíveis"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Search"
+#~ msgstr "Pesquisa"
 
 #~| msgid "gnome-logs"
 #~ msgid "org.gnome.Logs"
