@@ -2,20 +2,21 @@
 # Copyright (C) 2013 gnome-logs's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-logs package.
 # Andika Triwidada <andika@gmail.com>, 2013, 2014.
-#
+# Kukuh Syafaat <kukuhsyafaat@gnome.org>, 2017-2020.
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2019-10-09 08:34+0000\n"
-"PO-Revision-Date: 2019-10-10 15:31+0700\n"
+"POT-Creation-Date: 2020-07-27 09:30+0000\n"
+"PO-Revision-Date: 2020-07-31 19:18+0700\n"
 "Last-Translator: Kukuh Syafaat <kukuhsyafaat@gnome.org>\n"
 "Language-Team: Indonesian <gnome@i15n.org>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.3\n"
+"X-Generator: Poedit 2.4\n"
 
 #: data/gl-categorylist.ui:15
 msgid "Important"
@@ -33,19 +34,19 @@ msgstr "Dibintangi"
 msgid "All"
 msgstr "Semua"
 
-#: data/gl-categorylist.ui:75 src/gl-eventviewrow.c:207
+#: data/gl-categorylist.ui:75 src/gl-eventviewrow.c:209
 msgid "Applications"
 msgstr "Aplikasi"
 
-#: data/gl-categorylist.ui:90 src/gl-eventviewrow.c:216
+#: data/gl-categorylist.ui:90 src/gl-eventviewrow.c:218
 msgid "System"
 msgstr "Sistem"
 
-#: data/gl-categorylist.ui:105 src/gl-eventviewrow.c:220
+#: data/gl-categorylist.ui:105 src/gl-eventviewrow.c:222
 msgid "Security"
 msgstr "Keamanan"
 
-#: data/gl-categorylist.ui:120 src/gl-eventviewrow.c:212
+#: data/gl-categorylist.ui:120 src/gl-eventviewrow.c:214
 msgid "Hardware"
 msgstr "Perangkat Keras"
 
@@ -148,7 +149,7 @@ msgstr "Apa"
 
 #: data/gl-searchpopover.ui:130
 msgid "Select Journal Field…"
-msgstr "Pilih Field Jurnal..."
+msgstr "Pilih Field Jurnal…"
 
 #. When [log entries to be shown for a given timestamp range]
 #: data/gl-searchpopover.ui:155
@@ -157,7 +158,7 @@ msgstr "Kapan"
 
 #: data/gl-searchpopover.ui:170
 msgid "Show Logs from…"
-msgstr "Tampilkan Log dari..."
+msgstr "Tampilkan Log dari…"
 
 #: data/gl-searchpopover.ui:199
 msgid "Select Timestamp Range of the Log Entries to be shown"
@@ -194,7 +195,7 @@ msgstr "Kembali"
 
 #: data/gl-searchpopover.ui:397
 msgid "Show Logs Starting From…"
-msgstr "Tampilkan Log Mulai Dari..."
+msgstr "Tampilkan Log Mulai Dari…"
 
 #: data/gl-searchpopover.ui:419
 msgid "Select a start date"
@@ -202,7 +203,7 @@ msgstr "Pilih tanggal mulai"
 
 #: data/gl-searchpopover.ui:428 src/gl-searchpopover.c:503
 msgid "Select Start Date…"
-msgstr "Pilih Tanggal Mulai..."
+msgstr "Pilih Tanggal Mulai…"
 
 #: data/gl-searchpopover.ui:459 data/gl-searchpopover.ui:763
 msgid "22 January 2016 or 1/22/2016"
@@ -214,7 +215,7 @@ msgstr "Pilih waktu mulai"
 
 #: data/gl-searchpopover.ui:513 src/gl-searchpopover.c:504
 msgid "Select Start Time…"
-msgstr "Pilih Waktu Mulai..."
+msgstr "Pilih Waktu Mulai…"
 
 #: data/gl-searchpopover.ui:550 data/gl-searchpopover.ui:857
 msgid "Hr"
@@ -234,7 +235,7 @@ msgstr "AM/PM"
 
 #: data/gl-searchpopover.ui:701
 msgid "Until…"
-msgstr "Sampai..."
+msgstr "Sampai…"
 
 #: data/gl-searchpopover.ui:723
 msgid "Select an end date"
@@ -242,7 +243,7 @@ msgstr "Pilih tanggal akhir"
 
 #: data/gl-searchpopover.ui:732 src/gl-searchpopover.c:521
 msgid "Select End Date…"
-msgstr "Pilih Tanggal Akhir..."
+msgstr "Pilih Tanggal Akhir…"
 
 #: data/gl-searchpopover.ui:811
 msgid "Select end time"
@@ -250,7 +251,7 @@ msgstr "Pilih waktu akhir"
 
 #: data/gl-searchpopover.ui:820 src/gl-searchpopover.c:522
 msgid "Select End Time…"
-msgstr "Pilih Waktu Akhir..."
+msgstr "Pilih Waktu Akhir…"
 
 #: data/gl-searchpopover.ui:1037
 msgid "PID"
@@ -298,7 +299,7 @@ msgstr "Seluruh Jurnal"
 
 #: data/gl-searchpopover.ui:1133
 msgid "Set Custom Range…"
-msgstr "Atur Rentang Kustom..."
+msgstr "Atur Rentang Kustom…"
 
 #: data/gl-window.ui:26
 msgid "Help"
@@ -323,15 +324,30 @@ msgctxt "shortcut window"
 msgid "Close a window"
 msgstr "Tutup suatu jendela"
 
-#: data/help-overlay.ui:28
+#: data/help-overlay.ui:27
 msgctxt "shortcut window"
-msgid "Search"
-msgstr "Cari"
+msgid "Show help"
+msgstr "Tampilkan bantuan"
 
-#: data/help-overlay.ui:33
+#: data/help-overlay.ui:34
+msgctxt "shortcut window"
+msgid "Keyboard shortcuts"
+msgstr "Pintasan papan tik"
+
+#: data/help-overlay.ui:42
+msgctxt "shortcut window"
+msgid "Application"
+msgstr "Aplikasi"
+
+#: data/help-overlay.ui:47
 msgctxt "shortcut window"
 msgid "Find"
 msgstr "Temukan"
+
+#: data/help-overlay.ui:54
+msgctxt "shortcut window"
+msgid "Export logs to a file"
+msgstr "Ekspor log ke berkas"
 
 #: data/org.gnome.Logs.appdata.xml.in:7
 msgid "GNOME Logs"
@@ -347,7 +363,7 @@ msgid ""
 "such as hardware and applications."
 msgstr ""
 "Log menampilkan peristiwa dari jurnal systemd, dan memilah mereka ke dalam "
-"kategori-kategori, seperti perangkat keras dan aplikasi"
+"kategori-kategori, seperti perangkat keras dan aplikasi."
 
 #: data/org.gnome.Logs.appdata.xml.in:12
 msgid ""
@@ -396,17 +412,17 @@ msgstr "Bagaimana mengurut baris daftar dalam daftar tilikan kejadian"
 msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr "Urutkan baris daftar arah naik atau turun bagi tipe yang dipilih"
 
-#: src/gl-application.c:109
+#: src/gl-application.c:115
 msgid "translator-credits"
 msgstr ""
 "Andika Triwidada <andika@gmail.com>, 2013, 2014, 2016.\n"
-"Kukuh Syafaat <kukuhsyafaat@gnome.org>, 2017, 2019."
+"Kukuh Syafaat <kukuhsyafaat@gnome.org>, 2017-2020."
 
-#: src/gl-application.c:110
+#: src/gl-application.c:116
 msgid "View and search logs"
 msgstr "Tilik dan cari log"
 
-#: src/gl-application.c:225
+#: src/gl-application.c:255
 msgid "Print version information and exit"
 msgstr "Cetak informasi versi dan keluar"
 
@@ -421,7 +437,7 @@ msgstr "Boot"
 msgid "No results"
 msgstr "Tiada hasil"
 
-#: src/gl-eventviewrow.c:224
+#: src/gl-eventviewrow.c:226
 msgid "Other"
 msgstr "Lainnya"
 
@@ -605,17 +621,21 @@ msgstr "pesan log"
 msgid "Unable to export log messages to a file"
 msgstr "Tidak bisa mengekspor pesan log ke berkas"
 
-#: src/gl-window.c:481 src/gl-window.c:512
+#: src/gl-window.c:495 src/gl-window.c:526
 msgid "Unable to read system logs"
 msgstr "Tidak bisa membaca log sistem"
 
-#: src/gl-window.c:495
+#: src/gl-window.c:509
 msgid "Unable to read user logs"
 msgstr "Tidak bisa membaca log pengguna"
 
-#: src/gl-window.c:527
+#: src/gl-window.c:541
 msgid "No logs available"
 msgstr "Tidak ada log yang tersedia"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Search"
+#~ msgstr "Cari"
 
 #~ msgid "org.gnome.Logs"
 #~ msgstr "org.gnome.Logs"
