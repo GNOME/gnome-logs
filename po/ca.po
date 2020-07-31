@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2018-11-12 06:01+0000\n"
+"POT-Creation-Date: 2020-07-27 09:30+0000\n"
 "PO-Revision-Date: 2019-03-10 09:33+0100\n"
 "Last-Translator: David <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <gnome@llistes.softcatala.org>\n"
@@ -34,19 +34,19 @@ msgstr "Destacat"
 msgid "All"
 msgstr "Totes"
 
-#: data/gl-categorylist.ui:75 src/gl-eventviewrow.c:207
+#: data/gl-categorylist.ui:75 src/gl-eventviewrow.c:209
 msgid "Applications"
 msgstr "Aplicacions"
 
-#: data/gl-categorylist.ui:90 src/gl-eventviewrow.c:216
+#: data/gl-categorylist.ui:90 src/gl-eventviewrow.c:218
 msgid "System"
 msgstr "Sistema"
 
-#: data/gl-categorylist.ui:105 src/gl-eventviewrow.c:220
+#: data/gl-categorylist.ui:105 src/gl-eventviewrow.c:222
 msgid "Security"
 msgstr "Seguretat"
 
-#: data/gl-categorylist.ui:120 src/gl-eventviewrow.c:212
+#: data/gl-categorylist.ui:120 src/gl-eventviewrow.c:214
 msgid "Hardware"
 msgstr "Maquinari"
 
@@ -126,7 +126,7 @@ msgstr "Suport"
 msgid "Documentation"
 msgstr "Documentació"
 
-#: data/gl-eventviewlist.ui:43
+#: data/gl-eventviewlist.ui:42
 msgid "Select journal field and timestamp range filtering options"
 msgstr ""
 "Seleccioneu diari de camp i abast de la marca de temps de les opcions de "
@@ -134,7 +134,8 @@ msgstr ""
 
 #: data/gl-searchpopover.ui:26
 msgid "Select a Journal Field to filter the Logs according to it"
-msgstr "Seleccioneu un diari de camp per filtrar els registres d'acord amb ell"
+msgstr ""
+"Seleccioneu un diari de camp per filtrar els registres d'acord amb ell"
 
 #: data/gl-searchpopover.ui:35 data/gl-searchpopover.ui:1028
 msgid "All Available Fields"
@@ -305,11 +306,11 @@ msgstr "La totalitat del diari"
 msgid "Set Custom Range…"
 msgstr "Estableix interval personalitzat..."
 
-#: data/gl-window.ui:31
+#: data/gl-window.ui:26
 msgid "Help"
 msgstr "Ajuda"
 
-#: data/gl-window.ui:39
+#: data/gl-window.ui:34
 msgid "Ignore"
 msgstr "Ignora"
 
@@ -328,15 +329,30 @@ msgctxt "shortcut window"
 msgid "Close a window"
 msgstr "Tanca la finestra"
 
-#: data/help-overlay.ui:28
+#: data/help-overlay.ui:27
 msgctxt "shortcut window"
-msgid "Search"
-msgstr "Cerca"
+msgid "Show help"
+msgstr "Mostra l'ajuda"
 
-#: data/help-overlay.ui:33
+#: data/help-overlay.ui:34
+msgctxt "shortcut window"
+msgid "Keyboard shortcuts"
+msgstr "Dreceres de teclat"
+
+#: data/help-overlay.ui:42
+msgctxt "shortcut window"
+msgid "Application"
+msgstr "Aplicacions"
+
+#: data/help-overlay.ui:47
 msgctxt "shortcut window"
 msgid "Find"
 msgstr "Troba"
+
+#: data/help-overlay.ui:54
+msgctxt "shortcut window"
+msgid "Export logs to a file"
+msgstr "Exporta registres a un fitxer"
 
 #: data/org.gnome.Logs.appdata.xml.in:7
 msgid "GNOME Logs"
@@ -359,10 +375,14 @@ msgid ""
 "Using Logs you can search your logs by typing a search term, and view "
 "detailed information about each event by clicking on it."
 msgstr ""
-"Amb el Logs podeu cercar els vostres registres teclejant un terme de cerca i "
-"veure la informació detallada sobre cada esdeveniment fent-hi clic."
+"Amb el Logs podeu cercar els vostres registres teclejant un terme de cerca i"
+" veure la informació detallada sobre cada esdeveniment fent-hi clic."
 
-#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:139
+#: data/org.gnome.Logs.appdata.xml.in:30
+msgid "The GNOME Project"
+msgstr "El projecte GNOME"
+
+#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:143
 msgid "Logs"
 msgstr "Registres"
 
@@ -370,15 +390,11 @@ msgstr "Registres"
 msgid "Log Viewer"
 msgstr "Visualitzador de registres"
 
-#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or
+#. localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.Logs.desktop.in:7
 msgid "log;journal;debug;error;"
 msgstr "registre;diari;depuració;error;"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/org.gnome.Logs.desktop.in:12
-msgid "org.gnome.Logs"
-msgstr "org.gnome.Logs"
 
 #: data/org.gnome.Logs.gschema.xml:5
 msgid "Ignore warning"
@@ -386,11 +402,11 @@ msgstr "Ignora l'avís"
 
 #: data/org.gnome.Logs.gschema.xml:6
 msgid ""
-"Whether to ignore the warning that says you don’t have sufficient permission "
-"to view logs. If ignored, the warning won’t show up again."
+"Whether to ignore the warning that says you don’t have sufficient permission"
+" to view logs. If ignored, the warning won’t show up again."
 msgstr ""
-"Si s'ha d'ignorar l'avís que us diu que no teniu els permisos suficients per "
-"veure registres. Si s'ignora, l'avís no es tornarà a mostrar."
+"Si s'ha d'ignorar l'avís que us diu que no teniu els permisos suficients per"
+" veure registres. Si s'ignora, l'avís no es tornarà a mostrar."
 
 #: data/org.gnome.Logs.gschema.xml:10
 msgid "How to sort list rows in the event view list"
@@ -404,20 +420,20 @@ msgstr ""
 "Classifica la llista de files en ordre ascendent o descendent segons el "
 "tipus seleccionat"
 
-#: src/gl-application.c:109
+#: src/gl-application.c:115
 msgid "translator-credits"
 msgstr "Pau Iranzo <pau.iranzo@softcatala.org>"
 
-#: src/gl-application.c:110
+#: src/gl-application.c:116
 msgid "View and search logs"
 msgstr "Visualitza i cerca registres"
 
-#: src/gl-application.c:231
+#: src/gl-application.c:255
 msgid "Print version information and exit"
 msgstr "Mostra la informació de la versió i surt"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
-#: src/gl-eventtoolbar.c:130
+#: src/gl-eventtoolbar.c:134
 msgid "Boot"
 msgstr "Arrancada"
 
@@ -427,7 +443,7 @@ msgstr "Arrancada"
 msgid "No results"
 msgstr "Cap resultat"
 
-#: src/gl-eventviewrow.c:224
+#: src/gl-eventviewrow.c:226
 msgid "Other"
 msgstr "Altre"
 
@@ -462,10 +478,12 @@ msgid "%e %B %Y"
 msgstr "%e %B de %Y"
 
 #: src/gl-searchpopover.c:875
+#, c-format
 msgid "AM"
 msgstr "AM"
 
 #: src/gl-searchpopover.c:879
+#, c-format
 msgid "PM"
 msgstr "PM"
 
@@ -609,15 +627,15 @@ msgstr "Registre de missatges"
 msgid "Unable to export log messages to a file"
 msgstr "No s'han pogut exportar els missatges del registre a un fitxer"
 
-#: src/gl-window.c:474 src/gl-window.c:505
+#: src/gl-window.c:495 src/gl-window.c:526
 msgid "Unable to read system logs"
 msgstr "No s'han pogut llegir els registres del sistema"
 
-#: src/gl-window.c:488
+#: src/gl-window.c:509
 msgid "Unable to read user logs"
 msgstr "No s'han pogut llegir els registres d'usuari"
 
-#: src/gl-window.c:520
+#: src/gl-window.c:541
 msgid "No logs available"
 msgstr "No hi ha registres disponibles"
 
