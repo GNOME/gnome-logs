@@ -18,13 +18,3 @@ flatpak devel:
         RUNTIME_REPO: "https://sdk.gnome.org/gnome.flatpakrepo"
         APP_ID: "org.gnome.Logs"
     extends: .flatpak
-
-review:
-    stage: deploy
-    dependencies:
-        - 'flatpak devel'
-    extends: '.review'
-
-stop_review:
-    stage: deploy
-    extends: '.stop_review'
