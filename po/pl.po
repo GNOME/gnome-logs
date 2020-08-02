@@ -1,15 +1,15 @@
 # Polish translation for gnome-logs.
-# Copyright © 2013-2019 the gnome-logs authors.
+# Copyright © 2013-2020 the gnome-logs authors.
 # This file is distributed under the same license as the gnome-logs package.
-# Piotr Drąg <piotrdrag@gmail.com>, 2013-2019.
-# Aviary.pl <community-poland@mozilla.org>, 2013-2019.
+# Piotr Drąg <piotrdrag@gmail.com>, 2013-2020.
+# Aviary.pl <community-poland@mozilla.org>, 2013-2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2019-10-09 08:34+0000\n"
-"PO-Revision-Date: 2019-10-09 19:30+0200\n"
+"POT-Creation-Date: 2020-07-27 09:30+0000\n"
+"PO-Revision-Date: 2020-08-02 13:30+0200\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <community-poland@mozilla.org>\n"
 "Language: pl\n"
@@ -35,19 +35,19 @@ msgstr "Oznaczone gwiazdką"
 msgid "All"
 msgstr "Wszystkie"
 
-#: data/gl-categorylist.ui:75 src/gl-eventviewrow.c:207
+#: data/gl-categorylist.ui:75 src/gl-eventviewrow.c:209
 msgid "Applications"
 msgstr "Programy"
 
-#: data/gl-categorylist.ui:90 src/gl-eventviewrow.c:216
+#: data/gl-categorylist.ui:90 src/gl-eventviewrow.c:218
 msgid "System"
 msgstr "Systemowe"
 
-#: data/gl-categorylist.ui:105 src/gl-eventviewrow.c:220
+#: data/gl-categorylist.ui:105 src/gl-eventviewrow.c:222
 msgid "Security"
 msgstr "Bezpieczeństwo"
 
-#: data/gl-categorylist.ui:120 src/gl-eventviewrow.c:212
+#: data/gl-categorylist.ui:120 src/gl-eventviewrow.c:214
 msgid "Hardware"
 msgstr "Sprzęt"
 
@@ -325,15 +325,30 @@ msgctxt "shortcut window"
 msgid "Close a window"
 msgstr "Zamknięcie okna"
 
-#: data/help-overlay.ui:28
+#: data/help-overlay.ui:27
 msgctxt "shortcut window"
-msgid "Search"
-msgstr "Wyszukiwanie"
+msgid "Show help"
+msgstr "Wyświetlenie pomocy"
 
-#: data/help-overlay.ui:33
+#: data/help-overlay.ui:34
+msgctxt "shortcut window"
+msgid "Keyboard shortcuts"
+msgstr "Skróty klawiszowe"
+
+#: data/help-overlay.ui:42
+msgctxt "shortcut window"
+msgid "Application"
+msgstr "Program"
+
+#: data/help-overlay.ui:47
 msgctxt "shortcut window"
 msgid "Find"
 msgstr "Wyszukiwanie"
+
+#: data/help-overlay.ui:54
+msgctxt "shortcut window"
+msgid "Export logs to a file"
+msgstr "Eksport dzienników do pliku"
 
 #: data/org.gnome.Logs.appdata.xml.in:7
 msgid "GNOME Logs"
@@ -399,17 +414,17 @@ msgstr "Jak porządkować rzędy list na liście widoków zdarzeń"
 msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr "Porządkowanie rzędów list rosnąco lub malejąco dla wybranego typu"
 
-#: src/gl-application.c:109
+#: src/gl-application.c:115
 msgid "translator-credits"
 msgstr ""
-"Piotr Drąg <piotrdrag@gmail.com>, 2013-2019\n"
-"Aviary.pl <community-poland@mozilla.org>, 2013-2019"
+"Piotr Drąg <piotrdrag@gmail.com>, 2013-2020\n"
+"Aviary.pl <community-poland@mozilla.org>, 2013-2020"
 
-#: src/gl-application.c:110
+#: src/gl-application.c:116
 msgid "View and search logs"
 msgstr "Wyświetlanie i przeszukiwanie dzienników"
 
-#: src/gl-application.c:225
+#: src/gl-application.c:255
 msgid "Print version information and exit"
 msgstr "Wyświetla informację o wersji i kończy działanie"
 
@@ -424,7 +439,7 @@ msgstr "Uruchomienie"
 msgid "No results"
 msgstr "Brak wyników"
 
-#: src/gl-eventviewrow.c:224
+#: src/gl-eventviewrow.c:226
 msgid "Other"
 msgstr "Inne"
 
@@ -608,14 +623,14 @@ msgstr "Komunikaty dziennika"
 msgid "Unable to export log messages to a file"
 msgstr "Nie można wyeksportować komunikatów dziennika do pliku"
 
-#: src/gl-window.c:481 src/gl-window.c:512
+#: src/gl-window.c:495 src/gl-window.c:526
 msgid "Unable to read system logs"
 msgstr "Nie można odczytać dzienników systemowych"
 
-#: src/gl-window.c:495
+#: src/gl-window.c:509
 msgid "Unable to read user logs"
 msgstr "Nie można odczytać dzienników użytkownika"
 
-#: src/gl-window.c:527
+#: src/gl-window.c:541
 msgid "No logs available"
 msgstr "Brak dostępnych dzienników"
