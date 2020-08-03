@@ -148,6 +148,9 @@
     {
       "name": "gnome-logs",
       "buildsystem": "meson",
+      "config-opts": [
+        "-Dprofile=Devel"
+      ],
       "sources": [
         {
           "type": "git",
