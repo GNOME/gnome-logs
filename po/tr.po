@@ -5,15 +5,16 @@
 # Hongis_3 <hongis1982@gmail.com>, 2014.
 # Gökhan Gurbetoğlu <ggurbet@gmail.com>, 2014.
 # Muhammet Kara <muhammetk@gmail.com>, 2014, 2015, 2016.
-# Emin Tufan Çetin <etcetin@gmail.com>, 2017, 2018.
+# Sabri Ünal <libreajans@gmail.com>, 2020.
+# Emin Tufan Çetin <etcetin@gmail.com>, 2017, 2018, 2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2019-10-09 08:34+0000\n"
-"PO-Revision-Date: 2020-02-04 20:12+0300\n"
-"Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
+"POT-Creation-Date: 2020-08-02 11:32+0000\n"
+"PO-Revision-Date: 2020-08-08 12:08+0300\n"
+"Last-Translator: Emin Tufan Çetin <etcetin@gmail.com>\n"
 "Language-Team: Türkçe <gnome-turk@gnome.org>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
@@ -38,19 +39,19 @@ msgstr "Yıldızlı"
 msgid "All"
 msgstr "Tümü"
 
-#: data/gl-categorylist.ui:75 src/gl-eventviewrow.c:207
+#: data/gl-categorylist.ui:75 src/gl-eventviewrow.c:209
 msgid "Applications"
 msgstr "Uygulamalar"
 
-#: data/gl-categorylist.ui:90 src/gl-eventviewrow.c:216
+#: data/gl-categorylist.ui:90 src/gl-eventviewrow.c:218
 msgid "System"
 msgstr "Sistem"
 
-#: data/gl-categorylist.ui:105 src/gl-eventviewrow.c:220
+#: data/gl-categorylist.ui:105 src/gl-eventviewrow.c:222
 msgid "Security"
 msgstr "Güvenlik"
 
-#: data/gl-categorylist.ui:120 src/gl-eventviewrow.c:212
+#: data/gl-categorylist.ui:120 src/gl-eventviewrow.c:214
 msgid "Hardware"
 msgstr "Donanım"
 
@@ -328,15 +329,30 @@ msgctxt "shortcut window"
 msgid "Close a window"
 msgstr "Pencereyi kapat"
 
-#: data/help-overlay.ui:28
+#: data/help-overlay.ui:27
 msgctxt "shortcut window"
-msgid "Search"
-msgstr "Ara"
+msgid "Show help"
+msgstr "Yardımı göster"
 
-#: data/help-overlay.ui:33
+#: data/help-overlay.ui:34
+msgctxt "shortcut window"
+msgid "Keyboard shortcuts"
+msgstr "Klavye kısayolları"
+
+#: data/help-overlay.ui:42
+msgctxt "shortcut window"
+msgid "Application"
+msgstr "Uygulama"
+
+#: data/help-overlay.ui:47
 msgctxt "shortcut window"
 msgid "Find"
 msgstr "Bul"
+
+#: data/help-overlay.ui:54
+msgctxt "shortcut window"
+msgid "Export logs to a file"
+msgstr "Günlükleri dosyaya aktar"
 
 #: data/org.gnome.Logs.appdata.xml.in:7
 msgid "GNOME Logs"
@@ -400,17 +416,17 @@ msgstr "Olay görüntüleme listesinde liste satırlarının nasıl sıralanaca�
 msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr "Seçili tür için liste satırlarını artan ya da azalan düzende sırala"
 
-#: src/gl-application.c:109
+#: src/gl-application.c:115
 msgid "translator-credits"
 msgstr ""
 "Yusuf YILMAZ\n"
 "Muhammet Kara <muhammetk@gmail.com>"
 
-#: src/gl-application.c:110
+#: src/gl-application.c:116
 msgid "View and search logs"
 msgstr "Günlükleri görüntüle ve ara"
 
-#: src/gl-application.c:225
+#: src/gl-application.c:255
 msgid "Print version information and exit"
 msgstr "Sürüm bilgilerini yazdır ve çık"
 
@@ -425,7 +441,7 @@ msgstr "Önyükleme"
 msgid "No results"
 msgstr "Sonuç yok"
 
-#: src/gl-eventviewrow.c:224
+#: src/gl-eventviewrow.c:226
 msgid "Other"
 msgstr "Diğer"
 
@@ -609,17 +625,21 @@ msgstr "günlük iletileri"
 msgid "Unable to export log messages to a file"
 msgstr "Günlük iletileri dosyaya aktarılamadı"
 
-#: src/gl-window.c:481 src/gl-window.c:512
+#: src/gl-window.c:495 src/gl-window.c:526
 msgid "Unable to read system logs"
 msgstr "Sistem günlükleri okunamadı"
 
-#: src/gl-window.c:495
+#: src/gl-window.c:509
 msgid "Unable to read user logs"
 msgstr "Kullanıcı günlükleri okunamadı"
 
-#: src/gl-window.c:527
+#: src/gl-window.c:541
 msgid "No logs available"
 msgstr "Kullanılabilir günlük yok"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Search"
+#~ msgstr "Ara"
 
 #~ msgid "org.gnome.Logs"
 #~ msgstr "org.gnome.Logs"
