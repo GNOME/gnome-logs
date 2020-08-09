@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2019-10-09 08:34+0000\n"
-"PO-Revision-Date: 2019-11-30 18:00+0100\n"
+"POT-Creation-Date: 2020-08-02 15:56+0000\n"
+"PO-Revision-Date: 2020-08-09 20:50+0200\n"
 "Last-Translator: Tim Sabsch <tim@sabsch.com>\n"
 "Language-Team: Deutsch <gnome-de@gnome.org>\n"
 "Language: de\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 2.4\n"
 
 #: data/gl-categorylist.ui:15
 msgid "Important"
@@ -37,19 +37,19 @@ msgstr "Markiert"
 msgid "All"
 msgstr "Alle"
 
-#: data/gl-categorylist.ui:75 src/gl-eventviewrow.c:207
+#: data/gl-categorylist.ui:75 src/gl-eventviewrow.c:209
 msgid "Applications"
 msgstr "Anwendungen"
 
-#: data/gl-categorylist.ui:90 src/gl-eventviewrow.c:216
+#: data/gl-categorylist.ui:90 src/gl-eventviewrow.c:218
 msgid "System"
 msgstr "System"
 
-#: data/gl-categorylist.ui:105 src/gl-eventviewrow.c:220
+#: data/gl-categorylist.ui:105 src/gl-eventviewrow.c:222
 msgid "Security"
 msgstr "Sicherheit"
 
-#: data/gl-categorylist.ui:120 src/gl-eventviewrow.c:212
+#: data/gl-categorylist.ui:120 src/gl-eventviewrow.c:214
 msgid "Hardware"
 msgstr "Hardware"
 
@@ -228,15 +228,15 @@ msgstr "Eine Startzeit wählen …"
 
 #: data/gl-searchpopover.ui:550 data/gl-searchpopover.ui:857
 msgid "Hr"
-msgstr "h"
+msgstr "Std"
 
 #: data/gl-searchpopover.ui:585 data/gl-searchpopover.ui:892
 msgid "Min"
-msgstr "min"
+msgstr "Min"
 
 #: data/gl-searchpopover.ui:620 data/gl-searchpopover.ui:927
 msgid "Sec"
-msgstr "s"
+msgstr "Sek"
 
 #: data/gl-searchpopover.ui:655 data/gl-searchpopover.ui:962
 msgid "AM/PM"
@@ -244,7 +244,7 @@ msgstr "AM/PM"
 
 #: data/gl-searchpopover.ui:701
 msgid "Until…"
-msgstr "bis …"
+msgstr "Bis …"
 
 #: data/gl-searchpopover.ui:723
 msgid "Select an end date"
@@ -333,15 +333,30 @@ msgctxt "shortcut window"
 msgid "Close a window"
 msgstr "Fenster schließen"
 
-#: data/help-overlay.ui:28
+#: data/help-overlay.ui:27
 msgctxt "shortcut window"
-msgid "Search"
-msgstr "Suchen"
+msgid "Show help"
+msgstr "Hilfe anzeigen"
 
-#: data/help-overlay.ui:33
+#: data/help-overlay.ui:34
+msgctxt "shortcut window"
+msgid "Keyboard shortcuts"
+msgstr "Tastaturkürzel"
+
+#: data/help-overlay.ui:42
+msgctxt "shortcut window"
+msgid "Application"
+msgstr "Anwendung"
+
+#: data/help-overlay.ui:47
 msgctxt "shortcut window"
 msgid "Find"
 msgstr "Suchen"
+
+#: data/help-overlay.ui:54
+msgctxt "shortcut window"
+msgid "Export logs to a file"
+msgstr "Protokoll in eine Datei exportieren"
 
 #: data/org.gnome.Logs.appdata.xml.in:7
 msgid "GNOME Logs"
@@ -410,7 +425,7 @@ msgstr ""
 "Legt fest, ob Zeilen in auf- oder absteigender Reihenfolge für den "
 "ausgewählten Typ sortiert werden"
 
-#: src/gl-application.c:109
+#: src/gl-application.c:115
 msgid "translator-credits"
 msgstr ""
 "David Lüder <davidl-dev@gmx-topmail.de>\n"
@@ -420,11 +435,11 @@ msgstr ""
 "Mario Blättermann <mario.blaettermann@gmail.com>\n"
 "Tim Sabsch <tim@sabsch.com>"
 
-#: src/gl-application.c:110
+#: src/gl-application.c:116
 msgid "View and search logs"
 msgstr "Protokoll ansehen und durchsuchen"
 
-#: src/gl-application.c:225
+#: src/gl-application.c:255
 msgid "Print version information and exit"
 msgstr "Versionsinformationen anzeigen und beenden"
 
@@ -439,7 +454,7 @@ msgstr "Systemstart"
 msgid "No results"
 msgstr "Keine Ergebnisse gefunden"
 
-#: src/gl-eventviewrow.c:224
+#: src/gl-eventviewrow.c:226
 msgid "Other"
 msgstr "Andere"
 
@@ -459,7 +474,7 @@ msgstr "Von %s"
 #: src/gl-searchpopover.c:700
 #, c-format
 msgid "Until %s"
-msgstr "bis %s"
+msgstr "Bis %s"
 
 #. Translators: date format for the start date entry
 #. * and start date button label in the custom range submenu,
@@ -623,17 +638,21 @@ msgstr "Protokollmeldungen"
 msgid "Unable to export log messages to a file"
 msgstr "Protokollmeldungen konnten nicht in eine Datei exportiert werden"
 
-#: src/gl-window.c:481 src/gl-window.c:512
+#: src/gl-window.c:495 src/gl-window.c:526
 msgid "Unable to read system logs"
 msgstr "Systemprotokoll konnte nicht gelesen werden"
 
-#: src/gl-window.c:495
+#: src/gl-window.c:509
 msgid "Unable to read user logs"
 msgstr "Benutzerprotokoll konnte nicht gelesen werden"
 
-#: src/gl-window.c:527
+#: src/gl-window.c:541
 msgid "No logs available"
 msgstr "Keine Protokolle verfügbar"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Search"
+#~ msgstr "Suchen"
 
 #~ msgid "org.gnome.Logs"
 #~ msgstr "org.gnome.Logs"
