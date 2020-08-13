@@ -7,20 +7,22 @@
 # José Fournier <jaaf64@zoraldia.com>, 2017.
 # Jean-Baptiste Holcroft <jean-baptiste@holcroft.fr>, 2017.
 # Charles Monzat <charles.monzat@free.fr>, 2018-2019.
+# Thibault Martin <mail@thibaultmart.in>, 2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2019-10-09 08:34+0000\n"
-"PO-Revision-Date: 2020-02-09 10:35+0100\n"
-"Last-Translator: Charles Monzat <charles.monzat@free.fr>\n"
-"Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
+"POT-Creation-Date: 2020-08-02 11:32+0000\n"
+"PO-Revision-Date: 2020-08-13 12:12+0200\n"
+"Last-Translator: Thibault Martin <mail@thibaultmart.in>\n"
+"Language-Team: French <gnomefr@traduc.org>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+"X-Generator: Gtranslator 3.36.0\n"
 
 #: data/gl-categorylist.ui:15
 msgid "Important"
@@ -38,19 +40,19 @@ msgstr "Favoris"
 msgid "All"
 msgstr "Tous"
 
-#: data/gl-categorylist.ui:75 src/gl-eventviewrow.c:207
+#: data/gl-categorylist.ui:75 src/gl-eventviewrow.c:209
 msgid "Applications"
 msgstr "Applications"
 
-#: data/gl-categorylist.ui:90 src/gl-eventviewrow.c:216
+#: data/gl-categorylist.ui:90 src/gl-eventviewrow.c:218
 msgid "System"
 msgstr "Système"
 
-#: data/gl-categorylist.ui:105 src/gl-eventviewrow.c:220
+#: data/gl-categorylist.ui:105 src/gl-eventviewrow.c:222
 msgid "Security"
 msgstr "Sécurité"
 
-#: data/gl-categorylist.ui:120 src/gl-eventviewrow.c:212
+#: data/gl-categorylist.ui:120 src/gl-eventviewrow.c:214
 msgid "Hardware"
 msgstr "Matériel"
 
@@ -330,15 +332,33 @@ msgctxt "shortcut window"
 msgid "Close a window"
 msgstr "Fermer une fenêtre"
 
-#: data/help-overlay.ui:28
+#: data/help-overlay.ui:27
 msgctxt "shortcut window"
-msgid "Search"
-msgstr "Rechercher"
+msgid "Show help"
+msgstr "Afficher l’aide"
 
-#: data/help-overlay.ui:33
+#: data/help-overlay.ui:34
+#| msgid "Keyboard Shortcuts"
+msgctxt "shortcut window"
+msgid "Keyboard shortcuts"
+msgstr "Raccourcis clavier"
+
+#: data/help-overlay.ui:42
+#| msgid "Applications"
+msgctxt "shortcut window"
+msgid "Application"
+msgstr "Application"
+
+#: data/help-overlay.ui:47
 msgctxt "shortcut window"
 msgid "Find"
 msgstr "Trouver"
+
+#: data/help-overlay.ui:54
+#| msgid "Export logs to a file"
+msgctxt "shortcut window"
+msgid "Export logs to a file"
+msgstr "Exporter les journaux dans un fichier"
 
 #: data/org.gnome.Logs.appdata.xml.in:7
 msgid "GNOME Logs"
@@ -405,18 +425,18 @@ msgstr ""
 "Trier les lignes de la liste par ordre croissant ou décroissant pour le type "
 "sélectionné"
 
-#: src/gl-application.c:109
+#: src/gl-application.c:115
 msgid "translator-credits"
 msgstr ""
 "Jérôme Sirgue <jsirgue@free.fr>\n"
 "Alexandre Franke <alexandre.franke@gmail.com>\n"
 "José Fournier <jaaf64@zoraldia.com>"
 
-#: src/gl-application.c:110
+#: src/gl-application.c:116
 msgid "View and search logs"
 msgstr "Visualiser et rechercher dans les journaux"
 
-#: src/gl-application.c:225
+#: src/gl-application.c:255
 msgid "Print version information and exit"
 msgstr "Afficher les informations sur la version et quitter."
 
@@ -431,7 +451,7 @@ msgstr "Démarrage"
 msgid "No results"
 msgstr "Aucun résultat."
 
-#: src/gl-eventviewrow.c:224
+#: src/gl-eventviewrow.c:226
 msgid "Other"
 msgstr "Autre"
 
@@ -615,17 +635,21 @@ msgstr "messages de journal"
 msgid "Unable to export log messages to a file"
 msgstr "Impossible d’exporter les messages de journalisation dans un fichier"
 
-#: src/gl-window.c:481 src/gl-window.c:512
+#: src/gl-window.c:495 src/gl-window.c:526
 msgid "Unable to read system logs"
 msgstr "Impossible de lire les journaux systèmes"
 
-#: src/gl-window.c:495
+#: src/gl-window.c:509
 msgid "Unable to read user logs"
 msgstr "Impossible de lire les journaux utilisateurs"
 
-#: src/gl-window.c:527
+#: src/gl-window.c:541
 msgid "No logs available"
 msgstr "Aucun journal disponible"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Search"
+#~ msgstr "Rechercher"
 
 #~ msgid "_Quit"
 #~ msgstr "_Quitter"
