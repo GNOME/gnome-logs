@@ -9,15 +9,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2019-03-26 17:01+0000\n"
-"PO-Revision-Date: 2019-04-13 21:35+0800\n"
+"POT-Creation-Date: 2020-07-27 09:30+0000\n"
+"PO-Revision-Date: 2020-08-11 20:36+0800\n"
 "Last-Translator: Dingzhong Chen <wsxy162@gmail.com>\n"
 "Language-Team: Chinese (China) <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Gtranslator 2.91.7\n"
+"X-Generator: Poedit 2.4.1\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: data/gl-categorylist.ui:15
@@ -36,19 +36,19 @@ msgstr "已加星标"
 msgid "All"
 msgstr "全部"
 
-#: data/gl-categorylist.ui:75 src/gl-eventviewrow.c:207
+#: data/gl-categorylist.ui:75 src/gl-eventviewrow.c:209
 msgid "Applications"
 msgstr "应用程序"
 
-#: data/gl-categorylist.ui:90 src/gl-eventviewrow.c:216
+#: data/gl-categorylist.ui:90 src/gl-eventviewrow.c:218
 msgid "System"
 msgstr "系统"
 
-#: data/gl-categorylist.ui:105 src/gl-eventviewrow.c:220
+#: data/gl-categorylist.ui:105 src/gl-eventviewrow.c:222
 msgid "Security"
 msgstr "安全"
 
-#: data/gl-categorylist.ui:120 src/gl-eventviewrow.c:212
+#: data/gl-categorylist.ui:120 src/gl-eventviewrow.c:214
 msgid "Hardware"
 msgstr "硬件"
 
@@ -326,15 +326,30 @@ msgctxt "shortcut window"
 msgid "Close a window"
 msgstr "关闭此窗口"
 
-#: data/help-overlay.ui:28
+#: data/help-overlay.ui:27
 msgctxt "shortcut window"
-msgid "Search"
-msgstr "搜索"
+msgid "Show help"
+msgstr "显示帮助"
 
-#: data/help-overlay.ui:33
+#: data/help-overlay.ui:34
+msgctxt "shortcut window"
+msgid "Keyboard shortcuts"
+msgstr "键盘快捷键"
+
+#: data/help-overlay.ui:42
+msgctxt "shortcut window"
+msgid "Application"
+msgstr "应用程序"
+
+#: data/help-overlay.ui:47
 msgctxt "shortcut window"
 msgid "Find"
 msgstr "查找"
+
+#: data/help-overlay.ui:54
+msgctxt "shortcut window"
+msgid "Export logs to a file"
+msgstr "将日志导出到文件"
 
 #: data/org.gnome.Logs.appdata.xml.in:7
 msgid "GNOME Logs"
@@ -358,7 +373,11 @@ msgstr ""
 "使用 日志查看器 时您可以输入条件在日志中搜索，点击某个事件可以查看它的详细信"
 "息。"
 
-#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:139
+#: data/org.gnome.Logs.appdata.xml.in:30
+msgid "The GNOME Project"
+msgstr "GNOME 项目"
+
+#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:143
 msgid "Logs"
 msgstr "日志"
 
@@ -389,23 +408,23 @@ msgstr "如何在事件查看列别中对行列表排序"
 msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr "根据选择的类型以升序或降序排列列表行"
 
-#: src/gl-application.c:109
+#: src/gl-application.c:115
 msgid "translator-credits"
 msgstr ""
 "eternalhui <www.eternalhui@gmail.com>, 2013\n"
 "Jeff Bai <jeffbai@aosc.xyz>, 2015, 2016, 2017\n"
 "Dingzhong Chen <wsxy162@gmail.com>, 2016, 2018"
 
-#: src/gl-application.c:110
+#: src/gl-application.c:116
 msgid "View and search logs"
 msgstr "查看和搜索日志"
 
-#: src/gl-application.c:225
+#: src/gl-application.c:255
 msgid "Print version information and exit"
 msgstr "打印版本信息并退出"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
-#: src/gl-eventtoolbar.c:130
+#: src/gl-eventtoolbar.c:134
 msgid "Boot"
 msgstr "单次引导"
 
@@ -415,7 +434,7 @@ msgstr "单次引导"
 msgid "No results"
 msgstr "无结果"
 
-#: src/gl-eventviewrow.c:224
+#: src/gl-eventviewrow.c:226
 msgid "Other"
 msgstr "其他"
 
@@ -450,10 +469,12 @@ msgid "%e %B %Y"
 msgstr "%Y年%-m月%-e日"
 
 #: src/gl-searchpopover.c:875
+#, c-format
 msgid "AM"
 msgstr "上午"
 
 #: src/gl-searchpopover.c:879
+#, c-format
 msgid "PM"
 msgstr "下午"
 
@@ -597,17 +618,21 @@ msgstr "日志消息"
 msgid "Unable to export log messages to a file"
 msgstr "无法将日志消息导出到文件"
 
-#: src/gl-window.c:481 src/gl-window.c:512
+#: src/gl-window.c:495 src/gl-window.c:526
 msgid "Unable to read system logs"
 msgstr "无法读取系统日志"
 
-#: src/gl-window.c:495
+#: src/gl-window.c:509
 msgid "Unable to read user logs"
 msgstr "无法读取用户日志"
 
-#: src/gl-window.c:527
+#: src/gl-window.c:541
 msgid "No logs available"
 msgstr "无可用的日志"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Search"
+#~ msgstr "搜索"
 
 #~ msgid "_Quit"
 #~ msgstr "退出(_Q)"
