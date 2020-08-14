@@ -1,23 +1,24 @@
 #
-# Daniel Mustieles <daniel.mustieles@gmail.com>, 2014.
+# Daniel Mustieles <daniel.mustieles@gmail.com>, 2014-2020.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-03-10 07:55+0000\n"
-"PO-Revision-Date: 2014-03-10 13:11+0100\n"
+"Project-Id-Version: master\n"
+"POT-Creation-Date: 2020-06-23 08:27+0000\n"
+"PO-Revision-Date: 2020-08-14 11:04+0200\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Gtranslator 2.91.5\n"
+"X-Generator: Gtranslator 3.36.0\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
 msgid "translator-credits"
-msgstr "Daniel Mustieles <daniel.mustieles@gmail.com>, 2014"
+msgstr "Daniel Mustieles <daniel.mustieles@gmail.com>, 2014-2020"
 
 #. (itstool) path: info/title
 #: C/index.page:7
@@ -40,20 +41,6 @@ msgstr "Explorar y buscar los registros del diario de systemd."
 #: C/index.page:16
 msgid "<_:media-1/> Logs"
 msgstr "<_:media-1/> Registros"
-
-#. (itstool) path: media
-#. This is a reference to an external file such as an image or video. When
-#. the file changes, the md5 hash will change to let you know you need to
-#. update your localized copy. The msgstr is not used at all. Set it to
-#. whatever you like once you have updated your copy of the file.
-#: C/introduction.page:35
-msgctxt "_"
-msgid ""
-"external ref='media/gnome-logs-3-12.png' "
-"md5='56e83d7808cdfd80457691aff5ffc2d1'"
-msgstr ""
-"external ref='media/gnome-logs-3-12.png' "
-"md5='56e83d7808cdfd80457691aff5ffc2d1'"
 
 #. (itstool) path: credit/name
 #: C/introduction.page:11
@@ -97,6 +84,24 @@ msgid ""
 msgstr ""
 "Al usar Registros puede buscar en sus registros escribiendo un término de "
 "búsqueda y ver información detallada sobre cada evento al pulsar sobre él."
+
+#. (itstool) path: page/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/introduction.page:35
+#| msgctxt "_"
+#| msgid ""
+#| "external ref='media/gnome-logs-3-12.png' "
+#| "md5='56e83d7808cdfd80457691aff5ffc2d1'"
+msgctxt "_"
+msgid ""
+"external ref='media/gnome-logs-3-34.png' "
+"md5='572ed4fda65dbaa8cd2dc56f6bce5dfb'"
+msgstr ""
+"external ref='media/gnome-logs-3-34.png' "
+"md5='572ed4fda65dbaa8cd2dc56f6bce5dfb'"
 
 #. (itstool) path: media/p
 #: C/introduction.page:36
