@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2019-10-09 08:34+0000\n"
-"PO-Revision-Date: 2019-10-13 10:05+0300\n"
+"POT-Creation-Date: 2020-08-02 11:32+0000\n"
+"PO-Revision-Date: 2020-08-16 15:16+0300\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos+l10n@iki.fi>\n"
 "Language-Team: suomi <lokalisointi-lista@googlegroups.com>\n"
 "Language: fi\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Poedit 2.4.1\n"
 
 #: data/gl-categorylist.ui:15
 msgid "Important"
@@ -35,19 +35,19 @@ msgstr "Tähdelliset"
 msgid "All"
 msgstr "Kaikki"
 
-#: data/gl-categorylist.ui:75 src/gl-eventviewrow.c:207
+#: data/gl-categorylist.ui:75 src/gl-eventviewrow.c:209
 msgid "Applications"
 msgstr "Sovellukset"
 
-#: data/gl-categorylist.ui:90 src/gl-eventviewrow.c:216
+#: data/gl-categorylist.ui:90 src/gl-eventviewrow.c:218
 msgid "System"
 msgstr "Järjestelmä"
 
-#: data/gl-categorylist.ui:105 src/gl-eventviewrow.c:220
+#: data/gl-categorylist.ui:105 src/gl-eventviewrow.c:222
 msgid "Security"
 msgstr "Tietoturva"
 
-#: data/gl-categorylist.ui:120 src/gl-eventviewrow.c:212
+#: data/gl-categorylist.ui:120 src/gl-eventviewrow.c:214
 msgid "Hardware"
 msgstr "Laitteisto"
 
@@ -220,7 +220,7 @@ msgstr "Valitse aloitusaika…"
 
 #: data/gl-searchpopover.ui:550 data/gl-searchpopover.ui:857
 msgid "Hr"
-msgstr "t"
+msgstr "h"
 
 #: data/gl-searchpopover.ui:585 data/gl-searchpopover.ui:892
 msgid "Min"
@@ -325,15 +325,30 @@ msgctxt "shortcut window"
 msgid "Close a window"
 msgstr "Sulje ikkuna"
 
-#: data/help-overlay.ui:28
+#: data/help-overlay.ui:27
 msgctxt "shortcut window"
-msgid "Search"
-msgstr "Haku"
+msgid "Show help"
+msgstr "Näytä ohje"
 
-#: data/help-overlay.ui:33
+#: data/help-overlay.ui:34
+msgctxt "shortcut window"
+msgid "Keyboard shortcuts"
+msgstr "Pikanäppäimet"
+
+#: data/help-overlay.ui:42
+msgctxt "shortcut window"
+msgid "Application"
+msgstr "Sovellus"
+
+#: data/help-overlay.ui:47
 msgctxt "shortcut window"
 msgid "Find"
 msgstr "Etsi"
+
+#: data/help-overlay.ui:54
+msgctxt "shortcut window"
+msgid "Export logs to a file"
+msgstr "Vie lokit tiedostoon"
 
 #: data/org.gnome.Logs.appdata.xml.in:7
 msgid "GNOME Logs"
@@ -398,15 +413,15 @@ msgstr ""
 "Järjestä luettelon rivit nousevassa tai laskevassa järjestyksessä valitulle "
 "tyypille"
 
-#: src/gl-application.c:109
+#: src/gl-application.c:115
 msgid "translator-credits"
 msgstr "Jiri Grönroos"
 
-#: src/gl-application.c:110
+#: src/gl-application.c:116
 msgid "View and search logs"
 msgstr "Katsele lokeja ja etsi lokien sisällöstä"
 
-#: src/gl-application.c:225
+#: src/gl-application.c:255
 msgid "Print version information and exit"
 msgstr "Tulosta versiotiedot ja poistu"
 
@@ -421,7 +436,7 @@ msgstr "Käynnistys"
 msgid "No results"
 msgstr "Ei tuloksia"
 
-#: src/gl-eventviewrow.c:224
+#: src/gl-eventviewrow.c:226
 msgid "Other"
 msgstr "Muu"
 
@@ -605,17 +620,21 @@ msgstr "lokiviestit"
 msgid "Unable to export log messages to a file"
 msgstr "Lokiviestien vieminen tiedostoon epäonnistui"
 
-#: src/gl-window.c:481 src/gl-window.c:512
+#: src/gl-window.c:495 src/gl-window.c:526
 msgid "Unable to read system logs"
 msgstr "Järjestelmälokien lukeminen ei onnistu"
 
-#: src/gl-window.c:495
+#: src/gl-window.c:509
 msgid "Unable to read user logs"
 msgstr "Käyttäjälokien lukeminen ei onnistu"
 
-#: src/gl-window.c:527
+#: src/gl-window.c:541
 msgid "No logs available"
 msgstr "Lokeja ei ole saatavilla"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Search"
+#~ msgstr "Haku"
 
 #~| msgid "gnome-logs"
 #~ msgid "org.gnome.Logs"
