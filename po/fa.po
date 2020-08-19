@@ -2,20 +2,21 @@
 # Copyright (C) 2014 gnome-logs's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-logs package.
 # Arash Mousavi <mousavi.arash@gmail.com>, 2014, 2015, 2016, 2017.
+# Danial Behzadi <dani.behzi@ubuntu.com>, 2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs gnome-3-14\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2019-10-09 08:34+0000\n"
-"PO-Revision-Date: 2019-10-19 15:53+0000\n"
+"POT-Creation-Date: 2020-08-02 11:32+0000\n"
+"PO-Revision-Date: 2020-08-19 21:23+0000\n"
 "Last-Translator: Danial Behzadi <dani.behzi@ubuntu.com>\n"
 "Language-Team: Persian <fa@li.org>\n"
 "Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 2.4.1\n"
 
 #: data/gl-categorylist.ui:15
 msgid "Important"
@@ -33,25 +34,25 @@ msgstr "ستاره‌دار"
 msgid "All"
 msgstr "همه"
 
-#: data/gl-categorylist.ui:75 src/gl-eventviewrow.c:207
+#: data/gl-categorylist.ui:75 src/gl-eventviewrow.c:209
 msgid "Applications"
 msgstr "برنامه‌ها"
 
-#: data/gl-categorylist.ui:90 src/gl-eventviewrow.c:216
+#: data/gl-categorylist.ui:90 src/gl-eventviewrow.c:218
 msgid "System"
 msgstr "سامانه"
 
-#: data/gl-categorylist.ui:105 src/gl-eventviewrow.c:220
+#: data/gl-categorylist.ui:105 src/gl-eventviewrow.c:222
 msgid "Security"
 msgstr "امنیت"
 
-#: data/gl-categorylist.ui:120 src/gl-eventviewrow.c:212
+#: data/gl-categorylist.ui:120 src/gl-eventviewrow.c:214
 msgid "Hardware"
 msgstr "سخت‌افزار"
 
 #: data/gl-categorylist.ui:135
 msgid "Updates"
-msgstr "بروزرسانی"
+msgstr "به‌روز رسانی‌ها"
 
 #: data/gl-categorylist.ui:150
 msgid "Usage"
@@ -79,19 +80,19 @@ msgstr "صادر کردن گزارش‌ها به یک پرونده"
 
 #: data/gl-eventtoolbar.ui:74
 msgid "Choose the boot from which to view logs"
-msgstr "یک بوت را برای نمایش گزارش‌ها‌اش گزینش کنید"
+msgstr "راه‌اندازی‌ای را برای نمایش گزارش‌ها‌یش بگزینید"
 
 #: data/gl-eventtoolbar.ui:86
 msgid "Search all the logs of the current category"
-msgstr "جست‌وجو تمام گزارش‌ها در دسته‌بندی فعلی"
+msgstr "جست‌وجوی تمام گزارش‌ها در دسته‌بندی فعلی"
 
 #: data/gl-eventviewdetail.ui:26
 msgid "Sender"
-msgstr "ارسال کننده"
+msgstr "فرستنده"
 
 #: data/gl-eventviewdetail.ui:58
 msgid "Time"
-msgstr "ساعت"
+msgstr "زمان"
 
 #: data/gl-eventviewdetail.ui:92 data/gl-searchpopover.ui:1052
 msgid "Message"
@@ -103,7 +104,7 @@ msgstr "بازرسی نشست"
 
 #: data/gl-eventviewdetail.ui:161 data/gl-searchpopover.ui:1067
 msgid "Kernel Device"
-msgstr "دستگاه هسته"
+msgstr "افزارهٔ کرنل"
 
 #: data/gl-eventviewdetail.ui:194
 msgid "Priority"
@@ -144,7 +145,7 @@ msgstr "عوامل"
 #. Translators: What [journal fields to search in]
 #: data/gl-searchpopover.ui:115
 msgid "What"
-msgstr "چه چیزی"
+msgstr "چه"
 
 #: data/gl-searchpopover.ui:130
 msgid "Select Journal Field…"
@@ -153,7 +154,7 @@ msgstr "گزینش فیلد ژورنال…"
 #. When [log entries to be shown for a given timestamp range]
 #: data/gl-searchpopover.ui:155
 msgid "When"
-msgstr "چه زمانی"
+msgstr "کِی"
 
 #: data/gl-searchpopover.ui:170
 msgid "Show Logs from…"
@@ -170,7 +171,7 @@ msgstr "راه‌اندازی فعلی"
 
 #: data/gl-searchpopover.ui:293
 msgid "Search Type"
-msgstr "نوع جست‌وجو"
+msgstr "گونهٔ جست‌وجو"
 
 #: data/gl-searchpopover.ui:310
 msgid "Substring"
@@ -182,7 +183,7 @@ msgstr "تطبیق با هر قسمتی از رشته"
 
 #: data/gl-searchpopover.ui:328
 msgid "Exact"
-msgstr "کاملاً منطبق"
+msgstr "دقیقاً"
 
 #: data/gl-searchpopover.ui:332
 msgid "Match complete string only"
@@ -190,7 +191,7 @@ msgstr "تطبیق با تمام رشته"
 
 #: data/gl-searchpopover.ui:379
 msgid "Back"
-msgstr "برگشت"
+msgstr "بازگشت"
 
 #: data/gl-searchpopover.ui:397
 msgid "Show Logs Starting From…"
@@ -323,15 +324,30 @@ msgctxt "shortcut window"
 msgid "Close a window"
 msgstr "بستن یک پنجره"
 
-#: data/help-overlay.ui:28
+#: data/help-overlay.ui:27
 msgctxt "shortcut window"
-msgid "Search"
-msgstr "جست‌وجو"
+msgid "Show help"
+msgstr "نمایش راهنما"
 
-#: data/help-overlay.ui:33
+#: data/help-overlay.ui:34
+msgctxt "shortcut window"
+msgid "Keyboard shortcuts"
+msgstr "میان‌برهای صفحه‌کلید"
+
+#: data/help-overlay.ui:42
+msgctxt "shortcut window"
+msgid "Application"
+msgstr "برنامه"
+
+#: data/help-overlay.ui:47
 msgctxt "shortcut window"
 msgid "Find"
 msgstr "یافتن"
+
+#: data/help-overlay.ui:54
+msgctxt "shortcut window"
+msgid "Export logs to a file"
+msgstr "برون‌ریزی گزارش‌ها در یک پرونده"
 
 #: data/org.gnome.Logs.appdata.xml.in:7
 msgid "GNOME Logs"
@@ -394,17 +410,17 @@ msgstr "چگونگی چینش  ردیف‌های فهرست در فهرست نم
 msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr "چینش ردیف‌های فهرست به صورت نزولی یا صعودی"
 
-#: src/gl-application.c:109
+#: src/gl-application.c:115
 msgid "translator-credits"
 msgstr ""
 "آرش موسوی <mousavi.arash@gmail.com>\n"
 "دانیال بهزادی <dani.behzi@ubuntu.com>"
 
-#: src/gl-application.c:110
+#: src/gl-application.c:116
 msgid "View and search logs"
 msgstr "نمایش و جست‌وجوی گزارش‌ها"
 
-#: src/gl-application.c:225
+#: src/gl-application.c:255
 msgid "Print version information and exit"
 msgstr "چاپ اطلاعات نگارش و خروج"
 
@@ -419,7 +435,7 @@ msgstr "راه‌اندازی"
 msgid "No results"
 msgstr "بدون نتیجه"
 
-#: src/gl-eventviewrow.c:224
+#: src/gl-eventviewrow.c:226
 msgid "Other"
 msgstr "متفرقه"
 
@@ -603,17 +619,21 @@ msgstr "پیام‌های گزارش"
 msgid "Unable to export log messages to a file"
 msgstr "امکان صادر کردن گزارش‌ها به یک پرونده نبود"
 
-#: src/gl-window.c:481 src/gl-window.c:512
+#: src/gl-window.c:495 src/gl-window.c:526
 msgid "Unable to read system logs"
 msgstr "امکان خواندن گزارش‌های سامانه نبود"
 
-#: src/gl-window.c:495
+#: src/gl-window.c:509
 msgid "Unable to read user logs"
 msgstr "امکان خواندن گزارش‌های کاربر نبود"
 
-#: src/gl-window.c:527
+#: src/gl-window.c:541
 msgid "No logs available"
 msgstr "هیچ گزارشی موجود نیست"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Search"
+#~ msgstr "جست‌وجو"
 
 #~ msgid "_Quit"
 #~ msgstr "_خروج"
