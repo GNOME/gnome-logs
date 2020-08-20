@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2020-02-28 13:10+0000\n"
-"PO-Revision-Date: 2020-02-29 20:45+0100\n"
+"POT-Creation-Date: 2020-08-16 12:17+0000\n"
+"PO-Revision-Date: 2020-08-19 18:23+0200\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian <gnome-si@googlegroups.com>\n"
 "Language: sl\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 2.3\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
 #: data/gl-categorylist.ui:15
@@ -88,11 +88,11 @@ msgstr "Izberite zagonski disk, za katerega želite pregledati dnevnik."
 
 #: data/gl-eventtoolbar.ui:86
 msgid "Search all the logs of the current category"
-msgstr "Iskanje vseh dnevnikov v trenutni kategoriji"
+msgstr "Iskanje po vseh dnevnikih trenutne kategorije"
 
 #: data/gl-eventviewdetail.ui:26
 msgid "Sender"
-msgstr "Pošiljatelj"
+msgstr "Program"
 
 #: data/gl-eventviewdetail.ui:58
 msgid "Time"
@@ -149,20 +149,20 @@ msgstr "Parametri"
 #. Translators: What [journal fields to search in]
 #: data/gl-searchpopover.ui:115
 msgid "What"
-msgstr "Kaj"
+msgstr "Preišči …"
 
 #: data/gl-searchpopover.ui:130
 msgid "Select Journal Field…"
-msgstr "Izbor polja dnevnika ..."
+msgstr "Izbor polja dnevnika …"
 
 #. When [log entries to be shown for a given timestamp range]
 #: data/gl-searchpopover.ui:155
 msgid "When"
-msgstr "Kdaj"
+msgstr "Časovno obdobje"
 
 #: data/gl-searchpopover.ui:170
 msgid "Show Logs from…"
-msgstr "Pokaži dnevnik od ..."
+msgstr "Pokaži dnevnik od …"
 
 #: data/gl-searchpopover.ui:199
 msgid "Select Timestamp Range of the Log Entries to be shown"
@@ -171,7 +171,7 @@ msgstr "Izbor obsega časovnega žiga za prikaz vpisov v dnevnik"
 #: data/gl-searchpopover.ui:208 data/gl-searchpopover.ui:1091
 #: src/gl-searchpopover.c:1309
 msgid "Current Boot"
-msgstr "Trenutni zagon sistema"
+msgstr "Trenutno zagnana seja"
 
 #: data/gl-searchpopover.ui:293
 msgid "Search Type"
@@ -199,7 +199,7 @@ msgstr "Nazaj"
 
 #: data/gl-searchpopover.ui:397
 msgid "Show Logs Starting From…"
-msgstr "Pokaži dnevnike z začetkom od ..."
+msgstr "Pokaži dnevnike z začetkom od …"
 
 #: data/gl-searchpopover.ui:419
 msgid "Select a start date"
@@ -207,7 +207,7 @@ msgstr "Izbor začetnega datuma"
 
 #: data/gl-searchpopover.ui:428 src/gl-searchpopover.c:503
 msgid "Select Start Date…"
-msgstr "Izbor začetnega datuma ..."
+msgstr "Izbor začetnega datuma …"
 
 #: data/gl-searchpopover.ui:459 data/gl-searchpopover.ui:763
 msgid "22 January 2016 or 1/22/2016"
@@ -219,7 +219,7 @@ msgstr "Izbor začetnega časa"
 
 #: data/gl-searchpopover.ui:513 src/gl-searchpopover.c:504
 msgid "Select Start Time…"
-msgstr "Izbor začetnega časa ..."
+msgstr "Izbor začetnega časa …"
 
 #: data/gl-searchpopover.ui:550 data/gl-searchpopover.ui:857
 msgid "Hr"
@@ -235,11 +235,11 @@ msgstr "sek"
 
 #: data/gl-searchpopover.ui:655 data/gl-searchpopover.ui:962
 msgid "AM/PM"
-msgstr "AM/PM"
+msgstr "dop./pop."
 
 #: data/gl-searchpopover.ui:701
 msgid "Until…"
-msgstr "Do ..."
+msgstr "do …"
 
 #: data/gl-searchpopover.ui:723
 msgid "Select an end date"
@@ -247,7 +247,7 @@ msgstr "Izbor končnega datuma"
 
 #: data/gl-searchpopover.ui:732 src/gl-searchpopover.c:521
 msgid "Select End Date…"
-msgstr "Izbor končnega datuma ..."
+msgstr "Izbor končnega datuma …"
 
 #: data/gl-searchpopover.ui:811
 msgid "Select end time"
@@ -255,7 +255,7 @@ msgstr "Izbor končnega časa"
 
 #: data/gl-searchpopover.ui:820 src/gl-searchpopover.c:522
 msgid "Select End Time…"
-msgstr "Izbor končnega časa ..."
+msgstr "Izbor končnega časa …"
 
 #: data/gl-searchpopover.ui:1037
 msgid "PID"
@@ -283,15 +283,15 @@ msgstr "Izvedljiva pot"
 
 #: data/gl-searchpopover.ui:1096
 msgid "Previous Boot"
-msgstr "Predhodni zagon"
+msgstr "Predhodno zagnana seja"
 
 #: data/gl-searchpopover.ui:1105
 msgid "Today"
-msgstr "Danes"
+msgstr "Današnji dan"
 
 #: data/gl-searchpopover.ui:1110
 msgid "Yesterday"
-msgstr "Včeraj"
+msgstr "Včerajšnji dan"
 
 #: data/gl-searchpopover.ui:1115
 msgid "Last 3 days"
@@ -303,7 +303,7 @@ msgstr "Celoten dnevnik"
 
 #: data/gl-searchpopover.ui:1133
 msgid "Set Custom Range…"
-msgstr "Določi obseg po meri ..."
+msgstr "Določi obseg po meri …"
 
 #: data/gl-window.ui:26
 msgid "Help"
@@ -321,22 +321,37 @@ msgstr "Splošno"
 #: data/help-overlay.ui:13
 msgctxt "shortcut window"
 msgid "Open a new window"
-msgstr "Odpri novo okno"
+msgstr "Odpre novo okno"
 
 #: data/help-overlay.ui:20
 msgctxt "shortcut window"
 msgid "Close a window"
-msgstr "Zapri okno"
+msgstr "Zapre okno"
 
-#: data/help-overlay.ui:28
+#: data/help-overlay.ui:27
 msgctxt "shortcut window"
-msgid "Search"
-msgstr "Iskanje"
+msgid "Show help"
+msgstr "Pokaže pomoč"
 
-#: data/help-overlay.ui:33
+#: data/help-overlay.ui:34
+msgctxt "shortcut window"
+msgid "Keyboard shortcuts"
+msgstr "Tipkovne bližnjice"
+
+#: data/help-overlay.ui:42
+msgctxt "shortcut window"
+msgid "Application"
+msgstr "Program"
+
+#: data/help-overlay.ui:47
 msgctxt "shortcut window"
 msgid "Find"
-msgstr "Najdi"
+msgstr "Odpre iskalno polje"
+
+#: data/help-overlay.ui:54
+msgctxt "shortcut window"
+msgid "Export logs to a file"
+msgstr "Izvozi dnevniški izpis v datoteko"
 
 #: data/org.gnome.Logs.appdata.xml.in:7
 msgid "GNOME Logs"
@@ -401,17 +416,17 @@ msgstr "Kako razvrstiti vrstice seznama v pogledu seznama dogodkov"
 msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr "Razvrščanje vrstic naraščajoče oziroma padajoče za izbrano vrsto"
 
-#: src/gl-application.c:109
+#: src/gl-application.c:115
 msgid "translator-credits"
 msgstr ""
 "Matej Urbančič <mateju@svn.gnome.org>\n"
 "Martin Srebotnjak"
 
-#: src/gl-application.c:110
+#: src/gl-application.c:116
 msgid "View and search logs"
-msgstr "Pokaži in preišči dnevnike"
+msgstr "Pokaže in omogoča iskanje po sistemskih dnevnikih."
 
-#: src/gl-application.c:225
+#: src/gl-application.c:255
 msgid "Print version information and exit"
 msgstr "Izpiši podatke o različici in končaj"
 
@@ -610,17 +625,21 @@ msgstr "dnevniška sporočila"
 msgid "Unable to export log messages to a file"
 msgstr "Ni mogoče izvoziti dnevniških sporočil v datoteko"
 
-#: src/gl-window.c:481 src/gl-window.c:512
+#: src/gl-window.c:495 src/gl-window.c:526
 msgid "Unable to read system logs"
 msgstr "Ni mogoče prebrati sistemskega dnevnika"
 
-#: src/gl-window.c:495
+#: src/gl-window.c:509
 msgid "Unable to read user logs"
 msgstr "Ni mogoče prebrati uporabniškega dnevnika"
 
-#: src/gl-window.c:527
+#: src/gl-window.c:541
 msgid "No logs available"
 msgstr "Ni shranjenih dnevnikov"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Search"
+#~ msgstr "Iskanje"
 
 #~ msgid "org.gnome.Logs"
 #~ msgstr "org.gnome.Logs"
