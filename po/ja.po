@@ -2,7 +2,7 @@
 # Copyright (C) 2014, 2019-2020 gnome-logs's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-logs package.
 # Aaron Hamilton <aaron@correspondwith.me>, 2014.
-# sicklylife <translation@sicklylife.jp>, 2019.
+# sicklylife <translation@sicklylife.jp>, 2019-2020.
 # Ryo Nakano <ryonakaknock3@gmail.com>, 2020.
 #
 msgid ""
@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
 "POT-Creation-Date: 2020-08-02 11:32+0000\n"
-"PO-Revision-Date: 2020-07-18 19:42+0900\n"
+"PO-Revision-Date: 2020-08-23 23:30+0900\n"
 "Last-Translator: sicklylife <translation@sicklylife.jp>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
 "Language: ja\n"
@@ -57,7 +57,7 @@ msgstr "アップデート"
 
 #: data/gl-categorylist.ui:150
 msgid "Usage"
-msgstr ""
+msgstr "使用"
 
 #: data/gl-eventtoolbar.ui:6
 msgid "_New Window"
@@ -329,18 +329,14 @@ msgstr "ウィンドウを閉じる"
 #: data/help-overlay.ui:27
 msgctxt "shortcut window"
 msgid "Show help"
-msgstr ""
+msgstr "ヘルプを表示する"
 
 #: data/help-overlay.ui:34
-#, fuzzy
-#| msgid "Keyboard Shortcuts"
 msgctxt "shortcut window"
 msgid "Keyboard shortcuts"
-msgstr "キーボードショートカット"
+msgstr "キーボードショートカットを表示する"
 
 #: data/help-overlay.ui:42
-#, fuzzy
-#| msgid "Applications"
 msgctxt "shortcut window"
 msgid "Application"
 msgstr "アプリケーション"
@@ -351,11 +347,9 @@ msgid "Find"
 msgstr "検索する"
 
 #: data/help-overlay.ui:54
-#, fuzzy
-#| msgid "Export logs to a file"
 msgctxt "shortcut window"
 msgid "Export logs to a file"
-msgstr "ログをファイルにエクスポートします"
+msgstr "ログをファイルにエクスポートする"
 
 #: data/org.gnome.Logs.appdata.xml.in:7
 msgid "GNOME Logs"
