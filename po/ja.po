@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2020-07-18 10:02+0000\n"
+"POT-Creation-Date: 2020-08-02 11:32+0000\n"
 "PO-Revision-Date: 2020-07-18 19:42+0900\n"
 "Last-Translator: sicklylife <translation@sicklylife.jp>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
@@ -326,15 +326,36 @@ msgctxt "shortcut window"
 msgid "Close a window"
 msgstr "ウィンドウを閉じる"
 
-#: data/help-overlay.ui:28
+#: data/help-overlay.ui:27
 msgctxt "shortcut window"
-msgid "Search"
-msgstr "検索"
+msgid "Show help"
+msgstr ""
 
-#: data/help-overlay.ui:33
+#: data/help-overlay.ui:34
+#, fuzzy
+#| msgid "Keyboard Shortcuts"
+msgctxt "shortcut window"
+msgid "Keyboard shortcuts"
+msgstr "キーボードショートカット"
+
+#: data/help-overlay.ui:42
+#, fuzzy
+#| msgid "Applications"
+msgctxt "shortcut window"
+msgid "Application"
+msgstr "アプリケーション"
+
+#: data/help-overlay.ui:47
 msgctxt "shortcut window"
 msgid "Find"
 msgstr "検索する"
+
+#: data/help-overlay.ui:54
+#, fuzzy
+#| msgid "Export logs to a file"
+msgctxt "shortcut window"
+msgid "Export logs to a file"
+msgstr "ログをファイルにエクスポートします"
 
 #: data/org.gnome.Logs.appdata.xml.in:7
 msgid "GNOME Logs"
@@ -408,7 +429,7 @@ msgstr ""
 msgid "View and search logs"
 msgstr "ログの検索と表示"
 
-#: src/gl-application.c:242
+#: src/gl-application.c:255
 msgid "Print version information and exit"
 msgstr "バージョン情報を表示して終了する"
 
@@ -618,6 +639,10 @@ msgstr "ユーザーログを読み取れません"
 #: src/gl-window.c:541
 msgid "No logs available"
 msgstr "ログはありません"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Search"
+#~ msgstr "検索"
 
 #~ msgid "Go back to the event view"
 #~ msgstr "イベントビューへ戻ります"
