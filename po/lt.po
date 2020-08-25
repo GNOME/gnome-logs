@@ -2,14 +2,14 @@
 # Copyright (C) 2014 gnome-logs's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-logs package.
 # FULL NAME <EMAIL@ADDRESS>, 2014.
-# Aurimas Černius <aurisc4@gmail.com>, 2014-2019.
+# Aurimas Černius <aurisc4@gmail.com>, 2014-2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2019-10-09 08:34+0000\n"
-"PO-Revision-Date: 2019-10-13 18:13+0300\n"
+"POT-Creation-Date: 2020-08-02 11:32+0000\n"
+"PO-Revision-Date: 2020-08-25 22:35+0300\n"
 "Last-Translator: Aurimas Černius <aurisc4@gmail.com>\n"
 "Language-Team: Lietuvių <gnome-lt@lists.akl.lt>\n"
 "Language: lt\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
 "%100<10 || n%100>=20) ? 1 : 2)\n"
-"X-Generator: Gtranslator 3.32.1\n"
+"X-Generator: Gtranslator 3.36.0\n"
 
 #: data/gl-categorylist.ui:15
 msgid "Important"
@@ -36,19 +36,19 @@ msgstr "Peržiūrėti"
 msgid "All"
 msgstr "Visi"
 
-#: data/gl-categorylist.ui:75 src/gl-eventviewrow.c:207
+#: data/gl-categorylist.ui:75 src/gl-eventviewrow.c:209
 msgid "Applications"
 msgstr "Programos"
 
-#: data/gl-categorylist.ui:90 src/gl-eventviewrow.c:216
+#: data/gl-categorylist.ui:90 src/gl-eventviewrow.c:218
 msgid "System"
 msgstr "Sistema"
 
-#: data/gl-categorylist.ui:105 src/gl-eventviewrow.c:220
+#: data/gl-categorylist.ui:105 src/gl-eventviewrow.c:222
 msgid "Security"
 msgstr "Saugumas"
 
-#: data/gl-categorylist.ui:120 src/gl-eventviewrow.c:212
+#: data/gl-categorylist.ui:120 src/gl-eventviewrow.c:214
 msgid "Hardware"
 msgstr "Aparatinė įranga"
 
@@ -326,15 +326,33 @@ msgctxt "shortcut window"
 msgid "Close a window"
 msgstr "Užverti langą"
 
-#: data/help-overlay.ui:28
+#: data/help-overlay.ui:27
 msgctxt "shortcut window"
-msgid "Search"
-msgstr "Paieška"
+msgid "Show help"
+msgstr "Rodyti žinyną"
 
-#: data/help-overlay.ui:33
+#: data/help-overlay.ui:34
+#| msgid "Keyboard Shortcuts"
+msgctxt "shortcut window"
+msgid "Keyboard shortcuts"
+msgstr "Klaviatūros trumpiniai"
+
+#: data/help-overlay.ui:42
+#| msgid "Applications"
+msgctxt "shortcut window"
+msgid "Application"
+msgstr "Programa"
+
+#: data/help-overlay.ui:47
 msgctxt "shortcut window"
 msgid "Find"
 msgstr "Rasti"
+
+#: data/help-overlay.ui:54
+#| msgid "Export logs to a file"
+msgctxt "shortcut window"
+msgid "Export logs to a file"
+msgstr "Eksportuoti žurnalus į failą"
 
 #: data/org.gnome.Logs.appdata.xml.in:7
 msgid "GNOME Logs"
@@ -397,17 +415,17 @@ msgstr "Kaip rikiuoti eilutes įvykių vaizde"
 msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr "Rikiuoti eilutes didėjimo arba mažėjimo tvarka pasirinktam tipui"
 
-#: src/gl-application.c:109
+#: src/gl-application.c:115
 msgid "translator-credits"
 msgstr ""
 "Išvertė:\n"
 "Aurimas Černius <aurisc4@gmail.com>"
 
-#: src/gl-application.c:110
+#: src/gl-application.c:116
 msgid "View and search logs"
 msgstr "Rodyti ir ieškoti žurnaluose"
 
-#: src/gl-application.c:225
+#: src/gl-application.c:255
 msgid "Print version information and exit"
 msgstr "Atspausdinti versijos informaciją ir išeiti"
 
@@ -422,7 +440,7 @@ msgstr "Įkėlimas"
 msgid "No results"
 msgstr "Nėra rezultatų"
 
-#: src/gl-eventviewrow.c:224
+#: src/gl-eventviewrow.c:226
 msgid "Other"
 msgstr "Kita"
 
@@ -606,17 +624,21 @@ msgstr "žurnalo pranešimai"
 msgid "Unable to export log messages to a file"
 msgstr "Nepavyko eksportuoti žurnalo pranešimų į failą"
 
-#: src/gl-window.c:481 src/gl-window.c:512
+#: src/gl-window.c:495 src/gl-window.c:526
 msgid "Unable to read system logs"
 msgstr "Nepavyko perskaityti sistemos žurnalų"
 
-#: src/gl-window.c:495
+#: src/gl-window.c:509
 msgid "Unable to read user logs"
 msgstr "Nepavyko perskaityti naudotojo žurnalų"
 
-#: src/gl-window.c:527
+#: src/gl-window.c:541
 msgid "No logs available"
 msgstr "Nėra prieinamų žurnalų"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Search"
+#~ msgstr "Paieška"
 
 #~| msgid "gnome-logs"
 #~ msgid "org.gnome.Logs"
