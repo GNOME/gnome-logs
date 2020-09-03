@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2019-10-09 08:34+0000\n"
-"PO-Revision-Date: 2020-02-09 11:53+0100\n"
+"POT-Creation-Date: 2020-08-02 11:32+0000\n"
+"PO-Revision-Date: 2020-09-03 10:00+0200\n"
 "Last-Translator: Марко М. Костић <marko.m.kostic@gmail.com>\n"
 "Language-Team: српски <gnome-sr@googlegroups.org>\n"
 "Language: sr\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=n==1? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Project-Style: gnome\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 2.4.1\n"
 
 #: data/gl-categorylist.ui:15
 msgid "Important"
@@ -38,19 +38,19 @@ msgstr "Озвездани"
 msgid "All"
 msgstr "Све"
 
-#: data/gl-categorylist.ui:75 src/gl-eventviewrow.c:207
+#: data/gl-categorylist.ui:75 src/gl-eventviewrow.c:209
 msgid "Applications"
 msgstr "Програми"
 
-#: data/gl-categorylist.ui:90 src/gl-eventviewrow.c:216
+#: data/gl-categorylist.ui:90 src/gl-eventviewrow.c:218
 msgid "System"
 msgstr "Систем"
 
-#: data/gl-categorylist.ui:105 src/gl-eventviewrow.c:220
+#: data/gl-categorylist.ui:105 src/gl-eventviewrow.c:222
 msgid "Security"
 msgstr "Безбедност"
 
-#: data/gl-categorylist.ui:120 src/gl-eventviewrow.c:212
+#: data/gl-categorylist.ui:120 src/gl-eventviewrow.c:214
 msgid "Hardware"
 msgstr "Хардвер"
 
@@ -328,16 +328,31 @@ msgctxt "shortcut window"
 msgid "Close a window"
 msgstr "Затварање прозора"
 
-#: data/help-overlay.ui:28
+#: data/help-overlay.ui:27
 msgctxt "shortcut window"
-msgid "Search"
-msgstr "Претрага"
+msgid "Show help"
+msgstr "Прикажи помоћ"
+
+#: data/help-overlay.ui:34
+msgctxt "shortcut window"
+msgid "Keyboard shortcuts"
+msgstr "Пречице тастатуре"
+
+#: data/help-overlay.ui:42
+msgctxt "shortcut window"
+msgid "Application"
+msgstr "Програм"
 
 # Проналажење где? Могуће је да је у питању тренутни документ (find in page).
-#: data/help-overlay.ui:33
+#: data/help-overlay.ui:47
 msgctxt "shortcut window"
 msgid "Find"
 msgstr "Проналажење"
+
+#: data/help-overlay.ui:54
+msgctxt "shortcut window"
+msgid "Export logs to a file"
+msgstr "Извези записнике у датотеку"
 
 #: data/org.gnome.Logs.appdata.xml.in:7
 msgid "GNOME Logs"
@@ -402,19 +417,19 @@ msgstr "Како да поређа редове списка у списку п�
 msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr "Ређа редове списка растућим или опадајућим поретком за изабрану врсту"
 
-#: src/gl-application.c:109
+#: src/gl-application.c:115
 msgid "translator-credits"
 msgstr ""
 "Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Марко М. Костић <marko.m.kostic@gmail.com>\n"
 "\n"
-"http://prevod.org — превод на српски језик"
+"https://гном.срб — превод Гнома на српски језик"
 
-#: src/gl-application.c:110
+#: src/gl-application.c:116
 msgid "View and search logs"
 msgstr "Прегледа и претражује записнике"
 
-#: src/gl-application.c:225
+#: src/gl-application.c:255
 msgid "Print version information and exit"
 msgstr "Исписује податке о издању и излази"
 
@@ -429,7 +444,7 @@ msgstr "Подизање система"
 msgid "No results"
 msgstr "Нема резултата"
 
-#: src/gl-eventviewrow.c:224
+#: src/gl-eventviewrow.c:226
 msgid "Other"
 msgstr "Друго"
 
@@ -613,17 +628,21 @@ msgstr "поруке записника"
 msgid "Unable to export log messages to a file"
 msgstr "Нисам успео да извезем поруке из записника у датотеку"
 
-#: src/gl-window.c:481 src/gl-window.c:512
+#: src/gl-window.c:495 src/gl-window.c:526
 msgid "Unable to read system logs"
 msgstr "Нисам успео да прочитам системске записнике"
 
-#: src/gl-window.c:495
+#: src/gl-window.c:509
 msgid "Unable to read user logs"
 msgstr "Нисам успео да прочитам корисничке записнике"
 
-#: src/gl-window.c:527
+#: src/gl-window.c:541
 msgid "No logs available"
 msgstr "Нема доступних записника"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Search"
+#~ msgstr "Претрага"
 
 #~ msgid "org.gnome.Logs"
 #~ msgstr "org.gnome.Logs"
