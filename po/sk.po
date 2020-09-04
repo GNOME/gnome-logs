@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2019-10-09 08:34+0000\n"
-"PO-Revision-Date: 2020-01-21 15:18+0100\n"
+"POT-Creation-Date: 2020-08-02 11:32+0000\n"
+"PO-Revision-Date: 2020-09-04 11:27+0200\n"
 "Last-Translator: Dušan Kazik <prescott66@gmail.com>\n"
 "Language-Team: slovenčina <>\n"
 "Language: sk\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 1 : (n>=2 && n<=4) ? 2 : 0;\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 2.4.1\n"
 
 #: data/gl-categorylist.ui:15
 msgid "Important"
@@ -37,19 +37,19 @@ msgstr "Označené hviezdičkou"
 msgid "All"
 msgstr "Všetky"
 
-#: data/gl-categorylist.ui:75 src/gl-eventviewrow.c:207
+#: data/gl-categorylist.ui:75 src/gl-eventviewrow.c:209
 msgid "Applications"
 msgstr "Aplikácie"
 
-#: data/gl-categorylist.ui:90 src/gl-eventviewrow.c:216
+#: data/gl-categorylist.ui:90 src/gl-eventviewrow.c:218
 msgid "System"
 msgstr "Systém"
 
-#: data/gl-categorylist.ui:105 src/gl-eventviewrow.c:220
+#: data/gl-categorylist.ui:105 src/gl-eventviewrow.c:222
 msgid "Security"
 msgstr "Bezpečnosť"
 
-#: data/gl-categorylist.ui:120 src/gl-eventviewrow.c:212
+#: data/gl-categorylist.ui:120 src/gl-eventviewrow.c:214
 msgid "Hardware"
 msgstr "Hardvér"
 
@@ -340,15 +340,31 @@ msgctxt "shortcut window"
 msgid "Close a window"
 msgstr "Zatvorenie okna"
 
-#: data/help-overlay.ui:28
+#: data/help-overlay.ui:27
 msgctxt "shortcut window"
-msgid "Search"
-msgstr "Vyhľadávanie"
+msgid "Show help"
+msgstr "Zobrazenie pomocníka"
 
-#: data/help-overlay.ui:33
+#: data/help-overlay.ui:34
+msgctxt "shortcut window"
+msgid "Keyboard shortcuts"
+msgstr "Klávesové skratky"
+
+#: data/help-overlay.ui:42
+msgctxt "shortcut window"
+msgid "Application"
+msgstr "Aplikácia"
+
+#: data/help-overlay.ui:47
 msgctxt "shortcut window"
 msgid "Find"
 msgstr "Nájdenie"
+
+# tooltip
+#: data/help-overlay.ui:54
+msgctxt "shortcut window"
+msgid "Export logs to a file"
+msgstr "Export záznamov do súboru"
 
 #: data/org.gnome.Logs.appdata.xml.in:7
 msgid "GNOME Logs"
@@ -415,17 +431,17 @@ msgstr "Ako usporiadať riadky zoznamu v zobrazení udalostí"
 msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr "Usporiadať zoznam riadkov vzostupne alebo  zostupne pre vybratý typ"
 
-#: src/gl-application.c:109
+#: src/gl-application.c:115
 msgid "translator-credits"
 msgstr ""
 "Peter Vágner <pvdeejay@gmail.com>\n"
 "Dušan Kazik <prescott66@gmail.com>"
 
-#: src/gl-application.c:110
+#: src/gl-application.c:116
 msgid "View and search logs"
 msgstr "Zobrazuje a prehľadáva záznamy"
 
-#: src/gl-application.c:225
+#: src/gl-application.c:255
 msgid "Print version information and exit"
 msgstr "Vypíše informácie o verzii a skončí"
 
@@ -440,7 +456,7 @@ msgstr "Spustenie"
 msgid "No results"
 msgstr "Žiadne výsledky"
 
-#: src/gl-eventviewrow.c:224
+#: src/gl-eventviewrow.c:226
 msgid "Other"
 msgstr "Ostatné"
 
@@ -625,17 +641,21 @@ msgstr "správy záznamu"
 msgid "Unable to export log messages to a file"
 msgstr "Nie je možné exportovať správy záznamu do súboru"
 
-#: src/gl-window.c:481 src/gl-window.c:512
+#: src/gl-window.c:495 src/gl-window.c:526
 msgid "Unable to read system logs"
 msgstr "Nie je možné čítať systémové záznamy"
 
-#: src/gl-window.c:495
+#: src/gl-window.c:509
 msgid "Unable to read user logs"
 msgstr "Nie je možné čítať záznamy používateľa"
 
-#: src/gl-window.c:527
+#: src/gl-window.c:541
 msgid "No logs available"
 msgstr "Nie sú dostupné žiadne záznamy"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Search"
+#~ msgstr "Vyhľadávanie"
 
 #~ msgid "_Quit"
 #~ msgstr "U_končiť"
