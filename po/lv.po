@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2020-03-27 18:35+0000\n"
-"PO-Revision-Date: 2020-04-03 23:46+0300\n"
+"POT-Creation-Date: 2020-08-02 11:32+0000\n"
+"PO-Revision-Date: 2020-09-12 12:04+0300\n"
 "Last-Translator: Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>\n"
 "Language-Team: Latvian <lata-l10n@googlegroups.com>\n"
 "Language: lv\n"
@@ -325,15 +325,35 @@ msgctxt "shortcut window"
 msgid "Close a window"
 msgstr "Aizvērt logu"
 
-#: data/help-overlay.ui:28
+#: data/help-overlay.ui:27
 msgctxt "shortcut window"
-msgid "Search"
-msgstr "Meklēt"
+msgid "Show help"
+msgstr "Rādīt palīdzību"
 
-#: data/help-overlay.ui:33
+#: data/help-overlay.ui:34
+#| msgid "Keyboard Shortcuts"
+msgctxt "shortcut window"
+msgid "Keyboard shortcuts"
+msgstr "Tastatūras saīsnes"
+
+#: data/help-overlay.ui:42
+#, fuzzy
+#| msgid "Applications"
+msgctxt "shortcut window"
+msgid "Application"
+msgstr "Lietotnes"
+
+#: data/help-overlay.ui:47
 msgctxt "shortcut window"
 msgid "Find"
 msgstr "Meklēt"
+
+#: data/help-overlay.ui:54
+#, fuzzy
+#| msgid "Export logs to a file"
+msgctxt "shortcut window"
+msgid "Export logs to a file"
+msgstr "Eksportēt žurnālus uz datni"
 
 #: data/org.gnome.Logs.appdata.xml.in:7
 msgid "GNOME Logs"
@@ -396,15 +416,15 @@ msgstr "Kā kārtot saraksta rindas notikumu skatīšanas sarakstā"
 msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr "Kārtot saraksta rindas augošā vai dilstošā secībā izvēlētajam tipam"
 
-#: src/gl-application.c:109
+#: src/gl-application.c:115
 msgid "translator-credits"
 msgstr "Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>"
 
-#: src/gl-application.c:110
+#: src/gl-application.c:116
 msgid "View and search logs"
 msgstr "Katīt un meklēt žurnālos"
 
-#: src/gl-application.c:225
+#: src/gl-application.c:255
 msgid "Print version information and exit"
 msgstr "Parādīt informāciju par versiju un iziet"
 
@@ -603,17 +623,21 @@ msgstr "žurnāla ieraksti"
 msgid "Unable to export log messages to a file"
 msgstr "Neizdevās eksportēt žurnāla ierakstus datnē"
 
-#: src/gl-window.c:481 src/gl-window.c:512
+#: src/gl-window.c:495 src/gl-window.c:526
 msgid "Unable to read system logs"
 msgstr "Neizdevās nolasīt sistēmas žurnālus"
 
-#: src/gl-window.c:495
+#: src/gl-window.c:509
 msgid "Unable to read user logs"
 msgstr "Neizdevās nolasīt lietotāja žurnālus"
 
-#: src/gl-window.c:527
+#: src/gl-window.c:541
 msgid "No logs available"
 msgstr "Nav pieejamu žurnālu"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Search"
+#~ msgstr "Meklēt"
 
 #~| msgid "gnome-logs"
 #~ msgid "org.gnome.Logs"
