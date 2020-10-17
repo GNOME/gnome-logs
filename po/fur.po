@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2020-08-02 11:32+0000\n"
-"PO-Revision-Date: 2020-08-28 13:08+0200\n"
+"POT-Creation-Date: 2020-08-28 11:10+0000\n"
+"PO-Revision-Date: 2020-10-17 21:45+0200\n"
 "Last-Translator: Fabio Tomat <f.t.public@gmail.com>\n"
 "Language-Team: Friulian <fur@li.org>\n"
 "Language: fur\n"
@@ -422,7 +422,7 @@ msgstr "Mostre e cîr regjistis"
 
 #: src/gl-application.c:255
 msgid "Print version information and exit"
-msgstr "Stampe informazions su le version e jes"
+msgstr "Stampe informazions su la version e jes"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
 #: src/gl-eventtoolbar.c:134
