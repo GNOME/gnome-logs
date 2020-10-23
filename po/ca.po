@@ -342,7 +342,7 @@ msgstr "Dreceres de teclat"
 #: data/help-overlay.ui:42
 msgctxt "shortcut window"
 msgid "Application"
-msgstr "Aplicacions"
+msgstr "Aplicació"
 
 #: data/help-overlay.ui:47
 msgctxt "shortcut window"
