@@ -1,0 +1,613 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
+"POT-Creation-Date: 2020-08-01 12:45+0000\n"
+"PO-Revision-Date: 2020-11-13 12:43+0100\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.1\n"
+"Last-Translator: SACI Rachida <rgebbid@gmail.com>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: kab\n"
+
+#: data/gl-categorylist.ui:15
+msgid "Important"
+msgstr "D axatar"
+
+#: data/gl-categorylist.ui:30
+msgid "Alerts"
+msgstr "Ilɣuten"
+
+#: data/gl-categorylist.ui:45
+msgid "Starred"
+msgstr "S yitran"
+
+#: data/gl-categorylist.ui:60
+msgid "All"
+msgstr "Akk"
+
+#: data/gl-categorylist.ui:75 src/gl-eventviewrow.c:207
+msgid "Applications"
+msgstr "Isnasen"
+
+#: data/gl-categorylist.ui:90 src/gl-eventviewrow.c:216
+msgid "System"
+msgstr "Anagraw"
+
+#: data/gl-categorylist.ui:105 src/gl-eventviewrow.c:220
+msgid "Security"
+msgstr "Taɣellist"
+
+#: data/gl-categorylist.ui:120 src/gl-eventviewrow.c:212
+msgid "Hardware"
+msgstr "Arrum"
+
+#: data/gl-categorylist.ui:135
+msgid "Updates"
+msgstr "Ileqman"
+
+#: data/gl-categorylist.ui:150
+msgid "Usage"
+msgstr "Aseqdec"
+
+#: data/gl-eventtoolbar.ui:6
+msgid "_New Window"
+msgstr "_Asfaylu amaynut"
+
+#: data/gl-eventtoolbar.ui:12
+msgid "Keyboard Shortcuts"
+msgstr "Inegzumen n unasiw"
+
+#: data/gl-eventtoolbar.ui:17
+msgid "_Help"
+msgstr "Ta_llelt"
+
+#: data/gl-eventtoolbar.ui:21
+msgid "_About Logs"
+msgstr "_Ɣef yiɣmisen"
+
+#: data/gl-eventtoolbar.ui:53
+msgid "Export logs to a file"
+msgstr "Sifeḍ iɣmisen ɣer ufaylu"
+
+#: data/gl-eventtoolbar.ui:74
+msgid "Choose the boot from which to view logs"
+msgstr "Fren asenker seg wansi ara tsekneḍ iɣmisen"
+
+#: data/gl-eventtoolbar.ui:86
+msgid "Search all the logs of the current category"
+msgstr "Nadi meṛṛa iɣmisen n taggayt tamirant"
+
+#: data/gl-eventviewdetail.ui:26
+msgid "Sender"
+msgstr "Amazan"
+
+#: data/gl-eventviewdetail.ui:58
+msgid "Time"
+msgstr "Asrag"
+
+#: data/gl-eventviewdetail.ui:92 data/gl-searchpopover.ui:1052
+msgid "Message"
+msgstr "Izen"
+
+#: data/gl-eventviewdetail.ui:128 data/gl-searchpopover.ui:1072
+msgid "Audit Session"
+msgstr "Tiɣimit n usenqed"
+
+#: data/gl-eventviewdetail.ui:161 data/gl-searchpopover.ui:1067
+msgid "Kernel Device"
+msgstr "Ibenk n Kernel"
+
+#: data/gl-eventviewdetail.ui:194
+msgid "Priority"
+msgstr "Tazwart"
+
+#: data/gl-eventviewdetail.ui:228
+msgid "Subject"
+msgstr "Asentel"
+
+#: data/gl-eventviewdetail.ui:264
+msgid "Defined By"
+msgstr "Yettusbadu sɣur"
+
+#: data/gl-eventviewdetail.ui:298
+msgid "Support"
+msgstr "Tadhalt"
+
+#: data/gl-eventviewdetail.ui:334
+msgid "Documentation"
+msgstr "Assefter"
+
+#: data/gl-eventviewlist.ui:42
+msgid "Select journal field and timestamp range filtering options"
+msgstr "Fren tixtiṛiyin n usizdeg n wurti n tesɣunt akked uzilal n wazemzakud"
+
+#: data/gl-searchpopover.ui:26
+msgid "Select a Journal Field to filter the Logs according to it"
+msgstr "Fren urti n tesɣunt i usizdeg n tes qunin almend n wa"
+
+#: data/gl-searchpopover.ui:35 data/gl-searchpopover.ui:1028
+msgid "All Available Fields"
+msgstr "Meṛṛa urtiyen i yellan"
+
+#: data/gl-searchpopover.ui:78 data/gl-searchpopover.ui:251
+msgid "Parameters"
+msgstr "Iɣewwaren"
+
+#. Translators: What [journal fields to search in]
+#: data/gl-searchpopover.ui:115
+msgid "What"
+msgstr "Acu"
+
+#: data/gl-searchpopover.ui:130
+msgid "Select Journal Field…"
+msgstr "Fren urti n tesɣunt..."
+
+#. When [log entries to be shown for a given timestamp range]
+#: data/gl-searchpopover.ui:155
+msgid "When"
+msgstr "Melmi"
+
+#: data/gl-searchpopover.ui:170
+msgid "Show Logs from…"
+msgstr "Sken iɣmisen deg..."
+
+#: data/gl-searchpopover.ui:199
+msgid "Select Timestamp Range of the Log Entries to be shown"
+msgstr "Fren azilal n wazemzakud n yinekcumen n uɣmis ara d-yettwaseknen"
+
+#: data/gl-searchpopover.ui:208 data/gl-searchpopover.ui:1091
+#: src/gl-searchpopover.c:1309
+msgid "Current Boot"
+msgstr "Asenker amiran"
+
+#: data/gl-searchpopover.ui:293
+msgid "Search Type"
+msgstr "Anaw n unadi"
+
+#: data/gl-searchpopover.ui:310
+msgid "Substring"
+msgstr "Azrir arnaw"
+
+#: data/gl-searchpopover.ui:314
+msgid "Match in any part of the string"
+msgstr "Yemṣada d yal aḥric seg uzrir"
+
+#: data/gl-searchpopover.ui:328
+msgid "Exact"
+msgstr "Usdid"
+
+#: data/gl-searchpopover.ui:332
+msgid "Match complete string only"
+msgstr "Yemṣada akked uzrir ummid kan"
+
+#: data/gl-searchpopover.ui:379
+msgid "Back"
+msgstr "Ar deffir"
+
+#: data/gl-searchpopover.ui:397
+msgid "Show Logs Starting From…"
+msgstr "Sken iɣmisen s beddu seg..."
+
+#: data/gl-searchpopover.ui:419
+msgid "Select a start date"
+msgstr "Fren azemz n beddu"
+
+#: data/gl-searchpopover.ui:428 src/gl-searchpopover.c:503
+msgid "Select Start Date…"
+msgstr "Fren azemz n beddu..."
+
+#: data/gl-searchpopover.ui:459 data/gl-searchpopover.ui:763
+msgid "22 January 2016 or 1/22/2016"
+msgstr "22 deg yennayer 2016 neɣ 1/22/2016"
+
+#: data/gl-searchpopover.ui:504
+msgid "Select start time"
+msgstr "Fren akud n beddu"
+
+#: data/gl-searchpopover.ui:513 src/gl-searchpopover.c:504
+msgid "Select Start Time…"
+msgstr "Fren akud n beddu..."
+
+#: data/gl-searchpopover.ui:550 data/gl-searchpopover.ui:857
+msgid "Hr"
+msgstr "Hr"
+
+#: data/gl-searchpopover.ui:585 data/gl-searchpopover.ui:892
+msgid "Min"
+msgstr "Tsd"
+
+#: data/gl-searchpopover.ui:620 data/gl-searchpopover.ui:927
+msgid "Sec"
+msgstr "Tsn"
+
+#: data/gl-searchpopover.ui:655 data/gl-searchpopover.ui:962
+msgid "AM/PM"
+msgstr "AM/PM"
+
+#: data/gl-searchpopover.ui:701
+msgid "Until…"
+msgstr "Alamma..."
+
+#: data/gl-searchpopover.ui:723
+msgid "Select an end date"
+msgstr "Fren azemz n keffu"
+
+#: data/gl-searchpopover.ui:732 src/gl-searchpopover.c:521
+msgid "Select End Date…"
+msgstr "Fren azemz n keffu..."
+
+#: data/gl-searchpopover.ui:811
+msgid "Select end time"
+msgstr "Fren akud n keffu"
+
+#: data/gl-searchpopover.ui:820 src/gl-searchpopover.c:522
+msgid "Select End Time…"
+msgstr "Fren akud n keffu..."
+
+#: data/gl-searchpopover.ui:1037
+msgid "PID"
+msgstr "PID"
+
+#: data/gl-searchpopover.ui:1042
+msgid "UID"
+msgstr "UID"
+
+#: data/gl-searchpopover.ui:1047
+msgid "GID"
+msgstr "GID"
+
+#: data/gl-searchpopover.ui:1057
+msgid "Process Name"
+msgstr "Isem n ukala"
+
+#: data/gl-searchpopover.ui:1062
+msgid "Systemd Unit"
+msgstr "Afedis n unagrawd"
+
+#: data/gl-searchpopover.ui:1077
+msgid "Executable Path"
+msgstr "Abrid aselkam"
+
+#: data/gl-searchpopover.ui:1096
+msgid "Previous Boot"
+msgstr "Asenker yezrin"
+
+#: data/gl-searchpopover.ui:1105
+msgid "Today"
+msgstr "Ass-a"
+
+#: data/gl-searchpopover.ui:1110
+msgid "Yesterday"
+msgstr "Iḍelli"
+
+#: data/gl-searchpopover.ui:1115
+msgid "Last 3 days"
+msgstr "3wussan ineggura"
+
+#: data/gl-searchpopover.ui:1124
+msgid "Entire Journal"
+msgstr "Tasɣunt s lekmal"
+
+#: data/gl-searchpopover.ui:1133
+msgid "Set Custom Range…"
+msgstr "Sbadu azilal udmawan..."
+
+#: data/gl-window.ui:26
+msgid "Help"
+msgstr "Tallelt"
+
+#: data/gl-window.ui:34
+msgid "Ignore"
+msgstr "Anef"
+
+#: data/help-overlay.ui:8
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Amatu"
+
+#: data/help-overlay.ui:13
+msgctxt "shortcut window"
+msgid "Open a new window"
+msgstr "Ldi asfaylu amaynut"
+
+#: data/help-overlay.ui:20
+msgctxt "shortcut window"
+msgid "Close a window"
+msgstr "Mdel asfaylu"
+
+#: data/help-overlay.ui:28
+msgctxt "shortcut window"
+msgid "Search"
+msgstr "Nadi"
+
+#: data/help-overlay.ui:33
+msgctxt "shortcut window"
+msgid "Find"
+msgstr "Nadi"
+
+#: data/org.gnome.Logs.appdata.xml.in:7
+msgid "GNOME Logs"
+msgstr "Iɣmisen n GNOME"
+
+#: data/org.gnome.Logs.appdata.xml.in:8 data/org.gnome.Logs.desktop.in:5
+msgid "View detailed event logs for the system"
+msgstr "Sken iɣmisen n tedyanin leqqayen i unagraw"
+
+#: data/org.gnome.Logs.appdata.xml.in:10
+msgid ""
+"Logs shows events from the systemd journal, and sorts them into categories, "
+"such as hardware and applications."
+msgstr ""
+"Iɣmisen skanayen tidyanin seg uɣmis n systemd yerna yesmiyazwar-itent d "
+"taggayin, am warrum d yisnasen."
+
+#: data/org.gnome.Logs.appdata.xml.in:12
+msgid ""
+"Using Logs you can search your logs by typing a search term, and view "
+"detailed information about each event by clicking on it."
+msgstr ""
+"S useqdec n yiɣmisen, tzemreḍ ad tnadiḍ iɣmisen-inek·inem s tira n wawal n "
+"unadi syen ad d-tban talɣut leqqayen n yal tadyant s usiti fell-as."
+
+#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:143
+msgid "Logs"
+msgstr "Iɣmisen"
+
+#: data/org.gnome.Logs.desktop.in:4
+msgid "Log Viewer"
+msgstr "Ameẓray n uɣmis"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.Logs.desktop.in:7
+msgid "log;journal;debug;error;"
+msgstr "aɣmis;tasɣunt;tamseɣtayt;tuccḍa;"
+
+#: data/org.gnome.Logs.gschema.xml:5
+msgid "Ignore warning"
+msgstr "Anef "
+
+#: data/org.gnome.Logs.gschema.xml:6
+msgid ""
+"Whether to ignore the warning that says you don’t have sufficient permission "
+"to view logs. If ignored, the warning won’t show up again."
+msgstr ""
+"Ma yella tebɣiḍ ad tzegleḍ asmigel i d-yemmalen ur tesɛiḍ ara akk tisirag i "
+"ilaqen i uskan n yiɣmisen. Ma yella yettuzgel, asmigel ur d-yettban ara."
+
+#: data/org.gnome.Logs.gschema.xml:10
+msgid "How to sort list rows in the event view list"
+msgstr "Amek ad tesmizwareḍ idurren n tebdart deg tebdart n uskan n tedyanin"
+
+#: data/org.gnome.Logs.gschema.xml:11
+msgid "Sort list rows in ascending or descending order for the selected type"
+msgstr "Smizwer idurren n tebdart s gemmu neɣ s umnusruy i wanaw yettwafernen"
+
+#: src/gl-application.c:109
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Slimane Selyan AMIRI https://launchpad.net/~slimaneamiri"
+
+#: src/gl-application.c:110
+msgid "View and search logs"
+msgstr "Wali syen nadi iɣmisen"
+
+#: src/gl-application.c:225
+msgid "Print version information and exit"
+msgstr "Siggez talɣut n lqem syen ffeɣ"
+
+#. Translators: Boot refers to a single run (or bootup) of the system
+#: src/gl-eventtoolbar.c:134
+msgid "Boot"
+msgstr "Asenker"
+
+#. Translators: Shown when there are no (zero) results in the current
+#. * view.
+#: src/gl-eventviewlist.c:488
+msgid "No results"
+msgstr "Ulac igmaḍ"
+
+#: src/gl-eventviewrow.c:224
+msgid "Other"
+msgstr "Wayeḍ"
+
+#. Translators: if only custom start timestamp is set, then we update
+#. * the timestamp range button label in popover to show that
+#. * logs are shown in the window starting from this timestamp
+#. * until the ending timestamp of journal.
+#: src/gl-searchpopover.c:687
+#, c-format
+msgid "From %s"
+msgstr "Seg %s"
+
+#. Translators: if only custom end timestamp is set, then we update
+#. * the timestamp range button label in popover to show that
+#. * logs are shown in the window upto this timestamp
+#. * with the starting timestamp being the current time.
+#: src/gl-searchpopover.c:700
+#, c-format
+msgid "Until %s"
+msgstr "Alamma d %s"
+
+#. Translators: date format for the start date entry
+#. * and start date button label in the custom range submenu,
+#. * showing the day of month in decimal number, full month
+#. * name as string, the year as a decimal number including the century.
+#. Translators: date format for the end date entry
+#. * and end date button label in the custom range submenu,
+#. * showing the day of month in decimal number, full month
+#. * name as string, the year as a decimal number including the century.
+#: src/gl-searchpopover.c:737 src/gl-searchpopover.c:1107
+msgid "%e %B %Y"
+msgstr "%e %B %Y"
+
+#: src/gl-searchpopover.c:875
+#, c-format
+msgid "AM"
+msgstr "AM"
+
+#: src/gl-searchpopover.c:879
+#, c-format
+msgid "PM"
+msgstr "PM"
+
+#. Translators: timestamp format for the custom start time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 12-hour format.
+#. Translators: timestamp format for the custom end time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 12-hour format.
+#: src/gl-searchpopover.c:987 src/gl-searchpopover.c:1229
+msgid "%I:%M:%S %p"
+msgstr "%I:%M:%S %p"
+
+#. Translators: timestamp format for the custom start time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 24-hour format.
+#. Translators: timestamp format for the custom end time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 24-hour format.
+#: src/gl-searchpopover.c:994 src/gl-searchpopover.c:1236
+msgid "%T"
+msgstr "%T"
+
+#. Translators: timestamp format for events on the
+#. * current day, showing the time with seconds in
+#. * 12-hour format.
+#: src/gl-util.c:148
+msgid "%l:%M:%S %p"
+msgstr "%l:%M:%S %p"
+
+#. Translators: timestamp format for events on the
+#. * current day, showing the time without seconds in
+#. * 12-hour format.
+#: src/gl-util.c:155
+msgid "%l:%M %p"
+msgstr "%l:%M %p"
+
+#. Translators: timestamp format for events in
+#. * the current year, showing the abbreviated
+#. * month name, day of the month and the time
+#. * with seconds in 12-hour format.
+#: src/gl-util.c:166
+msgid "%b %e %l:%M:%S %p"
+msgstr "%b %e %l:%M:%S %p"
+
+#. Translators: timestamp format for events in the
+#. * current year, showing the abbreviated month name,
+#. * day of the month and the time without seconds in
+#. * 12-hour format.
+#: src/gl-util.c:174
+msgid "%b %e %l:%M %p"
+msgstr "%b %e %l:%M %p"
+
+#. Translators: timestamp format for events in
+#. * a different year, showing the abbreviated
+#. * month name, day of the month, year and the
+#. * time with seconds in 12-hour format.
+#: src/gl-util.c:185
+msgid "%b %e %Y %l:%M:%S %p"
+msgstr "%b %e %Y %l:%M:%S %p"
+
+#. Translators: timestamp format for events in
+#. * a different year, showing the abbreviated
+#. * month name day of the month, year and the
+#. * time without seconds in 12-hour format.
+#: src/gl-util.c:194
+msgid "%b %e %Y %l:%M %p"
+msgstr "%b %e %Y %l:%M %p"
+
+#. Translators: timestamp format for events on the
+#. * current day, showing the time with seconds in
+#. * 24-hour format.
+#: src/gl-util.c:211
+msgid "%H:%M:%S"
+msgstr "%H:%M:%S"
+
+#. Translators: timestamp format for events on the
+#. * current day, showing the time without seconds in
+#. * 24-hour format.
+#: src/gl-util.c:218
+msgid "%H:%M"
+msgstr "%H:%M"
+
+#. Translators: timestamp format for events in the
+#. * current year, showing the abbreviated month name,
+#. * day of the month and the time with seconds in
+#. * 24-hour format.
+#: src/gl-util.c:228
+msgid "%b %e %H:%M:%S"
+msgstr "%b %e %H:%M:%S"
+
+#. Translators: timestamp format for events in the
+#. * current year, showing the abbreviated month name,
+#. * day of the month and the time without seconds in
+#. * 24-hour format.
+#: src/gl-util.c:236
+msgid "%b %e %H:%M"
+msgstr "%b %e %H:%M"
+
+#. Translators: timestamp format for events in
+#. * a different year, showing the abbreviated
+#. * month name, day of the month, year and the
+#. * time with seconds in 24-hour format.
+#: src/gl-util.c:247
+msgid "%b %e %Y %H:%M:%S"
+msgstr "%b %e %Y %H:%M:%S"
+
+#. Translators: timestamp format for events in a
+#. * different year, showing the abbreviated month name,
+#. * day of the month, year and the time without seconds
+#. * in 24-hour format.
+#: src/gl-util.c:255
+msgid "%b %e %Y %H:%M"
+msgstr "%b %e %Y %H:%M"
+
+#. Transltors: the first string is the earliest timestamp of the boot,
+#. * and the second string is the newest timestamp. An example string might
+#. * be '08:10 - 08:30'
+#: src/gl-util.c:319
+#, c-format
+msgid "%s – %s"
+msgstr "%s – %s"
+
+#: src/gl-window.c:113
+msgid "Save logs"
+msgstr "Sekles iɣmisen"
+
+#: src/gl-window.c:116
+msgid "_Cancel"
+msgstr "Se_fsex"
+
+#: src/gl-window.c:117
+msgid "_Save"
+msgstr "_Sekles"
+
+#: src/gl-window.c:122
+msgid "log messages"
+msgstr "iznan n uɣmis"
+
+#: src/gl-window.c:181
+msgid "Unable to export log messages to a file"
+msgstr "Asifeḍ n yiznan n uɣmis ɣer ufaylu d awezɣi"
+
+#: src/gl-window.c:481 src/gl-window.c:512
+msgid "Unable to read system logs"
+msgstr "Taɣuri n yiɣmisen n unagraw d awezɣi"
+
+#: src/gl-window.c:495
+msgid "Unable to read user logs"
+msgstr "Taɣuri n yiɣmisen n useqdac d awezɣi"
+
+#: src/gl-window.c:527
+msgid "No logs available"
+msgstr "Ulac iɣmisen yellan"
