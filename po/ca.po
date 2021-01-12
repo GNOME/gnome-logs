@@ -135,7 +135,7 @@ msgstr ""
 #: data/gl-searchpopover.ui:26
 msgid "Select a Journal Field to filter the Logs according to it"
 msgstr ""
-"Seleccioneu un diari de camp per filtrar els registres d'acord amb ell"
+"Seleccioneu un diari de camp per a filtrar els registres d'acord amb ell"
 
 #: data/gl-searchpopover.ui:35 data/gl-searchpopover.ui:1028
 msgid "All Available Fields"
@@ -405,7 +405,7 @@ msgid ""
 "Whether to ignore the warning that says you don’t have sufficient permission"
 " to view logs. If ignored, the warning won’t show up again."
 msgstr ""
-"Si s'ha d'ignorar l'avís que us diu que no teniu els permisos suficients per"
+"Si s'ha d'ignorar l'avís que us diu que no teniu els permisos suficients per a"
 " veure registres. Si s'ignora, l'avís no es tornarà a mostrar."
 
 #: data/org.gnome.Logs.gschema.xml:10
