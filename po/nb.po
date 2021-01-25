@@ -1,14 +1,14 @@
 # Norwegian bokmål translation of gnome-logs.
 # Copyright (C) 2014 THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# Kjartan Maraas <kmaraas@gnome.org>, 2014-2017.
+# Kjartan Maraas <kmaraas@gnome.org>, 2014-2020.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-logs 3.27.x\n"
-"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2017-11-08 18:52+0000\n"
-"PO-Revision-Date: 2017-11-11 19:12+0100\n"
+"Project-Id-Version: gnome-logs 3.38.x\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
+"POT-Creation-Date: 2020-07-27 09:30+0000\n"
+"PO-Revision-Date: 2021-01-25 15:58+0100\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
 "Language: nb\n"
@@ -33,19 +33,19 @@ msgstr "Stjernemerket"
 msgid "All"
 msgstr "Alle"
 
-#: data/gl-categorylist.ui:75 src/gl-eventviewrow.c:207
+#: data/gl-categorylist.ui:75 src/gl-eventviewrow.c:209
 msgid "Applications"
 msgstr "Programmer"
 
-#: data/gl-categorylist.ui:90 src/gl-eventviewrow.c:216
+#: data/gl-categorylist.ui:90 src/gl-eventviewrow.c:218
 msgid "System"
 msgstr "System"
 
-#: data/gl-categorylist.ui:105 src/gl-eventviewrow.c:220
+#: data/gl-categorylist.ui:105 src/gl-eventviewrow.c:222
 msgid "Security"
 msgstr "Sikkerhet"
 
-#: data/gl-categorylist.ui:120 src/gl-eventviewrow.c:212
+#: data/gl-categorylist.ui:120 src/gl-eventviewrow.c:214
 msgid "Hardware"
 msgstr "Maskinvare"
 
@@ -57,15 +57,31 @@ msgstr "Oppdateringer"
 msgid "Usage"
 msgstr "Bruk"
 
-#: data/gl-eventtoolbar.ui:9
+#: data/gl-eventtoolbar.ui:6
+msgid "_New Window"
+msgstr "_Nytt vindu"
+
+#: data/gl-eventtoolbar.ui:12
+msgid "Keyboard Shortcuts"
+msgstr "Tastatursnarveier"
+
+#: data/gl-eventtoolbar.ui:17
+msgid "_Help"
+msgstr "_Hjelp"
+
+#: data/gl-eventtoolbar.ui:21
+msgid "_About Logs"
+msgstr "_Om Logger"
+
+#: data/gl-eventtoolbar.ui:53
 msgid "Export logs to a file"
 msgstr "Eksporter logger til en fil"
 
-#: data/gl-eventtoolbar.ui:30
+#: data/gl-eventtoolbar.ui:74
 msgid "Choose the boot from which to view logs"
 msgstr "Velg oppstart du vil vise logger fra"
 
-#: data/gl-eventtoolbar.ui:42
+#: data/gl-eventtoolbar.ui:86
 msgid "Search all the logs of the current category"
 msgstr "Søk alle logger i denne kategorien"
 
@@ -109,7 +125,7 @@ msgstr "Brukerstøtte"
 msgid "Documentation"
 msgstr "Dokumentasjon"
 
-#: data/gl-eventviewlist.ui:43
+#: data/gl-eventviewlist.ui:42
 msgid "Select journal field and timestamp range filtering options"
 msgstr "Velg journalfelt og tidsområde for filtrering"
 
@@ -148,7 +164,7 @@ msgid "Select Timestamp Range of the Log Entries to be shown"
 msgstr "Velg tidsområde for loggoppføringene som skal vises"
 
 #: data/gl-searchpopover.ui:208 data/gl-searchpopover.ui:1091
-#: src/gl-searchpopover.c:1303
+#: src/gl-searchpopover.c:1309
 msgid "Current Boot"
 msgstr "Siste oppstart"
 
@@ -284,11 +300,11 @@ msgstr "Hele journalen"
 msgid "Set Custom Range…"
 msgstr "Sett egendefinert område …"
 
-#: data/gl-window.ui:31
+#: data/gl-window.ui:26
 msgid "Help"
 msgstr "Hjelp"
 
-#: data/gl-window.ui:39
+#: data/gl-window.ui:34
 msgid "Ignore"
 msgstr "Ignorer"
 
@@ -307,35 +323,30 @@ msgctxt "shortcut window"
 msgid "Close a window"
 msgstr "Lukk et vindu"
 
-#: data/help-overlay.ui:28
+#: data/help-overlay.ui:27
 msgctxt "shortcut window"
-msgid "Search"
-msgstr "Søk"
+msgid "Show help"
+msgstr "Vis hjelp"
 
-#: data/help-overlay.ui:33
+#: data/help-overlay.ui:34
+msgctxt "shortcut window"
+msgid "Keyboard shortcuts"
+msgstr "Tastatursnarveier"
+
+#: data/help-overlay.ui:42
+msgctxt "shortcut window"
+msgid "Application"
+msgstr "Program"
+
+#: data/help-overlay.ui:47
 msgctxt "shortcut window"
 msgid "Find"
 msgstr "Finn"
 
-#: data/menus.ui:6
-msgid "_New Window"
-msgstr "_Nytt vindu"
-
-#: data/menus.ui:13
-msgid "_Help"
-msgstr "_Hjelp"
-
-#: data/menus.ui:17
-msgid "Keyboard Shortcuts"
-msgstr "Tastatursnarveier"
-
-#: data/menus.ui:21
-msgid "_About"
-msgstr "_Om"
-
-#: data/menus.ui:26
-msgid "_Quit"
-msgstr "A_vslutt"
+#: data/help-overlay.ui:54
+msgctxt "shortcut window"
+msgid "Export logs to a file"
+msgstr "Eksporter logger til en fil"
 
 #: data/org.gnome.Logs.appdata.xml.in:7
 msgid "GNOME Logs"
@@ -361,7 +372,11 @@ msgstr ""
 "Med Logger kan du søke i dine logger ved å skrive inn teksten du søker etter "
 "og du kan vise detaljert informasjon om hver hendelse ved å klikke på den."
 
-#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:137
+#: data/org.gnome.Logs.appdata.xml.in:30
+msgid "The GNOME Project"
+msgstr "GNOME prosjektet"
+
+#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:143
 msgid "Logs"
 msgstr "Logger"
 
@@ -373,11 +388,6 @@ msgstr "Loggvisning"
 #: data/org.gnome.Logs.desktop.in:7
 msgid "log;journal;debug;error;"
 msgstr "logg;journal;feilsøking;feil;"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/org.gnome.Logs.desktop.in:12
-msgid "gnome-logs"
-msgstr "gnome-logs"
 
 #: data/org.gnome.Logs.gschema.xml:5
 msgid "Ignore warning"
@@ -397,30 +407,30 @@ msgstr "Hvordan liste rader skal sorteres ved hendelsesvisning"
 msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr "Sorter listerader i stigende eller synkende rekkefølge for valgt type"
 
-#: src/gl-application.c:109
+#: src/gl-application.c:115
 msgid "translator-credits"
 msgstr "Kjartan Maraas <kmaraas@gnome.org>"
 
-#: src/gl-application.c:110
+#: src/gl-application.c:116
 msgid "View and search logs"
 msgstr "Vis og søk i logger"
 
-#: src/gl-application.c:243
+#: src/gl-application.c:255
 msgid "Print version information and exit"
 msgstr "Skriv ut versjonsinformasjon og avslutt"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
-#: src/gl-eventtoolbar.c:128
+#: src/gl-eventtoolbar.c:134
 msgid "Boot"
 msgstr "Omstart"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: src/gl-eventviewlist.c:478
+#: src/gl-eventviewlist.c:488
 msgid "No results"
 msgstr "Ingen resultater"
 
-#: src/gl-eventviewrow.c:224
+#: src/gl-eventviewrow.c:226
 msgid "Other"
 msgstr "Annet"
 
@@ -450,15 +460,17 @@ msgstr "Til %s"
 #. * and end date button label in the custom range submenu,
 #. * showing the day of month in decimal number, full month
 #. * name as string, the year as a decimal number including the century.
-#: src/gl-searchpopover.c:737 src/gl-searchpopover.c:1104
+#: src/gl-searchpopover.c:737 src/gl-searchpopover.c:1107
 msgid "%e %B %Y"
 msgstr "%B %e %Y"
 
 #: src/gl-searchpopover.c:875
+#, c-format
 msgid "AM"
 msgstr "AM"
 
 #: src/gl-searchpopover.c:879
+#, c-format
 msgid "PM"
 msgstr "PM"
 
@@ -468,7 +480,7 @@ msgstr "PM"
 #. Translators: timestamp format for the custom end time button
 #. * label in the custom range submenu, showing the time with seconds
 #. * in 12-hour format.
-#: src/gl-searchpopover.c:987 src/gl-searchpopover.c:1226
+#: src/gl-searchpopover.c:987 src/gl-searchpopover.c:1229
 msgid "%I:%M:%S %p"
 msgstr "%H.%M.%S"
 
@@ -478,7 +490,7 @@ msgstr "%H.%M.%S"
 #. Translators: timestamp format for the custom end time button
 #. * label in the custom range submenu, showing the time with seconds
 #. * in 24-hour format.
-#: src/gl-searchpopover.c:994 src/gl-searchpopover.c:1233
+#: src/gl-searchpopover.c:994 src/gl-searchpopover.c:1236
 msgid "%T"
 msgstr "%T"
 
@@ -598,18 +610,18 @@ msgstr "_Lagre"
 msgid "log messages"
 msgstr "loggmeldinger"
 
-#: src/gl-window.c:175
+#: src/gl-window.c:181
 msgid "Unable to export log messages to a file"
 msgstr "Kan ikke eksportere loggmeldinger til en fil"
 
-#: src/gl-window.c:439 src/gl-window.c:470
+#: src/gl-window.c:495 src/gl-window.c:526
 msgid "Unable to read system logs"
 msgstr "Kan ikke lese systemloggene"
 
-#: src/gl-window.c:453
+#: src/gl-window.c:509
 msgid "Unable to read user logs"
 msgstr "Kan ikke lese brukerlogger"
 
-#: src/gl-window.c:485
+#: src/gl-window.c:541
 msgid "No logs available"
 msgstr "Ingen logger tilgjengelig"
