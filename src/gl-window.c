@@ -39,7 +39,7 @@ typedef struct
     GtkWidget *info_bar;
 } GlWindowPrivate;
 
-G_DEFINE_TYPE_WITH_PRIVATE (GlWindow, gl_window, GTK_TYPE_APPLICATION_WINDOW)
+G_DEFINE_TYPE_WITH_PRIVATE (GlWindow, gl_window, HDY_TYPE_APPLICATION_WINDOW)
 
 static const gchar SETTINGS_SCHEMA[] = "org.gnome.Logs";
 static const gchar IGNORE_WARNING[] = "ignore-warning";

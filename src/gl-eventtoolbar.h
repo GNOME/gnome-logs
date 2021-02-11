@@ -20,6 +20,7 @@
 #define GL_EVENT_TOOLBAR_H_
 
 #include <gtk/gtk.h>
+#include <libhandy-1/handy.h>
 
 G_BEGIN_DECLS
 
@@ -37,7 +38,7 @@ typedef enum
 } GlEventToolbarMode;
 
 #define GL_TYPE_EVENT_TOOLBAR (gl_event_toolbar_get_type ())
-G_DECLARE_FINAL_TYPE (GlEventToolbar, gl_event_toolbar, GL, EVENT_TOOLBAR, GtkHeaderBar)
+G_DECLARE_FINAL_TYPE (GlEventToolbar, gl_event_toolbar, GL, EVENT_TOOLBAR, HdyHeaderBar)
 
 GtkWidget * gl_event_toolbar_new (void);
 void gl_event_toolbar_add_boots (GlEventToolbar *toolbar, GArray *boot_ids);

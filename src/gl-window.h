@@ -20,6 +20,7 @@
 #define GL_WINDOW_H_
 
 #include <gtk/gtk.h>
+#include <libhandy-1/handy.h>
 
 #include "gl-application.h"
 #include "gl-journal-model.h"
@@ -27,7 +28,7 @@
 G_BEGIN_DECLS
 
 #define GL_TYPE_WINDOW (gl_window_get_type ())
-G_DECLARE_FINAL_TYPE (GlWindow, gl_window, GL, WINDOW, GtkApplicationWindow)
+G_DECLARE_FINAL_TYPE (GlWindow, gl_window, GL, WINDOW, HdyApplicationWindow)
 
 void gl_window_load_journal (GlWindow *window, GlJournal *journal);
 GtkWidget * gl_window_new (GtkApplication *application);
