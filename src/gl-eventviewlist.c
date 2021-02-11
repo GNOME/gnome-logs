@@ -20,6 +20,7 @@
 
 #include <glib/gi18n.h>
 #include <glib-unix.h>
+#include <libhandy-1/handy.h>
 #include <stdlib.h>
 
 #include "gl-categorylist.h"
@@ -462,37 +463,18 @@ gl_event_view_list_set_search_mode (GlEventViewList *view,
 static GtkWidget *
 gl_event_view_create_empty (G_GNUC_UNUSED GlEventViewList *view)
 {
-    GtkWidget *box;
-    GtkStyleContext *context;
-    GtkWidget *image;
-    GtkWidget *label;
-    gchar *markup;
+    GtkWidget *status_page;
 
-    box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 12);
-    gtk_widget_set_halign (box, GTK_ALIGN_CENTER);
-    gtk_widget_set_hexpand (box, TRUE);
-    gtk_widget_set_valign (box, GTK_ALIGN_CENTER);
-    gtk_widget_set_vexpand (box, TRUE);
-    context = gtk_widget_get_style_context (box);
-    gtk_style_context_add_class (context, "dim-label");
-
-    image = gtk_image_new_from_icon_name ("action-unavailable-symbolic", 0);
-    context = gtk_widget_get_style_context (image);
-    gtk_style_context_add_class (context, "dim-label");
-    gtk_image_set_pixel_size (GTK_IMAGE (image), 128);
-    gtk_container_add (GTK_CONTAINER (box), image);
-
-    label = gtk_label_new (NULL);
+    status_page = hdy_status_page_new ();
+    hdy_status_page_set_icon_name (HDY_STATUS_PAGE (status_page),
+                                   "action-unavailable-symbolic");
     /* Translators: Shown when there are no (zero) results in the current
      * view. */
-    markup = g_markup_printf_escaped ("<big>%s</big>", _("No results"));
-    gtk_label_set_markup (GTK_LABEL (label), markup);
-    gtk_container_add (GTK_CONTAINER (box), label);
-    g_free (markup);
+    hdy_status_page_set_title (HDY_STATUS_PAGE (status_page), _("No Results"));
 
-    gtk_widget_show_all (box);
+    gtk_widget_show (status_page);
 
-    return box;
+    return status_page;
 }
 
 static GtkWidget *
