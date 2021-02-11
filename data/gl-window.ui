@@ -1,16 +1,16 @@
 <interface domain="gnome-logs">
-    <template class="GlWindow" parent="GtkApplicationWindow">
+    <template class="GlWindow" parent="HdyApplicationWindow">
         <property name="height-request">780</property>
         <property name="width-request">1200</property>
         <signal name="key-press-event" handler="on_gl_window_key_press_event"/>
-        <child type="titlebar">
-            <object class="GlEventToolbar" id="event_toolbar">
-            </object>
-        </child>
         <child>
             <object class="GtkBox" id="event_box">
                 <property name="orientation">vertical</property>
                 <property name="visible">True</property>
+                <child>
+                  <object class="GlEventToolbar" id="event_toolbar">
+                  </object>
+                </child>
                 <child>
                     <object class="GtkInfoBar" id="info_bar">
                         <property name="message-type">GTK_MESSAGE_ERROR</property>

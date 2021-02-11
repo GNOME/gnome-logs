@@ -23,8 +23,8 @@
             </item>
         </section>
     </menu>
-    <template class="GlEventToolbar" parent="GtkHeaderBar">
-        <property name="expand">True</property>
+    <template class="GlEventToolbar" parent="HdyHeaderBar">
+        <property name="hexpand">True</property>
         <property name="show-close-button">True</property>
         <property name="visible">True</property>
         <child>

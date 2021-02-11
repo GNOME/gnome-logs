@@ -40,7 +40,7 @@ typedef struct
     GlEventToolbarMode mode;
 } GlEventToolbarPrivate;
 
-G_DEFINE_TYPE_WITH_PRIVATE (GlEventToolbar, gl_event_toolbar, GTK_TYPE_HEADER_BAR)
+G_DEFINE_TYPE_WITH_PRIVATE (GlEventToolbar, gl_event_toolbar, HDY_TYPE_HEADER_BAR)
 
 static void
 gl_event_toolbar_update_boot_menu_label (GlEventToolbar *toolbar,
@@ -155,7 +155,7 @@ gl_event_toolbar_add_boots (GlEventToolbar *toolbar,
     gtk_grid_attach (GTK_GRID (grid), arrow, 1, 0, 1, 2);
     gtk_widget_show_all (grid);
 
-    gtk_header_bar_set_custom_title (GTK_HEADER_BAR (toolbar),
+    hdy_header_bar_set_custom_title (HDY_HEADER_BAR (toolbar),
                                      priv->menu_button);
 
     g_free (current_boot);
