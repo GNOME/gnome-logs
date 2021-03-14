@@ -6,8 +6,8 @@ sources = [
 ]
 
 media = [
-    'media/gnome-logs.png',
-    'media/gnome-logs-3-34.png'
+    'media/gnome-logs-3-34.png',
+    'media/org.gnome.Logs.svg'
 ]
 
 gnome.yelp(

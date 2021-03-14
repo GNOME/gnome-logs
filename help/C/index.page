@@ -4,6 +4,7 @@
       id="index">
 
   <info>
+    <title type="link" role="trail">Logs help</title>
     <title type="text">Logs help</title>
     <title type="link">Logs help</title>
     <revision pkgversion="3.12" date="2014-02-18" status="review"/>
@@ -14,7 +15,8 @@
   </info>
 
   <title>
-    <media type="image" mime="image/png" its:translate="no" src="media/gnome-logs.png" />
+    <media type="image" width="48px" height="48px" its:translate="no"
+      src="media/org.gnome.Logs.svg" />
     Logs
   </title>
 
