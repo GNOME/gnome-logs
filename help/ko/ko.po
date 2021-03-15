@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "POT-Creation-Date: 2020-06-23 08:27+0000\n"
-"PO-Revision-Date: 2021-03-13 16:48+0900\n"
+"PO-Revision-Date: 2021-03-15 10:32+0900\n"
 "Last-Translator: Seong-ho Cho <shcho@gnome.org>\n"
 "Language-Team: GNOME Korea <gnome-kr@googlegroups.com>\n"
 "Language: ko\n"
@@ -93,15 +93,11 @@ msgstr ""
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
 #: C/introduction.page:35
-#| msgctxt "_"
-#| msgid ""
-#| "external ref='media/gnome-logs-3-12.png' "
-#| "md5='56e83d7808cdfd80457691aff5ffc2d1'"
 msgctxt "_"
 msgid ""
 "external ref='media/gnome-logs-3-34.png' "
 "md5='572ed4fda65dbaa8cd2dc56f6bce5dfb'"
-msgstr ""
+msgstr "https://l10n.gnome.org/media/upload/gnome-logs-master-help-ko-971777.png"
 
 #. (itstool) path: media/p
 #: C/introduction.page:36
