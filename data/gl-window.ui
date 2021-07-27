@@ -1,7 +1,7 @@
 <interface domain="gnome-logs">
     <template class="GlWindow" parent="HdyApplicationWindow">
-        <property name="height-request">780</property>
-        <property name="width-request">1200</property>
+        <property name="default-width">1200</property>
+        <property name="default-height">600</property>
         <signal name="key-press-event" handler="on_gl_window_key_press_event"/>
         <child>
             <object class="GtkBox" id="event_box">
