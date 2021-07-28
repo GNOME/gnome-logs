@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2020-08-28 11:10+0000\n"
-"PO-Revision-Date: 2020-10-17 21:45+0200\n"
+"POT-Creation-Date: 2021-07-28 07:14+0000\n"
+"PO-Revision-Date: 2021-07-28 09:45+0200\n"
 "Last-Translator: Fabio Tomat <f.t.public@gmail.com>\n"
 "Language-Team: Friulian <fur@li.org>\n"
 "Language: fur\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.1\n"
+"X-Generator: Poedit 3.0\n"
 
 #: data/gl-categorylist.ui:15
 msgid "Important"
@@ -412,15 +412,15 @@ msgstr "Ce mût ordenâ lis riis te viodude events"
 msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr "Ordene lis riis in ordin a cressi o calâ par il gjenar selezionât"
 
-#: src/gl-application.c:115
+#: src/gl-application.c:116
 msgid "translator-credits"
 msgstr "Fabio Tomat <f.t.public@gmail.com>"
 
-#: src/gl-application.c:116
+#: src/gl-application.c:117
 msgid "View and search logs"
 msgstr "Mostre e cîr regjistis"
 
-#: src/gl-application.c:255
+#: src/gl-application.c:259
 msgid "Print version information and exit"
 msgstr "Stampe informazions su la version e jes"
 
@@ -431,8 +431,8 @@ msgstr "Inviament"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: src/gl-eventviewlist.c:488
-msgid "No results"
+#: src/gl-eventviewlist.c:473
+msgid "No Results"
 msgstr "Nissun risultât"
 
 #: src/gl-eventviewrow.c:226
@@ -604,30 +604,30 @@ msgid "Save logs"
 msgstr "Salve regjistris"
 
 #: src/gl-window.c:116
-msgid "_Cancel"
-msgstr "_Anule"
-
-#: src/gl-window.c:117
 msgid "_Save"
 msgstr "_Salve"
 
-#: src/gl-window.c:122
+#: src/gl-window.c:117
+msgid "_Cancel"
+msgstr "_Anule"
+
+#: src/gl-window.c:121
 msgid "log messages"
 msgstr "messaçs dal regjistri"
 
-#: src/gl-window.c:181
+#: src/gl-window.c:180
 msgid "Unable to export log messages to a file"
 msgstr "Impussibil espuartâ i messaçs dal regjistri intun file"
 
-#: src/gl-window.c:495 src/gl-window.c:526
+#: src/gl-window.c:494 src/gl-window.c:525
 msgid "Unable to read system logs"
 msgstr "Impussibil lei regjistris di sisteme"
 
-#: src/gl-window.c:509
+#: src/gl-window.c:508
 msgid "Unable to read user logs"
 msgstr "Impussibil lei i regjistris utent"
 
-#: src/gl-window.c:541
+#: src/gl-window.c:540
 msgid "No logs available"
 msgstr "Nissun regjistri disponibil"
 
