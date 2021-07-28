@@ -1,14 +1,14 @@
 # Swedish translation for gnome-logs.
-# Copyright © 2014-2020 gnome-logs's COPYRIGHT HOLDER
+# Copyright © 2014-2021 gnome-logs's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-logs package.
-# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2014, 2015, 2016, 2017, 2018, 2019, 2020.
+# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021.
 # Sebastian Rasmussen <sebras@gmail.com>, 2016.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2020-07-27 09:30+0000\n"
-"PO-Revision-Date: 2020-07-30 12:09+0200\n"
+"POT-Creation-Date: 2021-07-28 07:14+0000\n"
+"PO-Revision-Date: 2021-07-28 22:00+0200\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.3.1\n"
+"X-Generator: Poedit 2.4.2\n"
 
 #: data/gl-categorylist.ui:15
 msgid "Important"
@@ -412,7 +412,7 @@ msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr ""
 "Sortera listrader i stigande eller fallande ordning för den valda typen"
 
-#: src/gl-application.c:115
+#: src/gl-application.c:116
 msgid "translator-credits"
 msgstr ""
 "Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
@@ -420,11 +420,11 @@ msgstr ""
 "Skicka synpunkter på översättningen till\n"
 "<tp-sv@listor.tp-sv.se>."
 
-#: src/gl-application.c:116
+#: src/gl-application.c:117
 msgid "View and search logs"
 msgstr "Visa och sök igenom loggar"
 
-#: src/gl-application.c:255
+#: src/gl-application.c:259
 msgid "Print version information and exit"
 msgstr "Skriv ut versionsinformation och avsluta"
 
@@ -435,8 +435,8 @@ msgstr "Uppstart"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: src/gl-eventviewlist.c:488
-msgid "No results"
+#: src/gl-eventviewlist.c:473
+msgid "No Results"
 msgstr "Inga resultat"
 
 #: src/gl-eventviewrow.c:226
@@ -608,45 +608,29 @@ msgid "Save logs"
 msgstr "Spara loggar"
 
 #: src/gl-window.c:116
-msgid "_Cancel"
-msgstr "_Avbryt"
-
-#: src/gl-window.c:117
 msgid "_Save"
 msgstr "_Spara"
 
-#: src/gl-window.c:122
+#: src/gl-window.c:117
+msgid "_Cancel"
+msgstr "_Avbryt"
+
+#: src/gl-window.c:121
 msgid "log messages"
 msgstr "loggmeddelanden"
 
-#: src/gl-window.c:181
+#: src/gl-window.c:180
 msgid "Unable to export log messages to a file"
 msgstr "Kan ej exportera loggmeddelanden till en fil"
 
-#: src/gl-window.c:495 src/gl-window.c:526
+#: src/gl-window.c:494 src/gl-window.c:525
 msgid "Unable to read system logs"
 msgstr "Kan ej läsa systemloggar"
 
-#: src/gl-window.c:509
+#: src/gl-window.c:508
 msgid "Unable to read user logs"
 msgstr "Kan ej läsa användarloggar"
 
-#: src/gl-window.c:541
+#: src/gl-window.c:540
 msgid "No logs available"
 msgstr "Inga loggar tillgängliga"
-
-#~ msgctxt "shortcut window"
-#~ msgid "Search"
-#~ msgstr "Sökning"
-
-#~ msgid "org.gnome.Logs"
-#~ msgstr "org.gnome.Logs"
-
-#~ msgid "_Quit"
-#~ msgstr "_Avsluta"
-
-#~ msgid "Go back to the event view"
-#~ msgstr "Gå tillbaka till händelsevyn"
-
-#~ msgid "Search the displayed logs"
-#~ msgstr "Sök igenom de visade loggarna"
