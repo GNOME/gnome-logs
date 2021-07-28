@@ -1,14 +1,14 @@
 # Swedish translation for gnome-logs.
-# Copyright © 2015 gnome-logs's COPYRIGHT HOLDER
+# Copyright © 2015-2021 gnome-logs's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-logs package.
 # Sebastian Rasmussen <sebras@gmail.com>, 2015.
-# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2020.
+# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2020, 2021.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
-"POT-Creation-Date: 2020-06-23 08:27+0000\n"
-"PO-Revision-Date: 2020-09-10 12:47+0200\n"
+"POT-Creation-Date: 2021-07-28 07:14+0000\n"
+"PO-Revision-Date: 2021-07-28 22:02+0200\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.4.1\n"
+"X-Generator: Poedit 2.4.2\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
@@ -25,23 +25,29 @@ msgstr "Sebastian Rasmussen <sebras@gmail.com>, 2015"
 
 #. (itstool) path: info/title
 #: C/index.page:7
-msgctxt "text"
+msgctxt "link:trail"
 msgid "Logs help"
 msgstr "Hjälp för Loggar"
 
 #. (itstool) path: info/title
 #: C/index.page:8
+msgctxt "text"
+msgid "Logs help"
+msgstr "Hjälp för Loggar"
+
+#. (itstool) path: info/title
+#: C/index.page:9
 msgctxt "link"
 msgid "Logs help"
 msgstr "Hjälp för Loggar"
 
 #. (itstool) path: info/desc
-#: C/index.page:13
+#: C/index.page:14
 msgid "Browse and search through your systemd journal logs."
 msgstr "Bläddra och sök genom dina systemd-journalloggar."
 
 #. (itstool) path: page/title
-#: C/index.page:16
+#: C/index.page:17
 msgid "<_:media-1/> Logs"
 msgstr "<_:media-1/> Loggar"
 
@@ -94,10 +100,6 @@ msgstr ""
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
 #: C/introduction.page:35
-#| msgctxt "_"
-#| msgid ""
-#| "external ref='media/gnome-logs-3-12.png' "
-#| "md5='56e83d7808cdfd80457691aff5ffc2d1'"
 msgctxt "_"
 msgid ""
 "external ref='media/gnome-logs-3-34.png' "
