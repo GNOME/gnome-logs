@@ -1,25 +1,28 @@
 # German translation for gnome-logs.
 # Copyright (C) 2014 gnome-logs's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-logs package.
+#
+#
 # David Lüder <davidl-dev@gmx-topmail.de>, 2014.
 # Benjamin Steinwender <b@stbe.at>, 2014.
 # Bernd Homuth <dev@hmt.im>, 2015.
 # Mario Blättermann <mario.blaettermann@gmail.com>, 2015-2017.
+# Philipp Kiemle <philipp.kiemle@gmail.com>, 2021.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2020-08-02 15:56+0000\n"
-"PO-Revision-Date: 2020-08-09 20:50+0200\n"
-"Last-Translator: Tim Sabsch <tim@sabsch.com>\n"
+"POT-Creation-Date: 2021-07-28 07:14+0000\n"
+"PO-Revision-Date: 2021-07-28 09:45+0200\n"
+"Last-Translator: Philipp Kiemle <philipp.kiemle@gmail.com>\n"
 "Language-Team: Deutsch <gnome-de@gnome.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.4\n"
+"X-Generator: Poedit 2.4.2\n"
 
 #: data/gl-categorylist.ui:15
 msgid "Important"
@@ -425,7 +428,7 @@ msgstr ""
 "Legt fest, ob Zeilen in auf- oder absteigender Reihenfolge für den "
 "ausgewählten Typ sortiert werden"
 
-#: src/gl-application.c:115
+#: src/gl-application.c:116
 msgid "translator-credits"
 msgstr ""
 "David Lüder <davidl-dev@gmx-topmail.de>\n"
@@ -433,13 +436,14 @@ msgstr ""
 "Bernd Homuth <dev@hmt.im>\n"
 "Christian Kirbach <christian.kirbach@gmail.com>\n"
 "Mario Blättermann <mario.blaettermann@gmail.com>\n"
-"Tim Sabsch <tim@sabsch.com>"
+"Tim Sabsch <tim@sabsch.com>\n"
+"Philipp Kiemle <philipp.kiemle@gmail.com>"
 
-#: src/gl-application.c:116
+#: src/gl-application.c:117
 msgid "View and search logs"
 msgstr "Protokoll ansehen und durchsuchen"
 
-#: src/gl-application.c:255
+#: src/gl-application.c:259
 msgid "Print version information and exit"
 msgstr "Versionsinformationen anzeigen und beenden"
 
@@ -450,9 +454,9 @@ msgstr "Systemstart"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: src/gl-eventviewlist.c:488
-msgid "No results"
-msgstr "Keine Ergebnisse gefunden"
+#: src/gl-eventviewlist.c:473
+msgid "No Results"
+msgstr "Keine Ergebnisse"
 
 #: src/gl-eventviewrow.c:226
 msgid "Other"
@@ -623,30 +627,30 @@ msgid "Save logs"
 msgstr "Protokoll speichern"
 
 #: src/gl-window.c:116
-msgid "_Cancel"
-msgstr "Abbre_chen"
-
-#: src/gl-window.c:117
 msgid "_Save"
 msgstr "_Speichern"
 
-#: src/gl-window.c:122
+#: src/gl-window.c:117
+msgid "_Cancel"
+msgstr "Abbre_chen"
+
+#: src/gl-window.c:121
 msgid "log messages"
 msgstr "Protokollmeldungen"
 
-#: src/gl-window.c:181
+#: src/gl-window.c:180
 msgid "Unable to export log messages to a file"
 msgstr "Protokollmeldungen konnten nicht in eine Datei exportiert werden"
 
-#: src/gl-window.c:495 src/gl-window.c:526
+#: src/gl-window.c:494 src/gl-window.c:525
 msgid "Unable to read system logs"
 msgstr "Systemprotokoll konnte nicht gelesen werden"
 
-#: src/gl-window.c:509
+#: src/gl-window.c:508
 msgid "Unable to read user logs"
 msgstr "Benutzerprotokoll konnte nicht gelesen werden"
 
-#: src/gl-window.c:541
+#: src/gl-window.c:540
 msgid "No logs available"
 msgstr "Keine Protokolle verfügbar"
 
