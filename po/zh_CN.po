@@ -9,15 +9,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2020-07-27 09:30+0000\n"
-"PO-Revision-Date: 2020-08-11 20:36+0800\n"
-"Last-Translator: Dingzhong Chen <wsxy162@gmail.com>\n"
+"POT-Creation-Date: 2021-07-28 07:14+0000\n"
+"PO-Revision-Date: 2021-07-28 14:36-0400\n"
+"Last-Translator: Boyuan Yang <073plan@gmail.com>\n"
 "Language-Team: Chinese (China) <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.1\n"
+"X-Generator: Poedit 3.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: data/gl-categorylist.ui:15
@@ -408,18 +408,18 @@ msgstr "如何在事件查看列别中对行列表排序"
 msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr "根据选择的类型以升序或降序排列列表行"
 
-#: src/gl-application.c:115
+#: src/gl-application.c:116
 msgid "translator-credits"
 msgstr ""
 "eternalhui <www.eternalhui@gmail.com>, 2013\n"
 "Jeff Bai <jeffbai@aosc.xyz>, 2015, 2016, 2017\n"
 "Dingzhong Chen <wsxy162@gmail.com>, 2016, 2018"
 
-#: src/gl-application.c:116
+#: src/gl-application.c:117
 msgid "View and search logs"
 msgstr "查看和搜索日志"
 
-#: src/gl-application.c:255
+#: src/gl-application.c:259
 msgid "Print version information and exit"
 msgstr "打印版本信息并退出"
 
@@ -430,8 +430,8 @@ msgstr "单次引导"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: src/gl-eventviewlist.c:488
-msgid "No results"
+#: src/gl-eventviewlist.c:473
+msgid "No Results"
 msgstr "无结果"
 
 #: src/gl-eventviewrow.c:226
@@ -603,30 +603,30 @@ msgid "Save logs"
 msgstr "保存日志"
 
 #: src/gl-window.c:116
-msgid "_Cancel"
-msgstr "取消(_C)"
-
-#: src/gl-window.c:117
 msgid "_Save"
 msgstr "保存(_S)"
 
-#: src/gl-window.c:122
+#: src/gl-window.c:117
+msgid "_Cancel"
+msgstr "取消(_C)"
+
+#: src/gl-window.c:121
 msgid "log messages"
 msgstr "日志消息"
 
-#: src/gl-window.c:181
+#: src/gl-window.c:180
 msgid "Unable to export log messages to a file"
 msgstr "无法将日志消息导出到文件"
 
-#: src/gl-window.c:495 src/gl-window.c:526
+#: src/gl-window.c:494 src/gl-window.c:525
 msgid "Unable to read system logs"
 msgstr "无法读取系统日志"
 
-#: src/gl-window.c:509
+#: src/gl-window.c:508
 msgid "Unable to read user logs"
 msgstr "无法读取用户日志"
 
-#: src/gl-window.c:541
+#: src/gl-window.c:540
 msgid "No logs available"
 msgstr "无可用的日志"
 
