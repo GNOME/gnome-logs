@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2020-07-27 09:30+0000\n"
+"POT-Creation-Date: 2021-07-28 07:14+0000\n"
 "PO-Revision-Date: 2020-08-02 13:30+0200\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <community-poland@mozilla.org>\n"
@@ -414,17 +414,17 @@ msgstr "Jak porządkować rzędy list na liście widoków zdarzeń"
 msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr "Porządkowanie rzędów list rosnąco lub malejąco dla wybranego typu"
 
-#: src/gl-application.c:115
+#: src/gl-application.c:116
 msgid "translator-credits"
 msgstr ""
 "Piotr Drąg <piotrdrag@gmail.com>, 2013-2020\n"
 "Aviary.pl <community-poland@mozilla.org>, 2013-2020"
 
-#: src/gl-application.c:116
+#: src/gl-application.c:117
 msgid "View and search logs"
 msgstr "Wyświetlanie i przeszukiwanie dzienników"
 
-#: src/gl-application.c:255
+#: src/gl-application.c:259
 msgid "Print version information and exit"
 msgstr "Wyświetla informację o wersji i kończy działanie"
 
@@ -435,8 +435,8 @@ msgstr "Uruchomienie"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: src/gl-eventviewlist.c:488
-msgid "No results"
+#: src/gl-eventviewlist.c:473
+msgid "No Results"
 msgstr "Brak wyników"
 
 #: src/gl-eventviewrow.c:226
@@ -608,29 +608,29 @@ msgid "Save logs"
 msgstr "Zapisanie dzienników"
 
 #: src/gl-window.c:116
-msgid "_Cancel"
-msgstr "_Anuluj"
-
-#: src/gl-window.c:117
 msgid "_Save"
 msgstr "_Zapisz"
 
-#: src/gl-window.c:122
+#: src/gl-window.c:117
+msgid "_Cancel"
+msgstr "_Anuluj"
+
+#: src/gl-window.c:121
 msgid "log messages"
 msgstr "Komunikaty dziennika"
 
-#: src/gl-window.c:181
+#: src/gl-window.c:180
 msgid "Unable to export log messages to a file"
 msgstr "Nie można wyeksportować komunikatów dziennika do pliku"
 
-#: src/gl-window.c:495 src/gl-window.c:526
+#: src/gl-window.c:494 src/gl-window.c:525
 msgid "Unable to read system logs"
 msgstr "Nie można odczytać dzienników systemowych"
 
-#: src/gl-window.c:509
+#: src/gl-window.c:508
 msgid "Unable to read user logs"
 msgstr "Nie można odczytać dzienników użytkownika"
 
-#: src/gl-window.c:541
+#: src/gl-window.c:540
 msgid "No logs available"
 msgstr "Brak dostępnych dzienników"
