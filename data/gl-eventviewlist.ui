@@ -36,7 +36,6 @@
                                         <child>
                                             <object class="GtkSearchEntry" id="search_entry">
                                                 <property name="visible">True</property>
-                                                <property name="width-request">400</property>
                                                 <signal name="search-changed" handler="on_search_entry_changed" />
                                             </object>
                                         </child>
