@@ -8,16 +8,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2020-07-27 09:30+0000\n"
-"PO-Revision-Date: 2021-06-12 11:56+0200\n"
-"Last-Translator: Cédric Valmary (totenoc.eu) <cvalmary@yahoo.fr>\n"
+"POT-Creation-Date: 2021-07-28 07:14+0000\n"
+"PO-Revision-Date: 2021-07-29 19:00+0200\n"
+"Last-Translator: Quentin PAGÈS\n"
 "Language-Team: Tot En Òc\n"
 "Language: oc\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Poedit 3.0\n"
 "X-Project-Style: gnome\n"
 
 #: data/gl-categorylist.ui:15
@@ -416,15 +416,15 @@ msgstr ""
 "Triar las linhas de la lista en òrdre creissent o descreissent pel tipe "
 "seleccionat"
 
-#: src/gl-application.c:115
+#: src/gl-application.c:116
 msgid "translator-credits"
 msgstr "Cédric Valmary <cvalmary@yahoo.fr>"
 
-#: src/gl-application.c:116
+#: src/gl-application.c:117
 msgid "View and search logs"
 msgstr "Afichar e recercar dins los jornals"
 
-#: src/gl-application.c:255
+#: src/gl-application.c:259
 msgid "Print version information and exit"
 msgstr "Afichar las informacions sus la version e quitar"
 
@@ -435,9 +435,9 @@ msgstr "Aviada"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: src/gl-eventviewlist.c:488
-msgid "No results"
-msgstr "Pas cap de resultat"
+#: src/gl-eventviewlist.c:473
+msgid "No Results"
+msgstr "Cap de resultat"
 
 #: src/gl-eventviewrow.c:226
 msgid "Other"
@@ -608,30 +608,30 @@ msgid "Save logs"
 msgstr "Enregistrar los jornals"
 
 #: src/gl-window.c:116
-msgid "_Cancel"
-msgstr "A_nullar"
-
-#: src/gl-window.c:117
 msgid "_Save"
 msgstr "_Enregistrar"
 
-#: src/gl-window.c:122
+#: src/gl-window.c:117
+msgid "_Cancel"
+msgstr "A_nullar"
+
+#: src/gl-window.c:121
 msgid "log messages"
 msgstr "messatges de jornal"
 
-#: src/gl-window.c:181
+#: src/gl-window.c:180
 msgid "Unable to export log messages to a file"
 msgstr "Impossible d'exportar los messatges de jornalizacion dins un fichièr"
 
-#: src/gl-window.c:495 src/gl-window.c:526
+#: src/gl-window.c:494 src/gl-window.c:525
 msgid "Unable to read system logs"
 msgstr "Impossible de legir los jornals sistèmas"
 
-#: src/gl-window.c:509
+#: src/gl-window.c:508
 msgid "Unable to read user logs"
 msgstr "Impossible de legir los jornals utilizaires"
 
-#: src/gl-window.c:541
+#: src/gl-window.c:540
 msgid "No logs available"
 msgstr "Cap de jornal pas disponible"
 
