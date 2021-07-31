@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2020-07-27 09:30+0000\n"
-"PO-Revision-Date: 2021-06-29 09:02+0300\n"
+"POT-Creation-Date: 2021-07-28 07:14+0000\n"
+"PO-Revision-Date: 2021-07-29 16:33+0300\n"
 "Last-Translator: Alexey Rubtsov <rushills@gmail.com>\n"
 "Language-Team: Русский <gnome-cyr@gnome.org>\n"
 "Language: ru\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Poedit 3.0\n"
+"X-Generator: Poedit 2.4.3\n"
 
 #: data/gl-categorylist.ui:15
 msgid "Important"
@@ -415,17 +415,18 @@ msgstr ""
 "Сортировать список строк в порядке возрастания или убывания для выбранного "
 "типа"
 
-#: src/gl-application.c:115
+#: src/gl-application.c:116
 msgid "translator-credits"
 msgstr ""
 "Станислав Соловей <whats_up@tut.by>, 2014-2019.\n"
-"Юрий Мясоедов <ymyasoedov@yandex.ru>, 2015-2017."
+"Юрий Мясоедов <ymyasoedov@yandex.ru>, 2015-2017.\n"
+"Alexey Rubtsov <rushills@gmail.com>, 2021"
 
-#: src/gl-application.c:116
+#: src/gl-application.c:117
 msgid "View and search logs"
 msgstr "Просмотр и поиск событий"
 
-#: src/gl-application.c:255
+#: src/gl-application.c:259
 msgid "Print version information and exit"
 msgstr "Показать информацию о версии и выйти"
 
@@ -436,8 +437,8 @@ msgstr "Загрузка"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: src/gl-eventviewlist.c:488
-msgid "No results"
+#: src/gl-eventviewlist.c:473
+msgid "No Results"
 msgstr "Результаты отсутствуют"
 
 #: src/gl-eventviewrow.c:226
@@ -617,30 +618,30 @@ msgid "Save logs"
 msgstr "Сохранить журналы"
 
 #: src/gl-window.c:116
-msgid "_Cancel"
-msgstr "_Отменить"
-
-#: src/gl-window.c:117
 msgid "_Save"
 msgstr "_Сохранить"
 
-#: src/gl-window.c:122
+#: src/gl-window.c:117
+msgid "_Cancel"
+msgstr "_Отменить"
+
+#: src/gl-window.c:121
 msgid "log messages"
 msgstr "cообщения журнала"
 
-#: src/gl-window.c:181
+#: src/gl-window.c:180
 msgid "Unable to export log messages to a file"
 msgstr "Не удалось экспортировать сообщения журнала в файл"
 
-#: src/gl-window.c:495 src/gl-window.c:526
+#: src/gl-window.c:494 src/gl-window.c:525
 msgid "Unable to read system logs"
 msgstr "Не удалось прочитать системные журналы"
 
-#: src/gl-window.c:509
+#: src/gl-window.c:508
 msgid "Unable to read user logs"
 msgstr "Не удалось прочитать пользовательские журналы"
 
-#: src/gl-window.c:541
+#: src/gl-window.c:540
 msgid "No logs available"
 msgstr "Нет доступных журналов"
 
