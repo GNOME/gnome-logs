@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the gnome-logs package.
 #
 # Petr Kovar <pknbe@volny.cz>, 2015.
-# Marek Černocký <marek@manet.cz>, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020.
+# Marek Černocký <marek@manet.cz>, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2020-08-02 11:32+0000\n"
-"PO-Revision-Date: 2020-08-09 17:46+0200\n"
+"POT-Creation-Date: 2021-07-28 07:14+0000\n"
+"PO-Revision-Date: 2021-08-07 10:36+0200\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: čeština <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -414,15 +414,15 @@ msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr ""
 "Pro vybraný typ řadit řádky seznamu ve vzestupném nebo sestupném pořadí"
 
-#: src/gl-application.c:115
+#: src/gl-application.c:116
 msgid "translator-credits"
 msgstr "Marek Černocký <marek@manet.cz>"
 
-#: src/gl-application.c:116
+#: src/gl-application.c:117
 msgid "View and search logs"
 msgstr "Zobrazit a prohledat záznamy o provozu"
 
-#: src/gl-application.c:255
+#: src/gl-application.c:259
 msgid "Print version information and exit"
 msgstr "Vypsat informace o verzi a skončit"
 
@@ -433,8 +433,8 @@ msgstr "Spuštění"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: src/gl-eventviewlist.c:488
-msgid "No results"
+#: src/gl-eventviewlist.c:473
+msgid "No Results"
 msgstr "Žádné výsledky"
 
 #: src/gl-eventviewrow.c:226
@@ -606,29 +606,30 @@ msgid "Save logs"
 msgstr "Uložení záznamů"
 
 #: src/gl-window.c:116
-msgid "_Cancel"
-msgstr "_Zrušit"
-
-#: src/gl-window.c:117
 msgid "_Save"
 msgstr "_Uložit"
 
-#: src/gl-window.c:122
+#: src/gl-window.c:117
+msgid "_Cancel"
+msgstr "_Zrušit"
+
+#: src/gl-window.c:121
 msgid "log messages"
 msgstr "Zprávy ze záznamu"
 
-#: src/gl-window.c:181
+#: src/gl-window.c:180
 msgid "Unable to export log messages to a file"
 msgstr "Nelze exportovat zprávy ze záznamů do souboru"
 
-#: src/gl-window.c:495 src/gl-window.c:526
+#: src/gl-window.c:494 src/gl-window.c:525
 msgid "Unable to read system logs"
 msgstr "Nelze přečíst systémové záznamy"
 
-#: src/gl-window.c:509
+#: src/gl-window.c:508
 msgid "Unable to read user logs"
 msgstr "Nelze přečíst uživatelské záznamy"
 
-#: src/gl-window.c:541
+#: src/gl-window.c:540
 msgid "No logs available"
 msgstr "Žádný záznam není dostupný"
+
