@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Logs 0.1\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2020-07-27 09:30+0000\n"
-"PO-Revision-Date: 2021-04-01 00:45+0300\n"
+"POT-Creation-Date: 2021-07-28 07:14+0000\n"
+"PO-Revision-Date: 2021-08-07 19:31+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: עברית <>\n"
 "Language: he\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural= (n!=1);\n"
-"X-Generator: Poedit 2.4.2\n"
+"X-Generator: Poedit 3.0\n"
 
 #: data/gl-categorylist.ui:15
 msgid "Important"
@@ -411,15 +411,15 @@ msgstr "How to sort list rows in the event view list"
 msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr "Sort list rows in ascending or descending order for the selected type"
 
-#: src/gl-application.c:115
+#: src/gl-application.c:116
 msgid "translator-credits"
 msgstr "יוסף אור בוצ׳קו <yoseforb@gmail.com>"
 
-#: src/gl-application.c:116
+#: src/gl-application.c:117
 msgid "View and search logs"
 msgstr "הצגה וחיפוש בקובצי הרישום"
 
-#: src/gl-application.c:255
+#: src/gl-application.c:259
 msgid "Print version information and exit"
 msgstr "הצגת נתוני הגרסה ויציאה"
 
@@ -430,8 +430,8 @@ msgstr "הפעלה"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: src/gl-eventviewlist.c:488
-msgid "No results"
+#: src/gl-eventviewlist.c:473
+msgid "No Results"
 msgstr "אין תוצאות"
 
 #: src/gl-eventviewrow.c:226
@@ -603,30 +603,30 @@ msgid "Save logs"
 msgstr "שמירת יומנים"
 
 #: src/gl-window.c:116
-msgid "_Cancel"
-msgstr "_ביטול"
-
-#: src/gl-window.c:117
 msgid "_Save"
 msgstr "_שמירה"
 
-#: src/gl-window.c:122
+#: src/gl-window.c:117
+msgid "_Cancel"
+msgstr "_ביטול"
+
+#: src/gl-window.c:121
 msgid "log messages"
 msgstr "הודעות יומן"
 
-#: src/gl-window.c:181
+#: src/gl-window.c:180
 msgid "Unable to export log messages to a file"
 msgstr "לא ניתן לייצא את הודעת היומן לקובץ"
 
-#: src/gl-window.c:495 src/gl-window.c:526
+#: src/gl-window.c:494 src/gl-window.c:525
 msgid "Unable to read system logs"
 msgstr "לא ניתן לקרוא את יומני המערכת"
 
-#: src/gl-window.c:509
+#: src/gl-window.c:508
 msgid "Unable to read user logs"
 msgstr "לא ניתן לקרוא את יומני המשתמש"
 
-#: src/gl-window.c:541
+#: src/gl-window.c:540
 msgid "No logs available"
 msgstr "אין יומנים זמינים"
 
