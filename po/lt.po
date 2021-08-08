@@ -2,14 +2,14 @@
 # Copyright (C) 2014 gnome-logs's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-logs package.
 # FULL NAME <EMAIL@ADDRESS>, 2014.
-# Aurimas Černius <aurisc4@gmail.com>, 2014-2020.
+# Aurimas Černius <aurisc4@gmail.com>, 2014-2021.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2020-08-02 11:32+0000\n"
-"PO-Revision-Date: 2020-08-25 22:35+0300\n"
+"POT-Creation-Date: 2021-07-28 07:14+0000\n"
+"PO-Revision-Date: 2021-08-08 22:21+0300\n"
 "Last-Translator: Aurimas Černius <aurisc4@gmail.com>\n"
 "Language-Team: Lietuvių <gnome-lt@lists.akl.lt>\n"
 "Language: lt\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
 "%100<10 || n%100>=20) ? 1 : 2)\n"
-"X-Generator: Gtranslator 3.36.0\n"
+"X-Generator: Gtranslator 40.0\n"
 
 #: data/gl-categorylist.ui:15
 msgid "Important"
@@ -332,13 +332,11 @@ msgid "Show help"
 msgstr "Rodyti žinyną"
 
 #: data/help-overlay.ui:34
-#| msgid "Keyboard Shortcuts"
 msgctxt "shortcut window"
 msgid "Keyboard shortcuts"
 msgstr "Klaviatūros trumpiniai"
 
 #: data/help-overlay.ui:42
-#| msgid "Applications"
 msgctxt "shortcut window"
 msgid "Application"
 msgstr "Programa"
@@ -349,7 +347,6 @@ msgid "Find"
 msgstr "Rasti"
 
 #: data/help-overlay.ui:54
-#| msgid "Export logs to a file"
 msgctxt "shortcut window"
 msgid "Export logs to a file"
 msgstr "Eksportuoti žurnalus į failą"
@@ -415,17 +412,17 @@ msgstr "Kaip rikiuoti eilutes įvykių vaizde"
 msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr "Rikiuoti eilutes didėjimo arba mažėjimo tvarka pasirinktam tipui"
 
-#: src/gl-application.c:115
+#: src/gl-application.c:116
 msgid "translator-credits"
 msgstr ""
 "Išvertė:\n"
 "Aurimas Černius <aurisc4@gmail.com>"
 
-#: src/gl-application.c:116
+#: src/gl-application.c:117
 msgid "View and search logs"
 msgstr "Rodyti ir ieškoti žurnaluose"
 
-#: src/gl-application.c:255
+#: src/gl-application.c:259
 msgid "Print version information and exit"
 msgstr "Atspausdinti versijos informaciją ir išeiti"
 
@@ -436,8 +433,9 @@ msgstr "Įkėlimas"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: src/gl-eventviewlist.c:488
-msgid "No results"
+#: src/gl-eventviewlist.c:473
+#| msgid "No results"
+msgid "No Results"
 msgstr "Nėra rezultatų"
 
 #: src/gl-eventviewrow.c:226
@@ -609,30 +607,30 @@ msgid "Save logs"
 msgstr "Įrašyti žurnalus"
 
 #: src/gl-window.c:116
-msgid "_Cancel"
-msgstr "_Atsisakyti"
-
-#: src/gl-window.c:117
 msgid "_Save"
 msgstr "Įraš_yti"
 
-#: src/gl-window.c:122
+#: src/gl-window.c:117
+msgid "_Cancel"
+msgstr "_Atsisakyti"
+
+#: src/gl-window.c:121
 msgid "log messages"
 msgstr "žurnalo pranešimai"
 
-#: src/gl-window.c:181
+#: src/gl-window.c:180
 msgid "Unable to export log messages to a file"
 msgstr "Nepavyko eksportuoti žurnalo pranešimų į failą"
 
-#: src/gl-window.c:495 src/gl-window.c:526
+#: src/gl-window.c:494 src/gl-window.c:525
 msgid "Unable to read system logs"
 msgstr "Nepavyko perskaityti sistemos žurnalų"
 
-#: src/gl-window.c:509
+#: src/gl-window.c:508
 msgid "Unable to read user logs"
 msgstr "Nepavyko perskaityti naudotojo žurnalų"
 
-#: src/gl-window.c:541
+#: src/gl-window.c:540
 msgid "No logs available"
 msgstr "Nėra prieinamų žurnalų"
 
