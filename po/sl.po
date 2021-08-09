@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the gnome-logs package.
 #
 # Martin Srebotnjak <miles@filmsi.net>, 2013–2015.
-# Matej Urbančič <mateju@svn.gnome.org>, 2015–2020.
+# Matej Urbančič <mateju@svn.gnome.org>, 2015–2021.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2020-08-16 12:17+0000\n"
-"PO-Revision-Date: 2020-08-19 18:23+0200\n"
+"POT-Creation-Date: 2021-08-08 19:22+0000\n"
+"PO-Revision-Date: 2021-08-09 09:46+0200\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian <gnome-si@googlegroups.com>\n"
 "Language: sl\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Poedit 2.4.2\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
 #: data/gl-categorylist.ui:15
@@ -130,7 +130,7 @@ msgstr "Podpora"
 msgid "Documentation"
 msgstr "Dokumentacija"
 
-#: data/gl-eventviewlist.ui:42
+#: data/gl-eventviewlist.ui:44
 msgid "Select journal field and timestamp range filtering options"
 msgstr "Izbor polja dnevnika in časovni obseg za filtriranje"
 
@@ -359,7 +359,7 @@ msgstr "Dnevniki GNOME"
 
 #: data/org.gnome.Logs.appdata.xml.in:8 data/org.gnome.Logs.desktop.in:5
 msgid "View detailed event logs for the system"
-msgstr "Pokaži podrobne dnevniške zapise dogodkov sistema"
+msgstr "Program za pregledovanje dnevniških zapisov dogodkov sistema"
 
 #: data/org.gnome.Logs.appdata.xml.in:10
 msgid ""
@@ -394,7 +394,7 @@ msgstr "Pregledovalnik dnevnikov"
 msgid "log;journal;debug;error;"
 msgstr ""
 "dnevnik;razhroščevanje;hrošči;napaka;napake;težave;težava;problem;problemi;"
-"log;beleženje;"
+"log;beleženje;log;"
 
 #: data/org.gnome.Logs.gschema.xml:5
 msgid "Ignore warning"
@@ -416,17 +416,17 @@ msgstr "Kako razvrstiti vrstice seznama v pogledu seznama dogodkov"
 msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr "Razvrščanje vrstic naraščajoče oziroma padajoče za izbrano vrsto"
 
-#: src/gl-application.c:115
+#: src/gl-application.c:116
 msgid "translator-credits"
 msgstr ""
 "Matej Urbančič <mateju@svn.gnome.org>\n"
 "Martin Srebotnjak"
 
-#: src/gl-application.c:116
+#: src/gl-application.c:117
 msgid "View and search logs"
 msgstr "Pokaže in omogoča iskanje po sistemskih dnevnikih."
 
-#: src/gl-application.c:255
+#: src/gl-application.c:259
 msgid "Print version information and exit"
 msgstr "Izpiši podatke o različici in končaj"
 
@@ -437,8 +437,8 @@ msgstr "Zagoni"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: src/gl-eventviewlist.c:488
-msgid "No results"
+#: src/gl-eventviewlist.c:473
+msgid "No Results"
 msgstr "Ni najdenih zadetkov"
 
 #: src/gl-eventviewrow.c:226
@@ -610,30 +610,30 @@ msgid "Save logs"
 msgstr "Shrani dnevnike"
 
 #: src/gl-window.c:116
-msgid "_Cancel"
-msgstr "Pre_kliči"
-
-#: src/gl-window.c:117
 msgid "_Save"
 msgstr "_Shrani"
 
-#: src/gl-window.c:122
+#: src/gl-window.c:117
+msgid "_Cancel"
+msgstr "Pre_kliči"
+
+#: src/gl-window.c:121
 msgid "log messages"
 msgstr "dnevniška sporočila"
 
-#: src/gl-window.c:181
+#: src/gl-window.c:180
 msgid "Unable to export log messages to a file"
 msgstr "Ni mogoče izvoziti dnevniških sporočil v datoteko"
 
-#: src/gl-window.c:495 src/gl-window.c:526
+#: src/gl-window.c:494 src/gl-window.c:525
 msgid "Unable to read system logs"
 msgstr "Ni mogoče prebrati sistemskega dnevnika"
 
-#: src/gl-window.c:509
+#: src/gl-window.c:508
 msgid "Unable to read user logs"
 msgstr "Ni mogoče prebrati uporabniškega dnevnika"
 
-#: src/gl-window.c:541
+#: src/gl-window.c:540
 msgid "No logs available"
 msgstr "Ni shranjenih dnevnikov"
 
