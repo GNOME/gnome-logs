@@ -2,14 +2,14 @@
 # Copyright (C) 2013 gnome-logs's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-logs package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# Daniel Mustieles <daniel.mustieles@gmail.com>, 2013-2020.
+# Daniel Mustieles <daniel.mustieles@gmail.com>, 2013-2021.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2020-07-27 09:30+0000\n"
-"PO-Revision-Date: 2020-07-29 09:05+0200\n"
+"POT-Creation-Date: 2021-07-28 07:14+0000\n"
+"PO-Revision-Date: 2021-08-17 13:34+0200\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Spanish - Spain <gnome-es-list@gnome.org>\n"
 "Language: es_ES\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Gtranslator 3.36.0\n"
+"X-Generator: Gtranslator 40.0\n"
 
 #: data/gl-categorylist.ui:15
 msgid "Important"
@@ -334,13 +334,11 @@ msgid "Show help"
 msgstr "Mostrar ayuda"
 
 #: data/help-overlay.ui:34
-#| msgid "Keyboard Shortcuts"
 msgctxt "shortcut window"
 msgid "Keyboard shortcuts"
 msgstr "Atajos del teclado"
 
 #: data/help-overlay.ui:42
-#| msgid "Applications"
 msgctxt "shortcut window"
 msgid "Application"
 msgstr "Aplicación"
@@ -351,7 +349,6 @@ msgid "Find"
 msgstr "Buscar"
 
 #: data/help-overlay.ui:54
-#| msgid "Export logs to a file"
 msgctxt "shortcut window"
 msgid "Export logs to a file"
 msgstr "Exportar registros a un archivo"
@@ -420,15 +417,15 @@ msgstr ""
 "Ordenar listas de filas en orden ascendiente o descendiente para el tipo "
 "seleccionado"
 
-#: src/gl-application.c:115
+#: src/gl-application.c:116
 msgid "translator-credits"
 msgstr "Daniel Mustieles <daniel.mustieles@gmail.com>, 2013-2016"
 
-#: src/gl-application.c:116
+#: src/gl-application.c:117
 msgid "View and search logs"
 msgstr "Ver y buscar registros"
 
-#: src/gl-application.c:255
+#: src/gl-application.c:259
 msgid "Print version information and exit"
 msgstr "Mostrar información de la versión y salir"
 
@@ -439,8 +436,9 @@ msgstr "Arranque"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: src/gl-eventviewlist.c:488
-msgid "No results"
+#: src/gl-eventviewlist.c:473
+#| msgid "No results"
+msgid "No Results"
 msgstr "No hay resultados"
 
 #: src/gl-eventviewrow.c:226
@@ -612,30 +610,30 @@ msgid "Save logs"
 msgstr "Guardar registros"
 
 #: src/gl-window.c:116
-msgid "_Cancel"
-msgstr "_Cancelar"
-
-#: src/gl-window.c:117
 msgid "_Save"
 msgstr "_Guardar"
 
-#: src/gl-window.c:122
+#: src/gl-window.c:117
+msgid "_Cancel"
+msgstr "_Cancelar"
+
+#: src/gl-window.c:121
 msgid "log messages"
 msgstr "mensajes de registro"
 
-#: src/gl-window.c:181
+#: src/gl-window.c:180
 msgid "Unable to export log messages to a file"
 msgstr "No se puede exportar el registro de mensajes a un archivo"
 
-#: src/gl-window.c:495 src/gl-window.c:526
+#: src/gl-window.c:494 src/gl-window.c:525
 msgid "Unable to read system logs"
 msgstr "No se pueden leer los registros del sistema"
 
-#: src/gl-window.c:509
+#: src/gl-window.c:508
 msgid "Unable to read user logs"
 msgstr "No se pueden leer los registros del usuario"
 
-#: src/gl-window.c:541
+#: src/gl-window.c:540
 msgid "No logs available"
 msgstr "No hay registros disponibles"
 
