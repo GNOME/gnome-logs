@@ -1,13 +1,13 @@
 # Czech translation for gnome-logs.
 # Copyright (C) 2014 gnome-logs's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-logs package.
-# Marek Černocký <marek@manet.cz>, 2014, 2020.
+# Marek Černocký <marek@manet.cz>, 2014, 2020, 2021.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
-"POT-Creation-Date: 2020-06-23 08:27+0000\n"
-"PO-Revision-Date: 2020-08-09 19:47+0200\n"
+"POT-Creation-Date: 2021-07-28 07:14+0000\n"
+"PO-Revision-Date: 2021-08-26 17:48+0200\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -24,23 +24,29 @@ msgstr "Marek Černocký <marek@manet.cz>"
 
 #. (itstool) path: info/title
 #: C/index.page:7
-msgctxt "text"
+msgctxt "link:trail"
 msgid "Logs help"
 msgstr "Nápověda k Záznamům"
 
 #. (itstool) path: info/title
 #: C/index.page:8
+msgctxt "text"
+msgid "Logs help"
+msgstr "Nápověda k Záznamům"
+
+#. (itstool) path: info/title
+#: C/index.page:9
 msgctxt "link"
 msgid "Logs help"
 msgstr "Nápověda k Záznamům"
 
 #. (itstool) path: info/desc
-#: C/index.page:13
+#: C/index.page:14
 msgid "Browse and search through your systemd journal logs."
 msgstr "Procházení a vyhledávání v žurnálových záznamech systemd."
 
 #. (itstool) path: page/title
-#: C/index.page:16
+#: C/index.page:17
 msgid "<_:media-1/> Logs"
 msgstr "<_:media-1/> Záznamy"
 
@@ -184,3 +190,4 @@ msgstr ""
 "Pokud jste <gui>správce</gui>, tak jen jiný správce může změnit váš přístup "
 "k záznamům. Více informací o oprávněních přístupu k záznamům <link href="
 "\"man:systemd-journald\">najdete v manuálové stránkce <_:cmd-1/></link>."
+
