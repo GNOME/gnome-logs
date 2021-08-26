@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2020-08-02 11:32+0000\n"
-"PO-Revision-Date: 2020-08-16 15:16+0300\n"
+"POT-Creation-Date: 2021-07-28 07:14+0000\n"
+"PO-Revision-Date: 2021-08-26 12:00+0300\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos+l10n@iki.fi>\n"
 "Language-Team: suomi <lokalisointi-lista@googlegroups.com>\n"
 "Language: fi\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.4.1\n"
+"X-Generator: Poedit 3.0\n"
 
 #: data/gl-categorylist.ui:15
 msgid "Important"
@@ -413,15 +413,15 @@ msgstr ""
 "Järjestä luettelon rivit nousevassa tai laskevassa järjestyksessä valitulle "
 "tyypille"
 
-#: src/gl-application.c:115
+#: src/gl-application.c:116
 msgid "translator-credits"
 msgstr "Jiri Grönroos"
 
-#: src/gl-application.c:116
+#: src/gl-application.c:117
 msgid "View and search logs"
 msgstr "Katsele lokeja ja etsi lokien sisällöstä"
 
-#: src/gl-application.c:255
+#: src/gl-application.c:259
 msgid "Print version information and exit"
 msgstr "Tulosta versiotiedot ja poistu"
 
@@ -432,8 +432,8 @@ msgstr "Käynnistys"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: src/gl-eventviewlist.c:488
-msgid "No results"
+#: src/gl-eventviewlist.c:473
+msgid "No Results"
 msgstr "Ei tuloksia"
 
 #: src/gl-eventviewrow.c:226
@@ -605,30 +605,30 @@ msgid "Save logs"
 msgstr "Tallenna lokit"
 
 #: src/gl-window.c:116
-msgid "_Cancel"
-msgstr "_Peru"
-
-#: src/gl-window.c:117
 msgid "_Save"
 msgstr "_Tallenna"
 
-#: src/gl-window.c:122
+#: src/gl-window.c:117
+msgid "_Cancel"
+msgstr "_Peru"
+
+#: src/gl-window.c:121
 msgid "log messages"
 msgstr "lokiviestit"
 
-#: src/gl-window.c:181
+#: src/gl-window.c:180
 msgid "Unable to export log messages to a file"
 msgstr "Lokiviestien vieminen tiedostoon epäonnistui"
 
-#: src/gl-window.c:495 src/gl-window.c:526
+#: src/gl-window.c:494 src/gl-window.c:525
 msgid "Unable to read system logs"
 msgstr "Järjestelmälokien lukeminen ei onnistu"
 
-#: src/gl-window.c:509
+#: src/gl-window.c:508
 msgid "Unable to read user logs"
 msgstr "Käyttäjälokien lukeminen ei onnistu"
 
-#: src/gl-window.c:541
+#: src/gl-window.c:540
 msgid "No logs available"
 msgstr "Lokeja ei ole saatavilla"
 
