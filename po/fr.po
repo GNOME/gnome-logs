@@ -6,23 +6,23 @@
 # Alexandre Franke <alexandre.franke@gmail.com>, 2015.
 # José Fournier <jaaf64@zoraldia.com>, 2017.
 # Jean-Baptiste Holcroft <jean-baptiste@holcroft.fr>, 2017.
-# Charles Monzat <charles.monzat@free.fr>, 2018-2019.
 # Thibault Martin <mail@thibaultmart.in>, 2020.
+# Charles Monzat <charles.monzat@free.fr>, 2018-2021.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2020-08-02 11:32+0000\n"
-"PO-Revision-Date: 2020-08-13 12:12+0200\n"
-"Last-Translator: Thibault Martin <mail@thibaultmart.in>\n"
-"Language-Team: French <gnomefr@traduc.org>\n"
+"POT-Creation-Date: 2021-07-28 07:14+0000\n"
+"PO-Revision-Date: 2021-08-31 10:18+0200\n"
+"Last-Translator: Charles Monzat <charles.monzat@free.fr>\n"
+"Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1)\n"
-"X-Generator: Gtranslator 3.36.0\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Gtranslator 40.0\n"
 
 #: data/gl-categorylist.ui:15
 msgid "Important"
@@ -338,13 +338,11 @@ msgid "Show help"
 msgstr "Afficher l’aide"
 
 #: data/help-overlay.ui:34
-#| msgid "Keyboard Shortcuts"
 msgctxt "shortcut window"
 msgid "Keyboard shortcuts"
 msgstr "Raccourcis clavier"
 
 #: data/help-overlay.ui:42
-#| msgid "Applications"
 msgctxt "shortcut window"
 msgid "Application"
 msgstr "Application"
@@ -355,7 +353,6 @@ msgid "Find"
 msgstr "Trouver"
 
 #: data/help-overlay.ui:54
-#| msgid "Export logs to a file"
 msgctxt "shortcut window"
 msgid "Export logs to a file"
 msgstr "Exporter les journaux dans un fichier"
@@ -425,18 +422,18 @@ msgstr ""
 "Trier les lignes de la liste par ordre croissant ou décroissant pour le type "
 "sélectionné"
 
-#: src/gl-application.c:115
+#: src/gl-application.c:116
 msgid "translator-credits"
 msgstr ""
 "Jérôme Sirgue <jsirgue@free.fr>\n"
 "Alexandre Franke <alexandre.franke@gmail.com>\n"
 "José Fournier <jaaf64@zoraldia.com>"
 
-#: src/gl-application.c:116
+#: src/gl-application.c:117
 msgid "View and search logs"
 msgstr "Visualiser et rechercher dans les journaux"
 
-#: src/gl-application.c:255
+#: src/gl-application.c:259
 msgid "Print version information and exit"
 msgstr "Afficher les informations sur la version et quitter."
 
@@ -447,9 +444,10 @@ msgstr "Démarrage"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: src/gl-eventviewlist.c:488
-msgid "No results"
-msgstr "Aucun résultat."
+#: src/gl-eventviewlist.c:473
+#| msgid "No results"
+msgid "No Results"
+msgstr "Aucun résultat"
 
 #: src/gl-eventviewrow.c:226
 msgid "Other"
@@ -620,30 +618,30 @@ msgid "Save logs"
 msgstr "Enregistrer les journaux"
 
 #: src/gl-window.c:116
-msgid "_Cancel"
-msgstr "A_nnuler"
-
-#: src/gl-window.c:117
 msgid "_Save"
 msgstr "_Enregistrer"
 
-#: src/gl-window.c:122
+#: src/gl-window.c:117
+msgid "_Cancel"
+msgstr "A_nnuler"
+
+#: src/gl-window.c:121
 msgid "log messages"
 msgstr "messages de journal"
 
-#: src/gl-window.c:181
+#: src/gl-window.c:180
 msgid "Unable to export log messages to a file"
 msgstr "Impossible d’exporter les messages de journalisation dans un fichier"
 
-#: src/gl-window.c:495 src/gl-window.c:526
+#: src/gl-window.c:494 src/gl-window.c:525
 msgid "Unable to read system logs"
 msgstr "Impossible de lire les journaux systèmes"
 
-#: src/gl-window.c:509
+#: src/gl-window.c:508
 msgid "Unable to read user logs"
 msgstr "Impossible de lire les journaux utilisateurs"
 
-#: src/gl-window.c:541
+#: src/gl-window.c:540
 msgid "No logs available"
 msgstr "Aucun journal disponible"
 
