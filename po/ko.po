@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the gnome-logs package.
 # Changwoo Ryu <cwryu@debian.org>, 2014-2016.
 # Junyoul Lim <purum@postech.ac.kr>, 2017-2018.
-# Seong-ho Cho <shcho@gnome.org>, 2016-2017, 2020.
+# Seong-ho Cho <shcho@gnome.org>, 2016-2017, 2020-2021.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2020-08-02 11:32+0000\n"
-"PO-Revision-Date: 2020-08-30 02:10+0900\n"
+"POT-Creation-Date: 2021-07-28 07:14+0000\n"
+"PO-Revision-Date: 2021-08-30 18:17+0900\n"
 "Last-Translator: Seong-ho Cho <shcho@gnome.org>\n"
 "Language-Team: Korean <gnome-kr@googlegroups.com>\n"
 "Language: ko\n"
@@ -412,18 +412,18 @@ msgstr "이벤트 보기 목록에서 행을 정렬하는 방식"
 msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr "선택한 기준에 따라 오름차순 또는 내림차순으로 행 정렬"
 
-#: src/gl-application.c:115
+#: src/gl-application.c:116
 msgid "translator-credits"
 msgstr ""
 "류창우 <cwryu@debian.org>\n"
 "조성호 <shcho@gnome.org>\n"
 "임준열 <purum@postech.ac.kr>"
 
-#: src/gl-application.c:116
+#: src/gl-application.c:117
 msgid "View and search logs"
 msgstr "기록 보기 및 검색"
 
-#: src/gl-application.c:255
+#: src/gl-application.c:259
 msgid "Print version information and exit"
 msgstr "버전 정보를 표시하고 끝납니다"
 
@@ -434,8 +434,8 @@ msgstr "부팅"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: src/gl-eventviewlist.c:488
-msgid "No results"
+#: src/gl-eventviewlist.c:473
+msgid "No Results"
 msgstr "결과 없음"
 
 #: src/gl-eventviewrow.c:226
@@ -607,30 +607,30 @@ msgid "Save logs"
 msgstr "로그 저장"
 
 #: src/gl-window.c:116
-msgid "_Cancel"
-msgstr "취소(_C)"
-
-#: src/gl-window.c:117
 msgid "_Save"
 msgstr "저장(_S)"
 
-#: src/gl-window.c:122
+#: src/gl-window.c:117
+msgid "_Cancel"
+msgstr "취소(_C)"
+
+#: src/gl-window.c:121
 msgid "log messages"
 msgstr "로그 메시지"
 
-#: src/gl-window.c:181
+#: src/gl-window.c:180
 msgid "Unable to export log messages to a file"
 msgstr "로그 메시지를 파일로 내보낼 수 없습니다"
 
-#: src/gl-window.c:495 src/gl-window.c:526
+#: src/gl-window.c:494 src/gl-window.c:525
 msgid "Unable to read system logs"
 msgstr "시스템 로그를 읽을 수 없습니다"
 
-#: src/gl-window.c:509
+#: src/gl-window.c:508
 msgid "Unable to read user logs"
 msgstr "사용자 로그를 읽을 수 없습니다"
 
-#: src/gl-window.c:541
+#: src/gl-window.c:540
 msgid "No logs available"
 msgstr "로그 없음"
 
