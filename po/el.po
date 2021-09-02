@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2020-08-02 11:32+0000\n"
-"PO-Revision-Date: 2020-09-09 01:18+0300\n"
+"POT-Creation-Date: 2021-07-28 07:14+0000\n"
+"PO-Revision-Date: 2021-09-02 22:46+0300\n"
 "Last-Translator: Efstathios Iosifidis <eiosifidis@gnome.org>\n"
 "Language-Team: Greek, Modern (1453-) <gnome-el-list@gnome.org>\n"
 "Language: el\n"
@@ -419,7 +419,7 @@ msgstr "Πώς να ταξινομήσετε γραμμές στη λίστα τ
 msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr "Ταξινόμηση γραμμών σε αύξουσα ή φθίνουσα σειρά για τον επιλεγμένο τύπο"
 
-#: src/gl-application.c:115
+#: src/gl-application.c:116
 msgid "translator-credits"
 msgstr ""
 "Ελληνική μεταφραστική ομάδα GNOME\n"
@@ -430,11 +430,11 @@ msgstr ""
 "Για περισσότερες πληροφορίες, επισκεφθείτε τη σελίδα\n"
 "http://gnome.gr/"
 
-#: src/gl-application.c:116
+#: src/gl-application.c:117
 msgid "View and search logs"
 msgstr "Δείτε και ψάξτε καταγραφές"
 
-#: src/gl-application.c:255
+#: src/gl-application.c:259
 msgid "Print version information and exit"
 msgstr "Προβολή πληροφοριών έκδοσης και έξοδος"
 
@@ -445,8 +445,8 @@ msgstr "Εκκίνηση"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: src/gl-eventviewlist.c:488
-msgid "No results"
+#: src/gl-eventviewlist.c:473
+msgid "No Results"
 msgstr "Χωρίς αποτελέσματα"
 
 #: src/gl-eventviewrow.c:226
@@ -618,30 +618,30 @@ msgid "Save logs"
 msgstr "Αποθήκευσης καταγραφών"
 
 #: src/gl-window.c:116
-msgid "_Cancel"
-msgstr "Ακύρω_ση"
-
-#: src/gl-window.c:117
 msgid "_Save"
 msgstr "_Αποθήκευση"
 
-#: src/gl-window.c:122
+#: src/gl-window.c:117
+msgid "_Cancel"
+msgstr "Ακύρω_ση"
+
+#: src/gl-window.c:121
 msgid "log messages"
 msgstr "καταγραφή μηνυμάτων"
 
-#: src/gl-window.c:181
+#: src/gl-window.c:180
 msgid "Unable to export log messages to a file"
 msgstr "Αδυναμία εξαγωγής των καταγραφών σε αρχείο"
 
-#: src/gl-window.c:495 src/gl-window.c:526
+#: src/gl-window.c:494 src/gl-window.c:525
 msgid "Unable to read system logs"
 msgstr "Αδυναμία ανάγνωσης καταγραφών του συστήματος"
 
-#: src/gl-window.c:509
+#: src/gl-window.c:508
 msgid "Unable to read user logs"
 msgstr "Αδυναμία ανάγνωσης καταγραφών του χρήστη"
 
-#: src/gl-window.c:541
+#: src/gl-window.c:540
 msgid "No logs available"
 msgstr "Δεν υπάρχουν εγγραφές"
 
