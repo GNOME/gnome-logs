@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2021-07-28 07:14+0000\n"
-"PO-Revision-Date: 2021-07-28 22:00+0200\n"
+"POT-Creation-Date: 2021-07-28 20:02+0000\n"
+"PO-Revision-Date: 2021-09-07 19:38+0200\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.4.2\n"
+"X-Generator: Poedit 3.0\n"
 
 #: data/gl-categorylist.ui:15
 msgid "Important"
@@ -229,9 +229,11 @@ msgstr "Min"
 msgid "Sec"
 msgstr "Sek"
 
+# Enligt ICU-locale: https://www.localeplanet.com/icu/sv/index.html
+# Glibc är istället tom: https://lh.2xlibre.net/locale/sv_SE/
 #: data/gl-searchpopover.ui:655 data/gl-searchpopover.ui:962
 msgid "AM/PM"
-msgstr "f.m./e.m."
+msgstr "fm/em"
 
 #: data/gl-searchpopover.ui:701
 msgid "Until…"
@@ -473,15 +475,19 @@ msgstr "Till %s"
 msgid "%e %B %Y"
 msgstr "%e %B %Y"
 
+# Enligt ICU-locale: https://www.localeplanet.com/icu/sv/index.html
+# Glibc är istället tom: https://lh.2xlibre.net/locale/sv_SE/
 #: src/gl-searchpopover.c:875
 #, c-format
 msgid "AM"
-msgstr "f.m."
+msgstr "fm"
 
+# Enligt ICU-locale: https://www.localeplanet.com/icu/sv/index.html
+# Glibc är istället tom: https://lh.2xlibre.net/locale/sv_SE/
 #: src/gl-searchpopover.c:879
 #, c-format
 msgid "PM"
-msgstr "e.m."
+msgstr "em"
 
 #. Translators: timestamp format for the custom start time button
 #. * label in the custom range submenu, showing the time with seconds
