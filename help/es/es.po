@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: master\n"
-"POT-Creation-Date: 2020-06-23 08:27+0000\n"
-"PO-Revision-Date: 2020-08-14 11:04+0200\n"
+"POT-Creation-Date: 2021-07-28 07:14+0000\n"
+"PO-Revision-Date: 2021-09-10 17:39+0200\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "Language: es\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Gtranslator 3.36.0\n"
+"X-Generator: Poedit 3.0\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
@@ -22,23 +22,29 @@ msgstr "Daniel Mustieles <daniel.mustieles@gmail.com>, 2014-2020"
 
 #. (itstool) path: info/title
 #: C/index.page:7
-msgctxt "text"
+msgctxt "link:trail"
 msgid "Logs help"
 msgstr "Ayuda de Registros"
 
 #. (itstool) path: info/title
 #: C/index.page:8
+msgctxt "text"
+msgid "Logs help"
+msgstr "Ayuda de Registros"
+
+#. (itstool) path: info/title
+#: C/index.page:9
 msgctxt "link"
 msgid "Logs help"
 msgstr "Ayuda de Registros"
 
 #. (itstool) path: info/desc
-#: C/index.page:13
+#: C/index.page:14
 msgid "Browse and search through your systemd journal logs."
 msgstr "Explorar y buscar los registros del diario de systemd."
 
 #. (itstool) path: page/title
-#: C/index.page:16
+#: C/index.page:17
 msgid "<_:media-1/> Logs"
 msgstr "<_:media-1/> Registros"
 
@@ -91,10 +97,6 @@ msgstr ""
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
 #: C/introduction.page:35
-#| msgctxt "_"
-#| msgid ""
-#| "external ref='media/gnome-logs-3-12.png' "
-#| "md5='56e83d7808cdfd80457691aff5ffc2d1'"
 msgctxt "_"
 msgid ""
 "external ref='media/gnome-logs-3-34.png' "
