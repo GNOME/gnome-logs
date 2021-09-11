@@ -8,15 +8,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2020-11-20 14:02+0000\n"
-"PO-Revision-Date: 2020-12-31 00:00+0200\n"
-"Last-Translator: scootergrisen\n"
+"POT-Creation-Date: 2021-07-28 07:14+0000\n"
+"PO-Revision-Date: 2021-08-28 16:12+0200\n"
+"Last-Translator: Alan Mortensen <alanmortensen.am@gmail.com>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.3\n"
 
 #: data/gl-categorylist.ui:15
 msgid "Important"
@@ -409,7 +410,7 @@ msgstr "Hvordan listerækker skal sorteres i begivenhedsoversigten"
 msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr "Sortér listerækker i stigende eller faldende orden for den valgte type"
 
-#: src/gl-application.c:115
+#: src/gl-application.c:116
 msgid "translator-credits"
 msgstr ""
 "Ask Hjorth Larsen\n"
@@ -419,11 +420,11 @@ msgstr ""
 "Websted http://dansk-gruppen.dk\n"
 "E-mail <dansk@dansk-gruppen.dk>"
 
-#: src/gl-application.c:116
+#: src/gl-application.c:117
 msgid "View and search logs"
 msgstr "Vis og søg i logge"
 
-#: src/gl-application.c:255
+#: src/gl-application.c:259
 msgid "Print version information and exit"
 msgstr "Vis versionsoplysninger og afslut"
 
@@ -434,8 +435,8 @@ msgstr "Opstart"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: src/gl-eventviewlist.c:488
-msgid "No results"
+#: src/gl-eventviewlist.c:473
+msgid "No Results"
 msgstr "Ingen resultater"
 
 #: src/gl-eventviewrow.c:226
@@ -607,29 +608,29 @@ msgid "Save logs"
 msgstr "Gem logge"
 
 #: src/gl-window.c:116
-msgid "_Cancel"
-msgstr "_Annullér"
-
-#: src/gl-window.c:117
 msgid "_Save"
 msgstr "_Gem"
 
-#: src/gl-window.c:122
+#: src/gl-window.c:117
+msgid "_Cancel"
+msgstr "_Annullér"
+
+#: src/gl-window.c:121
 msgid "log messages"
 msgstr "logmeddelelser"
 
-#: src/gl-window.c:181
+#: src/gl-window.c:180
 msgid "Unable to export log messages to a file"
 msgstr "Kunne ikke eksportere logmeddelelser til en fil"
 
-#: src/gl-window.c:495 src/gl-window.c:526
+#: src/gl-window.c:494 src/gl-window.c:525
 msgid "Unable to read system logs"
 msgstr "Kunne ikke læse systemlogge"
 
-#: src/gl-window.c:509
+#: src/gl-window.c:508
 msgid "Unable to read user logs"
 msgstr "Kunne ikke læse brugerlogge"
 
-#: src/gl-window.c:541
+#: src/gl-window.c:540
 msgid "No logs available"
 msgstr "Ingen tilgængelige logge"
