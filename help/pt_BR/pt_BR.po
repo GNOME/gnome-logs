@@ -1,5 +1,5 @@
 # Brazilian Portuguese translation for gnome-logs.
-# Copyright (C) 2014 gnome-logs's COPYRIGHT HOLDER
+# Copyright (C) 2021 gnome-logs's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-logs package.
 # Enrico Nicoletto <liverig@gmail.com>, 2014.
 # Rafael Fontenelle <rafaelff@gnome.org>, 2021.
@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
-"POT-Creation-Date: 2020-06-23 08:27+0000\n"
-"PO-Revision-Date: 2021-02-28 21:56-0300\n"
+"POT-Creation-Date: 2021-07-28 07:14+0000\n"
+"PO-Revision-Date: 2021-09-17 07:01-0300\n"
 "Last-Translator: Rafael Fontenelle <rafaelff@gnome.org>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
 "Language: pt_BR\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1)\n"
-"X-Generator: Gtranslator 3.38.0\n"
+"X-Generator: Gtranslator 40.0\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
@@ -27,24 +27,32 @@ msgstr ""
 
 #. (itstool) path: info/title
 #: C/index.page:7
-msgctxt "text"
+#| msgctxt "text"
+#| msgid "Logs help"
+msgctxt "link:trail"
 msgid "Logs help"
 msgstr "Ajuda do visualizador de registros"
 
 #. (itstool) path: info/title
 #: C/index.page:8
+msgctxt "text"
+msgid "Logs help"
+msgstr "Ajuda do visualizador de registros"
+
+#. (itstool) path: info/title
+#: C/index.page:9
 msgctxt "link"
 msgid "Logs help"
 msgstr "Ajuda do visualizador de registros"
 
 #. (itstool) path: info/desc
-#: C/index.page:13
+#: C/index.page:14
 msgid "Browse and search through your systemd journal logs."
 msgstr ""
 "Navegue e pesquise através de seus registros de sistema journal do systemd."
 
 #. (itstool) path: page/title
-#: C/index.page:16
+#: C/index.page:17
 msgid "<_:media-1/> Logs"
 msgstr "Visualizador de registros <_:media-1/>"
 
@@ -100,10 +108,6 @@ msgstr ""
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
 #: C/introduction.page:35
-#| msgctxt "_"
-#| msgid ""
-#| "external ref='media/gnome-logs-3-12.png' "
-#| "md5='56e83d7808cdfd80457691aff5ffc2d1'"
 msgctxt "_"
 msgid ""
 "external ref='media/gnome-logs-3-34.png' "
