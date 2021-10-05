@@ -2,22 +2,22 @@
 # Copyright (C) 2014 gnome-logs's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-logs package.
 # Peter Vágner <pvdeejay@gmail.com>, 2014.
-# Dušan Kazik <prescott66@gmail.com>, 2015.
+# Dušan Kazik <prescott66@gmail.com>, 2015-2021.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2020-08-02 11:32+0000\n"
-"PO-Revision-Date: 2020-09-04 11:27+0200\n"
+"POT-Creation-Date: 2021-07-28 07:14+0000\n"
+"PO-Revision-Date: 2021-10-05 13:26+0200\n"
 "Last-Translator: Dušan Kazik <prescott66@gmail.com>\n"
-"Language-Team: slovenčina <>\n"
+"Language-Team: Slovak <gnome-sk-list@gnome.org>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 1 : (n>=2 && n<=4) ? 2 : 0;\n"
-"X-Generator: Poedit 2.4.1\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 1 : (n>=2 && n<=4) ? 2 : 0\n"
+"X-Generator: Gtranslator 40.0\n"
 
 #: data/gl-categorylist.ui:15
 msgid "Important"
@@ -431,17 +431,17 @@ msgstr "Ako usporiadať riadky zoznamu v zobrazení udalostí"
 msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr "Usporiadať zoznam riadkov vzostupne alebo  zostupne pre vybratý typ"
 
-#: src/gl-application.c:115
+#: src/gl-application.c:116
 msgid "translator-credits"
 msgstr ""
 "Peter Vágner <pvdeejay@gmail.com>\n"
 "Dušan Kazik <prescott66@gmail.com>"
 
-#: src/gl-application.c:116
+#: src/gl-application.c:117
 msgid "View and search logs"
 msgstr "Zobrazuje a prehľadáva záznamy"
 
-#: src/gl-application.c:255
+#: src/gl-application.c:259
 msgid "Print version information and exit"
 msgstr "Vypíše informácie o verzii a skončí"
 
@@ -452,8 +452,9 @@ msgstr "Spustenie"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: src/gl-eventviewlist.c:488
-msgid "No results"
+#: src/gl-eventviewlist.c:473
+#| msgid "No results"
+msgid "No Results"
 msgstr "Žiadne výsledky"
 
 #: src/gl-eventviewrow.c:226
@@ -626,30 +627,30 @@ msgid "Save logs"
 msgstr "Uloženie záznamov"
 
 #: src/gl-window.c:116
-msgid "_Cancel"
-msgstr "_Zrušiť"
-
-#: src/gl-window.c:117
 msgid "_Save"
 msgstr "_Uložiť"
 
-#: src/gl-window.c:122
+#: src/gl-window.c:117
+msgid "_Cancel"
+msgstr "_Zrušiť"
+
+#: src/gl-window.c:121
 msgid "log messages"
 msgstr "správy záznamu"
 
-#: src/gl-window.c:181
+#: src/gl-window.c:180
 msgid "Unable to export log messages to a file"
 msgstr "Nie je možné exportovať správy záznamu do súboru"
 
-#: src/gl-window.c:495 src/gl-window.c:526
+#: src/gl-window.c:494 src/gl-window.c:525
 msgid "Unable to read system logs"
 msgstr "Nie je možné čítať systémové záznamy"
 
-#: src/gl-window.c:509
+#: src/gl-window.c:508
 msgid "Unable to read user logs"
 msgstr "Nie je možné čítať záznamy používateľa"
 
-#: src/gl-window.c:541
+#: src/gl-window.c:540
 msgid "No logs available"
 msgstr "Nie sú dostupné žiadne záznamy"
 
