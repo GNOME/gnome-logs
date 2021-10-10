@@ -401,7 +401,7 @@ static void
 gl_window_init (GlWindow *window)
 {
     GtkCssProvider *provider;
-    GdkScreen *screen;
+    GdkDisplay *display;
     GlWindowPrivate *priv;
     GlEventViewList *event_list;
     GtkWidget *categories;
@@ -440,10 +440,10 @@ gl_window_init (GlWindow *window)
     gtk_css_provider_load_from_resource (provider,
                                          "/org/gnome/Logs/gl-style.css");
 
-    screen = gdk_screen_get_default ();
-    gtk_style_context_add_provider_for_screen (screen,
-                                               GTK_STYLE_PROVIDER (provider),
-                                               GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
+    display = gdk_display_get_default ();
+    gtk_style_context_add_provider_for_display (display,
+                                                GTK_STYLE_PROVIDER (provider),
+                                                GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
 
     settings = g_settings_new (SETTINGS_SCHEMA);
     ignore = g_settings_get_boolean (settings, IGNORE_WARNING);
