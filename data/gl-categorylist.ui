@@ -1,155 +1,159 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface domain="gnome-logs">
-    <template class="GlCategoryList" parent="GtkListBox">
-        <property name="selection-mode">browse</property>
-        <property name="visible">True</property>
-        <signal name="row-selected" handler="on_gl_category_list_row_selected" />
+    <template class="GlCategoryList">
         <child>
-            <object class="GtkListBoxRow" id="important">
+            <object class="GtkListBox" id="list_box">
+                <property name="selection-mode">browse</property>
                 <property name="visible">True</property>
-                <style>
-                    <class name="category"/>
-                </style>
+                <signal name="row-selected" handler="on_gl_category_list_row_selected" />
                 <child>
-                    <object class="GtkLabel" id="important_label">
-                        <property name="halign">start</property>
-                        <property name="label" translatable="yes">Important</property>
+                    <object class="GtkListBoxRow" id="important">
                         <property name="visible">True</property>
+                        <style>
+                            <class name="category"/>
+                        </style>
+                        <child>
+                            <object class="GtkLabel" id="important_label">
+                                <property name="halign">start</property>
+                                <property name="label" translatable="yes">Important</property>
+                                <property name="visible">True</property>
+                            </object>
+                        </child>
                     </object>
                 </child>
-            </object>
-        </child>
-        <child>
-            <object class="GtkListBoxRow" id="alerts">
-                <property name="visible">False</property>
-                <style>
-                    <class name="category"/>
-                </style>
                 <child>
-                    <object class="GtkLabel" id="alerts_label">
-                        <property name="halign">start</property>
-                        <property name="label" translatable="yes">Alerts</property>
-                        <property name="visible">True</property>
+                    <object class="GtkListBoxRow" id="alerts">
+                        <property name="visible">False</property>
+                        <style>
+                            <class name="category"/>
+                        </style>
+                        <child>
+                            <object class="GtkLabel" id="alerts_label">
+                                <property name="halign">start</property>
+                                <property name="label" translatable="yes">Alerts</property>
+                                <property name="visible">True</property>
+                            </object>
+                        </child>
                     </object>
                 </child>
-            </object>
-        </child>
-        <child>
-            <object class="GtkListBoxRow" id="starred">
-                <property name="visible">False</property>
-                <style>
-                    <class name="category"/>
-                </style>
                 <child>
-                    <object class="GtkLabel" id="starred_label">
-                        <property name="halign">start</property>
-                        <property name="label" translatable="yes">Starred</property>
-                        <property name="visible">True</property>
+                    <object class="GtkListBoxRow" id="starred">
+                        <property name="visible">False</property>
+                        <style>
+                            <class name="category"/>
+                        </style>
+                        <child>
+                            <object class="GtkLabel" id="starred_label">
+                                <property name="halign">start</property>
+                                <property name="label" translatable="yes">Starred</property>
+                                <property name="visible">True</property>
+                            </object>
+                        </child>
                     </object>
                 </child>
-            </object>
-        </child>
-        <child>
-            <object class="GtkListBoxRow" id="all">
-                <property name="visible">True</property>
-                <style>
-                    <class name="category"/>
-                </style>
                 <child>
-                    <object class="GtkLabel" id="all_label">
-                        <property name="halign">start</property>
-                        <property name="label" translatable="yes">All</property>
+                    <object class="GtkListBoxRow" id="all">
                         <property name="visible">True</property>
+                        <style>
+                            <class name="category"/>
+                        </style>
+                        <child>
+                            <object class="GtkLabel" id="all_label">
+                                <property name="halign">start</property>
+                                <property name="label" translatable="yes">All</property>
+                                <property name="visible">True</property>
+                            </object>
+                        </child>
                     </object>
                 </child>
-            </object>
-        </child>
-        <child>
-            <object class="GtkListBoxRow" id="applications">
-                <property name="visible">True</property>
-                <style>
-                    <class name="category"/>
-                </style>
                 <child>
-                    <object class="GtkLabel" id="applications_label">
-                        <property name="halign">start</property>
-                        <property name="label" translatable="yes">Applications</property>
+                    <object class="GtkListBoxRow" id="applications">
                         <property name="visible">True</property>
+                        <style>
+                            <class name="category"/>
+                        </style>
+                        <child>
+                            <object class="GtkLabel" id="applications_label">
+                                <property name="halign">start</property>
+                                <property name="label" translatable="yes">Applications</property>
+                                <property name="visible">True</property>
+                            </object>
+                        </child>
                     </object>
                 </child>
-            </object>
-        </child>
-        <child>
-            <object class="GtkListBoxRow" id="system">
-                <property name="visible">True</property>
-                <style>
-                    <class name="category"/>
-                </style>
                 <child>
-                    <object class="GtkLabel" id="system_label">
-                        <property name="halign">start</property>
-                        <property name="label" translatable="yes">System</property>
+                    <object class="GtkListBoxRow" id="system">
                         <property name="visible">True</property>
+                        <style>
+                            <class name="category"/>
+                        </style>
+                        <child>
+                            <object class="GtkLabel" id="system_label">
+                                <property name="halign">start</property>
+                                <property name="label" translatable="yes">System</property>
+                                <property name="visible">True</property>
+                            </object>
+                        </child>
                     </object>
                 </child>
-            </object>
-        </child>
-        <child>
-            <object class="GtkListBoxRow" id="security">
-                <property name="visible">True</property>
-                <style>
-                    <class name="category"/>
-                </style>
                 <child>
-                    <object class="GtkLabel" id="security_label">
-                        <property name="halign">start</property>
-                        <property name="label" translatable="yes">Security</property>
+                    <object class="GtkListBoxRow" id="security">
                         <property name="visible">True</property>
+                        <style>
+                            <class name="category"/>
+                        </style>
+                        <child>
+                            <object class="GtkLabel" id="security_label">
+                                <property name="halign">start</property>
+                                <property name="label" translatable="yes">Security</property>
+                                <property name="visible">True</property>
+                            </object>
+                        </child>
                     </object>
                 </child>
-            </object>
-        </child>
-        <child>
-            <object class="GtkListBoxRow" id="hardware">
-                <property name="visible">True</property>
-                <style>
-                    <class name="category"/>
-                </style>
                 <child>
-                    <object class="GtkLabel" id="hardware_label">
-                        <property name="halign">start</property>
-                        <property name="label" translatable="yes">Hardware</property>
+                    <object class="GtkListBoxRow" id="hardware">
                         <property name="visible">True</property>
+                        <style>
+                            <class name="category"/>
+                        </style>
+                        <child>
+                            <object class="GtkLabel" id="hardware_label">
+                                <property name="halign">start</property>
+                                <property name="label" translatable="yes">Hardware</property>
+                                <property name="visible">True</property>
+                            </object>
+                        </child>
                     </object>
                 </child>
-            </object>
-        </child>
-        <child>
-            <object class="GtkListBoxRow" id="updates">
-                <property name="visible">False</property>
-                <style>
-                    <class name="category"/>
-                </style>
                 <child>
-                    <object class="GtkLabel" id="updates_label">
-                        <property name="halign">start</property>
-                        <property name="label" translatable="yes">Updates</property>
-                        <property name="visible">True</property>
+                    <object class="GtkListBoxRow" id="updates">
+                        <property name="visible">False</property>
+                        <style>
+                            <class name="category"/>
+                        </style>
+                        <child>
+                            <object class="GtkLabel" id="updates_label">
+                                <property name="halign">start</property>
+                                <property name="label" translatable="yes">Updates</property>
+                                <property name="visible">True</property>
+                            </object>
+                        </child>
                     </object>
                 </child>
-            </object>
-        </child>
-        <child>
-            <object class="GtkListBoxRow" id="usage">
-                <property name="visible">False</property>
-                <style>
-                    <class name="category"/>
-                </style>
                 <child>
-                    <object class="GtkLabel" id="usage_label">
-                        <property name="halign">start</property>
-                        <property name="label" translatable="yes">Usage</property>
-                        <property name="visible">True</property>
+                    <object class="GtkListBoxRow" id="usage">
+                        <property name="visible">False</property>
+                        <style>
+                            <class name="category"/>
+                        </style>
+                        <child>
+                            <object class="GtkLabel" id="usage_label">
+                                <property name="halign">start</property>
+                                <property name="label" translatable="yes">Usage</property>
+                                <property name="visible">True</property>
+                            </object>
+                        </child>
                     </object>
                 </child>
             </object>

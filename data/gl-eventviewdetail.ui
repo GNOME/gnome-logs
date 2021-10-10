@@ -85,8 +85,6 @@
                         </child>
                         <child>
                             <object class="GtkLabel" id="message_field_label">
-                                <property name="visible">True</property>
-                                <property name="no_show_all">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="halign">end</property>
                                 <property name="valign">baseline</property>
@@ -103,8 +101,6 @@
                         </child>
                         <child>
                             <object class="GtkLabel" id="message_label">
-                                <property name="visible">True</property>
-                                <property name="no_show_all">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="halign">start</property>
                                 <property name="valign">baseline</property>
@@ -123,7 +119,6 @@
                         <child>
                             <object class="GtkLabel" id="audit_field_label">
                                 <property name="visible">False</property>
-                                <property name="no_show_all">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="halign">end</property>
                                 <property name="label" translatable="yes">Audit Session</property>
@@ -346,7 +341,6 @@
                         <child>
                             <object class="GtkLabel" id="documentation_label">
                                 <property name="visible">False</property>
-                                <property name="no_show_all">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="halign">start</property>
                                 <property name="selectable">True</property>

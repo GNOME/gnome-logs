@@ -4,7 +4,7 @@
         <property name="orientation">horizontal</property>
         <property name="visible">True</property>
 	<child>
-            <object class="HdyFlap">
+            <object class="AdwFlap">
                 <property name="visible">True</property>
                 <child type="flap">
                     <object class="GlCategoryList" id="categories">

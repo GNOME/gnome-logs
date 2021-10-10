@@ -24,83 +24,77 @@
             </item>
         </section>
     </menu>
-    <template class="GlEventToolbar" parent="HdyHeaderBar">
-        <property name="hexpand">True</property>
-        <property name="show-close-button">True</property>
-        <property name="visible">True</property>
+    <template class="GlEventToolbar">
         <child>
-            <object class="GtkMenuButton" id="main_menu">
-                <property name="valign">center</property>
+            <object class="AdwHeaderBar">
+                <property name="hexpand">True</property>
                 <property name="visible">True</property>
-                <property name="menu_model">primary-menu</property>
-                <style>
-                    <class name="image-button" />
-                </style>
-                <child>
-                    <object class="GtkImage">
-                        <property name="icon-name">open-menu-symbolic</property>
-                        <property name="icon-size">1</property>
+                <child type="end">
+                    <object class="GtkMenuButton" id="main_menu">
+                        <property name="valign">center</property>
                         <property name="visible">True</property>
+                        <property name="menu_model">primary-menu</property>
+                        <style>
+                            <class name="image-button" />
+                        </style>
+                        <child>
+                            <object class="GtkImage">
+                                <property name="icon-name">open-menu-symbolic</property>
+                                <property name="icon-size">1</property>
+                                <property name="visible">True</property>
+                            </object>
+                        </child>
+                    </object>
+                </child>
+                <child type="end">
+                    <object class="GtkButton" id="output_button">
+                        <property name="action-name">win.export</property>
+                        <property name="tooltip-text" translatable="yes">Export logs to a file</property>
+                        <property name="valign">center</property>
+                        <property name="visible">True</property>
+                        <style>
+                            <class name="image-button" />
+                        </style>
+                        <child>
+                            <object class="GtkImage" id="output_icon">
+                                <property name="icon-name">document-save-symbolic</property>
+                                <property name="icon-size">1</property>
+                                <property name="visible">True</property>
+                            </object>
+                        </child>
+                    </object>
+                </child>
+                <child type="title">
+                    <object class="GtkMenuButton" id="menu_button">
+                        <property name="direction">none</property>
+                        <property name="tooltip-text" translatable="yes">Choose the boot from which to view logs</property>
+                        <property name="valign">center</property>
+                        <property name="visible">True</property>
+                        <property name="relief">GTK_RELIEF_NONE</property>
+                        <style>
+                            <class name="title-menu-button"/>
+                        </style>
+                    </object>
+                </child>
+                <child type="end">
+                    <object class="GtkToggleButton" id="search_button">
+                        <property name="action-name">win.search</property>
+                        <property name="tooltip-text" translatable="yes">Search all the logs of the current category</property>
+                        <property name="valign">center</property>
+                        <property name="visible">True</property>
+                        <style>
+                            <class name="image-button"/>
+                        </style>
+                        <child>
+                            <object class="GtkImage" id="search_icon">
+                                <property name="icon-name">edit-find-symbolic</property>
+                                <property name="icon-size">1</property>
+                                <property name="visible">True</property>
+                            </object>
+                        </child>
                     </object>
                 </child>
             </object>
-            <packing>
-                <property name="pack-type">end</property>
-            </packing>
-        </child>
-        <child>
-            <object class="GtkButton" id="output_button">
-                <property name="action-name">win.export</property>
-                <property name="tooltip-text" translatable="yes">Export logs to a file</property>
-                <property name="valign">center</property>
-                <property name="visible">True</property>
-                <style>
-                    <class name="image-button" />
-                </style>
-                <child>
-                    <object class="GtkImage" id="output_icon">
-                        <property name="icon-name">document-save-symbolic</property>
-                        <property name="icon-size">1</property>
-                        <property name="visible">True</property>
-                    </object>
-                </child>
-            </object>
-            <packing>
-                <property name="pack-type">end</property>
-            </packing>
-        </child>
-        <child type="title">
-            <object class="GtkMenuButton" id="menu_button">
-                <property name="direction">none</property>
-                <property name="tooltip-text" translatable="yes">Choose the boot from which to view logs</property>
-                <property name="valign">center</property>
-                <property name="visible">True</property>
-                <property name="relief">GTK_RELIEF_NONE</property>
-                <style>
-                    <class name="title-menu-button"/>
-                </style>
-            </object>
-        </child>
-        <child>
-            <object class="GtkToggleButton" id="search_button">
-                <property name="action-name">win.search</property>
-                <property name="tooltip-text" translatable="yes">Search all the logs of the current category</property>
-                <property name="valign">center</property>
-                <property name="visible">True</property>
-                <style>
-                    <class name="image-button"/>
-                </style>
-                <child>
-                    <object class="GtkImage" id="search_icon">
-                        <property name="icon-name">edit-find-symbolic</property>
-                        <property name="icon-size">1</property>
-                        <property name="visible">True</property>
-                    </object>
-                </child>
-            </object>
-            <packing>
-                <property name="pack-type">end</property>
-            </packing>
         </child>
     </template>
 </interface>
