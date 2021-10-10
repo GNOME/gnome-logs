@@ -75,19 +75,12 @@ on_help (GSimpleAction *action,
 {
     GtkApplication *application;
     GtkWindow *parent;
-    GError *error = NULL;
 
     application = GTK_APPLICATION (user_data);
     parent = gtk_application_get_active_window (application);
 
-    gtk_show_uri_on_window (parent, "help:gnome-logs",
-                            GDK_CURRENT_TIME, &error);
-
-    if (error)
-    {
-        g_debug ("Error while opening help: %s", error->message);
-        g_error_free (error);
-    }
+    gtk_show_uri (parent, "help:gnome-logs",
+                  GDK_CURRENT_TIME);
 }
 
 static void

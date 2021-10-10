@@ -263,19 +263,12 @@ on_help_button_clicked (GlWindow *window,
 {
     GlWindowPrivate *priv;
     GtkWindow *parent;
-    GError *error = NULL;
 
     parent = GTK_WINDOW (window);
     priv = gl_window_get_instance_private (GL_WINDOW (window));
 
-    gtk_show_uri_on_window (parent, "help:gnome-logs/permissions",
-                            GDK_CURRENT_TIME, &error);
-
-    if (error)
-    {
-        g_debug ("Error while opening help: %s", error->message);
-        g_error_free (error);
-    }
+    gtk_show_uri (parent, "help:gnome-logs/permissions",
+                  GDK_CURRENT_TIME);
 
     gtk_widget_hide (priv->info_bar);
 }
