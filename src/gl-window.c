@@ -256,27 +256,6 @@ on_category_list_changed (GlCategoryList *list,
     g_free (current_boot);
 }
 
-static gboolean
-on_gl_window_key_press_event (GlWindow *window,
-                              GdkEvent *event,
-                              gpointer user_data)
-{
-    GlWindowPrivate *priv;
-    GlEventViewList *event_list;
-    GAction *action;
-
-    priv = gl_window_get_instance_private (window);
-    action = g_action_map_lookup_action (G_ACTION_MAP (window), "search");
-    event_list = GL_EVENT_VIEW_LIST (priv->event_list);
-
-    if (gl_event_view_list_handle_search_event (event_list, action, event) == GDK_EVENT_STOP)
-    {
-        return GDK_EVENT_STOP;
-    }
-
-    return GDK_EVENT_PROPAGATE;
-}
-
 static void
 on_help_button_clicked (GlWindow *window,
                         gint response_id,
@@ -355,8 +334,6 @@ gl_window_class_init (GlWindowClass *klass)
     gtk_widget_class_bind_template_child_private (widget_class, GlWindow,
                                                   info_bar);
 
-    gtk_widget_class_bind_template_callback (widget_class,
-                                             on_gl_window_key_press_event);
     gtk_widget_class_bind_template_callback (widget_class,
                                              on_help_button_clicked);
     gtk_widget_class_bind_template_callback (widget_class,

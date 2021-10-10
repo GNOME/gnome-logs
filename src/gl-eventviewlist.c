@@ -414,29 +414,6 @@ gl_event_view_list_get_boot_ids (GlEventViewList *view)
     return gl_journal_model_get_boot_ids (priv->journal_model);
 }
 
-gboolean
-gl_event_view_list_handle_search_event (GlEventViewList *view,
-                                        GAction *action,
-                                        GdkEvent *event)
-{
-    GlEventViewListPrivate *priv;
-
-    priv = gl_event_view_list_get_instance_private (view);
-
-    if (g_action_get_enabled (action))
-    {
-        if (gtk_search_bar_handle_event (GTK_SEARCH_BAR (priv->event_search),
-                                         event) == GDK_EVENT_STOP)
-        {
-            g_action_change_state (action, g_variant_new_boolean (TRUE));
-
-            return GDK_EVENT_STOP;
-        }
-    }
-
-    return GDK_EVENT_PROPAGATE;
-}
-
 void
 gl_event_view_list_set_search_mode (GlEventViewList *view,
                                     gboolean state)
@@ -1018,12 +995,28 @@ gl_event_view_list_finalize (GObject *object)
 }
 
 static void
+gl_event_view_list_realize (GtkWidget *widget)
+{
+    GlEventViewList *view = GL_EVENT_VIEW_LIST (widget);
+    GlEventViewListPrivate *priv = gl_event_view_list_get_instance_private (view);
+    GtkRoot *root;
+
+    GTK_WIDGET_CLASS (gl_event_view_list_parent_class)->realize (widget);
+
+    root = gtk_widget_get_root (widget);
+
+    gtk_search_bar_set_key_capture_widget (GTK_SEARCH_BAR (priv->event_search),
+                                           GTK_WIDGET (root));
+}
+
+static void
 gl_event_view_list_class_init (GlEventViewListClass *klass)
 {
     GObjectClass *gobject_class = G_OBJECT_CLASS (klass);
     GtkWidgetClass *widget_class = GTK_WIDGET_CLASS (klass);
 
     gobject_class->finalize = gl_event_view_list_finalize;
+    widget_class->realize = gl_event_view_list_realize;
 
     gtk_widget_class_set_template_from_resource (widget_class,
                                                  "/org/gnome/Logs/gl-eventviewlist.ui");

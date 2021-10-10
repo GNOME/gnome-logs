@@ -32,9 +32,6 @@ G_DECLARE_FINAL_TYPE (GlEventViewList, gl_event_view_list, GL, EVENT_VIEW_LIST, 
 
 GtkWidget * gl_event_view_list_new (void);
 GlRowEntry *gl_event_view_list_get_detail_entry (GlEventViewList *view);
-gboolean gl_event_view_list_handle_search_event (GlEventViewList *view,
-                                                 GAction *action,
-                                                 GdkEvent *event);
 void gl_event_view_list_set_search_mode (GlEventViewList *view, gboolean state);
 void gl_event_view_list_set_sort_order (GlEventViewList *view, GlSortOrder  sort_order);
 void gl_event_view_list_view_boot (GlEventViewList *view, const gchar *match);

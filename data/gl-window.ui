@@ -3,8 +3,6 @@
     <template class="GlWindow" parent="AdwApplicationWindow">
         <property name="default-width">1200</property>
         <property name="default-height">600</property>
-        <!-- TODO -->
-        <!-- <signal name="key-press-event" handler="on_gl_window_key_press_event"/> -->
         <child>
             <object class="GtkBox" id="event_box">
                 <property name="orientation">vertical</property>
