@@ -29,11 +29,11 @@
                                     <class name="detail-field-label"/>
                                     <class name="dim-label"/>
                                 </style>
+                                <layout>
+                                    <property name="column">0</property>
+                                    <property name="row">0</property>
+                                </layout>
                             </object>
-                            <packing>
-                                <property name="left_attach">0</property>
-                                <property name="top_attach">0</property>
-                            </packing>
                         </child>
                         <child>
                             <object class="GtkLabel" id="comm_label">
@@ -45,11 +45,11 @@
                                 <style>
                                     <class name="detail-comm"/>
                                 </style>
+                                <layout>
+                                    <property name="column">1</property>
+                                    <property name="row">0</property>
+                                </layout>
                             </object>
-                            <packing>
-                                <property name="left_attach">1</property>
-                                <property name="top_attach">0</property>
-                            </packing>
                         </child>
                         <child>
                             <object class="GtkLabel" id="time_field_label">
@@ -61,11 +61,11 @@
                                     <class name="detail-field-label"/>
                                     <class name="dim-label"/>
                                 </style>
+                                <layout>
+                                    <property name="column">0</property>
+                                    <property name="row">1</property>
+                                </layout>
                             </object>
-                            <packing>
-                                <property name="left_attach">0</property>
-                                <property name="top_attach">1</property>
-                            </packing>
                         </child>
                         <child>
                             <object class="GtkLabel" id="time_label">
@@ -77,11 +77,11 @@
                                 <style>
                                     <class name="detail-time"/>
                                 </style>
+                                <layout>
+                                    <property name="column">1</property>
+                                    <property name="row">1</property>
+                                </layout>
                             </object>
-                            <packing>
-                                <property name="left_attach">1</property>
-                                <property name="top_attach">1</property>
-                            </packing>
                         </child>
                         <child>
                             <object class="GtkLabel" id="message_field_label">
@@ -93,11 +93,11 @@
                                     <class name="detail-field-label"/>
                                     <class name="dim-label"/>
                                 </style>
+                                <layout>
+                                    <property name="column">0</property>
+                                    <property name="row">2</property>
+                                </layout>
                             </object>
-                            <packing>
-                                <property name="left_attach">0</property>
-                                <property name="top_attach">2</property>
-                            </packing>
                         </child>
                         <child>
                             <object class="GtkLabel" id="message_label">
@@ -110,11 +110,11 @@
                                 <style>
                                     <class name="detail-message"/>
                                 </style>
+                                <layout>
+                                    <property name="column">1</property>
+                                    <property name="row">2</property>
+                                </layout>
                             </object>
-                            <packing>
-                                <property name="left_attach">1</property>
-                                <property name="top_attach">2</property>
-                            </packing>
                         </child>
                         <child>
                             <object class="GtkLabel" id="audit_field_label">
@@ -126,11 +126,11 @@
                                     <class name="detail-field-label"/>
                                     <class name="dim-label"/>
                                 </style>
+                                <layout>
+                                    <property name="column">0</property>
+                                    <property name="row">3</property>
+                                </layout>
                             </object>
-                            <packing>
-                                <property name="left_attach">0</property>
-                                <property name="top_attach">3</property>
-                            </packing>
                         </child>
                         <child>
                             <object class="GtkLabel" id="audit_label">
@@ -142,11 +142,11 @@
                                 <style>
                                     <class name="detail-audit_session"/>
                                 </style>
+                                <layout>
+                                    <property name="column">1</property>
+                                    <property name="row">3</property>
+                                </layout>
                             </object>
-                            <packing>
-                                <property name="left_attach">1</property>
-                                <property name="top_attach">3</property>
-                            </packing>
                         </child>
                         <child>
                             <object class="GtkLabel" id="device_field_label">
@@ -159,11 +159,11 @@
                                     <class name="detail-field-label"/>
                                     <class name="dim-label"/>
                                 </style>
+                                <layout>
+                                    <property name="column">0</property>
+                                    <property name="row">4</property>
+                                </layout>
                             </object>
-                            <packing>
-                                <property name="left_attach">0</property>
-                                <property name="top_attach">4</property>
-                            </packing>
                         </child>
                         <child>
                             <object class="GtkLabel" id="device_label">
@@ -175,11 +175,11 @@
                                 <style>
                                     <class name="detail-kernel_device"/>
                                 </style>
+                                <layout>
+                                    <property name="column">1</property>
+                                    <property name="row">4</property>
+                                </layout>
                             </object>
-                            <packing>
-                                <property name="left_attach">1</property>
-                                <property name="top_attach">4</property>
-                            </packing>
                         </child>
                         <child>
                             <object class="GtkLabel" id="priority_field_label">
@@ -192,11 +192,11 @@
                                     <class name="detail-field-label"/>
                                     <class name="dim-label"/>
                                 </style>
+                                <layout>
+                                    <property name="column">0</property>
+                                    <property name="row">5</property>
+                                </layout>
                             </object>
-                            <packing>
-                                <property name="left_attach">0</property>
-                                <property name="top_attach">5</property>
-                            </packing>
                         </child>
                         <child>
                             <object class="GtkLabel" id="priority_label">
@@ -208,11 +208,11 @@
                                 <style>
                                     <class name="detail-priority"/>
                                 </style>
+                                <layout>
+                                    <property name="column">1</property>
+                                    <property name="row">5</property>
+                                </layout>
                             </object>
-                            <packing>
-                                <property name="left_attach">1</property>
-                                <property name="top_attach">5</property>
-                            </packing>
                         </child>
                         <child>
                             <object class="GtkLabel" id="subject_field_label">
@@ -226,11 +226,11 @@
                                     <class name="detail-field-label"/>
                                     <class name="dim-label"/>
                                 </style>
+                                <layout>
+                                    <property name="column">0</property>
+                                    <property name="row">6</property>
+                                </layout>
                             </object>
-                            <packing>
-                                <property name="left_attach">0</property>
-                                <property name="top_attach">6</property>
-                            </packing>
                         </child>
                         <child>
                             <object class="GtkLabel" id="subject_label">
@@ -245,11 +245,11 @@
                                 <style>
                                     <class name="detail-subject"/>
                                 </style>
+                                <layout>
+                                    <property name="column">1</property>
+                                    <property name="row">6</property>
+                                </layout>
                             </object>
-                            <packing>
-                                <property name="left_attach">1</property>
-                                <property name="top_attach">6</property>
-                            </packing>
                         </child>
                         <child>
                             <object class="GtkLabel" id="definedby_field_label">
@@ -262,11 +262,11 @@
                                     <class name="detail-field-label"/>
                                     <class name="dim-label"/>
                                 </style>
+                                <layout>
+                                    <property name="column">0</property>
+                                    <property name="row">7</property>
+                                </layout>
                             </object>
-                            <packing>
-                                <property name="left_attach">0</property>
-                                <property name="top_attach">7</property>
-                            </packing>
                         </child>
                         <child>
                             <object class="GtkLabel" id="definedby_label">
@@ -278,11 +278,11 @@
                                 <style>
                                     <class name="detail-definedby"/>
                                 </style>
+                                <layout>
+                                    <property name="column">1</property>
+                                    <property name="row">7</property>
+                                </layout>
                             </object>
-                            <packing>
-                                <property name="left_attach">1</property>
-                                <property name="top_attach">7</property>
-                            </packing>
                         </child>
                         <child>
                             <object class="GtkLabel" id="support_field_label">
@@ -296,11 +296,11 @@
                                     <class name="detail-field-label"/>
                                     <class name="dim-label"/>
                                 </style>
+                                <layout>
+                                    <property name="column">0</property>
+                                    <property name="row">8</property>
+                                </layout>
                             </object>
-                            <packing>
-                                <property name="left_attach">0</property>
-                                <property name="top_attach">8</property>
-                            </packing>
                         </child>
                         <child>
                             <object class="GtkLabel" id="support_label">
@@ -315,11 +315,11 @@
                                 <style>
                                     <class name="detail-support"/>
                                 </style>
+                                <layout>
+                                    <property name="column">1</property>
+                                    <property name="row">8</property>
+                                </layout>
                             </object>
-                            <packing>
-                                <property name="left_attach">1</property>
-                                <property name="top_attach">8</property>
-                            </packing>
                         </child>
                         <child>
                             <object class="GtkLabel" id="documentation_field_label">
@@ -332,11 +332,11 @@
                                     <class name="detail-field-label"/>
                                     <class name="dim-label"/>
                                 </style>
+                                <layout>
+                                    <property name="column">0</property>
+                                    <property name="row">9</property>
+                                </layout>
                             </object>
-                            <packing>
-                                <property name="left_attach">0</property>
-                                <property name="top_attach">9</property>
-                            </packing>
                         </child>
                         <child>
                             <object class="GtkLabel" id="documentation_label">
@@ -347,11 +347,11 @@
                                 <style>
                                     <class name="detail-documentation"/>
                                 </style>
+                                <layout>
+                                    <property name="column">1</property>
+                                    <property name="row">9</property>
+                                </layout>
                             </object>
-                            <packing>
-                                <property name="left_attach">1</property>
-                                <property name="top_attach">9</property>
-                            </packing>
                         </child>
                         <child>
                             <object class="GtkLabel" id="detailed_message_label">
@@ -363,12 +363,11 @@
                                 <style>
                                     <class name="detail-message"/>
                                 </style>
+                                <layout>
+                                    <property name="column">0</property>
+                                    <property name="row">10</property>
+                                </layout>
                             </object>
-                            <packing>
-                                <property name="left_attach">0</property>
-                                <property name="top_attach">10</property>
-                                <property name="width">2</property>
-                            </packing>
                         </child>
                     </object>
                 </child>
