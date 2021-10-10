@@ -250,7 +250,7 @@ on_parameter_treeview_row_activated (GtkTreeView *tree_view,
 }
 
 static void
-search_type_changed (GtkToggleButton *togglebutton,
+search_type_changed (GtkCheckButton *check_button,
                      gpointer user_data)
 {
     GlSearchPopover *popover;
@@ -260,7 +260,7 @@ search_type_changed (GtkToggleButton *togglebutton,
 
     priv = gl_search_popover_get_instance_private (popover);
 
-    if (gtk_toggle_button_get_active (togglebutton))
+    if (gtk_check_button_get_active (check_button))
     {
         priv->search_type = GL_QUERY_SEARCH_TYPE_EXACT;
     }

@@ -292,29 +292,25 @@
                                                     <object class="GtkBox">
                                                         <property name="visible">True</property>
                                                         <child>
-                                                            <object class="GtkRadioButton" id="radiobutton_substring">
+                                                            <object class="GtkCheckButton" id="checkbutton_substring">
                                                                 <property name="label" translatable="yes">Substring</property>
                                                                 <property name="visible">True</property>
                                                                 <property name="can_focus">True</property>
                                                                 <property name="receives_default">False</property>
                                                                 <property name="tooltip_text" translatable="yes">Match in any part of the string</property>
                                                                 <property name="hexpand">True</property>
-                                                                <property name="xalign">0</property>
                                                                 <property name="active">True</property>
-                                                                <property name="draw_indicator">False</property>
                                                             </object>
                                                         </child>
                                                         <child>
-                                                            <object class="GtkRadioButton" id="radiobutton_exact">
+                                                            <object class="GtkCheckButton" id="checkbutton_exact">
                                                                 <property name="label" translatable="yes">Exact</property>
                                                                 <property name="visible">True</property>
                                                                 <property name="can_focus">True</property>
                                                                 <property name="receives_default">False</property>
                                                                 <property name="tooltip_text" translatable="yes">Match complete string only</property>
                                                                 <property name="hexpand">True</property>
-                                                                <property name="xalign">0</property>
-                                                                <property name="draw_indicator">False</property>
-                                                                <property name="group">radiobutton_substring</property>
+                                                                <property name="group">checkbutton_substring</property>
                                                                 <signal name="toggled" handler="search_type_changed"/>
                                                             </object>
                                                         </child>
