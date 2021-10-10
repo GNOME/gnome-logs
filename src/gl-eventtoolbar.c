@@ -28,7 +28,7 @@
 struct _GlEventToolbar
 {
     /*< private >*/
-    GtkHeaderBar parent_instance;
+    GtkWidget parent_instance;
 };
 
 typedef struct
@@ -37,10 +37,11 @@ typedef struct
     GtkWidget *output_button;
     GtkWidget *menu_button;
     GtkWidget *search_button;
+    GtkWidget *headerbar;
     GlEventToolbarMode mode;
 } GlEventToolbarPrivate;
 
-G_DEFINE_TYPE_WITH_PRIVATE (GlEventToolbar, gl_event_toolbar, HDY_TYPE_HEADER_BAR)
+G_DEFINE_TYPE_WITH_PRIVATE (GlEventToolbar, gl_event_toolbar, GTK_TYPE_WIDGET)
 
 static void
 gl_event_toolbar_update_boot_menu_label (GlEventToolbar *toolbar,
@@ -138,22 +139,20 @@ gl_event_toolbar_add_boots (GlEventToolbar *toolbar,
 
     grid = gtk_grid_new ();
     gtk_grid_set_column_spacing (GTK_GRID (grid), 6);
-    gtk_container_add (GTK_CONTAINER (priv->menu_button), grid);
+    gtk_menu_button_set_child (GTK_MENU_BUTTON (priv->menu_button), grid);
 
     title_label = gtk_label_new (_("Logs"));
     context = gtk_widget_get_style_context (GTK_WIDGET (title_label));
     gtk_style_context_add_class (context, "title");
     gtk_grid_attach (GTK_GRID (grid), title_label, 0, 0, 1, 1);
 
-    gtk_label_set_text (GTK_LABEL (priv->current_boot), current_boot);
+    gtk_label_set_label (GTK_LABEL (priv->current_boot), current_boot);
     context = gtk_widget_get_style_context (GTK_WIDGET (priv->current_boot));
     gtk_style_context_add_class (context, "subtitle");
     gtk_grid_attach (GTK_GRID (grid), priv->current_boot, 0, 1, 1, 1);
 
-    arrow = gtk_image_new_from_icon_name ("pan-down-symbolic",
-                                          GTK_ICON_SIZE_BUTTON);
+    arrow = gtk_image_new_from_icon_name ("pan-down-symbolic");
     gtk_grid_attach (GTK_GRID (grid), arrow, 1, 0, 1, 2);
-    gtk_widget_show_all (grid);
 
     adw_header_bar_set_title_widget (ADW_HEADER_BAR (priv->headerbar),
                                      priv->menu_button);
@@ -162,9 +161,25 @@ gl_event_toolbar_add_boots (GlEventToolbar *toolbar,
 }
 
 static void
+gl_event_toolbar_dispose (GObject *object)
+{
+    GlEventToolbar *list = GL_EVENT_TOOLBAR (object);
+    GlEventToolbarPrivate *priv = gl_event_toolbar_get_instance_private (list);
+
+    gtk_widget_unparent (priv->headerbar);
+
+    G_OBJECT_CLASS (gl_event_toolbar_parent_class)->dispose (object);
+}
+
+static void
 gl_event_toolbar_class_init (GlEventToolbarClass *klass)
 {
+    GObjectClass *gobject_class = G_OBJECT_CLASS (klass);
     GtkWidgetClass *widget_class = GTK_WIDGET_CLASS (klass);
+
+    gobject_class->dispose = gl_event_toolbar_dispose;
+
+    gtk_widget_class_set_layout_manager_type (widget_class, GTK_TYPE_BIN_LAYOUT);
 
     gtk_widget_class_set_template_from_resource (widget_class,
                                                  "/org/gnome/Logs/gl-eventtoolbar.ui");
@@ -174,6 +189,8 @@ gl_event_toolbar_class_init (GlEventToolbarClass *klass)
                                                   menu_button);
     gtk_widget_class_bind_template_child_private (widget_class, GlEventToolbar,
                                                   search_button);
+    gtk_widget_class_bind_template_child_private (widget_class, GlEventToolbar,
+                                                  headerbar);
 }
 
 static void
