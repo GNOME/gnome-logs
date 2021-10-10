@@ -433,7 +433,7 @@ gl_event_view_list_set_search_mode (GlEventViewList *view,
     }
     else
     {
-        gtk_entry_set_text (GTK_ENTRY (priv->search_entry), "");
+        gtk_editable_set_text (GTK_EDITABLE (priv->search_entry), "");
     }
 }
 
@@ -859,7 +859,7 @@ on_search_entry_changed (GtkSearchEntry *entry,
 
     g_free (priv->search_text);
 
-    priv->search_text = g_strdup (gtk_entry_get_text (GTK_ENTRY (priv->search_entry)));
+    priv->search_text = g_strdup (gtk_editable_get_text (GTK_EDITABLE (priv->search_entry)));
 
     /* Create the query object */
     query = create_query_object (view);
@@ -1076,7 +1076,7 @@ gl_event_view_list_init (GlEventViewList *view)
                       G_CALLBACK (on_listbox_row_activated), GTK_BOX (view));
 
     gtk_search_bar_connect_entry (GTK_SEARCH_BAR (priv->event_search),
-                                  GTK_ENTRY (priv->search_entry));
+                                  GTK_EDITABLE (priv->search_entry));
 
     /* TODO: Monitor and propagate any GSettings changes. */
     settings = g_settings_new (DESKTOP_SCHEMA);

@@ -499,7 +499,7 @@ reset_custom_range_widgets (GlSearchPopover *popover)
         gtk_spin_button_set_value (GTK_SPIN_BUTTON (priv->start_time_hour_spin), 23.0);
     }
 
-    gtk_entry_set_text (GTK_ENTRY (priv->start_date_entry), "");
+    gtk_editable_set_text (GTK_EDITABLE (priv->start_date_entry), "");
     gtk_label_set_label (GTK_LABEL (priv->start_date_button_label), _("Select Start Date…"));
     gtk_label_set_label (GTK_LABEL (priv->start_time_button_label), _("Select Start Time…"));
 
@@ -517,7 +517,7 @@ reset_custom_range_widgets (GlSearchPopover *popover)
         gtk_spin_button_set_value (GTK_SPIN_BUTTON (priv->end_time_hour_spin), 0.0);
     }
 
-    gtk_entry_set_text (GTK_ENTRY (priv->end_date_entry), "");
+    gtk_editable_set_text (GTK_EDITABLE (priv->end_date_entry), "");
     gtk_label_set_label (GTK_LABEL (priv->end_date_button_label), _("Select End Date…"));
     gtk_label_set_label (GTK_LABEL (priv->end_time_button_label), _("Select End Time…"));
 }
@@ -609,7 +609,7 @@ get_start_date_time (GlSearchPopover *popover)
 
     priv = gl_search_popover_get_instance_private (popover);
 
-    entry_date = gtk_entry_get_text (GTK_ENTRY (priv->start_date_entry));
+    entry_date = gtk_editable_get_text (GTK_EDITABLE (priv->start_date_entry));
 
     hour = gtk_spin_button_get_value_as_int (GTK_SPIN_BUTTON (priv->start_time_hour_spin));
     minute = gtk_spin_button_get_value_as_int (GTK_SPIN_BUTTON (priv->start_time_minute_spin));
@@ -743,7 +743,7 @@ start_date_calendar_day_selected (GtkCalendar *calendar,
     {
         GDateTime *start_date_time;
 
-        gtk_entry_set_text (GTK_ENTRY (priv->start_date_entry), date_label);
+        gtk_editable_set_text (GTK_EDITABLE (priv->start_date_entry), date_label);
 
         gtk_label_set_label (GTK_LABEL (priv->start_date_button_label), date_label);
 
@@ -780,7 +780,7 @@ start_date_entry_activate (GtkEntry *entry,
         GDate *date;
 
         date = g_date_new ();
-        g_date_set_parse (date, gtk_entry_get_text (entry));
+        g_date_set_parse (date, gtk_editable_get_text (GTK_EDITABLE (entry)));
 
         /* Invalid date silently does nothing */
         if (!g_date_valid (date))
@@ -802,7 +802,8 @@ start_date_entry_activate (GtkEntry *entry,
         {
             GDateTime *start_date_time;
 
-            gtk_label_set_label (GTK_LABEL (priv->start_date_button_label), gtk_entry_get_text(entry));
+            gtk_label_set_label (GTK_LABEL (priv->start_date_button_label),
+                                 gtk_editable_get_text (GTK_EDITABLE (entry)));
 
             show_start_date_widgets (popover, FALSE);
 
@@ -844,7 +845,7 @@ roundoff_invalid_time_value (GtkSpinButton *spin_button,
 {
     gint time;
 
-    time = atoi (gtk_entry_get_text (GTK_ENTRY (spin_button)));
+    time = atoi (gtk_editable_get_text (GTK_EDITABLE (spin_button)));
 
     /* Roundoff to the nearest limit if out of limits*/
     if (time < lower_limit)
@@ -879,7 +880,7 @@ spinbox_format_time_period_to_text (GtkSpinButton *spin_button,
         time_period_string = g_strdup_printf (_("PM"));
     }
 
-    gtk_entry_set_text (GTK_ENTRY (spin_button), time_period_string);
+    gtk_editable_set_text (GTK_EDITABLE (spin_button), time_period_string);
 
     g_free (time_period_string);
 
@@ -893,7 +894,7 @@ spinbox_format_time_period_to_int (GtkSpinButton *spin_button,
 {
     const gchar *time_period_string;
 
-    time_period_string = gtk_entry_get_text (GTK_ENTRY (spin_button));
+    time_period_string = gtk_editable_get_text (GTK_EDITABLE (spin_button));
 
     if ( g_strcmp0 ("PM", time_period_string) == 0)
     {
@@ -956,7 +957,7 @@ spinbox_entry_format_two_digits (GtkSpinButton *spin_button,
 
     time_string = g_strdup_printf ("%02d", value);
 
-    gtk_entry_set_text (GTK_ENTRY (spin_button), time_string);
+    gtk_editable_set_text (GTK_EDITABLE (spin_button), time_string);
 
     g_free (time_string);
 
@@ -1033,7 +1034,7 @@ get_end_date_time (GlSearchPopover *popover)
 
     priv = gl_search_popover_get_instance_private (popover);
 
-    entry_date = gtk_entry_get_text (GTK_ENTRY (priv->end_date_entry));
+    entry_date = gtk_editable_get_text (GTK_EDITABLE (priv->end_date_entry));
 
     hour = gtk_spin_button_get_value_as_int (GTK_SPIN_BUTTON (priv->end_time_hour_spin));
     minute = gtk_spin_button_get_value_as_int (GTK_SPIN_BUTTON (priv->end_time_minute_spin));
@@ -1113,7 +1114,7 @@ end_date_calendar_day_selected (GtkCalendar *calendar,
     {
         GDateTime *end_date_time;
 
-        gtk_entry_set_text (GTK_ENTRY (priv->end_date_entry), date_label);
+        gtk_editable_set_text (GTK_EDITABLE (priv->end_date_entry), date_label);
 
         gtk_label_set_label (GTK_LABEL (priv->end_date_button_label), date_label);
 
@@ -1150,7 +1151,7 @@ end_date_entry_activate (GtkEntry *entry,
         GDate *date;
 
         date = g_date_new ();
-        g_date_set_parse (date, gtk_entry_get_text (entry));
+        g_date_set_parse (date, gtk_editable_get_text (GTK_EDITABLE (entry)));
 
         /* Invalid date silently does nothing */
         if (!g_date_valid (date))
@@ -1172,7 +1173,8 @@ end_date_entry_activate (GtkEntry *entry,
         {
             GDateTime *end_date_time;
 
-            gtk_label_set_label (GTK_LABEL (priv->end_date_button_label), gtk_entry_get_text(entry));
+            gtk_label_set_label (GTK_LABEL (priv->end_date_button_label),
+                                 gtk_editable_get_text (GTK_EDITABLE (entry)));
 
             show_end_date_widgets (popover, FALSE);
 
