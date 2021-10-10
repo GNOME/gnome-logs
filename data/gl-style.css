@@ -1,6 +1,6 @@
 /* Theme overrides. */
 .categories {
-    background-color: shade(@theme_bg_color, 0.99)
+    background-color: shade(@theme_bg_color, 0.99);
 }
 
 .category {
@@ -56,8 +56,8 @@
   }
 
 .popover-activated-row {
-    color: @theme_selected_fg_color;
-    background-color: @theme_selected_bg_color;
+    color: @accent_fg_color;
+    background-color: @accent_bg_color;
 }
 
 .compressed-rows-group-separator {
