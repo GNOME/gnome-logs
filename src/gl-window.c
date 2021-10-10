@@ -459,9 +459,6 @@ gl_window_init (GlWindow *window)
                               G_CALLBACK (enable_export), window);
 
     provider = gtk_css_provider_new ();
-    g_signal_connect (provider, "parsing-error",
-                      G_CALLBACK (gl_util_on_css_provider_parsing_error),
-                      NULL);
     gtk_css_provider_load_from_resource (provider,
                                          "/org/gnome/Logs/gl-style.css");
 

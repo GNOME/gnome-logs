@@ -51,10 +51,6 @@ typedef enum
     GL_JOURNAL_STORAGE_VOLATILE
 } GlJournalStorage;
 
-void gl_util_on_css_provider_parsing_error (GtkCssProvider *provider,
-                                            GtkCssSection *section,
-                                            GError *error,
-                                            G_GNUC_UNUSED gpointer user_data);
 gchar * gl_util_timestamp_to_display (guint64 microsecs,
                                       GDateTime *now,
                                       GlUtilClockFormat format,

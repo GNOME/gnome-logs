@@ -47,28 +47,6 @@ static const gchar DESKTOP_SCHEMA[] = "org.gnome.desktop.interface";
 static const gchar CLOCK_FORMAT[] = "clock-format";
 
 /**
- * gl_util_on_css_provider_parsing_error:
- * @provider: the provider that had a parsing error
- * @section: section the error happened in
- * @error: the parsing error
- * @user_data: user data set when the signal handler was connected
- *
- * Handle the GtkCssProvider::parsing-error signal and print a warning based on
- * @section and @error.
- */
-void
-gl_util_on_css_provider_parsing_error (GtkCssProvider *provider,
-                                       GtkCssSection *section,
-                                       GError *error,
-                                       G_GNUC_UNUSED gpointer user_data)
-{
-    g_critical ("Error while parsing CSS style (line: %u, character: %u): %s",
-                gtk_css_section_get_end_line (section) + 1,
-                gtk_css_section_get_end_position (section) + 1,
-                error->message);
-}
-
-/**
  * compare_timestamps:
  * @a: a date
  * @b: a date to compare with
