@@ -331,7 +331,7 @@ gl_event_view_detail_popover_closed (GtkPopover *popover,
     GtkWidget *time_label;
     GtkStyleContext *context;
 
-    row = gtk_popover_get_relative_to (popover);
+    row = gtk_widget_get_parent (GTK_WIDGET (popover));
 
     context = gtk_widget_get_style_context (row);
     gtk_style_context_remove_class (context, "popover-activated-row");

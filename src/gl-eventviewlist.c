@@ -200,7 +200,11 @@ listbox_update_header_func (GtkListBoxRow *row,
     }
 }
 
-
+static void
+popover_closed (GtkPopover *popover)
+{
+    gtk_widget_unparent (GTK_WIDGET (popover));
+}
 
 static void
 on_listbox_row_activated (GtkListBox *listbox,
@@ -361,7 +365,7 @@ on_listbox_row_activated (GtkListBox *listbox,
         GtkStyleContext *context;
 
         event_detail_popover = gl_event_view_detail_new (priv->entry, priv->clock_format);
-        gtk_popover_set_relative_to (GTK_POPOVER (event_detail_popover), GTK_WIDGET (row));
+        gtk_widget_set_parent (event_detail_popover, GTK_WIDGET (row));
 
         category_label = gl_event_view_row_get_category_label (GL_EVENT_VIEW_ROW (row));
 
@@ -378,6 +382,7 @@ on_listbox_row_activated (GtkListBox *listbox,
         context = gtk_widget_get_style_context (GTK_WIDGET (row));
         gtk_style_context_add_class (context, "popover-activated-row");
 
+        g_signal_connect (event_detail_popover, "closed", G_CALLBACK (popover_closed), NULL);
         gtk_popover_popup (GTK_POPOVER (event_detail_popover));
     }
 }
