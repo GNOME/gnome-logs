@@ -592,7 +592,7 @@ pango_font_description_to_css (PangoFontDescription *desc)
     }
   if (set & PANGO_FONT_MASK_SIZE)
     {
-      g_string_append_printf (s, "font-size: %dpt", pango_font_description_get_size (desc) / PANGO_SCALE);
+      g_string_append_printf (s, "font-size: %dpt;", pango_font_description_get_size (desc) / PANGO_SCALE);
     }
 
   g_string_append (s, "}");
