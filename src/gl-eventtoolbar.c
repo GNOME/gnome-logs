@@ -155,7 +155,7 @@ gl_event_toolbar_add_boots (GlEventToolbar *toolbar,
     gtk_grid_attach (GTK_GRID (grid), arrow, 1, 0, 1, 2);
     gtk_widget_show_all (grid);
 
-    hdy_header_bar_set_custom_title (HDY_HEADER_BAR (toolbar),
+    adw_header_bar_set_title_widget (ADW_HEADER_BAR (priv->headerbar),
                                      priv->menu_button);
 
     g_free (current_boot);

@@ -20,7 +20,7 @@
 #define GL_EVENT_TOOLBAR_H_
 
 #include <gtk/gtk.h>
-#include <libhandy-1/handy.h>
+#include <libadwaita-1/adwaita.h>
 
 G_BEGIN_DECLS
 

@@ -20,7 +20,7 @@
 #include "gl-application.h"
 
 #include <glib/gi18n.h>
-#include <libhandy-1/handy.h>
+#include <libadwaita-1/adwaita.h>
 
 #include "gl-categorylist.h"
 #include "gl-eventtoolbar.h"
@@ -200,8 +200,8 @@ gl_application_startup (GApplication *application)
     /* Calls gtk_init() with no arguments. */
     G_APPLICATION_CLASS (gl_application_parent_class)->startup (application);
 
-    /* Initialize libhandy widgets and styling */
-    hdy_init ();
+    /* Initialize libadwaita widgets and styling */
+    adw_init ();
 
     /* gtk_init() calls setlocale(), so gettext must be called after that. */
     g_set_application_name (_(PACKAGE_NAME));

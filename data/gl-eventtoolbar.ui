@@ -26,7 +26,7 @@
     </menu>
     <template class="GlEventToolbar">
         <child>
-            <object class="AdwHeaderBar">
+            <object class="AdwHeaderBar" id="headerbar">
                 <property name="hexpand">True</property>
                 <property name="visible">True</property>
                 <child type="end">

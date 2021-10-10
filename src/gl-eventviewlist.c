@@ -20,7 +20,7 @@
 
 #include <glib/gi18n.h>
 #include <glib-unix.h>
-#include <libhandy-1/handy.h>
+#include <libadwaita-1/adwaita.h>
 #include <stdlib.h>
 
 #include "gl-categorylist.h"
@@ -465,12 +465,13 @@ gl_event_view_create_empty (G_GNUC_UNUSED GlEventViewList *view)
 {
     GtkWidget *status_page;
 
-    status_page = hdy_status_page_new ();
-    hdy_status_page_set_icon_name (HDY_STATUS_PAGE (status_page),
+    status_page = adw_status_page_new ();
+    gtk_widget_set_hexpand (status_page, TRUE);
+    adw_status_page_set_icon_name (ADW_STATUS_PAGE (status_page),
                                    "action-unavailable-symbolic");
     /* Translators: Shown when there are no (zero) results in the current
      * view. */
-    hdy_status_page_set_title (HDY_STATUS_PAGE (status_page), _("No Results"));
+    adw_status_page_set_title (ADW_STATUS_PAGE (status_page), _("No Results"));
 
     gtk_widget_show (status_page);
 
