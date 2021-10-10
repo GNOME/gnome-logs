@@ -717,7 +717,6 @@ start_date_calendar_day_selected (GtkCalendar *calendar,
 {
     GDateTime *date;
     GDateTime *now;
-    guint year, month, day;
     gchar *date_label;
     GlSearchPopover *popover;
     GlSearchPopoverPrivate *priv;
@@ -726,9 +725,7 @@ start_date_calendar_day_selected (GtkCalendar *calendar,
 
     priv = gl_search_popover_get_instance_private (popover);
 
-    gtk_calendar_get_date (calendar, &year, &month, &day);
-
-    date = g_date_time_new_local (year, month + 1, day, 0, 0, 0);
+    date = gtk_calendar_get_date (calendar);
 
     /* Translators: date format for the start date entry
      * and start date button label in the custom range submenu,
@@ -1088,7 +1085,6 @@ end_date_calendar_day_selected (GtkCalendar *calendar,
 {
     GDateTime *date;
     GDateTime *now;
-    guint year, month, day;
     gchar *date_label;
     GlSearchPopover *popover;
     GlSearchPopoverPrivate *priv;
@@ -1097,9 +1093,7 @@ end_date_calendar_day_selected (GtkCalendar *calendar,
 
     priv = gl_search_popover_get_instance_private (popover);
 
-    gtk_calendar_get_date (calendar, &year, &month, &day);
-
-    date = g_date_time_new_local (year, month + 1, day, 0, 0, 0);
+    date = gtk_calendar_get_date (calendar);
 
     /* Translators: date format for the end date entry
      * and end date button label in the custom range submenu,
