@@ -42,21 +42,24 @@ typedef struct
     GtkWidget *hardware;
     GtkWidget *updates;
     GtkWidget *usage;
+    GtkWidget *list_box;
     GlCategoryListFilter category;
 } GlCategoryListPrivate;
 
-G_DEFINE_TYPE_WITH_PRIVATE (GlCategoryList, gl_category_list, GTK_TYPE_LIST_BOX)
+G_DEFINE_TYPE_WITH_PRIVATE (GlCategoryList, gl_category_list, GTK_TYPE_WIDGET)
 
 static GParamSpec *obj_properties[N_PROPERTIES] = { NULL, };
 
 static gboolean
-gl_category_list_focus (GtkWidget *listbox, GtkDirectionType direction)
+gl_category_list_focus (GtkWidget *list, GtkDirectionType direction)
 {
+    GlCategoryListPrivate *priv = gl_category_list_get_instance_private (GL_CATEGORY_LIST (list));
+
     switch (direction)
     {
         case GTK_DIR_TAB_BACKWARD:
         case GTK_DIR_TAB_FORWARD:
-            if (gtk_container_get_focus_child (GTK_CONTAINER (listbox)))
+            if (gtk_widget_get_focus_child (GTK_WIDGET (priv->list_box)))
             {
                 /* Force tab events which jump to another child to jump out of
                  * the category list. */
@@ -65,14 +68,14 @@ gl_category_list_focus (GtkWidget *listbox, GtkDirectionType direction)
             else
             {
                 /* Allow tab events to focus into the widget. */
-                GTK_WIDGET_CLASS (gl_category_list_parent_class)->focus (listbox,
+                GTK_WIDGET_CLASS (gl_category_list_parent_class)->focus (priv->list_box,
                                                                          direction);
                 return TRUE;
             }
             break;
         /* Allow the widget to handle all other focus events. */
         default:
-            GTK_WIDGET_CLASS (gl_category_list_parent_class)->focus (listbox,
+            GTK_WIDGET_CLASS (gl_category_list_parent_class)->focus (priv->list_box,
                                                                      direction);
             return TRUE;
             break;
@@ -80,15 +83,15 @@ gl_category_list_focus (GtkWidget *listbox, GtkDirectionType direction)
 }
 
 static void
-on_gl_category_list_row_selected (GlCategoryList *listbox,
-                                  GtkListBoxRow *row,
-                                  gpointer user_data)
+on_gl_category_list_row_selected (GtkListBox     *listbox,
+                                  GtkListBoxRow  *row,
+                                  GlCategoryList *list)
 {
     GlCategoryListPrivate *priv;
     GEnumClass *eclass;
     GEnumValue *evalue;
 
-    priv = gl_category_list_get_instance_private (listbox);
+    priv = gl_category_list_get_instance_private (list);
     eclass = g_type_class_ref (GL_TYPE_CATEGORY_LIST_FILTER);
 
     if (row == GTK_LIST_BOX_ROW (priv->important))
@@ -140,7 +143,7 @@ on_gl_category_list_row_selected (GlCategoryList *listbox,
 
     priv->category = evalue->value;
 
-    g_object_notify_by_pspec (G_OBJECT (listbox),
+    g_object_notify_by_pspec (G_OBJECT (list),
                               obj_properties[PROP_CATEGORY]);
 
     g_type_class_unref (eclass);
@@ -197,6 +200,17 @@ gl_category_list_set_property (GObject *object,
 }
 
 static void
+gl_category_list_dispose (GObject *object)
+{
+    GlCategoryList *list = GL_CATEGORY_LIST (object);
+    GlCategoryListPrivate *priv = gl_category_list_get_instance_private (list);
+
+    gtk_widget_unparent (priv->list_box);
+
+    G_OBJECT_CLASS (gl_category_list_parent_class)->dispose (object);
+}
+
+static void
 gl_category_list_class_init (GlCategoryListClass *klass)
 {
     GObjectClass *gobject_class = G_OBJECT_CLASS (klass);
@@ -204,7 +218,10 @@ gl_category_list_class_init (GlCategoryListClass *klass)
 
     gobject_class->get_property = gl_category_list_get_property;
     gobject_class->set_property = gl_category_list_set_property;
+    gobject_class->dispose = gl_category_list_dispose;
     widget_class->focus = gl_category_list_focus;
+
+    gtk_widget_class_set_layout_manager_type (widget_class, GTK_TYPE_BIN_LAYOUT);
 
     obj_properties[PROP_CATEGORY] = g_param_spec_enum ("category", "Category",
                                                        "Filter events by",
@@ -238,6 +255,8 @@ gl_category_list_class_init (GlCategoryListClass *klass)
                                                   updates);
     gtk_widget_class_bind_template_child_private (widget_class, GlCategoryList,
                                                   usage);
+    gtk_widget_class_bind_template_child_private (widget_class, GlCategoryList,
+                                                  list_box);
 
     gtk_widget_class_bind_template_callback (widget_class,
                                              on_gl_category_list_row_selected);
@@ -264,9 +283,12 @@ gl_category_list_init (GlCategoryList *list)
     gtk_widget_init_template (GTK_WIDGET (list));
 
     priv = gl_category_list_get_instance_private (list);
-    gtk_list_box_set_header_func (GTK_LIST_BOX (list),
+    gtk_list_box_set_header_func (GTK_LIST_BOX (priv->list_box),
                                   (GtkListBoxUpdateHeaderFunc)gl_category_list_header_func,
                                   priv->applications, NULL);
+
+    g_signal_connect (priv->list_box, "row-selected",
+                      G_CALLBACK (on_gl_category_list_row_selected), list);
 }
 
 GtkWidget *

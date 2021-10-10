@@ -5,7 +5,6 @@
             <object class="GtkListBox" id="list_box">
                 <property name="selection-mode">browse</property>
                 <property name="visible">True</property>
-                <signal name="row-selected" handler="on_gl_category_list_row_selected" />
                 <child>
                     <object class="GtkListBoxRow" id="important">
                         <property name="visible">True</property>

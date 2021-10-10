@@ -26,13 +26,13 @@ G_BEGIN_DECLS
 typedef struct
 {
     /*< private >*/
-    GtkListBox parent_instance;
+    GtkWidget parent_instance;
 } GlCategoryList;
 
 typedef struct
 {
     /*< private >*/
-    GtkListBoxClass parent_class;
+    GtkWidgetClass parent_class;
 } GlCategoryListClass;
 
 /*
