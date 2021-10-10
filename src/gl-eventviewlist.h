@@ -28,7 +28,7 @@
 G_BEGIN_DECLS
 
 #define GL_TYPE_EVENT_VIEW_LIST (gl_event_view_list_get_type ())
-G_DECLARE_FINAL_TYPE (GlEventViewList, gl_event_view_list, GL, EVENT_VIEW_LIST, GtkListBox)
+G_DECLARE_FINAL_TYPE (GlEventViewList, gl_event_view_list, GL, EVENT_VIEW_LIST, GtkBox)
 
 GtkWidget * gl_event_view_list_new (void);
 GlRowEntry *gl_event_view_list_get_detail_entry (GlEventViewList *view);
