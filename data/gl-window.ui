@@ -16,12 +16,18 @@
                 <child>
                     <object class="GtkInfoBar" id="info_bar">
                         <property name="message-type">GTK_MESSAGE_ERROR</property>
+                        <property name="visible">False</property>
                         <child>
                             <object class="GtkBox" id="action_area">
                                 <property name="visible">True</property>
                                 <property name="orientation">horizontal</property>
-                                <!-- TODO -->
-                                <!-- <property name="layout_style">center</property> -->
+                                <property name="spacing">6</property>
+                                <child>
+                                    <object class="GtkLabel" id="message_label">
+                                        <property name="hexpand">True</property>
+                                        <property name="halign">start</property>
+                                    </object>
+                                </child>
                                 <child>
                                     <object class="GtkButton" id="help_button">
                                         <property name="visible">True</property>

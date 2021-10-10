@@ -37,6 +37,7 @@ typedef struct
     GtkWidget *event_toolbar;
     GtkWidget *event_list;
     GtkWidget *info_bar;
+    GtkLabel *message_label;
 } GlWindowPrivate;
 
 G_DEFINE_TYPE_WITH_PRIVATE (GlWindow, gl_window, ADW_TYPE_APPLICATION_WINDOW)
@@ -485,28 +486,14 @@ gl_window_init (GlWindow *window)
         {
             if (!gl_util_can_read_system_journal (GL_JOURNAL_STORAGE_PERSISTENT))
             {
-                GtkWidget *message_label;
-                GtkWidget *content_area;
-
-                message_label = gtk_label_new (_("Unable to read system logs"));
-                gtk_widget_set_hexpand (GTK_WIDGET (message_label), TRUE);
-                gtk_widget_show (message_label);
-                content_area = gtk_info_bar_get_content_area (GTK_INFO_BAR (priv->info_bar));
-                gtk_container_add (GTK_CONTAINER (content_area), message_label);
+                gtk_label_set_label (priv->message_label, _("Unable to read system logs"));
 
                 gtk_widget_show (priv->info_bar);
             }
 
             if (!gl_util_can_read_user_journal ())
             {
-                GtkWidget *message_label;
-                GtkWidget *content_area;
-
-                message_label = gtk_label_new (_("Unable to read user logs"));
-                gtk_widget_set_hexpand (GTK_WIDGET (message_label), TRUE);
-                gtk_widget_show (message_label);
-                content_area = gtk_info_bar_get_content_area (GTK_INFO_BAR (priv->info_bar));
-                gtk_container_add (GTK_CONTAINER (content_area), message_label);
+                gtk_label_set_label (priv->message_label, _("Unable to read user logs"));
 
                 gtk_widget_show (priv->info_bar);
             }
@@ -516,14 +503,7 @@ gl_window_init (GlWindow *window)
         {
             if (!gl_util_can_read_system_journal (GL_JOURNAL_STORAGE_VOLATILE))
             {
-                GtkWidget *message_label;
-                GtkWidget *content_area;
-
-                message_label = gtk_label_new (_("Unable to read system logs"));
-                gtk_widget_set_hexpand (GTK_WIDGET (message_label), TRUE);
-                gtk_widget_show (message_label);
-                content_area = gtk_info_bar_get_content_area (GTK_INFO_BAR (priv->info_bar));
-                gtk_container_add (GTK_CONTAINER (content_area), message_label);
+                gtk_label_set_label (priv->message_label, _("Unable to read system logs"));
 
                 gtk_widget_show (priv->info_bar);
             }
@@ -531,14 +511,7 @@ gl_window_init (GlWindow *window)
         }
         case GL_JOURNAL_STORAGE_NONE:
         {
-            GtkWidget *message_label;
-            GtkWidget *content_area;
-
-            message_label = gtk_label_new (_("No logs available"));
-            gtk_widget_set_hexpand (GTK_WIDGET (message_label), TRUE);
-            gtk_widget_show (message_label);
-            content_area = gtk_info_bar_get_content_area (GTK_INFO_BAR (priv->info_bar));
-            gtk_container_add (GTK_CONTAINER (content_area), message_label);
+            gtk_label_set_label (priv->message_label, _("No logs available"));
 
             gtk_widget_show (priv->info_bar);
             break;
