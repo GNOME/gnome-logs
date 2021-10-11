@@ -14,7 +14,6 @@
                         <property name="child">
                             <object class="GtkGrid" id="popover_grid">
                                 <property name="visible">True</property>
-                                <property name="border_width">20</property>
                                 <property name="row_spacing">8</property>
                                 <property name="column_spacing">18</property>
                                 <child>
@@ -367,7 +366,6 @@
                                 <child>
                                     <object class="GtkGrid" id="start_end_date_time_grid">
                                         <property name="visible">True</property>
-                                        <property name="border_width">20</property>
                                         <property name="row_spacing">8</property>
                                         <property name="column_spacing">18</property>
                                         <child>
@@ -502,7 +500,6 @@
                                                         <property name="child">
                                                             <object class="GtkGrid" id="start-time-spinbox-grid">
                                                                 <property name="visible">True</property>
-                                                                <property name="border_width">10</property>
                                                                 <property name="row_spacing">15</property>
                                                                 <property name="column_spacing">10</property>
                                                                 <property name="column-homogeneous">True</property>
@@ -778,7 +775,6 @@
                                                         <property name="child">
                                                             <object class="GtkGrid" id="end-time-spinbox-grid">
                                                                 <property name="visible">True</property>
-                                                                <property name="border_width">10</property>
                                                                 <property name="row_spacing">15</property>
                                                                 <property name="column_spacing">10</property>
                                                                 <property name="column-homogeneous">True</property>
