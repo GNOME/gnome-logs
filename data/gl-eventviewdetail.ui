@@ -135,7 +135,6 @@
                         <child>
                             <object class="GtkLabel" id="audit_label">
                                 <property name="visible">False</property>
-                                <property name="no_show_all">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="halign">start</property>
                                 <property name="selectable">True</property>
@@ -151,7 +150,6 @@
                         <child>
                             <object class="GtkLabel" id="device_field_label">
                                 <property name="visible">False</property>
-                                <property name="no_show_all">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="halign">end</property>
                                 <property name="label" translatable="yes">Kernel Device</property>
@@ -168,7 +166,6 @@
                         <child>
                             <object class="GtkLabel" id="device_label">
                                 <property name="visible">False</property>
-                                <property name="no_show_all">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="halign">start</property>
                                 <property name="selectable">True</property>
@@ -184,7 +181,6 @@
                         <child>
                             <object class="GtkLabel" id="priority_field_label">
                                 <property name="visible">True</property>
-                                <property name="no_show_all">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="halign">end</property>
                                 <property name="label" translatable="yes">Priority</property>
@@ -201,7 +197,6 @@
                         <child>
                             <object class="GtkLabel" id="priority_label">
                                 <property name="visible">True</property>
-                                <property name="no_show_all">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="halign">start</property>
                                 <property name="selectable">True</property>
@@ -217,7 +212,6 @@
                         <child>
                             <object class="GtkLabel" id="subject_field_label">
                                 <property name="visible">False</property>
-                                <property name="no_show_all">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="halign">end</property>
                                 <property name="valign">baseline</property>
@@ -235,7 +229,6 @@
                         <child>
                             <object class="GtkLabel" id="subject_label">
                                 <property name="visible">False</property>
-                                <property name="no_show_all">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="halign">start</property>
                                 <property name="valign">baseline</property>
@@ -254,7 +247,6 @@
                         <child>
                             <object class="GtkLabel" id="definedby_field_label">
                                 <property name="visible">False</property>
-                                <property name="no_show_all">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="halign">end</property>
                                 <property name="label" translatable="yes">Defined By</property>
@@ -271,7 +263,6 @@
                         <child>
                             <object class="GtkLabel" id="definedby_label">
                                 <property name="visible">False</property>
-                                <property name="no_show_all">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="halign">start</property>
                                 <property name="selectable">True</property>
@@ -287,7 +278,6 @@
                         <child>
                             <object class="GtkLabel" id="support_field_label">
                                 <property name="visible">False</property>
-                                <property name="no_show_all">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="halign">end</property>
                                 <property name="valign">baseline</property>
@@ -305,7 +295,6 @@
                         <child>
                             <object class="GtkLabel" id="support_label">
                                 <property name="visible">False</property>
-                                <property name="no_show_all">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="halign">start</property>
                                 <property name="valign">baseline</property>
@@ -324,7 +313,6 @@
                         <child>
                             <object class="GtkLabel" id="documentation_field_label">
                                 <property name="visible">False</property>
-                                <property name="no_show_all">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="halign">end</property>
                                 <property name="label" translatable="yes">Documentation</property>
