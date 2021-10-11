@@ -1264,6 +1264,7 @@ custom_range_submenu_back_button_clicked (GtkButton *button,
 
     gtk_stack_set_visible_child_name (GTK_STACK (priv->range_stack), "range-button");
     gtk_stack_set_visible_child_name (GTK_STACK (priv->range_label_stack), "when-label");
+    gtk_stack_set_visible_child_name (GTK_STACK (priv->menu_stack), "main");
 }
 
 guint64

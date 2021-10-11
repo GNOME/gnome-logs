@@ -339,13 +339,29 @@
                                 <property name="orientation">vertical</property>
                                 <property name="visible">True</property>
                                 <child>
-                                    <object class="GtkModelButton" id="submenu_back_button">
+                                    <object class="GtkButton" id="submenu_back_button">
                                         <property name="visible">True</property>
-                                        <property name="centered">True</property>
-                                        <property name="inverted">True</property>
-                                        <property name="menu-name">main</property>
-                                        <property name="text" translatable="yes">Back</property>
                                         <signal name="clicked" handler="custom_range_submenu_back_button_clicked"/>
+                                        <child>
+                                            <object class="GtkBox">
+                                                <child>
+                                                    <object class="GtkImage">
+                                                        <property name="icon-name">go-previous-symbolic</property>
+                                                        <property name="halign">start</property>
+                                                    </object>
+                                                </child>
+                                                <child>
+                                                    <object class="GtkLabel">
+                                                        <property name="label" translatable="yes">Back</property>
+                                                        <property name="hexpand">True</property>
+                                                        <property name="halign">center</property>
+                                                    </object>
+                                                </child>
+                                            </object>
+                                        </child>
+                                        <style>
+                                            <class name="flat"/>
+                                        </style>
                                     </object>
                                 </child>
                                 <child>
