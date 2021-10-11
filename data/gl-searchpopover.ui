@@ -519,7 +519,6 @@
                                                                         <property name="width_chars">2</property>
                                                                         <property name="adjustment">start_time_hour_adjustment</property>
                                                                         <property name="wrap">1</property>
-                                                                        <property name="max-length">2</property>
                                                                         <property name="numeric">True</property>
                                                                         <property name="halign">GTK_ALIGN_CENTER</property>
                                                                         <property name="hexpand">True</property>
@@ -552,7 +551,6 @@
                                                                         <property name="width_chars">2</property>
                                                                         <property name="adjustment">start_time_minute_adjustment</property>
                                                                         <property name="wrap">1</property>
-                                                                        <property name="max-length">2</property>
                                                                         <property name="numeric">True</property>
                                                                         <property name="hexpand">True</property>
                                                                         <property name="halign">GTK_ALIGN_CENTER</property>
@@ -585,7 +583,6 @@
                                                                         <property name="width_chars">2</property>
                                                                         <property name="adjustment">start_time_second_adjustment</property>
                                                                         <property name="wrap">1</property>
-                                                                        <property name="max-length">2</property>
                                                                         <property name="numeric">True</property>
                                                                         <property name="hexpand">True</property>
                                                                         <property name="halign">GTK_ALIGN_CENTER</property>
@@ -619,7 +616,6 @@
                                                                         <property name="editable">True</property>
                                                                         <property name="adjustment">start_time_period_adjustment</property>
                                                                         <property name="wrap">1</property>
-                                                                        <property name="max-length">2</property>
                                                                         <property name="halign">GTK_ALIGN_CENTER</property>
                                                                         <signal name="input" handler="spinbox_format_time_period_to_int"/>
                                                                         <signal name="output" handler="spinbox_format_time_period_to_text"/>
@@ -798,7 +794,6 @@
                                                                         <property name="width_chars">2</property>
                                                                         <property name="adjustment">end_time_hour_adjustment</property>
                                                                         <property name="wrap">1</property>
-                                                                        <property name="max-length">2</property>
                                                                         <property name="numeric">True</property>
                                                                         <property name="halign">GTK_ALIGN_CENTER</property>
                                                                         <property name="hexpand">True</property>
@@ -831,7 +826,6 @@
                                                                         <property name="width_chars">2</property>
                                                                         <property name="adjustment">end_time_minute_adjustment</property>
                                                                         <property name="wrap">1</property>
-                                                                        <property name="max-length">2</property>
                                                                         <property name="numeric">True</property>
                                                                         <property name="hexpand">True</property>
                                                                         <property name="halign">GTK_ALIGN_CENTER</property>
@@ -864,7 +858,6 @@
                                                                         <property name="width_chars">2</property>
                                                                         <property name="adjustment">end_time_second_adjustment</property>
                                                                         <property name="wrap">1</property>
-                                                                        <property name="max-length">2</property>
                                                                         <property name="numeric">True</property>
                                                                         <property name="hexpand">True</property>
                                                                         <property name="halign">GTK_ALIGN_CENTER</property>
@@ -898,7 +891,6 @@
                                                                         <property name="editable">True</property>
                                                                         <property name="adjustment">end_time_period_adjustment</property>
                                                                         <property name="wrap">1</property>
-                                                                        <property name="max-length">2</property>
                                                                         <property name="halign">GTK_ALIGN_CENTER</property>
                                                                         <signal name="input" handler="spinbox_format_time_period_to_int"/>
                                                                         <signal name="output" handler="spinbox_format_time_period_to_text"/>
