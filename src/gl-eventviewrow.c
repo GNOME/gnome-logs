@@ -281,7 +281,7 @@ gl_event_view_row_constructed (GObject *object)
     gtk_style_context_add_class (context, "event");
     grid = gtk_grid_new ();
     gtk_grid_set_column_spacing (GTK_GRID (grid), 6);
-    gtk_container_add (GTK_CONTAINER (row), grid);
+    gtk_list_box_row_set_child (GTK_LIST_BOX_ROW (row), grid);
 
     g_object_get (object,
                   "category", &category,
@@ -338,9 +338,8 @@ gl_event_view_row_constructed (GObject *object)
 
         message_box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 10);
 
-        gtk_box_pack_start (GTK_BOX (message_box),
-                            priv->message_label,
-                            TRUE, TRUE, 2);
+        gtk_box_append (GTK_BOX (message_box),
+                        priv->message_label);
 
         compressed_entries = gl_row_entry_get_compressed_entries (row_entry);
         compressed_entries_string = g_strdup_printf ("%d", compressed_entries);
@@ -353,9 +352,8 @@ gl_event_view_row_constructed (GObject *object)
         gtk_widget_set_halign (compressed_entries_label, GTK_ALIGN_START);
         gtk_label_set_xalign (GTK_LABEL (compressed_entries_label), 0);
 
-        gtk_box_pack_start (GTK_BOX (message_box),
-                            compressed_entries_label,
-                            TRUE, TRUE, 0);
+        gtk_box_append (GTK_BOX (message_box),
+                        compressed_entries_label);
 
         gtk_grid_attach (GTK_GRID (grid), message_box,
                          1, 0, 1, 1);
