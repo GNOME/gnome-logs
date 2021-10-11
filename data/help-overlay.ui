@@ -3,37 +3,31 @@
     <object class="GtkShortcutsWindow" id="help_overlay">
         <child>
             <object class="GtkShortcutsSection">
-                <property name="visible">True</property>
                 <child>
                     <object class="GtkShortcutsGroup">
                         <property name="title" translatable="yes" context="shortcut window">General</property>
-                        <property name="visible">True</property>
                         <child>
                             <object class="GtkShortcutsShortcut">
                                 <property name="accelerator">&lt;Primary&gt;n</property>
                                 <property name="title" translatable="yes" context="shortcut window">Open a new window</property>
-                                <property name="visible">True</property>
                             </object>
                         </child>
                         <child>
                             <object class="GtkShortcutsShortcut">
                                 <property name="accelerator">&lt;Primary&gt;w</property>
                                 <property name="title" translatable="yes" context="shortcut window">Close a window</property>
-                                <property name="visible">True</property>
                             </object>
                         </child>
                         <child>
                             <object class="GtkShortcutsShortcut">
                                 <property name="accelerator">F1</property>
                                 <property name="title" translatable="yes" context="shortcut window">Show help</property>
-                                <property name="visible">True</property>
                             </object>
                         </child>
                         <child>
                             <object class="GtkShortcutsShortcut">
                                 <property name="accelerator">&lt;Primary&gt;question</property>
                                 <property name="title" translatable="yes" context="shortcut window">Keyboard shortcuts</property>
-                                <property name="visible">True</property>
                             </object>
                         </child>
                     </object>
@@ -41,19 +35,16 @@
                 <child>
                     <object class="GtkShortcutsGroup">
                         <property name="title" translatable="yes" context="shortcut window">Application</property>
-                        <property name="visible">True</property>
                         <child>
                             <object class="GtkShortcutsShortcut">
                                 <property name="accelerator">&lt;Primary&gt;f</property>
                                 <property name="title" translatable="yes" context="shortcut window">Find</property>
-                                <property name="visible">True</property>
                             </object>
                         </child>
                         <child>
                             <object class="GtkShortcutsShortcut">
                                 <property name="accelerator">&lt;Primary&gt;e</property>
                                 <property name="title" translatable="yes" context="shortcut window">Export logs to a file</property>
-                                <property name="visible">True</property>
                             </object>
                         </child>
                     </object>

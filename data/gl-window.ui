@@ -6,7 +6,6 @@
         <child>
             <object class="GtkBox" id="event_box">
                 <property name="orientation">vertical</property>
-                <property name="visible">True</property>
                 <child>
                   <object class="GlEventToolbar" id="event_toolbar">
                   </object>
@@ -17,7 +16,6 @@
                         <property name="visible">False</property>
                         <child>
                             <object class="GtkBox" id="action_area">
-                                <property name="visible">True</property>
                                 <property name="orientation">horizontal</property>
                                 <property name="spacing">6</property>
                                 <child>
@@ -28,7 +26,6 @@
                                 </child>
                                 <child>
                                     <object class="GtkButton" id="help_button">
-                                        <property name="visible">True</property>
                                         <property name="halign">center</property>
                                         <property name="label" translatable="yes">Help</property>
                                         <signal name="clicked" handler="on_help_button_clicked" object="GlWindow"/>
@@ -36,7 +33,6 @@
                                 </child>
                                 <child>
                                     <object class="GtkButton" id="ignore_button">
-                                        <property name="visible">True</property>
                                         <property name="halign">center</property>
                                         <property name="label" translatable="yes">Ignore</property>
                                         <signal name="clicked" handler="on_ignore_button_clicked" object="GlWindow"/>

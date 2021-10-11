@@ -2,20 +2,15 @@
 <interface domain="gnome-logs">
     <template class="GlEventViewDetail" parent="GtkPopover">
         <!-- The popover size is set such that it does not go beyond the window -->
-        <property name="can_focus">False</property>
         <signal name="closed" handler="gl_event_view_detail_popover_closed"/>
         <child>
             <object class="GtkScrolledWindow">
-                <property name="visible">True</property>
                 <property name="hexpand">True</property>
                 <property name="vexpand">True</property>
                 <property name="min-content-width">320</property>
                 <property name="min-content-height">300</property>
-                <property name="can_focus">False</property>
                 <child>
                     <object class="GtkGrid" id="grid">
-                        <property name="visible">True</property>
-                        <property name="can_focus">False</property>
                         <property name="column-spacing">12</property>
                         <property name="margin-top">12</property>
                         <property name="margin-bottom">12</property>
@@ -24,7 +19,6 @@
                         <child>
                             <object class="GtkLabel" id="comm_field_label">
                                 <property name="visible">False</property>
-                                <property name="can_focus">False</property>
                                 <property name="halign">end</property>
                                 <property name="label" translatable="yes">Sender</property>
                                 <style>
@@ -40,7 +34,6 @@
                         <child>
                             <object class="GtkLabel" id="comm_label">
                                 <property name="visible">False</property>
-                                <property name="can_focus">False</property>
                                 <property name="halign">start</property>
                                 <property name="hexpand">True</property>
                                 <property name="selectable">True</property>
@@ -55,8 +48,6 @@
                         </child>
                         <child>
                             <object class="GtkLabel" id="time_field_label">
-                                <property name="visible">True</property>
-                                <property name="can_focus">False</property>
                                 <property name="halign">end</property>
                                 <property name="label" translatable="yes">Time</property>
                                 <style>
@@ -71,8 +62,6 @@
                         </child>
                         <child>
                             <object class="GtkLabel" id="time_label">
-                                <property name="visible">True</property>
-                                <property name="can_focus">False</property>
                                 <property name="halign">start</property>
                                 <property name="hexpand">True</property>
                                 <property name="selectable">True</property>
@@ -87,7 +76,6 @@
                         </child>
                         <child>
                             <object class="GtkLabel" id="message_field_label">
-                                <property name="can_focus">False</property>
                                 <property name="halign">end</property>
                                 <property name="valign">baseline</property>
                                 <property name="label" translatable="yes">Message</property>
@@ -103,7 +91,6 @@
                         </child>
                         <child>
                             <object class="GtkLabel" id="message_label">
-                                <property name="can_focus">False</property>
                                 <property name="halign">start</property>
                                 <property name="valign">baseline</property>
                                 <property name="selectable">True</property>
@@ -121,7 +108,6 @@
                         <child>
                             <object class="GtkLabel" id="audit_field_label">
                                 <property name="visible">False</property>
-                                <property name="can_focus">False</property>
                                 <property name="halign">end</property>
                                 <property name="label" translatable="yes">Audit Session</property>
                                 <style>
@@ -137,7 +123,6 @@
                         <child>
                             <object class="GtkLabel" id="audit_label">
                                 <property name="visible">False</property>
-                                <property name="can_focus">False</property>
                                 <property name="halign">start</property>
                                 <property name="selectable">True</property>
                                 <style>
@@ -152,7 +137,6 @@
                         <child>
                             <object class="GtkLabel" id="device_field_label">
                                 <property name="visible">False</property>
-                                <property name="can_focus">False</property>
                                 <property name="halign">end</property>
                                 <property name="label" translatable="yes">Kernel Device</property>
                                 <style>
@@ -168,7 +152,6 @@
                         <child>
                             <object class="GtkLabel" id="device_label">
                                 <property name="visible">False</property>
-                                <property name="can_focus">False</property>
                                 <property name="halign">start</property>
                                 <property name="selectable">True</property>
                                 <style>
@@ -182,8 +165,6 @@
                         </child>
                         <child>
                             <object class="GtkLabel" id="priority_field_label">
-                                <property name="visible">True</property>
-                                <property name="can_focus">False</property>
                                 <property name="halign">end</property>
                                 <property name="label" translatable="yes">Priority</property>
                                 <style>
@@ -198,8 +179,6 @@
                         </child>
                         <child>
                             <object class="GtkLabel" id="priority_label">
-                                <property name="visible">True</property>
-                                <property name="can_focus">False</property>
                                 <property name="halign">start</property>
                                 <property name="selectable">True</property>
                                 <style>
@@ -214,7 +193,6 @@
                         <child>
                             <object class="GtkLabel" id="subject_field_label">
                                 <property name="visible">False</property>
-                                <property name="can_focus">False</property>
                                 <property name="halign">end</property>
                                 <property name="valign">baseline</property>
                                 <property name="label" translatable="yes">Subject</property>
@@ -231,7 +209,6 @@
                         <child>
                             <object class="GtkLabel" id="subject_label">
                                 <property name="visible">False</property>
-                                <property name="can_focus">False</property>
                                 <property name="halign">start</property>
                                 <property name="valign">baseline</property>
                                 <property name="selectable">True</property>
@@ -249,7 +226,6 @@
                         <child>
                             <object class="GtkLabel" id="definedby_field_label">
                                 <property name="visible">False</property>
-                                <property name="can_focus">False</property>
                                 <property name="halign">end</property>
                                 <property name="label" translatable="yes">Defined By</property>
                                 <style>
@@ -265,7 +241,6 @@
                         <child>
                             <object class="GtkLabel" id="definedby_label">
                                 <property name="visible">False</property>
-                                <property name="can_focus">False</property>
                                 <property name="halign">start</property>
                                 <property name="selectable">True</property>
                                 <style>
@@ -280,7 +255,6 @@
                         <child>
                             <object class="GtkLabel" id="support_field_label">
                                 <property name="visible">False</property>
-                                <property name="can_focus">False</property>
                                 <property name="halign">end</property>
                                 <property name="valign">baseline</property>
                                 <property name="label" translatable="yes">Support</property>
@@ -297,7 +271,6 @@
                         <child>
                             <object class="GtkLabel" id="support_label">
                                 <property name="visible">False</property>
-                                <property name="can_focus">False</property>
                                 <property name="halign">start</property>
                                 <property name="valign">baseline</property>
                                 <property name="selectable">True</property>
@@ -315,7 +288,6 @@
                         <child>
                             <object class="GtkLabel" id="documentation_field_label">
                                 <property name="visible">False</property>
-                                <property name="can_focus">False</property>
                                 <property name="halign">end</property>
                                 <property name="label" translatable="yes">Documentation</property>
                                 <style>
@@ -331,7 +303,6 @@
                         <child>
                             <object class="GtkLabel" id="documentation_label">
                                 <property name="visible">False</property>
-                                <property name="can_focus">False</property>
                                 <property name="halign">start</property>
                                 <property name="selectable">True</property>
                                 <style>
@@ -345,8 +316,6 @@
                         </child>
                         <child>
                             <object class="GtkLabel" id="detailed_message_label">
-                                <property name="visible">True</property>
-                                <property name="can_focus">False</property>
                                 <property name="halign">start</property>
                                 <property name="selectable">True</property>
                                 <property name="wrap">True</property>

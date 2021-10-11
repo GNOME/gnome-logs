@@ -4,7 +4,6 @@
         <signal name="closed" handler="search_popover_closed"/>
         <child>
             <object class="GtkStack" id="menu_stack">
-                <property name="visible">True</property>
                 <property name="vhomogeneous">False</property>
                 <property name="transition_duration">250</property>
                 <property name="transition_type">GTK_STACK_TRANSITION_TYPE_SLIDE_LEFT_RIGHT</property>
@@ -13,12 +12,10 @@
                         <property name="name">main</property>
                         <property name="child">
                             <object class="GtkGrid" id="popover_grid">
-                                <property name="visible">True</property>
                                 <property name="row_spacing">8</property>
                                 <property name="column_spacing">18</property>
                                 <child>
                                     <object class="GtkStack" id="parameter_stack">
-                                        <property name="visible">True</property>
                                         <property name="vhomogeneous">False</property>
                                         <property name="transition_type">crossfade</property>
                                         <child>
@@ -26,17 +23,13 @@
                                                 <property name="name">parameter-button</property>
                                                 <property name="child">
                                                     <object class="GtkButton" id="select_parameter_button">
-                                                        <property name="visible">True</property>
-                                                        <property name="can_focus">True</property>
                                                         <property name="receives_default">True</property>
                                                         <property name="tooltip_text" translatable="yes">Select a Journal Field to filter the Logs according to it</property>
                                                         <signal name="clicked" handler="select_parameter_button_clicked"/>
                                                         <child>
                                                             <object class="GtkBox" id="parameter_filter_box">
-                                                                <property name="visible">True</property>
                                                                 <child>
                                                                     <object class="GtkLabel" id="parameter_button_label">
-                                                                        <property name="visible">True</property>
                                                                         <property name="hexpand">True</property>
                                                                         <property name="label" translatable="yes">All Available Fields</property>
                                                                         <property name="width_chars">30</property>
@@ -45,7 +38,6 @@
                                                                 </child>
                                                                 <child>
                                                                     <object class="GtkImage" id="parameter_button_image">
-                                                                        <property name="visible">True</property>
                                                                         <property name="icon_name">pan-down-symbolic</property>
                                                                     </object>
                                                                 </child>
@@ -62,11 +54,8 @@
                                                     <object class="GtkScrolledWindow" id="parameter_scrolled_window">
                                                         <property name="has-frame">True</property>
                                                         <property name="height_request">150</property>
-                                                        <property name="visible">True</property>
-                                                        <property name="can_focus">True</property>
                                                         <child>
                                                             <object class="GtkTreeView" id="parameter_treeview">
-                                                                <property name="visible">True</property>
                                                                 <property name="model">parameter_liststore</property>
                                                                 <property name="headers-visible">False</property>
                                                                 <property name="activate-on-single-click">True</property>
@@ -74,7 +63,6 @@
                                                                 <child>
                                                                     <object class="GtkTreeViewColumn" id="parameter-column">
                                                                         <property name="title" translatable="yes">Parameters</property>
-                                                                        <property name="visible">True</property>
                                                                         <child>
                                                                             <object class="GtkCellRendererText" id="test-renderer"/>
                                                                             <attributes>
@@ -102,14 +90,12 @@
                                 </child>
                                 <child>
                                     <object class="GtkStack" id="parameter_label_stack">
-                                        <property name="visible">True</property>
                                         <child>
                                             <object class="GtkStackPage">
                                                 <property name="title">page0</property>
                                                 <property name="name">what-label</property>
                                                 <property name="child">
                                                     <object class="GtkLabel" id="what_dim_label">
-                                                        <property name="visible">True</property>
                                                         <property name="margin_top">10</property>
                                                         <property name="label" translatable="yes" comments="Translators: What [journal fields to search in]">What</property>
                                                         <property name="xalign">0</property>
@@ -126,7 +112,6 @@
                                                 <property name="name">select-parameter-label</property>
                                                 <property name="child">
                                                     <object class="GtkLabel" id="select_parameter_dim_label">
-                                                        <property name="visible">True</property>
                                                         <property name="margin_top">10</property>
                                                         <property name="label" translatable="yes">Select Journal Field…</property>
                                                         <property name="xalign">0</property>
@@ -145,14 +130,12 @@
                                 </child>
                                 <child>
                                     <object class="GtkStack" id="range_label_stack">
-                                        <property name="visible">True</property>
                                         <child>
                                             <object class="GtkStackPage">
                                                 <property name="name">when-label</property>
                                                 <property name="title">page0</property>
                                                 <property name="child">
                                                     <object class="GtkLabel" id="when_dim_label">
-                                                        <property name="visible">True</property>
                                                         <property name="label" translatable="yes" comments="When [log entries to be shown for a given timestamp range]">When</property>
                                                         <property name="xalign">0</property>
                                                         <style>
@@ -168,7 +151,6 @@
                                                 <property name="title">page1</property>
                                                 <property name="child">
                                                     <object class="GtkLabel" id="show_logs_from_dim_label">
-                                                        <property name="visible">True</property>
                                                         <property name="margin_top">10</property>
                                                         <property name="label" translatable="yes">Show Logs from…</property>
                                                         <property name="xalign">0</property>
@@ -187,7 +169,6 @@
                                 </child>
                                 <child>
                                     <object class="GtkStack" id="range_stack">
-                                        <property name="visible">True</property>
                                         <property name="vhomogeneous">False</property>
                                         <property name="transition_type">crossfade</property>
                                         <child>
@@ -195,24 +176,19 @@
                                                 <property name="name">range-button</property>
                                                 <property name="child">
                                                     <object class="GtkButton" id="select_range_button">
-                                                        <property name="visible">True</property>
-                                                        <property name="can_focus">True</property>
                                                         <property name="receives_default">True</property>
                                                         <property name="tooltip_text" translatable="yes">Select Timestamp Range of the Log Entries to be shown</property>
                                                         <property name="hexpand">True</property>
                                                         <signal name="clicked" handler="select_range_button_clicked"/>
                                                         <child>
                                                             <object class="GtkBox">
-                                                                <property name="visible">True</property>
                                                                 <child>
                                                                     <object class="GtkLabel" id="range_button_label">
-                                                                        <property name="visible">True</property>
                                                                         <property name="label" translatable="yes">Current Boot</property>
                                                                     </object>
                                                                 </child>
                                                                 <child>
                                                                     <object class="GtkImage" id="range_button_drop_down_image">
-                                                                        <property name="visible">True</property>
                                                                         <property name="icon_name">pan-down-symbolic</property>
                                                                     </object>
                                                                 </child>
@@ -230,12 +206,9 @@
                                                     <object class="GtkScrolledWindow" id="range_scrolled_window">
                                                         <property name="has-frame">True</property>
                                                         <property name="height_request">176</property>
-                                                        <property name="visible">True</property>
-                                                        <property name="can_focus">True</property>
                                                         <property name="hexpand">True</property>
                                                         <child>
                                                             <object class="GtkTreeView" id="range_treeview">
-                                                                <property name="visible">True</property>
                                                                 <property name="model">range_liststore</property>
                                                                 <property name="headers-visible">False</property>
                                                                 <property name="activate-on-single-click">True</property>
@@ -243,7 +216,6 @@
                                                                 <child>
                                                                     <object class="GtkTreeViewColumn" id="range-column">
                                                                         <property name="title" translatable="yes">Parameters</property>
-                                                                        <property name="visible">True</property>
                                                                         <child>
                                                                             <object class="GtkCellRendererText" id="range-text-renderer"/>
                                                                             <attributes>
@@ -273,12 +245,10 @@
                                     <object class="GtkRevealer" id="search_type_revealer">
                                         <child>
                                             <object class="GtkBox">
-                                                <property name="visible">True</property>
                                                 <property name="orientation">vertical</property>
                                                 <property name="spacing">8</property>
                                                 <child>
                                                     <object class="GtkLabel" id="search_type_dim_label">
-                                                        <property name="visible">True</property>
                                                         <property name="margin_top">10</property>
                                                         <property name="label" translatable="yes">Search Type</property>
                                                         <property name="xalign">0</property>
@@ -289,12 +259,9 @@
                                                 </child>
                                                 <child>
                                                     <object class="GtkBox">
-                                                        <property name="visible">True</property>
                                                         <child>
                                                             <object class="GtkCheckButton" id="checkbutton_substring">
                                                                 <property name="label" translatable="yes">Substring</property>
-                                                                <property name="visible">True</property>
-                                                                <property name="can_focus">True</property>
                                                                 <property name="receives_default">False</property>
                                                                 <property name="tooltip_text" translatable="yes">Match in any part of the string</property>
                                                                 <property name="hexpand">True</property>
@@ -304,8 +271,6 @@
                                                         <child>
                                                             <object class="GtkCheckButton" id="checkbutton_exact">
                                                                 <property name="label" translatable="yes">Exact</property>
-                                                                <property name="visible">True</property>
-                                                                <property name="can_focus">True</property>
                                                                 <property name="receives_default">False</property>
                                                                 <property name="tooltip_text" translatable="yes">Match complete string only</property>
                                                                 <property name="hexpand">True</property>
@@ -336,10 +301,8 @@
                         <property name="child">
                             <object class="GtkBox" id="set_custom_range_vbox">
                                 <property name="orientation">vertical</property>
-                                <property name="visible">True</property>
                                 <child>
                                     <object class="GtkButton" id="submenu_back_button">
-                                        <property name="visible">True</property>
                                         <signal name="clicked" handler="custom_range_submenu_back_button_clicked"/>
                                         <child>
                                             <object class="GtkBox">
@@ -365,12 +328,10 @@
                                 </child>
                                 <child>
                                     <object class="GtkGrid" id="start_end_date_time_grid">
-                                        <property name="visible">True</property>
                                         <property name="row_spacing">8</property>
                                         <property name="column_spacing">18</property>
                                         <child>
                                             <object class="GtkLabel" id="start_date_dim_label">
-                                                <property name="visible">True</property>
                                                 <property name="label" translatable="yes">Show Logs Starting From…</property>
                                                 <property name="xalign">0</property>
                                                 <style>
@@ -384,7 +345,6 @@
                                         </child>
                                         <child>
                                             <object class="GtkStack" id="start_date_stack">
-                                                <property name="visible">True</property>
                                                 <property name="transition_duration">250</property>
                                                 <property name="transition_type">crossfade</property>
                                                 <child>
@@ -392,24 +352,19 @@
                                                         <property name="name">start-date-button</property>
                                                         <property name="child">
                                                             <object class="GtkButton" id="start_date_button">
-                                                                <property name="visible">True</property>
-                                                                <property name="can_focus">True</property>
                                                                 <property name="receives_default">True</property>
                                                                 <property name="tooltip_text" translatable="yes">Select a start date</property>
                                                                 <property name="hexpand">True</property>
                                                                 <signal name="clicked" handler="start_date_button_clicked"/>
                                                                 <child>
                                                                     <object class="GtkBox" id="start_date_button_label_hbox">
-                                                                        <property name="visible">True</property>
                                                                         <child>
                                                                             <object class="GtkLabel" id="start_date_button_label">
-                                                                                <property name="visible">True</property>
                                                                                 <property name="label" translatable="yes">Select Start Date…</property>
                                                                             </object>
                                                                         </child>
                                                                         <child>
                                                                             <object class="GtkImage" id="start_date_button_drop_down_image">
-                                                                                <property name="visible">True</property>
                                                                                 <property name="icon_name">pan-down-symbolic</property>
                                                                             </object>
                                                                         </child>
@@ -424,8 +379,6 @@
                                                         <property name="name">start-date-entry</property>
                                                         <property name="child">
                                                             <object class="GtkEntry" id="start_date_entry">
-                                                                <property name="visible">True</property>
-                                                                <property name="can_focus">True</property>
                                                                 <property name="placeholder-text" translatable="yes">22 January 2016 or 1/22/2016</property>
                                                                 <signal name="activate" handler="start_date_entry_activate"/>
                                                             </object>
@@ -442,8 +395,6 @@
                                             <object class="GtkRevealer" id="start_date_calendar_revealer">
                                                 <child>
                                                     <object class="GtkCalendar" id="start_date_calendar">
-                                                        <property name="visible">True</property>
-                                                        <property name="can_focus">True</property>
                                                         <property name="valign">start</property>
                                                         <property name="show_week_numbers">True</property>
                                                         <signal name="day-selected" handler="start_date_calendar_day_selected"/>
@@ -457,7 +408,6 @@
                                         </child>
                                         <child>
                                             <object class="GtkStack" id="start_time_stack">
-                                                <property name="visible">True</property>
                                                 <property name="transition_duration">250</property>
                                                 <property name="transition_type">crossfade</property>
                                                 <property name="vhomogeneous">False</property>
@@ -467,24 +417,19 @@
                                                         <property name="name">start-time-select-button</property>
                                                         <property name="child">
                                                             <object class="GtkButton" id="start_time_button">
-                                                                <property name="visible">True</property>
-                                                                <property name="can_focus">True</property>
                                                                 <property name="receives_default">True</property>
                                                                 <property name="tooltip_text" translatable="yes">Select start time</property>
                                                                 <property name="hexpand">True</property>
                                                                 <signal name="clicked" handler="start_time_button_clicked"/>
                                                                 <child>
                                                                     <object class="GtkBox" id="start_time_button_label_hbox">
-                                                                        <property name="visible">True</property>
                                                                         <child>
                                                                             <object class="GtkLabel" id="start_time_button_label">
-                                                                                <property name="visible">True</property>
                                                                                 <property name="label" translatable="yes">Select Start Time…</property>
                                                                             </object>
                                                                         </child>
                                                                         <child>
                                                                             <object class="GtkImage" id="start_time_button_drop_down_image">
-                                                                                <property name="visible">True</property>
                                                                                 <property name="icon_name">pan-down-symbolic</property>
                                                                             </object>
                                                                         </child>
@@ -499,13 +444,11 @@
                                                         <property name="name">start-time-spinbutton</property>
                                                         <property name="child">
                                                             <object class="GtkGrid" id="start-time-spinbox-grid">
-                                                                <property name="visible">True</property>
                                                                 <property name="row_spacing">15</property>
                                                                 <property name="column_spacing">10</property>
                                                                 <property name="column-homogeneous">True</property>
                                                                 <child>
                                                                     <object class="GtkLabel" id="start_time_hour_label">
-                                                                        <property name="visible">True</property>
                                                                         <property name="label" translatable="yes">Hr</property>
                                                                         <style>
                                                                             <class name="dim-label"/>
@@ -514,7 +457,6 @@
                                                                 </child>
                                                                 <child>
                                                                     <object class="GtkSpinButton" id="start_time_hour_spin">
-                                                                        <property name="visible">1</property>
                                                                         <property name="orientation">vertical</property>
                                                                         <property name="width_chars">2</property>
                                                                         <property name="adjustment">start_time_hour_adjustment</property>
@@ -533,7 +475,6 @@
                                                                 </child>
                                                                 <child>
                                                                     <object class="GtkLabel" id="start_time_minute_label">
-                                                                        <property name="visible">True</property>
                                                                         <property name="label" translatable="yes">Min</property>
                                                                         <style>
                                                                             <class name="dim-label"/>
@@ -546,7 +487,6 @@
                                                                 </child>
                                                                 <child>
                                                                     <object class="GtkSpinButton" id="start_time_minute_spin">
-                                                                        <property name="visible">1</property>
                                                                         <property name="orientation">vertical</property>
                                                                         <property name="width_chars">2</property>
                                                                         <property name="adjustment">start_time_minute_adjustment</property>
@@ -565,7 +505,6 @@
                                                                 </child>
                                                                 <child>
                                                                     <object class="GtkLabel" id="start_time_second_label">
-                                                                        <property name="visible">True</property>
                                                                         <property name="label" translatable="yes">Sec</property>
                                                                         <style>
                                                                             <class name="dim-label"/>
@@ -578,7 +517,6 @@
                                                                 </child>
                                                                 <child>
                                                                     <object class="GtkSpinButton" id="start_time_second_spin">
-                                                                        <property name="visible">1</property>
                                                                         <property name="orientation">vertical</property>
                                                                         <property name="width_chars">2</property>
                                                                         <property name="adjustment">start_time_second_adjustment</property>
@@ -597,7 +535,6 @@
                                                                 </child>
                                                                 <child>
                                                                     <object class="GtkLabel" id="start_time_period_label">
-                                                                        <property name="visible">True</property>
                                                                         <property name="label" translatable="yes">AM/PM</property>
                                                                         <style>
                                                                             <class name="dim-label"/>
@@ -610,7 +547,6 @@
                                                                 </child>
                                                                 <child>
                                                                     <object class="GtkSpinButton" id="start_time_period_spin">
-                                                                        <property name="visible">True</property>
                                                                         <property name="orientation">vertical</property>
                                                                         <property name="width_chars">2</property>
                                                                         <property name="editable">True</property>
@@ -638,7 +574,6 @@
                                         </child>
                                         <child>
                                             <object class="GtkLabel" id="end_date_dim_label">
-                                                <property name="visible">True</property>
                                                 <property name="label" translatable="yes">Until…</property>
                                                 <property name="xalign">0</property>
                                                 <style>
@@ -652,7 +587,6 @@
                                         </child>
                                         <child>
                                             <object class="GtkStack" id="end_date_stack">
-                                                <property name="visible">True</property>
                                                 <property name="transition_duration">250</property>
                                                 <property name="transition_type">crossfade</property>
                                                 <child>
@@ -660,24 +594,19 @@
                                                         <property name="name">end-date-button</property>
                                                         <property name="child">
                                                             <object class="GtkButton" id="end_date_button">
-                                                                <property name="visible">True</property>
-                                                                <property name="can_focus">True</property>
                                                                 <property name="receives_default">True</property>
                                                                 <property name="tooltip_text" translatable="yes">Select an end date</property>
                                                                 <property name="hexpand">True</property>
                                                                 <signal name="clicked" handler="end_date_button_clicked"/>
                                                                 <child>
                                                                     <object class="GtkBox" id="end_date_button_label_hbox">
-                                                                        <property name="visible">True</property>
                                                                         <child>
                                                                             <object class="GtkLabel" id="end_date_button_label">
-                                                                                <property name="visible">True</property>
                                                                                 <property name="label" translatable="yes">Select End Date…</property>
                                                                             </object>
                                                                         </child>
                                                                         <child>
                                                                             <object class="GtkImage" id="end_date_button_drop_down_image">
-                                                                                <property name="visible">True</property>
                                                                                 <property name="icon_name">pan-down-symbolic</property>
                                                                             </object>
                                                                         </child>
@@ -692,8 +621,6 @@
                                                         <property name="name">end-date-entry</property>
                                                         <property name="child">
                                                             <object class="GtkEntry" id="end_date_entry">
-                                                                <property name="visible">True</property>
-                                                                <property name="can_focus">True</property>
                                                                 <property name="placeholder-text" translatable="yes">22 January 2016 or 1/22/2016</property>
                                                                 <signal name="activate" handler="end_date_entry_activate"/>
                                                             </object>
@@ -710,8 +637,6 @@
                                             <object class="GtkRevealer" id="end_date_calendar_revealer">
                                                 <child>
                                                     <object class="GtkCalendar" id="end_date_calendar">
-                                                        <property name="visible">True</property>
-                                                        <property name="can_focus">True</property>
                                                         <property name="valign">start</property>
                                                         <property name="year">2016</property>
                                                         <property name="month">5</property>
@@ -728,7 +653,6 @@
                                         </child>
                                         <child>
                                             <object class="GtkStack" id="end_time_stack">
-                                                <property name="visible">True</property>
                                                 <property name="transition_duration">250</property>
                                                 <property name="transition_type">crossfade</property>
                                                 <property name="vhomogeneous">False</property>
@@ -738,24 +662,19 @@
                                                         <property name="name">end-time-select-button</property>
                                                         <property name="child">
                                                             <object class="GtkButton" id="end_time_button">
-                                                                <property name="visible">True</property>
-                                                                <property name="can_focus">True</property>
                                                                 <property name="receives_default">True</property>
                                                                 <property name="tooltip_text" translatable="yes">Select end time</property>
                                                                 <property name="hexpand">True</property>
                                                                 <signal name="clicked" handler="end_time_button_clicked"/>
                                                                 <child>
                                                                     <object class="GtkBox" id="end_time_button_label_hbox">
-                                                                        <property name="visible">True</property>
                                                                         <child>
                                                                             <object class="GtkLabel" id="end_time_button_label">
-                                                                                <property name="visible">True</property>
                                                                                 <property name="label" translatable="yes">Select End Time…</property>
                                                                             </object>
                                                                         </child>
                                                                         <child>
                                                                             <object class="GtkImage" id="end_time_button_drop_down_image">
-                                                                                <property name="visible">True</property>
                                                                                 <property name="icon_name">pan-down-symbolic</property>
                                                                             </object>
                                                                         </child>
@@ -770,13 +689,11 @@
                                                         <property name="name">end-time-spinbutton</property>
                                                         <property name="child">
                                                             <object class="GtkGrid" id="end-time-spinbox-grid">
-                                                                <property name="visible">True</property>
                                                                 <property name="row_spacing">15</property>
                                                                 <property name="column_spacing">10</property>
                                                                 <property name="column-homogeneous">True</property>
                                                                 <child>
                                                                     <object class="GtkLabel" id="end_time_hour_label">
-                                                                        <property name="visible">True</property>
                                                                         <property name="label" translatable="yes">Hr</property>
                                                                         <style>
                                                                             <class name="dim-label"/>
@@ -789,7 +706,6 @@
                                                                 </child>
                                                                 <child>
                                                                     <object class="GtkSpinButton" id="end_time_hour_spin">
-                                                                        <property name="visible">1</property>
                                                                         <property name="orientation">vertical</property>
                                                                         <property name="width_chars">2</property>
                                                                         <property name="adjustment">end_time_hour_adjustment</property>
@@ -808,7 +724,6 @@
                                                                 </child>
                                                                 <child>
                                                                     <object class="GtkLabel" id="end_time_minute_label">
-                                                                        <property name="visible">True</property>
                                                                         <property name="label" translatable="yes">Min</property>
                                                                         <style>
                                                                             <class name="dim-label"/>
@@ -821,7 +736,6 @@
                                                                 </child>
                                                                 <child>
                                                                     <object class="GtkSpinButton" id="end_time_minute_spin">
-                                                                        <property name="visible">1</property>
                                                                         <property name="orientation">vertical</property>
                                                                         <property name="width_chars">2</property>
                                                                         <property name="adjustment">end_time_minute_adjustment</property>
@@ -840,7 +754,6 @@
                                                                 </child>
                                                                 <child>
                                                                     <object class="GtkLabel" id="end_time_second_label">
-                                                                        <property name="visible">True</property>
                                                                         <property name="label" translatable="yes">Sec</property>
                                                                         <style>
                                                                             <class name="dim-label"/>
@@ -853,7 +766,6 @@
                                                                 </child>
                                                                 <child>
                                                                     <object class="GtkSpinButton" id="end_time_second_spin">
-                                                                        <property name="visible">1</property>
                                                                         <property name="orientation">vertical</property>
                                                                         <property name="width_chars">2</property>
                                                                         <property name="adjustment">end_time_second_adjustment</property>
@@ -872,7 +784,6 @@
                                                                 </child>
                                                                 <child>
                                                                     <object class="GtkLabel" id="end_time_period_label">
-                                                                        <property name="visible">True</property>
                                                                         <property name="label" translatable="yes">AM/PM</property>
                                                                         <style>
                                                                             <class name="dim-label"/>
@@ -885,7 +796,6 @@
                                                                 </child>
                                                                 <child>
                                                                     <object class="GtkSpinButton" id="end_time_period_spin">
-                                                                        <property name="visible">True</property>
                                                                         <property name="orientation">vertical</property>
                                                                         <property name="width_chars">2</property>
                                                                         <property name="editable">True</property>

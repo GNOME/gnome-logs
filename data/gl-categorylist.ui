@@ -4,10 +4,8 @@
         <child>
             <object class="GtkListBox" id="list_box">
                 <property name="selection-mode">browse</property>
-                <property name="visible">True</property>
                 <child>
                     <object class="GtkListBoxRow" id="important">
-                        <property name="visible">True</property>
                         <style>
                             <class name="category"/>
                         </style>
@@ -15,7 +13,6 @@
                             <object class="GtkLabel" id="important_label">
                                 <property name="halign">start</property>
                                 <property name="label" translatable="yes">Important</property>
-                                <property name="visible">True</property>
                             </object>
                         </child>
                     </object>
@@ -30,7 +27,6 @@
                             <object class="GtkLabel" id="alerts_label">
                                 <property name="halign">start</property>
                                 <property name="label" translatable="yes">Alerts</property>
-                                <property name="visible">True</property>
                             </object>
                         </child>
                     </object>
@@ -45,14 +41,12 @@
                             <object class="GtkLabel" id="starred_label">
                                 <property name="halign">start</property>
                                 <property name="label" translatable="yes">Starred</property>
-                                <property name="visible">True</property>
                             </object>
                         </child>
                     </object>
                 </child>
                 <child>
                     <object class="GtkListBoxRow" id="all">
-                        <property name="visible">True</property>
                         <style>
                             <class name="category"/>
                         </style>
@@ -60,14 +54,12 @@
                             <object class="GtkLabel" id="all_label">
                                 <property name="halign">start</property>
                                 <property name="label" translatable="yes">All</property>
-                                <property name="visible">True</property>
                             </object>
                         </child>
                     </object>
                 </child>
                 <child>
                     <object class="GtkListBoxRow" id="applications">
-                        <property name="visible">True</property>
                         <style>
                             <class name="category"/>
                         </style>
@@ -75,14 +67,12 @@
                             <object class="GtkLabel" id="applications_label">
                                 <property name="halign">start</property>
                                 <property name="label" translatable="yes">Applications</property>
-                                <property name="visible">True</property>
                             </object>
                         </child>
                     </object>
                 </child>
                 <child>
                     <object class="GtkListBoxRow" id="system">
-                        <property name="visible">True</property>
                         <style>
                             <class name="category"/>
                         </style>
@@ -90,14 +80,12 @@
                             <object class="GtkLabel" id="system_label">
                                 <property name="halign">start</property>
                                 <property name="label" translatable="yes">System</property>
-                                <property name="visible">True</property>
                             </object>
                         </child>
                     </object>
                 </child>
                 <child>
                     <object class="GtkListBoxRow" id="security">
-                        <property name="visible">True</property>
                         <style>
                             <class name="category"/>
                         </style>
@@ -105,14 +93,12 @@
                             <object class="GtkLabel" id="security_label">
                                 <property name="halign">start</property>
                                 <property name="label" translatable="yes">Security</property>
-                                <property name="visible">True</property>
                             </object>
                         </child>
                     </object>
                 </child>
                 <child>
                     <object class="GtkListBoxRow" id="hardware">
-                        <property name="visible">True</property>
                         <style>
                             <class name="category"/>
                         </style>
@@ -120,7 +106,6 @@
                             <object class="GtkLabel" id="hardware_label">
                                 <property name="halign">start</property>
                                 <property name="label" translatable="yes">Hardware</property>
-                                <property name="visible">True</property>
                             </object>
                         </child>
                     </object>
@@ -135,7 +120,6 @@
                             <object class="GtkLabel" id="updates_label">
                                 <property name="halign">start</property>
                                 <property name="label" translatable="yes">Updates</property>
-                                <property name="visible">True</property>
                             </object>
                         </child>
                     </object>
@@ -150,7 +134,6 @@
                             <object class="GtkLabel" id="usage_label">
                                 <property name="halign">start</property>
                                 <property name="label" translatable="yes">Usage</property>
-                                <property name="visible">True</property>
                             </object>
                         </child>
                     </object>

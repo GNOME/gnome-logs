@@ -28,11 +28,9 @@
         <child>
             <object class="AdwHeaderBar" id="headerbar">
                 <property name="hexpand">True</property>
-                <property name="visible">True</property>
                 <child type="end">
                     <object class="GtkMenuButton" id="main_menu">
                         <property name="valign">center</property>
-                        <property name="visible">True</property>
                         <property name="menu_model">primary-menu</property>
                         <property name="icon-name">open-menu-symbolic</property>
                     </object>
@@ -42,7 +40,6 @@
                         <property name="action-name">win.export</property>
                         <property name="tooltip-text" translatable="yes">Export logs to a file</property>
                         <property name="valign">center</property>
-                        <property name="visible">True</property>
                         <property name="icon-name">document-save-symbolic</property>
                     </object>
                 </child>
@@ -51,7 +48,6 @@
                         <property name="direction">none</property>
                         <property name="tooltip-text" translatable="yes">Choose the boot from which to view logs</property>
                         <property name="valign">center</property>
-                        <property name="visible">True</property>
                         <style>
                             <class name="title-menu-button"/>
                         </style>
@@ -62,7 +58,6 @@
                         <property name="action-name">win.search</property>
                         <property name="tooltip-text" translatable="yes">Search all the logs of the current category</property>
                         <property name="valign">center</property>
-                        <property name="visible">True</property>
                         <property name="icon-name">edit-find-symbolic</property>
                     </object>
                 </child>
