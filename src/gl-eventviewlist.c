@@ -879,14 +879,14 @@ on_search_bar_notify_search_mode_enabled (GtkSearchBar *search_bar,
                                           gpointer user_data)
 {
     GAction *search;
-    GtkWidget *toplevel;
+    GtkRoot *root;
     GActionMap *appwindow;
 
-    toplevel = gtk_widget_get_toplevel (GTK_WIDGET (user_data));
+    root = gtk_widget_get_root (GTK_WIDGET (user_data));
 
-    if (gtk_widget_is_toplevel (toplevel))
+    if (G_IS_ACTION_MAP (root))
     {
-        appwindow = G_ACTION_MAP (toplevel);
+        appwindow = G_ACTION_MAP (root);
         search = g_action_map_lookup_action (appwindow, "search");
     }
     else
