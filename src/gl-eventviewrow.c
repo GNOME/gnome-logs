@@ -47,6 +47,7 @@ typedef struct
     GtkWidget *category_label;
     GtkWidget *message_label;
     GtkWidget *time_label;
+    GtkWidget *old_parent;
 } GlEventViewRowPrivate;
 
 G_DEFINE_TYPE_WITH_PRIVATE (GlEventViewRow, gl_event_view_row, GTK_TYPE_LIST_BOX_ROW)
@@ -125,6 +126,7 @@ gl_event_view_row_finalize (GObject *object)
     GlEventViewRowPrivate *priv = gl_event_view_row_get_instance_private (row);
 
     g_clear_object (&priv->entry);
+    priv->old_parent = NULL;
 
     G_OBJECT_CLASS (gl_event_view_row_parent_class)->finalize (object);
 }
@@ -400,21 +402,22 @@ gl_event_view_row_constructed (GObject *object)
 
 /* Hide the rows to be compressed */
 static void
-on_parent_set (GtkWidget *widget,
-               GtkWidget *old_parent,
-               gpointer   user_data)
+on_parent_set (GtkWidget *widget)
 {
-    GlEventViewRow *row = GL_EVENT_VIEW_ROW (user_data);
+    GlEventViewRow *row = GL_EVENT_VIEW_ROW (widget);
     GlEventViewRowPrivate *priv;
 
     priv = gl_event_view_row_get_instance_private (row);
 
     /* Execute only if the parent was not set earlier at all */
-    if (old_parent == NULL &&
+    if (priv->old_parent == NULL &&
         gl_row_entry_get_row_type (priv->entry) == GL_ROW_ENTRY_TYPE_COMPRESSED)
     {
         gtk_widget_hide (widget);
     }
+
+    if (gtk_widget_get_parent (GTK_WIDGET (row)))
+        priv->old_parent = gtk_widget_get_parent (GTK_WIDGET (row));
 }
 
 static void
@@ -460,8 +463,8 @@ gl_event_view_row_init (GlEventViewRow *row)
     /* The widgets are initialized in gl_event_view_row_constructed (), because
      * at _init() time the construct-only properties have not been set. */
 
-    g_signal_connect (row, "parent-set",
-                      G_CALLBACK (on_parent_set), row);
+    g_signal_connect (row, "notify::parent",
+                      G_CALLBACK (on_parent_set), NULL);
 }
 
 GlRowEntry *
