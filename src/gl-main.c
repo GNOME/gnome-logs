@@ -34,7 +34,6 @@ main (int argc,
     bind_textdomain_codeset (PACKAGE_TARNAME, "UTF-8");
     textdomain (GETTEXT_PACKAGE);
 
-    g_set_prgname (PACKAGE_TARNAME);
     application = gl_application_new ();
     status = g_application_run (G_APPLICATION (application), argc, argv);
     g_object_unref (application);
