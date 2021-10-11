@@ -52,7 +52,6 @@
                         <property name="tooltip-text" translatable="yes">Choose the boot from which to view logs</property>
                         <property name="valign">center</property>
                         <property name="visible">True</property>
-                        <property name="relief">GTK_RELIEF_NONE</property>
                         <style>
                             <class name="title-menu-button"/>
                         </style>
