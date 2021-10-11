@@ -920,7 +920,7 @@ spinbox_entry_validate_hour_min_sec (GtkSpinButton *spin_button,
 
     priv = gl_search_popover_get_instance_private (popover);
 
-    spinbutton_id = gtk_buildable_get_name (GTK_BUILDABLE (spin_button));
+    spinbutton_id = gtk_buildable_get_buildable_id (GTK_BUILDABLE (spin_button));
 
     /* Check if called from hour spinboxes */
     if (g_strcmp0 (spinbutton_id, "end_time_hour_spin") == 0
