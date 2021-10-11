@@ -98,30 +98,23 @@ on_search (GSimpleAction *action,
 }
 
 static void
-on_export (GSimpleAction *action,
-           GVariant *variant,
-           gpointer user_data)
+on_error_dialog_response (GtkDialog *dialog,
+                          gint       res)
+{
+    gtk_window_destroy (GTK_WINDOW (dialog));
+}
+
+static void
+on_dialog_response (GtkNativeDialog *dialog,
+                    gint             res,
+                    gpointer        *user_data)
 {
     GlWindowPrivate *priv;
     GlEventViewList *event_list;
-    GtkFileChooser *file_chooser;
-    GtkFileChooserNative *dialog;
-    gint res;
 
     priv = gl_window_get_instance_private (GL_WINDOW (user_data));
     event_list = GL_EVENT_VIEW_LIST (priv->event_list);
 
-    dialog = gtk_file_chooser_native_new (_("Save logs"),
-                                          GTK_WINDOW (user_data),
-                                          GTK_FILE_CHOOSER_ACTION_SAVE,
-                                          _("_Save"),
-                                          _("_Cancel"));
-
-    file_chooser = GTK_FILE_CHOOSER (dialog);
-    gtk_file_chooser_set_do_overwrite_confirmation (file_chooser, TRUE);
-    gtk_file_chooser_set_current_name (file_chooser, _("log messages"));
-
-    res = gtk_native_dialog_run (GTK_NATIVE_DIALOG (dialog));
     if (res == GTK_RESPONSE_ACCEPT)
     {
         gboolean have_error = FALSE;
@@ -132,7 +125,7 @@ on_export (GSimpleAction *action,
         GtkWidget *error_dialog;
 
         file_content = gl_event_view_list_get_output_logs (event_list);
-        output_file = gtk_file_chooser_get_file (file_chooser);
+        output_file = gtk_file_chooser_get_file (GTK_FILE_CHOOSER (dialog));
         file_ostream = g_file_replace (output_file, NULL, TRUE,
                                        G_FILE_CREATE_NONE, NULL, &error);
         if (error != NULL)
@@ -179,8 +172,8 @@ on_export (GSimpleAction *action,
                                                    GTK_BUTTONS_CLOSE,
                                                    "%s",
                                                    _("Unable to export log messages to a file"));
-            gtk_dialog_run (GTK_DIALOG (error_dialog));
-            gtk_widget_destroy (error_dialog);
+            g_signal_connect (error_dialog, "response", G_CALLBACK (on_error_dialog_response), NULL);
+            gtk_window_present (GTK_WINDOW (error_dialog));
         }
 
         g_free (file_content);
@@ -189,6 +182,27 @@ on_export (GSimpleAction *action,
     }
 
     g_object_unref (dialog);
+}
+
+static void
+on_export (GSimpleAction *action,
+           GVariant *variant,
+           gpointer user_data)
+{
+    GtkFileChooser *file_chooser;
+    GtkFileChooserNative *dialog;
+
+    dialog = gtk_file_chooser_native_new (_("Save logs"),
+                                          GTK_WINDOW (user_data),
+                                          GTK_FILE_CHOOSER_ACTION_SAVE,
+                                          _("_Save"),
+                                          _("_Cancel"));
+
+    file_chooser = GTK_FILE_CHOOSER (dialog);
+    gtk_file_chooser_set_current_name (file_chooser, _("log messages"));
+
+    g_signal_connect (dialog, "response", (GCallback) on_dialog_response, user_data);
+    gtk_native_dialog_show (GTK_NATIVE_DIALOG (dialog));
 }
 
 static void
