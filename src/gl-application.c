@@ -158,7 +158,7 @@ on_monospace_font_name_changed (GSettings *settings,
         css_fragment = g_strconcat (".event-monospace ", css_desc, NULL);
 
         provider = gtk_css_provider_new ();
-        gtk_css_provider_load_from_data (provider, css_fragment, -1, NULL);
+        gtk_css_provider_load_from_data (provider, css_fragment, -1);
 
         gtk_style_context_add_provider_for_display (gdk_display_get_default (),
                                                     GTK_STYLE_PROVIDER (provider),
