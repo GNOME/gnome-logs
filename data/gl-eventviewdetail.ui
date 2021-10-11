@@ -3,7 +3,6 @@
     <template class="GlEventViewDetail" parent="GtkPopover">
         <!-- The popover size is set such that it does not go beyond the window -->
         <property name="can_focus">False</property>
-        <property name="transitions-enabled">True</property>
         <signal name="closed" handler="gl_event_view_detail_popover_closed"/>
         <child>
             <object class="GtkScrolledWindow">
