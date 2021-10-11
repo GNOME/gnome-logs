@@ -182,7 +182,6 @@ listbox_update_header_func (GtkListBoxRow *row,
         if (current == NULL)
         {
             current = gtk_separator_new (GTK_ORIENTATION_HORIZONTAL);
-            gtk_widget_show (current);
             gtk_list_box_row_set_header (row, current);
         }
     }
@@ -194,7 +193,6 @@ listbox_update_header_func (GtkListBoxRow *row,
         if (current == NULL)
         {
             current = gtk_separator_new (GTK_ORIENTATION_HORIZONTAL);
-            gtk_widget_show (current);
             gtk_list_box_row_set_header (row, current);
         }
     }
@@ -448,8 +446,6 @@ gl_event_view_create_empty (G_GNUC_UNUSED GlEventViewList *view)
     /* Translators: Shown when there are no (zero) results in the current
      * view. */
     adw_status_page_set_title (ADW_STATUS_PAGE (status_page), _("No Results"));
-
-    gtk_widget_show (status_page);
 
     return status_page;
 }
