@@ -65,7 +65,7 @@ on_new_window (GSimpleAction *action,
 
     window = gl_window_new (GTK_APPLICATION (application));
     gl_window_load_journal (GL_WINDOW (window), priv->journal);
-    gtk_widget_show (window);
+    gtk_window_present (GTK_WINDOW (window));
 }
 
 static void
@@ -218,7 +218,7 @@ launch_window (GApplication *application)
 
     window = gl_window_new (GTK_APPLICATION (application));
     gl_window_load_journal (GL_WINDOW (window), priv->journal);
-    gtk_widget_show (window);
+    gtk_window_present (GTK_WINDOW (window));
     gtk_application_set_accels_for_action (GTK_APPLICATION (application),
                                            "win.close", close_accel);
     gtk_application_set_accels_for_action (GTK_APPLICATION (application),
