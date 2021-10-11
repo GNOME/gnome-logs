@@ -404,6 +404,8 @@ gl_journal_constructed (GObject *object)
     sd_journal *journal;
     gint ret;
 
+    G_OBJECT_CLASS (gl_journal_parent_class)->constructed (object);
+
     self = GL_JOURNAL (object);
     priv = gl_journal_get_instance_private (self);
 
