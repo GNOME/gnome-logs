@@ -362,7 +362,6 @@ on_listbox_row_activated (GtkListBox *listbox,
         GtkWidget *event_detail_popover;
         GtkWidget *category_label;
         GtkWidget *time_label;
-        GtkStyleContext *context;
 
         event_detail_popover = gl_event_view_detail_new (priv->entry, priv->clock_format);
         gtk_widget_set_parent (event_detail_popover, GTK_WIDGET (row));
@@ -370,17 +369,12 @@ on_listbox_row_activated (GtkListBox *listbox,
         category_label = gl_event_view_row_get_category_label (GL_EVENT_VIEW_ROW (row));
 
         if (category_label)
-        {
-            context = gtk_widget_get_style_context (category_label);
-            gtk_style_context_remove_class (context, "dim-label");
-        }
+            gtk_widget_remove_css_class (category_label, "dim-label");
 
         time_label = gl_event_view_row_get_time_label (GL_EVENT_VIEW_ROW (row));
-        context = gtk_widget_get_style_context (time_label);
-        gtk_style_context_remove_class (context, "dim-label");
+        gtk_widget_remove_css_class (time_label, "dim-label");
 
-        context = gtk_widget_get_style_context (GTK_WIDGET (row));
-        gtk_style_context_add_class (context, "popover-activated-row");
+        gtk_widget_add_css_class (GTK_WIDGET (row), "popover-activated-row");
 
         g_signal_connect (event_detail_popover, "closed", G_CALLBACK (popover_closed), NULL);
         gtk_popover_popup (GTK_POPOVER (event_detail_popover));

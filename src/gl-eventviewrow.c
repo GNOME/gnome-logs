@@ -258,7 +258,6 @@ gl_event_view_row_replace_newline (const gchar *message)
 static void
 gl_event_view_row_constructed (GObject *object)
 {
-    GtkStyleContext *context;
     GtkWidget *grid;
     gchar *time;
     const gchar *message;
@@ -279,8 +278,7 @@ gl_event_view_row_constructed (GObject *object)
 
     rtl = (gtk_widget_get_default_direction () == GTK_TEXT_DIR_RTL);
 
-    context = gtk_widget_get_style_context (GTK_WIDGET (row));
-    gtk_style_context_add_class (context, "event");
+    gtk_widget_add_css_class (GTK_WIDGET (row), "event");
     grid = gtk_grid_new ();
     gtk_grid_set_column_spacing (GTK_GRID (grid), 6);
     gtk_list_box_row_set_child (GTK_LIST_BOX_ROW (row), grid);
@@ -295,9 +293,8 @@ gl_event_view_row_constructed (GObject *object)
     {
         gl_event_view_row_construct_category_label (row, entry);
 
-        context = gtk_widget_get_style_context (GTK_WIDGET (priv->category_label));
-        gtk_style_context_add_class (context, "dim-label");
-        gtk_style_context_add_class (context, "event-monospace");
+        gtk_widget_add_css_class (GTK_WIDGET (priv->category_label), "dim-label");
+        gtk_widget_add_css_class (GTK_WIDGET (priv->category_label), "event-monospace");
         gtk_label_set_xalign (GTK_LABEL (priv->category_label), 0);
         gtk_grid_attach (GTK_GRID (grid), priv->category_label,
                          rtl ? 2 : 0, 0, 1, 1);
@@ -323,8 +320,7 @@ gl_event_view_row_constructed (GObject *object)
     }
 
     gtk_widget_set_direction (priv->message_label, GTK_TEXT_DIR_LTR);
-    context = gtk_widget_get_style_context (GTK_WIDGET (priv->message_label));
-    gtk_style_context_add_class (context, "event-monospace");
+    gtk_widget_add_css_class (GTK_WIDGET (priv->message_label), "event-monospace");
     gtk_widget_set_halign (priv->message_label, GTK_ALIGN_START);
     gtk_label_set_ellipsize (GTK_LABEL (priv->message_label),
                              PANGO_ELLIPSIZE_END);
@@ -349,8 +345,7 @@ gl_event_view_row_constructed (GObject *object)
         compressed_entries_label = gtk_label_new (compressed_entries_string);
 
         gtk_widget_set_direction (compressed_entries_label, GTK_TEXT_DIR_LTR);
-        context = gtk_widget_get_style_context (GTK_WIDGET (compressed_entries_label));
-        gtk_style_context_add_class (context, "compressed-entries-label");
+        gtk_widget_add_css_class (GTK_WIDGET (compressed_entries_label), "compressed-entries-label");
         gtk_widget_set_halign (compressed_entries_label, GTK_ALIGN_START);
         gtk_label_set_xalign (GTK_LABEL (compressed_entries_label), 0);
 
@@ -383,10 +378,9 @@ gl_event_view_row_constructed (GObject *object)
         priv->time_label = gtk_label_new ("      ");
     }
 
-    context = gtk_widget_get_style_context (GTK_WIDGET (priv->time_label));
-    gtk_style_context_add_class (context, "dim-label");
-    gtk_style_context_add_class (context, "event-monospace");
-    gtk_style_context_add_class (context, "event-time");
+    gtk_widget_add_css_class (GTK_WIDGET (priv->time_label), "dim-label");
+    gtk_widget_add_css_class (GTK_WIDGET (priv->time_label), "event-monospace");
+    gtk_widget_add_css_class (GTK_WIDGET (priv->time_label), "event-time");
     gtk_widget_set_halign (priv->time_label, GTK_ALIGN_END);
     gtk_widget_set_hexpand (priv->time_label, TRUE);
     gtk_label_set_xalign (GTK_LABEL (priv->time_label), 1);
