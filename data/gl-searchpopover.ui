@@ -54,6 +54,7 @@
                                                     <object class="GtkScrolledWindow" id="parameter_scrolled_window">
                                                         <property name="has-frame">True</property>
                                                         <property name="height_request">150</property>
+                                                        <property name="has-frame">True</property>
                                                         <child>
                                                             <object class="GtkTreeView" id="parameter_treeview">
                                                                 <property name="model">parameter_liststore</property>
@@ -207,6 +208,7 @@
                                                         <property name="has-frame">True</property>
                                                         <property name="height_request">176</property>
                                                         <property name="hexpand">True</property>
+                                                        <property name="has-frame">True</property>
                                                         <child>
                                                             <object class="GtkTreeView" id="range_treeview">
                                                                 <property name="model">range_liststore</property>
