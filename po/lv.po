@@ -1,13 +1,13 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>, 2014, 2016, 2017, 2018, 2019, 2020.
+# Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>, 2014, 2016, 2017, 2018, 2019, 2020, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2020-08-02 11:32+0000\n"
-"PO-Revision-Date: 2020-09-12 12:05+0300\n"
+"POT-Creation-Date: 2021-07-28 07:14+0000\n"
+"PO-Revision-Date: 2021-10-25 19:37+0300\n"
 "Last-Translator: Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>\n"
 "Language-Team: Latvian <lata-l10n@googlegroups.com>\n"
 "Language: lv\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 :"
 " 2);\n"
-"X-Generator: Lokalize 19.12.3\n"
+"X-Generator: Lokalize 21.08.1\n"
 
 #: data/gl-categorylist.ui:15
 msgid "Important"
@@ -331,13 +331,11 @@ msgid "Show help"
 msgstr "Rādīt palīdzību"
 
 #: data/help-overlay.ui:34
-#| msgid "Keyboard Shortcuts"
 msgctxt "shortcut window"
 msgid "Keyboard shortcuts"
 msgstr "Tastatūras saīsnes"
 
 #: data/help-overlay.ui:42
-#| msgid "Applications"
 msgctxt "shortcut window"
 msgid "Application"
 msgstr "Lietotne"
@@ -348,7 +346,6 @@ msgid "Find"
 msgstr "Meklēt"
 
 #: data/help-overlay.ui:54
-#| msgid "Export logs to a file"
 msgctxt "shortcut window"
 msgid "Export logs to a file"
 msgstr "Eksportēt žurnālus uz datni"
@@ -414,15 +411,15 @@ msgstr "Kā kārtot saraksta rindas notikumu skatīšanas sarakstā"
 msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr "Kārtot saraksta rindas augošā vai dilstošā secībā izvēlētajam tipam"
 
-#: src/gl-application.c:115
+#: src/gl-application.c:116
 msgid "translator-credits"
 msgstr "Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>"
 
-#: src/gl-application.c:116
+#: src/gl-application.c:117
 msgid "View and search logs"
 msgstr "Katīt un meklēt žurnālos"
 
-#: src/gl-application.c:255
+#: src/gl-application.c:259
 msgid "Print version information and exit"
 msgstr "Parādīt informāciju par versiju un iziet"
 
@@ -433,8 +430,9 @@ msgstr "Sistēmas ielāde"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: src/gl-eventviewlist.c:488
-msgid "No results"
+#: src/gl-eventviewlist.c:473
+#| msgid "No results"
+msgid "No Results"
 msgstr "Nav rezultātu"
 
 #: src/gl-eventviewrow.c:226
@@ -606,30 +604,30 @@ msgid "Save logs"
 msgstr "Saglabāt žurnālus"
 
 #: src/gl-window.c:116
-msgid "_Cancel"
-msgstr "At_celt"
-
-#: src/gl-window.c:117
 msgid "_Save"
 msgstr "_Saglabāt"
 
-#: src/gl-window.c:122
+#: src/gl-window.c:117
+msgid "_Cancel"
+msgstr "At_celt"
+
+#: src/gl-window.c:121
 msgid "log messages"
 msgstr "žurnāla ieraksti"
 
-#: src/gl-window.c:181
+#: src/gl-window.c:180
 msgid "Unable to export log messages to a file"
 msgstr "Neizdevās eksportēt žurnāla ierakstus datnē"
 
-#: src/gl-window.c:495 src/gl-window.c:526
+#: src/gl-window.c:494 src/gl-window.c:525
 msgid "Unable to read system logs"
 msgstr "Neizdevās nolasīt sistēmas žurnālus"
 
-#: src/gl-window.c:509
+#: src/gl-window.c:508
 msgid "Unable to read user logs"
 msgstr "Neizdevās nolasīt lietotāja žurnālus"
 
-#: src/gl-window.c:541
+#: src/gl-window.c:540
 msgid "No logs available"
 msgstr "Nav pieejamu žurnālu"
 
