@@ -7,15 +7,11 @@
   "tags": ["nightly"],
   "desktop-file-name-prefix": "(Nightly) ",
   "finish-args": [
-    "--share=ipc", "--socket=x11",
+    "--share=ipc", "--socket=fallback-x11",
     "--socket=wayland",
     "--filesystem=/var/log/journal:ro",
-    "--filesystem=xdg-run/dconf", "--filesystem=~/.config/dconf:ro",
-    "--talk-name=ca.desrt.dconf", "--env=DCONF_USER_CONFIG_DIR=.config/dconf"
+    "--metadata=X-DConf=migrate-path=/org/gnome/logs/"
   ],
-  "build-options": {
-    "cflags": "-O2 -g"
-  },
   "cleanup": [
     "/include",
     "/lib/pkgconfig"
@@ -24,21 +20,36 @@
     {
       "name": "liblz4",
       "buildsystem": "meson",
-      "builddir": true,
       "subdir": "contrib/meson",
       "sources": [
         {
           "type": "git",
           "url": "https://github.com/lz4/lz4",
-          "tag": "v1.9.0",
-          "commit": "131896ab9d4fc9b8c606616327ed223d5d86472b"
+          "tag": "v1.9.2",
+          "commit": "fdf2ef5809ca875c454510610764d9125ef2ebbd"
+        }
+      ]
+    },
+    {
+      "name": "rsync",
+      "config-opts": [
+        "--disable-zstd",
+        "--disable-xxhash"
+      ],
+      "cleanup": [
+        "/share"
+      ],
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://download.samba.org/pub/rsync/src/rsync-3.2.3.tar.gz",
+          "sha256": "becc3c504ceea499f4167a260040ccf4d9f2ef9499ad5683c179a697146ce50e"
         }
       ]
     },
     {
       "name": "systemd",
       "buildsystem": "meson",
-      "builddir": true,
       "config-opts": [
         "--libdir=lib",
         "-Drootprefix=/app",
@@ -98,15 +109,14 @@
         {
           "type": "git",
           "url": "https://github.com/systemd/systemd.git",
-          "tag": "v242",
-          "commit": "1e5d2d656420d0e755dbcf72aeba3c3aba54e956"
+          "tag": "v246",
+          "commit": "ae366f3acbc1a45504e9875099b17a7e1a221d03"
         }
       ]
     },
     {
       "name": "gnome-logs",
       "buildsystem": "meson",
-      "builddir": true,
       "sources": [
         {
           "type": "git",
