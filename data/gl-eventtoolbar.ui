@@ -50,6 +50,7 @@
                         <property name="valign">center</property>
                         <style>
                             <class name="title-menu-button"/>
+                            <class name="flat"/>
                         </style>
                     </object>
                 </child>
