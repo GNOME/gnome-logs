@@ -5,11 +5,7 @@
 	<child>
             <object class="AdwFlap">
                 <child type="flap">
-                    <object class="GlCategoryList" id="categories">
-                        <style>
-                            <class name="categories"/>
-                        </style>
-                    </object>
+                    <object class="GlCategoryList" id="categories"/>
                 </child>
                 <child type="separator">
                     <object class="GtkSeparator" id="content_separator">

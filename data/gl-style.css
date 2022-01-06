@@ -1,13 +1,4 @@
 /* Theme overrides. */
-.categories {
-    background-color: shade(@theme_bg_color, 0.99);
-}
-
-.category {
-    padding: 15px;
-    padding-right: 30px;
-}
-
 .detail-comm, .detail-audit_session, .detail-kernel_device, .detail-message, .detail-priority, .detail-time, .detail-subject, .detail-definedby, .detail-support, .detail-documentation {
     padding: 3px;
 }

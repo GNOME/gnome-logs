@@ -6,9 +6,6 @@
                 <property name="selection-mode">browse</property>
                 <child>
                     <object class="GtkListBoxRow" id="important">
-                        <style>
-                            <class name="category"/>
-                        </style>
                         <child>
                             <object class="GtkLabel" id="important_label">
                                 <property name="halign">start</property>
@@ -20,9 +17,6 @@
                 <child>
                     <object class="GtkListBoxRow" id="alerts">
                         <property name="visible">False</property>
-                        <style>
-                            <class name="category"/>
-                        </style>
                         <child>
                             <object class="GtkLabel" id="alerts_label">
                                 <property name="halign">start</property>
@@ -34,9 +28,6 @@
                 <child>
                     <object class="GtkListBoxRow" id="starred">
                         <property name="visible">False</property>
-                        <style>
-                            <class name="category"/>
-                        </style>
                         <child>
                             <object class="GtkLabel" id="starred_label">
                                 <property name="halign">start</property>
@@ -47,9 +38,6 @@
                 </child>
                 <child>
                     <object class="GtkListBoxRow" id="all">
-                        <style>
-                            <class name="category"/>
-                        </style>
                         <child>
                             <object class="GtkLabel" id="all_label">
                                 <property name="halign">start</property>
@@ -60,9 +48,6 @@
                 </child>
                 <child>
                     <object class="GtkListBoxRow" id="applications">
-                        <style>
-                            <class name="category"/>
-                        </style>
                         <child>
                             <object class="GtkLabel" id="applications_label">
                                 <property name="halign">start</property>
@@ -73,9 +58,6 @@
                 </child>
                 <child>
                     <object class="GtkListBoxRow" id="system">
-                        <style>
-                            <class name="category"/>
-                        </style>
                         <child>
                             <object class="GtkLabel" id="system_label">
                                 <property name="halign">start</property>
@@ -86,9 +68,6 @@
                 </child>
                 <child>
                     <object class="GtkListBoxRow" id="security">
-                        <style>
-                            <class name="category"/>
-                        </style>
                         <child>
                             <object class="GtkLabel" id="security_label">
                                 <property name="halign">start</property>
@@ -99,9 +78,6 @@
                 </child>
                 <child>
                     <object class="GtkListBoxRow" id="hardware">
-                        <style>
-                            <class name="category"/>
-                        </style>
                         <child>
                             <object class="GtkLabel" id="hardware_label">
                                 <property name="halign">start</property>
@@ -113,9 +89,6 @@
                 <child>
                     <object class="GtkListBoxRow" id="updates">
                         <property name="visible">False</property>
-                        <style>
-                            <class name="category"/>
-                        </style>
                         <child>
                             <object class="GtkLabel" id="updates_label">
                                 <property name="halign">start</property>
@@ -127,9 +100,6 @@
                 <child>
                     <object class="GtkListBoxRow" id="usage">
                         <property name="visible">False</property>
-                        <style>
-                            <class name="category"/>
-                        </style>
                         <child>
                             <object class="GtkLabel" id="usage_label">
                                 <property name="halign">start</property>
@@ -138,6 +108,9 @@
                         </child>
                     </object>
                 </child>
+                <style>
+                    <class name="navigation-sidebar"/>
+                </style>
             </object>
         </child>
     </template>
