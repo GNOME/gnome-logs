@@ -206,6 +206,10 @@ gl_application_startup (GApplication *application)
     /* gtk_init() calls setlocale(), so gettext must be called after that. */
     g_set_application_name (_(PACKAGE_NAME));
     gtk_window_set_default_icon_name (PACKAGE_TARNAME);
+
+    /* Opt-in to color scheme user preference. */
+    hdy_style_manager_set_color_scheme (hdy_style_manager_get_default (),
+                                        HDY_COLOR_SCHEME_PREFER_LIGHT);
 }
 
 static void

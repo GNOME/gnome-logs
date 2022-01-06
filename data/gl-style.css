@@ -32,8 +32,8 @@
 }
 
 .compressed-entries-label {
-    background-color: shade(@borders, 1.15);
-    color: @theme_selected_fg_color;
+    background-color: alpha(@theme_fg_color, 0.6);
+    color: @theme_bg_color;
     font-size: small;
     border-radius: 3px;
     padding-left: 5px;
