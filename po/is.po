@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
 "POT-Creation-Date: 2022-01-06 16:54+0000\n"
-"PO-Revision-Date: 2022-01-30 11:34+0000\n"
+"PO-Revision-Date: 2022-01-30 12:02+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic <translation-team-is@lists.sourceforge.org>\n"
 "Language: is\n"
@@ -127,11 +127,11 @@ msgstr "Handbækur"
 
 #: data/gl-eventviewlist.ui:44
 msgid "Select journal field and timestamp range filtering options"
-msgstr ""
+msgstr "Veldu gagnasvæði færsluskrár og tímasvið sem valkosti við síun"
 
 #: data/gl-searchpopover.ui:26
 msgid "Select a Journal Field to filter the Logs according to it"
-msgstr ""
+msgstr "Veldu gagnasvæði færsluskrár samkvæmt hverju eigi að sía atvikaskrár"
 
 #: data/gl-searchpopover.ui:35 data/gl-searchpopover.ui:1028
 msgid "All Available Fields"
@@ -161,7 +161,7 @@ msgstr "Birta atvikaskráningu frá…"
 
 #: data/gl-searchpopover.ui:199
 msgid "Select Timestamp Range of the Log Entries to be shown"
-msgstr ""
+msgstr "Veldu tímasvið atvikaskráningarfærslna sem á að birta"
 
 #: data/gl-searchpopover.ui:208 data/gl-searchpopover.ui:1091
 #: src/gl-searchpopover.c:1309
@@ -355,19 +355,24 @@ msgstr "Atvikaskrár"
 
 #: data/org.gnome.Logs.appdata.xml.in:8 data/org.gnome.Logs.desktop.in:5
 msgid "View detailed event logs for the system"
-msgstr ""
+msgstr "Skoða ítarlega atvikaskráningu fyrir kerfið"
 
 #: data/org.gnome.Logs.appdata.xml.in:10
 msgid ""
 "Logs shows events from the systemd journal, and sorts them into categories, "
 "such as hardware and applications."
 msgstr ""
+"Atvikaskrá sýnir atvik úr systemd-færsluskráningu (journal) og raðar þeim í"
+" flokka, eins og t.d. vélbúnað og forrit."
 
 #: data/org.gnome.Logs.appdata.xml.in:12
 msgid ""
 "Using Logs you can search your logs by typing a search term, and view "
 "detailed information about each event by clicking on it."
 msgstr ""
+"Með atvikaskrárskoðaranum geturðu leitað í atvikaskrám með því að skrifa"
+" leitarorð og þá séð ítarlegar upplýsingar um hvert atvik með því að smella á"
+" það."
 
 #: data/org.gnome.Logs.appdata.xml.in:30
 msgid "The GNOME Project"
@@ -380,7 +385,7 @@ msgstr "Atvikaskoðari"
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.Logs.desktop.in:7
 msgid "log;journal;debug;error;"
-msgstr ""
+msgstr "atvikaskráning;færsluskrá;villuleit;villa;"
 
 #: data/org.gnome.Logs.gschema.xml:5
 msgid "Ignore warning"
@@ -391,14 +396,16 @@ msgid ""
 "Whether to ignore the warning that says you don’t have sufficient permission "
 "to view logs. If ignored, the warning won’t show up again."
 msgstr ""
+"Hvort eigi að hunsa aðvörun um að þú hafir ekki nægar heimildir til að skoða"
+" atvikaskrár. Ef aðvörun er hunsuð birtist hún ekki aftur."
 
 #: data/org.gnome.Logs.gschema.xml:10
 msgid "How to sort list rows in the event view list"
-msgstr ""
+msgstr "Hvernig eigi að raða röðum lista við skoðun atvikalista"
 
 #: data/org.gnome.Logs.gschema.xml:11
 msgid "Sort list rows in ascending or descending order for the selected type"
-msgstr ""
+msgstr "Raða röðum lista í hækkandi eða lækkandi röð fyrir valda tegund"
 
 #: src/gl-application.c:116
 msgid "translator-credits"
