@@ -1,8 +1,8 @@
 # Japanese translation for gnome-logs.
-# Copyright (C) 2014, 2019-2020 gnome-logs's COPYRIGHT HOLDER
+# Copyright (C) 2014, 2019-2020, 2022 gnome-logs's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-logs package.
 # Aaron Hamilton <aaron@correspondwith.me>, 2014.
-# sicklylife <translation@sicklylife.jp>, 2019-2020.
+# sicklylife <translation@sicklylife.jp>, 2019-2020, 2022.
 # Ryo Nakano <ryonakaknock3@gmail.com>, 2020.
 #
 msgid ""
@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
 "POT-Creation-Date: 2020-08-02 11:32+0000\n"
-"PO-Revision-Date: 2020-08-23 23:30+0900\n"
+"PO-Revision-Date: 2022-02-01 20:00+0900\n"
 "Last-Translator: sicklylife <translation@sicklylife.jp>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
 "Language: ja\n"
@@ -434,9 +434,9 @@ msgstr "稼動期間"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: src/gl-eventviewlist.c:488
-msgid "No results"
-msgstr "見つかりません"
+#: src/gl-eventviewlist.c:473
+msgid "No Results"
+msgstr "一致するものがありません"
 
 #: src/gl-eventviewrow.c:226
 msgid "Other"
