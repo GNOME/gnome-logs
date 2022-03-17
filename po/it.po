@@ -1,16 +1,16 @@
 # Italian translation for gnome-logs.
-# Copyright (C) 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020 gnome-logs's COPYRIGHT HOLDER
+# Copyright (C) 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2022 gnome-logs's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-logs package.
 # Daniele Medri <dmedri@gmail.com>, 2013.
-# Milo Casagrande <milo@milo.name>, 2014, 2015, 2016, 2017, 2018, 2019, 2020.
+# Milo Casagrande <milo@milo.name>, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2022.
 # Gianvito Cavasoli <gianvito@gmx.it>, 2016.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2020-08-02 11:32+0000\n"
-"PO-Revision-Date: 2020-08-12 09:30+0200\n"
+"POT-Creation-Date: 2022-01-06 16:54+0000\n"
+"PO-Revision-Date: 2022-03-16 10:14+0100\n"
 "Last-Translator: Milo Casagrande <milo@milo.name>\n"
 "Language-Team: Italiano <gnome-it-list@gnome.org>\n"
 "Language: it\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Poedit 3.0.1\n"
 
 #: data/gl-categorylist.ui:15
 msgid "Important"
@@ -128,7 +128,7 @@ msgstr "Supporto"
 msgid "Documentation"
 msgstr "Documentazione"
 
-#: data/gl-eventviewlist.ui:42
+#: data/gl-eventviewlist.ui:44
 msgid "Select journal field and timestamp range filtering options"
 msgstr "Seleziona le opzioni di filtro per il campo e l'intervallo temporale"
 
@@ -351,9 +351,10 @@ msgctxt "shortcut window"
 msgid "Export logs to a file"
 msgstr "Esporta registri su file"
 
-#: data/org.gnome.Logs.appdata.xml.in:7
-msgid "GNOME Logs"
-msgstr "Registri di GNOME"
+#: data/org.gnome.Logs.appdata.xml.in:7 data/org.gnome.Logs.desktop.in:3
+#: src/gl-eventtoolbar.c:143
+msgid "Logs"
+msgstr "Registri"
 
 #: data/org.gnome.Logs.appdata.xml.in:8 data/org.gnome.Logs.desktop.in:5
 msgid "View detailed event logs for the system"
@@ -379,10 +380,6 @@ msgstr ""
 #: data/org.gnome.Logs.appdata.xml.in:30
 msgid "The GNOME Project"
 msgstr "Il progetto GNOME"
-
-#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:143
-msgid "Logs"
-msgstr "Registri"
 
 #: data/org.gnome.Logs.desktop.in:4
 msgid "Log Viewer"
@@ -415,17 +412,17 @@ msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr ""
 "Ordina le righe in ordine crescente o decrescente per il tipo selezionato"
 
-#: src/gl-application.c:115
+#: src/gl-application.c:116
 msgid "translator-credits"
 msgstr ""
 "Milo Casagrande <milo@milo.name>\n"
 "Daniele Medri <dmedri@gmail.com>, 2013"
 
-#: src/gl-application.c:116
+#: src/gl-application.c:117
 msgid "View and search logs"
 msgstr "Visualizza e cerca registri"
 
-#: src/gl-application.c:255
+#: src/gl-application.c:263
 msgid "Print version information and exit"
 msgstr "Stampa informazioni sulla versione ed esce"
 
@@ -436,8 +433,8 @@ msgstr "Avvio"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: src/gl-eventviewlist.c:488
-msgid "No results"
+#: src/gl-eventviewlist.c:473
+msgid "No Results"
 msgstr "Nessun risultato"
 
 #: src/gl-eventviewrow.c:226
@@ -609,29 +606,29 @@ msgid "Save logs"
 msgstr "Salva registri"
 
 #: src/gl-window.c:116
-msgid "_Cancel"
-msgstr "A_nnulla"
-
-#: src/gl-window.c:117
 msgid "_Save"
 msgstr "_Salva"
 
-#: src/gl-window.c:122
+#: src/gl-window.c:117
+msgid "_Cancel"
+msgstr "A_nnulla"
+
+#: src/gl-window.c:121
 msgid "log messages"
 msgstr "messaggi del registro"
 
-#: src/gl-window.c:181
+#: src/gl-window.c:180
 msgid "Unable to export log messages to a file"
 msgstr "Impossibile esportare i messaggi del registro su file"
 
-#: src/gl-window.c:495 src/gl-window.c:526
+#: src/gl-window.c:494 src/gl-window.c:525
 msgid "Unable to read system logs"
 msgstr "Impossibile leggere i registri di sistema"
 
-#: src/gl-window.c:509
+#: src/gl-window.c:508
 msgid "Unable to read user logs"
 msgstr "Impossibile leggere i registri utente"
 
-#: src/gl-window.c:541
+#: src/gl-window.c:540
 msgid "No logs available"
 msgstr "Nessun registro disponibile"
