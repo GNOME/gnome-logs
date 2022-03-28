@@ -6,21 +6,22 @@
 # Sérgio Cardeira <scardeira.sergio@gmail.com>, 2016.
 # José Vieira <jvieira33@sapo.pt>, 2020.
 # Juliano Camargo <julianosc@pm.me>, 2020.
+# Hugo Carvalho <hugokarvalho@hotmail.com>, 2020 - 2022.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2021-07-28 07:14+0000\n"
-"PO-Revision-Date: 2021-07-31 22:02+0100\n"
+"POT-Creation-Date: 2022-03-28 17:25+0000\n"
+"PO-Revision-Date: 2022-03-28 23:41+0100\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
-"Language-Team: Portuguese <gnome_pt@yahoogroups.com>\n"
+"Language-Team: Portuguese <hugokarvalho@hotmail.com>\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.0\n"
+"X-Generator: Poedit 3.0.1\n"
 "X-Project-Style: gnome\n"
 
 #: data/gl-categorylist.ui:15
@@ -85,7 +86,7 @@ msgstr "Exportar registos para um ficheiro"
 
 #: data/gl-eventtoolbar.ui:74
 msgid "Choose the boot from which to view logs"
-msgstr "Escolher de onde ver os registos"
+msgstr "Escolher o arranque de onde ver os registos"
 
 #: data/gl-eventtoolbar.ui:86
 msgid "Search all the logs of the current category"
@@ -131,7 +132,7 @@ msgstr "Assistência"
 msgid "Documentation"
 msgstr "Documentação"
 
-#: data/gl-eventviewlist.ui:42
+#: data/gl-eventviewlist.ui:44
 msgid "Select journal field and timestamp range filtering options"
 msgstr ""
 "Selecionar o campo do journal e as opções de filtragem do intervalo data-hora"
@@ -175,7 +176,7 @@ msgstr ""
 #: data/gl-searchpopover.ui:208 data/gl-searchpopover.ui:1091
 #: src/gl-searchpopover.c:1309
 msgid "Current Boot"
-msgstr "Iniciação atual"
+msgstr "Arranque atual"
 
 #: data/gl-searchpopover.ui:293
 msgid "Search Type"
@@ -287,7 +288,7 @@ msgstr "Caminho executável"
 
 #: data/gl-searchpopover.ui:1096
 msgid "Previous Boot"
-msgstr "Início/arranque anterior"
+msgstr "Arranque anterior"
 
 #: data/gl-searchpopover.ui:1105
 msgid "Today"
@@ -357,9 +358,10 @@ msgctxt "shortcut window"
 msgid "Export logs to a file"
 msgstr "Exportar registos para um ficheiro"
 
-#: data/org.gnome.Logs.appdata.xml.in:7
-msgid "GNOME Logs"
-msgstr "Registos do GNOME"
+#: data/org.gnome.Logs.appdata.xml.in:7 data/org.gnome.Logs.desktop.in:3
+#: src/gl-eventtoolbar.c:143
+msgid "Logs"
+msgstr "Registos"
 
 #: data/org.gnome.Logs.appdata.xml.in:8 data/org.gnome.Logs.desktop.in:5
 msgid "View detailed event logs for the system"
@@ -385,10 +387,6 @@ msgstr ""
 #: data/org.gnome.Logs.appdata.xml.in:30
 msgid "The GNOME Project"
 msgstr "O Projeto GNOME"
-
-#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:143
-msgid "Logs"
-msgstr "Registos"
 
 #: data/org.gnome.Logs.desktop.in:4
 msgid "Log Viewer"
@@ -431,14 +429,14 @@ msgstr ""
 msgid "View and search logs"
 msgstr "Ver e procurar registos"
 
-#: src/gl-application.c:259
+#: src/gl-application.c:263
 msgid "Print version information and exit"
 msgstr "Imprimir informação da versão e sair"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
 #: src/gl-eventtoolbar.c:134
 msgid "Boot"
-msgstr "Início/Arranque"
+msgstr "Arranque"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
@@ -641,6 +639,9 @@ msgstr "Impossível ler os registos do utilizador"
 #: src/gl-window.c:540
 msgid "No logs available"
 msgstr "Sem registos disponíveis"
+
+#~ msgid "GNOME Logs"
+#~ msgstr "Registos do GNOME"
 
 #~ msgid "Go back to the event view"
 #~ msgstr "Voltar à vista de evento"
