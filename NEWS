@@ -1,3 +1,27 @@
+GNOME Logs 42.0
+===============
+
+* Opt-in to dark mode user preference from Maximiliano Sandoval R
+* Rounded window corners using libhandy from Christopher Davis
+* Add feature to open journal files directly
+* Port to GtkFileChooserNative from Bas De Bue
+* Add several keyboard shortcuts to help overlay from Sabri Ünal
+* Window sizing improvements from Guido Günther
+* Small fixes from Maximiliano Sandoval R
+* Appdata name improvement from Sophie Herold
+* Add Basque, Catalan and Portuguese help translations
+* Add Kabyle translation
+* Updates to Brazilian Portuguese, Chinese (China), Czech, Danish, German,
+  Hungarian, Indonesian, Korean, Polish, Portuguese, Russian, Spanish, Swedish
+  and Ukrainian help translations
+* Updates to Basque, Brazilian Portuguese, British English, Bulgarian, Catalan,
+  Chinese (China), Chinese (Taiwan), Croatian, Czech, Danish, Dutch, Finnish,
+  French, Friulian, Galician, German, Greek, Hebrew, Hungarian, Icelandic,
+  Indonesian, Italian, Japanese, Kazakh, Korean, Latvian, Lithuanian,
+  Norwegian Bokmål, Occitan, Persian, Polish, Portuguese, Romanian, Russian,
+  Serbian, Slovak, Slovenian, Spanish, Swedish, Turkish and Ukrainian
+  translations
+
 GNOME Logs 3.36.0
 =================
 
