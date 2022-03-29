@@ -1,348 +1,357 @@
-# SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Daniel Korostil <ted.korostiled@gmail.com>, 2014, 2015, 2016, 2017.
+# Yuri Chornoivan <yurchor@ukr.net>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-20 13:18+0200\n"
-"PO-Revision-Date: 2017-03-20 13:35+0300\n"
-"Last-Translator: Daniel Korostil <ted.korostiled@gmail.com>\n"
-"Language-Team: linux.org.ua\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
+"POT-Creation-Date: 2022-03-28 22:37+0000\n"
+"PO-Revision-Date: 2022-03-29 08:38+0300\n"
+"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
+"Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Virtaal 0.7.1\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<"
+"=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Lokalize 20.12.0\n"
 "X-Project-Style: gnome\n"
 
-#: ../data/gl-categorylist.ui.h:1
+#: data/gl-categorylist.ui:15
 msgid "Important"
 msgstr "Важливе"
 
-#: ../data/gl-categorylist.ui.h:2
+#: data/gl-categorylist.ui:30
 msgid "Alerts"
 msgstr "Сигнали"
 
-#: ../data/gl-categorylist.ui.h:3
+#: data/gl-categorylist.ui:45
 msgid "Starred"
 msgstr "Із зірочкою"
 
-#: ../data/gl-categorylist.ui.h:4
+#: data/gl-categorylist.ui:60
 msgid "All"
 msgstr "Усе"
 
-#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:202
+#: data/gl-categorylist.ui:75 src/gl-eventviewrow.c:207
 msgid "Applications"
 msgstr "Програми"
 
-#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:211
+#: data/gl-categorylist.ui:90 src/gl-eventviewrow.c:216
 msgid "System"
 msgstr "Система"
 
-#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:215
+#: data/gl-categorylist.ui:105 src/gl-eventviewrow.c:220
 msgid "Security"
 msgstr "Безпека"
 
-#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:207
+#: data/gl-categorylist.ui:120 src/gl-eventviewrow.c:212
 msgid "Hardware"
 msgstr "Пристрої"
 
-#: ../data/gl-categorylist.ui.h:9
+#: data/gl-categorylist.ui:135
 msgid "Updates"
 msgstr "Оновлення"
 
-#: ../data/gl-categorylist.ui.h:10
+#: data/gl-categorylist.ui:150
 msgid "Usage"
 msgstr "Використання"
 
-#: ../data/gl-eventtoolbar.ui.h:1
-msgid "Go back to the event view"
-msgstr "Вернутись до перегляду подій"
+#: data/gl-eventtoolbar.ui:6
+msgid "_New Window"
+msgstr "_Створити вікно"
 
-#: ../data/gl-eventtoolbar.ui.h:2
+#: data/gl-eventtoolbar.ui:12
+msgid "Keyboard Shortcuts"
+msgstr "Клавіатурні скорочення"
+
+#: data/gl-eventtoolbar.ui:17
+msgid "_Help"
+msgstr "_Довідка"
+
+#: data/gl-eventtoolbar.ui:21
+#| msgid "_About"
+msgid "_About Logs"
+msgstr "_Про «Журнали»"
+
+#: data/gl-eventtoolbar.ui:53
 msgid "Export logs to a file"
 msgstr "Експортувати журнал у файл"
 
-#: ../data/gl-eventtoolbar.ui.h:3
+#: data/gl-eventtoolbar.ui:74
 msgid "Choose the boot from which to view logs"
 msgstr "Вибрати завантаження, з якого дивитись журнал"
 
-#: ../data/gl-eventtoolbar.ui.h:4
+#: data/gl-eventtoolbar.ui:86
 msgid "Search all the logs of the current category"
 msgstr "Пошук усіх журналів поточної категорії"
 
-#: ../data/gl-eventviewdetail.ui.h:1 ../data/gl-searchpopover.ui.h:35
+#: data/gl-eventviewdetail.ui:26
+msgid "Sender"
+msgstr "Відправник"
+
+#: data/gl-eventviewdetail.ui:58
+msgid "Time"
+msgstr "Час"
+
+#: data/gl-eventviewdetail.ui:92 data/gl-searchpopover.ui:1052
 msgid "Message"
 msgstr "Повідомлення"
 
-#: ../data/gl-eventviewdetail.ui.h:2 ../data/gl-searchpopover.ui.h:39
+#: data/gl-eventviewdetail.ui:128 data/gl-searchpopover.ui:1072
 msgid "Audit Session"
 msgstr "Перевірний сеанс"
 
-#: ../data/gl-eventviewdetail.ui.h:3 ../data/gl-searchpopover.ui.h:38
+#: data/gl-eventviewdetail.ui:161 data/gl-searchpopover.ui:1067
 msgid "Kernel Device"
 msgstr "Пристрій ядра"
 
-#: ../data/gl-eventviewdetail.ui.h:4
+#: data/gl-eventviewdetail.ui:194
 msgid "Priority"
 msgstr "Пріоритет"
 
-#: ../data/gl-eventviewdetail.ui.h:5
+#: data/gl-eventviewdetail.ui:228
 msgid "Subject"
 msgstr "Тематика"
 
-#: ../data/gl-eventviewdetail.ui.h:6
+#: data/gl-eventviewdetail.ui:264
 msgid "Defined By"
 msgstr "Визначив"
 
-#: ../data/gl-eventviewdetail.ui.h:7
+#: data/gl-eventviewdetail.ui:298
 msgid "Support"
 msgstr "Підтримування"
 
-#: ../data/gl-eventviewdetail.ui.h:8
+#: data/gl-eventviewdetail.ui:334
 msgid "Documentation"
 msgstr "Документація"
 
-#: ../data/gl-eventviewlist.ui.h:1
+#: data/gl-eventviewlist.ui:42
 msgid "Select journal field and timestamp range filtering options"
 msgstr "Виберіть поле пошуку та проміжок часу"
 
-#: ../data/gl-searchpopover.ui.h:1
+#: data/gl-searchpopover.ui:26
 msgid "Select a Journal Field to filter the Logs according to it"
 msgstr "Виберіть поле пошуку, щоб відсіяти невідповідні записи"
 
-#: ../data/gl-searchpopover.ui.h:2
+#: data/gl-searchpopover.ui:35 data/gl-searchpopover.ui:1028
 msgid "All Available Fields"
 msgstr "Усі доступні поля"
 
+#: data/gl-searchpopover.ui:78 data/gl-searchpopover.ui:251
+msgid "Parameters"
+msgstr "Параметри"
+
 #. Translators: What [journal fields to search in]
-#: ../data/gl-searchpopover.ui.h:4
+#: data/gl-searchpopover.ui:115
 msgid "What"
 msgstr "Що"
 
-#: ../data/gl-searchpopover.ui.h:5
+#: data/gl-searchpopover.ui:130
 msgid "Select Journal Field…"
 msgstr "Виберіть поле пошуку…"
 
 #. When [log entries to be shown for a given timestamp range]
-#: ../data/gl-searchpopover.ui.h:7
+#: data/gl-searchpopover.ui:155
 msgid "When"
 msgstr "Коли"
 
-#: ../data/gl-searchpopover.ui.h:8
+#: data/gl-searchpopover.ui:170
 msgid "Show Logs from…"
 msgstr "Показати журнал від…"
 
-#: ../data/gl-searchpopover.ui.h:9
+#: data/gl-searchpopover.ui:199
 msgid "Select Timestamp Range of the Log Entries to be shown"
 msgstr "Виберіть проміжок часу пошуку"
 
-#: ../data/gl-searchpopover.ui.h:10 ../src/gl-searchpopover.c:1303
+#: data/gl-searchpopover.ui:208 data/gl-searchpopover.ui:1091
+#: src/gl-searchpopover.c:1309
 msgid "Current Boot"
 msgstr "Поточний запуск"
 
-#: ../data/gl-searchpopover.ui.h:11
+#: data/gl-searchpopover.ui:293
 msgid "Search Type"
 msgstr "Тип пошуку"
 
-#: ../data/gl-searchpopover.ui.h:12
+#: data/gl-searchpopover.ui:310
 msgid "Substring"
 msgstr "Частина рядка"
 
-#: ../data/gl-searchpopover.ui.h:13
+#: data/gl-searchpopover.ui:314
 msgid "Match in any part of the string"
 msgstr "Збіг за частиною рядка"
 
-#: ../data/gl-searchpopover.ui.h:14
+#: data/gl-searchpopover.ui:328
 msgid "Exact"
 msgstr "Достеменно"
 
-#: ../data/gl-searchpopover.ui.h:15
+#: data/gl-searchpopover.ui:332
 msgid "Match complete string only"
 msgstr "Збіг тільки всього рядка"
 
-#: ../data/gl-searchpopover.ui.h:16
+#: data/gl-searchpopover.ui:379
 msgid "Back"
 msgstr "Назад"
 
-#: ../data/gl-searchpopover.ui.h:17
+#: data/gl-searchpopover.ui:397
 msgid "Show Logs Starting From…"
 msgstr "Показати журнал від…"
 
-#: ../data/gl-searchpopover.ui.h:18
+#: data/gl-searchpopover.ui:419
 msgid "Select a start date"
 msgstr "Виберіть початкову дату"
 
-#: ../data/gl-searchpopover.ui.h:19 ../src/gl-searchpopover.c:503
+#: data/gl-searchpopover.ui:428 src/gl-searchpopover.c:503
 msgid "Select Start Date…"
 msgstr "Виберіть початкову дату…"
 
-#: ../data/gl-searchpopover.ui.h:20
+#: data/gl-searchpopover.ui:459 data/gl-searchpopover.ui:763
 msgid "22 January 2016 or 1/22/2016"
 msgstr "22 Січня 2016 або 1/22/2016"
 
-#: ../data/gl-searchpopover.ui.h:21
+#: data/gl-searchpopover.ui:504
 msgid "Select start time"
 msgstr "Виберіть початковий час"
 
-#: ../data/gl-searchpopover.ui.h:22 ../src/gl-searchpopover.c:504
+#: data/gl-searchpopover.ui:513 src/gl-searchpopover.c:504
 msgid "Select Start Time…"
 msgstr "Виберіть початковий час"
 
-#: ../data/gl-searchpopover.ui.h:23
+#: data/gl-searchpopover.ui:550 data/gl-searchpopover.ui:857
 msgid "Hr"
 msgstr "Год"
 
-#: ../data/gl-searchpopover.ui.h:24
+#: data/gl-searchpopover.ui:585 data/gl-searchpopover.ui:892
 msgid "Min"
 msgstr "Хв"
 
-#: ../data/gl-searchpopover.ui.h:25
+#: data/gl-searchpopover.ui:620 data/gl-searchpopover.ui:927
 msgid "Sec"
 msgstr "Сек"
 
-#: ../data/gl-searchpopover.ui.h:26
+#: data/gl-searchpopover.ui:655 data/gl-searchpopover.ui:962
 msgid "AM/PM"
 msgstr "AM/PM"
 
-#: ../data/gl-searchpopover.ui.h:27
+#: data/gl-searchpopover.ui:701
 msgid "Until…"
 msgstr "По…"
 
-#: ../data/gl-searchpopover.ui.h:28
+#: data/gl-searchpopover.ui:723
 msgid "Select an end date"
 msgstr "Виберіть кінцеву дату"
 
-#: ../data/gl-searchpopover.ui.h:29 ../src/gl-searchpopover.c:521
+#: data/gl-searchpopover.ui:732 src/gl-searchpopover.c:521
 msgid "Select End Date…"
 msgstr "Виберіть кінцеву дату…"
 
-#: ../data/gl-searchpopover.ui.h:30
+#: data/gl-searchpopover.ui:811
 msgid "Select end time"
 msgstr "Виберіть кінцевий час"
 
-#: ../data/gl-searchpopover.ui.h:31 ../src/gl-searchpopover.c:522
+#: data/gl-searchpopover.ui:820 src/gl-searchpopover.c:522
 msgid "Select End Time…"
 msgstr "Виберіть кінцевий час…"
 
-#: ../data/gl-searchpopover.ui.h:32
+#: data/gl-searchpopover.ui:1037
 msgid "PID"
 msgstr "PID"
 
-#: ../data/gl-searchpopover.ui.h:33
+#: data/gl-searchpopover.ui:1042
 msgid "UID"
 msgstr "UID"
 
-#: ../data/gl-searchpopover.ui.h:34
+#: data/gl-searchpopover.ui:1047
 msgid "GID"
 msgstr "GID"
 
-#: ../data/gl-searchpopover.ui.h:36
+#: data/gl-searchpopover.ui:1057
 msgid "Process Name"
 msgstr "Назва процесу"
 
-#: ../data/gl-searchpopover.ui.h:37
+#: data/gl-searchpopover.ui:1062
 msgid "Systemd Unit"
 msgstr "Одиниця Systemd"
 
-#: ../data/gl-searchpopover.ui.h:40
+#: data/gl-searchpopover.ui:1077
 msgid "Executable Path"
 msgstr "Шлях до файла"
 
-#: ../data/gl-searchpopover.ui.h:41
+#: data/gl-searchpopover.ui:1096
 msgid "Previous Boot"
 msgstr "Попередній запуск"
 
-#: ../data/gl-searchpopover.ui.h:42
+#: data/gl-searchpopover.ui:1105
 msgid "Today"
 msgstr "Сьогодні"
 
-#: ../data/gl-searchpopover.ui.h:43
+#: data/gl-searchpopover.ui:1110
 msgid "Yesterday"
 msgstr "Учора"
 
-#: ../data/gl-searchpopover.ui.h:44
+#: data/gl-searchpopover.ui:1115
 msgid "Last 3 days"
 msgstr "Останні 3 доби"
 
-#: ../data/gl-searchpopover.ui.h:45
+#: data/gl-searchpopover.ui:1124
 msgid "Entire Journal"
 msgstr "Увесь журнал"
 
-#: ../data/gl-searchpopover.ui.h:46
+#: data/gl-searchpopover.ui:1133
 msgid "Set Custom Range…"
 msgstr "Вказати власний проміжок…"
 
-#: ../data/gl-window.ui.h:1
+#: data/gl-window.ui:26
 msgid "Help"
 msgstr "Довідка"
 
-#: ../data/help-overlay.ui.h:1
+#: data/gl-window.ui:34
+msgid "Ignore"
+msgstr "Ігнорувати"
+
+#: data/help-overlay.ui:8
 msgctxt "shortcut window"
 msgid "General"
 msgstr "Загальне"
 
-#: ../data/help-overlay.ui.h:2
+#: data/help-overlay.ui:13
 msgctxt "shortcut window"
 msgid "Open a new window"
 msgstr "Відкрити нове вікно"
 
-#: ../data/help-overlay.ui.h:3
+#: data/help-overlay.ui:20
 msgctxt "shortcut window"
 msgid "Close a window"
 msgstr "Закрити вікно"
 
-#: ../data/help-overlay.ui.h:4
+#: data/help-overlay.ui:28
 msgctxt "shortcut window"
 msgid "Search"
 msgstr "Пошук"
 
-#: ../data/help-overlay.ui.h:5
+#: data/help-overlay.ui:33
 msgctxt "shortcut window"
 msgid "Find"
 msgstr "Знайти"
 
-#: ../data/menus.ui.h:1
-msgid "_New Window"
-msgstr "_Створити вікно"
-
-#: ../data/menus.ui.h:2
-msgid "_Help"
-msgstr "_Довідка"
-
-#: ../data/menus.ui.h:3
-msgid "Keyboard Shortcuts"
-msgstr "Клавіатурні скорочення"
-
-#: ../data/menus.ui.h:4
-msgid "_About"
-msgstr "_Про програму"
-
-#: ../data/menus.ui.h:5
-msgid "_Quit"
-msgstr "Ви_йти"
-
-#: ../data/org.gnome.Logs.appdata.xml.in.h:1
+#: data/org.gnome.Logs.appdata.xml.in:7
 msgid "GNOME Logs"
 msgstr "Журнали GNOME"
 
-#: ../data/org.gnome.Logs.appdata.xml.in.h:2
-#: ../data/org.gnome.Logs.desktop.in.h:3
+#: data/org.gnome.Logs.appdata.xml.in:8 data/org.gnome.Logs.desktop.in:5
 msgid "View detailed event logs for the system"
 msgstr "Переглянути детальний журнал подій для системи"
 
-#: ../data/org.gnome.Logs.appdata.xml.in.h:3
+#: data/org.gnome.Logs.appdata.xml.in:10
 msgid ""
 "Logs shows events from the systemd journal, and sorts them into categories, "
 "such as hardware and applications."
 msgstr ""
 "Журнал показує події з журналу systemd і сортує їх за різними категоріями."
 
-#: ../data/org.gnome.Logs.appdata.xml.in.h:4
+#: data/org.gnome.Logs.appdata.xml.in:12
 msgid ""
 "Using Logs you can search your logs by typing a search term, and view "
 "detailed information about each event by clicking on it."
@@ -350,53 +359,66 @@ msgstr ""
 "Програма може шукати журнали і переглядати подробиці про кожну подію, якщо "
 "натиснути на неї."
 
-#: ../data/org.gnome.Logs.desktop.in.h:1 ../src/gl-eventtoolbar.c:124
+#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:143
 msgid "Logs"
 msgstr "Журнали"
 
-#: ../data/org.gnome.Logs.desktop.in.h:2
+#: data/org.gnome.Logs.desktop.in:4
 msgid "Log Viewer"
 msgstr "Переглядач журналу"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: ../data/org.gnome.Logs.desktop.in.h:5
+#: data/org.gnome.Logs.desktop.in:7
 msgid "log;journal;debug;error;"
 msgstr "журнал;зневадження;помилки;"
 
-#: ../data/org.gnome.Logs.gschema.xml.h:1
+#: data/org.gnome.Logs.gschema.xml:5
+msgid "Ignore warning"
+msgstr "Ігнорувати попередження"
+
+#: data/org.gnome.Logs.gschema.xml:6
+msgid ""
+"Whether to ignore the warning that says you don’t have sufficient permission "
+"to view logs. If ignored, the warning won’t show up again."
+msgstr ""
+"Визначає, чи слід ігнорувати попередження про те, що у вас недостатні права "
+"доступу для перегляду журналу. Якщо буде вибрано варіант «ігнорувати», "
+"програма більше не показуватиме відповідне попередження."
+
+#: data/org.gnome.Logs.gschema.xml:10
 msgid "How to sort list rows in the event view list"
 msgstr "Як впорядковувати рядки списку у переліку подій"
 
-#: ../data/org.gnome.Logs.gschema.xml.h:2
+#: data/org.gnome.Logs.gschema.xml:11
 msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr ""
 "Впорядкувати рядки списку в висхідному або спадному порядку для вибраного "
 "типу"
 
-#: ../src/gl-application.c:110
+#: src/gl-application.c:109
 msgid "translator-credits"
 msgstr "Daniel Korostil <ted.korostiled@gmail.com>"
 
-#: ../src/gl-application.c:111
+#: src/gl-application.c:110
 msgid "View and search logs"
 msgstr "Перегляд і пошук журналів"
 
-#: ../src/gl-application.c:245
+#: src/gl-application.c:225
 msgid "Print version information and exit"
 msgstr "Показати версію та вийти"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
-#: ../src/gl-eventtoolbar.c:115
+#: src/gl-eventtoolbar.c:134
 msgid "Boot"
 msgstr "Завантаження"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventviewlist.c:296
+#: src/gl-eventviewlist.c:488
 msgid "No results"
 msgstr "Безрезультатно"
 
-#: ../src/gl-eventviewrow.c:219
+#: src/gl-eventviewrow.c:224
 msgid "Other"
 msgstr "Інше"
 
@@ -404,7 +426,7 @@ msgstr "Інше"
 #. * the timestamp range button label in popover to show that
 #. * logs are shown in the window starting from this timestamp
 #. * until the ending timestamp of journal.
-#: ../src/gl-searchpopover.c:687
+#: src/gl-searchpopover.c:687
 #, c-format
 msgid "From %s"
 msgstr "З %s"
@@ -413,7 +435,7 @@ msgstr "З %s"
 #. * the timestamp range button label in popover to show that
 #. * logs are shown in the window upto this timestamp
 #. * with the starting timestamp being the current time.
-#: ../src/gl-searchpopover.c:700
+#: src/gl-searchpopover.c:700
 #, c-format
 msgid "Until %s"
 msgstr "По %s"
@@ -426,16 +448,16 @@ msgstr "По %s"
 #. * and end date button label in the custom range submenu,
 #. * showing the day of month in decimal number, full month
 #. * name as string, the year as a decimal number including the century.
-#: ../src/gl-searchpopover.c:737 ../src/gl-searchpopover.c:1104
+#: src/gl-searchpopover.c:737 src/gl-searchpopover.c:1107
 msgid "%e %B %Y"
 msgstr "%e %B %Y"
 
-#: ../src/gl-searchpopover.c:875
+#: src/gl-searchpopover.c:875
 #, c-format
 msgid "AM"
 msgstr "AM"
 
-#: ../src/gl-searchpopover.c:879
+#: src/gl-searchpopover.c:879
 #, c-format
 msgid "PM"
 msgstr "PM"
@@ -446,7 +468,7 @@ msgstr "PM"
 #. Translators: timestamp format for the custom end time button
 #. * label in the custom range submenu, showing the time with seconds
 #. * in 12-hour format.
-#: ../src/gl-searchpopover.c:987 ../src/gl-searchpopover.c:1226
+#: src/gl-searchpopover.c:987 src/gl-searchpopover.c:1229
 msgid "%I:%M:%S %p"
 msgstr "%k:%M:%S"
 
@@ -456,21 +478,21 @@ msgstr "%k:%M:%S"
 #. Translators: timestamp format for the custom end time button
 #. * label in the custom range submenu, showing the time with seconds
 #. * in 24-hour format.
-#: ../src/gl-searchpopover.c:994 ../src/gl-searchpopover.c:1233
+#: src/gl-searchpopover.c:994 src/gl-searchpopover.c:1236
 msgid "%T"
 msgstr "%T"
 
 #. Translators: timestamp format for events on the
 #. * current day, showing the time with seconds in
 #. * 12-hour format.
-#: ../src/gl-util.c:148
+#: src/gl-util.c:148
 msgid "%l:%M:%S %p"
 msgstr "%l:%M:%S %p"
 
 #. Translators: timestamp format for events on the
 #. * current day, showing the time without seconds in
 #. * 12-hour format.
-#: ../src/gl-util.c:155
+#: src/gl-util.c:155
 msgid "%l:%M %p"
 msgstr "%l:%M %p"
 
@@ -478,7 +500,7 @@ msgstr "%l:%M %p"
 #. * the current year, showing the abbreviated
 #. * month name, day of the month and the time
 #. * with seconds in 12-hour format.
-#: ../src/gl-util.c:166
+#: src/gl-util.c:166
 msgid "%b %e %l:%M:%S %p"
 msgstr "%b %e %l:%M:%S %p"
 
@@ -486,7 +508,7 @@ msgstr "%b %e %l:%M:%S %p"
 #. * current year, showing the abbreviated month name,
 #. * day of the month and the time without seconds in
 #. * 12-hour format.
-#: ../src/gl-util.c:174
+#: src/gl-util.c:174
 msgid "%b %e %l:%M %p"
 msgstr "%e %b %l:%M %p"
 
@@ -494,7 +516,7 @@ msgstr "%e %b %l:%M %p"
 #. * a different year, showing the abbreviated
 #. * month name, day of the month, year and the
 #. * time with seconds in 12-hour format.
-#: ../src/gl-util.c:185
+#: src/gl-util.c:185
 msgid "%b %e %Y %l:%M:%S %p"
 msgstr "%b %e %Y %l:%M:%S %p"
 
@@ -502,21 +524,21 @@ msgstr "%b %e %Y %l:%M:%S %p"
 #. * a different year, showing the abbreviated
 #. * month name day of the month, year and the
 #. * time without seconds in 12-hour format.
-#: ../src/gl-util.c:194
+#: src/gl-util.c:194
 msgid "%b %e %Y %l:%M %p"
 msgstr "%e %b %Y %l:%M %p"
 
 #. Translators: timestamp format for events on the
 #. * current day, showing the time with seconds in
 #. * 24-hour format.
-#: ../src/gl-util.c:211
+#: src/gl-util.c:211
 msgid "%H:%M:%S"
 msgstr "%H:%M:%S"
 
 #. Translators: timestamp format for events on the
 #. * current day, showing the time without seconds in
 #. * 24-hour format.
-#: ../src/gl-util.c:218
+#: src/gl-util.c:218
 msgid "%H:%M"
 msgstr "%H:%M"
 
@@ -524,7 +546,7 @@ msgstr "%H:%M"
 #. * current year, showing the abbreviated month name,
 #. * day of the month and the time with seconds in
 #. * 24-hour format.
-#: ../src/gl-util.c:228
+#: src/gl-util.c:228
 msgid "%b %e %H:%M:%S"
 msgstr "%b %e %H:%M:%S"
 
@@ -532,7 +554,7 @@ msgstr "%b %e %H:%M:%S"
 #. * current year, showing the abbreviated month name,
 #. * day of the month and the time without seconds in
 #. * 24-hour format.
-#: ../src/gl-util.c:236
+#: src/gl-util.c:236
 msgid "%b %e %H:%M"
 msgstr "%e %b %H:%M"
 
@@ -540,7 +562,7 @@ msgstr "%e %b %H:%M"
 #. * a different year, showing the abbreviated
 #. * month name, day of the month, year and the
 #. * time with seconds in 24-hour format.
-#: ../src/gl-util.c:247
+#: src/gl-util.c:247
 msgid "%b %e %Y %H:%M:%S"
 msgstr "%b %e %Y %H:%M:%S"
 
@@ -548,49 +570,55 @@ msgstr "%b %e %Y %H:%M:%S"
 #. * different year, showing the abbreviated month name,
 #. * day of the month, year and the time without seconds
 #. * in 24-hour format.
-#: ../src/gl-util.c:255
+#: src/gl-util.c:255
 msgid "%b %e %Y %H:%M"
 msgstr "%e %b %Y %H:%M"
 
 #. Transltors: the first string is the earliest timestamp of the boot,
 #. * and the second string is the newest timestamp. An example string might
 #. * be '08:10 - 08:30'
-#: ../src/gl-util.c:319
+#: src/gl-util.c:319
 #, c-format
 msgid "%s – %s"
 msgstr "%s – %s"
 
-#: ../src/gl-window.c:181
+#: src/gl-window.c:113
 msgid "Save logs"
 msgstr "Зберегти журнали"
 
-#: ../src/gl-window.c:184
+#: src/gl-window.c:116
 msgid "_Cancel"
 msgstr "_Скасувати"
 
-#: ../src/gl-window.c:185
+#: src/gl-window.c:117
 msgid "_Save"
 msgstr "З_берегти"
 
-#: ../src/gl-window.c:190
+#: src/gl-window.c:122
 msgid "log messages"
 msgstr "Повідомлення журналу"
 
-#: ../src/gl-window.c:243
+#: src/gl-window.c:181
 msgid "Unable to export log messages to a file"
 msgstr "Неможливо експортувати повідомлення журналу у файл"
 
-#: ../src/gl-window.c:474 ../src/gl-window.c:505
+#: src/gl-window.c:481 src/gl-window.c:512
 msgid "Unable to read system logs"
 msgstr "Неможливо прочитати системні журнали"
 
-#: ../src/gl-window.c:488
+#: src/gl-window.c:495
 msgid "Unable to read user logs"
 msgstr "Неможливо прочитати журнали користувача"
 
-#: ../src/gl-window.c:520
+#: src/gl-window.c:527
 msgid "No logs available"
 msgstr "Немає доступних журналів"
+
+#~ msgid "Go back to the event view"
+#~ msgstr "Вернутись до перегляду подій"
+
+#~ msgid "_Quit"
+#~ msgstr "Ви_йти"
 
 #~ msgid "Search the displayed logs"
 #~ msgstr "Пошук показаних журналів"
