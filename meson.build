@@ -55,14 +55,6 @@ configure_file(output : 'config.h',
 # Dependencies
 dependency('pkg-config', version : '>= 0.24')
 
-message('checking for glib-mkenums script...')
-glib_mkenums = run_command('pkg-config', ['--variable=glib_mkenums', 'glib-2.0'])
-if not glib_mkenums.stdout().contains('glib-mkenums')
-    error('glib-mkenums not listed in glib-2.0 pkg-config file')
-else
-    message(glib_mkenums.stdout().strip())
-endif
-
 gsettings_desktop_schemas = dependency('gsettings-desktop-schemas', required : false)
 if not gsettings_desktop_schemas.found()
     message('gsettings-desktop-schemas is required at runtime')
