@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2022-04-01 12:02+0000\n"
-"PO-Revision-Date: 2022-04-01 14:06+0100\n"
+"POT-Creation-Date: 2022-04-01 13:08+0000\n"
+"PO-Revision-Date: 2022-05-31 12:40+0100\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Português <>\n"
 "Language: pt\n"
@@ -36,7 +36,7 @@ msgstr "Relevante"
 
 #: data/gl-categorylist.ui:60
 msgid "All"
-msgstr "Todas"
+msgstr "Tudo"
 
 #: data/gl-categorylist.ui:75 src/gl-eventviewrow.c:209
 msgid "Applications"
