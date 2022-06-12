@@ -1,21 +1,22 @@
 # Swedish translation for gnome-logs.
-# Copyright (C) 2015 gnome-logs's COPYRIGHT HOLDER
+# Copyright © 2015-2022 gnome-logs's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-logs package.
 # Sebastian Rasmussen <sebras@gmail.com>, 2015.
+# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2022.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
-"POT-Creation-Date: 2016-05-05 08:50+0000\n"
-"PO-Revision-Date: 2016-05-07 12:28+0200\n"
+"POT-Creation-Date: 2022-05-31 12:41+0000\n"
+"PO-Revision-Date: 2022-06-12 21:31+0200\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
-"Language-Team: Swedish <gnome-se-list@gnome.org>\n"
+"Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"X-Generator: Poedit 3.0.1\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
@@ -26,13 +27,13 @@ msgstr "Sebastian Rasmussen <sebras@gmail.com>, 2015"
 #: C/index.page:7
 msgctxt "text"
 msgid "Logs help"
-msgstr "Loggar hjälp"
+msgstr "Hjälp för Loggar"
 
 #. (itstool) path: info/title
 #: C/index.page:8
 msgctxt "link"
 msgid "Logs help"
-msgstr "Loggar hjälp"
+msgstr "Hjälp för Loggar"
 
 #. (itstool) path: info/desc
 #: C/index.page:13
@@ -43,20 +44,6 @@ msgstr "Bläddra och sök genom dina systemd-journalloggar."
 #: C/index.page:16
 msgid "<_:media-1/> Logs"
 msgstr "<_:media-1/> Loggar"
-
-#. (itstool) path: media
-#. This is a reference to an external file such as an image or video. When
-#. the file changes, the md5 hash will change to let you know you need to
-#. update your localized copy. The msgstr is not used at all. Set it to
-#. whatever you like once you have updated your copy of the file.
-#: C/introduction.page:35
-msgctxt "_"
-msgid ""
-"external ref='media/gnome-logs-3-12.png' "
-"md5='56e83d7808cdfd80457691aff5ffc2d1'"
-msgstr ""
-"external ref='media/gnome-logs-3-12.png' "
-"md5='56e83d7808cdfd80457691aff5ffc2d1'"
 
 #. (itstool) path: credit/name
 #: C/introduction.page:11
@@ -100,6 +87,24 @@ msgid ""
 msgstr ""
 "Med Loggar kan du söka genom dina loggar genom att skriva en sökterm och "
 "visa detaljerad information om varje händelse genom att klicka på den."
+
+#. (itstool) path: page/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/introduction.page:35
+#| msgctxt "_"
+#| msgid ""
+#| "external ref='media/gnome-logs-3-12.png' "
+#| "md5='56e83d7808cdfd80457691aff5ffc2d1'"
+msgctxt "_"
+msgid ""
+"external ref='media/gnome-logs-3-34.png' "
+"md5='572ed4fda65dbaa8cd2dc56f6bce5dfb'"
+msgstr ""
+"external ref='media/gnome-logs-3-34.png' "
+"md5='572ed4fda65dbaa8cd2dc56f6bce5dfb'"
 
 #. (itstool) path: media/p
 #: C/introduction.page:36
@@ -175,8 +180,8 @@ msgid ""
 "administrators to have different levels of access to logs, so you may not be "
 "able to view all logs. If you are an <gui>Administrator</gui> user, then "
 "only other administrators can change which logs you can access. For more "
-"information about log access permissions, <link href=\"man:systemd-journald"
-"\">see the <_:cmd-1/> man page</link>."
+"information about log access permissions, <link href=\"man:systemd-"
+"journald\">see the <_:cmd-1/> man page</link>."
 msgstr ""
 "<em>Administratörs</em>-användare kommer normalt att kunna visa mer känsliga "
 "loggar så som kernelloggar och loggarna för andra användare. Det är möjligt "
