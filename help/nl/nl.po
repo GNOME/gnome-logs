@@ -1,49 +1,55 @@
 # Dutch translation for gnome-logs.
 # Copyright (C) 2017 gnome-logs's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-logs package.
-# Nathan Follens <nthn@unseen.is>, 2017.
+# Nathan Follens <nfollens@gnome.org>, 2017, 2022.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
-"POT-Creation-Date: 2017-09-08 11:32+0000\n"
-"PO-Revision-Date: 2017-09-08 14:14+0200\n"
+"POT-Creation-Date: 2022-05-31 12:39+0000\n"
+"PO-Revision-Date: 2022-06-30 21:07+0200\n"
+"Last-Translator: Nathan Follens <nfollens@gnome.org>\n"
 "Language-Team: Dutch <gnome-nl-list@gnome.org>\n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: nl\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Last-Translator: Nathan Follens <nthn@unseen.is>\n"
-"X-Generator: Poedit 2.0.3\n"
+"X-Generator: Poedit 3.1\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
 msgid "translator-credits"
 msgstr ""
-"Nathan Follens\n"
+"Nathan Follens <nfollens@gnome.org>\n"
 "\n"
 "Meer info over Gnome-NL http://nl.gnome.org"
 
 #. (itstool) path: info/title
 #: C/index.page:7
-msgctxt "text"
+msgctxt "link:trail"
 msgid "Logs help"
 msgstr "Hulp voor Logboeken"
 
 #. (itstool) path: info/title
 #: C/index.page:8
+msgctxt "text"
+msgid "Logs help"
+msgstr "Hulp voor Logboeken"
+
+#. (itstool) path: info/title
+#: C/index.page:9
 msgctxt "link"
 msgid "Logs help"
 msgstr "Hulp voor Logboeken"
 
 #. (itstool) path: info/desc
-#: C/index.page:13
+#: C/index.page:14
 msgid "Browse and search through your systemd journal logs."
-msgstr "Blader en zoek in uw systemd-logboeken."
+msgstr "Blader door en zoek in uw systemd-logboeken."
 
 #. (itstool) path: page/title
-#: C/index.page:16
+#: C/index.page:17
 msgid "<_:media-1/> Logs"
 msgstr "<_:media-1/> Logboeken"
 
@@ -71,7 +77,7 @@ msgstr ""
 #. (itstool) path: page/title
 #: C/introduction.page:27
 msgid "Introduction"
-msgstr "Introductie"
+msgstr "Inleiding"
 
 #. (itstool) path: page/p
 #: C/introduction.page:29
@@ -79,7 +85,7 @@ msgid ""
 "Logs shows events from the systemd journal, and sorts them into categories, "
 "such as hardware and applications."
 msgstr ""
-"Logboeken toont gebeurtenissen uit het systemd-logboek en toont deze in "
+"Logboeken toont gebeurtenissen uit het systemd-logboek en geeft ze weer in "
 "verschillende categorieën, zoals hardware en toepassingen."
 
 #. (itstool) path: page/p
@@ -99,11 +105,9 @@ msgstr ""
 #: C/introduction.page:35
 msgctxt "_"
 msgid ""
-"external ref='media/gnome-logs-3-12.png' "
-"md5='56e83d7808cdfd80457691aff5ffc2d1'"
-msgstr ""
-"external ref='media/gnome-logs-3-12.png' "
-"md5='56e83d7808cdfd80457691aff5ffc2d1'"
+"external ref='media/gnome-logs-3-34.png' "
+"md5='572ed4fda65dbaa8cd2dc56f6bce5dfb'"
+msgstr "@"
 
 #. (itstool) path: media/p
 #: C/introduction.page:36
@@ -113,7 +117,7 @@ msgstr "Schermafdruk van enkele logboeken."
 #. (itstool) path: p/link
 #: C/legal.xml:5
 msgid "Creative Commons Attribution-ShareAlike 3.0 Unported License"
-msgstr "Creative Commons Naamsvermelding-GelijkDelen 3.0 Unported Licentie"
+msgstr "Creative Commons Naamsvermelding-GelijkDelen 3.0 Unported-licentie"
 
 #. (itstool) path: license/p
 #: C/legal.xml:4
@@ -130,7 +134,7 @@ msgstr "2013"
 msgid ""
 "You can read some or all of the logs, depending on which permissions you "
 "have."
-msgstr "U kan sommige of alle logboeken lezen, afhankelijk van uw rechten."
+msgstr "U kunt sommige of alle logboeken lezen, afhankelijk van uw rechten."
 
 #. (itstool) path: page/title
 #: C/permissions.page:22
@@ -145,10 +149,10 @@ msgid ""
 "permissions are set by your distribution, but they can be changed by your "
 "system administrator."
 msgstr ""
-"U zal sommige berichten kunnen inzien die sinds de meest recente "
-"opstartsessie gelogd zijn, afhankelijk van uw rechten. Sommige van uw "
-"rechten worden door uw distributie ingesteld, maar deze kunnen aangepast "
-"worden door de systeembeheerder."
+"U zult, afhankelijk van uw toegangsrechten, sommige berichten kunnen inzien "
+"die sinds de meest recente opstartsessie gelogd zijn. Sommige van uw "
+"toegangsrechten worden door uw distributie ingesteld, maar deze kunnen "
+"aangepast worden door de systeembeheerder."
 
 #. (itstool) path: page/p
 #. TRANSLATORS: 'Standard' is taken from the user account type in the
@@ -164,7 +168,7 @@ msgstr ""
 "Standaard kunnen gebruikers in de groep <em href=\"help:gnome-help/user-"
 "admin-explain\">Standaard</em> slechts een beperkt deel van de logboeken "
 "inkijken, zoals toepassingslogboeken en hun eigen sessielogboek. Als u een "
-"gebruiker in de groep <gui>Standaard</gui> bent en geen enkel logboek kan "
+"gebruiker in de groep <gui>Standaard</gui> bent en geen enkel logboek kunt "
 "zien, is het mogelijk dat uw systeembeheerder uw mogelijkheid tot inkijken "
 "van logboeken heeft uitgeschakeld."
 
@@ -184,8 +188,8 @@ msgstr ""
 "Gebruikers in de groep <em>Beheerder</em> kunnen normaal gezien de meer "
 "gevoelige logboeken inkijken, zoals kernellogboeken en de logboeken van "
 "andere gebruikers. Het is mogelijk voor beheerders om verschillende "
-"toegangsniveau's tot de logboeken te hebben, dus kan u mogelijk niet alle "
+"toegangsniveau’s tot de logboeken te hebben, dus kunt u mogelijk niet alle "
 "logboeken inkijken. Als u een gebruiker in de groep <gui>Beheerder</gui> "
 "bent, kunnen enkel andere beheerders wijzigen tot welke logboeken u toegang "
-"heeft. <link href=\"man:systemd-journald\">Zie de <_:cmd-1/>-handleiding</"
+"hebt. <link href=\"man:systemd-journald\">Bekijk de <_:cmd-1/>-handleiding</"
 "link> voor meer informatie over logboektoegangsrechten."
