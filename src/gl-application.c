@@ -90,12 +90,12 @@ on_about (GSimpleAction *action,
 {
     GtkApplication *application;
     GtkWindow *parent;
-    static const gchar* artists[] = {
+    static const gchar* designers[] = {
         "Jakub Steiner <jimmac@gmail.com>",
         "Lapo Calamandrei <calamandrei@gmail.com>",
         NULL
     };
-    static const gchar* authors[] = {
+    static const gchar* developers[] = {
         "David King <davidk@gnome.org>",
         "Jonathan Kang <jonathan121537@gmail.com>",
         NULL
@@ -103,16 +103,19 @@ on_about (GSimpleAction *action,
 
     application = GTK_APPLICATION (user_data);
     parent = gtk_application_get_active_window (GTK_APPLICATION (application));
-    gtk_show_about_dialog (parent,
-                           "authors", authors,
-                           "artists", artists,
+    adw_show_about_window (parent,
+                           "application-name", _("Logs"),
+                           "application-icon", "org.gnome.Logs",
+                           "developer-name", _("The GNOME Project"),
+                           "developers", developers,
+                           "designers", designers,
                            "translator-credits", _("translator-credits"),
-                           "comments", _("View and search logs"),
                            "copyright", "Copyright © 2013–2015 Red Hat, Inc.\nCopyright © 2014-2015 Jonathan Kang",
                            "license-type", GTK_LICENSE_GPL_3_0,
-                           "logo-icon-name", "org.gnome.Logs",
                            "version", PACKAGE_VERSION,
-                           "website", PACKAGE_URL, NULL);
+                           "website", PACKAGE_URL,
+                           "issue-url", "https://gitlab.gnome.org/GNOME/gnome-logs/-/issues/new",
+                           NULL);
 }
 
 static void
