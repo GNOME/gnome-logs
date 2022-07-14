@@ -14,7 +14,7 @@ flatpak devel:
         MANIFEST_PATH: "org.gnome.Logs.json"
         MESON_ARGS: "-Dtests=true"
         FLATPAK_MODULE: "gnome-logs"
-        RUNTIME_REPO: "https://sdk.gnome.org/gnome.flatpakrepo"
+        RUNTIME_REPO: "https://nightly.gnome.org/gnome-nightly.flatpakrepo"
         APP_ID: "org.gnome.Logs"
     extends: .flatpak
 
