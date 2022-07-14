@@ -33,6 +33,21 @@ util_timestamp_to_display (void)
     {
         /* Test three cases for each format (same day, same year, different
            year */
+#if GLIB_CHECK_VERSION (2, 73, 1)
+        /* The space is a FIGURE SPACE (U+2007) */
+        { G_GUINT64_CONSTANT (1423486800000000), GL_UTIL_CLOCK_FORMAT_12HR,
+          "\u20071:00 PM" },
+        { G_GUINT64_CONSTANT (1423402200000000), GL_UTIL_CLOCK_FORMAT_12HR,
+          "Feb \u20078 \u20071:30 PM" },
+        { G_GUINT64_CONSTANT (1391952600000000), GL_UTIL_CLOCK_FORMAT_12HR,
+          "Feb \u20079 2014 \u20071:30 PM" },
+        { G_GUINT64_CONSTANT (1423486800000000), GL_UTIL_CLOCK_FORMAT_24HR,
+          "13:00" },
+        { G_GUINT64_CONSTANT (1423402200000000), GL_UTIL_CLOCK_FORMAT_24HR,
+          "Feb \u20078 13:30" },
+        { G_GUINT64_CONSTANT (1391952600000000), GL_UTIL_CLOCK_FORMAT_24HR,
+          "Feb \u20079 2014 13:30" }
+#else
         { G_GUINT64_CONSTANT (1423486800000000), GL_UTIL_CLOCK_FORMAT_12HR,
           " 1:00 PM" },
         { G_GUINT64_CONSTANT (1423402200000000), GL_UTIL_CLOCK_FORMAT_12HR,
@@ -45,6 +60,7 @@ util_timestamp_to_display (void)
           "Feb  8 13:30" },
         { G_GUINT64_CONSTANT (1391952600000000), GL_UTIL_CLOCK_FORMAT_24HR,
           "Feb  9 2014 13:30" }
+#endif
     };
 
     now = g_date_time_new_utc (2015, 2, 9, 13, 30, 42);
