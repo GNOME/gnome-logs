@@ -33,7 +33,7 @@
 struct _GlApplication
 {
     /*< private >*/
-    GtkApplication parent_instance;
+    AdwApplication parent_instance;
 };
 
 typedef struct
@@ -44,7 +44,7 @@ typedef struct
     gchar *monospace_font;
 } GlApplicationPrivate;
 
-G_DEFINE_TYPE_WITH_PRIVATE (GlApplication, gl_application, GTK_TYPE_APPLICATION)
+G_DEFINE_TYPE_WITH_PRIVATE (GlApplication, gl_application, ADW_TYPE_APPLICATION)
 
 static const gchar DESKTOP_SCHEMA[] = "org.gnome.desktop.interface";
 static const gchar SETTINGS_SCHEMA[] = "org.gnome.Logs";

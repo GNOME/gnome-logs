@@ -20,6 +20,7 @@
 #define GL_APPLICATION_H_
 
 #include <gtk/gtk.h>
+#include <libadwaita-1/adwaita.h>
 
 G_BEGIN_DECLS
 
@@ -31,7 +32,7 @@ typedef enum
 } GlSortOrder;
 
 #define GL_TYPE_APPLICATION (gl_application_get_type ())
-G_DECLARE_FINAL_TYPE (GlApplication, gl_application, GL, APPLICATION, GtkApplication)
+G_DECLARE_FINAL_TYPE (GlApplication, gl_application, GL, APPLICATION, AdwApplication)
 
 GtkApplication * gl_application_new (void);
 
