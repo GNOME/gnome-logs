@@ -1,20 +1,14 @@
-# Copyright (C) 2022 The Abkhazian language development fund named after Bagrat Shinkuba
-# This file is distributed under the same license as the gnome-logs package.
-# Нанба Наала <naala-nanba@rambler.ru>, 2022.
-#
-
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-logs\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
 "POT-Creation-Date: 2022-07-10 21:14+0000\n"
-"PO-Revision-Date: 2022-07-22 16:00+0000\n"
 "Last-Translator: Нанба Наала <naala-nanba@rambler.ru>\n"
-"Language-Team: Abkhazian <LL@li.org>\n"
+"Language-Team: Abkhazian <ab@li.org>\n"
 "Language: ab\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: data/gl-categorylist.ui:12
 msgid "Important"
@@ -40,7 +34,7 @@ msgstr ""
 msgid "System"
 msgstr ""
 
-#: data/gl-categorylist.ui:74+src/gl-eventviewrow.c:224
+#: data/gl-categorylist.ui:74 src/gl-eventviewrow.c:224
 msgid "Security"
 msgstr "Ашәарҭадара"
 
@@ -227,7 +221,7 @@ msgstr ""
 msgid "Sec"
 msgstr ""
 
-#: data/gl-searchpopover.ui:540+data/gl-searchpopover.ui:789
+#: data/gl-searchpopover.ui:540 data/gl-searchpopover.ui:789
 msgid "AM/PM"
 msgstr "AM/PM"
 
@@ -370,7 +364,7 @@ msgstr ""
 
 #: data/org.gnome.Logs.appdata.xml.in:30
 msgid "The GNOME Project"
-msgstr ""
+msgstr "The GNOME Project"
 
 #: data/org.gnome.Logs.desktop.in:4
 msgid "Log Viewer"
@@ -401,7 +395,7 @@ msgstr ""
 
 #: src/gl-application.c:109
 msgid "translator-credits"
-msgstr ""
+msgstr "Нанба Наала <naala-nanba@rambler.ru>, 2022"
 
 #: src/gl-application.c:110
 msgid "View and search logs"
@@ -457,25 +451,45 @@ msgid "%e %B %Y"
 msgstr ""
 
 #: src/gl-searchpopover.c:873
+#, c-format
 msgid "AM"
 msgstr "AM"
 
 #: src/gl-searchpopover.c:877
+#, c-format
 msgid "PM"
 msgstr "PM"
 
-#: src/gl-searchpopover.c:985+src/gl-searchpopover.c:1225
+#. Translators: timestamp format for the custom start time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 12-hour format.
+#. Translators: timestamp format for the custom end time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 12-hour format.
+#: src/gl-searchpopover.c:985 src/gl-searchpopover.c:1225
 msgid "%I:%M:%S %p"
-msgstr "%I:%M:%S %p"
+msgstr "%I∶%M∶%S %p"
 
-#: src/gl-searchpopover.c:992+src/gl-searchpopover.c:1232
+#. Translators: timestamp format for the custom start time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 24-hour format.
+#. Translators: timestamp format for the custom end time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 24-hour format.
+#: src/gl-searchpopover.c:992 src/gl-searchpopover.c:1232
 msgid "%T"
 msgstr "%T"
 
+#. Translators: timestamp format for events on the
+#. * current day, showing the time with seconds in
+#. * 12-hour format.
 #: src/gl-util.c:126
 msgid "%l:%M:%S %p"
-msgstr "%l:%M:%S %p"
+msgstr "%l∶%M∶%S %p"
 
+#. Translators: timestamp format for events on the
+#. * current day, showing the time without seconds in
+#. * 12-hour format.
 #: src/gl-util.c:133
 msgid "%l:%M %p"
 msgstr "%l:%M %p"
@@ -512,10 +526,16 @@ msgstr ""
 msgid "%b %e %Y %l:%M %p"
 msgstr ""
 
+#. Translators: timestamp format for events on the
+#. * current day, showing the time with seconds in
+#. * 24-hour format.
 #: src/gl-util.c:189
 msgid "%H:%M:%S"
 msgstr "%H:%M:%S"
 
+#. Translators: timestamp format for events on the
+#. * current day, showing the time without seconds in
+#. * 24-hour format.
 #: src/gl-util.c:196
 msgid "%H:%M"
 msgstr "%H:%M"
@@ -552,7 +572,11 @@ msgstr ""
 msgid "%b %e %Y %H:%M"
 msgstr ""
 
+#. Transltors: the first string is the earliest timestamp of the boot,
+#. * and the second string is the newest timestamp. An example string might
+#. * be '08:10 - 08:30'
 #: src/gl-util.c:297
+#, c-format
 msgid "%s – %s"
 msgstr "%s – %s"
 
