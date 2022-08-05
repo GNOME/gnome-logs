@@ -1,0 +1,193 @@
+# Italian translation for gnome-logs.
+# Copyright (C) 2022 gnome-logs's COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-logs package.
+# Davide Ferracin <davide.ferracin@protonmail.com>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-logs master\n"
+"POT-Creation-Date: 2022-08-02 08:48+0000\n"
+"PO-Revision-Date: 2022-08-04 15:11+0200\n"
+"Last-Translator: Davide Ferracin <davide.ferracin@protonmail.com>\n"
+"Language-Team: Italian <gnome-it-list@gnome.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: it\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
+msgctxt "_"
+msgid "translator-credits"
+msgstr "Davide Ferracin <davide.ferracin@protonmail.com>, 2022"
+
+#. (itstool) path: info/title
+#: C/index.page:7
+msgctxt "link:trail"
+msgid "Logs help"
+msgstr "Aiuto di Registri"
+
+#. (itstool) path: info/title
+#: C/index.page:8
+msgctxt "text"
+msgid "Logs help"
+msgstr "Aiuto di Registri"
+
+#. (itstool) path: info/title
+#: C/index.page:9
+msgctxt "link"
+msgid "Logs help"
+msgstr "Aiuto di Registri"
+
+#. (itstool) path: info/desc
+#: C/index.page:14
+msgid "Browse and search through your systemd journal logs."
+msgstr "Consulta i registri di systemd e cerca al loro interno."
+
+#. (itstool) path: page/title
+#: C/index.page:17
+msgid "<_:media-1/> Logs"
+msgstr "<_:media-1/> Registri"
+
+#. (itstool) path: credit/name
+#: C/introduction.page:11
+msgid "David King"
+msgstr "David King"
+
+#. (itstool) path: credit/years
+#: C/introduction.page:13 C/introduction.page:18
+msgid "2014"
+msgstr "2014"
+
+#. (itstool) path: credit/name
+#: C/introduction.page:16 C/permissions.page:11
+msgid "Ekaterina Gerasimova"
+msgstr "Ekaterina Gerasimova"
+
+#. (itstool) path: info/desc
+#: C/introduction.page:23
+msgid "<app>Logs</app> is a viewer for the <sys>systemd</sys> journal."
+msgstr "<app>Registri</app> è un'applicazione per visualizzare i registri di <sys>systemd</sys>."
+
+#. (itstool) path: page/title
+#: C/introduction.page:27
+msgid "Introduction"
+msgstr "Introduzione"
+
+#. (itstool) path: page/p
+#: C/introduction.page:29
+msgid ""
+"Logs shows events from the systemd journal, and sorts them into categories, "
+"such as hardware and applications."
+msgstr ""
+"Registri mostra gli eventi dal journal di systemd, e li suddivide in categorie, "
+"come “hardware” e “applicazioni”."
+
+#. (itstool) path: page/p
+#: C/introduction.page:32
+msgid ""
+"Using Logs you can search your logs by typing a search term, and view "
+"detailed information about each event by clicking on it."
+msgstr ""
+"Con Registri è possibile cercare all'interno dei registri di sistema con delle parole "
+"chiave, e visualizzare informazioni dettagliate su ciascun evento facendo clic su di esso."
+
+#. (itstool) path: page/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/introduction.page:35
+msgctxt "_"
+msgid ""
+"external ref='media/gnome-logs-3-34.png' "
+"md5='572ed4fda65dbaa8cd2dc56f6bce5dfb'"
+msgstr "media/gnome-logs-3-34.png"
+
+#. (itstool) path: media/p
+#: C/introduction.page:36
+msgid "Screenshot of Logs showing some journal entries."
+msgstr "Schermata di Registri con mostrate alcune voci del journal."
+
+#. (itstool) path: p/link
+#: C/legal.xml:5
+msgid "Creative Commons Attribution-ShareAlike 3.0 Unported License"
+msgstr ""
+"Licenza Creative Commons Attribuzione - Condividi allo stesso modo 3.0 "
+"Unported"
+
+#. (itstool) path: license/p
+#: C/legal.xml:4
+msgid "This work is licensed under a <_:link-1/>."
+msgstr "Quest'opera è rilasciata sotto una <_:link-1/>."
+
+#. (itstool) path: credit/years
+#: C/permissions.page:13
+msgid "2013"
+msgstr "2013"
+
+#. (itstool) path: info/desc
+#: C/permissions.page:18
+msgid ""
+"You can read some or all of the logs, depending on which permissions you "
+"have."
+msgstr ""
+"In base ai privilegi accordati al proprio utente, si potranno leggere tutti o solo alcuni "
+"dei registri."
+
+#. (itstool) path: page/title
+#: C/permissions.page:22
+msgid "Can I view all logs?"
+msgstr "Si possono visualizzare tutti i registri?"
+
+#. (itstool) path: page/p
+#: C/permissions.page:24
+msgid ""
+"You will be able to browse some messages that have been logged since the "
+"last reboot, depending on which permissions you have. Some of your "
+"permissions are set by your distribution, but they can be changed by your "
+"system administrator."
+msgstr ""
+"In base ai privilegi accordati al proprio utente, si potranno leggere alcuni dei messaggi "
+"che sono stati registrati a partire dall'ultimo avvio del sistema. Alcuni dei privilegi "
+"sono stabiliti dalla propria distribuzione, ma possono essere modificati "
+"dall'amministratore di sistema."
+
+#. (itstool) path: page/p
+#. TRANSLATORS: 'Standard' is taken from the user account type in the
+#. control panel when used in <em> or <gui> tags.
+#: C/permissions.page:30
+msgid ""
+"By default, <em href=\"help:gnome-help/user-admin-explain\">Standard</em> "
+"users are shown a limited set of logs, such as application logs and their "
+"own session logs. If you are a <gui>Standard</gui> user and do not see any "
+"logs, it is possible that your system administrator has disabled your "
+"ability to view logs."
+msgstr ""
+"Come modalità predefinita, gli utenti <em href=\"help:gnome-help/user-admin-"
+"explain\">standard</em> possono consultare solo un numero limitato di registri, come quelli "
+"delle applicazioni e quelli della propria sessione. Se si è un utente <gui>standard</gui> "
+"e non si riesce a vedere alcun registro, può essere che il proprio amministratore di "
+"sistema abbia disabilitato la possibilità di consultare i registri."
+
+#. (itstool) path: page/p
+#. TRANSLATORS: 'Administrator' is taken from the user account type in the
+#. control panel when used in <em> or <gui> tags.
+#: C/permissions.page:39
+msgid ""
+"<em>Administrator</em> users will normally be able to view more sensitive "
+"logs, such as kernel logs and the logs of other users. It is possible for "
+"administrators to have different levels of access to logs, so you may not be "
+"able to view all logs. If you are an <gui>Administrator</gui> user, then "
+"only other administrators can change which logs you can access. For more "
+"information about log access permissions, <link href=\"man:systemd-journald"
+"\">see the <_:cmd-1/> man page</link>."
+msgstr ""
+"Gli utenti <em>amministratori</em> potranno di norma visualizzare registri di "
+"sistema più riservati, come i registri del kernel e quelli di altri utenti. "
+"Gli amministratori possono avere diversi livelli di accesso ai registri, quindi "
+"può essere che non si sia comunque in grado di consultarli tutti. Se si è un "
+"utente <gui>amministratore</gui>, solo altri amministratori possono cambiare "
+"a quali registri si ha accesso. Per ulteriori informazioni a proposito dei "
+"privilegi di accesso ai registri, <link href=\"man:systemd-journald\">consultare "
+"la pagina man <_:cmd-1/></link>."
