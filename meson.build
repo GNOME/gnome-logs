@@ -1,4 +1,4 @@
-project('gnome-logs', 'c', version : '42.0')
+project('gnome-logs', 'c', version : '43.beta')
 
 gl_name = meson.project_name()
 gl_version = meson.project_version()

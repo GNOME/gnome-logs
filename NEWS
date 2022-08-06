@@ -1,3 +1,14 @@
+GNOME Logs 43.beta
+==================
+
+* GTK 4 port from Maximiliano Sandoval R
+* CI fixes from Bartłomiej Piotrowski and Maximiliano Sandoval R
+* Remove redundant glib-mkenums check from Marvin Schmidt
+* Add Italian help translation
+* Updates to Dutch and Swedish help translation
+* Updates to Dutch and Portuguese translations
+* Add Abkhazian and Georgian translations
+
 GNOME Logs 42.0
 ===============
 
