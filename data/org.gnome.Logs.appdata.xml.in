@@ -13,8 +13,8 @@
        view detailed information about each event by clicking on it.</p>
   </description>
   <screenshots>
-    <screenshot height="575" width="1000" type="default">
-      <image>http://amigadave.com/temp/gnome-logs-default.png</image>
+    <screenshot type="default">
+      <image>https://static.gnome.org/appdata/gnome-43/logs/logs-main.png</image>
     </screenshot>
   </screenshots>
   <releases>
