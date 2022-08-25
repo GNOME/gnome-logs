@@ -3,7 +3,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
 "POT-Creation-Date: 2022-07-10 21:14+0000\n"
 "Last-Translator: Нанба Наала <naala-nanba@rambler.ru>\n"
-"Language-Team: Abkhazian <ab@li.org>\n"
+"Language-Team: Abkhazian <daniel.abzakh@gmail.com>\n"
 "Language: ab\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -12,7 +12,7 @@ msgstr ""
 
 #: data/gl-categorylist.ui:12
 msgid "Important"
-msgstr ""
+msgstr "Ихадоу"
 
 #: data/gl-categorylist.ui:23
 msgid "Alerts"
@@ -24,7 +24,7 @@ msgstr ""
 
 #: data/gl-categorylist.ui:44
 msgid "All"
-msgstr ""
+msgstr "Зегьы"
 
 #: data/gl-categorylist.ui:54 src/gl-eventviewrow.c:211
 msgid "Applications"
@@ -84,7 +84,7 @@ msgstr ""
 
 #: data/gl-eventviewdetail.ui:52
 msgid "Time"
-msgstr ""
+msgstr "Аамҭа"
 
 #: data/gl-eventviewdetail.ui:81 data/gl-searchpopover.ui:867
 msgid "Message"
@@ -279,7 +279,7 @@ msgstr ""
 
 #: data/gl-searchpopover.ui:925
 msgid "Yesterday"
-msgstr ""
+msgstr "Иацы"
 
 #: data/gl-searchpopover.ui:930
 msgid "Last 3 days"
@@ -287,7 +287,7 @@ msgstr ""
 
 #: data/gl-searchpopover.ui:939
 msgid "Entire Journal"
-msgstr ""
+msgstr "Ажурнал зегьы"
 
 #: data/gl-searchpopover.ui:948
 msgid "Set Custom Range…"
@@ -448,7 +448,7 @@ msgstr ""
 #. * name as string, the year as a decimal number including the century.
 #: src/gl-searchpopover.c:734 src/gl-searchpopover.c:1102
 msgid "%e %B %Y"
-msgstr ""
+msgstr "%e %b. %Y"
 
 #: src/gl-searchpopover.c:873
 #, c-format
@@ -500,7 +500,7 @@ msgstr "%l:%M %p"
 #. * with seconds in 12-hour format.
 #: src/gl-util.c:144
 msgid "%b %e %l:%M:%S %p"
-msgstr ""
+msgstr "%e %b., %l:%M:%S %p"
 
 #. Translators: timestamp format for events in the
 #. * current year, showing the abbreviated month name,
@@ -508,7 +508,7 @@ msgstr ""
 #. * 12-hour format.
 #: src/gl-util.c:152
 msgid "%b %e %l:%M %p"
-msgstr ""
+msgstr "%e %b., %l:%M %p"
 
 #. Translators: timestamp format for events in
 #. * a different year, showing the abbreviated
@@ -516,7 +516,7 @@ msgstr ""
 #. * time with seconds in 12-hour format.
 #: src/gl-util.c:163
 msgid "%b %e %Y %l:%M:%S %p"
-msgstr ""
+msgstr "%e %b. %Y, %l:%M:%S %p"
 
 #. Translators: timestamp format for events in
 #. * a different year, showing the abbreviated
@@ -524,7 +524,7 @@ msgstr ""
 #. * time without seconds in 12-hour format.
 #: src/gl-util.c:172
 msgid "%b %e %Y %l:%M %p"
-msgstr ""
+msgstr "%e %b. %Y, %l:%M %p"
 
 #. Translators: timestamp format for events on the
 #. * current day, showing the time with seconds in
@@ -546,7 +546,7 @@ msgstr "%H:%M"
 #. * 24-hour format.
 #: src/gl-util.c:206
 msgid "%b %e %H:%M:%S"
-msgstr ""
+msgstr "%e %b., %H:%M:%S"
 
 #. Translators: timestamp format for events in the
 #. * current year, showing the abbreviated month name,
@@ -554,7 +554,7 @@ msgstr ""
 #. * 24-hour format.
 #: src/gl-util.c:214
 msgid "%b %e %H:%M"
-msgstr ""
+msgstr "%e %b., %H:%M"
 
 #. Translators: timestamp format for events in
 #. * a different year, showing the abbreviated
@@ -562,7 +562,7 @@ msgstr ""
 #. * time with seconds in 24-hour format.
 #: src/gl-util.c:225
 msgid "%b %e %Y %H:%M:%S"
-msgstr ""
+msgstr "%e %b. %Y, %H:%M:%S"
 
 #. Translators: timestamp format for events in a
 #. * different year, showing the abbreviated month name,
@@ -570,7 +570,7 @@ msgstr ""
 #. * in 24-hour format.
 #: src/gl-util.c:233
 msgid "%b %e %Y %H:%M"
-msgstr ""
+msgstr "%e %b. %Y, %H:%M"
 
 #. Transltors: the first string is the earliest timestamp of the boot,
 #. * and the second string is the newest timestamp. An example string might
