@@ -52,8 +52,6 @@ configure_file(output : 'config.h',
                configuration : config_h)
 
 # Dependencies
-dependency('pkg-config', version : '>= 0.24')
-
 gsettings_desktop_schemas = dependency('gsettings-desktop-schemas', required : false)
 if not gsettings_desktop_schemas.found()
     message('gsettings-desktop-schemas is required at runtime')
