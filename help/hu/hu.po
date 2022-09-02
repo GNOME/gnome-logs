@@ -6,16 +6,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs_help master\n"
-"POT-Creation-Date: 2014-03-19 10:58+0000\n"
-"PO-Revision-Date: 2016-03-19 14:45+0100\n"
+"POT-Creation-Date: 2022-06-12 19:32+0000\n"
+"PO-Revision-Date: 2022-09-03 00:24+0200\n"
 "Last-Translator: Gabor Kelemen <kelemeng at ubuntu dot com>\n"
 "Language-Team: Hungarian <openscope at googlegroups dot com>\n"
+"Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: hu\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 1.5\n"
+"X-Generator: Lokalize 19.12.3\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
@@ -44,32 +44,18 @@ msgstr "Tallózás és keresés a systemd naplóiban."
 msgid "<_:media-1/> Logs"
 msgstr "<_:media-1/> Naplók"
 
-#. (itstool) path: media
-#. This is a reference to an external file such as an image or video. When
-#. the file changes, the md5 hash will change to let you know you need to
-#. update your localized copy. The msgstr is not used at all. Set it to
-#. whatever you like once you have updated your copy of the file.
-#: C/introduction.page:35
-msgctxt "_"
-msgid ""
-"external ref='media/gnome-logs-3-12.png' "
-"md5='56e83d7808cdfd80457691aff5ffc2d1'"
-msgstr "LEFORDÍTVA"
-
 #. (itstool) path: credit/name
 #: C/introduction.page:11
 msgid "David King"
 msgstr "David King"
 
 #. (itstool) path: credit/years
-#: C/introduction.page:13
-#: C/introduction.page:18
+#: C/introduction.page:13 C/introduction.page:18
 msgid "2014"
 msgstr "2014"
 
 #. (itstool) path: credit/name
-#: C/introduction.page:16
-#: C/permissions.page:11
+#: C/introduction.page:16 C/permissions.page:11
 msgid "Ekaterina Gerasimova"
 msgstr "Ekaterina Gerasimova"
 
@@ -103,6 +89,24 @@ msgstr ""
 "A Naplók használatával keresőkifejezés alapján kereshet a naplókban, és "
 "részletes információkat jeleníthet meg az egyes eseményekről rájuk kattintva."
 
+#. (itstool) path: page/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/introduction.page:35
+#| msgctxt "_"
+#| msgid ""
+#| "external ref='media/gnome-logs-3-12.png' "
+#| "md5='56e83d7808cdfd80457691aff5ffc2d1'"
+msgctxt "_"
+msgid ""
+"external ref='media/gnome-logs-3-34.png' "
+"md5='572ed4fda65dbaa8cd2dc56f6bce5dfb'"
+msgstr ""
+"external ref='media/gnome-logs-3-34.png' "
+"md5='572ed4fda65dbaa8cd2dc56f6bce5dfb'"
+
 #. (itstool) path: media/p
 #: C/introduction.page:36
 msgid "Screenshot of Logs showing some journal entries."
@@ -126,7 +130,8 @@ msgstr "2013"
 #. (itstool) path: info/desc
 #: C/permissions.page:18
 msgid ""
-"You can read some or all of the logs, depending on which permissions you have."
+"You can read some or all of the logs, depending on which permissions you "
+"have."
 msgstr ""
 "Jogosultságaitól függően megjeleníthet néhány vagy minden naplóbejegyzést."
 
@@ -138,10 +143,10 @@ msgstr "Minden naplót megjeleníthetek?"
 #. (itstool) path: page/p
 #: C/permissions.page:24
 msgid ""
-"You will be able to browse some messages that have been logged since the last "
-"reboot, depending on which permissions you have. Some of your permissions are "
-"set by your distribution, but they can be changed by your system "
-"administrator."
+"You will be able to browse some messages that have been logged since the "
+"last reboot, depending on which permissions you have. Some of your "
+"permissions are set by your distribution, but they can be changed by your "
+"system administrator."
 msgstr ""
 "A jogosultságaitól függően böngészhet bizonyos üzeneteket, amelyek az utolsó "
 "újraindítás óta kerültek naplózásra. Egyes jogosultságokat a disztribúciója "
@@ -153,13 +158,13 @@ msgstr ""
 #: C/permissions.page:30
 msgid ""
 "By default, <em href=\"help:gnome-help/user-admin-explain\">Standard</em> "
-"users are shown a limited set of logs, such as application logs and their own "
-"session logs. If you are a <gui>Standard</gui> user and do not see any logs, "
-"it is possible that your system administrator has disabled your ability to "
-"view logs."
+"users are shown a limited set of logs, such as application logs and their "
+"own session logs. If you are a <gui>Standard</gui> user and do not see any "
+"logs, it is possible that your system administrator has disabled your "
+"ability to view logs."
 msgstr ""
-"Alapesetben az <em href=\"help:gnome-help/user-admin-explain\">Általános</em> "
-"felhasználók a naplók korlátozott halmazát láthatják, mint például az "
+"Alapesetben az <em href=\"help:gnome-help/user-admin-explain\">Általános</"
+"em> felhasználók a naplók korlátozott halmazát láthatják, mint például az "
 "alkalmazásnaplókat és saját munkamenet-naplóikat. Ha Ön <gui>Általános</gui> "
 "felhasználó és nem lát semmilyen naplót sem, akkor lehetséges, hogy a "
 "rendszergazda letiltotta a naplómegjelenítési jogosultságait."
@@ -172,10 +177,10 @@ msgid ""
 "<em>Administrator</em> users will normally be able to view more sensitive "
 "logs, such as kernel logs and the logs of other users. It is possible for "
 "administrators to have different levels of access to logs, so you may not be "
-"able to view all logs. If you are an <gui>Administrator</gui> user, then only "
-"other administrators can change which logs you can access. For more "
-"information about log access permissions, <link href=\"man:systemd-journald\">"
-"see the <_:cmd-1/> man page</link>."
+"able to view all logs. If you are an <gui>Administrator</gui> user, then "
+"only other administrators can change which logs you can access. For more "
+"information about log access permissions, <link href=\"man:systemd-journald"
+"\">see the <_:cmd-1/> man page</link>."
 msgstr ""
 "A <em>Rendszergazda</em> felhasználók általában az érzékenyebb naplókat is "
 "láthatják, például a kernel vagy más felhasználók naplóit. Rendszergazdák is "
@@ -185,5 +190,3 @@ msgstr ""
 "naplókat érhet el. A napló-hozzáférési jogosultságokról további "
 "információkért <link href=\"man:systemd-journald\">lásd a <_:cmd-1/> man "
 "oldalát</link>."
-
-
