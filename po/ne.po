@@ -6,427 +6,421 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs gnome 3.14\n"
-"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2017-08-01 14:25+0000\n"
-"PO-Revision-Date: 2017-10-06 12:22+0545\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
+"POT-Creation-Date: 2022-08-19 16:57+0000\n"
+"PO-Revision-Date: 2022-09-11 05:53+0545\n"
 "Last-Translator: Pawan Chitrakar <chautari@gmail.com>\n"
 "Language-Team: Nepali Translation Team <chautari@gmai.com>\n"
 "Language: ne\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.4\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
 
-#: ../data/gl-categorylist.ui.h:1
+#: data/gl-categorylist.ui:12
 msgid "Important"
 msgstr "महत्वपूर्ण"
 
-#: ../data/gl-categorylist.ui.h:2
+#: data/gl-categorylist.ui:23
 msgid "Alerts"
 msgstr "सतर्कता"
 
-#: ../data/gl-categorylist.ui.h:3
+#: data/gl-categorylist.ui:34
 msgid "Starred"
-msgstr ""
+msgstr "तारा"
 
-#: ../data/gl-categorylist.ui.h:4
+#: data/gl-categorylist.ui:44
 msgid "All"
 msgstr "सबै"
 
-#: ../data/gl-categorylist.ui.h:5 ../src/gl-eventviewrow.c:207
+#: data/gl-categorylist.ui:54 src/gl-eventviewrow.c:211
 msgid "Applications"
 msgstr "अनुप्रयोग"
 
-#: ../data/gl-categorylist.ui.h:6 ../src/gl-eventviewrow.c:216
+#: data/gl-categorylist.ui:64 src/gl-eventviewrow.c:220
 msgid "System"
 msgstr "प्रणाली"
 
-#: ../data/gl-categorylist.ui.h:7 ../src/gl-eventviewrow.c:220
+#: data/gl-categorylist.ui:74 src/gl-eventviewrow.c:224
 msgid "Security"
 msgstr "सुरक्षा"
 
-#: ../data/gl-categorylist.ui.h:8 ../src/gl-eventviewrow.c:212
+#: data/gl-categorylist.ui:84 src/gl-eventviewrow.c:216
 msgid "Hardware"
-msgstr "हार्डवेयर "
+msgstr "हार्डवेयर"
 
-#: ../data/gl-categorylist.ui.h:9
+#: data/gl-categorylist.ui:95
 msgid "Updates"
 msgstr "अद्यावधिक गर्नुहोस्"
 
-#: ../data/gl-categorylist.ui.h:10
+#: data/gl-categorylist.ui:106
 msgid "Usage"
-msgstr "प्रयोग:"
+msgstr "प्रयोग"
 
-#: ../data/gl-eventtoolbar.ui.h:1
-#, fuzzy
+#: data/gl-eventtoolbar.ui:7
+msgid "_New Window"
+msgstr "नयाँ सञ्झ्याल"
+
+#: data/gl-eventtoolbar.ui:13
+msgid "Keyboard Shortcuts"
+msgstr "कुञ्जीपाटी सर्टकटहरू"
+
+#: data/gl-eventtoolbar.ui:18
+msgid "_Help"
+msgstr "सहयोग"
+
+#: data/gl-eventtoolbar.ui:22
+msgid "_About Logs"
+msgstr "लगको बारेमा"
+
+#: data/gl-eventtoolbar.ui:41
 msgid "Export logs to a file"
-msgstr "फाइलमा निर्यात गर्नुहोस्"
+msgstr "फाइलमा लग निर्यात गर्नुहोस्"
 
-#: ../data/gl-eventtoolbar.ui.h:2
+#: data/gl-eventtoolbar.ui:49
 msgid "Choose the boot from which to view logs"
 msgstr ""
 
-#: ../data/gl-eventtoolbar.ui.h:3
+#: data/gl-eventtoolbar.ui:60
 msgid "Search all the logs of the current category"
 msgstr ""
 
-#: ../data/gl-eventviewdetail.ui.h:1
+#: data/gl-eventviewdetail.ui:23
 msgid "Sender"
 msgstr "प्रेषक"
 
-#: ../data/gl-eventviewdetail.ui.h:2
+#: data/gl-eventviewdetail.ui:52
 msgid "Time"
 msgstr "समय"
 
-#: ../data/gl-eventviewdetail.ui.h:3 ../data/gl-searchpopover.ui.h:35
+#: data/gl-eventviewdetail.ui:81 data/gl-searchpopover.ui:867
 msgid "Message"
 msgstr "सन्देश"
 
-#: ../data/gl-eventviewdetail.ui.h:4 ../data/gl-searchpopover.ui.h:39
-#, fuzzy
+#: data/gl-eventviewdetail.ui:112 data/gl-searchpopover.ui:887
 msgid "Audit Session"
-msgstr "सिफारिशहरू लेखा जाँच्नुहोस्"
+msgstr "सत्र परीक्षण"
 
-#: ../data/gl-eventviewdetail.ui.h:5 ../data/gl-searchpopover.ui.h:38
+#: data/gl-eventviewdetail.ui:141 data/gl-searchpopover.ui:882
 msgid "Kernel Device"
 msgstr "करनल यन्त्र"
 
-#: ../data/gl-eventviewdetail.ui.h:6
+#: data/gl-eventviewdetail.ui:169
 msgid "Priority"
-msgstr "प्राथमिकता:"
+msgstr "प्राथमिकता"
 
-#: ../data/gl-eventviewdetail.ui.h:7
+#: data/gl-eventviewdetail.ui:198
 msgid "Subject"
 msgstr "विषय"
 
-#: ../data/gl-eventviewdetail.ui.h:8
+#: data/gl-eventviewdetail.ui:230
 msgid "Defined By"
 msgstr "परिभाषित"
 
-#: ../data/gl-eventviewdetail.ui.h:9
+#: data/gl-eventviewdetail.ui:260
 msgid "Support"
 msgstr "समर्थन गर्नुहोस्"
 
-#: ../data/gl-eventviewdetail.ui.h:10
+#: data/gl-eventviewdetail.ui:292
 msgid "Documentation"
 msgstr "अभिलेखीकरण"
 
-#: ../data/gl-eventviewlist.ui.h:1
+#: data/gl-eventviewlist.ui:34
 msgid "Select journal field and timestamp range filtering options"
 msgstr ""
 
-#: ../data/gl-searchpopover.ui.h:1
+#: data/gl-searchpopover.ui:27
 msgid "Select a Journal Field to filter the Logs according to it"
 msgstr ""
 
-#: ../data/gl-searchpopover.ui.h:2
-#, fuzzy
+#: data/gl-searchpopover.ui:34 data/gl-searchpopover.ui:843
 msgid "All Available Fields"
-msgstr "सबै फाँटहरू खोजी गर्नुहोस्"
+msgstr "सबै उपलब्ध फाँटहरू"
+
+#: data/gl-searchpopover.ui:66 data/gl-searchpopover.ui:220
+msgid "Parameters"
+msgstr "परामितिहरू"
 
 #. Translators: What [journal fields to search in]
-#: ../data/gl-searchpopover.ui.h:4
+#: data/gl-searchpopover.ui:101
 msgid "What"
 msgstr "के"
 
-#: ../data/gl-searchpopover.ui.h:5
-#, fuzzy
+#: data/gl-searchpopover.ui:117
 msgid "Select Journal Field…"
-msgstr "फाँट चयन गर्नुहोस्"
+msgstr "जर्नल फिल्ड चयन गर्नुहोस्..."
 
 #. When [log entries to be shown for a given timestamp range]
-#: ../data/gl-searchpopover.ui.h:7
+#: data/gl-searchpopover.ui:140
 msgid "When"
 msgstr "जब"
 
-#: ../data/gl-searchpopover.ui.h:8
-#, fuzzy
+#: data/gl-searchpopover.ui:156
 msgid "Show Logs from…"
-msgstr "लग"
+msgstr "यसबाट लग देखाउनुहोस्..."
 
-#: ../data/gl-searchpopover.ui.h:9
+#: data/gl-searchpopover.ui:181
 msgid "Select Timestamp Range of the Log Entries to be shown"
 msgstr ""
 
-#: ../data/gl-searchpopover.ui.h:10 ../src/gl-searchpopover.c:1303
-#, fuzzy
+#: data/gl-searchpopover.ui:188 data/gl-searchpopover.ui:906
+#: src/gl-searchpopover.c:1306
 msgid "Current Boot"
-msgstr "हालको:"
+msgstr "हालको बुट"
 
-#: ../data/gl-searchpopover.ui.h:11
-#, fuzzy
+#: data/gl-searchpopover.ui:255
 msgid "Search Type"
-msgstr "<span weight=\"bold\">पाठ प्रकार खोजी गर्नुहोस्</span>"
+msgstr "खोजी प्रकार"
 
-#: ../data/gl-searchpopover.ui.h:12
+#: data/gl-searchpopover.ui:266
 msgid "Substring"
-msgstr ""
+msgstr "सबस्ट्रिङ"
 
-#: ../data/gl-searchpopover.ui.h:13
-#, fuzzy
+#: data/gl-searchpopover.ui:268
 msgid "Match in any part of the string"
-msgstr "(%s) एउटा जोडा प्रकार स्ट्रिङ आवश्यक छ"
+msgstr "स्ट्रिङको कुनै पनि भागमा मिलान गर्नुहोस्"
 
-#: ../data/gl-searchpopover.ui.h:14
+#: data/gl-searchpopover.ui:275
 msgid "Exact"
 msgstr "दुरुस्त"
 
-#: ../data/gl-searchpopover.ui.h:15
-#, fuzzy
+#: data/gl-searchpopover.ui:277
 msgid "Match complete string only"
-msgstr "(%s) एउटा जोडा प्रकार स्ट्रिङ आवश्यक छ"
+msgstr "पूर्ण स्ट्रिङ मात्र मिलाउनुहोस्"
 
-#: ../data/gl-searchpopover.ui.h:16
+#: data/gl-searchpopover.ui:319
 msgid "Back"
 msgstr "पछाडि"
 
-#: ../data/gl-searchpopover.ui.h:17
-#, fuzzy
+#: data/gl-searchpopover.ui:337
 msgid "Show Logs Starting From…"
-msgstr "सबै कार्यस्थानबाट सन्झ्याल देखाउनुहोस्"
+msgstr "यसबाट सुरु हुने लग देखाउनुहोस्..."
 
-#: ../data/gl-searchpopover.ui.h:18
+#: data/gl-searchpopover.ui:358
 msgid "Select a start date"
 msgstr "शुरु मिति चयन गर्नुहोस्"
 
-#: ../data/gl-searchpopover.ui.h:19 ../src/gl-searchpopover.c:503
+#: data/gl-searchpopover.ui:365 src/gl-searchpopover.c:503
 msgid "Select Start Date…"
-msgstr "शुरु मिति चयन गर्नुहोस्"
+msgstr "शुरु मिति चयन गर्नुहोस्…"
 
-#: ../data/gl-searchpopover.ui.h:20
+#: data/gl-searchpopover.ui:384 data/gl-searchpopover.ui:626
 msgid "22 January 2016 or 1/22/2016"
-msgstr ""
+msgstr "२२ जनवरी २०१६ वा १/२२/२०१६"
 
-#: ../data/gl-searchpopover.ui.h:21
+#: data/gl-searchpopover.ui:423
 msgid "Select start time"
 msgstr "शुरु समय चयन गर्नुहोस्"
 
-#: ../data/gl-searchpopover.ui.h:22 ../src/gl-searchpopover.c:504
+#: data/gl-searchpopover.ui:430 src/gl-searchpopover.c:504
 msgid "Select Start Time…"
-msgstr "शुरु समय चयन गर्नुहोस्"
+msgstr "शुरु समय चयन गर्नुहोस्…"
 
-#: ../data/gl-searchpopover.ui.h:23
+#: data/gl-searchpopover.ui:454 data/gl-searchpopover.ui:699
 msgid "Hr"
-msgstr ""
+msgstr "Hr"
 
-#: ../data/gl-searchpopover.ui.h:24
+#: data/gl-searchpopover.ui:480 data/gl-searchpopover.ui:729
 msgid "Min"
 msgstr "न्युन"
 
-#: ../data/gl-searchpopover.ui.h:25
+#: data/gl-searchpopover.ui:510 data/gl-searchpopover.ui:759
 msgid "Sec"
 msgstr "सकेण्ड"
 
-#: ../data/gl-searchpopover.ui.h:26
+#: data/gl-searchpopover.ui:540 data/gl-searchpopover.ui:789
 msgid "AM/PM"
 msgstr "AM/PM"
 
-#: ../data/gl-searchpopover.ui.h:27
+#: data/gl-searchpopover.ui:579
 msgid "Until…"
-msgstr "सम्म"
+msgstr "सम्म…"
 
-#: ../data/gl-searchpopover.ui.h:28
+#: data/gl-searchpopover.ui:600
 msgid "Select an end date"
 msgstr "समाप्ति मिति चयन गर्नुहोस्"
 
-#: ../data/gl-searchpopover.ui.h:29 ../src/gl-searchpopover.c:521
+#: data/gl-searchpopover.ui:607 src/gl-searchpopover.c:521
 msgid "Select End Date…"
-msgstr "समाप्ति मिति चयन गर्नुहोस्"
+msgstr "समाप्ति मिति चयन गर्नुहोस्…"
 
-#: ../data/gl-searchpopover.ui.h:30
+#: data/gl-searchpopover.ui:668
 msgid "Select end time"
 msgstr "समाप्ति समय चयन गर्नुहोस्"
 
-#: ../data/gl-searchpopover.ui.h:31 ../src/gl-searchpopover.c:522
+#: data/gl-searchpopover.ui:675 src/gl-searchpopover.c:522
 msgid "Select End Time…"
-msgstr "समाप्ति समय चयन गर्नुहोस्"
+msgstr "समाप्ति समय चयन गर्नुहोस्…"
 
-#: ../data/gl-searchpopover.ui.h:32
+#: data/gl-searchpopover.ui:852
 msgid "PID"
 msgstr "(पीआईडी) PID"
 
-#: ../data/gl-searchpopover.ui.h:33
+#: data/gl-searchpopover.ui:857
 msgid "UID"
 msgstr "UID"
 
-#: ../data/gl-searchpopover.ui.h:34
+#: data/gl-searchpopover.ui:862
 msgid "GID"
 msgstr "GID"
 
-#: ../data/gl-searchpopover.ui.h:36
+#: data/gl-searchpopover.ui:872
 msgid "Process Name"
 msgstr "प्रक्रिया नाम"
 
-#: ../data/gl-searchpopover.ui.h:37
+#: data/gl-searchpopover.ui:877
 msgid "Systemd Unit"
 msgstr "प्रणाली ईकाइ"
 
-#: ../data/gl-searchpopover.ui.h:40
-#, fuzzy
+#: data/gl-searchpopover.ui:892
 msgid "Executable Path"
-msgstr "यस फाइलका लागि कार्यान्वयनयोग्य छैन ।"
+msgstr "कार्यान्वयन योग्य मार्ग"
 
-#: ../data/gl-searchpopover.ui.h:41
-#, fuzzy
+#: data/gl-searchpopover.ui:911
 msgid "Previous Boot"
-msgstr "अघिल्लो"
+msgstr "अघिल्लो बुट"
 
-#: ../data/gl-searchpopover.ui.h:42
+#: data/gl-searchpopover.ui:920
 msgid "Today"
 msgstr "आज"
 
-#: ../data/gl-searchpopover.ui.h:43
+#: data/gl-searchpopover.ui:925
 msgid "Yesterday"
 msgstr "हिजो"
 
-#: ../data/gl-searchpopover.ui.h:44
+#: data/gl-searchpopover.ui:930
 msgid "Last 3 days"
 msgstr "३ दिन पहिले"
 
-#: ../data/gl-searchpopover.ui.h:45
-#, fuzzy
+#: data/gl-searchpopover.ui:939
 msgid "Entire Journal"
-msgstr "जर्नल"
+msgstr "पुरै जर्नल"
 
-#: ../data/gl-searchpopover.ui.h:46
-#, fuzzy
+#: data/gl-searchpopover.ui:948
 msgid "Set Custom Range…"
-msgstr "दायरालाई एक्सट्रयाक्टमा सेट गर्नुहोस्"
+msgstr "अनुकूल दायरा सेट गर्नुहोस्…"
 
-#: ../data/gl-window.ui.h:1
+#: data/gl-window.ui:30
 msgid "Help"
 msgstr "सहायता"
 
-#: ../data/gl-window.ui.h:2
+#: data/gl-window.ui:37
 msgid "Ignore"
 msgstr "वेवास्ता गर्नुहोस"
 
-#: ../data/help-overlay.ui.h:1
+#: data/help-overlay.ui:8
 msgctxt "shortcut window"
 msgid "General"
 msgstr "सामान्य"
 
-#: ../data/help-overlay.ui.h:2
+#: data/help-overlay.ui:12
 msgctxt "shortcut window"
 msgid "Open a new window"
 msgstr "नयाँ सञ्झ्याल खोल्नुहोस्"
 
-#: ../data/help-overlay.ui.h:3
+#: data/help-overlay.ui:18
 msgctxt "shortcut window"
 msgid "Close a window"
 msgstr "सञ्झ्याल बन्द गर्नुहोस्"
 
-#: ../data/help-overlay.ui.h:4
+#: data/help-overlay.ui:24
 msgctxt "shortcut window"
-msgid "Search"
-msgstr "खोजी गर्नुहोस्"
+msgid "Show help"
+msgstr "मद्दत देखाउनुहोस्"
 
-#: ../data/help-overlay.ui.h:5
+#: data/help-overlay.ui:30
+msgctxt "shortcut window"
+msgid "Keyboard shortcuts"
+msgstr "किबोर्स सर्टकटहरू"
+
+#: data/help-overlay.ui:37
+msgctxt "shortcut window"
+msgid "Application"
+msgstr "अनुप्रयोग"
+
+#: data/help-overlay.ui:41
 msgctxt "shortcut window"
 msgid "Find"
 msgstr "खोज्नुस्"
 
-#: ../data/menus.ui.h:1
-msgid "_New Window"
-msgstr "नयाँ सञ्झ्याल"
+#: data/help-overlay.ui:47
+msgctxt "shortcut window"
+msgid "Export logs to a file"
+msgstr "फाइलमा लग निर्यात गर्नुहोस्"
 
-#: ../data/menus.ui.h:2
-msgid "_Help"
-msgstr "सहयोग"
+#: data/org.gnome.Logs.appdata.xml.in:7 data/org.gnome.Logs.desktop.in:3
+#: src/gl-application.c:107 src/gl-eventtoolbar.c:144
+msgid "Logs"
+msgstr "लग"
 
-#: ../data/menus.ui.h:3
-msgid "Keyboard Shortcuts"
-msgstr "कुञ्जीपाटी सर्टकटहरू"
-
-#: ../data/menus.ui.h:4
-msgid "_About"
-msgstr "बारेमा"
-
-#: ../data/menus.ui.h:5
-msgid "_Quit"
-msgstr "अन्त्य गर्नुहोस्"
-
-#: ../data/org.gnome.Logs.appdata.xml.in.h:1
-msgid "GNOME Logs"
-msgstr "जिनोम लग"
-
-#: ../data/org.gnome.Logs.appdata.xml.in.h:2
-#: ../data/org.gnome.Logs.desktop.in.h:3
+#: data/org.gnome.Logs.appdata.xml.in:8 data/org.gnome.Logs.desktop.in:5
 msgid "View detailed event logs for the system"
 msgstr "प्रणालीबाट लग विवरण हेर्नुहोस्"
 
-#: ../data/org.gnome.Logs.appdata.xml.in.h:3
+#: data/org.gnome.Logs.appdata.xml.in:10
 msgid ""
 "Logs shows events from the systemd journal, and sorts them into categories, "
 "such as hardware and applications."
 msgstr ""
 
-#: ../data/org.gnome.Logs.appdata.xml.in.h:4
+#: data/org.gnome.Logs.appdata.xml.in:12
 msgid ""
 "Using Logs you can search your logs by typing a search term, and view "
 "detailed information about each event by clicking on it."
 msgstr ""
 
-#: ../data/org.gnome.Logs.desktop.in.h:1 ../src/gl-eventtoolbar.c:114
-msgid "Logs"
-msgstr "लग"
+#: data/org.gnome.Logs.appdata.xml.in:30 src/gl-application.c:109
+msgid "The GNOME Project"
+msgstr "जिनोम परियोजना"
 
-#: ../data/org.gnome.Logs.desktop.in.h:2
+#: data/org.gnome.Logs.desktop.in:4
 msgid "Log Viewer"
 msgstr "लग प्रदर्शक"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: ../data/org.gnome.Logs.desktop.in.h:5
-#, fuzzy
+#: data/org.gnome.Logs.desktop.in:7
 msgid "log;journal;debug;error;"
-msgstr "त्रुटिमोचक कार्य खोल्न असफल: %s\n"
+msgstr "लग;जर्नल;डिबग;त्रुटि;"
 
-#: ../data/org.gnome.Logs.gschema.xml.h:1
-#, fuzzy
+#: data/org.gnome.Logs.gschema.xml:5
 msgid "Ignore warning"
-msgstr "के तपाईँ यो चेतावनीलाई उपेक्षा गर्नुहुन्छ र जे भए पनि प्रक्रिया गर्नुहुन्छ?\n"
+msgstr "चेतावनी उपेक्षा गर्नुहोस्"
 
-#: ../data/org.gnome.Logs.gschema.xml.h:2
+#: data/org.gnome.Logs.gschema.xml:6
 msgid ""
 "Whether to ignore the warning that says you don’t have sufficient permission "
 "to view logs. If ignored, the warning won’t show up again."
 msgstr ""
 
-#: ../data/org.gnome.Logs.gschema.xml.h:3
+#: data/org.gnome.Logs.gschema.xml:10
 msgid "How to sort list rows in the event view list"
 msgstr ""
 
-#: ../data/org.gnome.Logs.gschema.xml.h:4
+#: data/org.gnome.Logs.gschema.xml:11
 msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr ""
 
-#: ../src/gl-application.c:109
+#: src/gl-application.c:112
 msgid "translator-credits"
 msgstr "Pawan Chitrakar <chautari@gmail.com>"
 
-#: ../src/gl-application.c:110
-msgid "View and search logs"
-msgstr "लग हेर्नु र खोजि गर्नुहोस्"
-
-#: ../src/gl-application.c:243
+#: src/gl-application.c:256
 msgid "Print version information and exit"
 msgstr "मुद्रण संस्करण विवरण अनि बाहिरनुहोस्"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
-#: ../src/gl-eventtoolbar.c:105
-#, fuzzy
+#: src/gl-eventtoolbar.c:135
 msgid "Boot"
-msgstr "कम्प्युटर समान्य प्रणालीमा फेरि सुरु गर्नुहोस्"
+msgstr "बुट"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventviewlist.c:458
-msgid "No results"
+#: src/gl-eventviewlist.c:448
+msgid "No Results"
 msgstr "नतिजा छैन"
 
-#: ../src/gl-eventviewrow.c:224
+#: src/gl-eventviewrow.c:228
 msgid "Other"
 msgstr "अन्य"
 
@@ -434,7 +428,7 @@ msgstr "अन्य"
 #. * the timestamp range button label in popover to show that
 #. * logs are shown in the window starting from this timestamp
 #. * until the ending timestamp of journal.
-#: ../src/gl-searchpopover.c:687
+#: src/gl-searchpopover.c:687
 #, c-format
 msgid "From %s"
 msgstr "%s बाट"
@@ -443,10 +437,10 @@ msgstr "%s बाट"
 #. * the timestamp range button label in popover to show that
 #. * logs are shown in the window upto this timestamp
 #. * with the starting timestamp being the current time.
-#: ../src/gl-searchpopover.c:700
-#, fuzzy, c-format
+#: src/gl-searchpopover.c:700
+#, c-format
 msgid "Until %s"
-msgstr "पुरा चार्जको हुन %s"
+msgstr "सम्म %s"
 
 #. Translators: date format for the start date entry
 #. * and start date button label in the custom range submenu,
@@ -456,16 +450,16 @@ msgstr "पुरा चार्जको हुन %s"
 #. * and end date button label in the custom range submenu,
 #. * showing the day of month in decimal number, full month
 #. * name as string, the year as a decimal number including the century.
-#: ../src/gl-searchpopover.c:737 ../src/gl-searchpopover.c:1104
+#: src/gl-searchpopover.c:734 src/gl-searchpopover.c:1102
 msgid "%e %B %Y"
 msgstr "%e %B %Y"
 
-#: ../src/gl-searchpopover.c:875
+#: src/gl-searchpopover.c:873
 #, c-format
 msgid "AM"
 msgstr "पूर्वाह्न"
 
-#: ../src/gl-searchpopover.c:879
+#: src/gl-searchpopover.c:877
 #, c-format
 msgid "PM"
 msgstr "अपराह्न"
@@ -476,7 +470,7 @@ msgstr "अपराह्न"
 #. Translators: timestamp format for the custom end time button
 #. * label in the custom range submenu, showing the time with seconds
 #. * in 12-hour format.
-#: ../src/gl-searchpopover.c:987 ../src/gl-searchpopover.c:1226
+#: src/gl-searchpopover.c:985 src/gl-searchpopover.c:1225
 msgid "%I:%M:%S %p"
 msgstr "%I:%M:%S %p %Z"
 
@@ -486,21 +480,21 @@ msgstr "%I:%M:%S %p %Z"
 #. Translators: timestamp format for the custom end time button
 #. * label in the custom range submenu, showing the time with seconds
 #. * in 24-hour format.
-#: ../src/gl-searchpopover.c:994 ../src/gl-searchpopover.c:1233
+#: src/gl-searchpopover.c:992 src/gl-searchpopover.c:1232
 msgid "%T"
 msgstr "%T"
 
 #. Translators: timestamp format for events on the
 #. * current day, showing the time with seconds in
 #. * 12-hour format.
-#: ../src/gl-util.c:148
+#: src/gl-util.c:126
 msgid "%l:%M:%S %p"
 msgstr "%l:%M:%S %p"
 
 #. Translators: timestamp format for events on the
 #. * current day, showing the time without seconds in
 #. * 12-hour format.
-#: ../src/gl-util.c:155
+#: src/gl-util.c:133
 msgid "%l:%M %p"
 msgstr "%l:%M %p"
 
@@ -508,17 +502,16 @@ msgstr "%l:%M %p"
 #. * the current year, showing the abbreviated
 #. * month name, day of the month and the time
 #. * with seconds in 12-hour format.
-#: ../src/gl-util.c:166
-#, fuzzy
+#: src/gl-util.c:144
 #| msgid "%b %e %l:%M %p"
 msgid "%b %e %l:%M:%S %p"
-msgstr "%a %b %e, %l:%M:%S %p"
+msgstr "%b %e %l:%M:%S %p"
 
 #. Translators: timestamp format for events in the
 #. * current year, showing the abbreviated month name,
 #. * day of the month and the time without seconds in
 #. * 12-hour format.
-#: ../src/gl-util.c:174
+#: src/gl-util.c:152
 msgid "%b %e %l:%M %p"
 msgstr "%b %e %l:%M %p"
 
@@ -526,31 +519,30 @@ msgstr "%b %e %l:%M %p"
 #. * a different year, showing the abbreviated
 #. * month name, day of the month, year and the
 #. * time with seconds in 12-hour format.
-#: ../src/gl-util.c:185
-#, fuzzy
+#: src/gl-util.c:163
 #| msgid "%b %e %Y %l:%M %p"
 msgid "%b %e %Y %l:%M:%S %p"
-msgstr "%A, %B %e, %Y %l:%M:%S %p"
+msgstr "%b %e %Y %l:%M:%S %p"
 
 #. Translators: timestamp format for events in
 #. * a different year, showing the abbreviated
 #. * month name day of the month, year and the
 #. * time without seconds in 12-hour format.
-#: ../src/gl-util.c:194
+#: src/gl-util.c:172
 msgid "%b %e %Y %l:%M %p"
 msgstr "%b %e %Y %l:%M %p"
 
 #. Translators: timestamp format for events on the
 #. * current day, showing the time with seconds in
 #. * 24-hour format.
-#: ../src/gl-util.c:211
+#: src/gl-util.c:189
 msgid "%H:%M:%S"
 msgstr "%I:%M:%S  %Z"
 
 #. Translators: timestamp format for events on the
 #. * current day, showing the time without seconds in
 #. * 24-hour format.
-#: ../src/gl-util.c:218
+#: src/gl-util.c:196
 msgid "%H:%M"
 msgstr "%H:%M"
 
@@ -558,17 +550,16 @@ msgstr "%H:%M"
 #. * current year, showing the abbreviated month name,
 #. * day of the month and the time with seconds in
 #. * 24-hour format.
-#: ../src/gl-util.c:228
-#, fuzzy
+#: src/gl-util.c:206
 #| msgid "%b %e %H:%M"
 msgid "%b %e %H:%M:%S"
-msgstr "%A, %B %e %H:%M:%S"
+msgstr "%b %e %H:%M:%S"
 
 #. Translators: timestamp format for events in the
 #. * current year, showing the abbreviated month name,
 #. * day of the month and the time without seconds in
 #. * 24-hour format.
-#: ../src/gl-util.c:236
+#: src/gl-util.c:214
 msgid "%b %e %H:%M"
 msgstr "%b %e %H:%M"
 
@@ -576,65 +567,71 @@ msgstr "%b %e %H:%M"
 #. * a different year, showing the abbreviated
 #. * month name, day of the month, year and the
 #. * time with seconds in 24-hour format.
-#: ../src/gl-util.c:247
-#, fuzzy
+#: src/gl-util.c:225
 #| msgid "%b %e %Y %H:%M"
 msgid "%b %e %Y %H:%M:%S"
-msgstr "%A, %B %e, %Y %H:%M:%S"
+msgstr "%b %e %Y %H:%M:%S"
 
 #. Translators: timestamp format for events in a
 #. * different year, showing the abbreviated month name,
 #. * day of the month, year and the time without seconds
 #. * in 24-hour format.
-#: ../src/gl-util.c:255
+#: src/gl-util.c:233
 msgid "%b %e %Y %H:%M"
 msgstr "%b %e %Y %H:%M"
 
 #. Transltors: the first string is the earliest timestamp of the boot,
 #. * and the second string is the newest timestamp. An example string might
 #. * be '08:10 - 08:30'
-#: ../src/gl-util.c:319
-#, fuzzy, c-format
+#: src/gl-util.c:297
+#, c-format
 msgid "%s – %s"
-msgstr "%s %s, %s %s"
+msgstr "%s – %s"
 
-#: ../src/gl-window.c:113
-#, fuzzy
-msgid "Save logs"
-msgstr "लग"
-
-#: ../src/gl-window.c:116
-msgid "_Cancel"
-msgstr "_रद्द गर्नुहोस्"
-
-#: ../src/gl-window.c:117
-msgid "_Save"
-msgstr "बचत गर्नुहोस्"
-
-#: ../src/gl-window.c:122
-#, fuzzy
-#| msgid "Message"
-msgid "log messages"
-msgstr "लग सन्देशहरू समात्नुहोस्"
-
-#: ../src/gl-window.c:175
+#: src/gl-window.c:174
 msgid "Unable to export log messages to a file"
 msgstr ""
 
-#: ../src/gl-window.c:402 ../src/gl-window.c:433
-#, fuzzy
+#: src/gl-window.c:195
+msgid "Save logs"
+msgstr "लग बचत गर्नुहोस्"
+
+#: src/gl-window.c:198
+msgid "_Save"
+msgstr "बचत गर्नुहोस्"
+
+#: src/gl-window.c:199
+msgid "_Cancel"
+msgstr "_रद्द गर्नुहोस्"
+
+#: src/gl-window.c:202
+msgid "log messages"
+msgstr "लग सन्देशहरू"
+
+#: src/gl-window.c:473 src/gl-window.c:490
 msgid "Unable to read system logs"
-msgstr "प्रणालीबाट लग विवरण हेर्नुहोस्"
+msgstr "प्रणाली लगहरू पढ्न अक्षम"
 
-#: ../src/gl-window.c:416
-#, fuzzy
+#: src/gl-window.c:480
 msgid "Unable to read user logs"
-msgstr "प्रयोगकर्ता परिवर्तन गर्न असक्षम"
+msgstr "प्रयोगकर्ता लगहरू पढ्न अक्षम"
 
-#: ../src/gl-window.c:448
-#, fuzzy
+#: src/gl-window.c:498
 msgid "No logs available"
-msgstr "लग"
+msgstr "लग उपलब्ध छैन"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Search"
+#~ msgstr "खोजी गर्नुहोस्"
+
+#~ msgid "_Quit"
+#~ msgstr "अन्त्य गर्नुहोस्"
+
+#~ msgid "GNOME Logs"
+#~ msgstr "जिनोम लग"
+
+#~ msgid "View and search logs"
+#~ msgstr "लग हेर्नु र खोजि गर्नुहोस्"
 
 #, fuzzy
 #~ msgid "Go back to the event view"
