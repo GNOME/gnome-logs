@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs gnome 3.14\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2022-08-19 16:57+0000\n"
-"PO-Revision-Date: 2022-09-11 05:53+0545\n"
+"POT-Creation-Date: 2022-09-11 00:09+0000\n"
+"PO-Revision-Date: 2022-09-19 11:08+0545\n"
 "Last-Translator: Pawan Chitrakar <chautari@gmail.com>\n"
 "Language-Team: Nepali Translation Team <chautari@gmai.com>\n"
 "Language: ne\n"
@@ -80,11 +80,11 @@ msgstr "फाइलमा लग निर्यात गर्नुहोस
 
 #: data/gl-eventtoolbar.ui:49
 msgid "Choose the boot from which to view logs"
-msgstr ""
+msgstr "लग हरू हेर्ने बुट रोज्नुहोस्"
 
 #: data/gl-eventtoolbar.ui:60
 msgid "Search all the logs of the current category"
-msgstr ""
+msgstr "हालको श्रेणीका सबै लगहरू खोजी गर्नुहोस्"
 
 #: data/gl-eventviewdetail.ui:23
 msgid "Sender"
@@ -128,11 +128,11 @@ msgstr "अभिलेखीकरण"
 
 #: data/gl-eventviewlist.ui:34
 msgid "Select journal field and timestamp range filtering options"
-msgstr ""
+msgstr "जर्नल फिल्ड र टाइमस्टाम्प दायरा फिल्टरिङ विकल्प चयन गर्नुहोस्"
 
 #: data/gl-searchpopover.ui:27
 msgid "Select a Journal Field to filter the Logs according to it"
-msgstr ""
+msgstr "यो अनुसार लगहरू फिल्टर गर्न जर्नल फिल्ड चयन गर्नुहोस्"
 
 #: data/gl-searchpopover.ui:34 data/gl-searchpopover.ui:843
 msgid "All Available Fields"
@@ -162,7 +162,7 @@ msgstr "यसबाट लग देखाउनुहोस्..."
 
 #: data/gl-searchpopover.ui:181
 msgid "Select Timestamp Range of the Log Entries to be shown"
-msgstr ""
+msgstr "देखाइने लग प्रविष्टिहरूको टाइमस्टाम्प दायरा चयन गर्नुहोस्"
 
 #: data/gl-searchpopover.ui:188 data/gl-searchpopover.ui:906
 #: src/gl-searchpopover.c:1306
@@ -363,12 +363,16 @@ msgid ""
 "Logs shows events from the systemd journal, and sorts them into categories, "
 "such as hardware and applications."
 msgstr ""
+"लगहरूले प्रणालीबद्ध जर्नलबाट घटनाहरू देखाउँदछ, र तिनीहरूलाई हार्डवेयर र अनुप्रयोगहरू जस्ता "
+"श्रेणीहरूमा क्रमबद्ध गर्दछ।"
 
 #: data/org.gnome.Logs.appdata.xml.in:12
 msgid ""
 "Using Logs you can search your logs by typing a search term, and view "
 "detailed information about each event by clicking on it."
 msgstr ""
+"लगहरू प्रयोग गरेर तपाईं खोजी शब्द टाइप गरेर आफ्नो लगहरू खोजी गर्न सक्नुहुन्छ, र यसमा क्लिक "
+"गरेर प्रत्येक घटनाको बारेमा विस्तृत जानकारी हेर्न सक्नुहुन्छ।"
 
 #: data/org.gnome.Logs.appdata.xml.in:30 src/gl-application.c:109
 msgid "The GNOME Project"
@@ -392,14 +396,17 @@ msgid ""
 "Whether to ignore the warning that says you don’t have sufficient permission "
 "to view logs. If ignored, the warning won’t show up again."
 msgstr ""
+"तपाईँसँग लगहरू हेर्नपर्याप्त अनुमति छैन भन्ने चेतावनीउपेक्षा गर्ने या नगर्ने । यदि बेवास्ता "
+"गरियो भने, चेतावनी फेरि देखा पर्दैन।"
 
 #: data/org.gnome.Logs.gschema.xml:10
 msgid "How to sort list rows in the event view list"
-msgstr ""
+msgstr "घटना दृश्य सूचीमा सूची पङ्क्तिहरू कसरी क्रमबद्ध गर्ने"
 
 #: data/org.gnome.Logs.gschema.xml:11
 msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr ""
+"चयन गरिएको प्रकारका लागि आरोही वा अवरोही क्रममा सूची पङ्क्तिहरू क्रमबद्ध गर्नुहोस्"
 
 #: src/gl-application.c:112
 msgid "translator-credits"
@@ -503,7 +510,6 @@ msgstr "%l:%M %p"
 #. * month name, day of the month and the time
 #. * with seconds in 12-hour format.
 #: src/gl-util.c:144
-#| msgid "%b %e %l:%M %p"
 msgid "%b %e %l:%M:%S %p"
 msgstr "%b %e %l:%M:%S %p"
 
@@ -520,7 +526,6 @@ msgstr "%b %e %l:%M %p"
 #. * month name, day of the month, year and the
 #. * time with seconds in 12-hour format.
 #: src/gl-util.c:163
-#| msgid "%b %e %Y %l:%M %p"
 msgid "%b %e %Y %l:%M:%S %p"
 msgstr "%b %e %Y %l:%M:%S %p"
 
@@ -551,7 +556,6 @@ msgstr "%H:%M"
 #. * day of the month and the time with seconds in
 #. * 24-hour format.
 #: src/gl-util.c:206
-#| msgid "%b %e %H:%M"
 msgid "%b %e %H:%M:%S"
 msgstr "%b %e %H:%M:%S"
 
@@ -568,7 +572,6 @@ msgstr "%b %e %H:%M"
 #. * month name, day of the month, year and the
 #. * time with seconds in 24-hour format.
 #: src/gl-util.c:225
-#| msgid "%b %e %Y %H:%M"
 msgid "%b %e %Y %H:%M:%S"
 msgstr "%b %e %Y %H:%M:%S"
 
@@ -590,7 +593,7 @@ msgstr "%s – %s"
 
 #: src/gl-window.c:174
 msgid "Unable to export log messages to a file"
-msgstr ""
+msgstr "फाइलमा लग सन्देश निर्यात गर्न अक्षम"
 
 #: src/gl-window.c:195
 msgid "Save logs"
