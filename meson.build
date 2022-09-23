@@ -1,4 +1,4 @@
-project('gnome-logs', 'c', version : '43.beta')
+project('gnome-logs', 'c', version : '43.beta', default_options : ['warning_level=1'])
 
 gl_name = meson.project_name()
 gl_version = meson.project_version()
@@ -13,7 +13,6 @@ gl_pkgdatadir = join_paths(gl_datadir, gl_name)
 
 # warning cflags
 warning_cflags = [
-    '-Wall',
     '-Wstrict-prototypes',
     '-Wnested-externs',
     '-Werror=missing-prototypes',
