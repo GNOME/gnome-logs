@@ -1,4 +1,4 @@
-project('gnome-logs', 'c', version : '43.1', default_options : ['warning_level=1'])
+project('gnome-logs', 'c', version : '43.1', default_options : ['warning_level=1'], meson_version: '>= 0.57.0')
 
 gl_name = meson.project_name()
 gl_version = meson.project_version()
@@ -111,4 +111,7 @@ subdir('po')
 subdir('help')
 subdir('tests')
 
-meson.add_install_script('meson_post_install.py')
+gnome.post_install(
+  glib_compile_schemas: true,
+  gtk_update_icon_cache: true,
+)
