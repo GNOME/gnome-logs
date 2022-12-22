@@ -99,8 +99,8 @@ gl_event_view_detail_create_detail (GlEventViewDetail *detail)
     if (gl_journal_entry_get_command_line (entry))
     {
         gtk_label_set_text (GTK_LABEL (priv->comm_label), gl_journal_entry_get_command_line (entry));
-        gtk_widget_show (priv->comm_field_label);
-        gtk_widget_show (priv->comm_label);
+        gtk_widget_set_visible (priv->comm_field_label, TRUE);
+        gtk_widget_set_visible (priv->comm_label, TRUE);
     }
 
     now = g_date_time_new_now_local ();
@@ -115,15 +115,15 @@ gl_event_view_detail_create_detail (GlEventViewDetail *detail)
     if (gl_journal_entry_get_audit_session (entry))
     {
         gtk_label_set_text (GTK_LABEL (priv->audit_label), gl_journal_entry_get_audit_session (entry));
-        gtk_widget_show (priv->audit_field_label);
-        gtk_widget_show (priv->audit_label);
+        gtk_widget_set_visible (priv->audit_field_label, TRUE);
+        gtk_widget_set_visible (priv->audit_label, TRUE);
     }
 
     if (gl_journal_entry_get_kernel_device (entry))
     {
         gtk_label_set_text (GTK_LABEL (priv->device_label), gl_journal_entry_get_kernel_device (entry));
-        gtk_widget_show (priv->device_field_label);
-        gtk_widget_show (priv->device_label);
+        gtk_widget_set_visible (priv->device_field_label, TRUE);
+        gtk_widget_set_visible (priv->device_label, TRUE);
     }
 
     /* TODO: Give a user-friendly representation of the priority. */
@@ -166,8 +166,8 @@ gl_event_view_detail_create_detail (GlEventViewDetail *detail)
                     {
                         gtk_label_set_text (GTK_LABEL (priv->subject_label),
                                             str_message);
-                        gtk_widget_show (priv->subject_field_label);
-                        gtk_widget_show (priv->subject_label);
+                        gtk_widget_set_visible (priv->subject_field_label, TRUE);
+                        gtk_widget_set_visible (priv->subject_label, TRUE);
                     }
                 }
                 else
@@ -180,8 +180,8 @@ gl_event_view_detail_create_detail (GlEventViewDetail *detail)
                     {
                         gtk_label_set_text (GTK_LABEL (priv->subject_label),
                                             str);
-                        gtk_widget_show (priv->subject_field_label);
-                        gtk_widget_show (priv->subject_label);
+                        gtk_widget_set_visible (priv->subject_field_label, TRUE);
+                        gtk_widget_set_visible (priv->subject_label, TRUE);
                     }
 
                     g_free (str);
@@ -199,8 +199,8 @@ gl_event_view_detail_create_detail (GlEventViewDetail *detail)
                     {
                         gtk_label_set_text (GTK_LABEL (priv->definedby_label),
                                             str_message);
-                        gtk_widget_show (priv->definedby_field_label);
-                        gtk_widget_show (priv->definedby_label);
+                        gtk_widget_set_visible (priv->definedby_field_label, TRUE);
+                        gtk_widget_set_visible (priv->definedby_label, TRUE);
                     }
                 }
                 else
@@ -213,8 +213,8 @@ gl_event_view_detail_create_detail (GlEventViewDetail *detail)
                     {
                         gtk_label_set_text (GTK_LABEL (priv->definedby_label),
                                             str);
-                        gtk_widget_show (priv->definedby_field_label);
-                        gtk_widget_show (priv->definedby_label);
+                        gtk_widget_set_visible (priv->definedby_field_label, TRUE);
+                        gtk_widget_set_visible (priv->definedby_label, TRUE);
                     }
 
                     g_free (str);
@@ -238,8 +238,8 @@ gl_event_view_detail_create_detail (GlEventViewDetail *detail)
 
                         gtk_label_set_markup (GTK_LABEL (priv->support_label),
                                               str_link);
-                        gtk_widget_show (priv->support_field_label);
-                        gtk_widget_show (priv->support_label);
+                        gtk_widget_set_visible (priv->support_field_label, TRUE);
+                        gtk_widget_set_visible (priv->support_label, TRUE);
 
                         g_free (str_link);
                     }
@@ -260,8 +260,8 @@ gl_event_view_detail_create_detail (GlEventViewDetail *detail)
 
                         gtk_label_set_markup (GTK_LABEL (priv->support_label),
                                               str_link);
-                        gtk_widget_show (priv->support_field_label);
-                        gtk_widget_show (priv->support_label);
+                        gtk_widget_set_visible (priv->support_field_label, TRUE);
+                        gtk_widget_set_visible (priv->support_label, TRUE);
 
                         g_free (str_link);
                     }
@@ -281,8 +281,8 @@ gl_event_view_detail_create_detail (GlEventViewDetail *detail)
                     {
                         gtk_label_set_text (GTK_LABEL (priv->documentation_label),
                                             str_message);
-                        gtk_widget_show (priv->documentation_field_label);
-                        gtk_widget_show (priv->documentation_label);
+                        gtk_widget_set_visible (priv->documentation_field_label, TRUE);
+                        gtk_widget_set_visible (priv->documentation_label, TRUE);
                     }
                 }
                 else
@@ -295,8 +295,8 @@ gl_event_view_detail_create_detail (GlEventViewDetail *detail)
                     {
                         gtk_label_set_text (GTK_LABEL (priv->documentation_label),
                                             str);
-                        gtk_widget_show (priv->documentation_field_label);
-                        gtk_widget_show (priv->documentation_label);
+                        gtk_widget_set_visible (priv->documentation_field_label, TRUE);
+                        gtk_widget_set_visible (priv->documentation_label, TRUE);
                     }
 
                     g_free (str);
@@ -314,7 +314,7 @@ gl_event_view_detail_create_detail (GlEventViewDetail *detail)
         {
             gtk_label_set_text (GTK_LABEL (priv->detailed_message_label),
                                 str_field);
-            gtk_widget_show (priv->detailed_message_label);
+            gtk_widget_set_visible (priv->detailed_message_label, TRUE);
         }
 
         g_free (str_field);

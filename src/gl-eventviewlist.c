@@ -233,6 +233,7 @@ on_listbox_row_activated (GtkListBox *listbox,
         for (index = header_row_index + 1; compressed_entries != 0; index++)
         {
             GtkListBoxRow *compressed_row;
+            gboolean row_visible;
 
             compressed_row = gtk_list_box_get_row_at_index (GTK_LIST_BOX (priv->entries_box),
                                                             index);
@@ -241,16 +242,9 @@ on_listbox_row_activated (GtkListBox *listbox,
             gtk_style_context_add_class (context, "compressed-row");
 
             /* Toggle the visibility */
-            if (gtk_widget_get_visible (GTK_WIDGET (compressed_row)))
-            {
-                gtk_widget_hide (GTK_WIDGET (compressed_row));
-                rows_expanded = FALSE;
-            }
-            else
-            {
-                gtk_widget_show (GTK_WIDGET (compressed_row));
-                rows_expanded = TRUE;
-            }
+            row_visible = gtk_widget_get_visible (GTK_WIDGET (compressed_row));
+            gtk_widget_set_visible (GTK_WIDGET (compressed_row), !row_visible);
+            rows_expanded = !row_visible;
 
             compressed_entries--;
         }
@@ -1089,3 +1083,4 @@ gl_event_view_list_new (void)
 {
     return g_object_new (GL_TYPE_EVENT_VIEW_LIST, NULL);
 }
+

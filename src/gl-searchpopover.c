@@ -1487,10 +1487,10 @@ gl_search_popover_init (GlSearchPopover *popover)
         GtkAdjustment *end_hour_adjustment;
 
         /* Hide the AM/PM time period spinbuttons */
-        gtk_widget_hide (priv->start_time_period_spin);
-        gtk_widget_hide (priv->start_time_period_label);
-        gtk_widget_hide (priv->end_time_period_spin);
-        gtk_widget_hide (priv->end_time_period_label);
+        gtk_widget_set_visible (priv->start_time_period_spin, FALSE);
+        gtk_widget_set_visible (priv->start_time_period_label, FALSE);
+        gtk_widget_set_visible (priv->end_time_period_spin, FALSE);
+        gtk_widget_set_visible (priv->end_time_period_label, FALSE);
 
         /* Set 0-23 as range for hour spinbutton */
         start_hour_adjustment = gtk_adjustment_new (23.0, 0.0, 23.0, 5.0, 0.0, 0.0);

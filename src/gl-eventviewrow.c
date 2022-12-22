@@ -405,7 +405,7 @@ on_parent_set (GtkWidget *widget)
     if (priv->old_parent == NULL &&
         gl_row_entry_get_row_type (priv->entry) == GL_ROW_ENTRY_TYPE_COMPRESSED)
     {
-        gtk_widget_hide (widget);
+        gtk_widget_set_visible (widget, FALSE);
     }
 
     if (gtk_widget_get_parent (GTK_WIDGET (row)))

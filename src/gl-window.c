@@ -284,7 +284,7 @@ on_help_button_clicked (GlWindow *window,
     gtk_show_uri (parent, "help:gnome-logs/permissions",
                   GDK_CURRENT_TIME);
 
-    gtk_widget_hide (priv->info_bar);
+    gtk_widget_set_visible (priv->info_bar, FALSE);
 }
 
 static void
@@ -300,7 +300,7 @@ on_ignore_button_clicked (GlWindow *window,
     settings = g_settings_new (SETTINGS_SCHEMA);
     g_settings_set_boolean (settings, IGNORE_WARNING, TRUE);
 
-    gtk_widget_hide (priv->info_bar);
+    gtk_widget_set_visible (priv->info_bar, FALSE);
 
     g_object_unref (settings);
 }
@@ -472,14 +472,14 @@ gl_window_init (GlWindow *window)
             {
                 gtk_label_set_label (priv->message_label, _("Unable to read system logs"));
 
-                gtk_widget_show (priv->info_bar);
+                gtk_widget_set_visible (priv->info_bar, TRUE);
             }
 
             if (!gl_util_can_read_user_journal ())
             {
                 gtk_label_set_label (priv->message_label, _("Unable to read user logs"));
 
-                gtk_widget_show (priv->info_bar);
+                gtk_widget_set_visible (priv->info_bar, TRUE);
             }
             break;
         }
@@ -489,7 +489,7 @@ gl_window_init (GlWindow *window)
             {
                 gtk_label_set_label (priv->message_label, _("Unable to read system logs"));
 
-                gtk_widget_show (priv->info_bar);
+                gtk_widget_set_visible (priv->info_bar, TRUE);
             }
             break;
         }
@@ -497,7 +497,7 @@ gl_window_init (GlWindow *window)
         {
             gtk_label_set_label (priv->message_label, _("No logs available"));
 
-            gtk_widget_show (priv->info_bar);
+            gtk_widget_set_visible (priv->info_bar, TRUE);
             break;
         }
         default:
