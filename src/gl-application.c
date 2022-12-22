@@ -69,18 +69,44 @@ on_new_window (GSimpleAction *action,
 }
 
 static void
+on_help_launch_cb (GtkUriLauncher *launcher,
+                   GAsyncResult *res,
+                   gpointer user_data)
+{
+  GtkWidget *error_dialog;
+  GtkWindow *active_window = GTK_WINDOW (user_data);
+  g_autoptr (GError) error = NULL;
+
+  if (!gtk_uri_launcher_launch_finish (launcher, res, &error))
+  {
+    error_dialog = adw_message_dialog_new (active_window,
+                                           _("Failed To Open Help"),
+                                           NULL);
+    adw_message_dialog_format_body (ADW_MESSAGE_DIALOG (error_dialog),
+                                    _("Failed to open the given help URI: %s"),
+                                    error->message);
+    adw_message_dialog_add_response (ADW_MESSAGE_DIALOG (error_dialog),
+                                     "close", _("_Close"));
+    adw_message_dialog_choose (ADW_MESSAGE_DIALOG (error_dialog),
+                               NULL, NULL, NULL);
+  }
+}
+
+static void
 on_help (GSimpleAction *action,
          GVariant *parameter,
          gpointer user_data)
 {
-    GtkApplication *application;
-    GtkWindow *parent;
+    GtkUriLauncher *launcher;
+    GtkApplication *self = GTK_APPLICATION (user_data);
+    GtkWindow *active_window = gtk_application_get_active_window (self);
 
-    application = GTK_APPLICATION (user_data);
-    parent = gtk_application_get_active_window (application);
-
-    gtk_show_uri (parent, "help:gnome-logs",
-                  GDK_CURRENT_TIME);
+    launcher = gtk_uri_launcher_new ("help:gnome-logs");
+    gtk_uri_launcher_launch (launcher,
+                             active_window,
+                             NULL,
+                             (GAsyncReadyCallback) on_help_launch_cb,
+                             NULL);
 }
 
 static void

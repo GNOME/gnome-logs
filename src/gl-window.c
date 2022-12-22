@@ -276,13 +276,27 @@ on_help_button_clicked (GlWindow *window,
                         gpointer user_data)
 {
     GlWindowPrivate *priv;
-    GtkWindow *parent;
+    GtkWidget *error_dialog;
+    g_autoptr (GError) error = NULL;
 
-    parent = GTK_WINDOW (window);
     priv = gl_window_get_instance_private (GL_WINDOW (window));
 
-    gtk_show_uri (parent, "help:gnome-logs/permissions",
-                  GDK_CURRENT_TIME);
+    g_app_info_launch_default_for_uri ("help:gnome-logs/permissions",
+                                       NULL, &error);
+
+    if (error != NULL)
+    {
+      error_dialog = adw_message_dialog_new (GTK_WINDOW (window),
+                                             _("Failed To Open Help"),
+                                             NULL);
+      adw_message_dialog_format_body (ADW_MESSAGE_DIALOG (error_dialog),
+                                      _("Failed to open the given help URI: %s"),
+                                      error->message);
+      adw_message_dialog_add_response (ADW_MESSAGE_DIALOG (error_dialog),
+                                       "close", _("_Close"));
+      adw_message_dialog_choose (ADW_MESSAGE_DIALOG (error_dialog),
+                                 NULL, NULL, NULL);
+    }
 
     gtk_widget_set_visible (priv->info_bar, FALSE);
 }
