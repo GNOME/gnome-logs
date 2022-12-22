@@ -105,83 +105,91 @@ on_error_dialog_response (GtkDialog *dialog,
 }
 
 static void
-on_dialog_response (GtkNativeDialog *dialog,
-                    gint             res,
-                    gpointer        *user_data)
+on_save_finish (GObject      *source_object,
+                GAsyncResult *res,
+                gpointer      user_data)
 {
     GlWindowPrivate *priv;
     GlEventViewList *event_list;
+    GtkFileDialog *dialog;
+    gboolean have_error = FALSE;
+    gchar *file_content;
+    GFile *output_file;
+    GFileOutputStream *file_ostream;
+    GError *error = NULL;
+    GtkWidget *error_dialog;
 
     priv = gl_window_get_instance_private (GL_WINDOW (user_data));
     event_list = GL_EVENT_VIEW_LIST (priv->event_list);
+    dialog = GTK_FILE_DIALOG (source_object);
 
-    if (res == GTK_RESPONSE_ACCEPT)
+    output_file = gtk_file_dialog_save_finish (dialog, res, &error);
+
+    if (error != NULL)
     {
-        gboolean have_error = FALSE;
-        gchar *file_content;
-        GFile *output_file;
-        GFileOutputStream *file_ostream;
-        GError *error = NULL;
-        GtkWidget *error_dialog;
+        have_error = TRUE;
+        g_warning ("Error while replacing exported log messages file: %s",
+                   error->message);
 
-        file_content = gl_event_view_list_get_output_logs (event_list);
-        output_file = gtk_file_chooser_get_file (GTK_FILE_CHOOSER (dialog));
-        file_ostream = g_file_replace (output_file, NULL, TRUE,
-                                       G_FILE_CREATE_NONE, NULL, &error);
-        if (error != NULL)
-        {
-            have_error = TRUE;
-
-            g_warning ("Error while replacing exported log messages file: %s",
-                       error->message);
-            g_clear_error (&error);
-        }
-
-        /* Check against NULL pointer to avoid a crash when exporting and there
-         * are no log entries. */
-        if (file_content != NULL)
-        {
-            g_output_stream_write (G_OUTPUT_STREAM (file_ostream), file_content,
-                                   strlen (file_content), NULL, &error);
-        }
-
-        if (error != NULL)
-        {
-            have_error = TRUE;
-
-            g_warning ("Error while replacing exported log messages file: %s",
-                       error->message);
-            g_clear_error (&error);
-        }
-
-        g_output_stream_close (G_OUTPUT_STREAM (file_ostream), NULL, &error);
-        if (error != NULL)
-        {
-            have_error = TRUE;
-
-            g_warning ("Error while replacing exported log messages file: %s",
-                       error->message);
-            g_clear_error (&error);
-        }
-
-        if (have_error == TRUE)
-        {
-            error_dialog = gtk_message_dialog_new (GTK_WINDOW (user_data),
-                                                   GTK_DIALOG_MODAL,
-                                                   GTK_MESSAGE_ERROR,
-                                                   GTK_BUTTONS_CLOSE,
-                                                   "%s",
-                                                   _("Unable to export log messages to a file"));
-            g_signal_connect (error_dialog, "response", G_CALLBACK (on_error_dialog_response), NULL);
-            gtk_window_present (GTK_WINDOW (error_dialog));
-        }
-
-        g_free (file_content);
-        g_object_unref (file_ostream);
+        g_clear_error (&error);
         g_object_unref (output_file);
+        return;
     }
 
-    g_object_unref (dialog);
+    file_content = gl_event_view_list_get_output_logs (event_list);
+    file_ostream = g_file_replace (output_file, NULL, TRUE,
+                                   G_FILE_CREATE_NONE, NULL, &error);
+    if (error != NULL)
+    {
+        have_error = TRUE;
+
+        g_warning ("Error while replacing exported log messages file: %s",
+                   error->message);
+        g_clear_error (&error);
+    }
+
+    /* Check against NULL pointer to avoid a crash when exporting and there
+     * are no log entries. */
+    if (file_content != NULL)
+    {
+        g_output_stream_write (G_OUTPUT_STREAM (file_ostream), file_content,
+                               strlen (file_content), NULL, &error);
+    }
+
+    if (error != NULL)
+    {
+        have_error = TRUE;
+
+        g_warning ("Error while replacing exported log messages file: %s",
+                   error->message);
+        g_clear_error (&error);
+    }
+
+    g_output_stream_close (G_OUTPUT_STREAM (file_ostream), NULL, &error);
+    if (error != NULL)
+    {
+        have_error = TRUE;
+
+        g_warning ("Error while replacing exported log messages file: %s",
+                   error->message);
+        g_clear_error (&error);
+    }
+
+    if (have_error == TRUE)
+    {
+        error_dialog = gtk_message_dialog_new (GTK_WINDOW (user_data),
+                                               GTK_DIALOG_MODAL,
+                                               GTK_MESSAGE_ERROR,
+                                               GTK_BUTTONS_CLOSE,
+                                               "%s",
+                                               _("Unable to export log messages to a file"));
+        g_signal_connect (error_dialog, "response", G_CALLBACK (on_error_dialog_response), NULL);
+        gtk_window_present (GTK_WINDOW (error_dialog));
+    }
+
+    g_free (file_content);
+    g_object_unref (file_ostream);
+    g_object_unref (output_file);
 }
 
 static void
@@ -189,20 +197,17 @@ on_export (GSimpleAction *action,
            GVariant *variant,
            gpointer user_data)
 {
-    GtkFileChooser *file_chooser;
-    GtkFileChooserNative *dialog;
+    GtkFileDialog *dialog;
 
-    dialog = gtk_file_chooser_native_new (_("Save logs"),
-                                          GTK_WINDOW (user_data),
-                                          GTK_FILE_CHOOSER_ACTION_SAVE,
-                                          _("_Save"),
-                                          _("_Cancel"));
+    dialog = gtk_file_dialog_new ();
 
-    file_chooser = GTK_FILE_CHOOSER (dialog);
-    gtk_file_chooser_set_current_name (file_chooser, _("log messages"));
+    gtk_file_dialog_set_initial_name (dialog, _("log messages"));
 
-    g_signal_connect (dialog, "response", (GCallback) on_dialog_response, user_data);
-    gtk_native_dialog_show (GTK_NATIVE_DIALOG (dialog));
+    gtk_file_dialog_save (dialog,
+                          GTK_WINDOW (user_data),
+                          NULL,
+                          on_save_finish,
+                          user_data);
 }
 
 static void
