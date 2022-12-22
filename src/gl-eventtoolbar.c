@@ -94,7 +94,6 @@ gl_event_toolbar_add_boots (GlEventToolbar *toolbar,
     GMenu *boot_menu;
     GMenu *section;
     GlEventToolbarPrivate *priv;
-    GtkStyleContext *context;
     gint i;
     gchar *current_boot = NULL;
 
@@ -142,14 +141,12 @@ gl_event_toolbar_add_boots (GlEventToolbar *toolbar,
     gtk_menu_button_set_child (GTK_MENU_BUTTON (priv->menu_button), grid);
 
     title_label = gtk_label_new (_("Logs"));
-    context = gtk_widget_get_style_context (GTK_WIDGET (title_label));
-    gtk_style_context_add_class (context, "title");
+    gtk_widget_add_css_class (GTK_WIDGET (title_label), "title");
     gtk_grid_attach (GTK_GRID (grid), title_label, 0, 0, 1, 1);
 
     gtk_label_set_label (GTK_LABEL (priv->current_boot), current_boot);
-    context = gtk_widget_get_style_context (GTK_WIDGET (priv->current_boot));
-    gtk_style_context_add_class (context, "caption");
-    gtk_style_context_add_class (context, "dim-label");
+    gtk_widget_add_css_class (GTK_WIDGET (priv->current_boot), "caption");
+    gtk_widget_add_css_class (GTK_WIDGET (priv->current_boot), "dim-label");
     gtk_grid_attach (GTK_GRID (grid), priv->current_boot, 0, 1, 1, 1);
 
     arrow = gtk_image_new_from_icon_name ("pan-down-symbolic");

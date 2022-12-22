@@ -220,7 +220,6 @@ on_listbox_row_activated (GtkListBox *listbox,
         gint header_row_index;
         gint index;
         gboolean rows_expanded;
-        GtkStyleContext *context;
         GtkListBoxRow *first_border_row;
         GtkListBoxRow *last_border_row;
         GtkWidget *row_separator;
@@ -238,8 +237,7 @@ on_listbox_row_activated (GtkListBox *listbox,
             compressed_row = gtk_list_box_get_row_at_index (GTK_LIST_BOX (priv->entries_box),
                                                             index);
 
-            context = gtk_widget_get_style_context (GTK_WIDGET (compressed_row));
-            gtk_style_context_add_class (context, "compressed-row");
+            gtk_widget_add_css_class (GTK_WIDGET (compressed_row), "compressed-row");
 
             /* Toggle the visibility */
             row_visible = gtk_widget_get_visible (GTK_WIDGET (compressed_row));
@@ -255,36 +253,31 @@ on_listbox_row_activated (GtkListBox *listbox,
         last_border_row = gtk_list_box_get_row_at_index (GTK_LIST_BOX (priv->entries_box),
                                                          index);
 
-        context = gtk_widget_get_style_context (GTK_WIDGET (row));
-
         /* Set background color of group separator */
         if (rows_expanded)
         {
-            gtk_style_context_add_class (context, "compressed-row-header");
+            gtk_widget_add_css_class (GTK_WIDGET (row), "compressed-row-header");
 
             row_separator = gtk_list_box_row_get_header (row);
 
             if (row_separator)
             {
-                context = gtk_widget_get_style_context (row_separator);
-                gtk_style_context_add_class (context, "compressed-rows-group-separator");
+                gtk_widget_add_css_class (row_separator, "compressed-rows-group-separator");
             }
 
             row_separator = gtk_list_box_row_get_header (first_border_row);
 
-            context = gtk_widget_get_style_context (row_separator);
-            gtk_style_context_add_class (context, "compressed-rows-group-separator");
+            gtk_widget_add_css_class (row_separator, "compressed-rows-group-separator");
 
             if (last_border_row)
             {
                 row_separator = gtk_list_box_row_get_header (last_border_row);
-                context = gtk_widget_get_style_context (row_separator);
-                gtk_style_context_add_class (context, "compressed-rows-group-separator");
+                gtk_widget_add_css_class (row_separator, "compressed-rows-group-separator");
             }
         }
         else
         {
-            gtk_style_context_remove_class (context, "compressed-row-header");
+            gtk_widget_remove_css_class (GTK_WIDGET (row), "compressed-row-header");
 
             row_separator = gtk_list_box_row_get_header (row);
 
@@ -307,14 +300,12 @@ on_listbox_row_activated (GtkListBox *listbox,
                     /* If not visible, remove the style class from it's separator */
                     if (!gtk_widget_get_visible (GTK_WIDGET (previous_row)))
                     {
-                        context = gtk_widget_get_style_context (row_separator);
-                        gtk_style_context_remove_class (context, "compressed-rows-group-separator");
+                        gtk_widget_remove_css_class (GTK_WIDGET (row_separator), "compressed-rows-group-separator");
                     }
                 }
                 else
                 {
-                    context = gtk_widget_get_style_context (row_separator);
-                    gtk_style_context_remove_class (context, "compressed-rows-group-separator");
+                    gtk_widget_remove_css_class (GTK_WIDGET (row_separator), "compressed-rows-group-separator");
                 }
             }
 
@@ -336,15 +327,13 @@ on_listbox_row_activated (GtkListBox *listbox,
                     if (!gtk_widget_get_visible (GTK_WIDGET (next_row)))
                     {
                         row_separator = gtk_list_box_row_get_header (last_border_row);
-                        context = gtk_widget_get_style_context (row_separator);
-                        gtk_style_context_remove_class (context, "compressed-rows-group-separator");
+                        gtk_widget_remove_css_class (row_separator, "compressed-rows-group-separator");
                     }
                 }
                 else
                 {
                     row_separator = gtk_list_box_row_get_header (last_border_row);
-                    context = gtk_widget_get_style_context (row_separator);
-                    gtk_style_context_remove_class (context, "compressed-rows-group-separator");
+                    gtk_widget_remove_css_class (row_separator, "compressed-rows-group-separator");
                 }
             }
         }

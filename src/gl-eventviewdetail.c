@@ -329,24 +329,20 @@ gl_event_view_detail_popover_closed (GtkPopover *popover,
     GtkWidget *row;
     GtkWidget *category_label;
     GtkWidget *time_label;
-    GtkStyleContext *context;
 
     row = gtk_widget_get_parent (GTK_WIDGET (popover));
 
-    context = gtk_widget_get_style_context (row);
-    gtk_style_context_remove_class (context, "popover-activated-row");
+    gtk_widget_remove_css_class (row, "popover-activated-row");
 
     category_label = gl_event_view_row_get_category_label (GL_EVENT_VIEW_ROW (row));
 
     if (category_label)
     {
-        context = gtk_widget_get_style_context (category_label);
-        gtk_style_context_add_class (context, "dim-label");
+        gtk_widget_add_css_class (category_label, "dim-label");
     }
 
     time_label = gl_event_view_row_get_time_label (GL_EVENT_VIEW_ROW (row));
-    context = gtk_widget_get_style_context (time_label);
-    gtk_style_context_add_class (context, "dim-label");
+    gtk_widget_add_css_class (time_label, "dim-label");
 }
 
 static void
