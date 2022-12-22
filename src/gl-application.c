@@ -119,6 +119,16 @@ on_about (GSimpleAction *action,
 }
 
 static void
+on_quit(GSimpleAction *action,
+        GVariant      *parameter,
+        gpointer       user_data)
+{
+    GApplication *application = G_APPLICATION (user_data);
+
+    g_application_quit (application);
+}
+
+static void
 on_sort_order_changed (GSettings *settings,
                        const gchar *key,
                        GlApplication *application)
@@ -181,7 +191,8 @@ on_monospace_font_name_changed (GSettings *settings,
 static GActionEntry actions[] = {
     { "new-window", on_new_window },
     { "help", on_help },
-    { "about", on_about }
+    { "about", on_about },
+    { "quit", on_quit },
 };
 
 static void
@@ -216,6 +227,7 @@ launch_window (GApplication *application)
     const gchar * const help_accel[] = { "F1", NULL };
     const gchar * const new_window_accel[] = { "<Primary>n", NULL };
     const gchar * const help_overlay_accel[] = { "<Primary>question", NULL };
+    const gchar * const quit_accel[] = { "<Primary>q", NULL };
 
     priv = gl_application_get_instance_private (GL_APPLICATION (application));
 
@@ -235,6 +247,8 @@ launch_window (GApplication *application)
     gtk_application_set_accels_for_action (GTK_APPLICATION (application),
                                            "win.show-help-overlay",
                                            help_overlay_accel);
+    gtk_application_set_accels_for_action (GTK_APPLICATION (application),
+                                           "app.quit", quit_accel);
 
     on_monospace_font_name_changed (priv->desktop, DESKTOP_MONOSPACE_FONT_NAME,
                                     priv);
