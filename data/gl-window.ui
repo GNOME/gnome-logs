@@ -11,35 +11,9 @@
                   </object>
                 </child>
                 <child>
-                    <object class="GtkInfoBar" id="info_bar">
-                        <property name="message-type">GTK_MESSAGE_ERROR</property>
-                        <property name="visible">False</property>
-                        <child>
-                            <object class="GtkBox" id="action_area">
-                                <property name="orientation">horizontal</property>
-                                <property name="spacing">6</property>
-                                <child>
-                                    <object class="GtkLabel" id="message_label">
-                                        <property name="hexpand">True</property>
-                                        <property name="halign">start</property>
-                                    </object>
-                                </child>
-                                <child>
-                                    <object class="GtkButton" id="help_button">
-                                        <property name="halign">center</property>
-                                        <property name="label" translatable="yes">Help</property>
-                                        <signal name="clicked" handler="on_help_button_clicked" object="GlWindow"/>
-                                    </object>
-                                </child>
-                                <child>
-                                    <object class="GtkButton" id="ignore_button">
-                                        <property name="halign">center</property>
-                                        <property name="label" translatable="yes">Ignore</property>
-                                        <signal name="clicked" handler="on_ignore_button_clicked" object="GlWindow"/>
-                                    </object>
-                                </child>
-                            </object>
-                        </child>
+                    <object class="AdwBanner" id="banner">
+                        <property name="button-label" translatable="yes">Help</property>
+                        <signal name="button-clicked" handler="on_help_button_clicked" swapped="yes"/>
                     </object>
                 </child>
                 <child>

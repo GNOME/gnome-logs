@@ -36,8 +36,7 @@ typedef struct
 {
     GtkWidget *event_toolbar;
     GtkWidget *event_list;
-    GtkWidget *info_bar;
-    GtkLabel *message_label;
+    AdwBanner *banner;
 } GlWindowPrivate;
 
 G_DEFINE_TYPE_WITH_PRIVATE (GlWindow, gl_window, ADW_TYPE_APPLICATION_WINDOW)
@@ -266,15 +265,11 @@ on_category_list_changed (GlCategoryList *list,
 }
 
 static void
-on_help_button_clicked (GlWindow *window,
-                        gint response_id,
-                        gpointer user_data)
+on_help_button_clicked (GlWindow  *window,
+                        AdwBanner *banner)
 {
-    GlWindowPrivate *priv;
     GtkWidget *error_dialog;
     g_autoptr (GError) error = NULL;
-
-    priv = gl_window_get_instance_private (GL_WINDOW (window));
 
     g_app_info_launch_default_for_uri ("help:gnome-logs/permissions",
                                        NULL, &error);
@@ -293,25 +288,7 @@ on_help_button_clicked (GlWindow *window,
                                  NULL, NULL, NULL);
     }
 
-    gtk_widget_set_visible (priv->info_bar, FALSE);
-}
-
-static void
-on_ignore_button_clicked (GlWindow *window,
-                          gint response_id,
-                          gpointer user_data)
-{
-    GlWindowPrivate *priv;
-    GSettings *settings;
-
-    priv = gl_window_get_instance_private (GL_WINDOW (window));
-
-    settings = g_settings_new (SETTINGS_SCHEMA);
-    g_settings_set_boolean (settings, IGNORE_WARNING, TRUE);
-
-    gtk_widget_set_visible (priv->info_bar, FALSE);
-
-    g_object_unref (settings);
+    adw_banner_set_revealed (banner, FALSE);
 }
 
 void
@@ -348,12 +325,10 @@ gl_window_class_init (GlWindowClass *klass)
     gtk_widget_class_bind_template_child_private (widget_class, GlWindow,
                                                   event_list);
     gtk_widget_class_bind_template_child_private (widget_class, GlWindow,
-                                                  info_bar);
+                                                  banner);
 
     gtk_widget_class_bind_template_callback (widget_class,
                                              on_help_button_clicked);
-    gtk_widget_class_bind_template_callback (widget_class,
-                                             on_ignore_button_clicked);
 }
 
 void
@@ -468,16 +443,16 @@ gl_window_init (GlWindow *window)
         {
             if (!gl_util_can_read_system_journal (GL_JOURNAL_STORAGE_PERSISTENT))
             {
-                gtk_label_set_label (priv->message_label, _("Unable to read system logs"));
+                adw_banner_set_title (priv->banner, _("Unable to read system logs"));
 
-                gtk_widget_set_visible (priv->info_bar, TRUE);
+                adw_banner_set_revealed (ADW_BANNER (priv->banner), TRUE);
             }
 
             if (!gl_util_can_read_user_journal ())
             {
-                gtk_label_set_label (priv->message_label, _("Unable to read user logs"));
+                adw_banner_set_title (priv->banner, _("Unable to read user logs"));
 
-                gtk_widget_set_visible (priv->info_bar, TRUE);
+                adw_banner_set_revealed (ADW_BANNER (priv->banner), TRUE);
             }
             break;
         }
@@ -485,17 +460,17 @@ gl_window_init (GlWindow *window)
         {
             if (!gl_util_can_read_system_journal (GL_JOURNAL_STORAGE_VOLATILE))
             {
-                gtk_label_set_label (priv->message_label, _("Unable to read system logs"));
+                adw_banner_set_title (priv->banner, _("Unable to read system logs"));
 
-                gtk_widget_set_visible (priv->info_bar, TRUE);
+                adw_banner_set_revealed (ADW_BANNER (priv->banner), TRUE);
             }
             break;
         }
         case GL_JOURNAL_STORAGE_NONE:
         {
-            gtk_label_set_label (priv->message_label, _("No logs available"));
+            adw_banner_set_title (priv->banner, _("No logs available"));
 
-            gtk_widget_set_visible (priv->info_bar, TRUE);
+            adw_banner_set_revealed (ADW_BANNER (priv->banner), TRUE);
             break;
         }
         default:
