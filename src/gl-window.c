@@ -98,13 +98,6 @@ on_search (GSimpleAction *action,
 }
 
 static void
-on_error_dialog_response (GtkDialog *dialog,
-                          gint       res)
-{
-    gtk_window_destroy (GTK_WINDOW (dialog));
-}
-
-static void
 on_save_finish (GObject      *source_object,
                 GAsyncResult *res,
                 gpointer      user_data)
@@ -127,12 +120,10 @@ on_save_finish (GObject      *source_object,
 
     if (error != NULL)
     {
-        have_error = TRUE;
         g_warning ("Error while replacing exported log messages file: %s",
                    error->message);
 
         g_clear_error (&error);
-        g_object_unref (output_file);
         return;
     }
 
@@ -177,14 +168,13 @@ on_save_finish (GObject      *source_object,
 
     if (have_error == TRUE)
     {
-        error_dialog = gtk_message_dialog_new (GTK_WINDOW (user_data),
-                                               GTK_DIALOG_MODAL,
-                                               GTK_MESSAGE_ERROR,
-                                               GTK_BUTTONS_CLOSE,
-                                               "%s",
+        error_dialog = adw_message_dialog_new (GTK_WINDOW (user_data),
+                                               _("Export Failed"),
                                                _("Unable to export log messages to a file"));
-        g_signal_connect (error_dialog, "response", G_CALLBACK (on_error_dialog_response), NULL);
-        gtk_window_present (GTK_WINDOW (error_dialog));
+        adw_message_dialog_add_response (ADW_MESSAGE_DIALOG (error_dialog),
+                                         "close", _("_Close"));
+        adw_message_dialog_choose (ADW_MESSAGE_DIALOG (error_dialog),
+                                   NULL, NULL, NULL);
     }
 
     g_free (file_content);
