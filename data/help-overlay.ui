@@ -8,25 +8,25 @@
                         <property name="title" translatable="yes" context="shortcut window">General</property>
                         <child>
                             <object class="GtkShortcutsShortcut">
-                                <property name="accelerator">&lt;Primary&gt;n</property>
+                                <property name="action-name">app.new-window</property>
                                 <property name="title" translatable="yes" context="shortcut window">Open a new window</property>
                             </object>
                         </child>
                         <child>
                             <object class="GtkShortcutsShortcut">
-                                <property name="accelerator">&lt;Primary&gt;w</property>
+                                <property name="action-name">win.close</property>
                                 <property name="title" translatable="yes" context="shortcut window">Close a window</property>
                             </object>
                         </child>
                         <child>
                             <object class="GtkShortcutsShortcut">
-                                <property name="accelerator">F1</property>
+                                <property name="action-name">app.help</property>
                                 <property name="title" translatable="yes" context="shortcut window">Show help</property>
                             </object>
                         </child>
                         <child>
                             <object class="GtkShortcutsShortcut">
-                                <property name="accelerator">&lt;Primary&gt;question</property>
+                                <property name="action-name">win.show-help-overlay</property>
                                 <property name="title" translatable="yes" context="shortcut window">Keyboard shortcuts</property>
                             </object>
                         </child>
@@ -37,13 +37,13 @@
                         <property name="title" translatable="yes" context="shortcut window">Application</property>
                         <child>
                             <object class="GtkShortcutsShortcut">
-                                <property name="accelerator">&lt;Primary&gt;f</property>
+                                <property name="action-name">win.search</property>
                                 <property name="title" translatable="yes" context="shortcut window">Find</property>
                             </object>
                         </child>
                         <child>
                             <object class="GtkShortcutsShortcut">
-                                <property name="accelerator">&lt;Primary&gt;e</property>
+                                <property name="action-name">win.export</property>
                                 <property name="title" translatable="yes" context="shortcut window">Export logs to a file</property>
                             </object>
                         </child>
