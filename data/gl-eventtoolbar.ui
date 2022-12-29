@@ -3,7 +3,6 @@
     <menu id='primary-menu'>
         <section>
             <item>
-                <attribute name="accel">&lt;Primary&gt;n</attribute>
                 <attribute name="label" translatable="yes">_New Window</attribute>
                 <attribute name="action">app.new-window</attribute>
             </item>
@@ -14,7 +13,6 @@
                 <attribute name="action">win.show-help-overlay</attribute>
             </item>
             <item>
-                <attribute name="accel">F1</attribute>
                 <attribute name="label" translatable="yes">_Help</attribute>
                 <attribute name="action">app.help</attribute>
             </item>
