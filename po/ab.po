@@ -400,7 +400,7 @@ msgstr "Нанба Наала <naala-nanba@rambler.ru>, 2022"
 
 #: src/gl-application.c:256
 msgid "Print version information and exit"
-msgstr ""
+msgstr "Аверисиа иазкны аинформациа аарԥшны аҭыҵра"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
 #: src/gl-eventtoolbar.c:135
@@ -465,7 +465,7 @@ msgstr "PM"
 #. * in 12-hour format.
 #: src/gl-searchpopover.c:985 src/gl-searchpopover.c:1225
 msgid "%I:%M:%S %p"
-msgstr "%I∶%M∶%S %p"
+msgstr "%I∶%M∶%S %p"
 
 #. Translators: timestamp format for the custom start time button
 #. * label in the custom range submenu, showing the time with seconds
@@ -482,7 +482,7 @@ msgstr "%T"
 #. * 12-hour format.
 #: src/gl-util.c:126
 msgid "%l:%M:%S %p"
-msgstr "%l∶%M∶%S %p"
+msgstr "%l∶%M∶%S %p"
 
 #. Translators: timestamp format for events on the
 #. * current day, showing the time without seconds in
