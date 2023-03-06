@@ -46,15 +46,6 @@ resource_data = files(
 
 gresource = files('org.gnome.Logs.gresource.xml')
 
-web_files = files(
-  'gl-style.css'
-)
-
-install_data(
-  web_files,
-  install_dir: gl_pkgdatadir
-)
-
 # GSettings schemas
 # https://github.com/mesonbuild/meson/issues/1687
 custom_target('gsettings-enums',

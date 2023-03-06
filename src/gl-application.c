@@ -20,7 +20,6 @@
 #include "gl-application.h"
 
 #include <glib/gi18n.h>
-#include <libadwaita-1/adwaita.h>
 
 #include "gl-categorylist.h"
 #include "gl-eventtoolbar.h"
@@ -33,7 +32,7 @@
 struct _GlApplication
 {
     /*< private >*/
-    GtkApplication parent_instance;
+    AdwApplication parent_instance;
 };
 
 typedef struct
@@ -44,7 +43,7 @@ typedef struct
     gchar *monospace_font;
 } GlApplicationPrivate;
 
-G_DEFINE_TYPE_WITH_PRIVATE (GlApplication, gl_application, GTK_TYPE_APPLICATION)
+G_DEFINE_TYPE_WITH_PRIVATE (GlApplication, gl_application, ADW_TYPE_APPLICATION)
 
 static const gchar DESKTOP_SCHEMA[] = "org.gnome.desktop.interface";
 static const gchar SETTINGS_SCHEMA[] = "org.gnome.Logs";
@@ -219,16 +218,9 @@ gl_application_startup (GApplication *application)
     /* Calls gtk_init() with no arguments. */
     G_APPLICATION_CLASS (gl_application_parent_class)->startup (application);
 
-    /* Initialize libadwaita widgets and styling */
-    adw_init ();
-
     /* gtk_init() calls setlocale(), so gettext must be called after that. */
     g_set_application_name (_(PACKAGE_NAME));
     gtk_window_set_default_icon_name (PACKAGE_TARNAME);
-
-    /* Opt-in to color scheme user preference. */
-    adw_style_manager_set_color_scheme (adw_style_manager_get_default (),
-                                        ADW_COLOR_SCHEME_PREFER_LIGHT);
 }
 
 static void
