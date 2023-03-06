@@ -47,7 +47,6 @@
                     <object class="GtkMenuButton" id="menu_button">
                         <property name="direction">none</property>
                         <property name="tooltip-text" translatable="yes">Choose the boot from which to view logs</property>
-                        <property name="valign">center</property>
                         <style>
                             <class name="title-menu-button"/>
                             <class name="flat"/>
