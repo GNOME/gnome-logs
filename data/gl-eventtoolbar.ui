@@ -33,6 +33,7 @@
                         <property name="valign">center</property>
                         <property name="menu_model">primary-menu</property>
                         <property name="icon-name">open-menu-symbolic</property>
+                        <property name="primary">true</property>
                     </object>
                 </child>
                 <child type="end">
