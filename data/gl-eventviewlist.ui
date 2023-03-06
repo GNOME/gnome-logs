@@ -26,6 +26,7 @@
                                         </style>
                                         <child>
                                             <object class="GtkSearchEntry" id="search_entry">
+                                                <property name="placeholder-text" translatable="yes">Search logs</property>
                                                 <signal name="search-changed" handler="on_search_entry_changed" />
                                             </object>
                                         </child>
