@@ -127,8 +127,15 @@
         "/lib/sysctl.d",
         "/lib/systemd",
         "/lib/udev",
-        "/app/share/doc",
-        "/share"
+        "/share/dbus-1",
+        "/share/doc",
+        "/share/factory",
+        "/share/glib-2.0",
+        "/share/icons",
+        "/share/man",
+        "/share/pkgconfig",
+        "/share/polkit-1",
+        "/share/runtime"
       ],
       "sources": [
         {
