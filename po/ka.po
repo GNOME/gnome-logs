@@ -1,22 +1,22 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Georgian translation for gnome-logs.
+# Copyright (C) 2023 gnome-logs's authors
+# This file is distributed under the same license as the gnome-logs package.
+# Ekaterine Papava <papava.e@gtu.ge>, 2023.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: gnome-logs\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2022-06-30 19:11+0000\n"
-"PO-Revision-Date: 2022-07-10 23:13+0200\n"
-"Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
-"Language-Team: \n"
+"POT-Creation-Date: 2023-08-07 08:45+0000\n"
+"PO-Revision-Date: 2023-08-07 14:25+0200\n"
+"Last-Translator: Ekaterine Papava <papava.e@gtu.ge>\n"
+"Language-Team: Georgian <(nothing)>\n"
 "Language: ka\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.3.2\n"
 
 #: data/gl-categorylist.ui:12
 msgid "Important"
@@ -58,21 +58,25 @@ msgstr "განახლებები"
 msgid "Usage"
 msgstr "გამოყენება"
 
-#: data/gl-eventtoolbar.ui:7
+#: data/gl-eventtoolbar.ui:6
 msgid "_New Window"
 msgstr "_ახალი ფანჯარა"
 
-#: data/gl-eventtoolbar.ui:13
-msgid "Keyboard Shortcuts"
-msgstr "კლავიატურის მალსახმობები"
+#: data/gl-eventtoolbar.ui:12
+msgid "_Keyboard Shortcuts"
+msgstr "_კლავიატურის მალსახმობები"
 
-#: data/gl-eventtoolbar.ui:18
+#: data/gl-eventtoolbar.ui:16
 msgid "_Help"
 msgstr "დახმარება"
 
-#: data/gl-eventtoolbar.ui:22
+#: data/gl-eventtoolbar.ui:20
 msgid "_About Logs"
 msgstr "_ჟურნალის შესახებ"
+
+#: data/gl-eventtoolbar.ui:35
+msgid "Main Menu"
+msgstr "მთავარი მენიუ"
 
 #: data/gl-eventtoolbar.ui:41
 msgid "Export logs to a file"
@@ -82,7 +86,7 @@ msgstr "ჟურნალის ფაილში გატანა"
 msgid "Choose the boot from which to view logs"
 msgstr ""
 
-#: data/gl-eventtoolbar.ui:60
+#: data/gl-eventtoolbar.ui:59
 msgid "Search all the logs of the current category"
 msgstr ""
 
@@ -126,7 +130,11 @@ msgstr "მხარდაჭერა"
 msgid "Documentation"
 msgstr "დოკუმენტაცია"
 
-#: data/gl-eventviewlist.ui:34
+#: data/gl-eventviewlist.ui:29
+msgid "Search logs"
+msgstr "ჟურნალში ძებნა"
+
+#: data/gl-eventviewlist.ui:35
 msgid "Select journal field and timestamp range filtering options"
 msgstr ""
 
@@ -149,7 +157,7 @@ msgstr "რა"
 
 #: data/gl-searchpopover.ui:117
 msgid "Select Journal Field…"
-msgstr ""
+msgstr "აირჩიეთ ჟურნალის ველი…"
 
 #. When [log entries to be shown for a given timestamp range]
 #: data/gl-searchpopover.ui:140
@@ -158,7 +166,7 @@ msgstr "როდის"
 
 #: data/gl-searchpopover.ui:156
 msgid "Show Logs from…"
-msgstr ""
+msgstr "ჟურნალის წყარო…"
 
 #: data/gl-searchpopover.ui:181
 msgid "Select Timestamp Range of the Log Entries to be shown"
@@ -299,7 +307,7 @@ msgstr "მთელი ჟურნალი"
 
 #: data/gl-searchpopover.ui:948
 msgid "Set Custom Range…"
-msgstr ""
+msgstr "მომხმარებლის დიაპაზონის დაყენება…"
 
 #: data/gl-window.ui:30
 msgid "Help"
@@ -350,7 +358,7 @@ msgid "Export logs to a file"
 msgstr "ჟურნალის ფაილში გატანა"
 
 #: data/org.gnome.Logs.appdata.xml.in:7 data/org.gnome.Logs.desktop.in:3
-#: src/gl-eventtoolbar.c:144
+#: src/gl-application.c:132 src/gl-eventtoolbar.c:143
 msgid "Logs"
 msgstr "ჟურნალი"
 
@@ -370,7 +378,7 @@ msgid ""
 "detailed information about each event by clicking on it."
 msgstr ""
 
-#: data/org.gnome.Logs.appdata.xml.in:30
+#: data/org.gnome.Logs.appdata.xml.in:38 src/gl-application.c:134
 msgid "The GNOME Project"
 msgstr "პროექტი „GNOME“"
 
@@ -385,7 +393,7 @@ msgstr "log;journal;debug;error;"
 
 #: data/org.gnome.Logs.gschema.xml:5
 msgid "Ignore warning"
-msgstr ""
+msgstr "გაფრთხილების უგულებელყოფა"
 
 #: data/org.gnome.Logs.gschema.xml:6
 msgid ""
@@ -401,26 +409,35 @@ msgstr ""
 msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr ""
 
-#: src/gl-application.c:109
+#: src/gl-application.c:82 src/gl-window.c:285
+msgid "Failed To Open Help"
+msgstr "დახმარების გახსნის შეცდომა"
+
+#: src/gl-application.c:85 src/gl-window.c:288
+#, c-format
+msgid "Failed to open the given help URI: %s"
+msgstr ""
+
+#: src/gl-application.c:88 src/gl-window.c:175 src/gl-window.c:291
+msgid "_Close"
+msgstr "_დახურვა"
+
+#: src/gl-application.c:137
 msgid "translator-credits"
 msgstr "თემური დოღონაძე"
 
-#: src/gl-application.c:110
-msgid "View and search logs"
-msgstr ""
-
-#: src/gl-application.c:253
+#: src/gl-application.c:270
 msgid "Print version information and exit"
 msgstr "ვერსიის ჩვენება და გასვლა"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
-#: src/gl-eventtoolbar.c:135
+#: src/gl-eventtoolbar.c:134
 msgid "Boot"
 msgstr "ჩატვირთვადი"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: src/gl-eventviewlist.c:448
+#: src/gl-eventviewlist.c:431
 msgid "No Results"
 msgstr "შედეგების გარეშე"
 
@@ -588,34 +605,32 @@ msgstr "%b %e %Y %H:%M"
 msgid "%s – %s"
 msgstr "%s – %s"
 
-#: src/gl-window.c:174
+#: src/gl-window.c:172
+msgid "Export Failed"
+msgstr "გატანის შეცდომა"
+
+#: src/gl-window.c:173
 msgid "Unable to export log messages to a file"
 msgstr ""
 
-#: src/gl-window.c:195
-msgid "Save logs"
-msgstr "ჟურნალის შენახვა"
-
-#: src/gl-window.c:198
-msgid "_Save"
-msgstr "_შენახვა"
-
-#: src/gl-window.c:199
-msgid "_Cancel"
-msgstr "_გაუქმება"
-
-#: src/gl-window.c:202
+#: src/gl-window.c:194
 msgid "log messages"
 msgstr "ჟურნალის შეტყობინებები"
 
-#: src/gl-window.c:473 src/gl-window.c:490
+#: src/gl-window.c:471 src/gl-window.c:488
 msgid "Unable to read system logs"
 msgstr "სისტემური ჟურნალის წაკითხვის შეცდომა"
 
-#: src/gl-window.c:480
+#: src/gl-window.c:478
 msgid "Unable to read user logs"
 msgstr "მომხმარებლის ჟურნალის წაკითხვის შეცდომა"
 
-#: src/gl-window.c:498
+#: src/gl-window.c:496
 msgid "No logs available"
 msgstr "ჟურნალები ხელმიუწვდომელია"
+
+#~ msgid "_Save"
+#~ msgstr "_შენახვა"
+
+#~ msgid "_Cancel"
+#~ msgstr "_გაუქმება"
