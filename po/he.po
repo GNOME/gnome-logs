@@ -2,14 +2,14 @@
 # Copyright (C) 2013 THE Logs'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the Logs package.
 # יוסף אור בוצ׳קו <yoseforb@gmail.com>, 2013.
-# Yosef Or Boczko <yoseforb@gmail.com>, 2013-2022.
+# Yosef Or Boczko <yoseforb@gmail.com>, 2013-2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Logs 0.1\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2022-09-23 22:15+0000\n"
-"PO-Revision-Date: 2022-10-23 20:06+0300\n"
+"POT-Creation-Date: 2023-08-07 14:24+0000\n"
+"PO-Revision-Date: 2023-08-08 16:34+0300\n"
 "Last-Translator: Yosef Or Boczko <yoseforb@gmail.com>\n"
 "Language-Team: Hebrew <yoseforb@gmail.com>\n"
 "Language: he\n"
@@ -59,21 +59,25 @@ msgstr "עדכונים"
 msgid "Usage"
 msgstr "שימוש"
 
-#: data/gl-eventtoolbar.ui:7
+#: data/gl-eventtoolbar.ui:6
 msgid "_New Window"
 msgstr "_חלון חדש"
 
-#: data/gl-eventtoolbar.ui:13
-msgid "Keyboard Shortcuts"
-msgstr "צירופי מקשים"
+#: data/gl-eventtoolbar.ui:12
+msgid "_Keyboard Shortcuts"
+msgstr "_צירופי מקשים"
 
-#: data/gl-eventtoolbar.ui:18
+#: data/gl-eventtoolbar.ui:16
 msgid "_Help"
 msgstr "ע_זרה"
 
-#: data/gl-eventtoolbar.ui:22
+#: data/gl-eventtoolbar.ui:20
 msgid "_About Logs"
 msgstr "על יומ_נים"
+
+#: data/gl-eventtoolbar.ui:35
+msgid "Main Menu"
+msgstr "תפריט ראשי"
 
 #: data/gl-eventtoolbar.ui:41
 msgid "Export logs to a file"
@@ -83,7 +87,7 @@ msgstr "ייצוא יומנים לקובץ"
 msgid "Choose the boot from which to view logs"
 msgstr "בחירת ההפעלה ממנה יוצגו יומנים"
 
-#: data/gl-eventtoolbar.ui:60
+#: data/gl-eventtoolbar.ui:59
 msgid "Search all the logs of the current category"
 msgstr "חיפוש בכל היומנים של הקטגוריה הנוכחית"
 
@@ -127,7 +131,11 @@ msgstr "תמיכה"
 msgid "Documentation"
 msgstr "תיעוד"
 
-#: data/gl-eventviewlist.ui:34
+#: data/gl-eventviewlist.ui:29
+msgid "Search logs"
+msgstr "חיפוש יומנים"
+
+#: data/gl-eventviewlist.ui:35
 msgid "Select journal field and timestamp range filtering options"
 msgstr "נא לבחור שדה עלון ואפשרויות סינון לפי טווח חותמות זמן"
 
@@ -351,7 +359,7 @@ msgid "Export logs to a file"
 msgstr "ייצוא יומנים לקובץ"
 
 #: data/org.gnome.Logs.appdata.xml.in:7 data/org.gnome.Logs.desktop.in:3
-#: src/gl-application.c:107 src/gl-eventtoolbar.c:144
+#: src/gl-application.c:132 src/gl-eventtoolbar.c:143
 msgid "Logs"
 msgstr "יומנים"
 
@@ -375,7 +383,7 @@ msgstr ""
 "בעזרת יומנים ניתן לחפש בקובצי רישום המערכת שלך על ידי הקלדת מונח ואז לצפות "
 "בפרטים על כל אחד מהאירועים על ידי לחיצה עליו."
 
-#: data/org.gnome.Logs.appdata.xml.in:38 src/gl-application.c:109
+#: data/org.gnome.Logs.appdata.xml.in:38 src/gl-application.c:134
 msgid "The GNOME Project"
 msgstr "מיזם GNOME"
 
@@ -408,24 +416,37 @@ msgstr "How to sort list rows in the event view list"
 msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr "Sort list rows in ascending or descending order for the selected type"
 
-#: src/gl-application.c:112
+#: src/gl-application.c:82 src/gl-window.c:285
+msgid "Failed To Open Help"
+msgstr "אירע כשל בפתיחת העזרה"
+
+#: src/gl-application.c:85 src/gl-window.c:288
+#, c-format
+msgid "Failed to open the given help URI: %s"
+msgstr "אירע כשל בפתיחת כתובת העזרה המבוקש: %s"
+
+#: src/gl-application.c:88 src/gl-window.c:175 src/gl-window.c:291
+msgid "_Close"
+msgstr "_סגירה"
+
+#: src/gl-application.c:137
 msgid "translator-credits"
 msgstr ""
 "יוסף אור בוצ׳קו <yoseforb@gmail.com>\n"
 "מיזם תרגום GNOME לעברית https://l10n.gnome.org/teams/he/"
 
-#: src/gl-application.c:256
+#: src/gl-application.c:270
 msgid "Print version information and exit"
 msgstr "הצגת נתוני הגרסה ויציאה"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
-#: src/gl-eventtoolbar.c:135
+#: src/gl-eventtoolbar.c:134
 msgid "Boot"
 msgstr "הפעלה"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: src/gl-eventviewlist.c:448
+#: src/gl-eventviewlist.c:431
 msgid "No Results"
 msgstr "אין תוצאות"
 
@@ -593,37 +614,35 @@ msgstr "%b %e %Y %H:%M"
 msgid "%s – %s"
 msgstr "%s – %s"
 
-#: src/gl-window.c:174
+#: src/gl-window.c:172
+msgid "Export Failed"
+msgstr "הייצוא נכשל"
+
+#: src/gl-window.c:173
 msgid "Unable to export log messages to a file"
 msgstr "לא ניתן לייצא את הודעת היומן לקובץ"
 
-#: src/gl-window.c:195
-msgid "Save logs"
-msgstr "שמירת יומנים"
-
-#: src/gl-window.c:198
-msgid "_Save"
-msgstr "_שמירה"
-
-#: src/gl-window.c:199
-msgid "_Cancel"
-msgstr "_ביטול"
-
-#: src/gl-window.c:202
+#: src/gl-window.c:194
 msgid "log messages"
 msgstr "הודעות יומן"
 
-#: src/gl-window.c:473 src/gl-window.c:490
+#: src/gl-window.c:471 src/gl-window.c:488
 msgid "Unable to read system logs"
 msgstr "לא ניתן לקרוא את יומני המערכת"
 
-#: src/gl-window.c:480
+#: src/gl-window.c:478
 msgid "Unable to read user logs"
 msgstr "לא ניתן לקרוא את יומני המשתמש"
 
-#: src/gl-window.c:498
+#: src/gl-window.c:496
 msgid "No logs available"
 msgstr "אין יומנים זמינים"
+
+#~ msgid "_Save"
+#~ msgstr "_שמירה"
+
+#~ msgid "_Cancel"
+#~ msgstr "_ביטול"
 
 #~ msgid "GNOME Logs"
 #~ msgstr "GNOME יומנים"
