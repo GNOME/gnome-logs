@@ -8,53 +8,53 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2021-07-28 07:14+0000\n"
-"PO-Revision-Date: 2021-07-29 12:22+0700\n"
-"Last-Translator: Andika Triwidada <andika@gmail.com>\n"
+"POT-Creation-Date: 2023-08-07 12:30+0000\n"
+"PO-Revision-Date: 2023-08-11 19:26+0700\n"
+"Last-Translator: Kukuh Syafaat <kukuhsyafaat@gnome.org>\n"
 "Language-Team: Indonesian <gnome@i15n.org>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.3\n"
+"X-Generator: Poedit 3.3.1\n"
 
-#: data/gl-categorylist.ui:15
+#: data/gl-categorylist.ui:12
 msgid "Important"
 msgstr "Penting"
 
-#: data/gl-categorylist.ui:30
+#: data/gl-categorylist.ui:23
 msgid "Alerts"
 msgstr "Tanda bahaya"
 
-#: data/gl-categorylist.ui:45
+#: data/gl-categorylist.ui:34
 msgid "Starred"
 msgstr "Dibintangi"
 
-#: data/gl-categorylist.ui:60
+#: data/gl-categorylist.ui:44
 msgid "All"
 msgstr "Semua"
 
-#: data/gl-categorylist.ui:75 src/gl-eventviewrow.c:209
+#: data/gl-categorylist.ui:54 src/gl-eventviewrow.c:211
 msgid "Applications"
 msgstr "Aplikasi"
 
-#: data/gl-categorylist.ui:90 src/gl-eventviewrow.c:218
+#: data/gl-categorylist.ui:64 src/gl-eventviewrow.c:220
 msgid "System"
 msgstr "Sistem"
 
-#: data/gl-categorylist.ui:105 src/gl-eventviewrow.c:222
+#: data/gl-categorylist.ui:74 src/gl-eventviewrow.c:224
 msgid "Security"
 msgstr "Keamanan"
 
-#: data/gl-categorylist.ui:120 src/gl-eventviewrow.c:214
+#: data/gl-categorylist.ui:84 src/gl-eventviewrow.c:216
 msgid "Hardware"
 msgstr "Perangkat Keras"
 
-#: data/gl-categorylist.ui:135
+#: data/gl-categorylist.ui:95
 msgid "Updates"
 msgstr "Pemutakhiran"
 
-#: data/gl-categorylist.ui:150
+#: data/gl-categorylist.ui:106
 msgid "Usage"
 msgstr "Cara Pakai"
 
@@ -63,249 +63,257 @@ msgid "_New Window"
 msgstr "Je_ndela Baru"
 
 #: data/gl-eventtoolbar.ui:12
-msgid "Keyboard Shortcuts"
-msgstr "Tombol Pintas"
+msgid "_Keyboard Shortcuts"
+msgstr "Pintasan Papan Ti_k"
 
-#: data/gl-eventtoolbar.ui:17
+#: data/gl-eventtoolbar.ui:16
 msgid "_Help"
 msgstr "_Bantuan"
 
-#: data/gl-eventtoolbar.ui:21
+#: data/gl-eventtoolbar.ui:20
 msgid "_About Logs"
 msgstr "Tent_ang Log"
 
-#: data/gl-eventtoolbar.ui:53
+#: data/gl-eventtoolbar.ui:35
+msgid "Main Menu"
+msgstr "Menu Utama"
+
+#: data/gl-eventtoolbar.ui:41
 msgid "Export logs to a file"
 msgstr "Ekspor log ke berkas"
 
-#: data/gl-eventtoolbar.ui:74
+#: data/gl-eventtoolbar.ui:49
 msgid "Choose the boot from which to view logs"
 msgstr "Pilih boot yang akan dilihat lognya"
 
-#: data/gl-eventtoolbar.ui:86
+#: data/gl-eventtoolbar.ui:59
 msgid "Search all the logs of the current category"
 msgstr "Cari semua log dengan kategori saat ini"
 
-#: data/gl-eventviewdetail.ui:26
+#: data/gl-eventviewdetail.ui:23
 msgid "Sender"
 msgstr "Pengirim"
 
-#: data/gl-eventviewdetail.ui:58
+#: data/gl-eventviewdetail.ui:52
 msgid "Time"
 msgstr "Waktu"
 
-#: data/gl-eventviewdetail.ui:92 data/gl-searchpopover.ui:1052
+#: data/gl-eventviewdetail.ui:81 data/gl-searchpopover.ui:867
 msgid "Message"
 msgstr "Pesan"
 
-#: data/gl-eventviewdetail.ui:128 data/gl-searchpopover.ui:1072
+#: data/gl-eventviewdetail.ui:112 data/gl-searchpopover.ui:887
 msgid "Audit Session"
 msgstr "Sesi Audit"
 
-#: data/gl-eventviewdetail.ui:161 data/gl-searchpopover.ui:1067
+#: data/gl-eventviewdetail.ui:141 data/gl-searchpopover.ui:882
 msgid "Kernel Device"
 msgstr "Perangkat Kernel"
 
-#: data/gl-eventviewdetail.ui:194
+#: data/gl-eventviewdetail.ui:169
 msgid "Priority"
 msgstr "Prioritas"
 
-#: data/gl-eventviewdetail.ui:228
+#: data/gl-eventviewdetail.ui:198
 msgid "Subject"
 msgstr "Subjek"
 
-#: data/gl-eventviewdetail.ui:264
+#: data/gl-eventviewdetail.ui:230
 msgid "Defined By"
 msgstr "Didefinisikan Oleh"
 
-#: data/gl-eventviewdetail.ui:298
+#: data/gl-eventviewdetail.ui:260
 msgid "Support"
 msgstr "Dukungan"
 
-#: data/gl-eventviewdetail.ui:334
+#: data/gl-eventviewdetail.ui:292
 msgid "Documentation"
 msgstr "Dokumentasi"
 
-#: data/gl-eventviewlist.ui:42
+#: data/gl-eventviewlist.ui:29
+msgid "Search logs"
+msgstr "Cari log"
+
+#: data/gl-eventviewlist.ui:35
 msgid "Select journal field and timestamp range filtering options"
 msgstr "Pilih field jurnal dan opsi penyaringan rentang timestamp"
 
-#: data/gl-searchpopover.ui:26
+#: data/gl-searchpopover.ui:27
 msgid "Select a Journal Field to filter the Logs according to it"
 msgstr "Pilih Field Jurnal untuk menyaring log menurut itu"
 
-#: data/gl-searchpopover.ui:35 data/gl-searchpopover.ui:1028
+#: data/gl-searchpopover.ui:34 data/gl-searchpopover.ui:843
 msgid "All Available Fields"
 msgstr "Semua Field yang Tersedia"
 
-#: data/gl-searchpopover.ui:78 data/gl-searchpopover.ui:251
+#: data/gl-searchpopover.ui:66 data/gl-searchpopover.ui:220
 msgid "Parameters"
 msgstr "Parameter"
 
 #. Translators: What [journal fields to search in]
-#: data/gl-searchpopover.ui:115
+#: data/gl-searchpopover.ui:101
 msgid "What"
 msgstr "Apa"
 
-#: data/gl-searchpopover.ui:130
+#: data/gl-searchpopover.ui:117
 msgid "Select Journal Field…"
 msgstr "Pilih Field Jurnal…"
 
 #. When [log entries to be shown for a given timestamp range]
-#: data/gl-searchpopover.ui:155
+#: data/gl-searchpopover.ui:140
 msgid "When"
 msgstr "Kapan"
 
-#: data/gl-searchpopover.ui:170
+#: data/gl-searchpopover.ui:156
 msgid "Show Logs from…"
 msgstr "Tampilkan Log dari…"
 
-#: data/gl-searchpopover.ui:199
+#: data/gl-searchpopover.ui:181
 msgid "Select Timestamp Range of the Log Entries to be shown"
 msgstr "Pilih Rentang Timestamp dari Entri Log yang akan ditampilkan"
 
-#: data/gl-searchpopover.ui:208 data/gl-searchpopover.ui:1091
-#: src/gl-searchpopover.c:1309
+#: data/gl-searchpopover.ui:188 data/gl-searchpopover.ui:906
+#: src/gl-searchpopover.c:1306
 msgid "Current Boot"
 msgstr "Boot Saat Ini"
 
-#: data/gl-searchpopover.ui:293
+#: data/gl-searchpopover.ui:255
 msgid "Search Type"
 msgstr "Jenis Pencarian"
 
-#: data/gl-searchpopover.ui:310
+#: data/gl-searchpopover.ui:266
 msgid "Substring"
 msgstr "Substring"
 
-#: data/gl-searchpopover.ui:314
+#: data/gl-searchpopover.ui:268
 msgid "Match in any part of the string"
 msgstr "Cocokkan pada setiap bagian string"
 
-#: data/gl-searchpopover.ui:328
+#: data/gl-searchpopover.ui:275
 msgid "Exact"
 msgstr "Tepat"
 
-#: data/gl-searchpopover.ui:332
+#: data/gl-searchpopover.ui:277
 msgid "Match complete string only"
 msgstr "Cocokkan hanya string lengkap"
 
-#: data/gl-searchpopover.ui:379
+#: data/gl-searchpopover.ui:319
 msgid "Back"
 msgstr "Kembali"
 
-#: data/gl-searchpopover.ui:397
+#: data/gl-searchpopover.ui:337
 msgid "Show Logs Starting From…"
 msgstr "Tampilkan Log Mulai Dari…"
 
-#: data/gl-searchpopover.ui:419
+#: data/gl-searchpopover.ui:358
 msgid "Select a start date"
 msgstr "Pilih tanggal mulai"
 
-#: data/gl-searchpopover.ui:428 src/gl-searchpopover.c:503
+#: data/gl-searchpopover.ui:365 src/gl-searchpopover.c:503
 msgid "Select Start Date…"
 msgstr "Pilih Tanggal Mulai…"
 
-#: data/gl-searchpopover.ui:459 data/gl-searchpopover.ui:763
+#: data/gl-searchpopover.ui:384 data/gl-searchpopover.ui:626
 msgid "22 January 2016 or 1/22/2016"
 msgstr "22 Januari 2016 atau 1/22/2016"
 
-#: data/gl-searchpopover.ui:504
+#: data/gl-searchpopover.ui:423
 msgid "Select start time"
 msgstr "Pilih waktu mulai"
 
-#: data/gl-searchpopover.ui:513 src/gl-searchpopover.c:504
+#: data/gl-searchpopover.ui:430 src/gl-searchpopover.c:504
 msgid "Select Start Time…"
 msgstr "Pilih Waktu Mulai…"
 
-#: data/gl-searchpopover.ui:550 data/gl-searchpopover.ui:857
+#: data/gl-searchpopover.ui:454 data/gl-searchpopover.ui:699
 msgid "Hr"
 msgstr "Jam"
 
-#: data/gl-searchpopover.ui:585 data/gl-searchpopover.ui:892
+#: data/gl-searchpopover.ui:480 data/gl-searchpopover.ui:729
 msgid "Min"
 msgstr "Men"
 
-#: data/gl-searchpopover.ui:620 data/gl-searchpopover.ui:927
+#: data/gl-searchpopover.ui:510 data/gl-searchpopover.ui:759
 msgid "Sec"
 msgstr "Det"
 
-#: data/gl-searchpopover.ui:655 data/gl-searchpopover.ui:962
+#: data/gl-searchpopover.ui:540 data/gl-searchpopover.ui:789
 msgid "AM/PM"
 msgstr "AM/PM"
 
-#: data/gl-searchpopover.ui:701
+#: data/gl-searchpopover.ui:579
 msgid "Until…"
 msgstr "Sampai…"
 
-#: data/gl-searchpopover.ui:723
+#: data/gl-searchpopover.ui:600
 msgid "Select an end date"
 msgstr "Pilih tanggal akhir"
 
-#: data/gl-searchpopover.ui:732 src/gl-searchpopover.c:521
+#: data/gl-searchpopover.ui:607 src/gl-searchpopover.c:521
 msgid "Select End Date…"
 msgstr "Pilih Tanggal Akhir…"
 
-#: data/gl-searchpopover.ui:811
+#: data/gl-searchpopover.ui:668
 msgid "Select end time"
 msgstr "Pilih waktu akhir"
 
-#: data/gl-searchpopover.ui:820 src/gl-searchpopover.c:522
+#: data/gl-searchpopover.ui:675 src/gl-searchpopover.c:522
 msgid "Select End Time…"
 msgstr "Pilih Waktu Akhir…"
 
-#: data/gl-searchpopover.ui:1037
+#: data/gl-searchpopover.ui:852
 msgid "PID"
 msgstr "PID"
 
-#: data/gl-searchpopover.ui:1042
+#: data/gl-searchpopover.ui:857
 msgid "UID"
 msgstr "UID"
 
-#: data/gl-searchpopover.ui:1047
+#: data/gl-searchpopover.ui:862
 msgid "GID"
 msgstr "GID"
 
-#: data/gl-searchpopover.ui:1057
+#: data/gl-searchpopover.ui:872
 msgid "Process Name"
 msgstr "Nama Proses"
 
-#: data/gl-searchpopover.ui:1062
+#: data/gl-searchpopover.ui:877
 msgid "Systemd Unit"
 msgstr "Unit Systemd"
 
-#: data/gl-searchpopover.ui:1077
+#: data/gl-searchpopover.ui:892
 msgid "Executable Path"
 msgstr "Path yang dapat dieksekusi"
 
-#: data/gl-searchpopover.ui:1096
+#: data/gl-searchpopover.ui:911
 msgid "Previous Boot"
 msgstr "Boot Sebelumnya"
 
-#: data/gl-searchpopover.ui:1105
+#: data/gl-searchpopover.ui:920
 msgid "Today"
 msgstr "Hari Ini"
 
-#: data/gl-searchpopover.ui:1110
+#: data/gl-searchpopover.ui:925
 msgid "Yesterday"
 msgstr "Kemarin"
 
-#: data/gl-searchpopover.ui:1115
+#: data/gl-searchpopover.ui:930
 msgid "Last 3 days"
 msgstr "3 hari yang lalu"
 
-#: data/gl-searchpopover.ui:1124
+#: data/gl-searchpopover.ui:939
 msgid "Entire Journal"
 msgstr "Seluruh Jurnal"
 
-#: data/gl-searchpopover.ui:1133
+#: data/gl-searchpopover.ui:948
 msgid "Set Custom Range…"
 msgstr "Atur Rentang Kustom…"
 
-#: data/gl-window.ui:26
+#: data/gl-window.ui:30
 msgid "Help"
 msgstr "Bantuan"
 
-#: data/gl-window.ui:34
+#: data/gl-window.ui:37
 msgid "Ignore"
 msgstr "Abaikan"
 
@@ -314,44 +322,45 @@ msgctxt "shortcut window"
 msgid "General"
 msgstr "Umum"
 
-#: data/help-overlay.ui:13
+#: data/help-overlay.ui:12
 msgctxt "shortcut window"
 msgid "Open a new window"
 msgstr "Buka jendela baru"
 
-#: data/help-overlay.ui:20
+#: data/help-overlay.ui:18
 msgctxt "shortcut window"
 msgid "Close a window"
 msgstr "Tutup suatu jendela"
 
-#: data/help-overlay.ui:27
+#: data/help-overlay.ui:24
 msgctxt "shortcut window"
 msgid "Show help"
 msgstr "Tampilkan bantuan"
 
-#: data/help-overlay.ui:34
+#: data/help-overlay.ui:30
 msgctxt "shortcut window"
 msgid "Keyboard shortcuts"
 msgstr "Pintasan papan tik"
 
-#: data/help-overlay.ui:42
+#: data/help-overlay.ui:37
 msgctxt "shortcut window"
 msgid "Application"
 msgstr "Aplikasi"
 
-#: data/help-overlay.ui:47
+#: data/help-overlay.ui:41
 msgctxt "shortcut window"
 msgid "Find"
 msgstr "Temukan"
 
-#: data/help-overlay.ui:54
+#: data/help-overlay.ui:47
 msgctxt "shortcut window"
 msgid "Export logs to a file"
 msgstr "Ekspor log ke berkas"
 
-#: data/org.gnome.Logs.appdata.xml.in:7
-msgid "GNOME Logs"
-msgstr "GNOME Log"
+#: data/org.gnome.Logs.appdata.xml.in:7 data/org.gnome.Logs.desktop.in:3
+#: src/gl-application.c:132 src/gl-eventtoolbar.c:143
+msgid "Logs"
+msgstr "Log"
 
 #: data/org.gnome.Logs.appdata.xml.in:8 data/org.gnome.Logs.desktop.in:5
 msgid "View detailed event logs for the system"
@@ -374,13 +383,9 @@ msgstr ""
 "yang ingin dicari, dan melihat informasi terrinci tentang setiap kejadian "
 "dengan mengkliknya."
 
-#: data/org.gnome.Logs.appdata.xml.in:30
+#: data/org.gnome.Logs.appdata.xml.in:38 src/gl-application.c:134
 msgid "The GNOME Project"
 msgstr "Proyek GNOME"
-
-#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:143
-msgid "Logs"
-msgstr "Log"
 
 #: data/org.gnome.Logs.desktop.in:4
 msgid "Log Viewer"
@@ -412,17 +417,26 @@ msgstr "Bagaimana mengurut baris daftar dalam daftar tilikan kejadian"
 msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr "Urutkan baris daftar arah naik atau turun bagi tipe yang dipilih"
 
-#: src/gl-application.c:116
+#: src/gl-application.c:82 src/gl-window.c:285
+msgid "Failed To Open Help"
+msgstr "Gagal Membuka Bantuan"
+
+#: src/gl-application.c:85 src/gl-window.c:288
+#, c-format
+msgid "Failed to open the given help URI: %s"
+msgstr "Gagal membuka URI bantuan yang diberikan: %s"
+
+#: src/gl-application.c:88 src/gl-window.c:175 src/gl-window.c:291
+msgid "_Close"
+msgstr "_Tutup"
+
+#: src/gl-application.c:137
 msgid "translator-credits"
 msgstr ""
 "Andika Triwidada <andika@gmail.com>, 2013, 2014, 2016, 2021.\n"
-"Kukuh Syafaat <kukuhsyafaat@gnome.org>, 2017-2020."
+"Kukuh Syafaat <kukuhsyafaat@gnome.org>, 2017-2020, 2023."
 
-#: src/gl-application.c:117
-msgid "View and search logs"
-msgstr "Tilik dan cari log"
-
-#: src/gl-application.c:259
+#: src/gl-application.c:270
 msgid "Print version information and exit"
 msgstr "Cetak informasi versi dan keluar"
 
@@ -433,11 +447,11 @@ msgstr "Boot"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: src/gl-eventviewlist.c:473
+#: src/gl-eventviewlist.c:431
 msgid "No Results"
 msgstr "Tidak Ada Hasil"
 
-#: src/gl-eventviewrow.c:226
+#: src/gl-eventviewrow.c:228
 msgid "Other"
 msgstr "Lainnya"
 
@@ -467,16 +481,16 @@ msgstr "Sampai %s"
 #. * and end date button label in the custom range submenu,
 #. * showing the day of month in decimal number, full month
 #. * name as string, the year as a decimal number including the century.
-#: src/gl-searchpopover.c:737 src/gl-searchpopover.c:1107
+#: src/gl-searchpopover.c:734 src/gl-searchpopover.c:1102
 msgid "%e %B %Y"
 msgstr "%e %B %Y"
 
-#: src/gl-searchpopover.c:875
+#: src/gl-searchpopover.c:873
 #, c-format
 msgid "AM"
 msgstr "AM"
 
-#: src/gl-searchpopover.c:879
+#: src/gl-searchpopover.c:877
 #, c-format
 msgid "PM"
 msgstr "PM"
@@ -487,7 +501,7 @@ msgstr "PM"
 #. Translators: timestamp format for the custom end time button
 #. * label in the custom range submenu, showing the time with seconds
 #. * in 12-hour format.
-#: src/gl-searchpopover.c:987 src/gl-searchpopover.c:1229
+#: src/gl-searchpopover.c:985 src/gl-searchpopover.c:1225
 msgid "%I:%M:%S %p"
 msgstr "%I:%M:%S %p"
 
@@ -497,21 +511,21 @@ msgstr "%I:%M:%S %p"
 #. Translators: timestamp format for the custom end time button
 #. * label in the custom range submenu, showing the time with seconds
 #. * in 24-hour format.
-#: src/gl-searchpopover.c:994 src/gl-searchpopover.c:1236
+#: src/gl-searchpopover.c:992 src/gl-searchpopover.c:1232
 msgid "%T"
 msgstr "%T"
 
 #. Translators: timestamp format for events on the
 #. * current day, showing the time with seconds in
 #. * 12-hour format.
-#: src/gl-util.c:148
+#: src/gl-util.c:126
 msgid "%l:%M:%S %p"
 msgstr "%l:%M:%S %p"
 
 #. Translators: timestamp format for events on the
 #. * current day, showing the time without seconds in
 #. * 12-hour format.
-#: src/gl-util.c:155
+#: src/gl-util.c:133
 msgid "%l:%M %p"
 msgstr "%l:%M %p"
 
@@ -519,7 +533,7 @@ msgstr "%l:%M %p"
 #. * the current year, showing the abbreviated
 #. * month name, day of the month and the time
 #. * with seconds in 12-hour format.
-#: src/gl-util.c:166
+#: src/gl-util.c:144
 msgid "%b %e %l:%M:%S %p"
 msgstr "%e %b %l:%M:%S %p"
 
@@ -527,7 +541,7 @@ msgstr "%e %b %l:%M:%S %p"
 #. * current year, showing the abbreviated month name,
 #. * day of the month and the time without seconds in
 #. * 12-hour format.
-#: src/gl-util.c:174
+#: src/gl-util.c:152
 msgid "%b %e %l:%M %p"
 msgstr "%e %b %l:%M %p"
 
@@ -535,7 +549,7 @@ msgstr "%e %b %l:%M %p"
 #. * a different year, showing the abbreviated
 #. * month name, day of the month, year and the
 #. * time with seconds in 12-hour format.
-#: src/gl-util.c:185
+#: src/gl-util.c:163
 msgid "%b %e %Y %l:%M:%S %p"
 msgstr "%e %b %Y %l:%M:%S %p"
 
@@ -543,21 +557,21 @@ msgstr "%e %b %Y %l:%M:%S %p"
 #. * a different year, showing the abbreviated
 #. * month name day of the month, year and the
 #. * time without seconds in 12-hour format.
-#: src/gl-util.c:194
+#: src/gl-util.c:172
 msgid "%b %e %Y %l:%M %p"
 msgstr "%e %b %Y %l:%M %p"
 
 #. Translators: timestamp format for events on the
 #. * current day, showing the time with seconds in
 #. * 24-hour format.
-#: src/gl-util.c:211
+#: src/gl-util.c:189
 msgid "%H:%M:%S"
 msgstr "%H:%M:%S"
 
 #. Translators: timestamp format for events on the
 #. * current day, showing the time without seconds in
 #. * 24-hour format.
-#: src/gl-util.c:218
+#: src/gl-util.c:196
 msgid "%H:%M"
 msgstr "%H:%M"
 
@@ -565,7 +579,7 @@ msgstr "%H:%M"
 #. * current year, showing the abbreviated month name,
 #. * day of the month and the time with seconds in
 #. * 24-hour format.
-#: src/gl-util.c:228
+#: src/gl-util.c:206
 msgid "%b %e %H:%M:%S"
 msgstr "%e %b %H:%M:%S"
 
@@ -573,7 +587,7 @@ msgstr "%e %b %H:%M:%S"
 #. * current year, showing the abbreviated month name,
 #. * day of the month and the time without seconds in
 #. * 24-hour format.
-#: src/gl-util.c:236
+#: src/gl-util.c:214
 msgid "%b %e %H:%M"
 msgstr "%e %b %H:%M"
 
@@ -581,7 +595,7 @@ msgstr "%e %b %H:%M"
 #. * a different year, showing the abbreviated
 #. * month name, day of the month, year and the
 #. * time with seconds in 24-hour format.
-#: src/gl-util.c:247
+#: src/gl-util.c:225
 msgid "%b %e %Y %H:%M:%S"
 msgstr "%b %e %Y %H:%M:%S"
 
@@ -589,46 +603,50 @@ msgstr "%b %e %Y %H:%M:%S"
 #. * different year, showing the abbreviated month name,
 #. * day of the month, year and the time without seconds
 #. * in 24-hour format.
-#: src/gl-util.c:255
+#: src/gl-util.c:233
 msgid "%b %e %Y %H:%M"
 msgstr "%b %e %Y %H:%M"
 
 #. Transltors: the first string is the earliest timestamp of the boot,
 #. * and the second string is the newest timestamp. An example string might
 #. * be '08:10 - 08:30'
-#: src/gl-util.c:319
+#: src/gl-util.c:297
 #, c-format
 msgid "%s – %s"
 msgstr "%s – %s"
 
-#: src/gl-window.c:113
-msgid "Save logs"
-msgstr "Simpan log"
+#: src/gl-window.c:172
+msgid "Export Failed"
+msgstr "Ekspor gagal"
 
-#: src/gl-window.c:116
-msgid "_Save"
-msgstr "_Simpan"
-
-#: src/gl-window.c:117
-msgid "_Cancel"
-msgstr "_Batal"
-
-#: src/gl-window.c:121
-msgid "log messages"
-msgstr "pesan log"
-
-#: src/gl-window.c:180
+#: src/gl-window.c:173
 msgid "Unable to export log messages to a file"
 msgstr "Tidak bisa mengekspor pesan log ke berkas"
 
-#: src/gl-window.c:494 src/gl-window.c:525
+#: src/gl-window.c:194
+msgid "log messages"
+msgstr "pesan log"
+
+#: src/gl-window.c:471 src/gl-window.c:488
 msgid "Unable to read system logs"
 msgstr "Tidak bisa membaca log sistem"
 
-#: src/gl-window.c:508
+#: src/gl-window.c:478
 msgid "Unable to read user logs"
 msgstr "Tidak bisa membaca log pengguna"
 
-#: src/gl-window.c:540
+#: src/gl-window.c:496
 msgid "No logs available"
 msgstr "Tidak ada log yang tersedia"
+
+#~ msgid "GNOME Logs"
+#~ msgstr "GNOME Log"
+
+#~ msgid "View and search logs"
+#~ msgstr "Tilik dan cari log"
+
+#~ msgid "_Save"
+#~ msgstr "_Simpan"
+
+#~ msgid "_Cancel"
+#~ msgstr "_Batal"
