@@ -7,17 +7,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2022-10-23 17:07+0000\n"
-"PO-Revision-Date: 2022-10-27 01:21+0300\n"
-"Last-Translator: Launchpad translators\n"
+"POT-Creation-Date: 2023-08-07 14:24+0000\n"
+"PO-Revision-Date: 2023-08-13 20:40+0300\n"
+"Last-Translator: Yuras Shumovich <shumovichy@gmail.com>\n"
 "Language-Team: Belarusian <i18n-bel-gnome@googlegroups.com>\n"
 "Language: be\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Poedit 3.2\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Poedit 3.3.2\n"
 
 #: data/gl-categorylist.ui:12
 msgid "Important"
@@ -59,21 +59,25 @@ msgstr "Абнаўленні"
 msgid "Usage"
 msgstr "Выкарыстанне"
 
-#: data/gl-eventtoolbar.ui:7
+#: data/gl-eventtoolbar.ui:6
 msgid "_New Window"
 msgstr "Новае _акно"
 
-#: data/gl-eventtoolbar.ui:13
-msgid "Keyboard Shortcuts"
-msgstr "Спалучэнні клавіш"
+#: data/gl-eventtoolbar.ui:12
+msgid "_Keyboard Shortcuts"
+msgstr "_Спалучэнні клавіш"
 
-#: data/gl-eventtoolbar.ui:18
+#: data/gl-eventtoolbar.ui:16
 msgid "_Help"
 msgstr "_Даведка"
 
-#: data/gl-eventtoolbar.ui:22
+#: data/gl-eventtoolbar.ui:20
 msgid "_About Logs"
 msgstr "_Аб праграме"
+
+#: data/gl-eventtoolbar.ui:35
+msgid "Main Menu"
+msgstr "Галоўнае меню"
 
 #: data/gl-eventtoolbar.ui:41
 msgid "Export logs to a file"
@@ -83,7 +87,7 @@ msgstr "Экспарт журналаў у файл"
 msgid "Choose the boot from which to view logs"
 msgstr "Выберыце загрузку для якой вы жадаеце паглядзець журналы"
 
-#: data/gl-eventtoolbar.ui:60
+#: data/gl-eventtoolbar.ui:59
 msgid "Search all the logs of the current category"
 msgstr "Пошук ва ўсіх журналах цяперашняй катэгорыі"
 
@@ -127,7 +131,11 @@ msgstr "Падтрымка"
 msgid "Documentation"
 msgstr "Дакументацыя"
 
-#: data/gl-eventviewlist.ui:34
+#: data/gl-eventviewlist.ui:29
+msgid "Search logs"
+msgstr "Пошук журнала"
+
+#: data/gl-eventviewlist.ui:35
 msgid "Select journal field and timestamp range filtering options"
 msgstr "Выберыце параметры фільтрацыі: поле журнала і дыяпазон метак часу"
 
@@ -351,7 +359,7 @@ msgid "Export logs to a file"
 msgstr "Экспарт журналаў у файл"
 
 #: data/org.gnome.Logs.appdata.xml.in:7 data/org.gnome.Logs.desktop.in:3
-#: src/gl-application.c:107 src/gl-eventtoolbar.c:144
+#: src/gl-application.c:132 src/gl-eventtoolbar.c:143
 msgid "Logs"
 msgstr "Журналы"
 
@@ -375,7 +383,7 @@ msgstr ""
 "У дастасаванні \"Журналы\" вы можаце шукаць вашыя запісы і глядзець "
 "падрабязнасці пра здарэнні пстрыкнуўшы па іх."
 
-#: data/org.gnome.Logs.appdata.xml.in:38 src/gl-application.c:109
+#: data/org.gnome.Logs.appdata.xml.in:38 src/gl-application.c:134
 msgid "The GNOME Project"
 msgstr "Праект GNOME"
 
@@ -409,22 +417,35 @@ msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr ""
 "Сартаваць спіс радкоў у прамым ці адваротным парадку для выбранага тыпу"
 
-#: src/gl-application.c:112
+#: src/gl-application.c:82 src/gl-window.c:285
+msgid "Failed To Open Help"
+msgstr "Не ўдалося адкрыць даведку"
+
+#: src/gl-application.c:85 src/gl-window.c:288
+#, c-format
+msgid "Failed to open the given help URI: %s"
+msgstr "Не ўдалося адкрыць указаны URI даведкі: %s"
+
+#: src/gl-application.c:88 src/gl-window.c:175 src/gl-window.c:291
+msgid "_Close"
+msgstr "_Закрыць"
+
+#: src/gl-application.c:137
 msgid "translator-credits"
 msgstr "Uladzimir Manulenka <vlma@tut.by>"
 
-#: src/gl-application.c:256
+#: src/gl-application.c:270
 msgid "Print version information and exit"
 msgstr "Вывесці інфармацыю пра версію і выйсці"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
-#: src/gl-eventtoolbar.c:135
+#: src/gl-eventtoolbar.c:134
 msgid "Boot"
 msgstr "Загрузка"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: src/gl-eventviewlist.c:448
+#: src/gl-eventviewlist.c:431
 msgid "No Results"
 msgstr "Нама вынікаў"
 
@@ -592,47 +613,44 @@ msgstr "%e %b %Y %H:%M"
 msgid "%s – %s"
 msgstr "%s – %s"
 
-#: src/gl-window.c:174
+#: src/gl-window.c:172
+msgid "Export Failed"
+msgstr "Не ўдалося экспартаваць"
+
+#: src/gl-window.c:173
 msgid "Unable to export log messages to a file"
 msgstr "Немагчыма экспартаваць запісы журнала ў файл"
 
-#: src/gl-window.c:195
-msgid "Save logs"
-msgstr "Захаваць журналы"
-
-#: src/gl-window.c:198
-msgid "_Save"
-msgstr "_Захаваць"
-
-#: src/gl-window.c:199
-msgid "_Cancel"
-msgstr "_Скасаваць"
-
-#: src/gl-window.c:202
+#: src/gl-window.c:194
 msgid "log messages"
 msgstr "запісы журнала"
 
-#: src/gl-window.c:473 src/gl-window.c:490
+#: src/gl-window.c:471 src/gl-window.c:488
 msgid "Unable to read system logs"
 msgstr "Немагчыма чытаць сістэмныя запісы"
 
-#: src/gl-window.c:480
+#: src/gl-window.c:478
 msgid "Unable to read user logs"
 msgstr "Немагчыма чытаць запісы карыстальнікаў"
 
-#: src/gl-window.c:498
+#: src/gl-window.c:496
 msgid "No logs available"
 msgstr "Няма даступных запісаў"
+
+#~ msgid "Save logs"
+#~ msgstr "Захаваць журналы"
+
+#~ msgid "_Save"
+#~ msgstr "_Захаваць"
+
+#~ msgid "_Cancel"
+#~ msgstr "_Скасаваць"
 
 #~ msgid "GNOME Logs"
 #~ msgstr "Журналы GNOME"
 
 #~ msgid "View and search logs"
 #~ msgstr "Прагляд і пошук журналаў"
-
-#~ msgctxt "shortcut window"
-#~ msgid "Search"
-#~ msgstr "Пошук"
 
 #~ msgid "_Quit"
 #~ msgstr "_Выхад"
