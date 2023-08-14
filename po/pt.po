@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2022-04-01 12:02+0000\n"
-"PO-Revision-Date: 2022-05-31 12:38+0100\n"
+"POT-Creation-Date: 2023-08-07 12:30+0000\n"
+"PO-Revision-Date: 2023-08-14 16:11+0100\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <hugokarvalho@hotmail.com>\n"
 "Language: pt\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.3.2\n"
 "X-Project-Style: gnome\n"
 
 #: data/gl-categorylist.ui:12
@@ -64,21 +64,25 @@ msgstr "Atualizações"
 msgid "Usage"
 msgstr "Utilização"
 
-#: data/gl-eventtoolbar.ui:7
+#: data/gl-eventtoolbar.ui:6
 msgid "_New Window"
 msgstr "_Nova janela"
 
-#: data/gl-eventtoolbar.ui:13
-msgid "Keyboard Shortcuts"
-msgstr "Teclas de atalho"
+#: data/gl-eventtoolbar.ui:12
+msgid "_Keyboard Shortcuts"
+msgstr "_Teclas de atalho"
 
-#: data/gl-eventtoolbar.ui:18
+#: data/gl-eventtoolbar.ui:16
 msgid "_Help"
 msgstr "A_juda"
 
-#: data/gl-eventtoolbar.ui:22
+#: data/gl-eventtoolbar.ui:20
 msgid "_About Logs"
 msgstr "_Acerca do Registos"
+
+#: data/gl-eventtoolbar.ui:35
+msgid "Main Menu"
+msgstr "Menu principal"
 
 #: data/gl-eventtoolbar.ui:41
 msgid "Export logs to a file"
@@ -88,7 +92,7 @@ msgstr "Exportar registos para um ficheiro"
 msgid "Choose the boot from which to view logs"
 msgstr "Escolher o arranque de onde ver os registos"
 
-#: data/gl-eventtoolbar.ui:60
+#: data/gl-eventtoolbar.ui:59
 msgid "Search all the logs of the current category"
 msgstr "Procurar todos os registos da categoria atual"
 
@@ -132,7 +136,11 @@ msgstr "Assistência"
 msgid "Documentation"
 msgstr "Documentação"
 
-#: data/gl-eventviewlist.ui:34
+#: data/gl-eventviewlist.ui:29
+msgid "Search logs"
+msgstr "Pesquisar registos"
+
+#: data/gl-eventviewlist.ui:35
 msgid "Select journal field and timestamp range filtering options"
 msgstr ""
 "Selecionar o campo do journal e as opções de filtragem do intervalo data-hora"
@@ -359,7 +367,7 @@ msgid "Export logs to a file"
 msgstr "Exportar registos para um ficheiro"
 
 #: data/org.gnome.Logs.appdata.xml.in:7 data/org.gnome.Logs.desktop.in:3
-#: src/gl-eventtoolbar.c:144
+#: src/gl-application.c:132 src/gl-eventtoolbar.c:143
 msgid "Logs"
 msgstr "Registos"
 
@@ -384,7 +392,7 @@ msgstr ""
 "de pesquisa e ver informações detalhadas sobre cada evento com um simples "
 "clique."
 
-#: data/org.gnome.Logs.appdata.xml.in:30
+#: data/org.gnome.Logs.appdata.xml.in:38 src/gl-application.c:134
 msgid "The GNOME Project"
 msgstr "O Projeto GNOME"
 
@@ -418,29 +426,38 @@ msgstr "Como ordenar linhas na vista da lista de eventos"
 msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr "Linhas em ordem ascendente ou descendente para o tipo selecionado"
 
-#: src/gl-application.c:109
+#: src/gl-application.c:82 src/gl-window.c:285
+msgid "Failed To Open Help"
+msgstr "Falha ao abrir a Ajuda"
+
+#: src/gl-application.c:85 src/gl-window.c:288
+#, c-format
+msgid "Failed to open the given help URI: %s"
+msgstr "Falha ao abrir o URI de ajuda fornecido: %s"
+
+#: src/gl-application.c:88 src/gl-window.c:175 src/gl-window.c:291
+msgid "_Close"
+msgstr "Fe_char"
+
+#: src/gl-application.c:137
 msgid "translator-credits"
 msgstr ""
 "Tiago Santos <tiagofsantos81@sapo.pt>\n"
 "Pedro Albuquerque <palbuquerque73@gmail.com>\n"
 "Hugo Carvalho <hugokarvalho@hotmail.com>"
 
-#: src/gl-application.c:110
-msgid "View and search logs"
-msgstr "Ver e procurar registos"
-
-#: src/gl-application.c:253
+#: src/gl-application.c:270
 msgid "Print version information and exit"
 msgstr "Imprimir informação da versão e sair"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
-#: src/gl-eventtoolbar.c:135
+#: src/gl-eventtoolbar.c:134
 msgid "Boot"
 msgstr "Arranque"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: src/gl-eventviewlist.c:448
+#: src/gl-eventviewlist.c:431
 msgid "No Results"
 msgstr "Sem resultados"
 
@@ -608,37 +625,38 @@ msgstr "%e %b %Y %H:%M"
 msgid "%s – %s"
 msgstr "%s – %s"
 
-#: src/gl-window.c:174
+#: src/gl-window.c:172
+msgid "Export Failed"
+msgstr "Falha ao exportar"
+
+#: src/gl-window.c:173
 msgid "Unable to export log messages to a file"
 msgstr "Impossível exportar o registo de mensagens para um ficheiro"
 
-#: src/gl-window.c:195
-msgid "Save logs"
-msgstr "Gravar registos"
-
-#: src/gl-window.c:198
-msgid "_Save"
-msgstr "_Gravar"
-
-#: src/gl-window.c:199
-msgid "_Cancel"
-msgstr "_Cancelar"
-
-#: src/gl-window.c:202
+#: src/gl-window.c:194
 msgid "log messages"
 msgstr "mensagens do registo"
 
-#: src/gl-window.c:473 src/gl-window.c:490
+#: src/gl-window.c:471 src/gl-window.c:488
 msgid "Unable to read system logs"
 msgstr "Impossível ler os registos do sistema"
 
-#: src/gl-window.c:480
+#: src/gl-window.c:478
 msgid "Unable to read user logs"
 msgstr "Impossível ler os registos do utilizador"
 
-#: src/gl-window.c:498
+#: src/gl-window.c:496
 msgid "No logs available"
 msgstr "Sem registos disponíveis"
+
+#~ msgid "View and search logs"
+#~ msgstr "Ver e procurar registos"
+
+#~ msgid "_Save"
+#~ msgstr "_Gravar"
+
+#~ msgid "_Cancel"
+#~ msgstr "_Cancelar"
 
 #~ msgid "GNOME Logs"
 #~ msgstr "Registos do GNOME"
