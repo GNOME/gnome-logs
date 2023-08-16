@@ -6,22 +6,22 @@
 # Gökhan Gurbetoğlu <ggurbet@gmail.com>, 2014.
 # Muhammet Kara <muhammetk@gmail.com>, 2014, 2015, 2016.
 # Sabri Ünal <libreajans@gmail.com>, 2020, 2023.
-# Emin Tufan Çetin <etcetin@gmail.com>, 2017, 2018, 2020.
+# Emin Tufan Çetin <etcetin@gmail.com>, 2017, 2018, 2020, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2023-01-25 19:00+0000\n"
-"PO-Revision-Date: 2021-09-09 21:55+0300\n"
-"Last-Translator: Emin Tufan Çetin <etcetin@gmail.com>\n"
+"POT-Creation-Date: 2023-08-07 08:45+0000\n"
+"PO-Revision-Date: 2023-08-07 12:10+0300\n"
+"Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
 "Language-Team: Türkçe <takim@gnome.org.tr>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 2.4.3\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #: data/gl-categorylist.ui:12
 msgid "Important"
@@ -63,21 +63,25 @@ msgstr "Güncellemeler"
 msgid "Usage"
 msgstr "Kullanım"
 
-#: data/gl-eventtoolbar.ui:7
+#: data/gl-eventtoolbar.ui:6
 msgid "_New Window"
 msgstr "_Yeni Pencere"
 
-#: data/gl-eventtoolbar.ui:13
-msgid "Keyboard Shortcuts"
-msgstr "Klavye Kısayolları"
+#: data/gl-eventtoolbar.ui:12
+msgid "_Keyboard Shortcuts"
+msgstr "_Klavye Kısayolları"
 
-#: data/gl-eventtoolbar.ui:18
+#: data/gl-eventtoolbar.ui:16
 msgid "_Help"
 msgstr "Y_ardım"
 
-#: data/gl-eventtoolbar.ui:22
+#: data/gl-eventtoolbar.ui:20
 msgid "_About Logs"
 msgstr "Günlükler _Hakkında"
+
+#: data/gl-eventtoolbar.ui:35
+msgid "Main Menu"
+msgstr "Ana Menü"
 
 #: data/gl-eventtoolbar.ui:41
 msgid "Export logs to a file"
@@ -87,7 +91,7 @@ msgstr "Günlükleri dosyaya aktar"
 msgid "Choose the boot from which to view logs"
 msgstr "Günlük kayıtlarının görüntüleneceği önyüklemeyi seç"
 
-#: data/gl-eventtoolbar.ui:60
+#: data/gl-eventtoolbar.ui:59
 msgid "Search all the logs of the current category"
 msgstr "Geçerli kategorideki tüm günlüklerde arama yap"
 
@@ -131,7 +135,11 @@ msgstr "Destek"
 msgid "Documentation"
 msgstr "Belgelendirme"
 
-#: data/gl-eventviewlist.ui:34
+#: data/gl-eventviewlist.ui:29
+msgid "Search logs"
+msgstr "Günlükleri ara"
+
+#: data/gl-eventviewlist.ui:35
 msgid "Select journal field and timestamp range filtering options"
 msgstr "Seçenekleri süzmek için zaman damgası aralığı ve günlük alanı seç"
 
@@ -355,7 +363,7 @@ msgid "Export logs to a file"
 msgstr "Günlükleri dosyaya aktar"
 
 #: data/org.gnome.Logs.appdata.xml.in:7 data/org.gnome.Logs.desktop.in:3
-#: src/gl-application.c:107 src/gl-eventtoolbar.c:144
+#: src/gl-application.c:132 src/gl-eventtoolbar.c:143
 msgid "Logs"
 msgstr "Günlükler"
 
@@ -380,7 +388,7 @@ msgstr ""
 "ve her olayın üzerine tıklayarak hakkındaki ayrıntılı bilgileri "
 "görüntüleyebilirsiniz."
 
-#: data/org.gnome.Logs.appdata.xml.in:38 src/gl-application.c:109
+#: data/org.gnome.Logs.appdata.xml.in:38 src/gl-application.c:134
 msgid "The GNOME Project"
 msgstr "GNOME Projesi"
 
@@ -413,24 +421,37 @@ msgstr "Olay görüntüleme listesinde liste satırlarının nasıl sıralanaca�
 msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr "Seçili tür için liste satırlarını artan ya da azalan düzende sırala"
 
-#: src/gl-application.c:112
+#: src/gl-application.c:82 src/gl-window.c:285
+msgid "Failed To Open Help"
+msgstr "Yardım Açılamadı"
+
+#: src/gl-application.c:85 src/gl-window.c:288
+#, c-format
+msgid "Failed to open the given help URI: %s"
+msgstr "Belirtilen yardım URI açılamadı: %s"
+
+#: src/gl-application.c:88 src/gl-window.c:175 src/gl-window.c:291
+msgid "_Close"
+msgstr "_Kapat"
+
+#: src/gl-application.c:137
 msgid "translator-credits"
 msgstr ""
 "Yusuf YILMAZ\n"
 "Muhammet Kara <muhammetk@gmail.com>"
 
-#: src/gl-application.c:256
+#: src/gl-application.c:270
 msgid "Print version information and exit"
 msgstr "Sürüm bilgilerini yazdır ve çık"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
-#: src/gl-eventtoolbar.c:135
+#: src/gl-eventtoolbar.c:134
 msgid "Boot"
 msgstr "Önyükleme"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: src/gl-eventviewlist.c:448
+#: src/gl-eventviewlist.c:431
 msgid "No Results"
 msgstr "Sonuç Yok"
 
@@ -598,34 +619,26 @@ msgstr "%e %b %Y %H:%M"
 msgid "%s – %s"
 msgstr "%s – %s"
 
-#: src/gl-window.c:174
+#: src/gl-window.c:172
+msgid "Export Failed"
+msgstr "Günlükler Dışa Aktarılamadı"
+
+#: src/gl-window.c:173
 msgid "Unable to export log messages to a file"
 msgstr "Günlük iletileri dosyaya aktarılamadı"
 
-#: src/gl-window.c:195
-msgid "Save logs"
-msgstr "Günlükleri kaydet"
-
-#: src/gl-window.c:198
-msgid "_Save"
-msgstr "_Kaydet"
-
-#: src/gl-window.c:199
-msgid "_Cancel"
-msgstr "_İptal"
-
-#: src/gl-window.c:202
+#: src/gl-window.c:194
 msgid "log messages"
 msgstr "günlük iletileri"
 
-#: src/gl-window.c:473 src/gl-window.c:490
+#: src/gl-window.c:471 src/gl-window.c:488
 msgid "Unable to read system logs"
 msgstr "Sistem günlükleri okunamadı"
 
-#: src/gl-window.c:480
+#: src/gl-window.c:478
 msgid "Unable to read user logs"
 msgstr "Kullanıcı günlükleri okunamadı"
 
-#: src/gl-window.c:498
+#: src/gl-window.c:496
 msgid "No logs available"
 msgstr "Kullanılabilir günlük yok"
