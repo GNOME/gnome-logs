@@ -2,201 +2,662 @@
 # Copyright (C) 2014 gnome-logs's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-logs package.
 #
-# A S Alam <aalam@users.sf.net>, 2014.
+# A S Alam <aalam@users.sf.net>, 2014, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"logs&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-03-07 21:13+0000\n"
-"PO-Revision-Date: 2014-03-07 21:13-0600\n"
-"Last-Translator: A S Alam <aalam@users.sf.net>\n"
-"Language-Team: Punjabi/Panjabi <punjabi-users@lists.sf.net>\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
+"POT-Creation-Date: 2023-08-07 12:30+0000\n"
+"PO-Revision-Date: 2023-09-01 19:43-0700\n"
+"Last-Translator: A S Alam <aalam@satluj.org>\n"
+"Language-Team: Punjabi <kde-i18n-doc@kde.org>\n"
 "Language: pa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 1.5\n"
+"X-Generator: Lokalize 23.04.3\n"
 
-#: ../data/appmenu.ui.h:1
-msgid "_New Window"
-msgstr "ਨਵੀਂ ਵਿੰਡੋ(_N)"
-
-#: ../data/appmenu.ui.h:2
-msgid "_Help"
-msgstr "ਮੱਦਦ(_H)"
-
-#: ../data/appmenu.ui.h:3
-msgid "_About"
-msgstr "ਇਸ ਬਾਰੇ(_A)"
-
-#: ../data/appmenu.ui.h:4
-msgid "_Quit"
-msgstr "ਬੰਦ ਕਰੋ(_Q)"
-
-#: ../data/gl-categorylist.ui.h:1
+#: data/gl-categorylist.ui:12
 msgid "Important"
 msgstr "ਖਾਸ"
 
-#: ../data/gl-categorylist.ui.h:2
+#: data/gl-categorylist.ui:23
 msgid "Alerts"
 msgstr "ਚੇਤਾਵਨੀ"
 
-#: ../data/gl-categorylist.ui.h:3
+#: data/gl-categorylist.ui:34
 msgid "Starred"
 msgstr "ਤਾਰਾ ਲੱਗੇ"
 
-#: ../data/gl-categorylist.ui.h:4
+#: data/gl-categorylist.ui:44
 msgid "All"
 msgstr "ਸਭ"
 
-#: ../data/gl-categorylist.ui.h:5
+#: data/gl-categorylist.ui:54 src/gl-eventviewrow.c:211
 msgid "Applications"
 msgstr "ਐਪਲੀਕੇਸ਼ਨ"
 
-#: ../data/gl-categorylist.ui.h:6
+#: data/gl-categorylist.ui:64 src/gl-eventviewrow.c:220
 msgid "System"
 msgstr "ਸਿਸਟਮ"
 
-#: ../data/gl-categorylist.ui.h:7
+#: data/gl-categorylist.ui:74 src/gl-eventviewrow.c:224
 msgid "Security"
 msgstr "ਸੁਰੱਖਿਆ"
 
-#: ../data/gl-categorylist.ui.h:8
+#: data/gl-categorylist.ui:84 src/gl-eventviewrow.c:216
 msgid "Hardware"
 msgstr "ਹਾਰਡਵੇਅਰ"
 
-#: ../data/gl-categorylist.ui.h:9
+#: data/gl-categorylist.ui:95
 msgid "Updates"
 msgstr "ਅੱਪਡੇਟ"
 
-#: ../data/gl-categorylist.ui.h:10
+#: data/gl-categorylist.ui:106
 msgid "Usage"
 msgstr "ਵਰਤੋਂ"
 
-#: ../data/gl-eventtoolbar.ui.h:1
+#: data/gl-eventtoolbar.ui:6
+msgid "_New Window"
+msgstr "ਨਵੀਂ ਵਿੰਡੋ(_N)"
+
+#: data/gl-eventtoolbar.ui:12
+msgid "_Keyboard Shortcuts"
+msgstr "ਕੀ-ਬੋਰਡ ਸ਼ਾਰਟਕੱਟ(_K)"
+
+#: data/gl-eventtoolbar.ui:16
+msgid "_Help"
+msgstr "ਮੱਦਦ(_H)"
+
+#: data/gl-eventtoolbar.ui:20
+#| msgid "_About"
+msgid "_About Logs"
+msgstr "ਲਾਗ ਬਾਰੇ(_A)"
+
+#: data/gl-eventtoolbar.ui:35
+msgid "Main Menu"
+msgstr "ਮੁੱਖ ਮੇਨੂ"
+
+#: data/gl-eventtoolbar.ui:41
+msgid "Export logs to a file"
+msgstr "ਲਾਗ ਫ਼ਾਇਲ ਵਿੱਚ ਐਕਸਪੋਰਟ ਕਰੋ"
+
+#: data/gl-eventtoolbar.ui:49
+msgid "Choose the boot from which to view logs"
+msgstr ""
+
+#: data/gl-eventtoolbar.ui:59
+msgid "Search all the logs of the current category"
+msgstr "ਮੌਜੂਦਾ ਵਰਗ ਵਿੱਚ ਸਭ ਲਾਗ ਖੋਜੋ"
+
+#: data/gl-eventviewdetail.ui:23
+msgid "Sender"
+msgstr "ਭੇਜਣ ਵਾਲਾ"
+
+#: data/gl-eventviewdetail.ui:52
+msgid "Time"
+msgstr "ਸਮਾਂ"
+
+#: data/gl-eventviewdetail.ui:81 data/gl-searchpopover.ui:867
+msgid "Message"
+msgstr "ਸੁਨੇਹਾ"
+
+#: data/gl-eventviewdetail.ui:112 data/gl-searchpopover.ui:887
+msgid "Audit Session"
+msgstr "ਆਡਿਟ ਸ਼ੈਸ਼ਨ"
+
+#: data/gl-eventviewdetail.ui:141 data/gl-searchpopover.ui:882
+msgid "Kernel Device"
+msgstr "ਕਰਨਲ ਜੰਤਰ"
+
+#: data/gl-eventviewdetail.ui:169
+msgid "Priority"
+msgstr "ਤਰਜੀਹ"
+
+#: data/gl-eventviewdetail.ui:198
+msgid "Subject"
+msgstr "ਵਿਸ਼ਾ"
+
+#: data/gl-eventviewdetail.ui:230
+msgid "Defined By"
+msgstr "ਪਰਿਭਾਸ਼ਿਤ ਰਾਹੀਂ"
+
+#: data/gl-eventviewdetail.ui:260
+msgid "Support"
+msgstr "ਸਹਿਯੋਗ"
+
+#: data/gl-eventviewdetail.ui:292
+msgid "Documentation"
+msgstr "ਦਸਤਾਵੇਜ਼"
+
+#: data/gl-eventviewlist.ui:29
+#| msgid "View and search logs"
+msgid "Search logs"
+msgstr "ਲਾਗ ਖੋਜੋ"
+
+#: data/gl-eventviewlist.ui:35
+msgid "Select journal field and timestamp range filtering options"
+msgstr ""
+
+#: data/gl-searchpopover.ui:27
+msgid "Select a Journal Field to filter the Logs according to it"
+msgstr ""
+
+#: data/gl-searchpopover.ui:34 data/gl-searchpopover.ui:843
+msgid "All Available Fields"
+msgstr "ਸਭ ਮੌਜੂਦ ਖੇਤਰ"
+
+#: data/gl-searchpopover.ui:66 data/gl-searchpopover.ui:220
+msgid "Parameters"
+msgstr "ਪੈਰਾਮੀਟਰ"
+
+#. Translators: What [journal fields to search in]
+#: data/gl-searchpopover.ui:101
+msgid "What"
+msgstr "ਕੀ"
+
+#: data/gl-searchpopover.ui:117
+msgid "Select Journal Field…"
+msgstr "…ਜਰਨਲ ਖੇਤਰ ਚੁਣੋ"
+
+#. When [log entries to be shown for a given timestamp range]
+#: data/gl-searchpopover.ui:140
+msgid "When"
+msgstr "ਕਦੋਂ"
+
+#: data/gl-searchpopover.ui:156
+msgid "Show Logs from…"
+msgstr "…ਤੋਂ ਲਾਗ ਵੇਖਾਓ"
+
+#: data/gl-searchpopover.ui:181
+msgid "Select Timestamp Range of the Log Entries to be shown"
+msgstr ""
+
+#: data/gl-searchpopover.ui:188 data/gl-searchpopover.ui:906
+#: src/gl-searchpopover.c:1306
+msgid "Current Boot"
+msgstr "ਮੌਜੂਦਾ ਬੂਟ"
+
+#: data/gl-searchpopover.ui:255
+msgid "Search Type"
+msgstr "ਖੋਜ ਕਿਸਮ"
+
+#: data/gl-searchpopover.ui:266
+msgid "Substring"
+msgstr "ਸਬ-ਸਤਰ"
+
+#: data/gl-searchpopover.ui:268
+msgid "Match in any part of the string"
+msgstr "ਸਤਰ ਦਾ ਕੋਈ ਵੀ ਹਿੱਸਾ ਮਿਲਾਓ"
+
+#: data/gl-searchpopover.ui:275
+msgid "Exact"
+msgstr "ਪੂਰਾ"
+
+#: data/gl-searchpopover.ui:277
+msgid "Match complete string only"
+msgstr "ਸਿਰਫ਼ ਪੂਰੀ ਸਤਰ ਮਿਲਾਓ"
+
+#: data/gl-searchpopover.ui:319
+msgid "Back"
+msgstr "ਪਿੱਛੇ"
+
+#: data/gl-searchpopover.ui:337
+msgid "Show Logs Starting From…"
+msgstr "…ਤੋਂ ਸ਼ੁਰੂ ਹੋ ਕੇ ਲਾਗ ਵੇਖਾਓ"
+
+#: data/gl-searchpopover.ui:358
+msgid "Select a start date"
+msgstr "ਸ਼ੁਰੂ ਤਾਰੀਖ ਚਣੋ"
+
+#: data/gl-searchpopover.ui:365 src/gl-searchpopover.c:503
+msgid "Select Start Date…"
+msgstr "…ਸ਼ੁਰੂ ਤਾਰੀਖ ਚਣੋ"
+
+#: data/gl-searchpopover.ui:384 data/gl-searchpopover.ui:626
+msgid "22 January 2016 or 1/22/2016"
+msgstr "22 ਜਨਵਰੀ 2016 ਜਾਂ 1/22/2016"
+
+#: data/gl-searchpopover.ui:423
+msgid "Select start time"
+msgstr "ਸ਼ੁਰੂ ਸਮਾਂ ਚਣੋ"
+
+#: data/gl-searchpopover.ui:430 src/gl-searchpopover.c:504
+msgid "Select Start Time…"
+msgstr "ਸ਼ੁਰੂ ਸਮਾਂ ਚੁਣੋ"
+
+#: data/gl-searchpopover.ui:454 data/gl-searchpopover.ui:699
+msgid "Hr"
+msgstr "ਘੰ"
+
+#: data/gl-searchpopover.ui:480 data/gl-searchpopover.ui:729
+msgid "Min"
+msgstr "ਮਿੰ"
+
+#: data/gl-searchpopover.ui:510 data/gl-searchpopover.ui:759
+msgid "Sec"
+msgstr "ਸ"
+
+#: data/gl-searchpopover.ui:540 data/gl-searchpopover.ui:789
+msgid "AM/PM"
+msgstr "ਸਵੇਰ/ਆਥਣ"
+
+#: data/gl-searchpopover.ui:579
+msgid "Until…"
+msgstr "…ਤੱਕ"
+
+#: data/gl-searchpopover.ui:600
+msgid "Select an end date"
+msgstr "ਅੰਤ ਤਾਰੀਖ ਚਣੋ"
+
+#: data/gl-searchpopover.ui:607 src/gl-searchpopover.c:521
+msgid "Select End Date…"
+msgstr "ਅੰਤ ਤਾਰੀਖ ਚੁਣੋ"
+
+#: data/gl-searchpopover.ui:668
+msgid "Select end time"
+msgstr "ਅੰਤ ਸਮਾਂ ਚੁਣੋ"
+
+#: data/gl-searchpopover.ui:675 src/gl-searchpopover.c:522
+msgid "Select End Time…"
+msgstr "…ਅੰਤ ਸਮਾਂ ਚੁਣੋ"
+
+#: data/gl-searchpopover.ui:852
+msgid "PID"
+msgstr "PID"
+
+#: data/gl-searchpopover.ui:857
+msgid "UID"
+msgstr "UID"
+
+#: data/gl-searchpopover.ui:862
+msgid "GID"
+msgstr "GID"
+
+#: data/gl-searchpopover.ui:872
+msgid "Process Name"
+msgstr "ਪਰੋਸੈੱਸ ਨਾਂ"
+
+#: data/gl-searchpopover.ui:877
+#| msgid "System"
+msgid "Systemd Unit"
+msgstr "Systemd ਯੂਨਿਟ"
+
+#: data/gl-searchpopover.ui:892
+msgid "Executable Path"
+msgstr "ਚੱਲਣਯੋਗ ਮਾਰਗ"
+
+#: data/gl-searchpopover.ui:911
+msgid "Previous Boot"
+msgstr "ਪਿਛਲਾ ਬੂਟ"
+
+#: data/gl-searchpopover.ui:920
+msgid "Today"
+msgstr "ਅੱਜ"
+
+#: data/gl-searchpopover.ui:925
+msgid "Yesterday"
+msgstr "ਕੱਲ੍ਹ"
+
+#: data/gl-searchpopover.ui:930
+msgid "Last 3 days"
+msgstr "ਪਿਛਲੇ 3 ਦਿਨ"
+
+#: data/gl-searchpopover.ui:939
+msgid "Entire Journal"
+msgstr "ਪੂਰਾ ਜਰਨਲ"
+
+#: data/gl-searchpopover.ui:948
+msgid "Set Custom Range…"
+msgstr "ਪਸੰਦੀਦਾ ਰੇਜ਼ ਦਿਓ…"
+
+#: data/gl-window.ui:30
+#| msgid "_Help"
+msgid "Help"
+msgstr "ਮਦਦ"
+
+#: data/gl-window.ui:37
+msgid "Ignore"
+msgstr "ਅਣਡਿੱਠਾ"
+
+#: data/help-overlay.ui:8
+msgctxt "shortcut window"
+msgid "General"
+msgstr "ਆਮ"
+
+#: data/help-overlay.ui:12
+msgctxt "shortcut window"
+msgid "Open a new window"
+msgstr "ਨਵੀਂ ਵਿੰਡੋ ਖੋਲ੍ਹੋ"
+
+#: data/help-overlay.ui:18
+msgctxt "shortcut window"
+msgid "Close a window"
+msgstr "ਵਿੰਡੋ ਬੰਦ ਕਰੋ"
+
+#: data/help-overlay.ui:24
+msgctxt "shortcut window"
+msgid "Show help"
+msgstr "ਮਦਦ ਵੇਖੋ"
+
+#: data/help-overlay.ui:30
+msgctxt "shortcut window"
+msgid "Keyboard shortcuts"
+msgstr "ਕੀਬੋਰਡ ਸ਼ਾਰਟਕੱਟ"
+
+#: data/help-overlay.ui:37
+#| msgid "Applications"
+msgctxt "shortcut window"
+msgid "Application"
+msgstr "ਐਪਲੀਕੇਸ਼ਨ"
+
+#: data/help-overlay.ui:41
+msgctxt "shortcut window"
+msgid "Find"
+msgstr "ਲੱਭੋ"
+
+#: data/help-overlay.ui:47
+msgctxt "shortcut window"
+msgid "Export logs to a file"
+msgstr "ਲਾਗ ਫ਼ਾਇਲ ਵਿੱਚ ਐਕਸਪੋਰਟ ਕਰੋ"
+
+#: data/org.gnome.Logs.appdata.xml.in:7 data/org.gnome.Logs.desktop.in:3
+#: src/gl-application.c:132 src/gl-eventtoolbar.c:143
 msgid "Logs"
 msgstr "ਲਾਗ"
 
-#: ../data/gl-eventtoolbar.ui.h:2
-msgid "Go back to the event view"
-msgstr "ਈਵੈਟ ਝਲਕ ਵਿੱਚ ਵਾਪਿਸ ਜਾਓ"
+#: data/org.gnome.Logs.appdata.xml.in:8 data/org.gnome.Logs.desktop.in:5
+msgid "View detailed event logs for the system"
+msgstr "ਸਿਸਟਮ ਲਈ ਵੇਰਵੇ ਸਮੇਤ ਈਵੈਂਟ ਲਾਗ ਵੇਖੋ"
 
-#: ../data/gl-eventtoolbar.ui.h:3
-msgid "Search the displayed logs"
-msgstr "ਵਿਖਾਏ ਲਾਗ ਵਿੱਚ ਲੱਭੋ"
-
-#: ../data/gnome-logs.appdata.xml.in.h:1
+#: data/org.gnome.Logs.appdata.xml.in:10
 msgid ""
 "Logs shows events from the systemd journal, and sorts them into categories, "
 "such as hardware and applications."
 msgstr ""
-"ਲਾਗਸ ਸਿਸਟਮ ਜਰਨਲ ਤੋਂ ਈਵੈਂਟ ਵਿਖਾਉਂਦਾ ਹੈ ਅਤੇ ਉਹਨਾਂ ਵਰਗਾਂ ਮੁਤਾਬਕ ਜਿਵੇਂ ਕਿ "
-"ਹਾਰਡਵੇਅਰ ਤੇ ਐਪਲੀਕੇਸ਼ਨ ਵਿੱਚ "
-"ਵੰਡਦਾ ਹੈ।"
+"ਲਾਗਸ ਸਿਸਟਮ ਜਰਨਲ ਤੋਂ ਈਵੈਂਟ ਵਿਖਾਉਂਦਾ ਹੈ ਅਤੇ ਉਹਨਾਂ ਵਰਗਾਂ ਮੁਤਾਬਕ ਜਿਵੇਂ ਕਿ"
+" ਹਾਰਡਵੇਅਰ ਤੇ ਐਪਲੀਕੇਸ਼ਨ "
+"ਵਿੱਚ ਵੰਡਦਾ ਹੈ।"
 
-#: ../data/gnome-logs.appdata.xml.in.h:2
+#: data/org.gnome.Logs.appdata.xml.in:12
 msgid ""
 "Using Logs you can search your logs by typing a search term, and view "
 "detailed information about each event by clicking on it."
 msgstr ""
-"ਲਾਗਸ ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਤੁਸੀਂ ਖੋਜ ਸ਼ਬਦ ਲਿਖ ਕੇ ਆਪਣੇ ਲਾਗ ਵਿੱਚ ਲੱਭ ਸਕਦੇ ਹੋ ਅਤੇ ਹਰੇਕ "
-"ਈਵੈਂਟ "
-"ਉੱਤੇ ਕਲਿੱਕ ਕਰਕੇ ਉਸ ਬਾਰੇ ਵੇਰਵੇ ਸਮੇਤ ਜਾਣਕਾਰੀ ਵੇਖ ਸਕਦੇ ਹੋ।"
+"ਲਾਗਸ ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਤੁਸੀਂ ਖੋਜ ਸ਼ਬਦ ਲਿਖ ਕੇ ਆਪਣੇ ਲਾਗ ਵਿੱਚ ਲੱਭ ਸਕਦੇ ਹੋ ਅਤੇ ਹਰੇਕ"
+" ਈਵੈਂਟ ਉੱਤੇ ਕਲਿੱਕ ਕਰਕੇ "
+"ਉਸ ਬਾਰੇ ਵੇਰਵੇ ਸਮੇਤ ਜਾਣਕਾਰੀ ਵੇਖ ਸਕਦੇ ਹੋ।"
 
-#: ../data/gnome-logs.desktop.in.h:1
+#: data/org.gnome.Logs.appdata.xml.in:38 src/gl-application.c:134
+msgid "The GNOME Project"
+msgstr "ਗਨੋਮ ਪਰੋਜੈਕਟ"
+
+#: data/org.gnome.Logs.desktop.in:4
 msgid "Log Viewer"
 msgstr "ਲਾਗ ਦਰਸ਼ਕ"
 
-#: ../data/gnome-logs.desktop.in.h:2
-msgid "View detailed event logs for the system"
-msgstr "ਸਿਸਟਮ ਲਈ ਵੇਰਵੇ ਸਮੇਤ ਈਵੈਂਟ ਲਾਗ ਵੇਖੋ"
-
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: ../data/gnome-logs.desktop.in.h:4
+#: data/org.gnome.Logs.desktop.in:7
 msgid "log;journal;debug;error;"
-msgstr "log;journal;debug;error;"
+msgstr "ਲਾਗ;ਲੌਗ;ਜਰਨਲ;ਡੀਬੱਗ;ਗਲਤੀ;ਤਰੁੱਟੀ;"
 
-#: ../src/gl-application.c:99
+#: data/org.gnome.Logs.gschema.xml:5
+msgid "Ignore warning"
+msgstr "ਚੇਤਾਵਨੀ ਅਣਡਿੱਠੀ ਕਰੋ"
+
+#: data/org.gnome.Logs.gschema.xml:6
+msgid ""
+"Whether to ignore the warning that says you don’t have sufficient permission "
+"to view logs. If ignored, the warning won’t show up again."
+msgstr ""
+
+#: data/org.gnome.Logs.gschema.xml:10
+msgid "How to sort list rows in the event view list"
+msgstr "ਈਵੈਂਟ ਝਲਕ ਸੂਚੀ ਵਿੱਚ ਸੂਚੀ ਕਤਾਰਾਂ ਨੂੰ ਕਿਵੇਂ ਲੜੀਬੱਧ ਕਰਨਾ ਹੈ"
+
+#: data/org.gnome.Logs.gschema.xml:11
+msgid "Sort list rows in ascending or descending order for the selected type"
+msgstr ""
+
+#: src/gl-application.c:82 src/gl-window.c:285
+msgid "Failed To Open Help"
+msgstr "ਮਦਦ ਖੋਲ੍ਹਣ ਲਈ ਫ਼ੇਲ੍ਹ ਹੈ"
+
+#: src/gl-application.c:85 src/gl-window.c:288
+#, c-format
+msgid "Failed to open the given help URI: %s"
+msgstr "ਦਿੱਤਾ ਮਦਦ URI ਖੋਲ੍ਹਣ ਲਈ ਫ਼ੇਲ੍ਹ ਹੈ: %s"
+
+#: src/gl-application.c:88 src/gl-window.c:175 src/gl-window.c:291
+msgid "_Close"
+msgstr "ਬੰਦ ਕਰੋ(_C)"
+
+#: src/gl-application.c:137
 msgid "translator-credits"
 msgstr ""
 "ਅਮਨਪਰੀਤ ਸਿੰਘ ਆਲਮ\n"
 "ਪੰਜਾਬੀ ਓਪਨਸੋਰਸ ਟੀਮ (POST)"
 
-#: ../src/gl-application.c:100
-msgid "View and search logs"
-msgstr "ਲਾਗ ਵੇਖੋ ਅਤੇ ਲੱਭੋ"
-
-#: ../src/gl-application.c:222
+#: src/gl-application.c:270
 msgid "Print version information and exit"
 msgstr "ਵਰਜਨ ਜਾਣਕਾਰੀ ਛਾਪੋ ਅਤੇ ਬੰਦ ਕਰੋ"
 
+#. Translators: Boot refers to a single run (or bootup) of the system
+#: src/gl-eventtoolbar.c:134
+msgid "Boot"
+msgstr "ਬੂਟ"
+
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: ../src/gl-eventview.c:217
-msgid "No results"
+#: src/gl-eventviewlist.c:431
+#| msgid "No results"
+msgid "No Results"
 msgstr "ਕੋਈ ਨਤੀਜਾ ਨਹੀਂ"
 
-#: ../src/gl-eventview.c:604 ../src/gl-eventview.c:614
-#: ../src/gl-eventview.c:745 ../src/gl-eventview.c:755
-msgid "Not implemented"
-msgstr "ਸਥਾਪਤ ਨਹੀਂ"
+#: src/gl-eventviewrow.c:228
+msgid "Other"
+msgstr "ਹੋਰ"
 
-#: ../src/gl-eventviewdetail.c:140
-msgid "Message"
-msgstr "ਸੁਨੇਹਾ"
+#. Translators: if only custom start timestamp is set, then we update
+#. * the timestamp range button label in popover to show that
+#. * logs are shown in the window starting from this timestamp
+#. * until the ending timestamp of journal.
+#: src/gl-searchpopover.c:687
+#, c-format
+msgid "From %s"
+msgstr "%s ਤੋਂ"
 
-#. TODO: Give a user-friendly representation of the priority.
-#: ../src/gl-eventviewdetail.c:161
-msgid "Priority"
-msgstr "ਤਰਜੀਹ"
+#. Translators: if only custom end timestamp is set, then we update
+#. * the timestamp range button label in popover to show that
+#. * logs are shown in the window upto this timestamp
+#. * with the starting timestamp being the current time.
+#: src/gl-searchpopover.c:700
+#, c-format
+msgid "Until %s"
+msgstr "%s ਤੱਕ"
 
-#: ../src/gl-eventviewdetail.c:189
-msgid "Kernel Device"
-msgstr "ਕਰਨਲ ਜੰਤਰ"
+#. Translators: date format for the start date entry
+#. * and start date button label in the custom range submenu,
+#. * showing the day of month in decimal number, full month
+#. * name as string, the year as a decimal number including the century.
+#. Translators: date format for the end date entry
+#. * and end date button label in the custom range submenu,
+#. * showing the day of month in decimal number, full month
+#. * name as string, the year as a decimal number including the century.
+#: src/gl-searchpopover.c:734 src/gl-searchpopover.c:1102
+msgid "%e %B %Y"
+msgstr "%e %B %Y"
 
-#: ../src/gl-eventviewdetail.c:209
-msgid "Audit Session"
-msgstr "ਆਡਿਟ ਸ਼ੈਸ਼ਨ"
+#: src/gl-searchpopover.c:873
+#, c-format
+msgid "AM"
+msgstr "ਸਵੇਰ"
 
-#. Translators: timestamp format for events on the current
-#. * day, showing the time in 12-hour format.
-#: ../src/gl-util.c:95
+#: src/gl-searchpopover.c:877
+#, c-format
+msgid "PM"
+msgstr "ਸ਼ਾਮ"
+
+#. Translators: timestamp format for the custom start time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 12-hour format.
+#. Translators: timestamp format for the custom end time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 12-hour format.
+#: src/gl-searchpopover.c:985 src/gl-searchpopover.c:1225
+msgid "%I:%M:%S %p"
+msgstr "%I:%M:%S %p"
+
+#. Translators: timestamp format for the custom start time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 24-hour format.
+#. Translators: timestamp format for the custom end time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 24-hour format.
+#: src/gl-searchpopover.c:992 src/gl-searchpopover.c:1232
+msgid "%T"
+msgstr "%T"
+
+#. Translators: timestamp format for events on the
+#. * current day, showing the time with seconds in
+#. * 12-hour format.
+#: src/gl-util.c:126
+#| msgid "%l:%M %p"
+msgid "%l:%M:%S %p"
+msgstr "%l:%M:%S %p"
+
+#. Translators: timestamp format for events on the
+#. * current day, showing the time without seconds in
+#. * 12-hour format.
+#: src/gl-util.c:133
 msgid "%l:%M %p"
 msgstr "%l:%M %p"
 
-#. Translators: timestamp format for events in the current
-#. * year, showing the abbreviated month name, day of the
-#. * month and the time in 12-hour format.
-#: ../src/gl-util.c:101
+#. Translators: timestamp format for events in
+#. * the current year, showing the abbreviated
+#. * month name, day of the month and the time
+#. * with seconds in 12-hour format.
+#: src/gl-util.c:144
+#| msgid "%b %e %l:%M %p"
+msgid "%b %e %l:%M:%S %p"
+msgstr "%e %b %l:%M:%S %p"
+
+#. Translators: timestamp format for events in the
+#. * current year, showing the abbreviated month name,
+#. * day of the month and the time without seconds in
+#. * 12-hour format.
+#: src/gl-util.c:152
 msgid "%b %e %l:%M %p"
 msgstr "%e %b %l:%M %p"
 
-#. Translators: timestamp format for events in a different
-#. * year, showing the abbreviated month name, day of the
-#. * month, year and the time in 12-hour format.
-#: ../src/gl-util.c:107
+#. Translators: timestamp format for events in
+#. * a different year, showing the abbreviated
+#. * month name, day of the month, year and the
+#. * time with seconds in 12-hour format.
+#: src/gl-util.c:163
+#| msgid "%b %e %Y %l:%M %p"
+msgid "%b %e %Y %l:%M:%S %p"
+msgstr "%e %b %Y %l:%M:%S %p"
+
+#. Translators: timestamp format for events in
+#. * a different year, showing the abbreviated
+#. * month name day of the month, year and the
+#. * time without seconds in 12-hour format.
+#: src/gl-util.c:172
 msgid "%b %e %Y %l:%M %p"
 msgstr "%e %b %Y %l:%M %p"
 
-#. Translators: timestamp format for events on the current
-#. * day, showing the time in 24-hour format.
-#: ../src/gl-util.c:120
+#. Translators: timestamp format for events on the
+#. * current day, showing the time with seconds in
+#. * 24-hour format.
+#: src/gl-util.c:189
+#| msgid "%H:%M"
+msgid "%H:%M:%S"
+msgstr "%H:%M:%S"
+
+#. Translators: timestamp format for events on the
+#. * current day, showing the time without seconds in
+#. * 24-hour format.
+#: src/gl-util.c:196
 msgid "%H:%M"
 msgstr "%H:%M"
 
-#. Translators: timestamp format for events in the current
-#. * year, showing the abbreviated month name, day of the
-#. * month and the time in 24-hour format.
-#: ../src/gl-util.c:126
+#. Translators: timestamp format for events in the
+#. * current year, showing the abbreviated month name,
+#. * day of the month and the time with seconds in
+#. * 24-hour format.
+#: src/gl-util.c:206
+#| msgid "%b %e %H:%M"
+msgid "%b %e %H:%M:%S"
+msgstr "%e %b %H:%M:%S"
+
+#. Translators: timestamp format for events in the
+#. * current year, showing the abbreviated month name,
+#. * day of the month and the time without seconds in
+#. * 24-hour format.
+#: src/gl-util.c:214
 msgid "%b %e %H:%M"
 msgstr "%e %b %H:%M"
 
-#. Translators: timestamp format for events in a different
-#. * year, showing the abbreviated month name, day of the
-#. * month, year and the time in 24-hour format.
-#: ../src/gl-util.c:132
+#. Translators: timestamp format for events in
+#. * a different year, showing the abbreviated
+#. * month name, day of the month, year and the
+#. * time with seconds in 24-hour format.
+#: src/gl-util.c:225
+#| msgid "%b %e %Y %H:%M"
+msgid "%b %e %Y %H:%M:%S"
+msgstr "%e %b %Y %H:%M:%S"
+
+#. Translators: timestamp format for events in a
+#. * different year, showing the abbreviated month name,
+#. * day of the month, year and the time without seconds
+#. * in 24-hour format.
+#: src/gl-util.c:233
 msgid "%b %e %Y %H:%M"
 msgstr "%e %b %Y %H:%M"
 
+#. Transltors: the first string is the earliest timestamp of the boot,
+#. * and the second string is the newest timestamp. An example string might
+#. * be '08:10 - 08:30'
+#: src/gl-util.c:297
+#, c-format
+msgid "%s – %s"
+msgstr "%s – %s"
+
+#: src/gl-window.c:172
+msgid "Export Failed"
+msgstr "ਐਕਸਪੋਰਟ ਫ਼ੇਲ੍ਹ"
+
+#: src/gl-window.c:173
+msgid "Unable to export log messages to a file"
+msgstr "ਲਾਗ ਸੁਨੇਹੇ ਫ਼ਾਇਲ ਵਿੱਚ ਭੇਜਣ ਲਈ ਅਸਮਰੱਥ"
+
+#: src/gl-window.c:194
+#| msgid "Message"
+msgid "log messages"
+msgstr "ਲਾਗ ਸੁਨੇਹੇ"
+
+#: src/gl-window.c:471 src/gl-window.c:488
+msgid "Unable to read system logs"
+msgstr "ਸਿਸਟਮ ਲਾਗ ਪੜ੍ਹਨ ਲਈ ਅਸਮਰੱਥ"
+
+#: src/gl-window.c:478
+msgid "Unable to read user logs"
+msgstr "ਵਰਤੋਂਕਾਰ ਲਾਗ ਪੜ੍ਹਨ ਲਈ ਅਸਮਰੱਥ"
+
+#: src/gl-window.c:496
+msgid "No logs available"
+msgstr "ਕੋਈ ਲਾਗ ਮੌਜੂਦ ਨਹੀਂ ਹੈ"
+
+#~ msgid "_Quit"
+#~ msgstr "ਬੰਦ ਕਰੋ(_Q)"
+
+#~ msgid "Go back to the event view"
+#~ msgstr "ਈਵੈਟ ਝਲਕ ਵਿੱਚ ਵਾਪਿਸ ਜਾਓ"
+
+#~ msgid "Search the displayed logs"
+#~ msgstr "ਵਿਖਾਏ ਲਾਗ ਵਿੱਚ ਲੱਭੋ"
+
+#~ msgid "Not implemented"
+#~ msgstr "ਸਥਾਪਤ ਨਹੀਂ"
