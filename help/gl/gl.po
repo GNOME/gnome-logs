@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
-"POT-Creation-Date: 2019-09-19 10:10+0000\n"
-"PO-Revision-Date: 2019-12-27 17:43+0100\n"
+"POT-Creation-Date: 2023-08-07 12:30+0000\n"
+"PO-Revision-Date: 2023-09-06 09:25+0200\n"
 "Last-Translator: Fran Diéguez <frandieguez@gnome.org>\n"
 "Language-Team: gnome-l10n-gl@gnome.org\n"
 "Language: gl\n"
@@ -14,33 +14,39 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 3.3.2\n"
 "X-Project-Style: gnome\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
 msgid "translator-credits"
-msgstr "Fran Diéguez <frandieguez@gnome.org>, 2014-2020"
+msgstr "Fran Diéguez <frandieguez@gnome.org>, 2014-2023"
 
 #. (itstool) path: info/title
 #: C/index.page:7
-msgctxt "text"
+msgctxt "link:trail"
 msgid "Logs help"
 msgstr "Axuda de Rexistros"
 
 #. (itstool) path: info/title
 #: C/index.page:8
+msgctxt "text"
+msgid "Logs help"
+msgstr "Axuda de Rexistros"
+
+#. (itstool) path: info/title
+#: C/index.page:9
 msgctxt "link"
 msgid "Logs help"
 msgstr "Axuda de Rexistros"
 
 #. (itstool) path: info/desc
-#: C/index.page:13
+#: C/index.page:14
 msgid "Browse and search through your systemd journal logs."
 msgstr "Explore e busque nos rexistros do diario de systemd."
 
 #. (itstool) path: page/title
-#: C/index.page:16
+#: C/index.page:17
 msgid "<_:media-1/> Logs"
 msgstr "<_:media-1/> Rexistros"
 
@@ -93,13 +99,17 @@ msgstr ""
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
 #: C/introduction.page:35
+#| msgctxt "_"
+#| msgid ""
+#| "external ref='media/gnome-logs-3-12.png' "
+#| "md5='56e83d7808cdfd80457691aff5ffc2d1'"
 msgctxt "_"
 msgid ""
-"external ref='media/gnome-logs-3-12.png' "
-"md5='56e83d7808cdfd80457691aff5ffc2d1'"
+"external ref='media/gnome-logs-3-34.png' "
+"md5='572ed4fda65dbaa8cd2dc56f6bce5dfb'"
 msgstr ""
-"external ref='media/gnome-logs-3-12.png' "
-"md5='56e83d7808cdfd80457691aff5ffc2d1'"
+"external ref='media/gnome-logs-3-34.png' "
+"md5='572ed4fda65dbaa8cd2dc56f6bce5dfb'"
 
 #. (itstool) path: media/p
 #: C/introduction.page:36
@@ -145,7 +155,8 @@ msgid ""
 msgstr ""
 "Poderá navegar algúns mensaxes que foran rexistrados desde o último "
 "reinicio, dependendo de que permisos teña. Algúns dos seus permisos están "
-"estabelecidos"
+"estabelecidos pola súa distribución, pero tamén puideron ser cambiados polo "
+"seu administrador de sistema."
 
 #. (itstool) path: page/p
 #. TRANSLATORS: 'Standard' is taken from the user account type in the
@@ -158,9 +169,9 @@ msgid ""
 "logs, it is possible that your system administrator has disabled your "
 "ability to view logs."
 msgstr ""
-"Por omisión, aos usuarios <em href=\"help:gnome-help/user-admin-explain"
-"\">estándar</em> móstranselle un conxunto limitado de rexistros, como os "
-"rexistros de aplicación e os seus propios rexistros de sesión. Se ten un "
+"Por omisión, aos usuarios <em href=\"help:gnome-help/user-admin-"
+"explain\">estándar</em> móstranselle un conxunto limitado de rexistros, como "
+"os rexistros de aplicación e os seus propios rexistros de sesión. Se ten un "
 "usuario <gui>estándar</gui> non verá algún rexistro, é posíbel que o seu "
 "administrador de sistemas desactivara a súa habilidade para ver rexistros."
 
@@ -174,8 +185,8 @@ msgid ""
 "administrators to have different levels of access to logs, so you may not be "
 "able to view all logs. If you are an <gui>Administrator</gui> user, then "
 "only other administrators can change which logs you can access. For more "
-"information about log access permissions, <link href=\"man:systemd-journald"
-"\">see the <_:cmd-1/> man page</link>."
+"information about log access permissions, <link href=\"man:systemd-"
+"journald\">see the <_:cmd-1/> man page</link>."
 msgstr ""
 "Os usuarios <em>Administrador</em> normalmente poden ver rexistros máis "
 "sensíbeis . Os administradores poden ter distintos niveis de acceso aos "
