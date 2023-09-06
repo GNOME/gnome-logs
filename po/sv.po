@@ -1,14 +1,14 @@
 # Swedish translation for gnome-logs.
-# Copyright © 2014-2022 gnome-logs's COPYRIGHT HOLDER
+# Copyright © 2014-2023 gnome-logs's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-logs package.
-# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022.
+# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
 # Sebastian Rasmussen <sebras@gmail.com>, 2016.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2022-09-06 07:39+0000\n"
-"PO-Revision-Date: 2022-09-20 23:44+0200\n"
+"POT-Creation-Date: 2023-08-07 12:30+0000\n"
+"PO-Revision-Date: 2023-08-07 15:50+0200\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.3.2\n"
 
 #: data/gl-categorylist.ui:12
 msgid "Important"
@@ -58,21 +58,25 @@ msgstr "Uppdateringar"
 msgid "Usage"
 msgstr "Användning"
 
-#: data/gl-eventtoolbar.ui:7
+#: data/gl-eventtoolbar.ui:6
 msgid "_New Window"
 msgstr "_Nytt fönster"
 
-#: data/gl-eventtoolbar.ui:13
-msgid "Keyboard Shortcuts"
-msgstr "Tangentbordsgenvägar"
+#: data/gl-eventtoolbar.ui:12
+msgid "_Keyboard Shortcuts"
+msgstr "_Tangentbordsgenvägar"
 
-#: data/gl-eventtoolbar.ui:18
+#: data/gl-eventtoolbar.ui:16
 msgid "_Help"
 msgstr "_Hjälp"
 
-#: data/gl-eventtoolbar.ui:22
+#: data/gl-eventtoolbar.ui:20
 msgid "_About Logs"
 msgstr "_Om Loggar"
+
+#: data/gl-eventtoolbar.ui:35
+msgid "Main Menu"
+msgstr "Huvudmeny"
 
 #: data/gl-eventtoolbar.ui:41
 msgid "Export logs to a file"
@@ -82,7 +86,7 @@ msgstr "Exportera loggar till en fil"
 msgid "Choose the boot from which to view logs"
 msgstr "Välj uppstarten från vilken loggar ska visas"
 
-#: data/gl-eventtoolbar.ui:60
+#: data/gl-eventtoolbar.ui:59
 msgid "Search all the logs of the current category"
 msgstr "Sök alla loggar för den aktuella kategorin"
 
@@ -126,7 +130,11 @@ msgstr "Support"
 msgid "Documentation"
 msgstr "Dokumentation"
 
-#: data/gl-eventviewlist.ui:34
+#: data/gl-eventviewlist.ui:29
+msgid "Search logs"
+msgstr "Sök loggar"
+
+#: data/gl-eventviewlist.ui:35
 msgid "Select journal field and timestamp range filtering options"
 msgstr "Välj filteralternativ för journalfält och tidsstämpelintervall"
 
@@ -230,7 +238,7 @@ msgid "Sec"
 msgstr "Sek"
 
 # Enligt ICU-locale: https://www.localeplanet.com/icu/sv/index.html
-# Glibc är istället tom: https://lh.2xlibre.net/locale/sv_SE/
+# Glibc är i stället tom: https://lh.2xlibre.net/locale/sv_SE/
 #: data/gl-searchpopover.ui:540 data/gl-searchpopover.ui:789
 msgid "AM/PM"
 msgstr "fm/em"
@@ -352,7 +360,7 @@ msgid "Export logs to a file"
 msgstr "Exportera loggar till en fil"
 
 #: data/org.gnome.Logs.appdata.xml.in:7 data/org.gnome.Logs.desktop.in:3
-#: src/gl-application.c:107 src/gl-eventtoolbar.c:144
+#: src/gl-application.c:132 src/gl-eventtoolbar.c:143
 msgid "Logs"
 msgstr "Loggar"
 
@@ -376,7 +384,7 @@ msgstr ""
 "Med Loggar kan du söka dina loggar genom att skriva in en sökterm. Se sedan "
 "detaljerad information om enstaka händelser genom att klicka på dem."
 
-#: data/org.gnome.Logs.appdata.xml.in:30 src/gl-application.c:109
+#: data/org.gnome.Logs.appdata.xml.in:38 src/gl-application.c:134
 msgid "The GNOME Project"
 msgstr "GNOME-projektet"
 
@@ -411,7 +419,20 @@ msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr ""
 "Sortera listrader i stigande eller fallande ordning för den valda typen"
 
-#: src/gl-application.c:112
+#: src/gl-application.c:82 src/gl-window.c:285
+msgid "Failed To Open Help"
+msgstr "Misslyckades med att öppna hjälp"
+
+#: src/gl-application.c:85 src/gl-window.c:288
+#, c-format
+msgid "Failed to open the given help URI: %s"
+msgstr "Misslyckades med att öppna angiven hjälp-URI: %s"
+
+#: src/gl-application.c:88 src/gl-window.c:175 src/gl-window.c:291
+msgid "_Close"
+msgstr "S_täng"
+
+#: src/gl-application.c:137
 msgid "translator-credits"
 msgstr ""
 "Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
@@ -419,18 +440,18 @@ msgstr ""
 "Skicka synpunkter på översättningen till\n"
 "<tp-sv@listor.tp-sv.se>."
 
-#: src/gl-application.c:256
+#: src/gl-application.c:270
 msgid "Print version information and exit"
 msgstr "Skriv ut versionsinformation och avsluta"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
-#: src/gl-eventtoolbar.c:135
+#: src/gl-eventtoolbar.c:134
 msgid "Boot"
 msgstr "Uppstart"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: src/gl-eventviewlist.c:448
+#: src/gl-eventviewlist.c:431
 msgid "No Results"
 msgstr "Inga resultat"
 
@@ -602,37 +623,35 @@ msgstr "%e %b %Y %H:%M"
 msgid "%s – %s"
 msgstr "%s – %s"
 
-#: src/gl-window.c:174
+#: src/gl-window.c:172
+msgid "Export Failed"
+msgstr "Export misslyckades"
+
+#: src/gl-window.c:173
 msgid "Unable to export log messages to a file"
 msgstr "Kan ej exportera loggmeddelanden till en fil"
 
-#: src/gl-window.c:195
-msgid "Save logs"
-msgstr "Spara loggar"
-
-#: src/gl-window.c:198
-msgid "_Save"
-msgstr "_Spara"
-
-#: src/gl-window.c:199
-msgid "_Cancel"
-msgstr "_Avbryt"
-
-#: src/gl-window.c:202
+#: src/gl-window.c:194
 msgid "log messages"
 msgstr "loggmeddelanden"
 
-#: src/gl-window.c:473 src/gl-window.c:490
+#: src/gl-window.c:471 src/gl-window.c:488
 msgid "Unable to read system logs"
 msgstr "Kan ej läsa systemloggar"
 
-#: src/gl-window.c:480
+#: src/gl-window.c:478
 msgid "Unable to read user logs"
 msgstr "Kan ej läsa användarloggar"
 
-#: src/gl-window.c:498
+#: src/gl-window.c:496
 msgid "No logs available"
 msgstr "Inga loggar tillgängliga"
+
+#~ msgid "_Save"
+#~ msgstr "_Spara"
+
+#~ msgid "_Cancel"
+#~ msgstr "_Avbryt"
 
 #~ msgid "GNOME Logs"
 #~ msgstr "GNOME Loggar"
