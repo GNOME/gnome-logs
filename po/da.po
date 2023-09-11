@@ -1,16 +1,16 @@
 # Danish translation for gnome-logs.
-# Copyright (C) 2014-2018 gnome-logs's COPYRIGHT HOLDER
+# Copyright (C) 2014-2018, 2023 gnome-logs's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-logs package.
-# Ask Hjorth Larsen <asklarsen@gmail.com>, 2014-2018.
+# Ask Hjorth Larsen <asklarsen@gmail.com>, 2014-2018, 2023.
 # scootergrisen, 2015-2016, 2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2021-07-28 07:14+0000\n"
-"PO-Revision-Date: 2021-08-28 16:12+0200\n"
-"Last-Translator: Alan Mortensen <alanmortensen.am@gmail.com>\n"
+"POT-Creation-Date: 2023-08-07 12:30+0000\n"
+"PO-Revision-Date: 2023-09-11 21:07+0200\n"
+"Last-Translator: Ask Hjorth Larsen <asklarsen@gmail.com>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
@@ -19,43 +19,43 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 2.3\n"
 
-#: data/gl-categorylist.ui:15
+#: data/gl-categorylist.ui:12
 msgid "Important"
 msgstr "Vigtige"
 
-#: data/gl-categorylist.ui:30
+#: data/gl-categorylist.ui:23
 msgid "Alerts"
 msgstr "Påmindelser"
 
-#: data/gl-categorylist.ui:45
+#: data/gl-categorylist.ui:34
 msgid "Starred"
 msgstr "Stjernemarkeret"
 
-#: data/gl-categorylist.ui:60
+#: data/gl-categorylist.ui:44
 msgid "All"
 msgstr "Alle"
 
-#: data/gl-categorylist.ui:75 src/gl-eventviewrow.c:209
+#: data/gl-categorylist.ui:54 src/gl-eventviewrow.c:211
 msgid "Applications"
 msgstr "Programmer"
 
-#: data/gl-categorylist.ui:90 src/gl-eventviewrow.c:218
+#: data/gl-categorylist.ui:64 src/gl-eventviewrow.c:220
 msgid "System"
 msgstr "System"
 
-#: data/gl-categorylist.ui:105 src/gl-eventviewrow.c:222
+#: data/gl-categorylist.ui:74 src/gl-eventviewrow.c:224
 msgid "Security"
 msgstr "Sikkerhed"
 
-#: data/gl-categorylist.ui:120 src/gl-eventviewrow.c:214
+#: data/gl-categorylist.ui:84 src/gl-eventviewrow.c:216
 msgid "Hardware"
 msgstr "Hardware"
 
-#: data/gl-categorylist.ui:135
+#: data/gl-categorylist.ui:95
 msgid "Updates"
 msgstr "Opdateringer"
 
-#: data/gl-categorylist.ui:150
+#: data/gl-categorylist.ui:106
 msgid "Usage"
 msgstr "Forbrug"
 
@@ -64,249 +64,257 @@ msgid "_New Window"
 msgstr "_Nyt vindue"
 
 #: data/gl-eventtoolbar.ui:12
-msgid "Keyboard Shortcuts"
-msgstr "Tastaturgenveje"
+msgid "_Keyboard Shortcuts"
+msgstr "_Tastaturgenveje"
 
-#: data/gl-eventtoolbar.ui:17
+#: data/gl-eventtoolbar.ui:16
 msgid "_Help"
 msgstr "_Hjælp"
 
-#: data/gl-eventtoolbar.ui:21
+#: data/gl-eventtoolbar.ui:20
 msgid "_About Logs"
 msgstr "_Om Logge"
 
-#: data/gl-eventtoolbar.ui:53
+#: data/gl-eventtoolbar.ui:35
+msgid "Main Menu"
+msgstr "Hovedmenu"
+
+#: data/gl-eventtoolbar.ui:41
 msgid "Export logs to a file"
 msgstr "Eksportér logge til en fil"
 
-#: data/gl-eventtoolbar.ui:74
+#: data/gl-eventtoolbar.ui:49
 msgid "Choose the boot from which to view logs"
 msgstr "Vælg hvilken opstart der skal vises log fra"
 
-#: data/gl-eventtoolbar.ui:86
+#: data/gl-eventtoolbar.ui:59
 msgid "Search all the logs of the current category"
 msgstr "Søg i alle loggene for den nuværende kategori"
 
-#: data/gl-eventviewdetail.ui:26
+#: data/gl-eventviewdetail.ui:23
 msgid "Sender"
 msgstr "Afsender"
 
-#: data/gl-eventviewdetail.ui:58
+#: data/gl-eventviewdetail.ui:52
 msgid "Time"
 msgstr "Tid"
 
-#: data/gl-eventviewdetail.ui:92 data/gl-searchpopover.ui:1052
+#: data/gl-eventviewdetail.ui:81 data/gl-searchpopover.ui:867
 msgid "Message"
 msgstr "Meddelelse"
 
-#: data/gl-eventviewdetail.ui:128 data/gl-searchpopover.ui:1072
+#: data/gl-eventviewdetail.ui:112 data/gl-searchpopover.ui:887
 msgid "Audit Session"
 msgstr "Kontrolsession"
 
-#: data/gl-eventviewdetail.ui:161 data/gl-searchpopover.ui:1067
+#: data/gl-eventviewdetail.ui:141 data/gl-searchpopover.ui:882
 msgid "Kernel Device"
 msgstr "Kerneenhed"
 
-#: data/gl-eventviewdetail.ui:194
+#: data/gl-eventviewdetail.ui:169
 msgid "Priority"
 msgstr "Prioritet"
 
-#: data/gl-eventviewdetail.ui:228
+#: data/gl-eventviewdetail.ui:198
 msgid "Subject"
 msgstr "Emne"
 
-#: data/gl-eventviewdetail.ui:264
+#: data/gl-eventviewdetail.ui:230
 msgid "Defined By"
 msgstr "Defineret af"
 
-#: data/gl-eventviewdetail.ui:298
+#: data/gl-eventviewdetail.ui:260
 msgid "Support"
 msgstr "Støtte"
 
-#: data/gl-eventviewdetail.ui:334
+#: data/gl-eventviewdetail.ui:292
 msgid "Documentation"
 msgstr "Dokumentation"
 
-#: data/gl-eventviewlist.ui:42
+#: data/gl-eventviewlist.ui:29
+msgid "Search logs"
+msgstr "Søg i logge"
+
+#: data/gl-eventviewlist.ui:35
 msgid "Select journal field and timestamp range filtering options"
 msgstr "Vælg filterindstillinger for journalfelt og interval for tidsstempel"
 
-#: data/gl-searchpopover.ui:26
+#: data/gl-searchpopover.ui:27
 msgid "Select a Journal Field to filter the Logs according to it"
 msgstr "Vælg et journalfelt og filtrér loggene efter dette"
 
-#: data/gl-searchpopover.ui:35 data/gl-searchpopover.ui:1028
+#: data/gl-searchpopover.ui:34 data/gl-searchpopover.ui:843
 msgid "All Available Fields"
 msgstr "Alle tilgængelige felter"
 
-#: data/gl-searchpopover.ui:78 data/gl-searchpopover.ui:251
+#: data/gl-searchpopover.ui:66 data/gl-searchpopover.ui:220
 msgid "Parameters"
 msgstr "Parametre"
 
 #. Translators: What [journal fields to search in]
-#: data/gl-searchpopover.ui:115
+#: data/gl-searchpopover.ui:101
 msgid "What"
 msgstr "Hvad"
 
-#: data/gl-searchpopover.ui:130
+#: data/gl-searchpopover.ui:117
 msgid "Select Journal Field…"
 msgstr "Vælg journalfelt …"
 
 #. When [log entries to be shown for a given timestamp range]
-#: data/gl-searchpopover.ui:155
+#: data/gl-searchpopover.ui:140
 msgid "When"
 msgstr "Hvornår"
 
-#: data/gl-searchpopover.ui:170
+#: data/gl-searchpopover.ui:156
 msgid "Show Logs from…"
 msgstr "Vis logge fra …"
 
-#: data/gl-searchpopover.ui:199
+#: data/gl-searchpopover.ui:181
 msgid "Select Timestamp Range of the Log Entries to be shown"
 msgstr "Vælg interval for tidsstempel i log-indgangene, der skal vises"
 
-#: data/gl-searchpopover.ui:208 data/gl-searchpopover.ui:1091
-#: src/gl-searchpopover.c:1309
+#: data/gl-searchpopover.ui:188 data/gl-searchpopover.ui:906
+#: src/gl-searchpopover.c:1306
 msgid "Current Boot"
 msgstr "Nuværende opstart"
 
-#: data/gl-searchpopover.ui:293
+#: data/gl-searchpopover.ui:255
 msgid "Search Type"
 msgstr "Søgningstype"
 
-#: data/gl-searchpopover.ui:310
+#: data/gl-searchpopover.ui:266
 msgid "Substring"
 msgstr "Delstreng"
 
-#: data/gl-searchpopover.ui:314
+#: data/gl-searchpopover.ui:268
 msgid "Match in any part of the string"
 msgstr "Match enhver del af strengen"
 
-#: data/gl-searchpopover.ui:328
+#: data/gl-searchpopover.ui:275
 msgid "Exact"
 msgstr "Eksakt"
 
-#: data/gl-searchpopover.ui:332
+#: data/gl-searchpopover.ui:277
 msgid "Match complete string only"
 msgstr "Match kun hele strengen"
 
-#: data/gl-searchpopover.ui:379
+#: data/gl-searchpopover.ui:319
 msgid "Back"
 msgstr "Tilbage"
 
-#: data/gl-searchpopover.ui:397
+#: data/gl-searchpopover.ui:337
 msgid "Show Logs Starting From…"
 msgstr "Vis logge begyndende fra …"
 
-#: data/gl-searchpopover.ui:419
+#: data/gl-searchpopover.ui:358
 msgid "Select a start date"
 msgstr "Vælg en startdato"
 
-#: data/gl-searchpopover.ui:428 src/gl-searchpopover.c:503
+#: data/gl-searchpopover.ui:365 src/gl-searchpopover.c:503
 msgid "Select Start Date…"
 msgstr "Vælg startdato …"
 
-#: data/gl-searchpopover.ui:459 data/gl-searchpopover.ui:763
+#: data/gl-searchpopover.ui:384 data/gl-searchpopover.ui:626
 msgid "22 January 2016 or 1/22/2016"
 msgstr "22. januar 2016 eller 22/1/2016"
 
-#: data/gl-searchpopover.ui:504
+#: data/gl-searchpopover.ui:423
 msgid "Select start time"
 msgstr "Vælg starttidspunkt"
 
-#: data/gl-searchpopover.ui:513 src/gl-searchpopover.c:504
+#: data/gl-searchpopover.ui:430 src/gl-searchpopover.c:504
 msgid "Select Start Time…"
 msgstr "Vælg starttidspunkt …"
 
-#: data/gl-searchpopover.ui:550 data/gl-searchpopover.ui:857
+#: data/gl-searchpopover.ui:454 data/gl-searchpopover.ui:699
 msgid "Hr"
 msgstr "Time"
 
-#: data/gl-searchpopover.ui:585 data/gl-searchpopover.ui:892
+#: data/gl-searchpopover.ui:480 data/gl-searchpopover.ui:729
 msgid "Min"
 msgstr "Min"
 
-#: data/gl-searchpopover.ui:620 data/gl-searchpopover.ui:927
+#: data/gl-searchpopover.ui:510 data/gl-searchpopover.ui:759
 msgid "Sec"
 msgstr "Sek"
 
-#: data/gl-searchpopover.ui:655 data/gl-searchpopover.ui:962
+#: data/gl-searchpopover.ui:540 data/gl-searchpopover.ui:789
 msgid "AM/PM"
 msgstr "AM/PM"
 
-#: data/gl-searchpopover.ui:701
+#: data/gl-searchpopover.ui:579
 msgid "Until…"
 msgstr "Indtil …"
 
-#: data/gl-searchpopover.ui:723
+#: data/gl-searchpopover.ui:600
 msgid "Select an end date"
 msgstr "Vælg en slutdato"
 
-#: data/gl-searchpopover.ui:732 src/gl-searchpopover.c:521
+#: data/gl-searchpopover.ui:607 src/gl-searchpopover.c:521
 msgid "Select End Date…"
 msgstr "Vælg slutdato …"
 
-#: data/gl-searchpopover.ui:811
+#: data/gl-searchpopover.ui:668
 msgid "Select end time"
 msgstr "Vælg sluttidspunkt"
 
-#: data/gl-searchpopover.ui:820 src/gl-searchpopover.c:522
+#: data/gl-searchpopover.ui:675 src/gl-searchpopover.c:522
 msgid "Select End Time…"
 msgstr "Vælg et sluttidspunkt …"
 
-#: data/gl-searchpopover.ui:1037
+#: data/gl-searchpopover.ui:852
 msgid "PID"
 msgstr "PID"
 
-#: data/gl-searchpopover.ui:1042
+#: data/gl-searchpopover.ui:857
 msgid "UID"
 msgstr "UID"
 
-#: data/gl-searchpopover.ui:1047
+#: data/gl-searchpopover.ui:862
 msgid "GID"
 msgstr "GID"
 
-#: data/gl-searchpopover.ui:1057
+#: data/gl-searchpopover.ui:872
 msgid "Process Name"
 msgstr "Procesnavn"
 
-#: data/gl-searchpopover.ui:1062
+#: data/gl-searchpopover.ui:877
 msgid "Systemd Unit"
 msgstr "Systemd-enhed"
 
-#: data/gl-searchpopover.ui:1077
+#: data/gl-searchpopover.ui:892
 msgid "Executable Path"
 msgstr "Sti til eksekverbar fil"
 
-#: data/gl-searchpopover.ui:1096
+#: data/gl-searchpopover.ui:911
 msgid "Previous Boot"
 msgstr "Forrige opstart"
 
-#: data/gl-searchpopover.ui:1105
+#: data/gl-searchpopover.ui:920
 msgid "Today"
 msgstr "I dag"
 
-#: data/gl-searchpopover.ui:1110
+#: data/gl-searchpopover.ui:925
 msgid "Yesterday"
 msgstr "I går"
 
-#: data/gl-searchpopover.ui:1115
+#: data/gl-searchpopover.ui:930
 msgid "Last 3 days"
 msgstr "Sidste 3 dage"
 
-#: data/gl-searchpopover.ui:1124
+#: data/gl-searchpopover.ui:939
 msgid "Entire Journal"
 msgstr "Hele journalen"
 
-#: data/gl-searchpopover.ui:1133
+#: data/gl-searchpopover.ui:948
 msgid "Set Custom Range…"
 msgstr "Angiv brugerindstillet interval …"
 
-#: data/gl-window.ui:26
+#: data/gl-window.ui:30
 msgid "Help"
 msgstr "Hjælp"
 
-#: data/gl-window.ui:34
+#: data/gl-window.ui:37
 msgid "Ignore"
 msgstr "Ignorér"
 
@@ -315,44 +323,45 @@ msgctxt "shortcut window"
 msgid "General"
 msgstr "Generelt"
 
-#: data/help-overlay.ui:13
+#: data/help-overlay.ui:12
 msgctxt "shortcut window"
 msgid "Open a new window"
 msgstr "Åbn et nyt vindue"
 
-#: data/help-overlay.ui:20
+#: data/help-overlay.ui:18
 msgctxt "shortcut window"
 msgid "Close a window"
 msgstr "Luk et vindue"
 
-#: data/help-overlay.ui:27
+#: data/help-overlay.ui:24
 msgctxt "shortcut window"
 msgid "Show help"
 msgstr "Vis hjælp"
 
-#: data/help-overlay.ui:34
+#: data/help-overlay.ui:30
 msgctxt "shortcut window"
 msgid "Keyboard shortcuts"
 msgstr "Tastaturgenveje"
 
-#: data/help-overlay.ui:42
+#: data/help-overlay.ui:37
 msgctxt "shortcut window"
 msgid "Application"
 msgstr "Program"
 
-#: data/help-overlay.ui:47
+#: data/help-overlay.ui:41
 msgctxt "shortcut window"
 msgid "Find"
 msgstr "Find"
 
-#: data/help-overlay.ui:54
+#: data/help-overlay.ui:47
 msgctxt "shortcut window"
 msgid "Export logs to a file"
 msgstr "Eksportér logge til en fil"
 
-#: data/org.gnome.Logs.appdata.xml.in:7
-msgid "GNOME Logs"
-msgstr "GNOME Logge"
+#: data/org.gnome.Logs.appdata.xml.in:7 data/org.gnome.Logs.desktop.in:3
+#: src/gl-application.c:132 src/gl-eventtoolbar.c:143
+msgid "Logs"
+msgstr "Logge"
 
 #: data/org.gnome.Logs.appdata.xml.in:8 data/org.gnome.Logs.desktop.in:5
 msgid "View detailed event logs for the system"
@@ -374,13 +383,9 @@ msgstr ""
 "Med Logge kan du søge i dine logge ved at skrive en søgeterm og vise "
 "detaljeret information om hver begivenhed ved at klikke på den."
 
-#: data/org.gnome.Logs.appdata.xml.in:30
+#: data/org.gnome.Logs.appdata.xml.in:38 src/gl-application.c:134
 msgid "The GNOME Project"
 msgstr "GNOME-projektet"
-
-#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:143
-msgid "Logs"
-msgstr "Logge"
 
 #: data/org.gnome.Logs.desktop.in:4
 msgid "Log Viewer"
@@ -410,7 +415,20 @@ msgstr "Hvordan listerækker skal sorteres i begivenhedsoversigten"
 msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr "Sortér listerækker i stigende eller faldende orden for den valgte type"
 
-#: src/gl-application.c:116
+#: src/gl-application.c:82 src/gl-window.c:285
+msgid "Failed To Open Help"
+msgstr "Kunne ikke åbne hjælp"
+
+#: src/gl-application.c:85 src/gl-window.c:288
+#, c-format
+msgid "Failed to open the given help URI: %s"
+msgstr "Kunne ikke åbne den givne hjælpe-URI: %s"
+
+#: src/gl-application.c:88 src/gl-window.c:175 src/gl-window.c:291
+msgid "_Close"
+msgstr "_Luk"
+
+#: src/gl-application.c:137
 msgid "translator-credits"
 msgstr ""
 "Ask Hjorth Larsen\n"
@@ -420,11 +438,7 @@ msgstr ""
 "Websted http://dansk-gruppen.dk\n"
 "E-mail <dansk@dansk-gruppen.dk>"
 
-#: src/gl-application.c:117
-msgid "View and search logs"
-msgstr "Vis og søg i logge"
-
-#: src/gl-application.c:259
+#: src/gl-application.c:270
 msgid "Print version information and exit"
 msgstr "Vis versionsoplysninger og afslut"
 
@@ -435,11 +449,11 @@ msgstr "Opstart"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: src/gl-eventviewlist.c:473
+#: src/gl-eventviewlist.c:431
 msgid "No Results"
 msgstr "Ingen resultater"
 
-#: src/gl-eventviewrow.c:226
+#: src/gl-eventviewrow.c:228
 msgid "Other"
 msgstr "Andre"
 
@@ -469,16 +483,16 @@ msgstr "Til %s"
 #. * and end date button label in the custom range submenu,
 #. * showing the day of month in decimal number, full month
 #. * name as string, the year as a decimal number including the century.
-#: src/gl-searchpopover.c:737 src/gl-searchpopover.c:1107
+#: src/gl-searchpopover.c:734 src/gl-searchpopover.c:1102
 msgid "%e %B %Y"
 msgstr "%e. %B %Y"
 
-#: src/gl-searchpopover.c:875
+#: src/gl-searchpopover.c:873
 #, c-format
 msgid "AM"
 msgstr "AM"
 
-#: src/gl-searchpopover.c:879
+#: src/gl-searchpopover.c:877
 #, c-format
 msgid "PM"
 msgstr "PM"
@@ -489,7 +503,7 @@ msgstr "PM"
 #. Translators: timestamp format for the custom end time button
 #. * label in the custom range submenu, showing the time with seconds
 #. * in 12-hour format.
-#: src/gl-searchpopover.c:987 src/gl-searchpopover.c:1229
+#: src/gl-searchpopover.c:985 src/gl-searchpopover.c:1225
 msgid "%I:%M:%S %p"
 msgstr "%I:%M:%S %p"
 
@@ -499,21 +513,21 @@ msgstr "%I:%M:%S %p"
 #. Translators: timestamp format for the custom end time button
 #. * label in the custom range submenu, showing the time with seconds
 #. * in 24-hour format.
-#: src/gl-searchpopover.c:994 src/gl-searchpopover.c:1236
+#: src/gl-searchpopover.c:992 src/gl-searchpopover.c:1232
 msgid "%T"
 msgstr "%T"
 
 #. Translators: timestamp format for events on the
 #. * current day, showing the time with seconds in
 #. * 12-hour format.
-#: src/gl-util.c:148
+#: src/gl-util.c:126
 msgid "%l:%M:%S %p"
 msgstr "%l:%M:%S %p"
 
 #. Translators: timestamp format for events on the
 #. * current day, showing the time without seconds in
 #. * 12-hour format.
-#: src/gl-util.c:155
+#: src/gl-util.c:133
 msgid "%l:%M %p"
 msgstr "%l:%M %p"
 
@@ -521,7 +535,7 @@ msgstr "%l:%M %p"
 #. * the current year, showing the abbreviated
 #. * month name, day of the month and the time
 #. * with seconds in 12-hour format.
-#: src/gl-util.c:166
+#: src/gl-util.c:144
 msgid "%b %e %l:%M:%S %p"
 msgstr "%e. %b %l:%M:%S %p"
 
@@ -529,7 +543,7 @@ msgstr "%e. %b %l:%M:%S %p"
 #. * current year, showing the abbreviated month name,
 #. * day of the month and the time without seconds in
 #. * 12-hour format.
-#: src/gl-util.c:174
+#: src/gl-util.c:152
 msgid "%b %e %l:%M %p"
 msgstr "%e. %b %l:%M %p"
 
@@ -537,7 +551,7 @@ msgstr "%e. %b %l:%M %p"
 #. * a different year, showing the abbreviated
 #. * month name, day of the month, year and the
 #. * time with seconds in 12-hour format.
-#: src/gl-util.c:185
+#: src/gl-util.c:163
 msgid "%b %e %Y %l:%M:%S %p"
 msgstr "%e. %b %Y %l:%M:%S %p"
 
@@ -545,21 +559,21 @@ msgstr "%e. %b %Y %l:%M:%S %p"
 #. * a different year, showing the abbreviated
 #. * month name day of the month, year and the
 #. * time without seconds in 12-hour format.
-#: src/gl-util.c:194
+#: src/gl-util.c:172
 msgid "%b %e %Y %l:%M %p"
 msgstr "%e. %b %Y %l:%M %p"
 
 #. Translators: timestamp format for events on the
 #. * current day, showing the time with seconds in
 #. * 24-hour format.
-#: src/gl-util.c:211
+#: src/gl-util.c:189
 msgid "%H:%M:%S"
 msgstr "%H:%M:%S"
 
 #. Translators: timestamp format for events on the
 #. * current day, showing the time without seconds in
 #. * 24-hour format.
-#: src/gl-util.c:218
+#: src/gl-util.c:196
 msgid "%H:%M"
 msgstr "%H:%M"
 
@@ -567,7 +581,7 @@ msgstr "%H:%M"
 #. * current year, showing the abbreviated month name,
 #. * day of the month and the time with seconds in
 #. * 24-hour format.
-#: src/gl-util.c:228
+#: src/gl-util.c:206
 msgid "%b %e %H:%M:%S"
 msgstr "%e. %b %H:%M:%S"
 
@@ -575,7 +589,7 @@ msgstr "%e. %b %H:%M:%S"
 #. * current year, showing the abbreviated month name,
 #. * day of the month and the time without seconds in
 #. * 24-hour format.
-#: src/gl-util.c:236
+#: src/gl-util.c:214
 msgid "%b %e %H:%M"
 msgstr "%e. %b %H:%M"
 
@@ -583,7 +597,7 @@ msgstr "%e. %b %H:%M"
 #. * a different year, showing the abbreviated
 #. * month name, day of the month, year and the
 #. * time with seconds in 24-hour format.
-#: src/gl-util.c:247
+#: src/gl-util.c:225
 msgid "%b %e %Y %H:%M:%S"
 msgstr "%e. %b %Y %H:%M:%S"
 
@@ -591,46 +605,50 @@ msgstr "%e. %b %Y %H:%M:%S"
 #. * different year, showing the abbreviated month name,
 #. * day of the month, year and the time without seconds
 #. * in 24-hour format.
-#: src/gl-util.c:255
+#: src/gl-util.c:233
 msgid "%b %e %Y %H:%M"
 msgstr "%e. %b %Y %H:%M"
 
 #. Transltors: the first string is the earliest timestamp of the boot,
 #. * and the second string is the newest timestamp. An example string might
 #. * be '08:10 - 08:30'
-#: src/gl-util.c:319
+#: src/gl-util.c:297
 #, c-format
 msgid "%s – %s"
 msgstr "%s – %s"
 
-#: src/gl-window.c:113
-msgid "Save logs"
-msgstr "Gem logge"
+#: src/gl-window.c:172
+msgid "Export Failed"
+msgstr "Eksport mislykkedes"
 
-#: src/gl-window.c:116
-msgid "_Save"
-msgstr "_Gem"
-
-#: src/gl-window.c:117
-msgid "_Cancel"
-msgstr "_Annullér"
-
-#: src/gl-window.c:121
-msgid "log messages"
-msgstr "logmeddelelser"
-
-#: src/gl-window.c:180
+#: src/gl-window.c:173
 msgid "Unable to export log messages to a file"
 msgstr "Kunne ikke eksportere logmeddelelser til en fil"
 
-#: src/gl-window.c:494 src/gl-window.c:525
+#: src/gl-window.c:194
+msgid "log messages"
+msgstr "logmeddelelser"
+
+#: src/gl-window.c:471 src/gl-window.c:488
 msgid "Unable to read system logs"
 msgstr "Kunne ikke læse systemlogge"
 
-#: src/gl-window.c:508
+#: src/gl-window.c:478
 msgid "Unable to read user logs"
 msgstr "Kunne ikke læse brugerlogge"
 
-#: src/gl-window.c:540
+#: src/gl-window.c:496
 msgid "No logs available"
 msgstr "Ingen tilgængelige logge"
+
+#~ msgid "GNOME Logs"
+#~ msgstr "GNOME Logge"
+
+#~ msgid "View and search logs"
+#~ msgstr "Vis og søg i logge"
+
+#~ msgid "_Save"
+#~ msgstr "_Gem"
+
+#~ msgid "_Cancel"
+#~ msgstr "_Annullér"
