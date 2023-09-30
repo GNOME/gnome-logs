@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2023-08-07 08:45+0000\n"
-"PO-Revision-Date: 2023-08-07 14:25+0200\n"
+"POT-Creation-Date: 2023-09-25 21:02+0000\n"
+"PO-Revision-Date: 2023-09-30 16:48+0200\n"
 "Last-Translator: Ekaterine Papava <papava.e@gtu.ge>\n"
 "Language-Team: Georgian <(nothing)>\n"
 "Language: ka\n"
@@ -84,11 +84,11 @@ msgstr "ჟურნალის ფაილში გატანა"
 
 #: data/gl-eventtoolbar.ui:49
 msgid "Choose the boot from which to view logs"
-msgstr ""
+msgstr "აირჩიეთ, რომელი ჩატვირთვის ჟურნალი გნებავთ, იხილოთ"
 
 #: data/gl-eventtoolbar.ui:59
 msgid "Search all the logs of the current category"
-msgstr ""
+msgstr "ძებნა მიმდინარე კატეგორიის ყველა ჟურნალში"
 
 #: data/gl-eventviewdetail.ui:23
 msgid "Sender"
@@ -136,11 +136,11 @@ msgstr "ჟურნალში ძებნა"
 
 #: data/gl-eventviewlist.ui:35
 msgid "Select journal field and timestamp range filtering options"
-msgstr ""
+msgstr "აირჩეთ ჟურნალის ველის და დროის შტამპის შუალედის გაფილტვრის პარამეტრები"
 
 #: data/gl-searchpopover.ui:27
 msgid "Select a Journal Field to filter the Logs according to it"
-msgstr ""
+msgstr "აირჩიეთ ჟურნალის ველი ჟურნალის მის მიხედვით გასაფილტრად"
 
 #: data/gl-searchpopover.ui:34 data/gl-searchpopover.ui:843
 msgid "All Available Fields"
@@ -170,7 +170,7 @@ msgstr "ჟურნალის წყარო…"
 
 #: data/gl-searchpopover.ui:181
 msgid "Select Timestamp Range of the Log Entries to be shown"
-msgstr ""
+msgstr "აირჩიეთ ჟურნალის ჩანაწერების დროის შტამპის შუალედი, საჩვენებლად"
 
 #: data/gl-searchpopover.ui:188 data/gl-searchpopover.ui:906
 #: src/gl-searchpopover.c:1306
@@ -187,7 +187,7 @@ msgstr "ქვესტრიქონი"
 
 #: data/gl-searchpopover.ui:268
 msgid "Match in any part of the string"
-msgstr ""
+msgstr "ამ სტრიქონის ნებისმიერი ნაწილის დამთხვევა"
 
 #: data/gl-searchpopover.ui:275
 msgid "Exact"
@@ -195,7 +195,7 @@ msgstr "ზუსტი"
 
 #: data/gl-searchpopover.ui:277
 msgid "Match complete string only"
-msgstr ""
+msgstr "მხოლოდ სრული სტრიქონის დამთხვევა"
 
 #: data/gl-searchpopover.ui:319
 msgid "Back"
@@ -203,7 +203,7 @@ msgstr "უკან"
 
 #: data/gl-searchpopover.ui:337
 msgid "Show Logs Starting From…"
-msgstr ""
+msgstr "ჟურნალის ჩვენება, რომელიც იწყება…"
 
 #: data/gl-searchpopover.ui:358
 msgid "Select a start date"
@@ -364,19 +364,23 @@ msgstr "ჟურნალი"
 
 #: data/org.gnome.Logs.appdata.xml.in:8 data/org.gnome.Logs.desktop.in:5
 msgid "View detailed event logs for the system"
-msgstr ""
+msgstr "სისტემის დეტალური მოვლენის დეტალების ნახვა"
 
 #: data/org.gnome.Logs.appdata.xml.in:10
 msgid ""
 "Logs shows events from the systemd journal, and sorts them into categories, "
 "such as hardware and applications."
 msgstr ""
+"Logs systemd-ის ჟურნალიდან მოვლენებს გაჩვენებთ და მათ ისეთ კატეგორიებად "
+"ჰყოფს, როგორიცაა, მაგალითად, აპარატურა და აპლიკაციები."
 
 #: data/org.gnome.Logs.appdata.xml.in:12
 msgid ""
 "Using Logs you can search your logs by typing a search term, and view "
 "detailed information about each event by clicking on it."
 msgstr ""
+"Logs-ის გამოყენებით შეგიძლიათ თქვენს ჟურნალში თქვენი პირობებით ეძებოთ და "
+"თითოეული მოვლენის შესახებ დეტალური ინფორმაცია მიიღოთ. მათზე დაწკაპუნებით."
 
 #: data/org.gnome.Logs.appdata.xml.in:38 src/gl-application.c:134
 msgid "The GNOME Project"
@@ -400,14 +404,17 @@ msgid ""
 "Whether to ignore the warning that says you don’t have sufficient permission "
 "to view logs. If ignored, the warning won’t show up again."
 msgstr ""
+"გამოვტოვო თუ არა გაფრთხილება, რომ ჟურნალის სანახავად წვდომები არ გაგაჩნიათ. "
+"თუ გამოტოვებთ, ამას აღარ გაჩვენებთ."
 
 #: data/org.gnome.Logs.gschema.xml:10
 msgid "How to sort list rows in the event view list"
-msgstr ""
+msgstr "როგორ დავალაგო მწკრივების სია მოვლენების ხედის სიაში"
 
 #: data/org.gnome.Logs.gschema.xml:11
 msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr ""
+"სიის მწკრივების აღმავალი ან დაღმავალი მიმდევრობით დალაგება არჩეული ტიპისთვის"
 
 #: src/gl-application.c:82 src/gl-window.c:285
 msgid "Failed To Open Help"
@@ -416,7 +423,7 @@ msgstr "დახმარების გახსნის შეცდომ�
 #: src/gl-application.c:85 src/gl-window.c:288
 #, c-format
 msgid "Failed to open the given help URI: %s"
-msgstr ""
+msgstr "მითითებული დახმარების URI-ის გახნსნა ჩავარდა: %s"
 
 #: src/gl-application.c:88 src/gl-window.c:175 src/gl-window.c:291
 msgid "_Close"
@@ -611,7 +618,7 @@ msgstr "გატანის შეცდომა"
 
 #: src/gl-window.c:173
 msgid "Unable to export log messages to a file"
-msgstr ""
+msgstr "ჟურნალის შეტყობინებების ფაილში გატანა ჩავარდა"
 
 #: src/gl-window.c:194
 msgid "log messages"
