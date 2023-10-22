@@ -8,8 +8,8 @@
 msgid ""
 msgstr "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2023-08-07 12:30+0000\n"
-"PO-Revision-Date: 2023-08-12 10:00+0100\n"
+"POT-Creation-Date: 2023-08-12 17:47+0000\n"
+"PO-Revision-Date: 2023-10-22 10:00+0100\n"
 "Last-Translator: Asier Sarasua Garmendia <asiersarasua@ni.eus>\n"
 "Language-Team: Basque <librezale@librezale.eus>\n"
 "Language: eu\n"
@@ -84,7 +84,7 @@ msgstr "Esportatu erregistroak fitxategi batera"
 
 #: data/gl-eventtoolbar.ui:49
 msgid "Choose the boot from which to view logs"
-msgstr "Aukeratu abioa (haren egunkariak ikusteko)"
+msgstr "Aukeratu abioa (haren erregistroak ikusteko)"
 
 #: data/gl-eventtoolbar.ui:59
 msgid "Search all the logs of the current category"
@@ -132,7 +132,7 @@ msgstr "Dokumentazioa"
 
 #: data/gl-eventviewlist.ui:29
 msgid "Search logs"
-msgstr "Bilaketa-egunkariak"
+msgstr "Bilatu erregistroetan"
 
 #: data/gl-eventviewlist.ui:35
 msgid "Select journal field and timestamp range filtering options"
@@ -166,7 +166,7 @@ msgstr "Noiz"
 
 #: data/gl-searchpopover.ui:156
 msgid "Show Logs from…"
-msgstr "Erakutsi _egunkariak noiztik…"
+msgstr "Erakutsi _erregistroak…"
 
 #: data/gl-searchpopover.ui:181
 msgid "Select Timestamp Range of the Log Entries to be shown"
@@ -183,7 +183,7 @@ msgstr "Bilaketa-mota"
 
 #: data/gl-searchpopover.ui:266
 msgid "Substring"
-msgstr "Azpi-katea"
+msgstr "Azpikatea"
 
 #: data/gl-searchpopover.ui:268
 msgid "Match in any part of the string"
@@ -203,7 +203,7 @@ msgstr "Atzera"
 
 #: data/gl-searchpopover.ui:337
 msgid "Show Logs Starting From…"
-msgstr "Erakutsi erregistroak noiztik hasiz…"
+msgstr "Erakutsi erregistroak honako datatik…"
 
 #: data/gl-searchpopover.ui:358
 msgid "Select a start date"
@@ -360,11 +360,11 @@ msgstr "Esportatu erregistroak fitxategi batera"
 #: data/org.gnome.Logs.appdata.xml.in:7 data/org.gnome.Logs.desktop.in:3
 #: src/gl-application.c:132 src/gl-eventtoolbar.c:143
 msgid "Logs"
-msgstr "Egunkariak"
+msgstr "Erregistroak"
 
 #: data/org.gnome.Logs.appdata.xml.in:8 data/org.gnome.Logs.desktop.in:5
 msgid "View detailed event logs for the system"
-msgstr "Ikusi sistemaren egunkarietako gertaera xeheak"
+msgstr "Ikusi sistemaren erregistroetako gertaera xeheak"
 
 #: data/org.gnome.Logs.appdata.xml.in:10
 msgid ""
@@ -376,7 +376,7 @@ msgstr "Logs aplikazioak systemd egunkariak sortutako gertaerak bistaratzeaz gai
 msgid ""
 "Using Logs you can search your logs by typing a search term, and view "
 "detailed information about each event by clicking on it."
-msgstr "Logs erabilita, egunkarietan bilaketak egin ditzakezu bilaketa-hitz bat idatzita , eta gertaera bakoitzaren informazio xehea ikus dezakezu haren gainean klik eginez gero."
+msgstr "Logs erabilita, erregistroetan bilaketak egin ditzakezu bilaketa-hitz bat idatzita , eta gertaera bakoitzaren informazio xehea ikus dezakezu haren gainean klik eginez gero."
 
 #: data/org.gnome.Logs.appdata.xml.in:38 src/gl-application.c:134
 msgid "The GNOME Project"
@@ -384,7 +384,7 @@ msgstr "GNOME proiektua"
 
 #: data/org.gnome.Logs.desktop.in:4
 msgid "Log Viewer"
-msgstr "Egunkarien ikustailea"
+msgstr "Erregistroen ikustailea"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.Logs.desktop.in:7
@@ -399,7 +399,7 @@ msgstr "Ez ikusi egin abisuari"
 msgid ""
 "Whether to ignore the warning that says you don’t have sufficient permission "
 "to view logs. If ignored, the warning won’t show up again."
-msgstr "Egunkariak ikusteko nahikoa baimen ez dituzula buruz jakinarazten zaituen abisuari ez ikusi egon edo ez. Ez ikusi egiten badiozu, abisua ez zaizu berriro agertuko."
+msgstr "Erregistroak ikusteko nahikoa baimen ez dituzula buruz jakinarazten zaituen abisuari ez ikusi egon edo ez. Ez ikusi egiten badiozu, abisua ez zaizu berriro agertuko."
 
 #: data/org.gnome.Logs.gschema.xml:10
 msgid "How to sort list rows in the event view list"
@@ -611,23 +611,23 @@ msgstr "Esportazioak huts egin du"
 
 #: src/gl-window.c:173
 msgid "Unable to export log messages to a file"
-msgstr "Ezin dira egunkariaren mezuak fitxategi batera esportatu"
+msgstr "Ezin dira erregistro-mezuak fitxategi batera esportatu"
 
 #: src/gl-window.c:194
 msgid "log messages"
-msgstr "egunkariko mezuak"
+msgstr "erregistro-mezuak"
 
 #: src/gl-window.c:471 src/gl-window.c:488
 msgid "Unable to read system logs"
-msgstr "Ezin dira sistemaren egunkariak irakurri"
+msgstr "Ezin dira sistemaren erregistroak irakurri"
 
 #: src/gl-window.c:478
 msgid "Unable to read user logs"
-msgstr "Ezin dira erabiltzailearen egunkariak irakurri"
+msgstr "Ezin dira erabiltzailearen erregistroak irakurri"
 
 #: src/gl-window.c:496
 msgid "No logs available"
-msgstr "Ez dago egunkaririk eskuragarri"
+msgstr "Ez dago erregistrorik eskuragarri"
 
 #~ msgid "GNOME Logs"
 #~ msgstr "GNOME Logs"
