@@ -613,6 +613,9 @@ query_add_search_matches (GlQuery *query,
         case GL_SEARCH_POPOVER_JOURNAL_FIELD_FILTER_EXECUTABLE_PATH:
             gl_query_add_match (query, "_EXE", search_text, search_type);
             break;
+        default:
+            g_warn_if_reached ();
+            break;
     }
 }
 

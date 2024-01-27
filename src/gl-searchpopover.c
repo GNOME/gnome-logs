@@ -1168,6 +1168,8 @@ create_range_string_models (GlSearchPopover *popover)
 
     flatten = gtk_flatten_list_model_new (G_LIST_MODEL (store));
 
+    g_assert (g_list_model_get_n_items (G_LIST_MODEL (flatten)) == GL_SEARCH_POPOVER_JOURNAL_TIMESTAMP_RANGE_N_ENTRIES);
+
     gtk_drop_down_set_model (GTK_DROP_DOWN (priv->range_dropdown), G_LIST_MODEL (flatten));
 }
 
@@ -1195,6 +1197,8 @@ create_parameter_string_models (GlSearchPopover *popover)
     g_object_unref (strings);
 
     flatten = gtk_flatten_list_model_new (G_LIST_MODEL (store));
+
+    g_assert (g_list_model_get_n_items(G_LIST_MODEL (flatten)) == GL_SEARCH_POPOVER_JOURNAL_FIELD_FILTER_N_ENTRIES);
 
     gtk_drop_down_set_model (GTK_DROP_DOWN (priv->parameter_dropdown), G_LIST_MODEL (flatten));
 }
