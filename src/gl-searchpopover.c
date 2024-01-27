@@ -121,6 +121,11 @@ static const gchar CLOCK_FORMAT[] = "clock-format";
 
 G_DEFINE_TYPE_WITH_PRIVATE (GlSearchPopover, gl_search_popover, GTK_TYPE_POPOVER)
 
+static void start_time_spinbox_value_changed (GtkSpinButton *spin_button,
+                                              gpointer user_data);
+static void end_time_spinbox_value_changed (GtkSpinButton *spin_button,
+                                            gpointer user_data);
+
 /* Event handlers for search popover elements */
 static void
 search_popover_closed (GtkPopover *popover,
@@ -485,6 +490,9 @@ reset_custom_range_widgets (GlSearchPopover *popover)
     show_end_date_widgets (popover, FALSE);
     show_end_time_widgets (popover, FALSE);
 
+    g_signal_handlers_block_by_func (priv->start_time_hour_spin, start_time_spinbox_value_changed, popover);
+    g_signal_handlers_block_by_func (priv->end_time_hour_spin, end_time_spinbox_value_changed, popover);
+
     /* Reset start range elements */
     gtk_spin_button_set_value (GTK_SPIN_BUTTON (priv->start_time_minute_spin), 59.0);
     gtk_spin_button_set_value (GTK_SPIN_BUTTON (priv->start_time_second_spin), 59.0);
@@ -516,6 +524,9 @@ reset_custom_range_widgets (GlSearchPopover *popover)
     {
         gtk_spin_button_set_value (GTK_SPIN_BUTTON (priv->end_time_hour_spin), 0.0);
     }
+
+    g_signal_handlers_unblock_by_func (priv->start_time_hour_spin, start_time_spinbox_value_changed, popover);
+    g_signal_handlers_unblock_by_func (priv->end_time_hour_spin, end_time_spinbox_value_changed, popover);
 
     gtk_editable_set_text (GTK_EDITABLE (priv->end_date_entry), "");
     gtk_label_set_label (GTK_LABEL (priv->end_date_button_label), _("Select End Date…"));
