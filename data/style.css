@@ -56,3 +56,13 @@
 .compressed-rows-group-separator {
   background-color: shade(@borders,0.98);
 }
+
+dropdown.slim-headers header > separator {
+margin-top: 0px;
+margin-bottom: 0px;
+}
+
+dropdown.slim-headers header {
+padding-top: 0px;
+padding-bottom: 0px;
+}

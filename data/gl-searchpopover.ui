@@ -32,6 +32,9 @@
                                             </object>
                                         </property>
                                         <signal name="notify::selected" handler="on_parameters_dropdown_selected_changed" />
+                                        <style>
+                                            <class name="slim-headers" />
+                                        </style>
                                         <layout>
                                             <property name="column">0</property>
                                             <property name="row">1</property>
@@ -87,6 +90,9 @@
                                             </object>
                                         </property>
                                         <signal name="notify::selected" handler="on_range_dropdown_selected_changed" />
+                                        <style>
+                                          <class name="slim-headers" />
+                                        </style>
                                         <layout>
                                             <property name="column">0</property>
                                             <property name="row">3</property>
