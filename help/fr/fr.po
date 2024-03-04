@@ -2,62 +2,59 @@
 # Copyright (C) 2014 gnome-logs's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-logs package.
 # Julien Hardelin <jhardlin@orange.fr>, 2014.
+# Charles Monzat <charles.monzat@free.fr>, 2021-2022.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
-"POT-Creation-Date: 2014-03-15 07:52+0000\n"
-"PO-Revision-Date: 2014-03-16 13:13+0100\n"
-"Last-Translator: Julien Hardelin <jhardlin@orange.fr>\n"
-"Language-Team: français <GNOME French Team <gnomefr@traduc.org>>\n"
+"POT-Creation-Date: 2021-07-28 07:14+0000\n"
+"PO-Revision-Date: 2022-04-11 22:28+0200\n"
+"Last-Translator: Charles Monzat <charles.monzat@free.fr>\n"
+"Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Gtranslator 2.91.6\n"
+"X-Generator: Gtranslator 40.0\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
 msgid "translator-credits"
-msgstr "Julien Hardelin <jhardlin@orange.fr>, 2014"
+msgstr ""
+"Julien Hardelin <jhardlin@orange.fr>, 2014\n"
+"Charles Monzat <charles.monzat@free.fr>"
 
 #. (itstool) path: info/title
 #: C/index.page:7
-msgctxt "text"
+#| msgctxt "text"
+#| msgid "Logs help"
+msgctxt "link:trail"
 msgid "Logs help"
 msgstr "Manuel utilisateur de Journaux"
 
 #. (itstool) path: info/title
 #: C/index.page:8
+msgctxt "text"
+msgid "Logs help"
+msgstr "Manuel utilisateur de Journaux"
+
+#. (itstool) path: info/title
+#: C/index.page:9
 msgctxt "link"
 msgid "Logs help"
 msgstr "Manuel utilisateur de Journaux"
 
 #. (itstool) path: info/desc
-#: C/index.page:13
+#: C/index.page:14
 msgid "Browse and search through your systemd journal logs."
 msgstr ""
 "Naviguer et rechercher dans les fichiers compte-rendus du journal systemd."
 
 #. (itstool) path: page/title
-#: C/index.page:16
+#: C/index.page:17
 msgid "<_:media-1/> Logs"
 msgstr "<_:media-1/> Journaux"
-
-#. (itstool) path: media
-#. This is a reference to an external file such as an image or video. When
-#. the file changes, the md5 hash will change to let you know you need to
-#. update your localized copy. The msgstr is not used at all. Set it to
-#. whatever you like once you have updated your copy of the file.
-#: C/introduction.page:35
-msgctxt "_"
-msgid ""
-"external ref='media/gnome-logs-3-12.png' "
-"md5='56e83d7808cdfd80457691aff5ffc2d1'"
-msgstr ""
-"external ref='media/gnome-logs-3-12.png' "
-"md5='56e83d7808cdfd80457691aff5ffc2d1'"
 
 #. (itstool) path: credit/name
 #: C/introduction.page:11
@@ -91,7 +88,7 @@ msgid ""
 "Logs shows events from the systemd journal, and sorts them into categories, "
 "such as hardware and applications."
 msgstr ""
-"Journaux affiche les événements du journal systemd, et les trie en "
+"Journaux affiche les évènements du journal systemd, et les trie en "
 "catégories telles que matériel et applications."
 
 #. (itstool) path: page/p
@@ -101,23 +98,42 @@ msgid ""
 "detailed information about each event by clicking on it."
 msgstr ""
 "Grâce à Journaux, vous pouvez explorer vos journaux en saisissant un terme "
-"de recherche et visualiser des informations détaillées sur chaque événement "
+"de recherche et visualiser des informations détaillées sur chaque évènement "
 "en cliquant dessus."
+
+#. (itstool) path: page/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/introduction.page:35
+#| msgctxt "_"
+#| msgid ""
+#| "external ref='media/gnome-logs-3-12.png' "
+#| "md5='56e83d7808cdfd80457691aff5ffc2d1'"
+msgctxt "_"
+msgid ""
+"external ref='media/gnome-logs-3-34.png' "
+"md5='572ed4fda65dbaa8cd2dc56f6bce5dfb'"
+msgstr ""
+"external ref='media/gnome-logs-42.png' md5='8867ae60fa7f25a66d09d1c05aa5209b'"
 
 #. (itstool) path: media/p
 #: C/introduction.page:36
 msgid "Screenshot of Logs showing some journal entries."
-msgstr "Captures d'écran de Journaux montrant des entrées de journal"
+msgstr "Captures d’écran de Journaux montrant des entrées de journal."
 
 #. (itstool) path: p/link
 #: C/legal.xml:5
 msgid "Creative Commons Attribution-ShareAlike 3.0 Unported License"
-msgstr "Creative Commons Attribution-ShareAlike 3.0 Unported License"
+msgstr ""
+"Licence Creative Commons Attribution - Partage dans les Mêmes Conditions 3.0 "
+"non transposé"
 
 #. (itstool) path: license/p
 #: C/legal.xml:4
 msgid "This work is licensed under a <_:link-1/>."
-msgstr "Ce travail est sous licence <_:link-1/>."
+msgstr "Cette œuvre est distribuée sous <_:link-1/>."
 
 #. (itstool) path: credit/years
 #: C/permissions.page:13
@@ -163,8 +179,8 @@ msgid ""
 "ability to view logs."
 msgstr ""
 "Par défaut, les utilisateurs <em href=\"help:gnome-help/user-admin-explain"
-"\">Standard</em> ne peuvent voir qu'un nombre limité de journaux, comme les "
-"journaux d'application et leurs propres journaux de session. Si vous êtes un "
+"\">Standard</em> ne peuvent voir qu’un nombre limité de journaux, comme les "
+"journaux d’application et leurs propres journaux de session. Si vous êtes un "
 "utilisateur <gui>Standard</gui> et que vous ne pouvez voir aucun journal, il "
 "est possible que votre administrateur système ait désactivé votre "
 "habilitation à visualiser les journaux."
@@ -185,9 +201,9 @@ msgstr ""
 "Les utilisateurs <em>administrateurs</em> sont normalement capables de "
 "visualiser des journaux plus sensibles, comme les journaux du noyau et les "
 "journaux des autres utilisateurs. Les administrateurs eux-mêmes peuvent "
-"disposer de différents niveaux d'accès aux journaux et ne pas pouvoir "
+"disposer de différents niveaux d’accès aux journaux et ne pas pouvoir "
 "visualiser tous les journaux. Si vous êtes un utilisateur "
-"<gui>Administrateur</gui>, seuls d'autres administrateurs peuvent modifier "
-"les journaux auxquels vous pouvez accéder. Pour plus d'informations sur les "
-"permissions d'accès aux journaux, reportez-vous à la <link href=\"man:"
+"<gui>Administrateur</gui>, seuls d’autres administrateurs peuvent modifier "
+"les journaux auxquels vous pouvez accéder. Pour plus d’informations sur les "
+"permissions d’accès aux journaux, reportez-vous à la <link href=\"man:"
 "systemd-journald\">page de manuel de <_:cmd-1/></link>."
