@@ -116,7 +116,7 @@ msgid ""
 "external ref='media/gnome-logs-3-34.png' "
 "md5='572ed4fda65dbaa8cd2dc56f6bce5dfb'"
 msgstr ""
-"external ref='media/gnome-logs-42.png' md5='8867ae60fa7f25a66d09d1c05aa5209b'"
+"external ref='media/gnome-logs-3-34.png' md5='8867ae60fa7f25a66d09d1c05aa5209b'"
 
 #. (itstool) path: media/p
 #: C/introduction.page:36
