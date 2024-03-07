@@ -36,6 +36,9 @@
   <update_contact>davidk@gnome.org</update_contact>
   <project_group>GNOME</project_group>
   <developer_name>The GNOME Project</developer_name>
+  <developer id="org.gnome">
+    <name>The GNOME Project</name>
+  </developer>
   <content_rating type="oars-1.0" />
   <kudos>
     <kudo>ModernToolkit</kudo>
