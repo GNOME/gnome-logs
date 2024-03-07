@@ -29,7 +29,10 @@
     <release version="3.34.0" date="2019-09-10" />
   </releases>
   <launchable type="desktop-id">org.gnome.Logs.desktop</launchable>
-  <url type="homepage">https://wiki.gnome.org/Apps/Logs</url>
+  <url type="homepage">https://apps.gnome.org/Logs/</url>
+  <url type="contribute">https://welcome.gnome.org/app/Logs/</url>
+  <url type="translate">https://l10n.gnome.org/module/gnome-logs/</url>
+  <url type="vcs-browser">https://gitlab.gnome.org/GNOME/gnome-logs/</url>
   <url type="bugtracker">https://gitlab.gnome.org/GNOME/gnome-logs/issues/</url>
   <url type="donation">https://www.gnome.org/donate/</url>
   <url type="help">https://help.gnome.org/users/gnome-logs/stable/</url>
