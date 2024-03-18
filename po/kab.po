@@ -7,16 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2022-08-09 05:40+0000\n"
-"PO-Revision-Date: 2022-08-25 21:33+0000\n"
-"Last-Translator: tasutlelli17 <Unknown>\n"
+"POT-Creation-Date: 2023-09-25 21:02+0000\n"
+"PO-Revision-Date: 2024-03-18 01:54+0100\n"
+"Last-Translator: sa\n"
 "Language-Team: \n"
+"Language: kab\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2022-08-25 21:42+0000\n"
-"X-Generator: Launchpad (build 813bec7783fe35df624c0e68cd38fcaa442fb8d1)\n"
-"Language: kab\n"
+"X-Generator: Poedit 3.4.2\n"
 
 #: data/gl-categorylist.ui:12
 msgid "Important"
@@ -58,21 +58,25 @@ msgstr "Ileqman"
 msgid "Usage"
 msgstr "Aseqdec"
 
-#: data/gl-eventtoolbar.ui:7
+#: data/gl-eventtoolbar.ui:6
 msgid "_New Window"
 msgstr "_Asfaylu amaynut"
 
-#: data/gl-eventtoolbar.ui:13
-msgid "Keyboard Shortcuts"
-msgstr "Inegzumen n unasiw"
+#: data/gl-eventtoolbar.ui:12
+msgid "_Keyboard Shortcuts"
+msgstr "_Inegzumen n unasiw"
 
-#: data/gl-eventtoolbar.ui:18
+#: data/gl-eventtoolbar.ui:16
 msgid "_Help"
 msgstr "Ta_llalt"
 
-#: data/gl-eventtoolbar.ui:22
+#: data/gl-eventtoolbar.ui:20
 msgid "_About Logs"
 msgstr "_Ɣef yiɣmisen"
+
+#: data/gl-eventtoolbar.ui:35
+msgid "Main Menu"
+msgstr "Umuɣ agejdan"
 
 #: data/gl-eventtoolbar.ui:41
 msgid "Export logs to a file"
@@ -82,7 +86,7 @@ msgstr "Sifeḍ iɣmisen ɣer ufaylu"
 msgid "Choose the boot from which to view logs"
 msgstr "Fren asenker seg wansi ara tsekneḍ iɣmisen"
 
-#: data/gl-eventtoolbar.ui:60
+#: data/gl-eventtoolbar.ui:59
 msgid "Search all the logs of the current category"
 msgstr "Nadi meṛṛa iɣmisen n taggayt tamirant"
 
@@ -126,10 +130,13 @@ msgstr "Tadhalt"
 msgid "Documentation"
 msgstr "Assefter"
 
-#: data/gl-eventviewlist.ui:34
+#: data/gl-eventviewlist.ui:29
+msgid "Search logs"
+msgstr "Sekles iɣmisen"
+
+#: data/gl-eventviewlist.ui:35
 msgid "Select journal field and timestamp range filtering options"
-msgstr ""
-"Fren tixtiṛiyin n usizdeg n wurti n tesɣunt akked uzilal n wazemzakud"
+msgstr "Fren tixtiṛiyin n usizdeg n wurti n tesɣunt akked uzilal n wazemzakud"
 
 #: data/gl-searchpopover.ui:27
 msgid "Select a Journal Field to filter the Logs according to it"
@@ -150,7 +157,7 @@ msgstr "Acu"
 
 #: data/gl-searchpopover.ui:117
 msgid "Select Journal Field…"
-msgstr "Fren urti n tesɣunt..."
+msgstr "Fren urti n tesɣunt…"
 
 #. When [log entries to be shown for a given timestamp range]
 #: data/gl-searchpopover.ui:140
@@ -159,7 +166,7 @@ msgstr "Melmi"
 
 #: data/gl-searchpopover.ui:156
 msgid "Show Logs from…"
-msgstr "Sken iɣmisen deg..."
+msgstr "Sken iɣmisen deg…"
 
 #: data/gl-searchpopover.ui:181
 msgid "Select Timestamp Range of the Log Entries to be shown"
@@ -196,7 +203,7 @@ msgstr "Ɣer deffir"
 
 #: data/gl-searchpopover.ui:337
 msgid "Show Logs Starting From…"
-msgstr "Sken iɣmisen s beddu seg..."
+msgstr "Sken iɣmisen s beddu seg…"
 
 #: data/gl-searchpopover.ui:358
 msgid "Select a start date"
@@ -204,7 +211,7 @@ msgstr "Fren azemz n beddu"
 
 #: data/gl-searchpopover.ui:365 src/gl-searchpopover.c:503
 msgid "Select Start Date…"
-msgstr "Fren azemz n beddu..."
+msgstr "Fren azemz n beddu…"
 
 #: data/gl-searchpopover.ui:384 data/gl-searchpopover.ui:626
 msgid "22 January 2016 or 1/22/2016"
@@ -216,7 +223,7 @@ msgstr "Fren akud n beddu"
 
 #: data/gl-searchpopover.ui:430 src/gl-searchpopover.c:504
 msgid "Select Start Time…"
-msgstr "Fren akud n beddu..."
+msgstr "Fren akud n beddu…"
 
 #: data/gl-searchpopover.ui:454 data/gl-searchpopover.ui:699
 msgid "Hr"
@@ -236,7 +243,7 @@ msgstr "AM/PM"
 
 #: data/gl-searchpopover.ui:579
 msgid "Until…"
-msgstr "Alamma..."
+msgstr "Alamma…"
 
 #: data/gl-searchpopover.ui:600
 msgid "Select an end date"
@@ -244,7 +251,7 @@ msgstr "Fren azemz n keffu"
 
 #: data/gl-searchpopover.ui:607 src/gl-searchpopover.c:521
 msgid "Select End Date…"
-msgstr "Fren azemz n keffu..."
+msgstr "Fren azemz n keffu…"
 
 #: data/gl-searchpopover.ui:668
 msgid "Select end time"
@@ -252,7 +259,7 @@ msgstr "Fren akud n keffu"
 
 #: data/gl-searchpopover.ui:675 src/gl-searchpopover.c:522
 msgid "Select End Time…"
-msgstr "Fren akud n keffu..."
+msgstr "Fren akud n keffu…"
 
 #: data/gl-searchpopover.ui:852
 msgid "PID"
@@ -300,7 +307,7 @@ msgstr "Tasɣunt s lekmal"
 
 #: data/gl-searchpopover.ui:948
 msgid "Set Custom Range…"
-msgstr "Sbadu azilal udmawan..."
+msgstr "Sbadu azilal udmawan…"
 
 #: data/gl-window.ui:30
 msgid "Help"
@@ -351,7 +358,7 @@ msgid "Export logs to a file"
 msgstr "Sifeḍ iɣmisen ɣer ufaylu"
 
 #: data/org.gnome.Logs.appdata.xml.in:7 data/org.gnome.Logs.desktop.in:3
-#: src/gl-eventtoolbar.c:144
+#: src/gl-application.c:132 src/gl-eventtoolbar.c:143
 msgid "Logs"
 msgstr "Iɣmisen"
 
@@ -375,7 +382,7 @@ msgstr ""
 "S useqdec n yiɣmisen, tzemreḍ ad tnadiḍ iɣmisen-inek·inem s tira n wawal n "
 "unadi syen ad d-tban talɣut leqqayen n yal tadyant s usiti fell-as."
 
-#: data/org.gnome.Logs.appdata.xml.in:30
+#: data/org.gnome.Logs.appdata.xml.in:38 src/gl-application.c:134
 msgid "The GNOME Project"
 msgstr "Asenfar n GNOME"
 
@@ -406,10 +413,22 @@ msgstr "Amek ad tesmizwareḍ idurren n tebdart deg tebdart n uskan n tedyanin"
 
 #: data/org.gnome.Logs.gschema.xml:11
 msgid "Sort list rows in ascending or descending order for the selected type"
-msgstr ""
-"Smizwer idurren n tebdart s gemmu neɣ s umnusruy i wanaw yettwafernen"
+msgstr "Smizwer idurren n tebdart s gemmu neɣ s umnusruy i wanaw yettwafernen"
 
-#: src/gl-application.c:109
+#: src/gl-application.c:82 src/gl-window.c:285
+msgid "Failed To Open Help"
+msgstr "Tecceḍ twaledyawt n tallalt"
+
+#: src/gl-application.c:85 src/gl-window.c:288
+#, c-format
+msgid "Failed to open the given help URI: %s"
+msgstr "Tecceḍ twaledyawt n URl n tallalt i d-yettwammlen: %s"
+
+#: src/gl-application.c:88 src/gl-window.c:175 src/gl-window.c:291
+msgid "_Close"
+msgstr "_Mdel"
+
+#: src/gl-application.c:137
 msgid "translator-credits"
 msgstr ""
 "ismaden-amsuqel\n"
@@ -419,22 +438,18 @@ msgstr ""
 "  Yacine Bouklif https://launchpad.net/~yacine-bouklif\n"
 "  tasutlelli17 https://launchpad.net/~tafziri13"
 
-#: src/gl-application.c:110
-msgid "View and search logs"
-msgstr "Wali syen nadi iɣmisen"
-
-#: src/gl-application.c:253
+#: src/gl-application.c:270
 msgid "Print version information and exit"
 msgstr "Siggez talɣut n lqem syen ffeɣ"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
-#: src/gl-eventtoolbar.c:135
+#: src/gl-eventtoolbar.c:134
 msgid "Boot"
 msgstr "Asenker"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: src/gl-eventviewlist.c:448
+#: src/gl-eventviewlist.c:431
 msgid "No Results"
 msgstr "Ulac igmaḍ"
 
@@ -602,34 +617,35 @@ msgstr "%b %e %Y %H:%M"
 msgid "%s – %s"
 msgstr "%s – %s"
 
-#: src/gl-window.c:174
+#: src/gl-window.c:172
+msgid "Export Failed"
+msgstr "Asifeḍ yecceḍ"
+
+#: src/gl-window.c:173
 msgid "Unable to export log messages to a file"
 msgstr "Asifeḍ n yiznan n uɣmis ɣer ufaylu d awezɣi"
 
-#: src/gl-window.c:195
-msgid "Save logs"
-msgstr "Sekles iɣmisen"
-
-#: src/gl-window.c:198
-msgid "_Save"
-msgstr "_Sekles"
-
-#: src/gl-window.c:199
-msgid "_Cancel"
-msgstr "_Semmet"
-
-#: src/gl-window.c:202
+#: src/gl-window.c:194
 msgid "log messages"
 msgstr "iznan n uɣmis"
 
-#: src/gl-window.c:473 src/gl-window.c:490
+#: src/gl-window.c:471 src/gl-window.c:488
 msgid "Unable to read system logs"
 msgstr "Taɣuri n yiɣmisen n unagraw d awezɣi"
 
-#: src/gl-window.c:480
+#: src/gl-window.c:478
 msgid "Unable to read user logs"
 msgstr "Taɣuri n yiɣmisen n useqdac d awezɣi"
 
-#: src/gl-window.c:498
+#: src/gl-window.c:496
 msgid "No logs available"
 msgstr "Ulac iɣmisen yellan"
+
+#~ msgid "View and search logs"
+#~ msgstr "Wali syen nadi iɣmisen"
+
+#~ msgid "_Save"
+#~ msgstr "_Sekles"
+
+#~ msgid "_Cancel"
+#~ msgstr "_Semmet"
