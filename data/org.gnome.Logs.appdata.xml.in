@@ -18,6 +18,19 @@
     </screenshot>
   </screenshots>
   <releases>
+    <release version="45.0" date="2024-03-22">
+      <description>
+        <ul>
+          <li>Improve app metainfo</li>
+          <li>Fix filters button style</li>
+          <li>Accelerator improvements</li>
+          <li>UI improvements</li>
+          <li>Meson improvements</li>
+          <li>Translation updates</li>
+          <li>New Faroese translation</li>
+        </ul>
+      </description>
+    </release>
     <release version="43.0" date="2022-09-23">
       <description>
         <ul>
