@@ -1,0 +1,636 @@
+# Hindi translation for gnome-logs.
+# Copyright (C) 2024 gnome-logs's COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-logs package.
+# Scrambled777 <weblate.scrambled777@simplelogin.com>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-logs master\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues/\n"
+"POT-Creation-Date: 2024-03-22 19:42+0000\n"
+"PO-Revision-Date: 2024-04-17 10:57+0530\n"
+"Last-Translator: Scrambled777 <weblate.scrambled777@simplelogin.com>\n"
+"Language-Team: Hindi\n"
+"Language: hi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Gtranslator 46.0\n"
+
+#: data/gl-categorylist.ui:12
+msgid "Important"
+msgstr "महत्वपूर्ण"
+
+#: data/gl-categorylist.ui:23
+msgid "Alerts"
+msgstr "चेतावनी"
+
+#: data/gl-categorylist.ui:34
+msgid "Starred"
+msgstr "तारांकित"
+
+#: data/gl-categorylist.ui:44
+msgid "All"
+msgstr "सभी"
+
+#: data/gl-categorylist.ui:54 src/gl-eventviewrow.c:211
+msgid "Applications"
+msgstr "अनुप्रयोग"
+
+#: data/gl-categorylist.ui:64 src/gl-eventviewrow.c:220
+msgid "System"
+msgstr "सिस्टम"
+
+#: data/gl-categorylist.ui:74 src/gl-eventviewrow.c:224
+msgid "Security"
+msgstr "सुरक्षा"
+
+#: data/gl-categorylist.ui:84 src/gl-eventviewrow.c:216
+msgid "Hardware"
+msgstr "हार्डवेयर"
+
+#: data/gl-categorylist.ui:95
+msgid "Updates"
+msgstr "अद्यतन"
+
+#: data/gl-categorylist.ui:106
+msgid "Usage"
+msgstr "उपयोग"
+
+#: data/gl-eventtoolbar.ui:6
+msgid "_New Window"
+msgstr "नई विंडो (_N)"
+
+#: data/gl-eventtoolbar.ui:12
+msgid "_Keyboard Shortcuts"
+msgstr "कीबोर्ड शॉर्टकट (_K)"
+
+#: data/gl-eventtoolbar.ui:16
+msgid "_Help"
+msgstr "सहायता (_H)"
+
+#: data/gl-eventtoolbar.ui:20
+msgid "_About Logs"
+msgstr "Logs के बारे में (_A)"
+
+#: data/gl-eventtoolbar.ui:35
+msgid "Main Menu"
+msgstr "मुख्य मेनू"
+
+#: data/gl-eventtoolbar.ui:41
+msgid "Export logs to a file"
+msgstr "किसी फ़ाइल में लॉग निर्यात करें"
+
+#: data/gl-eventtoolbar.ui:49
+msgid "Choose the boot from which to view logs"
+msgstr "वह बूट चुनें जिससे लॉग देखना है"
+
+#: data/gl-eventtoolbar.ui:59
+msgid "Search all the logs of the current category"
+msgstr "वर्तमान श्रेणी के सभी लॉग खोजें"
+
+#: data/gl-eventviewdetail.ui:23
+msgid "Sender"
+msgstr "प्रेषक"
+
+#: data/gl-eventviewdetail.ui:52
+msgid "Time"
+msgstr "समय"
+
+#: data/gl-eventviewdetail.ui:81 data/gl-searchpopover.ui:867
+msgid "Message"
+msgstr "संदेश"
+
+#: data/gl-eventviewdetail.ui:112 data/gl-searchpopover.ui:887
+msgid "Audit Session"
+msgstr "लेखापरीक्षा सत्र"
+
+#: data/gl-eventviewdetail.ui:141 data/gl-searchpopover.ui:882
+msgid "Kernel Device"
+msgstr "कर्नेल उपकरण"
+
+#: data/gl-eventviewdetail.ui:169
+msgid "Priority"
+msgstr "प्राथमिकता"
+
+#: data/gl-eventviewdetail.ui:198
+msgid "Subject"
+msgstr "विषय"
+
+#: data/gl-eventviewdetail.ui:230
+msgid "Defined By"
+msgstr "इससे परिभाषित"
+
+#: data/gl-eventviewdetail.ui:260
+msgid "Support"
+msgstr "समर्थन"
+
+#: data/gl-eventviewdetail.ui:292
+msgid "Documentation"
+msgstr "दस्तावेज़ीकरण"
+
+#: data/gl-eventviewlist.ui:29
+msgid "Search logs"
+msgstr "लॉग खोजें"
+
+#: data/gl-eventviewlist.ui:35
+msgid "Select journal field and timestamp range filtering options"
+msgstr "जर्नल फ़ील्ड और टाइमस्टैम्प रेंज फ़िल्टरिंग विकल्प चुनें"
+
+#: data/gl-searchpopover.ui:27
+msgid "Select a Journal Field to filter the Logs according to it"
+msgstr "लॉग को उसके अनुसार फ़िल्टर करने के लिए जर्नल फ़ील्ड का चयन करें"
+
+#: data/gl-searchpopover.ui:34 data/gl-searchpopover.ui:843
+msgid "All Available Fields"
+msgstr "सभी उपलब्ध क्षेत्र"
+
+#: data/gl-searchpopover.ui:66 data/gl-searchpopover.ui:220
+msgid "Parameters"
+msgstr "मापदंड"
+
+#. Translators: What [journal fields to search in]
+#: data/gl-searchpopover.ui:101
+msgid "What"
+msgstr "कौनसी"
+
+#: data/gl-searchpopover.ui:117
+msgid "Select Journal Field…"
+msgstr "जर्नल क्षेत्र चुनें…"
+
+#. When [log entries to be shown for a given timestamp range]
+#: data/gl-searchpopover.ui:140
+msgid "When"
+msgstr "कब"
+
+#: data/gl-searchpopover.ui:156
+msgid "Show Logs from…"
+msgstr "यहां से लॉग दिखाएं…"
+
+#: data/gl-searchpopover.ui:181
+msgid "Select Timestamp Range of the Log Entries to be shown"
+msgstr "दिखाई जाने वाली लॉग प्रविष्टियों की टाइमस्टैम्प रेंज का चयन करें"
+
+#: data/gl-searchpopover.ui:188 data/gl-searchpopover.ui:906
+#: src/gl-searchpopover.c:1306
+msgid "Current Boot"
+msgstr "वर्तमान बूट"
+
+#: data/gl-searchpopover.ui:255
+msgid "Search Type"
+msgstr "खोज प्रकार"
+
+#: data/gl-searchpopover.ui:266
+msgid "Substring"
+msgstr "उपस्ट्रिंग"
+
+#: data/gl-searchpopover.ui:268
+msgid "Match in any part of the string"
+msgstr "स्ट्रिंग के किसी भी हिस्से में मिलान करें"
+
+#: data/gl-searchpopover.ui:275
+msgid "Exact"
+msgstr "सटीक"
+
+#: data/gl-searchpopover.ui:277
+msgid "Match complete string only"
+msgstr "केवल पूर्ण स्ट्रिंग का मिलान करें"
+
+#: data/gl-searchpopover.ui:319
+msgid "Back"
+msgstr "पीछे"
+
+#: data/gl-searchpopover.ui:337
+msgid "Show Logs Starting From…"
+msgstr "इससे प्रारंभ होने वाले लॉग दिखाएं…"
+
+#: data/gl-searchpopover.ui:358
+msgid "Select a start date"
+msgstr "आरंभ तिथि चुनें"
+
+#: data/gl-searchpopover.ui:365 src/gl-searchpopover.c:503
+msgid "Select Start Date…"
+msgstr "आरंभ तिथि चुनें…"
+
+#: data/gl-searchpopover.ui:384 data/gl-searchpopover.ui:626
+msgid "22 January 2016 or 1/22/2016"
+msgstr "22 जनवरी 2016 या 1/22/2016"
+
+#: data/gl-searchpopover.ui:423
+msgid "Select start time"
+msgstr "आरंभ समय चुनें"
+
+#: data/gl-searchpopover.ui:430 src/gl-searchpopover.c:504
+msgid "Select Start Time…"
+msgstr "आरंभ समय चुनें…"
+
+#: data/gl-searchpopover.ui:454 data/gl-searchpopover.ui:699
+msgid "Hr"
+msgstr "घं"
+
+#: data/gl-searchpopover.ui:480 data/gl-searchpopover.ui:729
+msgid "Min"
+msgstr "मि"
+
+#: data/gl-searchpopover.ui:510 data/gl-searchpopover.ui:759
+msgid "Sec"
+msgstr "से"
+
+#: data/gl-searchpopover.ui:540 data/gl-searchpopover.ui:789
+msgid "AM/PM"
+msgstr "AM/PM"
+
+#: data/gl-searchpopover.ui:579
+msgid "Until…"
+msgstr "तक…"
+
+#: data/gl-searchpopover.ui:600
+msgid "Select an end date"
+msgstr "अंतिम तिथि चुनें"
+
+#: data/gl-searchpopover.ui:607 src/gl-searchpopover.c:521
+msgid "Select End Date…"
+msgstr "अंतिम तिथि चुनें…"
+
+#: data/gl-searchpopover.ui:668
+msgid "Select end time"
+msgstr "समाप्ति समय चुनें"
+
+#: data/gl-searchpopover.ui:675 src/gl-searchpopover.c:522
+msgid "Select End Time…"
+msgstr "समाप्ति समय चुनें…"
+
+#: data/gl-searchpopover.ui:852
+msgid "PID"
+msgstr "PID"
+
+#: data/gl-searchpopover.ui:857
+msgid "UID"
+msgstr "UID"
+
+#: data/gl-searchpopover.ui:862
+msgid "GID"
+msgstr "GID"
+
+#: data/gl-searchpopover.ui:872
+msgid "Process Name"
+msgstr "प्रक्रिया नाम"
+
+#: data/gl-searchpopover.ui:877
+msgid "Systemd Unit"
+msgstr "Systemd इकाई"
+
+#: data/gl-searchpopover.ui:892
+msgid "Executable Path"
+msgstr "निष्पादनयोग्य पथ"
+
+#: data/gl-searchpopover.ui:911
+msgid "Previous Boot"
+msgstr "पिछला बूट"
+
+#: data/gl-searchpopover.ui:920
+msgid "Today"
+msgstr "आज"
+
+#: data/gl-searchpopover.ui:925
+msgid "Yesterday"
+msgstr "बिता कल"
+
+#: data/gl-searchpopover.ui:930
+msgid "Last 3 days"
+msgstr "पिछले 3 दिन"
+
+#: data/gl-searchpopover.ui:939
+msgid "Entire Journal"
+msgstr "संपूर्ण जर्नल"
+
+#: data/gl-searchpopover.ui:948
+msgid "Set Custom Range…"
+msgstr "कस्टम रेंज निर्धारित करें…"
+
+#: data/gl-window.ui:30
+msgid "Help"
+msgstr "सहायता"
+
+#: data/gl-window.ui:37
+msgid "Ignore"
+msgstr "नजरअंदाज"
+
+#: data/help-overlay.ui:8
+msgctxt "shortcut window"
+msgid "General"
+msgstr "सामान्य"
+
+#: data/help-overlay.ui:12
+msgctxt "shortcut window"
+msgid "Open a new window"
+msgstr "नई विंडो खोलें"
+
+#: data/help-overlay.ui:18
+msgctxt "shortcut window"
+msgid "Close a window"
+msgstr "विंडो बंद करें"
+
+#: data/help-overlay.ui:24
+msgctxt "shortcut window"
+msgid "Show help"
+msgstr "सहायता दिखाएं"
+
+#: data/help-overlay.ui:30
+msgctxt "shortcut window"
+msgid "Keyboard shortcuts"
+msgstr "कीबोर्ड शॉर्टकट"
+
+#: data/help-overlay.ui:37
+msgctxt "shortcut window"
+msgid "Application"
+msgstr "अनुप्रयोग"
+
+#: data/help-overlay.ui:41
+msgctxt "shortcut window"
+msgid "Find"
+msgstr "खोजें"
+
+#: data/help-overlay.ui:47
+msgctxt "shortcut window"
+msgid "Export logs to a file"
+msgstr "किसी फ़ाइल में लॉग निर्यात करें"
+
+#: data/org.gnome.Logs.appdata.xml.in:7 data/org.gnome.Logs.desktop.in:3
+#: src/gl-application.c:132 src/gl-eventtoolbar.c:143
+msgid "Logs"
+msgstr "Logs"
+
+#: data/org.gnome.Logs.appdata.xml.in:8 data/org.gnome.Logs.desktop.in:5
+msgid "View detailed event logs for the system"
+msgstr "सिस्टम के लिए विस्तृत इवेंट लॉग देखें"
+
+#: data/org.gnome.Logs.appdata.xml.in:10
+msgid ""
+"Logs shows events from the systemd journal, and sorts them into categories, "
+"such as hardware and applications."
+msgstr ""
+"Logs systemd जर्नल से ईवेंट दिखाता है, और उन्हें हार्डवेयर और अनुप्रयोग जैसी श्रेणियों में "
+"क्रमबद्ध करता है।"
+
+#: data/org.gnome.Logs.appdata.xml.in:12
+msgid ""
+"Using Logs you can search your logs by typing a search term, and view "
+"detailed information about each event by clicking on it."
+msgstr ""
+"Logs का उपयोग करके आप एक खोज शब्द टाइप करके अपने लॉग खोज सकते हैं, और उस पर क्लिक "
+"करके प्रत्येक घटना के बारे में विस्तृत जानकारी देख सकते हैं।"
+
+#: data/org.gnome.Logs.appdata.xml.in:54 src/gl-application.c:134
+msgid "The GNOME Project"
+msgstr "GNOME परियोजना"
+
+#: data/org.gnome.Logs.desktop.in:4
+msgid "Log Viewer"
+msgstr "लॉग दर्शक"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.Logs.desktop.in:7
+msgid "log;journal;debug;error;"
+msgstr "लॉग;जर्नल;डीबग;त्रुटि;"
+
+#: data/org.gnome.Logs.gschema.xml:5
+msgid "Ignore warning"
+msgstr "चेतावनी को नजरअंदाज करें"
+
+#: data/org.gnome.Logs.gschema.xml:6
+msgid ""
+"Whether to ignore the warning that says you don’t have sufficient permission "
+"to view logs. If ignored, the warning won’t show up again."
+msgstr ""
+"क्या उस चेतावनी को अनदेखा करना चाहिए जो कहती है कि आपके पास लॉग देखने की पर्याप्त "
+"अनुमति नहीं है। यदि अनदेखा किया गया, तो चेतावनी दोबारा दिखाई नहीं देगी।"
+
+#: data/org.gnome.Logs.gschema.xml:10
+msgid "How to sort list rows in the event view list"
+msgstr "इवेंट दृश्य सूची में सूची पंक्तियों को कैसे क्रमबद्ध करें"
+
+#: data/org.gnome.Logs.gschema.xml:11
+msgid "Sort list rows in ascending or descending order for the selected type"
+msgstr "चयनित प्रकार के लिए सूची पंक्तियों को आरोही या अवरोही क्रम में क्रमबद्ध करें"
+
+#: src/gl-application.c:82 src/gl-window.c:285
+msgid "Failed To Open Help"
+msgstr "सहायता खोलने में विफल"
+
+#: src/gl-application.c:85 src/gl-window.c:288
+#, c-format
+msgid "Failed to open the given help URI: %s"
+msgstr "दी गई सहायता URI खोलने में विफल: %s"
+
+#: src/gl-application.c:88 src/gl-window.c:175 src/gl-window.c:291
+msgid "_Close"
+msgstr "बंद (_C)"
+
+#: src/gl-application.c:137
+msgid "translator-credits"
+msgstr "Scrambled777 <weblate.scrambled777@simplelogin.com>"
+
+#: src/gl-application.c:270
+msgid "Print version information and exit"
+msgstr "संस्करण जानकारी मुद्रित करें और बाहर निकलें"
+
+#. Translators: Boot refers to a single run (or bootup) of the system
+#: src/gl-eventtoolbar.c:134
+msgid "Boot"
+msgstr "बूट"
+
+#. Translators: Shown when there are no (zero) results in the current
+#. * view.
+#: src/gl-eventviewlist.c:431
+msgid "No Results"
+msgstr "कोई परिणाम नहीं"
+
+#: src/gl-eventviewrow.c:228
+msgid "Other"
+msgstr "अन्य"
+
+#. Translators: if only custom start timestamp is set, then we update
+#. * the timestamp range button label in popover to show that
+#. * logs are shown in the window starting from this timestamp
+#. * until the ending timestamp of journal.
+#: src/gl-searchpopover.c:687
+#, c-format
+msgid "From %s"
+msgstr "%s से"
+
+#. Translators: if only custom end timestamp is set, then we update
+#. * the timestamp range button label in popover to show that
+#. * logs are shown in the window upto this timestamp
+#. * with the starting timestamp being the current time.
+#: src/gl-searchpopover.c:700
+#, c-format
+msgid "Until %s"
+msgstr "%s तक"
+
+#. Translators: date format for the start date entry
+#. * and start date button label in the custom range submenu,
+#. * showing the day of month in decimal number, full month
+#. * name as string, the year as a decimal number including the century.
+#. Translators: date format for the end date entry
+#. * and end date button label in the custom range submenu,
+#. * showing the day of month in decimal number, full month
+#. * name as string, the year as a decimal number including the century.
+#: src/gl-searchpopover.c:734 src/gl-searchpopover.c:1102
+msgid "%e %B %Y"
+msgstr "%e %B %Y"
+
+#: src/gl-searchpopover.c:873
+#, c-format
+msgid "AM"
+msgstr "AM"
+
+#: src/gl-searchpopover.c:877
+#, c-format
+msgid "PM"
+msgstr "PM"
+
+#. Translators: timestamp format for the custom start time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 12-hour format.
+#. Translators: timestamp format for the custom end time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 12-hour format.
+#: src/gl-searchpopover.c:985 src/gl-searchpopover.c:1225
+msgid "%I:%M:%S %p"
+msgstr "%I:%M:%S %p"
+
+#. Translators: timestamp format for the custom start time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 24-hour format.
+#. Translators: timestamp format for the custom end time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 24-hour format.
+#: src/gl-searchpopover.c:992 src/gl-searchpopover.c:1232
+msgid "%T"
+msgstr "%T"
+
+#. Translators: timestamp format for events on the
+#. * current day, showing the time with seconds in
+#. * 12-hour format.
+#: src/gl-util.c:126
+msgid "%l:%M:%S %p"
+msgstr "%l:%M:%S %p"
+
+#. Translators: timestamp format for events on the
+#. * current day, showing the time without seconds in
+#. * 12-hour format.
+#: src/gl-util.c:133
+msgid "%l:%M %p"
+msgstr "%l:%M %p"
+
+#. Translators: timestamp format for events in
+#. * the current year, showing the abbreviated
+#. * month name, day of the month and the time
+#. * with seconds in 12-hour format.
+#: src/gl-util.c:144
+msgid "%b %e %l:%M:%S %p"
+msgstr "%b %e %l:%M:%S %p"
+
+#. Translators: timestamp format for events in the
+#. * current year, showing the abbreviated month name,
+#. * day of the month and the time without seconds in
+#. * 12-hour format.
+#: src/gl-util.c:152
+msgid "%b %e %l:%M %p"
+msgstr "%b %e %l:%M %p"
+
+#. Translators: timestamp format for events in
+#. * a different year, showing the abbreviated
+#. * month name, day of the month, year and the
+#. * time with seconds in 12-hour format.
+#: src/gl-util.c:163
+msgid "%b %e %Y %l:%M:%S %p"
+msgstr "%b %e %Y %l:%M:%S %p"
+
+#. Translators: timestamp format for events in
+#. * a different year, showing the abbreviated
+#. * month name day of the month, year and the
+#. * time without seconds in 12-hour format.
+#: src/gl-util.c:172
+msgid "%b %e %Y %l:%M %p"
+msgstr "%b %e %Y %l:%M %p"
+
+#. Translators: timestamp format for events on the
+#. * current day, showing the time with seconds in
+#. * 24-hour format.
+#: src/gl-util.c:189
+msgid "%H:%M:%S"
+msgstr "%H:%M:%S"
+
+#. Translators: timestamp format for events on the
+#. * current day, showing the time without seconds in
+#. * 24-hour format.
+#: src/gl-util.c:196
+msgid "%H:%M"
+msgstr "%H:%M"
+
+#. Translators: timestamp format for events in the
+#. * current year, showing the abbreviated month name,
+#. * day of the month and the time with seconds in
+#. * 24-hour format.
+#: src/gl-util.c:206
+msgid "%b %e %H:%M:%S"
+msgstr "%b %e %H:%M:%S"
+
+#. Translators: timestamp format for events in the
+#. * current year, showing the abbreviated month name,
+#. * day of the month and the time without seconds in
+#. * 24-hour format.
+#: src/gl-util.c:214
+msgid "%b %e %H:%M"
+msgstr "%b %e %H:%M"
+
+#. Translators: timestamp format for events in
+#. * a different year, showing the abbreviated
+#. * month name, day of the month, year and the
+#. * time with seconds in 24-hour format.
+#: src/gl-util.c:225
+msgid "%b %e %Y %H:%M:%S"
+msgstr "%b %e %Y %H:%M:%S"
+
+#. Translators: timestamp format for events in a
+#. * different year, showing the abbreviated month name,
+#. * day of the month, year and the time without seconds
+#. * in 24-hour format.
+#: src/gl-util.c:233
+msgid "%b %e %Y %H:%M"
+msgstr "%b %e %Y %H:%M"
+
+#. Transltors: the first string is the earliest timestamp of the boot,
+#. * and the second string is the newest timestamp. An example string might
+#. * be '08:10 - 08:30'
+#: src/gl-util.c:297
+#, c-format
+msgid "%s – %s"
+msgstr "%s – %s"
+
+#: src/gl-window.c:172
+msgid "Export Failed"
+msgstr "निर्यात विफल"
+
+#: src/gl-window.c:173
+msgid "Unable to export log messages to a file"
+msgstr "किसी फ़ाइल में लॉग संदेश निर्यात करने में असमर्थ"
+
+#: src/gl-window.c:194
+msgid "log messages"
+msgstr "संदेश लॉग करें"
+
+#: src/gl-window.c:471 src/gl-window.c:488
+msgid "Unable to read system logs"
+msgstr "सिस्टम लॉग पढ़ने में असमर्थ"
+
+#: src/gl-window.c:478
+msgid "Unable to read user logs"
+msgstr "उपयोगकर्ता लॉग पढ़ने में असमर्थ"
+
+#: src/gl-window.c:496
+msgid "No logs available"
+msgstr "कोई लॉग उपलब्ध नहीं है"
