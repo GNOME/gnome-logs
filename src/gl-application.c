@@ -139,7 +139,7 @@ on_about (GSimpleAction *action,
                            "license-type", GTK_LICENSE_GPL_3_0,
                            "version", PACKAGE_VERSION,
                            "website", PACKAGE_URL,
-                           "issue-url", "https://gitlab.gnome.org/GNOME/gnome-logs/-/issues/new",
+                           "issue-url", "https://gitlab.gnome.org/GNOME/gnome-logs/-/issues/",
                            NULL);
 }
 
