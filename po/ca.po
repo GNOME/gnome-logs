@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
 "POT-Creation-Date: 2023-09-25 21:02+0000\n"
-"PO-Revision-Date: 2023-10-05 16:34+0200\n"
+"PO-Revision-Date: 2024-06-02 16:34+0200\n"
 "Last-Translator: David <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <gnome@llistes.softcatala.org>\n"
 "Language: ca\n"
@@ -104,7 +104,7 @@ msgstr "Missatge"
 
 #: data/gl-eventviewdetail.ui:112 data/gl-searchpopover.ui:887
 msgid "Audit Session"
-msgstr "Audita la sessió"
+msgstr "Sessió d'auditoria"
 
 #: data/gl-eventviewdetail.ui:141 data/gl-searchpopover.ui:882
 msgid "Kernel Device"
@@ -384,7 +384,7 @@ msgid ""
 "Using Logs you can search your logs by typing a search term, and view "
 "detailed information about each event by clicking on it."
 msgstr ""
-"Amb el Logs podeu cercar els vostres registres teclejant un terme de cerca i "
+"Amb el Registres podeu cercar els vostres registres teclejant un terme de cerca i "
 "veure la informació detallada sobre cada esdeveniment fent-hi clic."
 
 #: data/org.gnome.Logs.appdata.xml.in:38 src/gl-application.c:134
@@ -644,14 +644,3 @@ msgstr "No s'han pogut llegir els registres d'usuari"
 msgid "No logs available"
 msgstr "No hi ha registres disponibles"
 
-#~ msgid "GNOME Logs"
-#~ msgstr "Registres del GNOME"
-
-#~ msgid "View and search logs"
-#~ msgstr "Visualitza i cerca registres"
-
-#~ msgid "_Save"
-#~ msgstr "_Desa"
-
-#~ msgid "_Cancel"
-#~ msgstr "_Cancel·la"
