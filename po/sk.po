@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the gnome-logs package.
 # Peter Vágner <pvdeejay@gmail.com>, 2014.
 # Dušan Kazik <prescott66@gmail.com>, 2015-2021.
+# Jose Riha <jose1711@gmail.com>, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2021-07-28 07:14+0000\n"
-"PO-Revision-Date: 2021-10-05 13:26+0200\n"
-"Last-Translator: Dušan Kazik <prescott66@gmail.com>\n"
+"POT-Creation-Date: 2023-09-25 21:02+0000\n"
+"PO-Revision-Date: 2024-06-29 11:25+0200\n"
+"Last-Translator: Jose Riha <jose1711@gmail.com>\n"
 "Language-Team: Slovak <gnome-sk-list@gnome.org>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
@@ -19,45 +20,45 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1) ? 1 : (n>=2 && n<=4) ? 2 : 0\n"
 "X-Generator: Gtranslator 40.0\n"
 
-#: data/gl-categorylist.ui:15
+#: data/gl-categorylist.ui:12
 msgid "Important"
 msgstr "Dôležité"
 
 # DK: varovania, vid slovnik
-#: data/gl-categorylist.ui:30
+#: data/gl-categorylist.ui:23
 msgid "Alerts"
 msgstr "Upozornenia"
 
 # DK: mozno skor "Označené hviezdičkou" ?
-#: data/gl-categorylist.ui:45
+#: data/gl-categorylist.ui:34
 msgid "Starred"
 msgstr "Označené hviezdičkou"
 
-#: data/gl-categorylist.ui:60
+#: data/gl-categorylist.ui:44
 msgid "All"
 msgstr "Všetky"
 
-#: data/gl-categorylist.ui:75 src/gl-eventviewrow.c:209
+#: data/gl-categorylist.ui:54 src/gl-eventviewrow.c:211
 msgid "Applications"
 msgstr "Aplikácie"
 
-#: data/gl-categorylist.ui:90 src/gl-eventviewrow.c:218
+#: data/gl-categorylist.ui:64 src/gl-eventviewrow.c:220
 msgid "System"
 msgstr "Systém"
 
-#: data/gl-categorylist.ui:105 src/gl-eventviewrow.c:222
+#: data/gl-categorylist.ui:74 src/gl-eventviewrow.c:224
 msgid "Security"
 msgstr "Bezpečnosť"
 
-#: data/gl-categorylist.ui:120 src/gl-eventviewrow.c:214
+#: data/gl-categorylist.ui:84 src/gl-eventviewrow.c:216
 msgid "Hardware"
 msgstr "Hardvér"
 
-#: data/gl-categorylist.ui:135
+#: data/gl-categorylist.ui:95
 msgid "Updates"
 msgstr "Aktualizácie"
 
-#: data/gl-categorylist.ui:150
+#: data/gl-categorylist.ui:106
 msgid "Usage"
 msgstr "Použitie"
 
@@ -66,262 +67,273 @@ msgid "_New Window"
 msgstr "_Nové okno"
 
 #: data/gl-eventtoolbar.ui:12
-msgid "Keyboard Shortcuts"
-msgstr "Klávesové skratky"
+#| msgid "Keyboard Shortcuts"
+msgid "_Keyboard Shortcuts"
+msgstr "_Klávesové skratky"
 
-#: data/gl-eventtoolbar.ui:17
+#: data/gl-eventtoolbar.ui:16
 msgid "_Help"
 msgstr "_Pomocník"
 
-#: data/gl-eventtoolbar.ui:21
+#: data/gl-eventtoolbar.ui:20
 msgid "_About Logs"
 msgstr "_O aplikácii Záznamy"
 
+#: data/gl-eventtoolbar.ui:35
+msgid "Main Menu"
+msgstr "Hlavná ponuka"
+
 # tooltip
-#: data/gl-eventtoolbar.ui:53
+#: data/gl-eventtoolbar.ui:41
 msgid "Export logs to a file"
 msgstr "Exportuje záznamy do súboru"
 
 # tooltip
-#: data/gl-eventtoolbar.ui:74
+#: data/gl-eventtoolbar.ui:49
 msgid "Choose the boot from which to view logs"
-msgstr "Zvolí spustenie systému, z ktorého sa zobrazia záznamy"
+msgstr "Vyberte spustenie systému, pre ktoré chcete vidieť záznamy"
 
 # tooltip
-#: data/gl-eventtoolbar.ui:86
+#: data/gl-eventtoolbar.ui:59
 msgid "Search all the logs of the current category"
 msgstr "Vyhľadá všetky záznamy v aktuálnej kategórii"
 
-#: data/gl-eventviewdetail.ui:26
+#: data/gl-eventviewdetail.ui:23
 msgid "Sender"
-msgstr "Odosielateľ"
+msgstr "Pôvodca"
 
-#: data/gl-eventviewdetail.ui:58
+#: data/gl-eventviewdetail.ui:52
 msgid "Time"
 msgstr "Čas"
 
-#: data/gl-eventviewdetail.ui:92 data/gl-searchpopover.ui:1052
+#: data/gl-eventviewdetail.ui:81 data/gl-searchpopover.ui:867
 msgid "Message"
 msgstr "Správa"
 
 # DK: session prekladame ako reláciu
-#: data/gl-eventviewdetail.ui:128 data/gl-searchpopover.ui:1072
+#: data/gl-eventviewdetail.ui:112 data/gl-searchpopover.ui:887
 msgid "Audit Session"
-msgstr "Audit relácie"
+msgstr "Auditovacia relácia"
 
-#: data/gl-eventviewdetail.ui:161 data/gl-searchpopover.ui:1067
+#: data/gl-eventviewdetail.ui:141 data/gl-searchpopover.ui:882
 msgid "Kernel Device"
 msgstr "Zariadenie jadra"
 
-#: data/gl-eventviewdetail.ui:194
+#: data/gl-eventviewdetail.ui:169
 msgid "Priority"
 msgstr "Priorita"
 
-#: data/gl-eventviewdetail.ui:228
+#: data/gl-eventviewdetail.ui:198
 msgid "Subject"
 msgstr "Predmet"
 
-#: data/gl-eventviewdetail.ui:264
+#: data/gl-eventviewdetail.ui:230
 msgid "Defined By"
 msgstr "Definoval"
 
-#: data/gl-eventviewdetail.ui:298
+#: data/gl-eventviewdetail.ui:260
 msgid "Support"
 msgstr "Podpora"
 
-#: data/gl-eventviewdetail.ui:334
+#: data/gl-eventviewdetail.ui:292
 msgid "Documentation"
 msgstr "Dokumentácia"
 
+#: data/gl-eventviewlist.ui:29
+#| msgctxt "shortcut window"
+#| msgid "Search"
+msgid "Search logs"
+msgstr "hľadať záznamy"
+
 # tooltip
-#: data/gl-eventviewlist.ui:42
+#: data/gl-eventviewlist.ui:35
 msgid "Select journal field and timestamp range filtering options"
 msgstr "Vyberie voľby filtrovania podľa poľa žurnálu a časových značiek"
 
 # tooltip
-#: data/gl-searchpopover.ui:26
+#: data/gl-searchpopover.ui:27
 msgid "Select a Journal Field to filter the Logs according to it"
 msgstr "Vyberie pole žurnálu, podľa ktorého sa budú filtrovať záznamy"
 
-#: data/gl-searchpopover.ui:35 data/gl-searchpopover.ui:1028
+#: data/gl-searchpopover.ui:34 data/gl-searchpopover.ui:843
 msgid "All Available Fields"
 msgstr "Všetky dostupné polia"
 
-#: data/gl-searchpopover.ui:78 data/gl-searchpopover.ui:251
+#: data/gl-searchpopover.ui:66 data/gl-searchpopover.ui:220
 msgid "Parameters"
 msgstr "Parametre"
 
 #. Translators: What [journal fields to search in]
-#: data/gl-searchpopover.ui:115
+#: data/gl-searchpopover.ui:101
 msgid "What"
 msgstr "Čo"
 
-#: data/gl-searchpopover.ui:130
+#: data/gl-searchpopover.ui:117
 msgid "Select Journal Field…"
 msgstr "Vybrať pole žurnálu…"
 
 #. When [log entries to be shown for a given timestamp range]
-#: data/gl-searchpopover.ui:155
+#: data/gl-searchpopover.ui:140
 msgid "When"
 msgstr "Kedy"
 
-#: data/gl-searchpopover.ui:170
+#: data/gl-searchpopover.ui:156
 msgid "Show Logs from…"
 msgstr "Zobraziť záznamy od…"
 
 # tooltip
-#: data/gl-searchpopover.ui:199
+#: data/gl-searchpopover.ui:181
 msgid "Select Timestamp Range of the Log Entries to be shown"
 msgstr ""
 "Vyberie rozsah časových značiek položiek záznamov, ktoré budú zobrazené"
 
-#: data/gl-searchpopover.ui:208 data/gl-searchpopover.ui:1091
-#: src/gl-searchpopover.c:1309
+#: data/gl-searchpopover.ui:188 data/gl-searchpopover.ui:906
+#: src/gl-searchpopover.c:1306
 msgid "Current Boot"
 msgstr "Aktuálne spustenie"
 
-#: data/gl-searchpopover.ui:293
+#: data/gl-searchpopover.ui:255
 msgid "Search Type"
 msgstr "Typ vyhľadávania"
 
-#: data/gl-searchpopover.ui:310
+#: data/gl-searchpopover.ui:266
 msgid "Substring"
 msgstr "Čiastočná zhoda"
 
 # tooltip
-#: data/gl-searchpopover.ui:314
+#: data/gl-searchpopover.ui:268
 msgid "Match in any part of the string"
 msgstr "Vyhľadá zhodu v akejkoľvek časti reťazca"
 
-#: data/gl-searchpopover.ui:328
+#: data/gl-searchpopover.ui:275
 msgid "Exact"
 msgstr "Presná zhoda"
 
-#: data/gl-searchpopover.ui:332
+#: data/gl-searchpopover.ui:277
 msgid "Match complete string only"
 msgstr "Vyhľadá iba zhodu celého reťazca"
 
-#: data/gl-searchpopover.ui:379
+#: data/gl-searchpopover.ui:319
 msgid "Back"
 msgstr "Späť"
 
-#: data/gl-searchpopover.ui:397
+#: data/gl-searchpopover.ui:337
 msgid "Show Logs Starting From…"
 msgstr "Zobraziť záznamy začínajúce od…"
 
 # tooltip
-#: data/gl-searchpopover.ui:419
+#: data/gl-searchpopover.ui:358
 msgid "Select a start date"
 msgstr "Vyberie počiatočný dátum"
 
-#: data/gl-searchpopover.ui:428 src/gl-searchpopover.c:503
+#: data/gl-searchpopover.ui:365 src/gl-searchpopover.c:503
 msgid "Select Start Date…"
 msgstr "Vybrať počiatočný dátum…"
 
-#: data/gl-searchpopover.ui:459 data/gl-searchpopover.ui:763
+#: data/gl-searchpopover.ui:384 data/gl-searchpopover.ui:626
 msgid "22 January 2016 or 1/22/2016"
 msgstr "22. január 2016 alebo 22.1.2016"
 
 # tooltip
-#: data/gl-searchpopover.ui:504
+#: data/gl-searchpopover.ui:423
 msgid "Select start time"
-msgstr "Vyberie počiatočný čas"
+msgstr "Vybrať počiatočný čas"
 
-#: data/gl-searchpopover.ui:513 src/gl-searchpopover.c:504
+#: data/gl-searchpopover.ui:430 src/gl-searchpopover.c:504
 msgid "Select Start Time…"
 msgstr "Vybrať počiatočný čas…"
 
-#: data/gl-searchpopover.ui:550 data/gl-searchpopover.ui:857
+#: data/gl-searchpopover.ui:454 data/gl-searchpopover.ui:699
 msgid "Hr"
 msgstr "Hod."
 
-#: data/gl-searchpopover.ui:585 data/gl-searchpopover.ui:892
+#: data/gl-searchpopover.ui:480 data/gl-searchpopover.ui:729
 msgid "Min"
 msgstr "Min."
 
-#: data/gl-searchpopover.ui:620 data/gl-searchpopover.ui:927
+#: data/gl-searchpopover.ui:510 data/gl-searchpopover.ui:759
 msgid "Sec"
 msgstr "Sek."
 
-#: data/gl-searchpopover.ui:655 data/gl-searchpopover.ui:962
+#: data/gl-searchpopover.ui:540 data/gl-searchpopover.ui:789
 msgid "AM/PM"
 msgstr "Dopoludnia/Popoludní"
 
-#: data/gl-searchpopover.ui:701
+#: data/gl-searchpopover.ui:579
 msgid "Until…"
 msgstr "Do…"
 
 # tooltip
-#: data/gl-searchpopover.ui:723
+#: data/gl-searchpopover.ui:600
 msgid "Select an end date"
 msgstr "Vyberie konečný dátum"
 
-#: data/gl-searchpopover.ui:732 src/gl-searchpopover.c:521
+#: data/gl-searchpopover.ui:607 src/gl-searchpopover.c:521
 msgid "Select End Date…"
 msgstr "Vybrať konečný dátum…"
 
 # tooltip
-#: data/gl-searchpopover.ui:811
+#: data/gl-searchpopover.ui:668
 msgid "Select end time"
 msgstr "Vyberie konečný čas"
 
-#: data/gl-searchpopover.ui:820 src/gl-searchpopover.c:522
+#: data/gl-searchpopover.ui:675 src/gl-searchpopover.c:522
 msgid "Select End Time…"
 msgstr "Vybrať konečný čas…"
 
-#: data/gl-searchpopover.ui:1037
+#: data/gl-searchpopover.ui:852
 msgid "PID"
 msgstr "PID"
 
-#: data/gl-searchpopover.ui:1042
+#: data/gl-searchpopover.ui:857
 msgid "UID"
 msgstr "UID"
 
-#: data/gl-searchpopover.ui:1047
+#: data/gl-searchpopover.ui:862
 msgid "GID"
 msgstr "GID"
 
-#: data/gl-searchpopover.ui:1057
+#: data/gl-searchpopover.ui:872
 msgid "Process Name"
 msgstr "Názov procesu"
 
-#: data/gl-searchpopover.ui:1062
+#: data/gl-searchpopover.ui:877
 msgid "Systemd Unit"
 msgstr "Jednotka systém Systemd"
 
-#: data/gl-searchpopover.ui:1077
+#: data/gl-searchpopover.ui:892
 msgid "Executable Path"
-msgstr "Cesta spustiteľného súboru"
+msgstr "Cesta ku spustiteľnému súboru"
 
-#: data/gl-searchpopover.ui:1096
+#: data/gl-searchpopover.ui:911
 msgid "Previous Boot"
 msgstr "Predošlé spustenie"
 
-#: data/gl-searchpopover.ui:1105
+#: data/gl-searchpopover.ui:920
 msgid "Today"
 msgstr "Dnes"
 
-#: data/gl-searchpopover.ui:1110
+#: data/gl-searchpopover.ui:925
 msgid "Yesterday"
 msgstr "Včera"
 
-#: data/gl-searchpopover.ui:1115
+#: data/gl-searchpopover.ui:930
 msgid "Last 3 days"
 msgstr "Posledné 3 dni"
 
-#: data/gl-searchpopover.ui:1124
+#: data/gl-searchpopover.ui:939
 msgid "Entire Journal"
 msgstr "Celý žurnál"
 
-#: data/gl-searchpopover.ui:1133
+#: data/gl-searchpopover.ui:948
 msgid "Set Custom Range…"
 msgstr "Nastaviť vlastný rozsah…"
 
-#: data/gl-window.ui:26
+#: data/gl-window.ui:30
 msgid "Help"
 msgstr "Pomocník"
 
-#: data/gl-window.ui:34
+#: data/gl-window.ui:37
 msgid "Ignore"
 msgstr "Ignorovať"
 
@@ -330,57 +342,58 @@ msgctxt "shortcut window"
 msgid "General"
 msgstr "Všeobecné"
 
-#: data/help-overlay.ui:13
+#: data/help-overlay.ui:12
 msgctxt "shortcut window"
 msgid "Open a new window"
 msgstr "Otvorenie nového okna"
 
-#: data/help-overlay.ui:20
+#: data/help-overlay.ui:18
 msgctxt "shortcut window"
 msgid "Close a window"
 msgstr "Zatvorenie okna"
 
-#: data/help-overlay.ui:27
+#: data/help-overlay.ui:24
 msgctxt "shortcut window"
 msgid "Show help"
 msgstr "Zobrazenie pomocníka"
 
-#: data/help-overlay.ui:34
+#: data/help-overlay.ui:30
 msgctxt "shortcut window"
 msgid "Keyboard shortcuts"
 msgstr "Klávesové skratky"
 
-#: data/help-overlay.ui:42
+#: data/help-overlay.ui:37
 msgctxt "shortcut window"
 msgid "Application"
 msgstr "Aplikácia"
 
-#: data/help-overlay.ui:47
+#: data/help-overlay.ui:41
 msgctxt "shortcut window"
 msgid "Find"
-msgstr "Nájdenie"
+msgstr "Nájsť"
 
 # tooltip
-#: data/help-overlay.ui:54
+#: data/help-overlay.ui:47
 msgctxt "shortcut window"
 msgid "Export logs to a file"
 msgstr "Export záznamov do súboru"
 
-#: data/org.gnome.Logs.appdata.xml.in:7
-msgid "GNOME Logs"
-msgstr "Záznamy prostredia GNOME"
+#: data/org.gnome.Logs.appdata.xml.in:7 data/org.gnome.Logs.desktop.in:3
+#: src/gl-application.c:132 src/gl-eventtoolbar.c:143
+msgid "Logs"
+msgstr "Záznamy"
 
 # DK:nezda sa mi moc presny ten preklad aj ked znie dobre. dal by som: "Zobrazuje podrobné záznamy udalostí systému"
 #: data/org.gnome.Logs.appdata.xml.in:8 data/org.gnome.Logs.desktop.in:5
 msgid "View detailed event logs for the system"
-msgstr "Zobrazuje podrobné záznamy o udalostiach v systéme"
+msgstr "Prezrite si podrobné záznamy o udalostiach v systéme"
 
 #: data/org.gnome.Logs.appdata.xml.in:10
 msgid ""
 "Logs shows events from the systemd journal, and sorts them into categories, "
 "such as hardware and applications."
 msgstr ""
-"Aplikácia záznamy zobrazuje udalosti zo žurnálu služby systemd a triedi ich "
+"Aplikácia Záznamy zobrazuje udalosti zo žurnálu služby systemd a triedi ich "
 "do kategórií ako sú napríklad hardvér alebo aplikácie."
 
 #: data/org.gnome.Logs.appdata.xml.in:12
@@ -391,13 +404,9 @@ msgstr ""
 "Použitím aplikácie Záznamy môžete vyhľadať zadaný výraz a kliknutím na "
 "udalosť zobraziť podrobné informácie o každej udalosti."
 
-#: data/org.gnome.Logs.appdata.xml.in:30
+#: data/org.gnome.Logs.appdata.xml.in:38 src/gl-application.c:134
 msgid "The GNOME Project"
 msgstr "Projekt GNOME"
-
-#: data/org.gnome.Logs.desktop.in:3 src/gl-eventtoolbar.c:143
-msgid "Logs"
-msgstr "Záznamy"
 
 #: data/org.gnome.Logs.desktop.in:4
 msgid "Log Viewer"
@@ -431,17 +440,27 @@ msgstr "Ako usporiadať riadky zoznamu v zobrazení udalostí"
 msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr "Usporiadať zoznam riadkov vzostupne alebo  zostupne pre vybratý typ"
 
-#: src/gl-application.c:116
+#: src/gl-application.c:82 src/gl-window.c:285
+msgid "Failed To Open Help"
+msgstr "Nepodarilo sa otvoriť Pomocníka"
+
+#: src/gl-application.c:85 src/gl-window.c:288
+#, c-format
+msgid "Failed to open the given help URI: %s"
+msgstr "Nepodarilo sa otvoriť zadanú URI pomocníka: %s"
+
+#: src/gl-application.c:88 src/gl-window.c:175 src/gl-window.c:291
+msgid "_Close"
+msgstr "_Zavrieť"
+
+#: src/gl-application.c:137
 msgid "translator-credits"
 msgstr ""
 "Peter Vágner <pvdeejay@gmail.com>\n"
-"Dušan Kazik <prescott66@gmail.com>"
+"Dušan Kazik <prescott66@gmail.com>\n"
+"Jose Riha <jose1711@gmail.com>"
 
-#: src/gl-application.c:117
-msgid "View and search logs"
-msgstr "Zobrazuje a prehľadáva záznamy"
-
-#: src/gl-application.c:259
+#: src/gl-application.c:270
 msgid "Print version information and exit"
 msgstr "Vypíše informácie o verzii a skončí"
 
@@ -452,12 +471,11 @@ msgstr "Spustenie"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: src/gl-eventviewlist.c:473
-#| msgid "No results"
+#: src/gl-eventviewlist.c:431
 msgid "No Results"
 msgstr "Žiadne výsledky"
 
-#: src/gl-eventviewrow.c:226
+#: src/gl-eventviewrow.c:228
 msgid "Other"
 msgstr "Ostatné"
 
@@ -487,16 +505,16 @@ msgstr "Do %s"
 #. * and end date button label in the custom range submenu,
 #. * showing the day of month in decimal number, full month
 #. * name as string, the year as a decimal number including the century.
-#: src/gl-searchpopover.c:737 src/gl-searchpopover.c:1107
+#: src/gl-searchpopover.c:734 src/gl-searchpopover.c:1102
 msgid "%e %B %Y"
 msgstr "%e. %B %Y"
 
-#: src/gl-searchpopover.c:875
+#: src/gl-searchpopover.c:873
 #, c-format
 msgid "AM"
 msgstr "Dopoludnia"
 
-#: src/gl-searchpopover.c:879
+#: src/gl-searchpopover.c:877
 #, c-format
 msgid "PM"
 msgstr "Popoludní"
@@ -507,7 +525,7 @@ msgstr "Popoludní"
 #. Translators: timestamp format for the custom end time button
 #. * label in the custom range submenu, showing the time with seconds
 #. * in 12-hour format.
-#: src/gl-searchpopover.c:987 src/gl-searchpopover.c:1229
+#: src/gl-searchpopover.c:985 src/gl-searchpopover.c:1225
 msgid "%I:%M:%S %p"
 msgstr "%k:%M:%S"
 
@@ -517,21 +535,21 @@ msgstr "%k:%M:%S"
 #. Translators: timestamp format for the custom end time button
 #. * label in the custom range submenu, showing the time with seconds
 #. * in 24-hour format.
-#: src/gl-searchpopover.c:994 src/gl-searchpopover.c:1236
+#: src/gl-searchpopover.c:992 src/gl-searchpopover.c:1232
 msgid "%T"
 msgstr "%T"
 
 #. Translators: timestamp format for events on the
 #. * current day, showing the time with seconds in
 #. * 12-hour format.
-#: src/gl-util.c:148
+#: src/gl-util.c:126
 msgid "%l:%M:%S %p"
 msgstr "%l:%M:%S %p"
 
 #. Translators: timestamp format for events on the
 #. * current day, showing the time without seconds in
 #. * 12-hour format.
-#: src/gl-util.c:155
+#: src/gl-util.c:133
 msgid "%l:%M %p"
 msgstr "%l:%M %p"
 
@@ -539,7 +557,7 @@ msgstr "%l:%M %p"
 #. * the current year, showing the abbreviated
 #. * month name, day of the month and the time
 #. * with seconds in 12-hour format.
-#: src/gl-util.c:166
+#: src/gl-util.c:144
 msgid "%b %e %l:%M:%S %p"
 msgstr "%e. %b %l:%M:%S %p"
 
@@ -547,7 +565,7 @@ msgstr "%e. %b %l:%M:%S %p"
 #. * current year, showing the abbreviated month name,
 #. * day of the month and the time without seconds in
 #. * 12-hour format.
-#: src/gl-util.c:174
+#: src/gl-util.c:152
 msgid "%b %e %l:%M %p"
 msgstr "%e. %b %l:%M %p"
 
@@ -555,7 +573,7 @@ msgstr "%e. %b %l:%M %p"
 #. * a different year, showing the abbreviated
 #. * month name, day of the month, year and the
 #. * time with seconds in 12-hour format.
-#: src/gl-util.c:185
+#: src/gl-util.c:163
 msgid "%b %e %Y %l:%M:%S %p"
 msgstr "%e. %b %Y %l:%M:%S %p"
 
@@ -563,21 +581,21 @@ msgstr "%e. %b %Y %l:%M:%S %p"
 #. * a different year, showing the abbreviated
 #. * month name day of the month, year and the
 #. * time without seconds in 12-hour format.
-#: src/gl-util.c:194
+#: src/gl-util.c:172
 msgid "%b %e %Y %l:%M %p"
 msgstr "%e. %b %Y %l:%M %p"
 
 #. Translators: timestamp format for events on the
 #. * current day, showing the time with seconds in
 #. * 24-hour format.
-#: src/gl-util.c:211
+#: src/gl-util.c:189
 msgid "%H:%M:%S"
 msgstr "%H:%M:%S"
 
 #. Translators: timestamp format for events on the
 #. * current day, showing the time without seconds in
 #. * 24-hour format.
-#: src/gl-util.c:218
+#: src/gl-util.c:196
 msgid "%H:%M"
 msgstr "%H:%M"
 
@@ -585,7 +603,7 @@ msgstr "%H:%M"
 #. * current year, showing the abbreviated month name,
 #. * day of the month and the time with seconds in
 #. * 24-hour format.
-#: src/gl-util.c:228
+#: src/gl-util.c:206
 msgid "%b %e %H:%M:%S"
 msgstr "%e. %b %H:%M:%S"
 
@@ -593,7 +611,7 @@ msgstr "%e. %b %H:%M:%S"
 #. * current year, showing the abbreviated month name,
 #. * day of the month and the time without seconds in
 #. * 24-hour format.
-#: src/gl-util.c:236
+#: src/gl-util.c:214
 msgid "%b %e %H:%M"
 msgstr "%e. %b %H:%M"
 
@@ -601,7 +619,7 @@ msgstr "%e. %b %H:%M"
 #. * a different year, showing the abbreviated
 #. * month name, day of the month, year and the
 #. * time with seconds in 24-hour format.
-#: src/gl-util.c:247
+#: src/gl-util.c:225
 msgid "%b %e %Y %H:%M:%S"
 msgstr "%e. %b %Y %H:%M:%S"
 
@@ -609,54 +627,59 @@ msgstr "%e. %b %Y %H:%M:%S"
 #. * different year, showing the abbreviated month name,
 #. * day of the month, year and the time without seconds
 #. * in 24-hour format.
-#: src/gl-util.c:255
+#: src/gl-util.c:233
 msgid "%b %e %Y %H:%M"
 msgstr "%e. %b %Y %H:%M"
 
 #. Transltors: the first string is the earliest timestamp of the boot,
 #. * and the second string is the newest timestamp. An example string might
 #. * be '08:10 - 08:30'
-#: src/gl-util.c:319
+#: src/gl-util.c:297
 #, c-format
 msgid "%s – %s"
 msgstr "%s – %s"
 
-# dialog title
-#: src/gl-window.c:113
-msgid "Save logs"
-msgstr "Uloženie záznamov"
+# tooltip
+#: src/gl-window.c:172
+#| msgid "Export logs to a file"
+msgid "Export Failed"
+msgstr "Export zlyhal"
 
-#: src/gl-window.c:116
-msgid "_Save"
-msgstr "_Uložiť"
-
-#: src/gl-window.c:117
-msgid "_Cancel"
-msgstr "_Zrušiť"
-
-#: src/gl-window.c:121
-msgid "log messages"
-msgstr "správy záznamu"
-
-#: src/gl-window.c:180
+#: src/gl-window.c:173
 msgid "Unable to export log messages to a file"
 msgstr "Nie je možné exportovať správy záznamu do súboru"
 
-#: src/gl-window.c:494 src/gl-window.c:525
+#: src/gl-window.c:194
+msgid "log messages"
+msgstr "správy záznamu"
+
+#: src/gl-window.c:471 src/gl-window.c:488
 msgid "Unable to read system logs"
 msgstr "Nie je možné čítať systémové záznamy"
 
-#: src/gl-window.c:508
+#: src/gl-window.c:478
 msgid "Unable to read user logs"
 msgstr "Nie je možné čítať záznamy používateľa"
 
-#: src/gl-window.c:540
+#: src/gl-window.c:496
 msgid "No logs available"
 msgstr "Nie sú dostupné žiadne záznamy"
 
-#~ msgctxt "shortcut window"
-#~ msgid "Search"
-#~ msgstr "Vyhľadávanie"
+#~ msgid "GNOME Logs"
+#~ msgstr "Záznamy prostredia GNOME"
+
+#~ msgid "View and search logs"
+#~ msgstr "Zobrazuje a prehľadáva záznamy"
+
+# dialog title
+#~ msgid "Save logs"
+#~ msgstr "Uloženie záznamov"
+
+#~ msgid "_Save"
+#~ msgstr "_Uložiť"
+
+#~ msgid "_Cancel"
+#~ msgstr "_Zrušiť"
 
 #~ msgid "_Quit"
 #~ msgstr "U_končiť"
