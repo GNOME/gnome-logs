@@ -72,22 +72,22 @@ on_help_launch_cb (GtkUriLauncher *launcher,
                    GAsyncResult *res,
                    gpointer user_data)
 {
-  GtkWidget *error_dialog;
+  AdwDialog *error_dialog;
   GtkWindow *active_window = GTK_WINDOW (user_data);
   g_autoptr (GError) error = NULL;
 
   if (!gtk_uri_launcher_launch_finish (launcher, res, &error))
   {
-    error_dialog = adw_message_dialog_new (active_window,
-                                           _("Failed To Open Help"),
-                                           NULL);
-    adw_message_dialog_format_body (ADW_MESSAGE_DIALOG (error_dialog),
-                                    _("Failed to open the given help URI: %s"),
-                                    error->message);
-    adw_message_dialog_add_response (ADW_MESSAGE_DIALOG (error_dialog),
-                                     "close", _("_Close"));
-    adw_message_dialog_choose (ADW_MESSAGE_DIALOG (error_dialog),
-                               NULL, NULL, NULL);
+    error_dialog = adw_alert_dialog_new (_("Failed To Open Help"),
+                                         NULL);
+    adw_alert_dialog_format_body (ADW_ALERT_DIALOG (error_dialog),
+                                  _("Failed to open the given help URI: %s"),
+                                  error->message);
+    adw_alert_dialog_add_response (ADW_ALERT_DIALOG (error_dialog),
+                                   "close", _("_Close"));
+    adw_alert_dialog_choose (ADW_ALERT_DIALOG (error_dialog),
+                             GTK_WIDGET (active_window),
+                             NULL, NULL, NULL);
   }
 }
 

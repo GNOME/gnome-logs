@@ -110,7 +110,7 @@ on_save_finish (GObject      *source_object,
     GFile *output_file;
     GFileOutputStream *file_ostream;
     GError *error = NULL;
-    GtkWidget *error_dialog;
+    AdwDialog *error_dialog;
 
     priv = gl_window_get_instance_private (GL_WINDOW (user_data));
     event_list = GL_EVENT_VIEW_LIST (priv->event_list);
@@ -168,13 +168,13 @@ on_save_finish (GObject      *source_object,
 
     if (have_error == TRUE)
     {
-        error_dialog = adw_message_dialog_new (GTK_WINDOW (user_data),
-                                               _("Export Failed"),
-                                               _("Unable to export log messages to a file"));
-        adw_message_dialog_add_response (ADW_MESSAGE_DIALOG (error_dialog),
-                                         "close", _("_Close"));
-        adw_message_dialog_choose (ADW_MESSAGE_DIALOG (error_dialog),
-                                   NULL, NULL, NULL);
+        error_dialog = adw_alert_dialog_new (_("Export Failed"),
+                                             _("Unable to export log messages to a file"));
+        adw_alert_dialog_add_response (ADW_ALERT_DIALOG (error_dialog),
+                                       "close", _("_Close"));
+        adw_alert_dialog_choose (ADW_ALERT_DIALOG (error_dialog),
+                                 GTK_WIDGET (user_data),
+                                 NULL, NULL, NULL);
     }
 
     g_free (file_content);
@@ -271,7 +271,7 @@ on_help_button_clicked (GlWindow *window,
                         gpointer user_data)
 {
     GlWindowPrivate *priv;
-    GtkWidget *error_dialog;
+    AdwDialog *error_dialog;
     g_autoptr (GError) error = NULL;
 
     priv = gl_window_get_instance_private (GL_WINDOW (window));
@@ -281,16 +281,16 @@ on_help_button_clicked (GlWindow *window,
 
     if (error != NULL)
     {
-      error_dialog = adw_message_dialog_new (GTK_WINDOW (window),
-                                             _("Failed To Open Help"),
-                                             NULL);
-      adw_message_dialog_format_body (ADW_MESSAGE_DIALOG (error_dialog),
+      error_dialog = adw_alert_dialog_new (_("Failed To Open Help"),
+                                           NULL);
+      adw_alert_dialog_format_body (ADW_ALERT_DIALOG (error_dialog),
                                       _("Failed to open the given help URI: %s"),
                                       error->message);
-      adw_message_dialog_add_response (ADW_MESSAGE_DIALOG (error_dialog),
-                                       "close", _("_Close"));
-      adw_message_dialog_choose (ADW_MESSAGE_DIALOG (error_dialog),
-                                 NULL, NULL, NULL);
+      adw_alert_dialog_add_response (ADW_ALERT_DIALOG (error_dialog),
+                                     "close", _("_Close"));
+      adw_alert_dialog_choose (ADW_ALERT_DIALOG (error_dialog),
+                               GTK_WIDGET (window),
+                               NULL, NULL, NULL);
     }
 
     gtk_widget_set_visible (priv->info_bar, FALSE);
