@@ -141,7 +141,7 @@
         {
           "type": "git",
           "url": "https://github.com/systemd/systemd.git",
-          "tag": "v251"
+          "tag": "v255"
         }
       ]
     },
