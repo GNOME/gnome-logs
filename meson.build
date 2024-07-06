@@ -59,8 +59,8 @@ endif
 
 gl_deps = [
     dependency('gio-unix-2.0', version : '>=2.43.90'),
-    dependency('gtk4', version : '>=4.10.0'),
-    dependency('libadwaita-1', version : '>=1.4.alpha'),
+    dependency('gtk4', version : '>=4.15.3'),
+    dependency('libadwaita-1', version : '>=1.6.alpha'),
     dependency('libsystemd')
 ]
 
