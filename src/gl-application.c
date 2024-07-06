@@ -128,7 +128,7 @@ on_about (GSimpleAction *action,
 
     application = GTK_APPLICATION (user_data);
     parent = gtk_application_get_active_window (GTK_APPLICATION (application));
-    adw_show_about_window (parent,
+    adw_show_about_dialog (GTK_WIDGET (parent),
                            "application-name", _("Logs"),
                            "application-icon", "org.gnome.Logs",
                            "developer-name", _("The GNOME Project"),
