@@ -8,9 +8,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2023-09-25 21:02+0000\n"
-"PO-Revision-Date: 2024-06-29 11:25+0200\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues/\n"
+"POT-Creation-Date: 2024-06-29 09:28+0000\n"
+"PO-Revision-Date: 2024-09-14 16:05+0200\n"
 "Last-Translator: Jose Riha <jose1711@gmail.com>\n"
 "Language-Team: Slovak <gnome-sk-list@gnome.org>\n"
 "Language: sk\n"
@@ -67,7 +67,6 @@ msgid "_New Window"
 msgstr "_Nové okno"
 
 #: data/gl-eventtoolbar.ui:12
-#| msgid "Keyboard Shortcuts"
 msgid "_Keyboard Shortcuts"
 msgstr "_Klávesové skratky"
 
@@ -140,8 +139,6 @@ msgid "Documentation"
 msgstr "Dokumentácia"
 
 #: data/gl-eventviewlist.ui:29
-#| msgctxt "shortcut window"
-#| msgid "Search"
 msgid "Search logs"
 msgstr "hľadať záznamy"
 
@@ -345,17 +342,17 @@ msgstr "Všeobecné"
 #: data/help-overlay.ui:12
 msgctxt "shortcut window"
 msgid "Open a new window"
-msgstr "Otvorenie nového okna"
+msgstr "Otvoriť nové okno"
 
 #: data/help-overlay.ui:18
 msgctxt "shortcut window"
 msgid "Close a window"
-msgstr "Zatvorenie okna"
+msgstr "Zatvoriť okno"
 
 #: data/help-overlay.ui:24
 msgctxt "shortcut window"
 msgid "Show help"
-msgstr "Zobrazenie pomocníka"
+msgstr "Zobraziť pomocníka"
 
 #: data/help-overlay.ui:30
 msgctxt "shortcut window"
@@ -370,13 +367,13 @@ msgstr "Aplikácia"
 #: data/help-overlay.ui:41
 msgctxt "shortcut window"
 msgid "Find"
-msgstr "Nájsť"
+msgstr "Hľadať"
 
 # tooltip
 #: data/help-overlay.ui:47
 msgctxt "shortcut window"
 msgid "Export logs to a file"
-msgstr "Export záznamov do súboru"
+msgstr "Exportovať záznamy do súboru"
 
 #: data/org.gnome.Logs.appdata.xml.in:7 data/org.gnome.Logs.desktop.in:3
 #: src/gl-application.c:132 src/gl-eventtoolbar.c:143
@@ -404,7 +401,7 @@ msgstr ""
 "Použitím aplikácie Záznamy môžete vyhľadať zadaný výraz a kliknutím na "
 "udalosť zobraziť podrobné informácie o každej udalosti."
 
-#: data/org.gnome.Logs.appdata.xml.in:38 src/gl-application.c:134
+#: data/org.gnome.Logs.appdata.xml.in:54 src/gl-application.c:134
 msgid "The GNOME Project"
 msgstr "Projekt GNOME"
 
@@ -641,7 +638,6 @@ msgstr "%s – %s"
 
 # tooltip
 #: src/gl-window.c:172
-#| msgid "Export logs to a file"
 msgid "Export Failed"
 msgstr "Export zlyhal"
 
