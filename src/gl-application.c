@@ -76,7 +76,7 @@ on_help_launch_cb (GtkUriLauncher *launcher,
   GtkWindow *active_window = GTK_WINDOW (user_data);
   g_autoptr (GError) error = NULL;
 
-  if (!gtk_uri_launcher_launch_finish (launcher, res, &error))
+  if (!g_app_info_launch_default_for_uri_finish (res, &error))
   {
     error_dialog = adw_message_dialog_new (active_window,
                                            _("Failed To Open Help"),
@@ -96,16 +96,23 @@ on_help (GSimpleAction *action,
          GVariant *parameter,
          gpointer user_data)
 {
-    GtkUriLauncher *launcher;
+    GdkDisplay *display;
+    GAppLaunchContext *context;
     GtkApplication *self = GTK_APPLICATION (user_data);
     GtkWindow *active_window = gtk_application_get_active_window (self);
 
-    launcher = gtk_uri_launcher_new ("help:gnome-logs");
-    gtk_uri_launcher_launch (launcher,
-                             active_window,
-                             NULL,
-                             (GAsyncReadyCallback) on_help_launch_cb,
-                             NULL);
+    display = gtk_widget_get_display (GTK_WIDGET (active_window));
+    if (display != NULL)
+        context = G_APP_LAUNCH_CONTEXT (gdk_display_get_app_launch_context (display));
+    else
+        context = NULL;
+
+    g_app_info_launch_default_for_uri_async ("help:gnome-logs", context, NULL,
+                                             (GAsyncReadyCallback) on_help_launch_cb,
+                                             active_window);
+
+    if (context)
+        g_object_unref (context);
 }
 
 static void
