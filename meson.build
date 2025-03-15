@@ -34,11 +34,11 @@ config_h = configuration_data()
 set_defines = [
   # package
   ['PACKAGE', gl_name],
-  ['PACKAGE_BUGREPORT', 'http://bugzilla.gnome.org/enter_bug.cgi?product=' + gl_name],
+  ['PACKAGE_BUGREPORT', 'https://gitlab.gnome.org/GNOME/gnome-logs/-/issues'],
   ['PACKAGE_NAME', 'Logs'],
   ['PACKAGE_STRING', '@0@ @1@'.format(gl_name, gl_version)],
   ['PACKAGE_TARNAME', gl_name],
-  ['PACKAGE_URL', 'https://wiki.gnome.org/Apps/Logs'],
+  ['PACKAGE_URL', 'https://apps.gnome.org/Logs/'],
   ['PACKAGE_VERSION', gl_version],
   ['VERSION', gl_version],
   # i18n
