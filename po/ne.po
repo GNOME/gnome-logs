@@ -6,9 +6,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs gnome 3.14\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2022-09-11 00:09+0000\n"
-"PO-Revision-Date: 2022-09-19 11:08+0545\n"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/browse.cgi?product=gnome-logs\n"
+"POT-Creation-Date: 2025-03-10 19:10+0000\n"
+"PO-Revision-Date: 2025-03-16 14:05+0545\n"
 "Last-Translator: Pawan Chitrakar <chautari@gmail.com>\n"
 "Language-Team: Nepali Translation Team <chautari@gmai.com>\n"
 "Language: ne\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.5\n"
 
 #: data/gl-categorylist.ui:12
 msgid "Important"
@@ -58,21 +58,25 @@ msgstr "अद्यावधिक गर्नुहोस्"
 msgid "Usage"
 msgstr "प्रयोग"
 
-#: data/gl-eventtoolbar.ui:7
+#: data/gl-eventtoolbar.ui:6
 msgid "_New Window"
 msgstr "नयाँ सञ्झ्याल"
 
-#: data/gl-eventtoolbar.ui:13
-msgid "Keyboard Shortcuts"
-msgstr "कुञ्जीपाटी सर्टकटहरू"
+#: data/gl-eventtoolbar.ui:12
+msgid "_Keyboard Shortcuts"
+msgstr "कुञ्जीपाटी सटकर्ट"
 
-#: data/gl-eventtoolbar.ui:18
+#: data/gl-eventtoolbar.ui:16
 msgid "_Help"
 msgstr "सहयोग"
 
-#: data/gl-eventtoolbar.ui:22
+#: data/gl-eventtoolbar.ui:20
 msgid "_About Logs"
 msgstr "लगको बारेमा"
+
+#: data/gl-eventtoolbar.ui:35
+msgid "Main Menu"
+msgstr "मुख्य मेनु"
 
 #: data/gl-eventtoolbar.ui:41
 msgid "Export logs to a file"
@@ -82,7 +86,7 @@ msgstr "फाइलमा लग निर्यात गर्नुहोस
 msgid "Choose the boot from which to view logs"
 msgstr "लग हरू हेर्ने बुट रोज्नुहोस्"
 
-#: data/gl-eventtoolbar.ui:60
+#: data/gl-eventtoolbar.ui:59
 msgid "Search all the logs of the current category"
 msgstr "हालको श्रेणीका सबै लगहरू खोजी गर्नुहोस्"
 
@@ -126,7 +130,11 @@ msgstr "समर्थन गर्नुहोस्"
 msgid "Documentation"
 msgstr "अभिलेखीकरण"
 
-#: data/gl-eventviewlist.ui:34
+#: data/gl-eventviewlist.ui:29
+msgid "Search logs"
+msgstr "लगहरू खोज्नुहोस्"
+
+#: data/gl-eventviewlist.ui:35
 msgid "Select journal field and timestamp range filtering options"
 msgstr "जर्नल फिल्ड र टाइमस्टाम्प दायरा फिल्टरिङ विकल्प चयन गर्नुहोस्"
 
@@ -149,7 +157,7 @@ msgstr "के"
 
 #: data/gl-searchpopover.ui:117
 msgid "Select Journal Field…"
-msgstr "जर्नल फिल्ड चयन गर्नुहोस्..."
+msgstr "जर्नल फिल्ड चयन गर्नुहोस्…"
 
 #. When [log entries to be shown for a given timestamp range]
 #: data/gl-searchpopover.ui:140
@@ -158,14 +166,13 @@ msgstr "जब"
 
 #: data/gl-searchpopover.ui:156
 msgid "Show Logs from…"
-msgstr "यसबाट लग देखाउनुहोस्..."
+msgstr "यसबाट लग देखाउनुहोस्…"
 
 #: data/gl-searchpopover.ui:181
 msgid "Select Timestamp Range of the Log Entries to be shown"
 msgstr "देखाइने लग प्रविष्टिहरूको टाइमस्टाम्प दायरा चयन गर्नुहोस्"
 
-#: data/gl-searchpopover.ui:188 data/gl-searchpopover.ui:906
-#: src/gl-searchpopover.c:1306
+#: data/gl-searchpopover.ui:188 data/gl-searchpopover.ui:906 src/gl-searchpopover.c:1306
 msgid "Current Boot"
 msgstr "हालको बुट"
 
@@ -195,7 +202,7 @@ msgstr "पछाडि"
 
 #: data/gl-searchpopover.ui:337
 msgid "Show Logs Starting From…"
-msgstr "यसबाट सुरु हुने लग देखाउनुहोस्..."
+msgstr "यसबाट सुरु हुने लग देखाउनुहोस्…"
 
 #: data/gl-searchpopover.ui:358
 msgid "Select a start date"
@@ -350,7 +357,7 @@ msgid "Export logs to a file"
 msgstr "फाइलमा लग निर्यात गर्नुहोस्"
 
 #: data/org.gnome.Logs.appdata.xml.in:7 data/org.gnome.Logs.desktop.in:3
-#: src/gl-application.c:107 src/gl-eventtoolbar.c:144
+#: src/gl-application.c:132 src/gl-eventtoolbar.c:143
 msgid "Logs"
 msgstr "लग"
 
@@ -360,21 +367,21 @@ msgstr "प्रणालीबाट लग विवरण हेर्नु
 
 #: data/org.gnome.Logs.appdata.xml.in:10
 msgid ""
-"Logs shows events from the systemd journal, and sorts them into categories, "
-"such as hardware and applications."
+"Logs shows events from the systemd journal, and sorts them into categories, such as "
+"hardware and applications."
 msgstr ""
-"लगहरूले प्रणालीबद्ध जर्नलबाट घटनाहरू देखाउँदछ, र तिनीहरूलाई हार्डवेयर र अनुप्रयोगहरू जस्ता "
-"श्रेणीहरूमा क्रमबद्ध गर्दछ।"
+"लगहरूले प्रणालीबद्ध जर्नलबाट घटनाहरू देखाउँदछ, र तिनीहरूलाई हार्डवेयर र अनुप्रयोगहरू जस्ता श्रेणीहरूमा क्रमबद्ध "
+"गर्दछ।."
 
 #: data/org.gnome.Logs.appdata.xml.in:12
 msgid ""
-"Using Logs you can search your logs by typing a search term, and view "
-"detailed information about each event by clicking on it."
+"Using Logs you can search your logs by typing a search term, and view detailed information "
+"about each event by clicking on it."
 msgstr ""
-"लगहरू प्रयोग गरेर तपाईं खोजी शब्द टाइप गरेर आफ्नो लगहरू खोजी गर्न सक्नुहुन्छ, र यसमा क्लिक "
-"गरेर प्रत्येक घटनाको बारेमा विस्तृत जानकारी हेर्न सक्नुहुन्छ।"
+"लगहरू प्रयोग गरेर तपाईं खोजी शब्द टाइप गरेर आफ्नो लगहरू खोजी गर्न सक्नुहुन्छ, र यसमा क्लिक गरेर प्रत्येक "
+"घटनाको बारेमा विस्तृत जानकारी हेर्न सक्नुहुन्छ।."
 
-#: data/org.gnome.Logs.appdata.xml.in:30 src/gl-application.c:109
+#: data/org.gnome.Logs.appdata.xml.in:54 src/gl-application.c:134
 msgid "The GNOME Project"
 msgstr "जिनोम परियोजना"
 
@@ -393,11 +400,11 @@ msgstr "चेतावनी उपेक्षा गर्नुहोस्"
 
 #: data/org.gnome.Logs.gschema.xml:6
 msgid ""
-"Whether to ignore the warning that says you don’t have sufficient permission "
-"to view logs. If ignored, the warning won’t show up again."
+"Whether to ignore the warning that says you don’t have sufficient permission to view logs. "
+"If ignored, the warning won’t show up again."
 msgstr ""
-"तपाईँसँग लगहरू हेर्नपर्याप्त अनुमति छैन भन्ने चेतावनीउपेक्षा गर्ने या नगर्ने । यदि बेवास्ता "
-"गरियो भने, चेतावनी फेरि देखा पर्दैन।"
+"तपाईँसँग लगहरू हेर्नपर्याप्त अनुमति छैन भन्ने चेतावनीउपेक्षा गर्ने या नगर्ने । यदि बेवास्ता गरियो भने, चेतावनी "
+"फेरि देखा पर्दैन।."
 
 #: data/org.gnome.Logs.gschema.xml:10
 msgid "How to sort list rows in the event view list"
@@ -405,25 +412,37 @@ msgstr "घटना दृश्य सूचीमा सूची पङ्�
 
 #: data/org.gnome.Logs.gschema.xml:11
 msgid "Sort list rows in ascending or descending order for the selected type"
-msgstr ""
-"चयन गरिएको प्रकारका लागि आरोही वा अवरोही क्रममा सूची पङ्क्तिहरू क्रमबद्ध गर्नुहोस्"
+msgstr "चयन गरिएको प्रकारका लागि आरोही वा अवरोही क्रममा सूची पङ्क्तिहरू क्रमबद्ध गर्नुहोस्"
 
-#: src/gl-application.c:112
+#: src/gl-application.c:82 src/gl-window.c:285
+msgid "Failed To Open Help"
+msgstr "मद्दत खोल्न असफल भयो"
+
+#: src/gl-application.c:85 src/gl-window.c:288
+#, c-format
+msgid "Failed to open the given help URI: %s"
+msgstr "दिइएको मद्दत URI खोल्न असफल भयो: %s"
+
+#: src/gl-application.c:88 src/gl-window.c:175 src/gl-window.c:291
+msgid "_Close"
+msgstr "बन्द गर्नुहोस्"
+
+#: src/gl-application.c:137
 msgid "translator-credits"
-msgstr "Pawan Chitrakar <chautari@gmail.com>"
+msgstr "pawan chitrakar <chautari@gmail.com>"
 
-#: src/gl-application.c:256
+#: src/gl-application.c:270
 msgid "Print version information and exit"
 msgstr "मुद्रण संस्करण विवरण अनि बाहिरनुहोस्"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
-#: src/gl-eventtoolbar.c:135
+#: src/gl-eventtoolbar.c:134
 msgid "Boot"
 msgstr "बुट"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: src/gl-eventviewlist.c:448
+#: src/gl-eventviewlist.c:431
 msgid "No Results"
 msgstr "नतिजा छैन"
 
@@ -591,41 +610,38 @@ msgstr "%b %e %Y %H:%M"
 msgid "%s – %s"
 msgstr "%s – %s"
 
-#: src/gl-window.c:174
+#: src/gl-window.c:172
+msgid "Export Failed"
+msgstr "निर्यात असफल भयो"
+
+#: src/gl-window.c:173
 msgid "Unable to export log messages to a file"
 msgstr "फाइलमा लग सन्देश निर्यात गर्न अक्षम"
 
-#: src/gl-window.c:195
-msgid "Save logs"
-msgstr "लग बचत गर्नुहोस्"
-
-#: src/gl-window.c:198
-msgid "_Save"
-msgstr "बचत गर्नुहोस्"
-
-#: src/gl-window.c:199
-msgid "_Cancel"
-msgstr "_रद्द गर्नुहोस्"
-
-#: src/gl-window.c:202
+#: src/gl-window.c:194
 msgid "log messages"
 msgstr "लग सन्देशहरू"
 
-#: src/gl-window.c:473 src/gl-window.c:490
+#: src/gl-window.c:471 src/gl-window.c:488
 msgid "Unable to read system logs"
 msgstr "प्रणाली लगहरू पढ्न अक्षम"
 
-#: src/gl-window.c:480
+#: src/gl-window.c:478
 msgid "Unable to read user logs"
 msgstr "प्रयोगकर्ता लगहरू पढ्न अक्षम"
 
-#: src/gl-window.c:498
+#: src/gl-window.c:496
 msgid "No logs available"
 msgstr "लग उपलब्ध छैन"
 
-#~ msgctxt "shortcut window"
-#~ msgid "Search"
-#~ msgstr "खोजी गर्नुहोस्"
+#~ msgid "Save logs"
+#~ msgstr "लग बचत गर्नुहोस्"
+
+#~ msgid "_Save"
+#~ msgstr "बचत गर्नुहोस्"
+
+#~ msgid "_Cancel"
+#~ msgstr "_रद्द गर्नुहोस्"
 
 #~ msgid "_Quit"
 #~ msgstr "अन्त्य गर्नुहोस्"
