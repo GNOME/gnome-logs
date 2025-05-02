@@ -424,6 +424,7 @@ gl_window_init (GlWindow *window)
     GSettings *settings;
     gboolean ignore;
     GlJournalModel *model;
+    GtkWindowGroup *window_group;
 
     /* Ensure these types that are used by the template have been
      * registered before calling gtk_widget_init_template().
@@ -433,6 +434,10 @@ gl_window_init (GlWindow *window)
     g_type_ensure(GL_TYPE_EVENT_VIEW_LIST);
 
     gtk_widget_init_template (GTK_WIDGET (window));
+
+    window_group = gtk_window_group_new ();
+    gtk_window_group_add_window (window_group, GTK_WINDOW (window));
+    g_object_unref (window_group);
 
     priv = gl_window_get_instance_private (window);
     event_list = GL_EVENT_VIEW_LIST (priv->event_list);
