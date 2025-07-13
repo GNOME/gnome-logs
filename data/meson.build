@@ -24,9 +24,9 @@ if desktop_file_validate.found()
   )
 endif
 
-appdata_file = i18n.merge_file(
-    input : 'org.gnome.Logs.appdata.xml.in',
-    output : 'org.gnome.Logs.appdata.xml',
+metainfo_file = i18n.merge_file(
+    input : 'org.gnome.Logs.metainfo.xml.in',
+    output : 'org.gnome.Logs.metainfo.xml',
     po_dir : po_dir,
     install : true,
     install_dir : join_paths(gl_datadir, 'metainfo')
@@ -36,9 +36,9 @@ if appstreamcli.found()
   test(
     'appstreamcli-validate', appstreamcli,
     args: [
-      'validate', '--no-net', '--explain', appdata_file,
+      'validate', '--no-net', '--explain', metainfo_file,
     ],
-    depends: appdata_file,
+    depends: metainfo_file,
   )
 endif
 
