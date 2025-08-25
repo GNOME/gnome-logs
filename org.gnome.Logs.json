@@ -78,8 +78,8 @@
         "-Ddocdir=/app/share/doc",
         "-Dsysvinit-path=/app/etc/init.d",
 
-        "-Dfdisk=false",
-        "-Ddbus=false",
+        "-Dfdisk=disabled",
+        "-Ddbus=disabled",
         "-Dutmp=false",
         "-Dhibernate=false",
         "-Dldconfig=false",
@@ -97,10 +97,10 @@
         "-Dnetworkd=false",
         "-Dtimedated=false",
         "-Dtimesyncd=false",
-        "-Dremote=false",
+        "-Dremote=disabled",
         "-Dnss-myhostname=false",
-        "-Dnss-mymachines=false",
-        "-Dnss-resolve=false",
+        "-Dnss-mymachines=disabled",
+        "-Dnss-resolve=disabled",
         "-Dnss-systemd=false",
         "-Dfirstboot=false",
         "-Drandomseed=false",
@@ -109,11 +109,11 @@
         "-Dquotacheck=false",
         "-Dsysusers=false",
         "-Dtmpfiles=false",
-        "-Dimportd=false",
+        "-Dimportd=disabled",
         "-Dhwdb=false",
         "-Drfkill=false",
-        "-Dman=false",
-        "-Dhtml=false",
+        "-Dman=disabled",
+        "-Dhtml=disabled",
         "-Dbashcompletiondir=no",
         "-Dzshcompletiondir=no"
       ],
@@ -141,7 +141,7 @@
         {
           "type": "git",
           "url": "https://github.com/systemd/systemd.git",
-          "tag": "v251"
+          "tag": "v256"
         }
       ]
     },
