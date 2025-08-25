@@ -43,8 +43,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://download.samba.org/pub/rsync/src/rsync-3.2.3.tar.gz",
-          "sha256": "becc3c504ceea499f4167a260040ccf4d9f2ef9499ad5683c179a697146ce50e"
+          "url": "https://download.samba.org/pub/rsync/src/rsync-3.4.1.tar.gz",
+          "sha256": "2924bcb3a1ed8b551fc101f740b9f0fe0a202b115027647cf69850d65fd88c52"
         }
       ]
     },
