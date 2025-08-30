@@ -18,6 +18,14 @@
     </screenshot>
   </screenshots>
   <releases>
+    <release version="49.rc" date="2025-08-31" type="development">
+      <description>
+        <ul>
+          <li>Put each main window into its own group</li>
+          <li>Translation updates</li>
+        </ul>
+      </description>
+    </release>
     <release version="45.0" date="2024-03-22">
       <description>
         <ul>
