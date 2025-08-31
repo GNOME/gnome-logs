@@ -89,6 +89,15 @@ install_data(
     'org.gnome.Logs.gschema.xml',
     install_dir : join_paths(gl_datadir, 'glib-2.0', 'schemas')
 )
+glib_compile_schemas = find_program('glib-compile-schemas', required: true)
+if glib_compile_schemas.found()
+  test(
+    'validate-gschema', glib_compile_schemas,
+    args: [
+      '--strict', '--dry-run', meson.current_build_dir()
+    ],
+  )
+endif
 
 version_conf = configuration_data()
 version_conf.set('PACKAGE_VERSION', gl_version)
