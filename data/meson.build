@@ -24,13 +24,23 @@ if desktop_file_validate.found()
   )
 endif
 
-i18n.merge_file(
+appdata_file = i18n.merge_file(
     input : 'org.gnome.Logs.appdata.xml.in',
     output : 'org.gnome.Logs.appdata.xml',
     po_dir : po_dir,
     install : true,
     install_dir : join_paths(gl_datadir, 'metainfo')
 )
+appstreamcli = find_program('appstreamcli', required: false)
+if appstreamcli.found()
+  test(
+    'appstreamcli-validate', appstreamcli,
+    args: [
+      'validate', '--no-net', '--explain', appdata_file,
+    ],
+    depends: appdata_file,
+  )
+endif
 
 service_conf = configuration_data()
 service_conf.set('bindir', gl_bindir)
