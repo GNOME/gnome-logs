@@ -4,7 +4,7 @@ add_global_arguments('-DGL_BINDIR="@0@"'.format(gl_bindir), language : 'c')
 
 gettext_package = gl_name
 
-i18n.merge_file(
+desktop_file = i18n.merge_file(
     input : 'org.gnome.Logs.desktop.in',
     output : 'org.gnome.Logs.desktop',
     type : 'desktop',
@@ -12,6 +12,17 @@ i18n.merge_file(
     install : true,
     install_dir : join_paths(gl_datadir, 'applications')
 )
+desktop_file_validate = find_program('desktop-file-validate', required: false)
+if desktop_file_validate.found()
+  test(
+    'validate-desktop',
+    desktop_file_validate,
+    args: [
+      desktop_file,
+    ],
+    depends: desktop_file,
+  )
+endif
 
 i18n.merge_file(
     input : 'org.gnome.Logs.appdata.xml.in',
