@@ -18,9 +18,10 @@
     </screenshot>
   </screenshots>
   <releases>
-    <release version="49.rc" date="2025-08-31" type="development">
+    <release version="49.0" date="2025-09-11">
       <description>
         <ul>
+          <li>Fix icon name</li>
           <li>Put each main window into its own group</li>
           <li>Translation updates</li>
         </ul>
