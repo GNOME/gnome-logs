@@ -6,41 +6,49 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
-"POT-Creation-Date: 2020-09-06 22:39+0000\n"
-"PO-Revision-Date: 2020-09-07 17:13+0200\n"
-"Last-Translator: Miquel-Àngel Burgos i Fradeja <miquel.angel.burgos@gmail."
-"com>\n"
+"POT-Creation-Date: 2025-10-26 15:12+0000\n"
+"PO-Revision-Date: 2025-10-29 16:09+0100\n"
+"Last-Translator: Miquel-Àngel Burgos i Fradeja "
+"<miquel.angel.burgos@gmail.com>\n"
 "Language-Team: Catalan <gnome@llistes.softcatala.org>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Poedit 3.6\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
 msgid "translator-credits"
-msgstr "Miquel-Àngel Burgos i Fradeja <miquel.angel.burgos@gmail.com>"
+msgstr ""
+"Miquel-Àngel Burgos i Fradeja <miquel.angel.burgos@gmail.com>\n"
+"Victor Dargallo <victordargallo@disroot.org>"
 
 #. (itstool) path: info/title
 #: C/index.page:7
-msgctxt "text"
+msgctxt "link:trail"
 msgid "Logs help"
 msgstr "Ajuda del Registres"
 
 #. (itstool) path: info/title
 #: C/index.page:8
+msgctxt "text"
+msgid "Logs help"
+msgstr "Ajuda del Registres"
+
+#. (itstool) path: info/title
+#: C/index.page:9
 msgctxt "link"
 msgid "Logs help"
 msgstr "Ajuda del Registres"
 
 #. (itstool) path: info/desc
-#: C/index.page:13
+#: C/index.page:14
 msgid "Browse and search through your systemd journal logs."
 msgstr "Navegueu i cerqueu als registres del vostre diari systemd."
 
 #. (itstool) path: page/title
-#: C/index.page:16
+#: C/index.page:17
 msgid "<_:media-1/> Logs"
 msgstr "<_:media-1/> Registres"
 
@@ -63,7 +71,7 @@ msgstr "Ekaterina Gerasimova"
 #: C/introduction.page:23
 msgid "<app>Logs</app> is a viewer for the <sys>systemd</sys> journal."
 msgstr ""
-"El <app>Registres</app> és un visualitzador del diari <sys>systemd</sys>."
+"El <app>Registres</app> és un visualitzador del diari del <sys>systemd</sys>."
 
 #. (itstool) path: page/title
 #: C/introduction.page:27
@@ -112,7 +120,9 @@ msgstr ""
 #. (itstool) path: p/link
 #: C/legal.xml:5
 msgid "Creative Commons Attribution-ShareAlike 3.0 Unported License"
-msgstr "Reconeixement-CompartirIgual 3.0 No adaptada (CC BY-SA 3.0)"
+msgstr ""
+"Llicència Creative Commons Reconeixement-CompartirIgual 3.0 Sense obres "
+"derivades"
 
 #. (itstool) path: license/p
 #: C/legal.xml:4
@@ -161,10 +171,10 @@ msgid ""
 "logs, it is possible that your system administrator has disabled your "
 "ability to view logs."
 msgstr ""
-"Per defecte, els usuaris <em href=\"help:gnome-help/user-admin-explain"
-"\">estàndard</em> veuen un conjunt limitat de registres, com ara registres "
-"d'aplicacions i els seus propis registres de sessió. Si sou un usuari "
-"<gui>estàndard</gui> i no veieu cap registre, és possible que "
+"Per defecte, els usuaris <em href=\"help:gnome-help/user-admin-"
+"explain\">estàndard</em> veuen un conjunt limitat de registres, com ara "
+"registres d'aplicacions i els seus propis registres de sessió. Si sou un "
+"usuari <gui>estàndard</gui> i no veieu cap registre, és possible que "
 "l'administrador del sistema us hagi desactivat la capacitat de veure els "
 "registres."
 
@@ -178,8 +188,8 @@ msgid ""
 "administrators to have different levels of access to logs, so you may not be "
 "able to view all logs. If you are an <gui>Administrator</gui> user, then "
 "only other administrators can change which logs you can access. For more "
-"information about log access permissions, <link href=\"man:systemd-journald"
-"\">see the <_:cmd-1/> man page</link>."
+"information about log access permissions, <link href=\"man:systemd-"
+"journald\">see the <_:cmd-1/> man page</link>."
 msgstr ""
 "Els usuaris <em>administradors</em> podran veure registres més sensibles, "
 "com ara els registres del nucli i els registres d'altres usuaris. És "
@@ -187,5 +197,5 @@ msgstr ""
 "registres, de manera que és possible no pugueu veure tots els registres. Si "
 "sou un usuari <gui>administrador</gui>, només altres administradors poden "
 "canviar els registres als quals podeu accedir. Per a més informació sobre "
-"els permisos d'accés als registres, <link href=\"man:systemd-journald"
-"\">vegeu la <_:cmd-1/> pàgina del manual</link>."
+"els permisos d'accés als registres, <link href=\"man:systemd-"
+"journald\">vegeu la <_:cmd-1/> pàgina del manual</link>."
