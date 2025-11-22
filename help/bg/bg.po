@@ -1,0 +1,198 @@
+# Bulgarian translation for gnome-logs.
+# Copyright (C) 2024 gnome-logs's COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-logs package.
+# twlvnn kraftwerk <kraft_werk@tutanota.com>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-logs master\n"
+"POT-Creation-Date: 2024-08-25 13:36+0000\n"
+"PO-Revision-Date: 2024-08-31 20:27+0200\n"
+"Last-Translator: twlvnn kraftwerk <kraft_werk@tutanota.com>\n"
+"Language-Team: Bulgarian <dict-notifications@fsa-bg.org>\n"
+"Language: bg\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"X-Generator: Gtranslator 46.1\n"
+
+#. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
+msgctxt "_"
+msgid "translator-credits"
+msgstr "twlvnn kraftwerk <kraft_werk@tutanota.com>"
+
+#. (itstool) path: info/title
+#: C/index.page:7
+msgctxt "link:trail"
+msgid "Logs help"
+msgstr "Журнали помощ"
+
+#. (itstool) path: info/title
+#: C/index.page:8
+msgctxt "text"
+msgid "Logs help"
+msgstr "Журнали помощ"
+
+#. (itstool) path: info/title
+#: C/index.page:9
+msgctxt "link"
+msgid "Logs help"
+msgstr "Журнали помощ"
+
+#. (itstool) path: info/desc
+#: C/index.page:14
+msgid "Browse and search through your systemd journal logs."
+msgstr "Преглеждайте и търсете в systemd журналите."
+
+#. (itstool) path: page/title
+#: C/index.page:17
+msgid "<_:media-1/> Logs"
+msgstr "<_:media-1/> Журнали"
+
+#. (itstool) path: credit/name
+#: C/introduction.page:11
+msgid "David King"
+msgstr "David King"
+
+#. (itstool) path: credit/years
+#: C/introduction.page:13 C/introduction.page:18
+msgid "2014"
+msgstr "2014"
+
+#. (itstool) path: credit/name
+#: C/introduction.page:16 C/permissions.page:11
+msgid "Ekaterina Gerasimova"
+msgstr "Ekaterina Gerasimova"
+
+#. (itstool) path: info/desc
+#: C/introduction.page:23
+msgid "<app>Logs</app> is a viewer for the <sys>systemd</sys> journal."
+msgstr ""
+"„<app>Журнали</app>“ е програма за преглеждане на <sys>systemd</sys> "
+"журналите."
+
+#. (itstool) path: page/title
+#: C/introduction.page:27
+msgid "Introduction"
+msgstr "Въведение"
+
+#. (itstool) path: page/p
+#: C/introduction.page:29
+msgid ""
+"Logs shows events from the systemd journal, and sorts them into categories, "
+"such as hardware and applications."
+msgstr ""
+"„Журнали“ показва съобщенията от systemd и ги подрежда в категории, като "
+"например хардуер и програми."
+
+#. (itstool) path: page/p
+#: C/introduction.page:32
+msgid ""
+"Using Logs you can search your logs by typing a search term, and view "
+"detailed information about each event by clicking on it."
+msgstr ""
+"С „Журнали“ може да търсите в журналите, като въведете термин за търсене, и "
+"да преглеждате подробна информация за всяко съобщение, като натиснете върху "
+"него."
+
+#. (itstool) path: page/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/introduction.page:35
+msgctxt "_"
+msgid ""
+"external ref='media/gnome-logs-3-34.png' "
+"md5='572ed4fda65dbaa8cd2dc56f6bce5dfb'"
+msgstr ""
+"external ref='media/gnome-logs-3-34.png' "
+"md5='572ed4fda65dbaa8cd2dc56f6bce5dfb'"
+
+#. (itstool) path: media/p
+#: C/introduction.page:36
+msgid "Screenshot of Logs showing some journal entries."
+msgstr "Снимка на екрана на „Журнали“, показваща някои записи в журналите."
+
+#. (itstool) path: p/link
+#: C/legal.xml:5
+msgid "Creative Commons Attribution-ShareAlike 3.0 Unported License"
+msgstr "Признание-Споделяне на споделеното 3.0 Нелокализиран"
+
+#. (itstool) path: license/p
+#: C/legal.xml:4
+msgid "This work is licensed under a <_:link-1/>."
+msgstr "Тази работа е лицензирана под <_:link-1/>."
+
+#. (itstool) path: credit/years
+#: C/permissions.page:13
+msgid "2013"
+msgstr "2013"
+
+#. (itstool) path: info/desc
+#: C/permissions.page:18
+msgid ""
+"You can read some or all of the logs, depending on which permissions you "
+"have."
+msgstr ""
+"Може да преглеждате някои или всички журнали, в зависимост от това какви "
+"права за достъп имате."
+
+#. (itstool) path: page/title
+#: C/permissions.page:22
+msgid "Can I view all logs?"
+msgstr "Мога ли да преглеждам всички журнали?"
+
+#. (itstool) path: page/p
+#: C/permissions.page:24
+msgid ""
+"You will be able to browse some messages that have been logged since the "
+"last reboot, depending on which permissions you have. Some of your "
+"permissions are set by your distribution, but they can be changed by your "
+"system administrator."
+msgstr ""
+"Ще може да преглеждате някои съобщения, които са били записани след "
+"последното рестартиране, в зависимост от това какви права за достъп имате. "
+"Някои от права ви са зададени от вашата дистрибуция, но те могат да бъдат "
+"променени от системния ви администратор."
+
+#. (itstool) path: page/p
+#. TRANSLATORS: 'Standard' is taken from the user account type in the
+#. control panel when used in <em> or <gui> tags.
+#: C/permissions.page:30
+msgid ""
+"By default, <em href=\"help:gnome-help/user-admin-explain\">Standard</em> "
+"users are shown a limited set of logs, such as application logs and their "
+"own session logs. If you are a <gui>Standard</gui> user and do not see any "
+"logs, it is possible that your system administrator has disabled your "
+"ability to view logs."
+msgstr ""
+"По подразбиране на <em href=\"help:gnome-help/user-admin-"
+"explain\">Стандартните</em> потребители се показва ограничен набор от "
+"журнали, като например дневниците на приложенията и дневниците на "
+"собствените им сесии. Ако сте <gui>Стандартен</gui> потребител и не виждате "
+"никакви журнали, възможно е системният ви администратор да е забранил "
+"възможността ви да ги виждате."
+
+#. (itstool) path: page/p
+#. TRANSLATORS: 'Administrator' is taken from the user account type in the
+#. control panel when used in <em> or <gui> tags.
+#: C/permissions.page:39
+msgid ""
+"<em>Administrator</em> users will normally be able to view more sensitive "
+"logs, such as kernel logs and the logs of other users. It is possible for "
+"administrators to have different levels of access to logs, so you may not be "
+"able to view all logs. If you are an <gui>Administrator</gui> user, then "
+"only other administrators can change which logs you can access. For more "
+"information about log access permissions, <link href=\"man:systemd-"
+"journald\">see the <_:cmd-1/> man page</link>."
+msgstr ""
+"Потребителите <em>Администратор</em> обикновено ще могат да преглеждат по-"
+"чувствителни журнали, като например журналите на ядрото и журналите на други "
+"потребители. Възможно е администраторите да имат различни нива на достъп до "
+"журналите, така че е възможно да не може да преглеждате всички журнали. Ако "
+"сте потребител <gui>Администратор</gui>, тогава само други администратори "
+"могат да променят кои журнали са достъпни за вас. За повече информация "
+"относно правата за достъп до журналите, <link href=\"man:systemd-"
+"journald\">вижте <_:cmd-1/> man страницата</link>."
