@@ -117,6 +117,7 @@ gl_event_view_list_get_output_logs (GlEventViewList *view)
         GDateTime *now;
         guint64 timestamp;
         GtkListBoxRow *row;
+        g_autoptr (GError) error = NULL;
 
         row = gtk_list_box_get_row_at_index (GTK_LIST_BOX (priv->entries_box),
                                              index);
@@ -142,8 +143,11 @@ gl_event_view_list_get_output_logs (GlEventViewList *view)
                                    message, "\n", NULL);
         index++;
 
-        g_output_stream_write (stream, output_text, strlen (output_text),
-                               NULL, NULL);
+        if (!g_output_stream_write_all (stream, output_text, strlen (output_text),
+                                        NULL, NULL, &error))
+        {
+            g_warning ("Error writing to stream: %s", error->message);
+        }
 
         g_date_time_unref (now);
         g_free (time);
