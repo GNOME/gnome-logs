@@ -102,6 +102,7 @@ gl_event_view_list_get_output_logs (GlEventViewList *view)
     gint index = 0;
     GOutputStream *stream;
     GlEventViewListPrivate *priv;
+    GList *output_list = NULL;
 
     priv = gl_event_view_list_get_instance_private (view);
 
@@ -117,7 +118,6 @@ gl_event_view_list_get_output_logs (GlEventViewList *view)
         GDateTime *now;
         guint64 timestamp;
         GtkListBoxRow *row;
-        g_autoptr (GError) error = NULL;
 
         row = gtk_list_box_get_row_at_index (GTK_LIST_BOX (priv->entries_box),
                                              index);
@@ -142,17 +142,26 @@ gl_event_view_list_get_output_logs (GlEventViewList *view)
                                    comm ? comm : "kernel", ": ",
                                    message, "\n", NULL);
         index++;
-
-        if (!g_output_stream_write_all (stream, output_text, strlen (output_text),
-                                        NULL, NULL, &error))
-        {
-            g_warning ("Error writing to stream: %s", error->message);
-        }
+        /* Prepend to list to reverse the order (export oldest to newest). */
+        output_list = g_list_prepend (output_list, output_text);
 
         g_date_time_unref (now);
         g_free (time);
-        g_free (output_text);
     }
+
+    for (GList *l = output_list; l != NULL; l = l->next)
+    {
+        g_autoptr (GError) error = NULL;
+
+        const gchar *data = (const gchar *) l->data;
+
+        if (!g_output_stream_write_all (stream, data, strlen (data),
+                                        NULL, NULL, &error))
+        {
+            g_warning ("Failed to write log entry: %s", error->message);
+        }
+    }
+    g_list_free_full (output_list, g_free);
 
     output_buf = g_memory_output_stream_get_data (G_MEMORY_OUTPUT_STREAM (stream));
 
