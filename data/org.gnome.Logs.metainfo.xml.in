@@ -18,6 +18,15 @@
     </screenshot>
   </screenshots>
   <releases>
+    <release version="50.0" date="2026-03-10">
+      <description>
+        <ul>
+          <li>Logs are now exported in ascending order</li>
+          <li>Fix help dialog inside sandboxes</li>
+          <li>Translation updates</li>
+        </ul>
+      </description>
+    </release>
     <release version="49.0" date="2025-09-11">
       <description>
         <ul>
