@@ -15,6 +15,7 @@
   <screenshots>
     <screenshot type="default">
       <image>https://static.gnome.org/appdata/gnome-43/logs/logs-main.png</image>
+      <caption>Main Window</caption>
     </screenshot>
   </screenshots>
   <releases>
