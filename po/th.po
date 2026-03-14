@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: gnome-logs gnome-3-14\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues/\n"
 "POT-Creation-Date: 2026-03-10 17:31+0000\n"
-"PO-Revision-Date: 2026-03-14 12:04+0700\n"
+"PO-Revision-Date: 2026-03-14 12:11+0700\n"
 "Last-Translator: Akom Chotiphantawanon <knight2000@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
 "Language: th\n"
@@ -381,11 +381,10 @@ msgstr "เพิกเฉยคำเตือน"
 
 #: data/org.gnome.Logs.gschema.xml:6
 msgid ""
-"Whether to ignore the warning that says you don’t have sufficient permission "
-"to view logs. If ignored, the warning won’t show up again."
+"Whether to ignore the warning that says you don’t have sufficient permission to "
+"view logs. If ignored, the warning won’t show up again."
 msgstr ""
-"กำหนดว่าจะเพิกเฉยคำเตือนที่บอกว่าคุณไม่มีสิทธิ์เพียงพอในการดูปูมหรือไม่ ถ้าเพิกเฉย "
-"คำเตือนนี้จะไม่แสดงอีก"
+"กำหนดว่าจะเพิกเฉยคำเตือนที่บอกว่าคุณไม่มีสิทธิ์เพียงพอในการดูปูมหรือไม่ ถ้าเพิกเฉย คำเตือนนี้จะไม่แสดงอีก"
 
 #: data/org.gnome.Logs.gschema.xml:10
 msgid "How to sort list rows in the event view list"
@@ -397,23 +396,22 @@ msgstr "เรียงลำดับรายการจากหน้าไ
 
 #: data/org.gnome.Logs.metainfo.xml.in:10
 msgid ""
-"Logs shows events from the systemd journal, and sorts them into categories, "
-"such as hardware and applications."
+"Logs shows events from the systemd journal, and sorts them into categories, such "
+"as hardware and applications."
 msgstr ""
-"“ปูม” จะแสดงเหตุการณ์จากบันทึกของ systemd และคัดแยกเหตุการณ์เป็นหมวด ๆ เช่น "
-"ฮาร์ดแวร์และโปรแกรม"
+"“ปูม” จะแสดงเหตุการณ์จากบันทึกของ systemd และคัดแยกเหตุการณ์เป็นหมวด ๆ เช่น ฮาร์ดแวร์และโปรแกรม"
 
 #: data/org.gnome.Logs.metainfo.xml.in:12
 msgid ""
-"Using Logs you can search your logs by typing a search term, and view "
-"detailed information about each event by clicking on it."
+"Using Logs you can search your logs by typing a search term, and view detailed "
+"information about each event by clicking on it."
 msgstr ""
 "ด้วย “ปูม” คุณสามารถค้นปูมต่าง ๆ ของคุณได้โดยป้อนคำค้น "
 "และสามารถดูข้อมูลรายละเอียดเกี่ยวกับแต่ละเหตุการณ์ได้โดยคลิกที่เหตุการณ์นั้น ๆ"
 
 #: data/org.gnome.Logs.metainfo.xml.in:72 src/gl-application.c:141
 msgid "The GNOME Project"
-msgstr "The GNOME Project"
+msgstr "โครงการ GNOME"
 
 #: src/gl-application.c:82 src/gl-window.c:285
 msgid "Failed To Open Help"
