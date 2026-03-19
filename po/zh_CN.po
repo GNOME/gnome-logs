@@ -4,22 +4,22 @@
 # eternalhui <www.eternalhui@gmail.com>, 2013.
 # Jeff Bai <jeffbai@aosc.xyz>, 2015, 2016.
 # Dingzhong Chen <wsxy162@gmail.com>, 2016, 2018, 2019.
-# lumingzh <lumingzh@qq.com>, 2023.
+# lumingzh <lumingzh@qq.com>, 2023-2026.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2023-08-07 08:45+0000\n"
-"PO-Revision-Date: 2023-08-07 16:49+0800\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues/\n"
+"POT-Creation-Date: 2026-03-18 19:15+0000\n"
+"PO-Revision-Date: 2026-03-19 10:38+0800\n"
 "Last-Translator: lumingzh <lumingzh@qq.com>\n"
-"Language-Team: Chinese - China <i18n-zh@googlegroups.com>\n"
+"Language-Team: Chinese (China) <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Gtranslator 42.0\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"X-Generator: Gtranslator 50.0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: data/gl-categorylist.ui:12
 msgid "Important"
@@ -360,39 +360,21 @@ msgctxt "shortcut window"
 msgid "Export logs to a file"
 msgstr "将日志导出到文件"
 
-#: data/org.gnome.Logs.appdata.xml.in:7 data/org.gnome.Logs.desktop.in:3
-#: src/gl-application.c:132 src/gl-eventtoolbar.c:143
+#: data/org.gnome.Logs.desktop.in:2 data/org.gnome.Logs.metainfo.xml.in:7
+#: src/gl-application.c:139 src/gl-eventtoolbar.c:143
 msgid "Logs"
 msgstr "日志"
 
-#: data/org.gnome.Logs.appdata.xml.in:8 data/org.gnome.Logs.desktop.in:5
-msgid "View detailed event logs for the system"
-msgstr "查看系统详细的事件日志"
-
-#: data/org.gnome.Logs.appdata.xml.in:10
-msgid ""
-"Logs shows events from the systemd journal, and sorts them into categories, "
-"such as hardware and applications."
-msgstr "日志查看器 显示来自 systemd 的日志并按“硬件”、“应用程序”等进行分类。"
-
-#: data/org.gnome.Logs.appdata.xml.in:12
-msgid ""
-"Using Logs you can search your logs by typing a search term, and view "
-"detailed information about each event by clicking on it."
-msgstr ""
-"使用 日志查看器 时您可以输入条件在日志中搜索，点击某个事件可以查看它的详细信"
-"息。"
-
-#: data/org.gnome.Logs.appdata.xml.in:38 src/gl-application.c:134
-msgid "The GNOME Project"
-msgstr "GNOME 项目"
-
-#: data/org.gnome.Logs.desktop.in:4
+#: data/org.gnome.Logs.desktop.in:3
 msgid "Log Viewer"
 msgstr "日志查看器"
 
+#: data/org.gnome.Logs.desktop.in:4 data/org.gnome.Logs.metainfo.xml.in:8
+msgid "View detailed event logs for the system"
+msgstr "查看系统详细的事件日志"
+
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/org.gnome.Logs.desktop.in:7
+#: data/org.gnome.Logs.desktop.in:6
 msgid "log;journal;debug;error;"
 msgstr "log;journal;debug;error;日志;记录;调试;错误;"
 
@@ -414,6 +396,28 @@ msgstr "如何在事件查看列别中对行列表排序"
 msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr "根据选择的类型以升序或降序排列列表行"
 
+#: data/org.gnome.Logs.metainfo.xml.in:10
+msgid ""
+"Logs shows events from the systemd journal, and sorts them into categories, "
+"such as hardware and applications."
+msgstr "日志查看器 显示来自 systemd 的日志并按“硬件”、“应用程序”等进行分类。"
+
+#: data/org.gnome.Logs.metainfo.xml.in:12
+msgid ""
+"Using Logs you can search your logs by typing a search term, and view "
+"detailed information about each event by clicking on it."
+msgstr ""
+"使用 日志查看器 时您可以输入条件在日志中搜索，点击某个事件可以查看它的详细信"
+"息。"
+
+#: data/org.gnome.Logs.metainfo.xml.in:18
+msgid "Main Window"
+msgstr "主窗口"
+
+#: data/org.gnome.Logs.metainfo.xml.in:73 src/gl-application.c:141
+msgid "The GNOME Project"
+msgstr "GNOME 项目"
+
 #: src/gl-application.c:82 src/gl-window.c:285
 msgid "Failed To Open Help"
 msgstr "打开帮助失败"
@@ -427,15 +431,15 @@ msgstr "打开给定的帮助地址失败：%s"
 msgid "_Close"
 msgstr "关闭(_C)"
 
-#: src/gl-application.c:137
+#: src/gl-application.c:144
 msgid "translator-credits"
 msgstr ""
 "eternalhui <www.eternalhui@gmail.com>, 2013\n"
 "Jeff Bai <jeffbai@aosc.xyz>, 2015, 2016, 2017\n"
 "Dingzhong Chen <wsxy162@gmail.com>, 2016, 2018\n"
-"lumingzh <lumingzh@qq.com>, 2023"
+"lumingzh <lumingzh@qq.com>, 2023-2026"
 
-#: src/gl-application.c:270
+#: src/gl-application.c:277
 msgid "Print version information and exit"
 msgstr "打印版本信息并退出"
 
@@ -446,7 +450,7 @@ msgstr "单次引导"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: src/gl-eventviewlist.c:431
+#: src/gl-eventviewlist.c:444
 msgid "No Results"
 msgstr "无结果"
 
@@ -626,15 +630,15 @@ msgstr "无法将日志消息导出到文件"
 msgid "log messages"
 msgstr "日志消息"
 
-#: src/gl-window.c:471 src/gl-window.c:488
+#: src/gl-window.c:476 src/gl-window.c:493
 msgid "Unable to read system logs"
 msgstr "无法读取系统日志"
 
-#: src/gl-window.c:478
+#: src/gl-window.c:483
 msgid "Unable to read user logs"
 msgstr "无法读取用户日志"
 
-#: src/gl-window.c:496
+#: src/gl-window.c:501
 msgid "No logs available"
 msgstr "无可用的日志"
 
