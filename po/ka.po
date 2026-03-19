@@ -1,14 +1,14 @@
 # Georgian translation for gnome-logs.
 # Copyright (C) 2023 gnome-logs's authors
 # This file is distributed under the same license as the gnome-logs package.
-# Ekaterine Papava <papava.e@gtu.ge>, 2023.
+# Ekaterine Papava <papava.e@gtu.ge>, 2023 2026.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2023-09-25 21:02+0000\n"
-"PO-Revision-Date: 2023-09-30 16:48+0200\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues/\n"
+"POT-Creation-Date: 2026-03-18 19:15+0000\n"
+"PO-Revision-Date: 2026-03-19 08:41+0100\n"
 "Last-Translator: Ekaterine Papava <papava.e@gtu.ge>\n"
 "Language-Team: Georgian <(nothing)>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 3.9\n"
 
 #: data/gl-categorylist.ui:12
 msgid "Important"
@@ -357,41 +357,21 @@ msgctxt "shortcut window"
 msgid "Export logs to a file"
 msgstr "ჟურნალის ფაილში გატანა"
 
-#: data/org.gnome.Logs.appdata.xml.in:7 data/org.gnome.Logs.desktop.in:3
-#: src/gl-application.c:132 src/gl-eventtoolbar.c:143
+#: data/org.gnome.Logs.desktop.in:2 data/org.gnome.Logs.metainfo.xml.in:7
+#: src/gl-application.c:139 src/gl-eventtoolbar.c:143
 msgid "Logs"
 msgstr "ჟურნალი"
 
-#: data/org.gnome.Logs.appdata.xml.in:8 data/org.gnome.Logs.desktop.in:5
-msgid "View detailed event logs for the system"
-msgstr "სისტემის დეტალური მოვლენის დეტალების ნახვა"
-
-#: data/org.gnome.Logs.appdata.xml.in:10
-msgid ""
-"Logs shows events from the systemd journal, and sorts them into categories, "
-"such as hardware and applications."
-msgstr ""
-"Logs systemd-ის ჟურნალიდან მოვლენებს გაჩვენებთ და მათ ისეთ კატეგორიებად "
-"ჰყოფს, როგორიცაა, მაგალითად, აპარატურა და აპლიკაციები."
-
-#: data/org.gnome.Logs.appdata.xml.in:12
-msgid ""
-"Using Logs you can search your logs by typing a search term, and view "
-"detailed information about each event by clicking on it."
-msgstr ""
-"Logs-ის გამოყენებით შეგიძლიათ თქვენს ჟურნალში თქვენი პირობებით ეძებოთ და "
-"თითოეული მოვლენის შესახებ დეტალური ინფორმაცია მიიღოთ. მათზე დაწკაპუნებით."
-
-#: data/org.gnome.Logs.appdata.xml.in:38 src/gl-application.c:134
-msgid "The GNOME Project"
-msgstr "პროექტი „GNOME“"
-
-#: data/org.gnome.Logs.desktop.in:4
+#: data/org.gnome.Logs.desktop.in:3
 msgid "Log Viewer"
 msgstr "ჟურნალის ნახვა"
 
+#: data/org.gnome.Logs.desktop.in:4 data/org.gnome.Logs.metainfo.xml.in:8
+msgid "View detailed event logs for the system"
+msgstr "სისტემის დეტალური მოვლენის დეტალების ნახვა"
+
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/org.gnome.Logs.desktop.in:7
+#: data/org.gnome.Logs.desktop.in:6
 msgid "log;journal;debug;error;"
 msgstr "log;journal;debug;error;"
 
@@ -416,6 +396,30 @@ msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr ""
 "სიის მწკრივების აღმავალი ან დაღმავალი მიმდევრობით დალაგება არჩეული ტიპისთვის"
 
+#: data/org.gnome.Logs.metainfo.xml.in:10
+msgid ""
+"Logs shows events from the systemd journal, and sorts them into categories, "
+"such as hardware and applications."
+msgstr ""
+"Logs systemd-ის ჟურნალიდან მოვლენებს გაჩვენებთ და მათ ისეთ კატეგორიებად "
+"ჰყოფს, როგორიცაა, მაგალითად, აპარატურა და აპლიკაციები."
+
+#: data/org.gnome.Logs.metainfo.xml.in:12
+msgid ""
+"Using Logs you can search your logs by typing a search term, and view "
+"detailed information about each event by clicking on it."
+msgstr ""
+"Logs-ის გამოყენებით შეგიძლიათ თქვენს ჟურნალში თქვენი პირობებით ეძებოთ და "
+"თითოეული მოვლენის შესახებ დეტალური ინფორმაცია მიიღოთ. მათზე დაწკაპუნებით."
+
+#: data/org.gnome.Logs.metainfo.xml.in:18
+msgid "Main Window"
+msgstr "მთავარი ფანჯარა"
+
+#: data/org.gnome.Logs.metainfo.xml.in:73 src/gl-application.c:141
+msgid "The GNOME Project"
+msgstr "პროექტი „GNOME“"
+
 #: src/gl-application.c:82 src/gl-window.c:285
 msgid "Failed To Open Help"
 msgstr "დახმარების გახსნის შეცდომა"
@@ -429,11 +433,11 @@ msgstr "მითითებული დახმარების URI-ის
 msgid "_Close"
 msgstr "_დახურვა"
 
-#: src/gl-application.c:137
+#: src/gl-application.c:144
 msgid "translator-credits"
 msgstr "თემური დოღონაძე"
 
-#: src/gl-application.c:270
+#: src/gl-application.c:277
 msgid "Print version information and exit"
 msgstr "ვერსიის ჩვენება და გასვლა"
 
@@ -444,7 +448,7 @@ msgstr "ჩატვირთვადი"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: src/gl-eventviewlist.c:431
+#: src/gl-eventviewlist.c:444
 msgid "No Results"
 msgstr "შედეგების გარეშე"
 
@@ -624,15 +628,15 @@ msgstr "ჟურნალის შეტყობინებების ფ�
 msgid "log messages"
 msgstr "ჟურნალის შეტყობინებები"
 
-#: src/gl-window.c:471 src/gl-window.c:488
+#: src/gl-window.c:476 src/gl-window.c:493
 msgid "Unable to read system logs"
 msgstr "სისტემური ჟურნალის წაკითხვის შეცდომა"
 
-#: src/gl-window.c:478
+#: src/gl-window.c:483
 msgid "Unable to read user logs"
 msgstr "მომხმარებლის ჟურნალის წაკითხვის შეცდომა"
 
-#: src/gl-window.c:496
+#: src/gl-window.c:501
 msgid "No logs available"
 msgstr "ჟურნალები ხელმიუწვდომელია"
 
