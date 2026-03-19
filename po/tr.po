@@ -5,16 +5,16 @@
 # Hongis_3 <hongis1982@gmail.com>, 2014.
 # Gökhan Gurbetoğlu <ggurbet@gmail.com>, 2014.
 # Muhammet Kara <muhammetk@gmail.com>, 2014, 2015, 2016.
-# Sabri Ünal <yakushabb@gmail.com>, 2020, 2023.
-# Emin Tufan Çetin <etcetin@gmail.com>, 2017, 2018, 2020, 2023.
+# Sabri Ünal <yakushabb@gmail.com>, 2020, 2023, 2024.
+# Emin Tufan Çetin <etcetin@gmail.com>, 2017, 2018, 2020, 2023, 2026.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues/\n"
-"POT-Creation-Date: 2024-07-19 15:18+0000\n"
-"PO-Revision-Date: 2024-05-07 11:40+0300\n"
-"Last-Translator: Sabri Ünal <yakushabb@gmail.com>\n"
+"POT-Creation-Date: 2026-03-18 19:15+0000\n"
+"PO-Revision-Date: 2026-03-19 08:00+0300\n"
+"Last-Translator: Emin Tufan Çetin <etcetin@gmail.com>\n"
 "Language-Team: Türkçe <takim@gnome.org.tr>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
@@ -208,7 +208,7 @@ msgstr "Geri"
 
 #: data/gl-searchpopover.ui:337
 msgid "Show Logs Starting From…"
-msgstr "Kayıtları göstermeye başla…"
+msgstr "Günlükleri Şundan Başlayarak Göster…"
 
 #: data/gl-searchpopover.ui:358
 msgid "Select a start date"
@@ -220,7 +220,7 @@ msgstr "Başlangıç Tarihi Seç…"
 
 #: data/gl-searchpopover.ui:384 data/gl-searchpopover.ui:626
 msgid "22 January 2016 or 1/22/2016"
-msgstr "22 Ocak 2016 veya 1/22/2016"
+msgstr "22 Ocak 2016 ya da 1/22/2016"
 
 #: data/gl-searchpopover.ui:423
 msgid "Select start time"
@@ -248,7 +248,7 @@ msgstr "ÖÖ/ÖS"
 
 #: data/gl-searchpopover.ui:579
 msgid "Until…"
-msgstr "İtibaren…"
+msgstr "Şuna Dek…"
 
 #: data/gl-searchpopover.ui:600
 msgid "Select an end date"
@@ -362,43 +362,22 @@ msgctxt "shortcut window"
 msgid "Export logs to a file"
 msgstr "Günlükleri dosyaya aktar"
 
-#: data/org.gnome.Logs.appdata.xml.in:7 data/org.gnome.Logs.desktop.in:3
-#: src/gl-application.c:132 src/gl-eventtoolbar.c:143
+#: data/org.gnome.Logs.desktop.in:2 data/org.gnome.Logs.metainfo.xml.in:7
+#: src/gl-application.c:139 src/gl-eventtoolbar.c:143
 msgid "Logs"
 msgstr "Günlükler"
 
-#: data/org.gnome.Logs.appdata.xml.in:8 data/org.gnome.Logs.desktop.in:5
-msgid "View detailed event logs for the system"
-msgstr "Sistem için ayrıntılı olay günlüklerini görüntüle"
-
-#: data/org.gnome.Logs.appdata.xml.in:10
-msgid ""
-"Logs shows events from the systemd journal, and sorts them into categories, "
-"such as hardware and applications."
-msgstr ""
-"Günlükler, systemd günlüğünden olayları gösterir ve bunları donanım ve "
-"uygulamalar gibi kategoriler halinde sıralar."
-
-#: data/org.gnome.Logs.appdata.xml.in:12
-msgid ""
-"Using Logs you can search your logs by typing a search term, and view "
-"detailed information about each event by clicking on it."
-msgstr ""
-"Günlükleri kullanarak, bir arama terimi yazarak günlüklerde arama yapabilir "
-"ve her olayın üzerine tıklayarak hakkındaki ayrıntılı bilgileri "
-"görüntüleyebilirsiniz."
-
-#: data/org.gnome.Logs.appdata.xml.in:54 src/gl-application.c:134
-msgid "The GNOME Project"
-msgstr "GNOME Projesi"
-
-#: data/org.gnome.Logs.desktop.in:4
+#: data/org.gnome.Logs.desktop.in:3
 msgid "Log Viewer"
 msgstr "Günlük Görüntüleyici"
 
+#: data/org.gnome.Logs.desktop.in:4 data/org.gnome.Logs.metainfo.xml.in:8
+msgid "View detailed event logs for the system"
+msgstr "Sistem için ayrıntılı olay günlüklerini görüntüle"
+
 # https://gitlab.gnome.org/GNOME/glib/-/issues/443 hatası sebebiyle ingilizce hallerini de koruyalım.
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/org.gnome.Logs.desktop.in:7
+#: data/org.gnome.Logs.desktop.in:6
 msgid "log;journal;debug;error;"
 msgstr "log;journal;debug;error;kayıt;günlük;hata ayıklama;hata;"
 
@@ -422,6 +401,30 @@ msgstr "Olay görüntüleme listesinde liste satırlarının nasıl sıralanaca�
 msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr "Seçili tür için liste satırlarını artan ya da azalan düzende sırala"
 
+#: data/org.gnome.Logs.metainfo.xml.in:10
+msgid ""
+"Logs shows events from the systemd journal, and sorts them into categories, "
+"such as hardware and applications."
+msgstr ""
+"Günlükler, systemd günlüğünden olayları gösterir ve bunları donanım ve "
+"uygulamalar gibi kategorilerde sıralar."
+
+#: data/org.gnome.Logs.metainfo.xml.in:12
+msgid ""
+"Using Logs you can search your logs by typing a search term, and view "
+"detailed information about each event by clicking on it."
+msgstr ""
+"Günlükler’i kullanarak, arama terimi yazarak günlüklerinizi arayabilir "
+"ve her bir olaya tıklayarak ayrıntılı bilgi görüntüleyebilirsiniz."
+
+#: data/org.gnome.Logs.metainfo.xml.in:18
+msgid "Main Window"
+msgstr "Ana Pencere"
+
+#: data/org.gnome.Logs.metainfo.xml.in:73 src/gl-application.c:141
+msgid "The GNOME Project"
+msgstr "GNOME Projesi"
+
 #: src/gl-application.c:82 src/gl-window.c:285
 msgid "Failed To Open Help"
 msgstr "Yardım Açılamadı"
@@ -435,13 +438,13 @@ msgstr "Belirtilen yardım URI açılamadı: %s"
 msgid "_Close"
 msgstr "_Kapat"
 
-#: src/gl-application.c:137
+#: src/gl-application.c:144
 msgid "translator-credits"
 msgstr ""
 "Yusuf YILMAZ\n"
 "Muhammet Kara <muhammetk@gmail.com>"
 
-#: src/gl-application.c:270
+#: src/gl-application.c:277
 msgid "Print version information and exit"
 msgstr "Sürüm bilgilerini yazdır ve çık"
 
@@ -452,7 +455,7 @@ msgstr "Önyükleme"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: src/gl-eventviewlist.c:431
+#: src/gl-eventviewlist.c:444
 msgid "No Results"
 msgstr "Sonuç Yok"
 
@@ -467,7 +470,7 @@ msgstr "Diğer"
 #: src/gl-searchpopover.c:687
 #, c-format
 msgid "From %s"
-msgstr "%s’den"
+msgstr "Şundan: %s"
 
 #. Translators: if only custom end timestamp is set, then we update
 #. * the timestamp range button label in popover to show that
@@ -476,7 +479,7 @@ msgstr "%s’den"
 #: src/gl-searchpopover.c:700
 #, c-format
 msgid "Until %s"
-msgstr "%s’e"
+msgstr "Şuna Dek: %s"
 
 #. Translators: date format for the start date entry
 #. * and start date button label in the custom range submenu,
@@ -622,7 +625,7 @@ msgstr "%s – %s"
 
 #: src/gl-window.c:172
 msgid "Export Failed"
-msgstr "Günlükler Dışa Aktarılamadı"
+msgstr "Dışa Aktarılamadı"
 
 #: src/gl-window.c:173
 msgid "Unable to export log messages to a file"
@@ -632,14 +635,14 @@ msgstr "Günlük iletileri dosyaya aktarılamadı"
 msgid "log messages"
 msgstr "günlük iletileri"
 
-#: src/gl-window.c:471 src/gl-window.c:488
+#: src/gl-window.c:476 src/gl-window.c:493
 msgid "Unable to read system logs"
 msgstr "Sistem günlükleri okunamadı"
 
-#: src/gl-window.c:478
+#: src/gl-window.c:483
 msgid "Unable to read user logs"
 msgstr "Kullanıcı günlükleri okunamadı"
 
-#: src/gl-window.c:496
+#: src/gl-window.c:501
 msgid "No logs available"
 msgstr "Kullanılabilir günlük yok"
