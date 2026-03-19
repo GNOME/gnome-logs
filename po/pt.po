@@ -1,19 +1,19 @@
 # Portuguese translation for gnome-logs.
-# Copyright © 2014 gnome-logs
+# Copyright © 2026 gnome-logs
 # This file is distributed under the same license as the gnome-logs package.
 # Tiago Santos <tiagofsantos81@sapo.pt>, 2014 - 2016.
 # Pedro Albuquerque <palbuquerque73@gmail.com>, 2015.
 # Sérgio Cardeira <scardeira.sergio@gmail.com>, 2016.
 # José Vieira <jvieira33@sapo.pt>, 2020.
 # Juliano Camargo <julianosc@pm.me>, 2020.
-# Hugo Carvalho <hugokarvalho@hotmail.com>, 2020 - 2022.
+# Hugo Carvalho <hugokarvalho@hotmail.com>, 2020-2026.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2023-08-07 12:30+0000\n"
-"PO-Revision-Date: 2023-08-14 16:11+0100\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues/\n"
+"POT-Creation-Date: 2026-03-18 19:15+0000\n"
+"PO-Revision-Date: 2026-03-19 14:45+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <hugokarvalho@hotmail.com>\n"
 "Language: pt\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 3.4.2\n"
 "X-Project-Style: gnome\n"
 
 #: data/gl-categorylist.ui:12
@@ -366,42 +366,21 @@ msgctxt "shortcut window"
 msgid "Export logs to a file"
 msgstr "Exportar registos para um ficheiro"
 
-#: data/org.gnome.Logs.appdata.xml.in:7 data/org.gnome.Logs.desktop.in:3
-#: src/gl-application.c:132 src/gl-eventtoolbar.c:143
+#: data/org.gnome.Logs.desktop.in:2 data/org.gnome.Logs.metainfo.xml.in:7
+#: src/gl-application.c:139 src/gl-eventtoolbar.c:143
 msgid "Logs"
 msgstr "Registos"
 
-#: data/org.gnome.Logs.appdata.xml.in:8 data/org.gnome.Logs.desktop.in:5
-msgid "View detailed event logs for the system"
-msgstr "Ver registos detalhados de eventos do sistema"
-
-#: data/org.gnome.Logs.appdata.xml.in:10
-msgid ""
-"Logs shows events from the systemd journal, and sorts them into categories, "
-"such as hardware and applications."
-msgstr ""
-"O Registos mostra os eventos do jornal do systemd e ordena-os em categorias, "
-"tais como equipamento e aplicações."
-
-#: data/org.gnome.Logs.appdata.xml.in:12
-msgid ""
-"Using Logs you can search your logs by typing a search term, and view "
-"detailed information about each event by clicking on it."
-msgstr ""
-"Utilizar o Registos permite-lhe procurar os seus registos através de termos "
-"de pesquisa e ver informações detalhadas sobre cada evento com um simples "
-"clique."
-
-#: data/org.gnome.Logs.appdata.xml.in:38 src/gl-application.c:134
-msgid "The GNOME Project"
-msgstr "O Projeto GNOME"
-
-#: data/org.gnome.Logs.desktop.in:4
+#: data/org.gnome.Logs.desktop.in:3
 msgid "Log Viewer"
 msgstr "Visualizador de registos"
 
+#: data/org.gnome.Logs.desktop.in:4 data/org.gnome.Logs.metainfo.xml.in:8
+msgid "View detailed event logs for the system"
+msgstr "Ver registos detalhados de eventos do sistema"
+
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/org.gnome.Logs.desktop.in:7
+#: data/org.gnome.Logs.desktop.in:6
 msgid "log;journal;debug;error;"
 msgstr "registo;jornal;depurar;erro;"
 
@@ -426,6 +405,31 @@ msgstr "Como ordenar linhas na vista da lista de eventos"
 msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr "Linhas em ordem ascendente ou descendente para o tipo selecionado"
 
+#: data/org.gnome.Logs.metainfo.xml.in:10
+msgid ""
+"Logs shows events from the systemd journal, and sorts them into categories, "
+"such as hardware and applications."
+msgstr ""
+"O Registos mostra os eventos do jornal do systemd e ordena-os em categorias, "
+"tais como equipamento e aplicações."
+
+#: data/org.gnome.Logs.metainfo.xml.in:12
+msgid ""
+"Using Logs you can search your logs by typing a search term, and view "
+"detailed information about each event by clicking on it."
+msgstr ""
+"Utilizar o Registos permite-lhe procurar os seus registos através de termos "
+"de pesquisa e ver informações detalhadas sobre cada evento com um simples "
+"clique."
+
+#: data/org.gnome.Logs.metainfo.xml.in:18
+msgid "Main Window"
+msgstr "Janela principal"
+
+#: data/org.gnome.Logs.metainfo.xml.in:73 src/gl-application.c:141
+msgid "The GNOME Project"
+msgstr "O Projeto GNOME"
+
 #: src/gl-application.c:82 src/gl-window.c:285
 msgid "Failed To Open Help"
 msgstr "Falha ao abrir a Ajuda"
@@ -439,14 +443,14 @@ msgstr "Falha ao abrir o URI de ajuda fornecido: %s"
 msgid "_Close"
 msgstr "Fe_char"
 
-#: src/gl-application.c:137
+#: src/gl-application.c:144
 msgid "translator-credits"
 msgstr ""
 "Tiago Santos <tiagofsantos81@sapo.pt>\n"
 "Pedro Albuquerque <palbuquerque73@gmail.com>\n"
 "Hugo Carvalho <hugokarvalho@hotmail.com>"
 
-#: src/gl-application.c:270
+#: src/gl-application.c:277
 msgid "Print version information and exit"
 msgstr "Imprimir informação da versão e sair"
 
@@ -457,7 +461,7 @@ msgstr "Arranque"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: src/gl-eventviewlist.c:431
+#: src/gl-eventviewlist.c:444
 msgid "No Results"
 msgstr "Sem resultados"
 
@@ -637,15 +641,15 @@ msgstr "Impossível exportar o registo de mensagens para um ficheiro"
 msgid "log messages"
 msgstr "mensagens do registo"
 
-#: src/gl-window.c:471 src/gl-window.c:488
+#: src/gl-window.c:476 src/gl-window.c:493
 msgid "Unable to read system logs"
 msgstr "Impossível ler os registos do sistema"
 
-#: src/gl-window.c:478
+#: src/gl-window.c:483
 msgid "Unable to read user logs"
 msgstr "Impossível ler os registos do utilizador"
 
-#: src/gl-window.c:496
+#: src/gl-window.c:501
 msgid "No logs available"
 msgstr "Sem registos disponíveis"
 
