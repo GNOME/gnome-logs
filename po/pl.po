@@ -3,21 +3,24 @@
 # This file is distributed under the same license as the gnome-logs package.
 # Piotr Drąg <piotrdrag@gmail.com>, 2013-2023.
 # Aviary.pl <community-poland@mozilla.org>, 2013-2023.
+# Błażej Hanzel <blazej.hanzel@gmail.com>, 2026.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2023-08-07 12:30+0000\n"
-"PO-Revision-Date: 2023-08-08 18:55+0200\n"
-"Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
-"Language-Team: Polish <community-poland@mozilla.org>\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues/\n"
+"POT-Creation-Date: 2026-03-18 19:15+0000\n"
+"PO-Revision-Date: 2026-03-27 10:34+0100\n"
+"Last-Translator: Błażej Hanzel <blazej.hanzel@gmail.com>\n"
+"Language-Team: Polish <gnome-logs.po-ui.master.pl>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
+"X-DL-VCS-Web: https://gitlab.gnome.org/GNOME/gnome-logs/\n"
+"X-Generator: Gtranslator 49.0\n"
 
 #: data/gl-categorylist.ui:12
 msgid "Important"
@@ -358,46 +361,23 @@ msgctxt "shortcut window"
 msgid "Export logs to a file"
 msgstr "Eksport dzienników do pliku"
 
-#: data/org.gnome.Logs.appdata.xml.in:7 data/org.gnome.Logs.desktop.in:3
-#: src/gl-application.c:132 src/gl-eventtoolbar.c:143
+#: data/org.gnome.Logs.desktop.in:2 data/org.gnome.Logs.metainfo.xml.in:7
+#: src/gl-application.c:139 src/gl-eventtoolbar.c:143
 msgid "Logs"
 msgstr "Dzienniki"
 
-#: data/org.gnome.Logs.appdata.xml.in:8 data/org.gnome.Logs.desktop.in:5
-msgid "View detailed event logs for the system"
-msgstr "Wyświetlanie szczegółowych dzienników zdarzeń w systemie"
-
-#: data/org.gnome.Logs.appdata.xml.in:10
-msgid ""
-"Logs shows events from the systemd journal, and sorts them into categories, "
-"such as hardware and applications."
-msgstr ""
-"Przeglądarka dzienników wyświetla zdarzenia z dziennika systemd i porządkuje "
-"je według kategorii, takich jak sprzęt i programy."
-
-#: data/org.gnome.Logs.appdata.xml.in:12
-msgid ""
-"Using Logs you can search your logs by typing a search term, and view "
-"detailed information about each event by clicking on it."
-msgstr ""
-"Za pomocą przeglądarki dzienników można przeszukiwać dzienniki wpisując "
-"szukany termin oraz wyświetlać szczegółowe informacje o każdym zdarzeniu po "
-"jego kliknięciu."
-
-#: data/org.gnome.Logs.appdata.xml.in:38 src/gl-application.c:134
-msgid "The GNOME Project"
-msgstr "Projekt GNOME"
-
-#: data/org.gnome.Logs.desktop.in:4
+#: data/org.gnome.Logs.desktop.in:3
 msgid "Log Viewer"
 msgstr "Przeglądarka dzienników"
 
+#: data/org.gnome.Logs.desktop.in:4 data/org.gnome.Logs.metainfo.xml.in:8
+msgid "View detailed event logs for the system"
+msgstr "Wyświetlanie szczegółowych dzienników zdarzeń w systemie"
+
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/org.gnome.Logs.desktop.in:7
+#: data/org.gnome.Logs.desktop.in:6
 msgid "log;journal;debug;error;"
-msgstr ""
-"dziennik;logi;journal;journald;debugowanie;debuggowanie;błąd;błędy;"
-"komunikaty;error;"
+msgstr "dziennik;logi;journal;journald;debugowanie;debuggowanie;błąd;błędy;komunikaty;error;"
 
 #: data/org.gnome.Logs.gschema.xml:5
 msgid "Ignore warning"
@@ -419,6 +399,31 @@ msgstr "Jak porządkować rzędy list na liście widoków zdarzeń"
 msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr "Porządkowanie rzędów list rosnąco lub malejąco dla wybranego typu"
 
+#: data/org.gnome.Logs.metainfo.xml.in:10
+msgid ""
+"Logs shows events from the systemd journal, and sorts them into categories, "
+"such as hardware and applications."
+msgstr ""
+"Przeglądarka dzienników wyświetla zdarzenia z dziennika systemd i porządkuje "
+"je według kategorii, takich jak sprzęt i programy."
+
+#: data/org.gnome.Logs.metainfo.xml.in:12
+msgid ""
+"Using Logs you can search your logs by typing a search term, and view "
+"detailed information about each event by clicking on it."
+msgstr ""
+"Za pomocą przeglądarki dzienników można przeszukiwać dzienniki wpisując "
+"szukany termin oraz wyświetlać szczegółowe informacje o każdym zdarzeniu po "
+"jego kliknięciu."
+
+#: data/org.gnome.Logs.metainfo.xml.in:18
+msgid "Main Window"
+msgstr "Główne okno programu"
+
+#: data/org.gnome.Logs.metainfo.xml.in:73 src/gl-application.c:141
+msgid "The GNOME Project"
+msgstr "Projekt GNOME"
+
 #: src/gl-application.c:82 src/gl-window.c:285
 msgid "Failed To Open Help"
 msgstr "Otwarcie pomocy się nie powiodło"
@@ -432,13 +437,14 @@ msgstr "Otwarcie podanego adresu URI pomocy się nie powiodło: %s"
 msgid "_Close"
 msgstr "Za_mknij"
 
-#: src/gl-application.c:137
+#: src/gl-application.c:144
 msgid "translator-credits"
 msgstr ""
 "Piotr Drąg <piotrdrag@gmail.com>, 2013-2023\n"
-"Aviary.pl <community-poland@mozilla.org>, 2013-2023"
+"Aviary.pl <community-poland@mozilla.org>, 2013-2023\n"
+"Błażej Hanzel <blazej.hanzel@gmail.com>, 2026"
 
-#: src/gl-application.c:270
+#: src/gl-application.c:277
 msgid "Print version information and exit"
 msgstr "Wyświetla informację o wersji i kończy działanie"
 
@@ -449,7 +455,7 @@ msgstr "Uruchomienie"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: src/gl-eventviewlist.c:431
+#: src/gl-eventviewlist.c:444
 msgid "No Results"
 msgstr "Brak wyników"
 
@@ -629,14 +635,14 @@ msgstr "Nie można wyeksportować komunikatów dziennika do pliku"
 msgid "log messages"
 msgstr "Komunikaty dziennika"
 
-#: src/gl-window.c:471 src/gl-window.c:488
+#: src/gl-window.c:476 src/gl-window.c:493
 msgid "Unable to read system logs"
 msgstr "Nie można odczytać dzienników systemowych"
 
-#: src/gl-window.c:478
+#: src/gl-window.c:483
 msgid "Unable to read user logs"
 msgstr "Nie można odczytać dzienników użytkownika"
 
-#: src/gl-window.c:496
+#: src/gl-window.c:501
 msgid "No logs available"
 msgstr "Brak dostępnych dzienników"
