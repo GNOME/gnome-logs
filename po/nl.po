@@ -5,15 +5,15 @@
 # Wouter Bolsterlee <wbolster@gnome.org>, 2014.
 # Jannick Hemelhof <clone1612@me.com>, 2014.
 # Hannie Dumoleyn <hannie@ubuntu-nl.org>, 2014.
-# Nathan Follens <nfollens@gnome.org>, 2015-2017, 2019-2022.
+# Nathan Follens <nfollens@gnome.org>, 2015-2017, 2019-2022, 2026.
 # Justin van Steijn <jvs@fsfe.org>, 2016, 2018.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2023-08-07 12:30+0000\n"
-"PO-Revision-Date: 2023-09-03 16:12+0200\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues/\n"
+"POT-Creation-Date: 2026-03-18 19:15+0000\n"
+"PO-Revision-Date: 2026-04-20 00:22+0200\n"
 "Last-Translator: Nathan Follens <nfollens@gnome.org>\n"
 "Language-Team: GNOME-NL https://matrix.to/#/#nl:gnome.org\n"
 "Language: nl\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 3.9\n"
 
 #: data/gl-categorylist.ui:12
 msgid "Important"
@@ -177,8 +177,7 @@ msgstr "Logboeken weergeven van…"
 msgid "Select Timestamp Range of the Log Entries to be shown"
 msgstr "Selecteer het tijdsbereik waarvan de logboeken moeten worden getoond"
 
-#: data/gl-searchpopover.ui:188 data/gl-searchpopover.ui:906
-#: src/gl-searchpopover.c:1306
+#: data/gl-searchpopover.ui:188 data/gl-searchpopover.ui:906 src/gl-searchpopover.c:1306
 msgid "Current Boot"
 msgstr "Huidige opstartsessie"
 
@@ -362,45 +361,23 @@ msgctxt "shortcut window"
 msgid "Export logs to a file"
 msgstr "Logboek naar bestand exporteren"
 
-#: data/org.gnome.Logs.appdata.xml.in:7 data/org.gnome.Logs.desktop.in:3
-#: src/gl-application.c:132 src/gl-eventtoolbar.c:143
+#: data/org.gnome.Logs.desktop.in:2 data/org.gnome.Logs.metainfo.xml.in:7
+#: src/gl-application.c:139 src/gl-eventtoolbar.c:143
 msgid "Logs"
 msgstr "Logboeken"
 
-#: data/org.gnome.Logs.appdata.xml.in:8 data/org.gnome.Logs.desktop.in:5
-msgid "View detailed event logs for the system"
-msgstr "Inzage in de logboeken van het systeem"
-
-#: data/org.gnome.Logs.appdata.xml.in:10
-msgid ""
-"Logs shows events from the systemd journal, and sorts them into categories, "
-"such as hardware and applications."
-msgstr ""
-"Logboeken toont gebeurtenissen uit het systemd-logboek en toont deze in "
-"verschillende categorieën, zoals hardware en toepassingen."
-
-#: data/org.gnome.Logs.appdata.xml.in:12
-msgid ""
-"Using Logs you can search your logs by typing a search term, and view "
-"detailed information about each event by clicking on it."
-msgstr ""
-"Met Logboeken kunt u uw logboeken doorzoeken door een zoekterm in te typen "
-"en vervolgens detailinformatie inzien door op een gebeurtenis te klikken."
-
-#: data/org.gnome.Logs.appdata.xml.in:38 src/gl-application.c:134
-msgid "The GNOME Project"
-msgstr "Het GNOME-project"
-
-#: data/org.gnome.Logs.desktop.in:4
+#: data/org.gnome.Logs.desktop.in:3
 msgid "Log Viewer"
 msgstr "Logboekviewer"
 
+#: data/org.gnome.Logs.desktop.in:4 data/org.gnome.Logs.metainfo.xml.in:8
+msgid "View detailed event logs for the system"
+msgstr "Inzage in de logboeken van het systeem"
+
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/org.gnome.Logs.desktop.in:7
+#: data/org.gnome.Logs.desktop.in:6
 msgid "log;journal;debug;error;"
-msgstr ""
-"log;journal;debug;error;logboek;fout;meldingen;foutmeldingen;event;"
-"gebeurtenis;"
+msgstr "log;journal;debug;error;logboek;fout;meldingen;foutmeldingen;event;gebeurtenis;"
 
 #: data/org.gnome.Logs.gschema.xml:5
 msgid "Ignore warning"
@@ -408,12 +385,12 @@ msgstr "Waarschuwing negeren"
 
 #: data/org.gnome.Logs.gschema.xml:6
 msgid ""
-"Whether to ignore the warning that says you don’t have sufficient permission "
-"to view logs. If ignored, the warning won’t show up again."
+"Whether to ignore the warning that says you don’t have sufficient permission to view "
+"logs. If ignored, the warning won’t show up again."
 msgstr ""
-"Of de waarschuwing die u laat weten dat u onvoldoende toestemming hebt om "
-"logboeken te bekijken genegeerd moet worden. Indien genegeerd zal de "
-"waarschuwing niet meer verschijnen."
+"Of de waarschuwing die u laat weten dat u onvoldoende toestemming hebt om logboeken "
+"te bekijken genegeerd moet worden. Indien genegeerd zal de waarschuwing niet meer "
+"verschijnen."
 
 #: data/org.gnome.Logs.gschema.xml:10
 msgid "How to sort list rows in the event view list"
@@ -421,8 +398,31 @@ msgstr "Hoe lijstrijen gesorteerd worden in het gebeurtenissenoverzicht"
 
 #: data/org.gnome.Logs.gschema.xml:11
 msgid "Sort list rows in ascending or descending order for the selected type"
+msgstr "Sorteer lijstrijen in op- of aflopende volgorde voor het geselecteerde type"
+
+#: data/org.gnome.Logs.metainfo.xml.in:10
+msgid ""
+"Logs shows events from the systemd journal, and sorts them into categories, such as "
+"hardware and applications."
 msgstr ""
-"Sorteer lijstrijen in op- of aflopende volgorde voor het geselecteerde type"
+"Logboeken toont gebeurtenissen uit het systemd-logboek en toont deze in verschillende "
+"categorieën, zoals hardware en toepassingen."
+
+#: data/org.gnome.Logs.metainfo.xml.in:12
+msgid ""
+"Using Logs you can search your logs by typing a search term, and view detailed "
+"information about each event by clicking on it."
+msgstr ""
+"Met Logboeken kunt u uw logboeken doorzoeken door een zoekterm in te typen en "
+"vervolgens detailinformatie inzien door op een gebeurtenis te klikken."
+
+#: data/org.gnome.Logs.metainfo.xml.in:18
+msgid "Main Window"
+msgstr "Hoofdvenster"
+
+#: data/org.gnome.Logs.metainfo.xml.in:73 src/gl-application.c:141
+msgid "The GNOME Project"
+msgstr "Het GNOME-project"
 
 #: src/gl-application.c:82 src/gl-window.c:285
 msgid "Failed To Open Help"
@@ -437,7 +437,7 @@ msgstr "Kon de gegeven hulp-URI niet openen: %s"
 msgid "_Close"
 msgstr "Sl_uiten"
 
-#: src/gl-application.c:137
+#: src/gl-application.c:144
 msgid "translator-credits"
 msgstr ""
 "Wouter Bolsterlee\n"
@@ -445,7 +445,7 @@ msgstr ""
 "Justin van Steijn <jvs@fsfe.org>\n"
 "Meer info over GNOME-NL https://nl.gnome.org"
 
-#: src/gl-application.c:270
+#: src/gl-application.c:277
 msgid "Print version information and exit"
 msgstr "Versie-informatie tonen en afsluiten"
 
@@ -456,7 +456,7 @@ msgstr "Opstartsessie"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: src/gl-eventviewlist.c:431
+#: src/gl-eventviewlist.c:444
 msgid "No Results"
 msgstr "Geen resultaten"
 
@@ -636,15 +636,15 @@ msgstr "Kon logboekberichten niet naar bestand exporteren"
 msgid "log messages"
 msgstr "logboekberichten"
 
-#: src/gl-window.c:471 src/gl-window.c:488
+#: src/gl-window.c:476 src/gl-window.c:493
 msgid "Unable to read system logs"
 msgstr "Kon systeemlogboek niet lezen"
 
-#: src/gl-window.c:478
+#: src/gl-window.c:483
 msgid "Unable to read user logs"
 msgstr "Kon gebruikerslogboek niet lezen"
 
-#: src/gl-window.c:496
+#: src/gl-window.c:501
 msgid "No logs available"
 msgstr "Geen logboeken beschikbaar"
 
