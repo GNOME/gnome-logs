@@ -1,14 +1,14 @@
 # Norwegian bokmål translation of gnome-logs.
 # Copyright (C) 2014 THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# Kjartan Maraas <kmaraas@gnome.org>, 2014-2025.
+# Kjartan Maraas <kmaraas@gnome.org>, 2014-2026.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs 3.38.x\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues/\n"
-"POT-Creation-Date: 2025-10-10 21:22+0000\n"
-"PO-Revision-Date: 2025-10-16 18:22+0200\n"
+"POT-Creation-Date: 2026-03-18 19:15+0000\n"
+"PO-Revision-Date: 2026-05-06 09:33+0200\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
 "Language: nb\n"
@@ -356,38 +356,18 @@ msgctxt "shortcut window"
 msgid "Export logs to a file"
 msgstr "Eksporter logger til en fil"
 
-#: data/org.gnome.Logs.appdata.xml.in:7 data/org.gnome.Logs.desktop.in:2
-#: src/gl-application.c:132 src/gl-eventtoolbar.c:143
+#: data/org.gnome.Logs.desktop.in:2 data/org.gnome.Logs.metainfo.xml.in:7
+#: src/gl-application.c:139 src/gl-eventtoolbar.c:143
 msgid "Logs"
 msgstr "Logger"
-
-#: data/org.gnome.Logs.appdata.xml.in:8 data/org.gnome.Logs.desktop.in:4
-msgid "View detailed event logs for the system"
-msgstr "Vis detaljerte hendelseslogger for systemet"
-
-#: data/org.gnome.Logs.appdata.xml.in:10
-msgid ""
-"Logs shows events from the systemd journal, and sorts them into categories, "
-"such as hardware and applications."
-msgstr ""
-"Logger viser hendelser fra systemd-journalen og sorterer dem inn i "
-"kategorier slik som maskinvare og programmer."
-
-#: data/org.gnome.Logs.appdata.xml.in:12
-msgid ""
-"Using Logs you can search your logs by typing a search term, and view "
-"detailed information about each event by clicking on it."
-msgstr ""
-"Med Logger kan du søke i dine logger ved å skrive inn teksten du søker etter "
-"og du kan vise detaljert informasjon om hver hendelse ved å klikke på den."
-
-#: data/org.gnome.Logs.appdata.xml.in:63 src/gl-application.c:134
-msgid "The GNOME Project"
-msgstr "GNOME prosjektet"
 
 #: data/org.gnome.Logs.desktop.in:3
 msgid "Log Viewer"
 msgstr "Loggvisning"
+
+#: data/org.gnome.Logs.desktop.in:4 data/org.gnome.Logs.metainfo.xml.in:8
+msgid "View detailed event logs for the system"
+msgstr "Vis detaljerte hendelseslogger for systemet"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.Logs.desktop.in:6
@@ -412,9 +392,33 @@ msgstr "Hvordan liste rader skal sorteres ved hendelsesvisning"
 msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr "Sorter listerader i stigende eller synkende rekkefølge for valgt type"
 
+#: data/org.gnome.Logs.metainfo.xml.in:10
+msgid ""
+"Logs shows events from the systemd journal, and sorts them into categories, "
+"such as hardware and applications."
+msgstr ""
+"Logger viser hendelser fra systemd-journalen og sorterer dem inn i "
+"kategorier slik som maskinvare og programmer."
+
+#: data/org.gnome.Logs.metainfo.xml.in:12
+msgid ""
+"Using Logs you can search your logs by typing a search term, and view "
+"detailed information about each event by clicking on it."
+msgstr ""
+"Med Logger kan du søke i dine logger ved å skrive inn teksten du søker etter "
+"og du kan vise detaljert informasjon om hver hendelse ved å klikke på den."
+
+#: data/org.gnome.Logs.metainfo.xml.in:18
+msgid "Main Window"
+msgstr "Hovedvindu"
+
+#: data/org.gnome.Logs.metainfo.xml.in:73 src/gl-application.c:141
+msgid "The GNOME Project"
+msgstr "GNOME prosjektet"
+
 #: src/gl-application.c:82 src/gl-window.c:285
 msgid "Failed To Open Help"
-msgstr ""
+msgstr "Klarte ikke å åpne hjelp"
 
 #: src/gl-application.c:85 src/gl-window.c:288
 #, c-format
@@ -425,11 +429,11 @@ msgstr "Klarte ikke å åpne oppgitt URI til hjelp: %s"
 msgid "_Close"
 msgstr "_Lukk"
 
-#: src/gl-application.c:137
+#: src/gl-application.c:144
 msgid "translator-credits"
 msgstr "Kjartan Maraas <kmaraas@gnome.org>"
 
-#: src/gl-application.c:270
+#: src/gl-application.c:277
 msgid "Print version information and exit"
 msgstr "Skriv ut versjonsinformasjon og avslutt"
 
@@ -440,7 +444,7 @@ msgstr "Omstart"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: src/gl-eventviewlist.c:431
+#: src/gl-eventviewlist.c:444
 msgid "No Results"
 msgstr "Ingen resultater"
 
@@ -631,15 +635,3 @@ msgstr "Kan ikke lese brukerlogger"
 #: src/gl-window.c:501
 msgid "No logs available"
 msgstr "Ingen logger tilgjengelig"
-
-#~ msgid "GNOME Logs"
-#~ msgstr "GNOME logger"
-
-#~ msgid "View and search logs"
-#~ msgstr "Vis og søk i logger"
-
-#~ msgid "_Cancel"
-#~ msgstr "A_vbryt"
-
-#~ msgid "_Save"
-#~ msgstr "_Lagre"
