@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues/\n"
 "POT-Creation-Date: 2026-03-18 19:15+0000\n"
-"PO-Revision-Date: 2026-03-30 12:14+0100\n"
+"PO-Revision-Date: 2026-05-22 21:18+0100\n"
 "Last-Translator: Flynn Peck <cirilla@tuta.io>\n"
 "Language-Team: kw\n"
 "Language: kw\n"
@@ -71,7 +71,7 @@ msgstr "Fenester _Nowydh"
 
 #: data/gl-eventtoolbar.ui:12
 msgid "_Keyboard Shortcuts"
-msgstr "_Kesunyansow Bysowek"
+msgstr "_Kesunyansow Vysowek"
 
 #: data/gl-eventtoolbar.ui:16
 msgid "_Help"
@@ -83,7 +83,7 @@ msgstr "_A-dro dhe Govskrifow"
 
 #: data/gl-eventtoolbar.ui:35
 msgid "Main Menu"
-msgstr "Rol Chif"
+msgstr "Pennrol"
 
 #: data/gl-eventtoolbar.ui:41
 msgid "Export logs to a file"
@@ -95,7 +95,7 @@ msgstr "Dewis an dalleth may dhyworth gweles kovskrifow"
 
 #: data/gl-eventtoolbar.ui:59
 msgid "Search all the logs of the current category"
-msgstr "Hwilas oll a'n kovskrifow a'n klass a-lemmyn"
+msgstr "Hwilas oll a'n govskrifow a'n klass a-lemmyn"
 
 #: data/gl-eventviewdetail.ui:23
 msgid "Sender"
@@ -123,7 +123,7 @@ msgstr "Ragwir"
 
 #: data/gl-eventviewdetail.ui:198
 msgid "Subject"
-msgstr "Mater"
+msgstr "Testen"
 
 #: data/gl-eventviewdetail.ui:230
 msgid "Defined By"
@@ -147,11 +147,11 @@ msgstr "Dewis ynworrans jornal ha dewisyow sidhlans efander termyn"
 
 #: data/gl-searchpopover.ui:27
 msgid "Select a Journal Field to filter the Logs according to it"
-msgstr "Dewis Ynworrans Jornal rag sidhla an Kovskrifow herwydh yth"
+msgstr "Dewis Ynworrans Jornal rag sidhla an Govskrifow herwydh yth"
 
 #: data/gl-searchpopover.ui:34 data/gl-searchpopover.ui:843
 msgid "All Available Fields"
-msgstr "Oll Ynworransow Kavadow"
+msgstr "Oll Ynworransow Gavadow"
 
 #: data/gl-searchpopover.ui:66 data/gl-searchpopover.ui:220
 msgid "Parameters"
@@ -169,7 +169,7 @@ msgstr "Dewis Ynworrans Jornal…"
 #. When [log entries to be shown for a given timestamp range]
 #: data/gl-searchpopover.ui:140
 msgid "When"
-msgstr "P'eur"
+msgstr "Py eur"
 
 #: data/gl-searchpopover.ui:156
 msgid "Show Logs from…"
@@ -177,7 +177,7 @@ msgstr "Diskwedhes Kovskrifow dhyworth…"
 
 #: data/gl-searchpopover.ui:181
 msgid "Select Timestamp Range of the Log Entries to be shown"
-msgstr "Dewis Efander Termyn a'n Ynworransow Kovskrif rag diskwedhes"
+msgstr "Dewis Efander Termyn a'n Ynworransow Govskrif rag diskwedhes"
 
 #: data/gl-searchpopover.ui:188 data/gl-searchpopover.ui:906
 #: src/gl-searchpopover.c:1306
@@ -190,11 +190,11 @@ msgstr "Eghen Hwithrans"
 
 #: data/gl-searchpopover.ui:266
 msgid "Substring"
-msgstr "Iskorden"
+msgstr "Isdekst"
 
 #: data/gl-searchpopover.ui:268
 msgid "Match in any part of the string"
-msgstr "Desedha yn neb rann a'n gorden"
+msgstr "Desedha yn neb rann a'n tekst"
 
 #: data/gl-searchpopover.ui:275
 msgid "Exact"
@@ -202,7 +202,7 @@ msgstr "Kewar"
 
 #: data/gl-searchpopover.ui:277
 msgid "Match complete string only"
-msgstr "Desedha korden leun hepken"
+msgstr "Desedha tekst leun hepken"
 
 #: data/gl-searchpopover.ui:319
 msgid "Back"
@@ -210,7 +210,7 @@ msgstr "Dehweles"
 
 #: data/gl-searchpopover.ui:337
 msgid "Show Logs Starting From…"
-msgstr "Diskwedhes Kovskrifow Ow Dalleth Dhyworth…"
+msgstr "Diskwedhes Kovskrifow Ow Talleth Dhyworth…"
 
 #: data/gl-searchpopover.ui:358
 msgid "Select a start date"
@@ -347,7 +347,7 @@ msgstr "Diskwedhes gweres"
 #: data/help-overlay.ui:30
 msgctxt "shortcut window"
 msgid "Keyboard shortcuts"
-msgstr "Kesunyansow bysowek"
+msgstr "Kesunyansow vysowek"
 
 #: data/help-overlay.ui:37
 msgctxt "shortcut window"
@@ -371,7 +371,7 @@ msgstr "Kovskrifow"
 
 #: data/org.gnome.Logs.desktop.in:3
 msgid "Log Viewer"
-msgstr "Gwelell Kovskrif"
+msgstr "Gwelell Govskrif"
 
 #: data/org.gnome.Logs.desktop.in:4 data/org.gnome.Logs.metainfo.xml.in:8
 msgid "View detailed event logs for the system"
@@ -392,7 +392,7 @@ msgid ""
 "to view logs. If ignored, the warning won’t show up again."
 msgstr ""
 "Mar skonya aswon an gwarnyans ow leverel ny gevydh kummyas lowr rag gweles "
-"kovskrifow. Mar skonya, an gwarnyans ny diskwedhes arta."
+"kovskrifow. Mar skonys, an gwarnyans ny vydh diskwedhys arta."
 
 #: data/org.gnome.Logs.gschema.xml:10
 msgid "How to sort list rows in the event view list"
@@ -400,28 +400,27 @@ msgstr "Fatel sortya rewyow rol y'n rol gwel hwarvos"
 
 #: data/org.gnome.Logs.gschema.xml:11
 msgid "Sort list rows in ascending or descending order for the selected type"
-msgstr "Sortya rewyow rol yn aray yskynnus po diyskynnus rag an eghen dewisys"
+msgstr "Sortya rewyow rol yn aray yskynnus po diyskynnus rag an eghen dhewisys"
 
 #: data/org.gnome.Logs.metainfo.xml.in:10
 msgid ""
 "Logs shows events from the systemd journal, and sorts them into categories, "
 "such as hardware and applications."
 msgstr ""
-"Kovskrifow diskwedhes hwarvosow dhyworth an jornal systemd, ha sortya y's yn "
-"klassys, kepar ha kalesweyth hag appys."
+"Kovskrifow a dhiskwedh hwarvosow dhyworth an jornal systemd, hag a sort "
+"dhedha yn klassys, kepar ha kalesweyth hag appys."
 
 #: data/org.gnome.Logs.metainfo.xml.in:12
 msgid ""
 "Using Logs you can search your logs by typing a search term, and view "
 "detailed information about each event by clicking on it."
 msgstr ""
-"Gans Kovskrifow ty a yll hwilas dha kovskrifow gans ow jynnskrifa term "
-"hwithrans, ha gweles kedhlow manylys a-dro dhe bub hwarvos gans ow klyckya "
-"war yth."
+"Gans Kovskrifow hwi a yll hwilas agas kovskrifow gans ow jynnskrifa term "
+"hwithrans, ha gweles kedhlow manylys a-dro dhe bub hwarvos gans ow klyckya."
 
 #: data/org.gnome.Logs.metainfo.xml.in:18
 msgid "Main Window"
-msgstr "Fenester Chif"
+msgstr "Pennfenester"
 
 #: data/org.gnome.Logs.metainfo.xml.in:73 src/gl-application.c:141
 msgid "The GNOME Project"
@@ -446,7 +445,7 @@ msgstr "Flynn"
 
 #: src/gl-application.c:277
 msgid "Print version information and exit"
-msgstr "Pryntya kedhlow versyon ha kwytya"
+msgstr "Pryntya kedhlow dyllans ha kwytya"
 
 #. Translators: Boot refers to a single run (or bootup) of the system
 #: src/gl-eventtoolbar.c:134
@@ -625,15 +624,15 @@ msgstr "%s – %s"
 
 #: src/gl-window.c:172
 msgid "Export Failed"
-msgstr "Esporth Fyllis"
+msgstr "Esporth re Fyllis"
 
 #: src/gl-window.c:173
 msgid "Unable to export log messages to a file"
-msgstr "Ny yllir esperthi messajys kovskrif dhe restren"
+msgstr "Ny yllir esperthi messajys govskrif dhe restren"
 
 #: src/gl-window.c:194
 msgid "log messages"
-msgstr "messajys kovskrif"
+msgstr "messajys govskrif"
 
 #: src/gl-window.c:476 src/gl-window.c:493
 msgid "Unable to read system logs"
@@ -641,8 +640,8 @@ msgstr "Ny yllir redya kovskrifow system"
 
 #: src/gl-window.c:483
 msgid "Unable to read user logs"
-msgstr "Ny yllir redya kovskrifow devnydhyer"
+msgstr "Ny yllir redya kovskrifow dhevnydhyer"
 
 #: src/gl-window.c:501
 msgid "No logs available"
-msgstr "Kovskrifow kavadow vyth"
+msgstr "Kovskrifow gavadow vyth"
