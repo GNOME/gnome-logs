@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2014, 2015, 2016, 2017.
-# Asier Sarasua Garmendia  <asiersarasua@ni.eus>, 2019, 2020, 2021, 2023.
+# Asier Saratsua Garmendia  <asiersarasua@ni.eus>, 2019, 2020, 2021, 2023, 2026.
 #
 msgid ""
 msgstr "Project-Id-Version: gnome-logs master\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2023-08-12 17:47+0000\n"
-"PO-Revision-Date: 2023-10-22 10:00+0100\n"
-"Last-Translator: Asier Sarasua Garmendia <asiersarasua@ni.eus>\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues/\n"
+"POT-Creation-Date: 2026-03-18 19:15+0000\n"
+"PO-Revision-Date: 2026-06-05 10:00+0100\n"
+"Last-Translator: Asier Saratsua Garmendia <asiersarasua@ni.eus>\n"
 "Language-Team: Basque <librezale@librezale.eus>\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
@@ -357,37 +357,21 @@ msgctxt "shortcut window"
 msgid "Export logs to a file"
 msgstr "Esportatu erregistroak fitxategi batera"
 
-#: data/org.gnome.Logs.appdata.xml.in:7 data/org.gnome.Logs.desktop.in:3
-#: src/gl-application.c:132 src/gl-eventtoolbar.c:143
+#: data/org.gnome.Logs.desktop.in:2 data/org.gnome.Logs.metainfo.xml.in:7
+#: src/gl-application.c:139 src/gl-eventtoolbar.c:143
 msgid "Logs"
 msgstr "Erregistroak"
 
-#: data/org.gnome.Logs.appdata.xml.in:8 data/org.gnome.Logs.desktop.in:5
-msgid "View detailed event logs for the system"
-msgstr "Ikusi sistemaren erregistroetako gertaera xeheak"
-
-#: data/org.gnome.Logs.appdata.xml.in:10
-msgid ""
-"Logs shows events from the systemd journal, and sorts them into categories, "
-"such as hardware and applications."
-msgstr "Logs aplikazioak systemd egunkariak sortutako gertaerak bistaratzeaz gain, haiek kategorietan antolatzen ditu (adibidez, 'hardwarea' edo 'aplikazioak')."
-
-#: data/org.gnome.Logs.appdata.xml.in:12
-msgid ""
-"Using Logs you can search your logs by typing a search term, and view "
-"detailed information about each event by clicking on it."
-msgstr "Logs erabilita, erregistroetan bilaketak egin ditzakezu bilaketa-hitz bat idatzita , eta gertaera bakoitzaren informazio xehea ikus dezakezu haren gainean klik eginez gero."
-
-#: data/org.gnome.Logs.appdata.xml.in:38 src/gl-application.c:134
-msgid "The GNOME Project"
-msgstr "GNOME proiektua"
-
-#: data/org.gnome.Logs.desktop.in:4
+#: data/org.gnome.Logs.desktop.in:3
 msgid "Log Viewer"
 msgstr "Erregistroen ikustailea"
 
+#: data/org.gnome.Logs.desktop.in:4 data/org.gnome.Logs.metainfo.xml.in:8
+msgid "View detailed event logs for the system"
+msgstr "Ikusi sistemaren erregistroetako gertaera xeheak"
+
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/org.gnome.Logs.desktop.in:7
+#: data/org.gnome.Logs.desktop.in:6
 msgid "log;journal;debug;error;"
 msgstr "erregistroa;egunkaria;arazketa;errorea;"
 
@@ -409,6 +393,27 @@ msgstr "Nola ordenatu errenkadak gertaeren ikuspegiaren zerrendan"
 msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr "Ordenatu hautatutako motaren errenkadak gorantz edo beherantz"
 
+#: data/org.gnome.Logs.metainfo.xml.in:10
+msgid ""
+"Logs shows events from the systemd journal, and sorts them into categories, "
+"such as hardware and applications."
+msgstr "Logs aplikazioak systemd egunkariak sortutako gertaerak bistaratzeaz gain, haiek kategorietan antolatzen ditu (adibidez, 'hardwarea' edo 'aplikazioak')."
+
+#: data/org.gnome.Logs.metainfo.xml.in:12
+msgid ""
+"Using Logs you can search your logs by typing a search term, and view "
+"detailed information about each event by clicking on it."
+msgstr "Logs erabilita, erregistroetan bilaketak egin ditzakezu bilaketa-hitz bat idatzita , eta gertaera bakoitzaren informazio xehea ikus dezakezu haren gainean klik eginez gero."
+
+#: data/org.gnome.Logs.metainfo.xml.in:18
+#| msgid "_New Window"
+msgid "Main Window"
+msgstr "Leiho nagusia"
+
+#: data/org.gnome.Logs.metainfo.xml.in:73 src/gl-application.c:141
+msgid "The GNOME Project"
+msgstr "GNOME proiektua"
+
 #: src/gl-application.c:82 src/gl-window.c:285
 msgid "Failed To Open Help"
 msgstr "Huts egin du laguntza irekitzeak"
@@ -422,11 +427,11 @@ msgstr "Huts egin du laguntzaren URIa irekitzeak: %s"
 msgid "_Close"
 msgstr "It_xi"
 
-#: src/gl-application.c:137
+#: src/gl-application.c:144
 msgid "translator-credits"
 msgstr "translator-credits"
 
-#: src/gl-application.c:270
+#: src/gl-application.c:277
 msgid "Print version information and exit"
 msgstr "Erakutsi bertsioaren informazioa eta irten"
 
@@ -437,7 +442,7 @@ msgstr "Abioa"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: src/gl-eventviewlist.c:431
+#: src/gl-eventviewlist.c:444
 msgid "No Results"
 msgstr "Ez dago emaitzarik"
 
@@ -617,15 +622,15 @@ msgstr "Ezin dira erregistro-mezuak fitxategi batera esportatu"
 msgid "log messages"
 msgstr "erregistro-mezuak"
 
-#: src/gl-window.c:471 src/gl-window.c:488
+#: src/gl-window.c:476 src/gl-window.c:493
 msgid "Unable to read system logs"
 msgstr "Ezin dira sistemaren erregistroak irakurri"
 
-#: src/gl-window.c:478
+#: src/gl-window.c:483
 msgid "Unable to read user logs"
 msgstr "Ezin dira erabiltzailearen erregistroak irakurri"
 
-#: src/gl-window.c:496
+#: src/gl-window.c:501
 msgid "No logs available"
 msgstr "Ez dago erregistrorik eskuragarri"
 
