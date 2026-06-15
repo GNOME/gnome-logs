@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: gnome-logs master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues/\n"
 "POT-Creation-Date: 2026-03-18 19:15+0000\n"
-"PO-Revision-Date: 2026-05-22 21:18+0100\n"
+"PO-Revision-Date: 2026-06-15 10:29+0100\n"
 "Last-Translator: Flynn Peck <cirilla@tuta.io>\n"
 "Language-Team: kw\n"
 "Language: kw\n"
@@ -27,7 +27,7 @@ msgstr ""
 
 #: data/gl-categorylist.ui:12
 msgid "Important"
-msgstr "Posek"
+msgstr "Bysi"
 
 #: data/gl-categorylist.ui:23
 msgid "Alerts"
@@ -71,7 +71,7 @@ msgstr "Fenester _Nowydh"
 
 #: data/gl-eventtoolbar.ui:12
 msgid "_Keyboard Shortcuts"
-msgstr "_Kesunyansow Vysowek"
+msgstr "_Kesunyansow Bysowek"
 
 #: data/gl-eventtoolbar.ui:16
 msgid "_Help"
@@ -91,11 +91,11 @@ msgstr "Esperthi kovskrifow dhe restren"
 
 #: data/gl-eventtoolbar.ui:49
 msgid "Choose the boot from which to view logs"
-msgstr "Dewis an dalleth may dhyworth gweles kovskrifow"
+msgstr "Dewis an dalleth rag gweles kovskrifow"
 
 #: data/gl-eventtoolbar.ui:59
 msgid "Search all the logs of the current category"
-msgstr "Hwilas oll a'n govskrifow a'n klass a-lemmyn"
+msgstr "Hwilas oll a'n kovskrifow a'n klass a-lemmyn"
 
 #: data/gl-eventviewdetail.ui:23
 msgid "Sender"
@@ -147,11 +147,11 @@ msgstr "Dewis ynworrans jornal ha dewisyow sidhlans efander termyn"
 
 #: data/gl-searchpopover.ui:27
 msgid "Select a Journal Field to filter the Logs according to it"
-msgstr "Dewis Ynworrans Jornal rag sidhla an Govskrifow herwydh yth"
+msgstr "Dewis Ynworrans Jornal rag sidhla an Kovskrifow herwydh yth"
 
 #: data/gl-searchpopover.ui:34 data/gl-searchpopover.ui:843
 msgid "All Available Fields"
-msgstr "Oll Ynworransow Gavadow"
+msgstr "Oll Ynworransow Kavadow"
 
 #: data/gl-searchpopover.ui:66 data/gl-searchpopover.ui:220
 msgid "Parameters"
@@ -177,7 +177,7 @@ msgstr "Diskwedhes Kovskrifow dhyworth…"
 
 #: data/gl-searchpopover.ui:181
 msgid "Select Timestamp Range of the Log Entries to be shown"
-msgstr "Dewis Efander Termyn a'n Ynworransow Govskrif rag diskwedhes"
+msgstr "Dewis Efander Termyn a'n Ynworransow Kovskrif rag diskwedhes"
 
 #: data/gl-searchpopover.ui:188 data/gl-searchpopover.ui:906
 #: src/gl-searchpopover.c:1306
@@ -250,7 +250,7 @@ msgstr "KH/WH"
 
 #: data/gl-searchpopover.ui:579
 msgid "Until…"
-msgstr "Erna…"
+msgstr "Ernag…"
 
 #: data/gl-searchpopover.ui:600
 msgid "Select an end date"
@@ -347,7 +347,7 @@ msgstr "Diskwedhes gweres"
 #: data/help-overlay.ui:30
 msgctxt "shortcut window"
 msgid "Keyboard shortcuts"
-msgstr "Kesunyansow vysowek"
+msgstr "Kesunyansow bysowek"
 
 #: data/help-overlay.ui:37
 msgctxt "shortcut window"
@@ -380,7 +380,7 @@ msgstr "Gweles kovskrifow hwarvos manylys rag an system"
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.Logs.desktop.in:6
 msgid "log;journal;debug;error;"
-msgstr "kovskrif;jornal;prevessa;error;logs;"
+msgstr "kovskrif;jornal;prevessa;kamm;logs;error;"
 
 #: data/org.gnome.Logs.gschema.xml:5
 msgid "Ignore warning"
@@ -391,12 +391,12 @@ msgid ""
 "Whether to ignore the warning that says you don’t have sufficient permission "
 "to view logs. If ignored, the warning won’t show up again."
 msgstr ""
-"Mar skonya aswon an gwarnyans ow leverel ny gevydh kummyas lowr rag gweles "
+"Mar skonya aswon an gwarnyans ow leverel nyns eus kummyas lowr rag gweles "
 "kovskrifow. Mar skonys, an gwarnyans ny vydh diskwedhys arta."
 
 #: data/org.gnome.Logs.gschema.xml:10
 msgid "How to sort list rows in the event view list"
-msgstr "Fatel sortya rewyow rol y'n rol gwel hwarvos"
+msgstr "Fatel sortya rewyow rol y'n gwel rol hwarvos"
 
 #: data/org.gnome.Logs.gschema.xml:11
 msgid "Sort list rows in ascending or descending order for the selected type"
@@ -478,7 +478,7 @@ msgstr "Dhyworth %s"
 #: src/gl-searchpopover.c:700
 #, c-format
 msgid "Until %s"
-msgstr "Erna %s"
+msgstr "Ernag %s"
 
 #. Translators: date format for the start date entry
 #. * and start date button label in the custom range submenu,
@@ -628,11 +628,11 @@ msgstr "Esporth re Fyllis"
 
 #: src/gl-window.c:173
 msgid "Unable to export log messages to a file"
-msgstr "Ny yllir esperthi messajys govskrif dhe restren"
+msgstr "Ny yllir esperthi messajys kovskrif dhe restren"
 
 #: src/gl-window.c:194
 msgid "log messages"
-msgstr "messajys govskrif"
+msgstr "messajys kovskrif"
 
 #: src/gl-window.c:476 src/gl-window.c:493
 msgid "Unable to read system logs"
@@ -640,8 +640,8 @@ msgstr "Ny yllir redya kovskrifow system"
 
 #: src/gl-window.c:483
 msgid "Unable to read user logs"
-msgstr "Ny yllir redya kovskrifow dhevnydhyer"
+msgstr "Ny yllir redya kovskrifow devnydhyer"
 
 #: src/gl-window.c:501
 msgid "No logs available"
-msgstr "Kovskrifow gavadow vyth"
+msgstr "Kovskrifow kavadow vyth"
