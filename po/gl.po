@@ -6,9 +6,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2023-08-07 12:30+0000\n"
-"PO-Revision-Date: 2023-08-11 02:38+0200\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues/\n"
+"POT-Creation-Date: 2026-03-18 19:15+0000\n"
+"PO-Revision-Date: 2026-08-10 20:45+0200\n"
 "Last-Translator: Fran Dieguez <frandieguez@gnome.org>\n"
 "Language-Team: Galician <Proxecto Trasno <proxecto@trasno.gal>>\n"
 "Language: gl\n"
@@ -16,13 +16,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.3.2\n"
-"X-Project-Style: gnome\n"
-"X-DL-Team: gl\n"
-"X-DL-Module: gnome-logs\n"
 "X-DL-Branch: master\n"
 "X-DL-Domain: po\n"
+"X-DL-Module: gnome-logs\n"
 "X-DL-State: Translating\n"
+"X-DL-Team: gl\n"
+"X-Generator: Poedit 3.9\n"
+"X-Project-Style: gnome\n"
 
 #: data/gl-categorylist.ui:12
 msgid "Important"
@@ -178,7 +178,8 @@ msgstr "Mostrar rexistros desde…"
 
 #: data/gl-searchpopover.ui:181
 msgid "Select Timestamp Range of the Log Entries to be shown"
-msgstr "Seleccionar un rango de marcas nas que mostrar as entradas do rexistro"
+msgstr ""
+"Seleccionar un rango de marcas nas que mostrar as entradas do rexistro"
 
 #: data/gl-searchpopover.ui:188 data/gl-searchpopover.ui:906
 #: src/gl-searchpopover.c:1306
@@ -365,41 +366,22 @@ msgctxt "shortcut window"
 msgid "Export logs to a file"
 msgstr "Exportar rexistros a un ficheiro"
 
-#: data/org.gnome.Logs.appdata.xml.in:7 data/org.gnome.Logs.desktop.in:3
-#: src/gl-application.c:132 src/gl-eventtoolbar.c:143
+#: data/org.gnome.Logs.desktop.in:2 data/org.gnome.Logs.metainfo.xml.in:7
+#: src/gl-application.c:139 src/gl-eventtoolbar.c:143
 msgid "Logs"
 msgstr "Rexistros"
 
-#: data/org.gnome.Logs.appdata.xml.in:8 data/org.gnome.Logs.desktop.in:5
-msgid "View detailed event logs for the system"
-msgstr "Ver rexistros de eventos detallados para o seu sistema"
-
-#: data/org.gnome.Logs.appdata.xml.in:10
-msgid ""
-"Logs shows events from the systemd journal, and sorts them into categories, "
-"such as hardware and applications."
-msgstr ""
-"Rexistros mostra os eventos do diario de systemd e ordénaos en categorías, "
-"como por exemplo hardware e aplicativos."
-
-#: data/org.gnome.Logs.appdata.xml.in:12
-msgid ""
-"Using Logs you can search your logs by typing a search term, and view "
-"detailed information about each event by clicking on it."
-msgstr ""
-"Ao usar Rexistros pode buscar nos seus rexistros escribindo na caixa de "
-"busca, e ver información detallada sobre cada evento premendo nel."
-
-#: data/org.gnome.Logs.appdata.xml.in:38 src/gl-application.c:134
-msgid "The GNOME Project"
-msgstr "Proxecto GNOME"
-
-#: data/org.gnome.Logs.desktop.in:4
+#: data/org.gnome.Logs.desktop.in:3
 msgid "Log Viewer"
 msgstr "Visor de rexistros"
 
-#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/org.gnome.Logs.desktop.in:7
+#: data/org.gnome.Logs.desktop.in:4 data/org.gnome.Logs.metainfo.xml.in:8
+msgid "View detailed event logs for the system"
+msgstr "Ver rexistros de eventos detallados para o seu sistema"
+
+#. Translators: Search terms to find this application. Do NOT translate or
+#. localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.Logs.desktop.in:6
 msgid "log;journal;debug;error;"
 msgstr "rexistro;diario;depuración;erro;"
 
@@ -409,8 +391,8 @@ msgstr "Ignorar aviso"
 
 #: data/org.gnome.Logs.gschema.xml:6
 msgid ""
-"Whether to ignore the warning that says you don’t have sufficient permission "
-"to view logs. If ignored, the warning won’t show up again."
+"Whether to ignore the warning that says you don’t have sufficient "
+"permission to view logs. If ignored, the warning won’t show up again."
 msgstr ""
 "Indica se ignorar o aviso que di que non ten suficientes permisos para ver "
 "os rexistros. Se o ignora, o aviso non se mostrará de novo."
@@ -425,6 +407,30 @@ msgstr ""
 "Ordenar as filas da lista en orde ascendente ou descendente para o tipo "
 "seleccionado"
 
+#: data/org.gnome.Logs.metainfo.xml.in:10
+msgid ""
+"Logs shows events from the systemd journal, and sorts them into categories, "
+"such as hardware and applications."
+msgstr ""
+"Rexistros mostra os eventos do diario de systemd e ordénaos en categorías, "
+"como por exemplo hardware e aplicativos."
+
+#: data/org.gnome.Logs.metainfo.xml.in:12
+msgid ""
+"Using Logs you can search your logs by typing a search term, and view "
+"detailed information about each event by clicking on it."
+msgstr ""
+"Ao usar Rexistros pode buscar nos seus rexistros escribindo na caixa de "
+"busca, e ver información detallada sobre cada evento premendo nel."
+
+#: data/org.gnome.Logs.metainfo.xml.in:18
+msgid "Main Window"
+msgstr "Xanela principal"
+
+#: data/org.gnome.Logs.metainfo.xml.in:73 src/gl-application.c:141
+msgid "The GNOME Project"
+msgstr "Proxecto GNOME"
+
 #: src/gl-application.c:82 src/gl-window.c:285
 msgid "Failed To Open Help"
 msgstr "Produciuse un fallo ao abrir a axuda"
@@ -438,11 +444,11 @@ msgstr "Produciuse un fallo ao abrir o URI de axuda fornecido: %s"
 msgid "_Close"
 msgstr "_Pechar"
 
-#: src/gl-application.c:137
+#: src/gl-application.c:144
 msgid "translator-credits"
 msgstr "Fran Diéguez <frandieguez@gnome.org>, 2013-2023."
 
-#: src/gl-application.c:270
+#: src/gl-application.c:277
 msgid "Print version information and exit"
 msgstr "Imprimir información da versión e saír"
 
@@ -453,7 +459,7 @@ msgstr "Arrinque"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: src/gl-eventviewlist.c:431
+#: src/gl-eventviewlist.c:444
 msgid "No Results"
 msgstr "Sen resultados"
 
@@ -633,15 +639,15 @@ msgstr "Non foi posíbel exportar os mensaxes de rexistro a un ficheiro"
 msgid "log messages"
 msgstr "mensaxes de rexistro"
 
-#: src/gl-window.c:471 src/gl-window.c:488
+#: src/gl-window.c:476 src/gl-window.c:493
 msgid "Unable to read system logs"
 msgstr "Non foi posíbel ler os rexistros do sistema"
 
-#: src/gl-window.c:478
+#: src/gl-window.c:483
 msgid "Unable to read user logs"
 msgstr "Non foi posíbel ler os rexistros do usuario"
 
-#: src/gl-window.c:496
+#: src/gl-window.c:501
 msgid "No logs available"
 msgstr "Non hai rexistros dispoñíbeis"
 
