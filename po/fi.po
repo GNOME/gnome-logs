@@ -7,9 +7,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2023-08-07 12:30+0000\n"
-"PO-Revision-Date: 2023-08-17 10:28+0300\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues/\n"
+"POT-Creation-Date: 2026-03-18 19:15+0000\n"
+"PO-Revision-Date: 2026-08-17 19:13+0300\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos+l10n@iki.fi>\n"
 "Language-Team: suomi <lokalisointi-lista@googlegroups.com>\n"
 "Language: fi\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 3.9\n"
 
 #: data/gl-categorylist.ui:12
 msgid "Important"
@@ -358,41 +358,21 @@ msgctxt "shortcut window"
 msgid "Export logs to a file"
 msgstr "Vie lokit tiedostoon"
 
-#: data/org.gnome.Logs.appdata.xml.in:7 data/org.gnome.Logs.desktop.in:3
-#: src/gl-application.c:132 src/gl-eventtoolbar.c:143
+#: data/org.gnome.Logs.desktop.in:2 data/org.gnome.Logs.metainfo.xml.in:7
+#: src/gl-application.c:139 src/gl-eventtoolbar.c:143
 msgid "Logs"
 msgstr "Lokit"
 
-#: data/org.gnome.Logs.appdata.xml.in:8 data/org.gnome.Logs.desktop.in:5
-msgid "View detailed event logs for the system"
-msgstr "Katsele järjestelmän yksityiskohtaisia tapahtumalokeja"
-
-#: data/org.gnome.Logs.appdata.xml.in:10
-msgid ""
-"Logs shows events from the systemd journal, and sorts them into categories, "
-"such as hardware and applications."
-msgstr ""
-"Lokit näyttää systemd:n tapahtumasanomia ja jakaa ne luokkiin, kuten "
-"laitteisto ja sovellukset."
-
-#: data/org.gnome.Logs.appdata.xml.in:12
-msgid ""
-"Using Logs you can search your logs by typing a search term, and view "
-"detailed information about each event by clicking on it."
-msgstr ""
-"Lokisovelluksen avulla voit etsiä tapahtumia lokeista, ja tarkastella "
-"yksittäisiä tapahtumia napsauttamalla niitä."
-
-#: data/org.gnome.Logs.appdata.xml.in:38 src/gl-application.c:134
-msgid "The GNOME Project"
-msgstr "Gnome-projekti"
-
-#: data/org.gnome.Logs.desktop.in:4
+#: data/org.gnome.Logs.desktop.in:3
 msgid "Log Viewer"
 msgstr "Lokikatselin"
 
+#: data/org.gnome.Logs.desktop.in:4 data/org.gnome.Logs.metainfo.xml.in:8
+msgid "View detailed event logs for the system"
+msgstr "Katsele järjestelmän yksityiskohtaisia tapahtumalokeja"
+
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/org.gnome.Logs.desktop.in:7
+#: data/org.gnome.Logs.desktop.in:6
 msgid "log;journal;debug;error;"
 msgstr "log;journal;debug;error;loki;vianetsintä;virhe;"
 
@@ -418,6 +398,31 @@ msgstr ""
 "Järjestä luettelon rivit nousevassa tai laskevassa järjestyksessä valitulle "
 "tyypille"
 
+#: data/org.gnome.Logs.metainfo.xml.in:10
+msgid ""
+"Logs shows events from the systemd journal, and sorts them into categories, "
+"such as hardware and applications."
+msgstr ""
+"Lokit näyttää systemd:n tapahtumasanomia ja jakaa ne luokkiin, kuten "
+"laitteisto ja sovellukset."
+
+#: data/org.gnome.Logs.metainfo.xml.in:12
+msgid ""
+"Using Logs you can search your logs by typing a search term, and view "
+"detailed information about each event by clicking on it."
+msgstr ""
+"Lokisovelluksen avulla voit etsiä tapahtumia lokeista, ja tarkastella "
+"yksittäisiä tapahtumia napsauttamalla niitä."
+
+#: data/org.gnome.Logs.metainfo.xml.in:18
+msgid "Main Window"
+msgstr "Pääikkuna"
+
+#: data/org.gnome.Logs.metainfo.xml.in:73
+#: data/org.gnome.Logs.metainfo.xml.in:75 src/gl-application.c:141
+msgid "The GNOME Project"
+msgstr "Gnome-projekti"
+
 #: src/gl-application.c:82 src/gl-window.c:285
 msgid "Failed To Open Help"
 msgstr "Ohjeen avaaminen epäonnistui"
@@ -431,11 +436,11 @@ msgstr "Ohje-URI:n avaaminen epäonnistui: %s"
 msgid "_Close"
 msgstr "_Sulje"
 
-#: src/gl-application.c:137
+#: src/gl-application.c:144
 msgid "translator-credits"
 msgstr "Jiri Grönroos"
 
-#: src/gl-application.c:270
+#: src/gl-application.c:277
 msgid "Print version information and exit"
 msgstr "Tulosta versiotiedot ja poistu"
 
@@ -446,7 +451,7 @@ msgstr "Käynnistys"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: src/gl-eventviewlist.c:431
+#: src/gl-eventviewlist.c:444
 msgid "No Results"
 msgstr "Ei tuloksia"
 
@@ -626,15 +631,15 @@ msgstr "Lokiviestien vieminen tiedostoon epäonnistui"
 msgid "log messages"
 msgstr "lokiviestit"
 
-#: src/gl-window.c:471 src/gl-window.c:488
+#: src/gl-window.c:476 src/gl-window.c:493
 msgid "Unable to read system logs"
 msgstr "Järjestelmälokien lukeminen ei onnistu"
 
-#: src/gl-window.c:478
+#: src/gl-window.c:483
 msgid "Unable to read user logs"
 msgstr "Käyttäjälokien lukeminen ei onnistu"
 
-#: src/gl-window.c:496
+#: src/gl-window.c:501
 msgid "No logs available"
 msgstr "Lokeja ei ole saatavilla"
 
