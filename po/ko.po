@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the gnome-logs package.
 # Changwoo Ryu <cwryu@debian.org>, 2014-2016.
 # Junyoul Lim <purum@postech.ac.kr>, 2017-2018.
-# Seong-ho Cho <shcho@gnome.org>, 2016-2017, 2020-2021, 2023.
+# Seong-ho Cho <shcho@gnome.org>, 2016-2017, 2020-2021, 2023, 2026.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2023-08-07 12:30+0000\n"
-"PO-Revision-Date: 2023-08-27 01:43+0900\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues/\n"
+"POT-Creation-Date: 2026-03-18 19:15+0000\n"
+"PO-Revision-Date: 2026-08-03 18:24+0900\n"
 "Last-Translator: Seong-ho Cho <darkcircle.0426@gmail.com>\n"
 "Language-Team: Korean <gnome-kr@googlegroups.com>\n"
 "Language: ko\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 2.3.1\n"
+"X-Generator: Poedit 3.6\n"
 
 #: data/gl-categorylist.ui:12
 msgid "Important"
@@ -359,41 +359,21 @@ msgctxt "shortcut window"
 msgid "Export logs to a file"
 msgstr "로그를 파일로 내보내기"
 
-#: data/org.gnome.Logs.appdata.xml.in:7 data/org.gnome.Logs.desktop.in:3
-#: src/gl-application.c:132 src/gl-eventtoolbar.c:143
+#: data/org.gnome.Logs.desktop.in:2 data/org.gnome.Logs.metainfo.xml.in:7
+#: src/gl-application.c:139 src/gl-eventtoolbar.c:143
 msgid "Logs"
 msgstr "기록"
 
-#: data/org.gnome.Logs.appdata.xml.in:8 data/org.gnome.Logs.desktop.in:5
-msgid "View detailed event logs for the system"
-msgstr "시스템의 자세한 이벤트 기록을 봅니다"
-
-#: data/org.gnome.Logs.appdata.xml.in:10
-msgid ""
-"Logs shows events from the systemd journal, and sorts them into categories, "
-"such as hardware and applications."
-msgstr ""
-"기록에서는 systemd 저널에서 이벤트를 표시하고, 하드웨어나 프로그램 등 분류에 "
-"따라 정렬합니다."
-
-#: data/org.gnome.Logs.appdata.xml.in:12
-msgid ""
-"Using Logs you can search your logs by typing a search term, and view "
-"detailed information about each event by clicking on it."
-msgstr ""
-"검색어를 입력해서 기록을 검색할 수 있습니다. 또 이벤트를 눌러서 정보를 자세"
-"히 볼 수도 있습니다."
-
-#: data/org.gnome.Logs.appdata.xml.in:38 src/gl-application.c:134
-msgid "The GNOME Project"
-msgstr "그놈 프로젝트"
-
-#: data/org.gnome.Logs.desktop.in:4
+#: data/org.gnome.Logs.desktop.in:3
 msgid "Log Viewer"
 msgstr "기록 보기"
 
+#: data/org.gnome.Logs.desktop.in:4 data/org.gnome.Logs.metainfo.xml.in:8
+msgid "View detailed event logs for the system"
+msgstr "시스템의 자세한 이벤트 기록을 봅니다"
+
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/org.gnome.Logs.desktop.in:7
+#: data/org.gnome.Logs.desktop.in:6
 msgid "log;journal;debug;error;"
 msgstr "log;로그;기록;journal;저널;debug;디버깅;error;오류;"
 
@@ -417,6 +397,30 @@ msgstr "이벤트 보기 목록에서 행을 정렬하는 방식"
 msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr "선택한 기준에 따라 오름차순 또는 내림차순으로 행 정렬"
 
+#: data/org.gnome.Logs.metainfo.xml.in:10
+msgid ""
+"Logs shows events from the systemd journal, and sorts them into categories, "
+"such as hardware and applications."
+msgstr ""
+"기록에서는 systemd 저널에서 이벤트를 표시하고, 하드웨어나 프로그램 등 분류에 "
+"따라 정렬합니다."
+
+#: data/org.gnome.Logs.metainfo.xml.in:12
+msgid ""
+"Using Logs you can search your logs by typing a search term, and view "
+"detailed information about each event by clicking on it."
+msgstr ""
+"검색어를 입력해서 기록을 검색할 수 있습니다. 또 이벤트를 눌러서 정보를 자세"
+"히 볼 수도 있습니다."
+
+#: data/org.gnome.Logs.metainfo.xml.in:18
+msgid "Main Window"
+msgstr "기본 창"
+
+#: data/org.gnome.Logs.metainfo.xml.in:73 src/gl-application.c:141
+msgid "The GNOME Project"
+msgstr "그놈 프로젝트"
+
 #: src/gl-application.c:82 src/gl-window.c:285
 msgid "Failed To Open Help"
 msgstr "도움말 열기에 실패했습니다"
@@ -430,14 +434,14 @@ msgstr "지정 도움말 URI 열기 실패: %s"
 msgid "_Close"
 msgstr "닫기(_C)"
 
-#: src/gl-application.c:137
+#: src/gl-application.c:144
 msgid "translator-credits"
 msgstr ""
 "류창우 <cwryu@debian.org>\n"
 "조성호 <shcho@gnome.org>\n"
 "임준열 <purum@postech.ac.kr>"
 
-#: src/gl-application.c:270
+#: src/gl-application.c:277
 msgid "Print version information and exit"
 msgstr "버전 정보를 표시하고 끝납니다"
 
@@ -448,7 +452,7 @@ msgstr "부팅"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: src/gl-eventviewlist.c:431
+#: src/gl-eventviewlist.c:444
 msgid "No Results"
 msgstr "결과 없음"
 
@@ -628,15 +632,15 @@ msgstr "로그 메시지를 파일로 내보낼 수 없습니다"
 msgid "log messages"
 msgstr "로그 메시지"
 
-#: src/gl-window.c:471 src/gl-window.c:488
+#: src/gl-window.c:476 src/gl-window.c:493
 msgid "Unable to read system logs"
 msgstr "시스템 로그를 읽을 수 없습니다"
 
-#: src/gl-window.c:478
+#: src/gl-window.c:483
 msgid "Unable to read user logs"
 msgstr "사용자 로그를 읽을 수 없습니다"
 
-#: src/gl-window.c:496
+#: src/gl-window.c:501
 msgid "No logs available"
 msgstr "로그 없음"
 
