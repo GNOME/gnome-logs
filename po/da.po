@@ -1,17 +1,17 @@
 # Danish translation for gnome-logs.
 # Copyright (C) 2014-2018, 2023 gnome-logs's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-logs package.
-# Ask Hjorth Larsen <asklarsen@gmail.com>, 2014-2018, 2023.
+# Ask Hjorth Larsen <askhl@proton.me>, 2014-2018, 2023, 2026.
 # scootergrisen, 2015-2016, 2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2023-08-07 12:30+0000\n"
-"PO-Revision-Date: 2023-09-11 21:07+0200\n"
-"Last-Translator: Ask Hjorth Larsen <asklarsen@gmail.com>\n"
-"Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues/\n"
+"POT-Creation-Date: 2026-03-18 19:15+0000\n"
+"PO-Revision-Date: 2026-09-08 00:04+0200\n"
+"Last-Translator: Ask Hjorth Larsen <askhl@proton.me>\n"
+"Language-Team: Danish <danskgruppen@groups.io>\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -358,41 +358,21 @@ msgctxt "shortcut window"
 msgid "Export logs to a file"
 msgstr "Eksportér logge til en fil"
 
-#: data/org.gnome.Logs.appdata.xml.in:7 data/org.gnome.Logs.desktop.in:3
-#: src/gl-application.c:132 src/gl-eventtoolbar.c:143
+#: data/org.gnome.Logs.desktop.in:2 data/org.gnome.Logs.metainfo.xml.in:7
+#: src/gl-application.c:139 src/gl-eventtoolbar.c:143
 msgid "Logs"
 msgstr "Logge"
 
-#: data/org.gnome.Logs.appdata.xml.in:8 data/org.gnome.Logs.desktop.in:5
-msgid "View detailed event logs for the system"
-msgstr "Vis detaljerede begivenhedslogge for systemet"
-
-#: data/org.gnome.Logs.appdata.xml.in:10
-msgid ""
-"Logs shows events from the systemd journal, and sorts them into categories, "
-"such as hardware and applications."
-msgstr ""
-"Logge viser begivenheder fra systemd-journalen og sorterer dem i kategorier "
-"såsom hardware og programmer."
-
-#: data/org.gnome.Logs.appdata.xml.in:12
-msgid ""
-"Using Logs you can search your logs by typing a search term, and view "
-"detailed information about each event by clicking on it."
-msgstr ""
-"Med Logge kan du søge i dine logge ved at skrive en søgeterm og vise "
-"detaljeret information om hver begivenhed ved at klikke på den."
-
-#: data/org.gnome.Logs.appdata.xml.in:38 src/gl-application.c:134
-msgid "The GNOME Project"
-msgstr "GNOME-projektet"
-
-#: data/org.gnome.Logs.desktop.in:4
+#: data/org.gnome.Logs.desktop.in:3
 msgid "Log Viewer"
 msgstr "Logfremviser"
 
+#: data/org.gnome.Logs.desktop.in:4 data/org.gnome.Logs.metainfo.xml.in:8
+msgid "View detailed event logs for the system"
+msgstr "Vis detaljerede begivenhedslogge for systemet"
+
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/org.gnome.Logs.desktop.in:7
+#: data/org.gnome.Logs.desktop.in:6
 msgid "log;journal;debug;error;"
 msgstr "log;journal;fejlsøgning;fejlsøg;debug;fejl;"
 
@@ -415,6 +395,31 @@ msgstr "Hvordan listerækker skal sorteres i begivenhedsoversigten"
 msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr "Sortér listerækker i stigende eller faldende orden for den valgte type"
 
+#: data/org.gnome.Logs.metainfo.xml.in:10
+msgid ""
+"Logs shows events from the systemd journal, and sorts them into categories, "
+"such as hardware and applications."
+msgstr ""
+"Logge viser begivenheder fra systemd-journalen og sorterer dem i kategorier "
+"såsom hardware og programmer."
+
+#: data/org.gnome.Logs.metainfo.xml.in:12
+msgid ""
+"Using Logs you can search your logs by typing a search term, and view "
+"detailed information about each event by clicking on it."
+msgstr ""
+"Med Logge kan du søge i dine logge ved at skrive en søgeterm og vise "
+"detaljeret information om hver begivenhed ved at klikke på den."
+
+#: data/org.gnome.Logs.metainfo.xml.in:18
+msgid "Main Window"
+msgstr "Hovedvindue"
+
+#: data/org.gnome.Logs.metainfo.xml.in:73
+#: data/org.gnome.Logs.metainfo.xml.in:75 src/gl-application.c:141
+msgid "The GNOME Project"
+msgstr "GNOME-projektet"
+
 #: src/gl-application.c:82 src/gl-window.c:285
 msgid "Failed To Open Help"
 msgstr "Kunne ikke åbne hjælp"
@@ -428,17 +433,17 @@ msgstr "Kunne ikke åbne den givne hjælpe-URI: %s"
 msgid "_Close"
 msgstr "_Luk"
 
-#: src/gl-application.c:137
+#: src/gl-application.c:144
 msgid "translator-credits"
 msgstr ""
 "Ask Hjorth Larsen\n"
 "scootergrisen\n"
 "\n"
 "Dansk-gruppen\n"
-"Websted http://dansk-gruppen.dk\n"
-"E-mail <dansk@dansk-gruppen.dk>"
+"Websted https://l10n.gnome.org/teams/da/\n"
+"E-mail <danskgruppen@groups.io>"
 
-#: src/gl-application.c:270
+#: src/gl-application.c:277
 msgid "Print version information and exit"
 msgstr "Vis versionsoplysninger og afslut"
 
@@ -449,7 +454,7 @@ msgstr "Opstart"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: src/gl-eventviewlist.c:431
+#: src/gl-eventviewlist.c:444
 msgid "No Results"
 msgstr "Ingen resultater"
 
@@ -629,15 +634,15 @@ msgstr "Kunne ikke eksportere logmeddelelser til en fil"
 msgid "log messages"
 msgstr "logmeddelelser"
 
-#: src/gl-window.c:471 src/gl-window.c:488
+#: src/gl-window.c:476 src/gl-window.c:493
 msgid "Unable to read system logs"
 msgstr "Kunne ikke læse systemlogge"
 
-#: src/gl-window.c:478
+#: src/gl-window.c:483
 msgid "Unable to read user logs"
 msgstr "Kunne ikke læse brugerlogge"
 
-#: src/gl-window.c:496
+#: src/gl-window.c:501
 msgid "No logs available"
 msgstr "Ingen tilgængelige logge"
 
