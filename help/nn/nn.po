@@ -1,0 +1,191 @@
+# Norwegian Nynorsk translation for gnome-logs-help.
+# Copyright (C) 2026 gnome-logs's COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-logs package.
+# Roy-Magne Mo <rmo@sunnmore.net>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-logs master\n"
+"POT-Creation-Date: 2026-09-10 15:26+0000\n"
+"PO-Revision-Date: 2026-09-12 23:53+0200\n"
+"Last-Translator: Roy-Magne Mo <rmo@sunnmore.net>\n"
+"Language-Team: Norwegian Nynorsk <nn@li.org>\n"
+"Language: nn\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
+msgctxt "_"
+msgid "translator-credits"
+msgstr "Roy-Magne Mo <rmo@sunnmore.net>"
+
+#. (itstool) path: info/title
+#: C/index.page:7
+msgctxt "link:trail"
+msgid "Logs help"
+msgstr "Hjelp for Loggar"
+
+#. (itstool) path: info/title
+#: C/index.page:8
+msgctxt "text"
+msgid "Logs help"
+msgstr "Hjelp for Loggar"
+
+#. (itstool) path: info/title
+#: C/index.page:9
+msgctxt "link"
+msgid "Logs help"
+msgstr "Hjelp for Loggar"
+
+#. (itstool) path: info/desc
+#: C/index.page:14
+msgid "Browse and search through your systemd journal logs."
+msgstr "Bla og søk gjennom loggane i systemd-journalen."
+
+#. (itstool) path: page/title
+#: C/index.page:17
+msgid "<_:media-1/> Logs"
+msgstr "<_:media-1/> Loggar"
+
+#. (itstool) path: credit/name
+#: C/introduction.page:11
+msgid "David King"
+msgstr "David King"
+
+#. (itstool) path: credit/years
+#: C/introduction.page:13 C/introduction.page:18
+msgid "2014"
+msgstr "2014"
+
+#. (itstool) path: credit/name
+#: C/introduction.page:16 C/permissions.page:11
+msgid "Ekaterina Gerasimova"
+msgstr "Ekaterina Gerasimova"
+
+#. (itstool) path: info/desc
+#: C/introduction.page:23
+msgid "<app>Logs</app> is a viewer for the <sys>systemd</sys> journal."
+msgstr "<app>Loggar</app> er ein visar for <sys>systemd</sys>-journalen."
+
+#. (itstool) path: page/title
+#: C/introduction.page:27
+msgid "Introduction"
+msgstr "Innleiing"
+
+#. (itstool) path: page/p
+#: C/introduction.page:29
+msgid ""
+"Logs shows events from the systemd journal, and sorts them into categories, "
+"such as hardware and applications."
+msgstr ""
+"Loggar viser hendingar frå systemd-journalen og sorterer dei i kategoriar, "
+"slik som maskinvare og appar."
+
+#. (itstool) path: page/p
+#: C/introduction.page:32
+msgid ""
+"Using Logs you can search your logs by typing a search term, and view "
+"detailed information about each event by clicking on it."
+msgstr ""
+"Med Loggar kan du søkje i loggane ved å skrive eit søkjeord, og sjå "
+"detaljert informasjon om kvar hending ved å klikke på henne."
+
+#. (itstool) path: page/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/introduction.page:35
+msgctxt "_"
+msgid ""
+"external ref='media/gnome-logs-3-34.png' "
+"md5='572ed4fda65dbaa8cd2dc56f6bce5dfb'"
+msgstr ""
+"external ref='media/gnome-logs-3-34.png' "
+"md5='572ed4fda65dbaa8cd2dc56f6bce5dfb'"
+
+#. (itstool) path: media/p
+#: C/introduction.page:36
+msgid "Screenshot of Logs showing some journal entries."
+msgstr "Skjermbilete av Loggar som viser nokre journaloppføringar."
+
+#. (itstool) path: p/link
+#: C/legal.xml:5
+msgid "Creative Commons Attribution-ShareAlike 3.0 Unported License"
+msgstr "Creative Commons Namngjeving-Del på same vilkår 3.0 Unported-lisens"
+
+#. (itstool) path: license/p
+#: C/legal.xml:4
+msgid "This work is licensed under a <_:link-1/>."
+msgstr "Dette verket er lisensiert under ein <_:link-1/>."
+
+#. (itstool) path: credit/years
+#: C/permissions.page:13
+msgid "2013"
+msgstr "2013"
+
+#. (itstool) path: info/desc
+#: C/permissions.page:18
+msgid ""
+"You can read some or all of the logs, depending on which permissions you "
+"have."
+msgstr ""
+"Du kan lese nokre av eller alle loggane, avhengig av kva tilgangar du har."
+
+#. (itstool) path: page/title
+#: C/permissions.page:22
+msgid "Can I view all logs?"
+msgstr "Kan eg sjå alle loggane?"
+
+#. (itstool) path: page/p
+#: C/permissions.page:24
+msgid ""
+"You will be able to browse some messages that have been logged since the "
+"last reboot, depending on which permissions you have. Some of your "
+"permissions are set by your distribution, but they can be changed by your "
+"system administrator."
+msgstr ""
+"Du vil kunne bla gjennom nokre meldingar som har vorte logga sidan førre "
+"omstart, avhengig av kva tilgangar du har. Nokre av tilgangane dine er "
+"fastsette av distribusjonen din, men dei kan endrast av "
+"systemadministratoren."
+
+#. (itstool) path: page/p
+#. TRANSLATORS: 'Standard' is taken from the user account type in the
+#. control panel when used in <em> or <gui> tags.
+#: C/permissions.page:30
+msgid ""
+"By default, <em href=\"help:gnome-help/user-admin-explain\">Standard</em> "
+"users are shown a limited set of logs, such as application logs and their "
+"own session logs. If you are a <gui>Standard</gui> user and do not see any "
+"logs, it is possible that your system administrator has disabled your "
+"ability to view logs."
+msgstr ""
+"Som standard får <em href=\"help:gnome-help/user-admin-"
+"explain\">Standard</em>-brukarar sjå eit avgrensa utval av loggar, slik som "
+"apploggar og loggane frå sine eigne økter. Dersom du er "
+"<gui>Standard</gui>-brukar og ikkje ser nokon loggar, kan det vere at "
+"systemadministratoren din har slått av høvet ditt til å sjå loggar."
+
+#. (itstool) path: page/p
+#. TRANSLATORS: 'Administrator' is taken from the user account type in the
+#. control panel when used in <em> or <gui> tags.
+#: C/permissions.page:39
+msgid ""
+"<em>Administrator</em> users will normally be able to view more sensitive "
+"logs, such as kernel logs and the logs of other users. It is possible for "
+"administrators to have different levels of access to logs, so you may not be "
+"able to view all logs. If you are an <gui>Administrator</gui> user, then "
+"only other administrators can change which logs you can access. For more "
+"information about log access permissions, <link href=\"man:systemd-"
+"journald\">see the <_:cmd-1/> man page</link>."
+msgstr ""
+"<em>Administrator</em>-brukarar kan vanlegvis sjå meir sensitive loggar, "
+"slik som kjerneloggar og loggane til andre brukarar. Administratorar kan ha "
+"ulike tilgangsnivå til loggane, så det kan hende du ikkje kan sjå alle. "
+"Dersom du er <gui>Administrator</gui>-brukar, kan berre andre "
+"administratorar endre kva loggar du har tilgang til. Du finn meir om tilgang"
+" til loggar på <link href=\"man:systemd-journald\">man-sida "
+"<_:cmd-1/></link>."
