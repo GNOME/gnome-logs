@@ -1,0 +1,393 @@
+# translation of gnome-utils.HEAD.az.po to Azerbaijani
+# translation of gnome-utils.HEAD.po to Azerbaijani Turkish
+# Copyright (C) 2000,2003, 2004 Free Software Foundation, Inc.
+# Vasif Ismailoglu MD <azerb_linux@hotmail.com>, 2000.
+# Mətin Əmirov <metin@karegen.com>, 2003, 2004.
+# Metin Amiroff <metin@karegen.com>, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-utils.HEAD.az\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-04-04 00:11+0000\n"
+"PO-Revision-Date: 2026-10-09 14:19+0000\n"
+"Last-Translator: Nicat Məmmədov <n1c4t97@gmail.com>\n"
+"Language-Team: Azerbaijani <translation-team-az@lists.sourceforge.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2026-10-09 14:21+0000\n"
+"X-Generator: Launchpad (build bf29148d11b470041bb212667dd016db93d0a408)\n"
+"Language: az\n"
+
+#: ../data/gnome-system-log.desktop.in.in.h:1 ../src/logview-app.c:305
+#: ../src/logview-window.c:1246
+msgid "System Log"
+msgstr "Sistem jurnalı"
+
+#: ../data/gnome-system-log.desktop.in.in.h:2
+msgid "View or monitor system log files"
+msgstr "Sistemin jurnal fayllarına baxın və ya nəzarət edin"
+
+#: ../data/gnome-system-log.desktop.in.in.h:3
+msgid "logs;debug;error;"
+msgstr "jurnal;sazlama;xəta;"
+
+#: ../data/org.gnome.gnome-system-log.gschema.xml.in.h:1
+msgid "Log file to open up on startup"
+msgstr "Başlanğıcda açılacaq jurnal faylı"
+
+#: ../data/org.gnome.gnome-system-log.gschema.xml.in.h:2
+msgid ""
+"Specifies the log file displayed at startup. The default is either "
+"/var/adm/messages or /var/log/messages, depending on your operating system."
+msgstr ""
+"Başlanğıc zamanı göstərilən jurnal faylını təyin edir. Standart olaraq, "
+"əməliyyat sisteminizdən asılı olaraq, /var/adm/messages və ya "
+"/var/log/messages faylı istifadə olunur."
+
+#: ../data/org.gnome.gnome-system-log.gschema.xml.in.h:3
+msgid "Size of the font used to display the log"
+msgstr "Jurnal qeydini göstərmək üçün istifadə olunacaq şrift ölçüsü"
+
+#: ../data/org.gnome.gnome-system-log.gschema.xml.in.h:4
+msgid ""
+"Specifies the size of the fixed-width font used to display the log in the "
+"main tree view. The default is taken from the default terminal font size."
+msgstr ""
+"Əsas ağac görünüşündə jurnalın göstərilməsi üçün istifadə olunan sabit enli "
+"şriftin ölçüsünü təyin edir. Standart ölçü terminalın standart şrift "
+"ölçüsündən götürülür."
+
+#: ../data/org.gnome.gnome-system-log.gschema.xml.in.h:5
+msgid "Height of the main window in pixels"
+msgstr "Əsas pəncərənin piksellərlə hündürlüyü"
+
+#: ../data/org.gnome.gnome-system-log.gschema.xml.in.h:6
+msgid "Specifies the height of the log viewer main window in pixels."
+msgstr ""
+"Jurnal görüntüləyicisinin əsas pəncərəsinin hündürlüyünü piksel ilə təyin "
+"edir."
+
+#: ../data/org.gnome.gnome-system-log.gschema.xml.in.h:7
+msgid "Width of the main window in pixels"
+msgstr "Əsas pəncərənin piksellərlə eni"
+
+#: ../data/org.gnome.gnome-system-log.gschema.xml.in.h:8
+msgid "Specifies the width of the log viewer main window in pixels."
+msgstr ""
+"Jurnal görüntüləyicisinin əsas pəncərəsinin enini piksel ilə təyin edir."
+
+#: ../data/org.gnome.gnome-system-log.gschema.xml.in.h:9
+msgid "Log files to open up on startup"
+msgstr "Başlanğıcda açılacaq jurnal faylları"
+
+#: ../data/org.gnome.gnome-system-log.gschema.xml.in.h:10
+msgid ""
+"Specifies a list of log files to open up at startup. A default list is "
+"created by reading /etc/syslog.conf."
+msgstr ""
+"Başlanğıc zamanı açılacaq jurnal fayllarının siyahısını təyin edir. Standart "
+"siyahı /etc/syslog.conf faylı oxunaraq yaradılır."
+
+#: ../data/org.gnome.gnome-system-log.gschema.xml.in.h:11
+msgid "List of saved filters"
+msgstr "Saxlanılmış süzgəclər"
+
+#: ../data/org.gnome.gnome-system-log.gschema.xml.in.h:12
+msgid "List of saved regexp filters"
+msgstr "Saxlanılmış regexp süzgəcləri"
+
+#: ../src/logview-about.h:49
+msgid ""
+"This program is free software; you can redistribute it and/or modify it "
+"under the terms of the GNU General Public License as published by the Free "
+"Software Foundation; either version 2 of the License, or (at your option) "
+"any later version."
+msgstr ""
+"Bu proqram azad proqram təminatıdır. Siz onu Azad Proqram Təminatı Fondu "
+"ərəfindən dərc edilmiş GNU Ümumi İctimai Lisenziyasının  şərtlərinə uyğun "
+"olaraq yenidən paylaya və/və ya dəyişdirə bilərsiniz. Bu lisenziyanın 2-ci "
+"versiyasından və ya (öz seçiminizə əsasən) daha sonrakı istənilən "
+"versiyasından istifadə edə bilərsiniz."
+
+#: ../src/logview-about.h:53
+msgid ""
+"This program is distributed in the hope that it will be useful, but WITHOUT "
+"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
+"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
+"more details."
+msgstr ""
+"Bu proqram faydalı olacağı ümidi ilə paylanır, lakin onunla bağlı heç bir "
+"zəmanət verilmir. Buraya SATILABİLƏRLİK və ya MÜƏYYƏN MƏQSƏDƏ YARARLILIQ "
+"üzrə hər hansı dolayı zəmanət də daxildir. Ətraflı məlumat üçün GNU Ümumi "
+"İctimai Lisenziyasına baxın."
+
+#: ../src/logview-about.h:57
+msgid ""
+"You should have received a copy of the GNU General Public License along with "
+"this program; if not, write to the Free Software Foundation, Inc., 51 "
+"Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA"
+msgstr ""
+"Bu proqramla birlikdə GNU Ümumi İctimai Lisenziyasının bir nüsxəsini də "
+"almış olmalısınız. Əgər almamısınızsa, Free Software Foundation, Inc. "
+"təşkilatına bu ünvana yazın: 51 Franklin Street, Fifth Floor, Boston, MA "
+"02110-1301, ABŞ."
+
+#. translator credits
+#: ../src/logview-about.h:63
+msgid "translator-credits"
+msgstr ""
+"Vasif İsmailoğlu <linuxaz@azerimail.net>\n"
+"Mətin Əmirov <metin@karegen.com>\n"
+"\n"
+"Tərcümə işləri üzrə yazışma siyahısı ünvanımız:\n"
+"<translation-team-az@lists.sourceforge.net>\n"
+"\n"
+"Launchpad Contributions:\n"
+"  Metin Amiroff https://launchpad.net/~metin-karegen\n"
+"  Nicat Məmmədov https://launchpad.net/~nicat"
+
+#: ../src/logview-app.c:288
+#, c-format
+msgid "There was an error displaying help: %s"
+msgstr "\"Yardım\" göstərilərkən xəta meydana gəldi: %s"
+
+#: ../src/logview-app.c:310 ../src/logview-app.c:396
+msgid "A system log viewer for GNOME."
+msgstr "GNOME üçün sistem jurnallarına baxış proqramı."
+
+#: ../src/logview-app.c:389
+msgid "Show the version of the program."
+msgstr "Proqramın versiyasını göstər."
+
+#: ../src/logview-app.c:390
+msgid "[URI...]"
+msgstr "[URI...]"
+
+#. Translators: this is a fatal error quit message printed on the
+#. * command line
+#: ../src/logview-app.c:406
+msgid "Could not parse arguments"
+msgstr "Arqumentləri təhlil etmək mümkün olmadı"
+
+#. Translators: this is a fatal error quit message printed on the
+#. * command line
+#: ../src/logview-app.c:423
+msgid "Could not register the application"
+msgstr "Tətbiqi qeydiyyatdan keçirmək mümkün olmadı"
+
+#: ../src/logview-app.c:531
+#, c-format
+msgid "Impossible to open the file %s"
+msgstr "%s faylını açmaq mümkün deyil"
+
+#: ../src/logview-app-menu.ui.h:1
+msgid "Auto Scroll"
+msgstr "Avtomatik sürüşdürmə"
+
+#: ../src/logview-app-menu.ui.h:2
+msgid "About System Log"
+msgstr "Sistem jurnalı haqqında"
+
+#: ../src/logview-app-menu.ui.h:3
+msgid "Help"
+msgstr "Yardım"
+
+#: ../src/logview-app-menu.ui.h:4
+msgid "Quit"
+msgstr "Çıx"
+
+#: ../src/logview-filter-manager.c:92
+msgid "Filter name is empty!"
+msgstr "Süzgəc adı boşdur!"
+
+#: ../src/logview-filter-manager.c:105
+msgid "Filter name may not contain the ':' character"
+msgstr "Süzgəc adında \":\" ola bilməz"
+
+#: ../src/logview-filter-manager.c:128
+msgid "Regular expression is empty!"
+msgstr "Rasional ifadə boşdur!"
+
+#: ../src/logview-filter-manager.c:144
+#, c-format
+msgid "Regular expression is invalid: %s"
+msgstr "Rasional ifadə düzgün deyil: %s"
+
+#: ../src/logview-filter-manager.c:238
+msgid "Please specify either foreground or background color!"
+msgstr "Zəhmət olmasa, ön və ya arxa plan rəngindən birini göstərin!"
+
+#: ../src/logview-filter-manager.c:292
+msgid "Edit filter"
+msgstr "Süzgəcə düzəliş et"
+
+#: ../src/logview-filter-manager.c:292
+msgid "Add new filter"
+msgstr "Yeni süzgəc əlavə et"
+
+#: ../src/logview-filter-manager.c:467 ../src/logview-window.c:1276
+msgid "_Close"
+msgstr "_Bağla"
+
+#: ../src/logview-filter-manager.c:501
+msgid "_Add"
+msgstr "_Əlavə et"
+
+#: ../src/logview-filter-manager.c:502
+msgid "_Properties"
+msgstr "_Özəlliklər"
+
+#: ../src/logview-filter-manager.c:503
+msgid "_Remove"
+msgstr "_Yığışdır"
+
+#: ../src/logview-filter-manager.c:506 ../src/logview-window.ui.h:8
+msgid "Filters"
+msgstr "Süzgəclər"
+
+#: ../src/logview-filter.ui.h:1
+msgid "_Name:"
+msgstr "_Ad:"
+
+#: ../src/logview-filter.ui.h:2
+msgid "_Regular Expression:"
+msgstr "_Rasional ifadə:"
+
+#: ../src/logview-filter.ui.h:3
+msgid "Highlight"
+msgstr "Vurğula"
+
+#: ../src/logview-filter.ui.h:4
+msgid "Hide"
+msgstr "Gizlət"
+
+#: ../src/logview-filter.ui.h:5
+msgid "Foreground:"
+msgstr "Ön plan:"
+
+#: ../src/logview-filter.ui.h:6
+msgid "Background:"
+msgstr "Arxa plan:"
+
+#: ../src/logview-filter.ui.h:7
+msgid "Effect:"
+msgstr "Effekt:"
+
+#: ../src/logview-findbar.c:152
+msgid "Find previous occurrence of the search string"
+msgstr "Axtarış sətrinin öncəki uyğunluğunu tap"
+
+#: ../src/logview-findbar.c:162
+msgid "Find next occurrence of the search string"
+msgstr "Axtarış sətrinin növbəti uyğunluğunu tap"
+
+#: ../src/logview-log.c:596
+msgid "Error while uncompressing the GZipped log. The file might be corrupt."
+msgstr ""
+"GZip formatında sıxılmış jurnal qeydini açarkən xəta baş verdi. Ola bilsin "
+"ki, fayl korlanıb."
+
+#: ../src/logview-log.c:643
+msgid "You don't have enough permissions to read the file."
+msgstr "Bu faylı oxumaq üçün lazımi icazəniz yoxdur."
+
+#: ../src/logview-log.c:658
+msgid "The file is not a regular file or is not a text file."
+msgstr "Fayl sadə dayl və ya mətn faylı deyil."
+
+#: ../src/logview-log.c:740
+msgid "This version of System Log does not support GZipped logs."
+msgstr ""
+"Sistem jurnalı proqramının bu versiyası GZIP formatında sıxılmış jurnal "
+"fayllarını dəstəkləmir."
+
+#: ../src/logview-loglist.c:316
+msgid "Loading..."
+msgstr "Yüklənir..."
+
+#: ../src/logview-utils.c:295
+msgid "today"
+msgstr "bu gün"
+
+#: ../src/logview-utils.c:297
+msgid "yesterday"
+msgstr "dünən"
+
+#: ../src/logview-window.c:178 ../src/logview-window.c:374
+#, c-format
+msgid "Search in \"%s\""
+msgstr "\"%s\" içində axtar"
+
+#. translators: this is part of a label composed with
+#. * a date string, for example "updated today 23:54"
+#. 
+#: ../src/logview-window.c:198
+msgid "updated"
+msgstr "yenilənib:"
+
+#: ../src/logview-window.c:342
+msgid "Wrapped"
+msgstr "Bükülüb"
+
+#: ../src/logview-window.c:357
+msgid "No matches found"
+msgstr "Heç bir uyğunluq tapılmadı"
+
+#: ../src/logview-window.c:737
+#, c-format
+msgid "Can't read from \"%s\""
+msgstr "\"%s\" oxuna bilmir"
+
+#: ../src/logview-window.c:1137
+msgid "Open Log"
+msgstr "Jurnal qeydini aç"
+
+#: ../src/logview-window.c:1140
+msgid "_Cancel"
+msgstr "_İmtina"
+
+#: ../src/logview-window.c:1141
+msgid "_Open"
+msgstr "_Aç"
+
+#: ../src/logview-window.c:1370
+msgid "Could not open the following files:"
+msgstr "Bu fayllar açıla bilmir:"
+
+#: ../src/logview-window.ui.h:1
+msgid "Open..."
+msgstr "Aç..."
+
+#: ../src/logview-window.ui.h:2
+msgid "Close"
+msgstr "Bağla"
+
+#: ../src/logview-window.ui.h:3
+msgid "Copy"
+msgstr "Köçür"
+
+#: ../src/logview-window.ui.h:4
+msgid "Select All"
+msgstr "Hamısını seç"
+
+#: ../src/logview-window.ui.h:5
+msgid "Zoom In"
+msgstr "Yaxınlaşdır"
+
+#: ../src/logview-window.ui.h:6
+msgid "Zoom Out"
+msgstr "Uzaqlaşdır"
+
+#: ../src/logview-window.ui.h:7
+msgid "Normal Size"
+msgstr "Normal ölçü"
+
+#: ../src/logview-window.ui.h:9
+msgid "Show Matches Only"
+msgstr "Yalnız uyğun gələnləri göstər"
+
+#: ../src/logview-window.ui.h:10
+msgid "Manage Filters..."
+msgstr "Süzgəclərə düzəliş et..."
