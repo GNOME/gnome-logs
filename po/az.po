@@ -1,393 +1,646 @@
-# translation of gnome-utils.HEAD.az.po to Azerbaijani
-# translation of gnome-utils.HEAD.po to Azerbaijani Turkish
-# Copyright (C) 2000,2003, 2004 Free Software Foundation, Inc.
-# Vasif Ismailoglu MD <azerb_linux@hotmail.com>, 2000.
-# Mətin Əmirov <metin@karegen.com>, 2003, 2004.
-# Metin Amiroff <metin@karegen.com>, 2004.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Huseyn <abdullazadehuseyn28@gmail.com>, 2026.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-utils.HEAD.az\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-04 00:11+0000\n"
-"PO-Revision-Date: 2026-10-09 14:19+0000\n"
-"Last-Translator: Nicat Məmmədov <n1c4t97@gmail.com>\n"
-"Language-Team: Azerbaijani <translation-team-az@lists.sourceforge.net>\n"
+"Project-Id-Version: gnome-logs\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues/\n"
+"POT-Creation-Date: 2026-03-18 19:15+0000\n"
+"PO-Revision-Date: 2026-11-02 14:09+0400\n"
+"Last-Translator: Huseyn <abdullazadehuseyn28@gmail.com>\n"
+"Language-Team: Azerbaijani\n"
+"Language: az\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2026-10-09 14:21+0000\n"
-"X-Generator: Launchpad (build bf29148d11b470041bb212667dd016db93d0a408)\n"
-"Language: az\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.10\n"
 
-#: ../data/gnome-system-log.desktop.in.in.h:1 ../src/logview-app.c:305
-#: ../src/logview-window.c:1246
-msgid "System Log"
-msgstr "Sistem jurnalı"
+#: data/gl-categorylist.ui:12
+msgid "Important"
+msgstr "Vacib"
 
-#: ../data/gnome-system-log.desktop.in.in.h:2
-msgid "View or monitor system log files"
-msgstr "Sistemin jurnal fayllarına baxın və ya nəzarət edin"
+#: data/gl-categorylist.ui:23
+msgid "Alerts"
+msgstr "Xəbərdarlıqlar"
 
-#: ../data/gnome-system-log.desktop.in.in.h:3
-msgid "logs;debug;error;"
-msgstr "jurnal;sazlama;xəta;"
+#: data/gl-categorylist.ui:34
+msgid "Starred"
+msgstr "Ulduzlu"
 
-#: ../data/org.gnome.gnome-system-log.gschema.xml.in.h:1
-msgid "Log file to open up on startup"
-msgstr "Başlanğıcda açılacaq jurnal faylı"
+#: data/gl-categorylist.ui:44
+msgid "All"
+msgstr "Hamısı"
 
-#: ../data/org.gnome.gnome-system-log.gschema.xml.in.h:2
-msgid ""
-"Specifies the log file displayed at startup. The default is either "
-"/var/adm/messages or /var/log/messages, depending on your operating system."
-msgstr ""
-"Başlanğıc zamanı göstərilən jurnal faylını təyin edir. Standart olaraq, "
-"əməliyyat sisteminizdən asılı olaraq, /var/adm/messages və ya "
-"/var/log/messages faylı istifadə olunur."
+#: data/gl-categorylist.ui:54 src/gl-eventviewrow.c:211
+msgid "Applications"
+msgstr "Tətbiqlər"
 
-#: ../data/org.gnome.gnome-system-log.gschema.xml.in.h:3
-msgid "Size of the font used to display the log"
-msgstr "Jurnal qeydini göstərmək üçün istifadə olunacaq şrift ölçüsü"
+#: data/gl-categorylist.ui:64 src/gl-eventviewrow.c:220
+msgid "System"
+msgstr "Sistem"
 
-#: ../data/org.gnome.gnome-system-log.gschema.xml.in.h:4
-msgid ""
-"Specifies the size of the fixed-width font used to display the log in the "
-"main tree view. The default is taken from the default terminal font size."
-msgstr ""
-"Əsas ağac görünüşündə jurnalın göstərilməsi üçün istifadə olunan sabit enli "
-"şriftin ölçüsünü təyin edir. Standart ölçü terminalın standart şrift "
-"ölçüsündən götürülür."
+#: data/gl-categorylist.ui:74 src/gl-eventviewrow.c:224
+msgid "Security"
+msgstr "Təhlükəsizlik"
 
-#: ../data/org.gnome.gnome-system-log.gschema.xml.in.h:5
-msgid "Height of the main window in pixels"
-msgstr "Əsas pəncərənin piksellərlə hündürlüyü"
+#: data/gl-categorylist.ui:84 src/gl-eventviewrow.c:216
+msgid "Hardware"
+msgstr "Avadanlıq"
 
-#: ../data/org.gnome.gnome-system-log.gschema.xml.in.h:6
-msgid "Specifies the height of the log viewer main window in pixels."
-msgstr ""
-"Jurnal görüntüləyicisinin əsas pəncərəsinin hündürlüyünü piksel ilə təyin "
-"edir."
+#: data/gl-categorylist.ui:95
+msgid "Updates"
+msgstr "Yeniləmələr"
 
-#: ../data/org.gnome.gnome-system-log.gschema.xml.in.h:7
-msgid "Width of the main window in pixels"
-msgstr "Əsas pəncərənin piksellərlə eni"
+#: data/gl-categorylist.ui:106
+msgid "Usage"
+msgstr "İstifadə"
 
-#: ../data/org.gnome.gnome-system-log.gschema.xml.in.h:8
-msgid "Specifies the width of the log viewer main window in pixels."
-msgstr ""
-"Jurnal görüntüləyicisinin əsas pəncərəsinin enini piksel ilə təyin edir."
+#: data/gl-eventtoolbar.ui:6
+msgid "_New Window"
+msgstr "_Yeni pəncərə"
 
-#: ../data/org.gnome.gnome-system-log.gschema.xml.in.h:9
-msgid "Log files to open up on startup"
-msgstr "Başlanğıcda açılacaq jurnal faylları"
+#: data/gl-eventtoolbar.ui:12
+msgid "_Keyboard Shortcuts"
+msgstr "_Klaviatura qısayolları"
 
-#: ../data/org.gnome.gnome-system-log.gschema.xml.in.h:10
-msgid ""
-"Specifies a list of log files to open up at startup. A default list is "
-"created by reading /etc/syslog.conf."
-msgstr ""
-"Başlanğıc zamanı açılacaq jurnal fayllarının siyahısını təyin edir. Standart "
-"siyahı /etc/syslog.conf faylı oxunaraq yaradılır."
+#: data/gl-eventtoolbar.ui:16
+msgid "_Help"
+msgstr "_Yardım"
 
-#: ../data/org.gnome.gnome-system-log.gschema.xml.in.h:11
-msgid "List of saved filters"
-msgstr "Saxlanılmış süzgəclər"
+#: data/gl-eventtoolbar.ui:20
+msgid "_About Logs"
+msgstr "_Jurnallar haqqında"
 
-#: ../data/org.gnome.gnome-system-log.gschema.xml.in.h:12
-msgid "List of saved regexp filters"
-msgstr "Saxlanılmış regexp süzgəcləri"
+#: data/gl-eventtoolbar.ui:35
+msgid "Main Menu"
+msgstr "Əsas menyu"
 
-#: ../src/logview-about.h:49
-msgid ""
-"This program is free software; you can redistribute it and/or modify it "
-"under the terms of the GNU General Public License as published by the Free "
-"Software Foundation; either version 2 of the License, or (at your option) "
-"any later version."
-msgstr ""
-"Bu proqram azad proqram təminatıdır. Siz onu Azad Proqram Təminatı Fondu "
-"ərəfindən dərc edilmiş GNU Ümumi İctimai Lisenziyasının  şərtlərinə uyğun "
-"olaraq yenidən paylaya və/və ya dəyişdirə bilərsiniz. Bu lisenziyanın 2-ci "
-"versiyasından və ya (öz seçiminizə əsasən) daha sonrakı istənilən "
-"versiyasından istifadə edə bilərsiniz."
+#: data/gl-eventtoolbar.ui:41
+msgid "Export logs to a file"
+msgstr "Jurnalları fayla ixrac et"
 
-#: ../src/logview-about.h:53
-msgid ""
-"This program is distributed in the hope that it will be useful, but WITHOUT "
-"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
-"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
-"more details."
-msgstr ""
-"Bu proqram faydalı olacağı ümidi ilə paylanır, lakin onunla bağlı heç bir "
-"zəmanət verilmir. Buraya SATILABİLƏRLİK və ya MÜƏYYƏN MƏQSƏDƏ YARARLILIQ "
-"üzrə hər hansı dolayı zəmanət də daxildir. Ətraflı məlumat üçün GNU Ümumi "
-"İctimai Lisenziyasına baxın."
+#: data/gl-eventtoolbar.ui:49
+msgid "Choose the boot from which to view logs"
+msgstr "Jurnallara baxmaq üçün önyükləmə seçin"
 
-#: ../src/logview-about.h:57
-msgid ""
-"You should have received a copy of the GNU General Public License along with "
-"this program; if not, write to the Free Software Foundation, Inc., 51 "
-"Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA"
-msgstr ""
-"Bu proqramla birlikdə GNU Ümumi İctimai Lisenziyasının bir nüsxəsini də "
-"almış olmalısınız. Əgər almamısınızsa, Free Software Foundation, Inc. "
-"təşkilatına bu ünvana yazın: 51 Franklin Street, Fifth Floor, Boston, MA "
-"02110-1301, ABŞ."
+#: data/gl-eventtoolbar.ui:59
+msgid "Search all the logs of the current category"
+msgstr "Cari kateqoriyanın bütün jurnallarında axtar"
 
-#. translator credits
-#: ../src/logview-about.h:63
-msgid "translator-credits"
-msgstr ""
-"Vasif İsmailoğlu <linuxaz@azerimail.net>\n"
-"Mətin Əmirov <metin@karegen.com>\n"
-"\n"
-"Tərcümə işləri üzrə yazışma siyahısı ünvanımız:\n"
-"<translation-team-az@lists.sourceforge.net>\n"
-"\n"
-"Launchpad Contributions:\n"
-"  Metin Amiroff https://launchpad.net/~metin-karegen\n"
-"  Nicat Məmmədov https://launchpad.net/~nicat"
+#: data/gl-eventviewdetail.ui:23
+msgid "Sender"
+msgstr "Göndərən"
 
-#: ../src/logview-app.c:288
-#, c-format
-msgid "There was an error displaying help: %s"
-msgstr "\"Yardım\" göstərilərkən xəta meydana gəldi: %s"
+#: data/gl-eventviewdetail.ui:52
+msgid "Time"
+msgstr "Vaxt"
 
-#: ../src/logview-app.c:310 ../src/logview-app.c:396
-msgid "A system log viewer for GNOME."
-msgstr "GNOME üçün sistem jurnallarına baxış proqramı."
+#: data/gl-eventviewdetail.ui:81 data/gl-searchpopover.ui:867
+msgid "Message"
+msgstr "Mesaj"
 
-#: ../src/logview-app.c:389
-msgid "Show the version of the program."
-msgstr "Proqramın versiyasını göstər."
+#: data/gl-eventviewdetail.ui:112 data/gl-searchpopover.ui:887
+msgid "Audit Session"
+msgstr "Audit oturumu"
 
-#: ../src/logview-app.c:390
-msgid "[URI...]"
-msgstr "[URI...]"
+#: data/gl-eventviewdetail.ui:141 data/gl-searchpopover.ui:882
+msgid "Kernel Device"
+msgstr "Nüvə cihazı"
 
-#. Translators: this is a fatal error quit message printed on the
-#. * command line
-#: ../src/logview-app.c:406
-msgid "Could not parse arguments"
-msgstr "Arqumentləri təhlil etmək mümkün olmadı"
+#: data/gl-eventviewdetail.ui:169
+msgid "Priority"
+msgstr "Prioritet"
 
-#. Translators: this is a fatal error quit message printed on the
-#. * command line
-#: ../src/logview-app.c:423
-msgid "Could not register the application"
-msgstr "Tətbiqi qeydiyyatdan keçirmək mümkün olmadı"
+#: data/gl-eventviewdetail.ui:198
+msgid "Subject"
+msgstr "Mövzu"
 
-#: ../src/logview-app.c:531
-#, c-format
-msgid "Impossible to open the file %s"
-msgstr "%s faylını açmaq mümkün deyil"
+#: data/gl-eventviewdetail.ui:230
+msgid "Defined By"
+msgstr "Təyin edən"
 
-#: ../src/logview-app-menu.ui.h:1
-msgid "Auto Scroll"
-msgstr "Avtomatik sürüşdürmə"
+#: data/gl-eventviewdetail.ui:260
+msgid "Support"
+msgstr "Dəstək"
 
-#: ../src/logview-app-menu.ui.h:2
-msgid "About System Log"
-msgstr "Sistem jurnalı haqqında"
+#: data/gl-eventviewdetail.ui:292
+msgid "Documentation"
+msgstr "Sənədləşmə"
 
-#: ../src/logview-app-menu.ui.h:3
+#: data/gl-eventviewlist.ui:29
+msgid "Search logs"
+msgstr "Jurnallarda axtar"
+
+#: data/gl-eventviewlist.ui:35
+msgid "Select journal field and timestamp range filtering options"
+msgstr "Jurnal sahəsini və vaxt aralığı filtrləmə seçimlərini seçin"
+
+#: data/gl-searchpopover.ui:27
+msgid "Select a Journal Field to filter the Logs according to it"
+msgstr "Jurnalları süzmək üçün jurnal sahəsini seçin"
+
+#: data/gl-searchpopover.ui:34 data/gl-searchpopover.ui:843
+msgid "All Available Fields"
+msgstr "Bütün mövcud sahələr"
+
+#: data/gl-searchpopover.ui:66 data/gl-searchpopover.ui:220
+msgid "Parameters"
+msgstr "Parametrlər"
+
+#. Translators: What [journal fields to search in]
+#: data/gl-searchpopover.ui:101
+msgid "What"
+msgstr "Nə"
+
+#: data/gl-searchpopover.ui:117
+msgid "Select Journal Field…"
+msgstr "Jurnal sahəsini seçin…"
+
+#. When [log entries to be shown for a given timestamp range]
+#: data/gl-searchpopover.ui:140
+msgid "When"
+msgstr "Nə vaxt"
+
+#: data/gl-searchpopover.ui:156
+msgid "Show Logs from…"
+msgstr "Jurnalları göstər…"
+
+#: data/gl-searchpopover.ui:181
+msgid "Select Timestamp Range of the Log Entries to be shown"
+msgstr "Göstəriləcək jurnal qeydlərinin vaxt aralığını seçin"
+
+#: data/gl-searchpopover.ui:188 data/gl-searchpopover.ui:906
+#: src/gl-searchpopover.c:1306
+msgid "Current Boot"
+msgstr "Hazırki önyükləmə"
+
+#: data/gl-searchpopover.ui:255
+msgid "Search Type"
+msgstr "Axtarış növü"
+
+#: data/gl-searchpopover.ui:266
+msgid "Substring"
+msgstr "Alt sətir"
+
+#: data/gl-searchpopover.ui:268
+msgid "Match in any part of the string"
+msgstr "Sətrin istənilən hissəsində uyğunluq"
+
+#: data/gl-searchpopover.ui:275
+msgid "Exact"
+msgstr "Dəqiq"
+
+#: data/gl-searchpopover.ui:277
+msgid "Match complete string only"
+msgstr "Yalnız sətrin tam uyğunluğu"
+
+#: data/gl-searchpopover.ui:319
+msgid "Back"
+msgstr "Geri"
+
+#: data/gl-searchpopover.ui:337
+msgid "Show Logs Starting From…"
+msgstr "Jurnalları bu tarixdən göstər…"
+
+#: data/gl-searchpopover.ui:358
+msgid "Select a start date"
+msgstr "Başlanğıc tarixini seçin"
+
+#: data/gl-searchpopover.ui:365 src/gl-searchpopover.c:503
+msgid "Select Start Date…"
+msgstr "Başlanğıc tarixini seçin…"
+
+#: data/gl-searchpopover.ui:384 data/gl-searchpopover.ui:626
+msgid "22 January 2016 or 1/22/2016"
+msgstr "22 yanvar 2016 və ya 1/22/2016"
+
+#: data/gl-searchpopover.ui:423
+msgid "Select start time"
+msgstr "Başlanğıc vaxtını seçin"
+
+#: data/gl-searchpopover.ui:430 src/gl-searchpopover.c:504
+msgid "Select Start Time…"
+msgstr "Başlanğıc vaxtını seçin…"
+
+#: data/gl-searchpopover.ui:454 data/gl-searchpopover.ui:699
+msgid "Hr"
+msgstr "Saat"
+
+#: data/gl-searchpopover.ui:480 data/gl-searchpopover.ui:729
+msgid "Min"
+msgstr "Dəq"
+
+#: data/gl-searchpopover.ui:510 data/gl-searchpopover.ui:759
+msgid "Sec"
+msgstr "San"
+
+#: data/gl-searchpopover.ui:540 data/gl-searchpopover.ui:789
+msgid "AM/PM"
+msgstr "G.Ə./G.S."
+
+#: data/gl-searchpopover.ui:579
+msgid "Until…"
+msgstr "Bu tarixə qədər…"
+
+#: data/gl-searchpopover.ui:600
+msgid "Select an end date"
+msgstr "Son tarixi seçin"
+
+#: data/gl-searchpopover.ui:607 src/gl-searchpopover.c:521
+msgid "Select End Date…"
+msgstr "Son tarixi seçin…"
+
+#: data/gl-searchpopover.ui:668
+msgid "Select end time"
+msgstr "Son vaxtı seçin"
+
+#: data/gl-searchpopover.ui:675 src/gl-searchpopover.c:522
+msgid "Select End Time…"
+msgstr "Son vaxtı seçin…"
+
+#: data/gl-searchpopover.ui:852
+msgid "PID"
+msgstr "PID"
+
+#: data/gl-searchpopover.ui:857
+msgid "UID"
+msgstr "UID"
+
+#: data/gl-searchpopover.ui:862
+msgid "GID"
+msgstr "GID"
+
+#: data/gl-searchpopover.ui:872
+msgid "Process Name"
+msgstr "Proses adı"
+
+#: data/gl-searchpopover.ui:877
+msgid "Systemd Unit"
+msgstr "Systemd vahidi"
+
+#: data/gl-searchpopover.ui:892
+msgid "Executable Path"
+msgstr "İcra faylının yolu"
+
+#: data/gl-searchpopover.ui:911
+msgid "Previous Boot"
+msgstr "Əvvəlki açılış"
+
+#: data/gl-searchpopover.ui:920
+msgid "Today"
+msgstr "Bu gün"
+
+#: data/gl-searchpopover.ui:925
+msgid "Yesterday"
+msgstr "Dünən"
+
+#: data/gl-searchpopover.ui:930
+msgid "Last 3 days"
+msgstr "Son 3 gün"
+
+#: data/gl-searchpopover.ui:939
+msgid "Entire Journal"
+msgstr "Bütün jurnal"
+
+#: data/gl-searchpopover.ui:948
+msgid "Set Custom Range…"
+msgstr "Fərdi aralıq təyin et…"
+
+#: data/gl-window.ui:30
 msgid "Help"
 msgstr "Yardım"
 
-#: ../src/logview-app-menu.ui.h:4
-msgid "Quit"
-msgstr "Çıx"
+#: data/gl-window.ui:37
+msgid "Ignore"
+msgstr "Görməzdən gəl"
 
-#: ../src/logview-filter-manager.c:92
-msgid "Filter name is empty!"
-msgstr "Süzgəc adı boşdur!"
+#: data/help-overlay.ui:8
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Ümumi"
 
-#: ../src/logview-filter-manager.c:105
-msgid "Filter name may not contain the ':' character"
-msgstr "Süzgəc adında \":\" ola bilməz"
+#: data/help-overlay.ui:12
+msgctxt "shortcut window"
+msgid "Open a new window"
+msgstr "Yeni pəncərə aç"
 
-#: ../src/logview-filter-manager.c:128
-msgid "Regular expression is empty!"
-msgstr "Rasional ifadə boşdur!"
+#: data/help-overlay.ui:18
+msgctxt "shortcut window"
+msgid "Close a window"
+msgstr "Pəncərəni bağla"
 
-#: ../src/logview-filter-manager.c:144
+#: data/help-overlay.ui:24
+msgctxt "shortcut window"
+msgid "Show help"
+msgstr "Kömək göstər"
+
+#: data/help-overlay.ui:30
+msgctxt "shortcut window"
+msgid "Keyboard shortcuts"
+msgstr "Klaviatura qısayolları"
+
+#: data/help-overlay.ui:37
+msgctxt "shortcut window"
+msgid "Application"
+msgstr "Tətbiq"
+
+#: data/help-overlay.ui:41
+msgctxt "shortcut window"
+msgid "Find"
+msgstr "Tap"
+
+#: data/help-overlay.ui:47
+msgctxt "shortcut window"
+msgid "Export logs to a file"
+msgstr "Jurnalları fayla ixrac et"
+
+#: data/org.gnome.Logs.desktop.in:2 data/org.gnome.Logs.metainfo.xml.in:7
+#: src/gl-application.c:139 src/gl-eventtoolbar.c:143
+msgid "Logs"
+msgstr "Jurnallar"
+
+#: data/org.gnome.Logs.desktop.in:3
+msgid "Log Viewer"
+msgstr "Jurnal görüntüləyicisi"
+
+#: data/org.gnome.Logs.desktop.in:4 data/org.gnome.Logs.metainfo.xml.in:8
+msgid "View detailed event logs for the system"
+msgstr "Sistem üçün ətraflı hadisə jurnallarına baxın"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.Logs.desktop.in:6
+msgid "log;journal;debug;error;"
+msgstr "jurnal;journal;sazlama;xəta;log;debug;error;"
+
+#: data/org.gnome.Logs.gschema.xml:5
+msgid "Ignore warning"
+msgstr "Xəbərdarlığı görməzdən gəl"
+
+#: data/org.gnome.Logs.gschema.xml:6
+msgid ""
+"Whether to ignore the warning that says you don’t have sufficient permission "
+"to view logs. If ignored, the warning won’t show up again."
+msgstr ""
+"Jurnallara baxmaq üçün kifayət qədər icazənizin olmaması barədə "
+"xəbərdarlığın nəzərə alınıb-alınmaması. Nəzərə alınarsa, xəbərdarlıq bir "
+"daha göstərilməyəcək."
+
+#: data/org.gnome.Logs.gschema.xml:10
+msgid "How to sort list rows in the event view list"
+msgstr "Hadisələr siyahısında sətirlərin necə sıralanması"
+
+#: data/org.gnome.Logs.gschema.xml:11
+msgid "Sort list rows in ascending or descending order for the selected type"
+msgstr ""
+"Seçilmiş növ üçün siyahı sətirlərini artan və ya azalan qaydada sıralayın"
+
+#: data/org.gnome.Logs.metainfo.xml.in:10
+msgid ""
+"Logs shows events from the systemd journal, and sorts them into categories, "
+"such as hardware and applications."
+msgstr ""
+"Jurnallar systemd jurnalındakı hadisələri göstərir və onları avadanlıq və "
+"tətbiqlər kimi kateqoriyalara ayırır."
+
+#: data/org.gnome.Logs.metainfo.xml.in:12
+msgid ""
+"Using Logs you can search your logs by typing a search term, and view "
+"detailed information about each event by clicking on it."
+msgstr ""
+"Jurnallar ilə axtarış sözü yazaraq jurnallarınızda axtarış edə və hər "
+"hadisənin üzərinə klikləməklə ətraflı məlumata baxa bilərsiniz."
+
+#: data/org.gnome.Logs.metainfo.xml.in:18
+msgid "Main Window"
+msgstr "Əsas pəncərə"
+
+#: data/org.gnome.Logs.metainfo.xml.in:73
+#: data/org.gnome.Logs.metainfo.xml.in:75 src/gl-application.c:141
+msgid "The GNOME Project"
+msgstr "GNOME Layihəsi"
+
+#: src/gl-application.c:82 src/gl-window.c:285
+msgid "Failed To Open Help"
+msgstr "Yardım açıla bilmədi"
+
+#: src/gl-application.c:85 src/gl-window.c:288
 #, c-format
-msgid "Regular expression is invalid: %s"
-msgstr "Rasional ifadə düzgün deyil: %s"
+msgid "Failed to open the given help URI: %s"
+msgstr "Verilmiş kömək URI-si açıla bilmədi: %s"
 
-#: ../src/logview-filter-manager.c:238
-msgid "Please specify either foreground or background color!"
-msgstr "Zəhmət olmasa, ön və ya arxa plan rəngindən birini göstərin!"
-
-#: ../src/logview-filter-manager.c:292
-msgid "Edit filter"
-msgstr "Süzgəcə düzəliş et"
-
-#: ../src/logview-filter-manager.c:292
-msgid "Add new filter"
-msgstr "Yeni süzgəc əlavə et"
-
-#: ../src/logview-filter-manager.c:467 ../src/logview-window.c:1276
+#: src/gl-application.c:88 src/gl-window.c:175 src/gl-window.c:291
 msgid "_Close"
 msgstr "_Bağla"
 
-#: ../src/logview-filter-manager.c:501
-msgid "_Add"
-msgstr "_Əlavə et"
-
-#: ../src/logview-filter-manager.c:502
-msgid "_Properties"
-msgstr "_Özəlliklər"
-
-#: ../src/logview-filter-manager.c:503
-msgid "_Remove"
-msgstr "_Yığışdır"
-
-#: ../src/logview-filter-manager.c:506 ../src/logview-window.ui.h:8
-msgid "Filters"
-msgstr "Süzgəclər"
-
-#: ../src/logview-filter.ui.h:1
-msgid "_Name:"
-msgstr "_Ad:"
-
-#: ../src/logview-filter.ui.h:2
-msgid "_Regular Expression:"
-msgstr "_Rasional ifadə:"
-
-#: ../src/logview-filter.ui.h:3
-msgid "Highlight"
-msgstr "Vurğula"
-
-#: ../src/logview-filter.ui.h:4
-msgid "Hide"
-msgstr "Gizlət"
-
-#: ../src/logview-filter.ui.h:5
-msgid "Foreground:"
-msgstr "Ön plan:"
-
-#: ../src/logview-filter.ui.h:6
-msgid "Background:"
-msgstr "Arxa plan:"
-
-#: ../src/logview-filter.ui.h:7
-msgid "Effect:"
-msgstr "Effekt:"
-
-#: ../src/logview-findbar.c:152
-msgid "Find previous occurrence of the search string"
-msgstr "Axtarış sətrinin öncəki uyğunluğunu tap"
-
-#: ../src/logview-findbar.c:162
-msgid "Find next occurrence of the search string"
-msgstr "Axtarış sətrinin növbəti uyğunluğunu tap"
-
-#: ../src/logview-log.c:596
-msgid "Error while uncompressing the GZipped log. The file might be corrupt."
+#: src/gl-application.c:144
+msgid "translator-credits"
 msgstr ""
-"GZip formatında sıxılmış jurnal qeydini açarkən xəta baş verdi. Ola bilsin "
-"ki, fayl korlanıb."
+"Huseyn <abdullazadehuseyn28@gmail.com>\n"
+"Nicat Xalid <nicat.m@pm.me>"
 
-#: ../src/logview-log.c:643
-msgid "You don't have enough permissions to read the file."
-msgstr "Bu faylı oxumaq üçün lazımi icazəniz yoxdur."
+#: src/gl-application.c:277
+msgid "Print version information and exit"
+msgstr "Versiya məlumatını çap et və çıx"
 
-#: ../src/logview-log.c:658
-msgid "The file is not a regular file or is not a text file."
-msgstr "Fayl sadə dayl və ya mətn faylı deyil."
+#. Translators: Boot refers to a single run (or bootup) of the system
+#: src/gl-eventtoolbar.c:134
+msgid "Boot"
+msgstr "Açılış"
 
-#: ../src/logview-log.c:740
-msgid "This version of System Log does not support GZipped logs."
-msgstr ""
-"Sistem jurnalı proqramının bu versiyası GZIP formatında sıxılmış jurnal "
-"fayllarını dəstəkləmir."
+#. Translators: Shown when there are no (zero) results in the current
+#. * view.
+#: src/gl-eventviewlist.c:444
+msgid "No Results"
+msgstr "Nəticə yoxdur"
 
-#: ../src/logview-loglist.c:316
-msgid "Loading..."
-msgstr "Yüklənir..."
+#: src/gl-eventviewrow.c:228
+msgid "Other"
+msgstr "Digər"
 
-#: ../src/logview-utils.c:295
-msgid "today"
-msgstr "bu gün"
-
-#: ../src/logview-utils.c:297
-msgid "yesterday"
-msgstr "dünən"
-
-#: ../src/logview-window.c:178 ../src/logview-window.c:374
+#. Translators: if only custom start timestamp is set, then we update
+#. * the timestamp range button label in popover to show that
+#. * logs are shown in the window starting from this timestamp
+#. * until the ending timestamp of journal.
+#: src/gl-searchpopover.c:687
 #, c-format
-msgid "Search in \"%s\""
-msgstr "\"%s\" içində axtar"
+msgid "From %s"
+msgstr "%s tarixindən"
 
-#. translators: this is part of a label composed with
-#. * a date string, for example "updated today 23:54"
-#. 
-#: ../src/logview-window.c:198
-msgid "updated"
-msgstr "yenilənib:"
-
-#: ../src/logview-window.c:342
-msgid "Wrapped"
-msgstr "Bükülüb"
-
-#: ../src/logview-window.c:357
-msgid "No matches found"
-msgstr "Heç bir uyğunluq tapılmadı"
-
-#: ../src/logview-window.c:737
+#. Translators: if only custom end timestamp is set, then we update
+#. * the timestamp range button label in popover to show that
+#. * logs are shown in the window upto this timestamp
+#. * with the starting timestamp being the current time.
+#: src/gl-searchpopover.c:700
 #, c-format
-msgid "Can't read from \"%s\""
-msgstr "\"%s\" oxuna bilmir"
+msgid "Until %s"
+msgstr "%s tarixinə qədər"
 
-#: ../src/logview-window.c:1137
-msgid "Open Log"
-msgstr "Jurnal qeydini aç"
+#. Translators: date format for the start date entry
+#. * and start date button label in the custom range submenu,
+#. * showing the day of month in decimal number, full month
+#. * name as string, the year as a decimal number including the century.
+#. Translators: date format for the end date entry
+#. * and end date button label in the custom range submenu,
+#. * showing the day of month in decimal number, full month
+#. * name as string, the year as a decimal number including the century.
+#: src/gl-searchpopover.c:734 src/gl-searchpopover.c:1102
+msgid "%e %B %Y"
+msgstr "%e %B %Y"
 
-#: ../src/logview-window.c:1140
-msgid "_Cancel"
-msgstr "_İmtina"
+#: src/gl-searchpopover.c:873
+#, c-format
+msgid "AM"
+msgstr "G.Ə."
 
-#: ../src/logview-window.c:1141
-msgid "_Open"
-msgstr "_Aç"
+#: src/gl-searchpopover.c:877
+#, c-format
+msgid "PM"
+msgstr "PM"
 
-#: ../src/logview-window.c:1370
-msgid "Could not open the following files:"
-msgstr "Bu fayllar açıla bilmir:"
+#. Translators: timestamp format for the custom start time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 12-hour format.
+#. Translators: timestamp format for the custom end time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 12-hour format.
+#: src/gl-searchpopover.c:985 src/gl-searchpopover.c:1225
+msgid "%I:%M:%S %p"
+msgstr "%I:%M:%S %p"
 
-#: ../src/logview-window.ui.h:1
-msgid "Open..."
-msgstr "Aç..."
+#. Translators: timestamp format for the custom start time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 24-hour format.
+#. Translators: timestamp format for the custom end time button
+#. * label in the custom range submenu, showing the time with seconds
+#. * in 24-hour format.
+#: src/gl-searchpopover.c:992 src/gl-searchpopover.c:1232
+msgid "%T"
+msgstr "%T"
 
-#: ../src/logview-window.ui.h:2
-msgid "Close"
-msgstr "Bağla"
+#. Translators: timestamp format for events on the
+#. * current day, showing the time with seconds in
+#. * 12-hour format.
+#: src/gl-util.c:126
+msgid "%l:%M:%S %p"
+msgstr "%l:%M:%S %p"
 
-#: ../src/logview-window.ui.h:3
-msgid "Copy"
-msgstr "Köçür"
+#. Translators: timestamp format for events on the
+#. * current day, showing the time without seconds in
+#. * 12-hour format.
+#: src/gl-util.c:133
+msgid "%l:%M %p"
+msgstr "%l:%M %p"
 
-#: ../src/logview-window.ui.h:4
-msgid "Select All"
-msgstr "Hamısını seç"
+#. Translators: timestamp format for events in
+#. * the current year, showing the abbreviated
+#. * month name, day of the month and the time
+#. * with seconds in 12-hour format.
+#: src/gl-util.c:144
+msgid "%b %e %l:%M:%S %p"
+msgstr "%b %e %l:%M:%S %p"
 
-#: ../src/logview-window.ui.h:5
-msgid "Zoom In"
-msgstr "Yaxınlaşdır"
+#. Translators: timestamp format for events in the
+#. * current year, showing the abbreviated month name,
+#. * day of the month and the time without seconds in
+#. * 12-hour format.
+#: src/gl-util.c:152
+msgid "%b %e %l:%M %p"
+msgstr "%b %e %l:%M %p"
 
-#: ../src/logview-window.ui.h:6
-msgid "Zoom Out"
-msgstr "Uzaqlaşdır"
+#. Translators: timestamp format for events in
+#. * a different year, showing the abbreviated
+#. * month name, day of the month, year and the
+#. * time with seconds in 12-hour format.
+#: src/gl-util.c:163
+msgid "%b %e %Y %l:%M:%S %p"
+msgstr "%b %e %Y %l:%M:%S %p"
 
-#: ../src/logview-window.ui.h:7
-msgid "Normal Size"
-msgstr "Normal ölçü"
+#. Translators: timestamp format for events in
+#. * a different year, showing the abbreviated
+#. * month name day of the month, year and the
+#. * time without seconds in 12-hour format.
+#: src/gl-util.c:172
+msgid "%b %e %Y %l:%M %p"
+msgstr "%b %e %Y %l:%M %p"
 
-#: ../src/logview-window.ui.h:9
-msgid "Show Matches Only"
-msgstr "Yalnız uyğun gələnləri göstər"
+#. Translators: timestamp format for events on the
+#. * current day, showing the time with seconds in
+#. * 24-hour format.
+#: src/gl-util.c:189
+msgid "%H:%M:%S"
+msgstr "%H:%M:%S"
 
-#: ../src/logview-window.ui.h:10
-msgid "Manage Filters..."
-msgstr "Süzgəclərə düzəliş et..."
+#. Translators: timestamp format for events on the
+#. * current day, showing the time without seconds in
+#. * 24-hour format.
+#: src/gl-util.c:196
+msgid "%H:%M"
+msgstr "%H:%M"
+
+#. Translators: timestamp format for events in the
+#. * current year, showing the abbreviated month name,
+#. * day of the month and the time with seconds in
+#. * 24-hour format.
+#: src/gl-util.c:206
+msgid "%b %e %H:%M:%S"
+msgstr "%b %e %H:%M:%S"
+
+#. Translators: timestamp format for events in the
+#. * current year, showing the abbreviated month name,
+#. * day of the month and the time without seconds in
+#. * 24-hour format.
+#: src/gl-util.c:214
+msgid "%b %e %H:%M"
+msgstr "%b %e %H:%M"
+
+#. Translators: timestamp format for events in
+#. * a different year, showing the abbreviated
+#. * month name, day of the month, year and the
+#. * time with seconds in 24-hour format.
+#: src/gl-util.c:225
+msgid "%b %e %Y %H:%M:%S"
+msgstr "%b %e %Y %H:%M:%S"
+
+#. Translators: timestamp format for events in a
+#. * different year, showing the abbreviated month name,
+#. * day of the month, year and the time without seconds
+#. * in 24-hour format.
+#: src/gl-util.c:233
+msgid "%b %e %Y %H:%M"
+msgstr "%b %e %Y %H:%M"
+
+#. Transltors: the first string is the earliest timestamp of the boot,
+#. * and the second string is the newest timestamp. An example string might
+#. * be '08:10 - 08:30'
+#: src/gl-util.c:297
+#, c-format
+msgid "%s – %s"
+msgstr "%s – %s"
+
+#: src/gl-window.c:172
+msgid "Export Failed"
+msgstr "İxrac uğursuz oldu"
+
+#: src/gl-window.c:173
+msgid "Unable to export log messages to a file"
+msgstr "Jurnal mesajlarını fayla ixrac etmək mümkün olmadı"
+
+#: src/gl-window.c:194
+msgid "log messages"
+msgstr "jurnal mesajları"
+
+#: src/gl-window.c:476 src/gl-window.c:493
+msgid "Unable to read system logs"
+msgstr "Sistem jurnallarını oxumaq mümkün olmadı"
+
+#: src/gl-window.c:483
+msgid "Unable to read user logs"
+msgstr "İstifadəçi jurnallarını oxumaq mümkün olmadı"
+
+#: src/gl-window.c:501
+msgid "No logs available"
+msgstr "Jurnal yoxdur"
