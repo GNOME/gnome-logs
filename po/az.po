@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: gnome-disk-utility main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-disk-utility/issues\n"
 "POT-Creation-Date: 2026-08-12 14:42+0000\n"
-"PO-Revision-Date: 2026-11-02 14:33+0400\n"
+"PO-Revision-Date: 2026-11-04 13:35+0400\n"
 "Last-Translator: \n"
 "Language-Team: Azerbaijani <Azerbaijani>\n"
 "Language: az\n"
@@ -2652,7 +2652,7 @@ msgstr ""
 #: src/resources/ui/gdu-create-partition-page.blp:70 src/resources/ui/gdu-new-disk-image-dialog.blp:92
 #: src/resources/ui/gdu-resize-volume-dialog.blp:113
 msgid "TiB"
-msgstr ""
+msgstr "TiB"
 
 #: src/resources/ui/gdu-create-partition-page.blp:71 src/resources/ui/gdu-new-disk-image-dialog.blp:93
 #: src/resources/ui/gdu-resize-volume-dialog.blp:114
