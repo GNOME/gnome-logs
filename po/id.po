@@ -4,19 +4,21 @@
 # Andika Triwidada <andika@gmail.com>, 2013, 2014.
 # Kukuh Syafaat <kukuhsyafaat@gnome.org>, 2017-2020.
 #
+# herpiko <herpiko@gmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-logs master\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues\n"
-"POT-Creation-Date: 2023-08-07 12:30+0000\n"
-"PO-Revision-Date: 2023-08-11 19:26+0700\n"
-"Last-Translator: Kukuh Syafaat <kukuhsyafaat@gnome.org>\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues/\n"
+"POT-Creation-Date: 2026-03-18 19:15+0000\n"
+"PO-Revision-Date: 2026-11-09 11:16+0000\n"
+"Last-Translator: herpiko <herpiko@gmail.com>\n"
 "Language-Team: Indonesian <gnome@i15n.org>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.3.1\n"
+"X-Generator: Pelokalan\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: data/gl-categorylist.ui:12
 msgid "Important"
@@ -357,42 +359,21 @@ msgctxt "shortcut window"
 msgid "Export logs to a file"
 msgstr "Ekspor log ke berkas"
 
-#: data/org.gnome.Logs.appdata.xml.in:7 data/org.gnome.Logs.desktop.in:3
-#: src/gl-application.c:132 src/gl-eventtoolbar.c:143
+#: data/org.gnome.Logs.desktop.in:2 data/org.gnome.Logs.metainfo.xml.in:7
+#: src/gl-application.c:139 src/gl-eventtoolbar.c:143
 msgid "Logs"
 msgstr "Log"
 
-#: data/org.gnome.Logs.appdata.xml.in:8 data/org.gnome.Logs.desktop.in:5
-msgid "View detailed event logs for the system"
-msgstr "Tilik log kejadian terinci bagi sistem"
-
-#: data/org.gnome.Logs.appdata.xml.in:10
-msgid ""
-"Logs shows events from the systemd journal, and sorts them into categories, "
-"such as hardware and applications."
-msgstr ""
-"Log menampilkan peristiwa dari jurnal systemd, dan memilah mereka ke dalam "
-"kategori-kategori, seperti perangkat keras dan aplikasi."
-
-#: data/org.gnome.Logs.appdata.xml.in:12
-msgid ""
-"Using Logs you can search your logs by typing a search term, and view "
-"detailed information about each event by clicking on it."
-msgstr ""
-"Memakai Log Anda dapat mencari catatan log Anda dengan mengetikkan istilah "
-"yang ingin dicari, dan melihat informasi terrinci tentang setiap kejadian "
-"dengan mengkliknya."
-
-#: data/org.gnome.Logs.appdata.xml.in:38 src/gl-application.c:134
-msgid "The GNOME Project"
-msgstr "Proyek GNOME"
-
-#: data/org.gnome.Logs.desktop.in:4
+#: data/org.gnome.Logs.desktop.in:3
 msgid "Log Viewer"
 msgstr "Penilik Log"
 
+#: data/org.gnome.Logs.desktop.in:4 data/org.gnome.Logs.metainfo.xml.in:8
+msgid "View detailed event logs for the system"
+msgstr "Tilik log kejadian terinci bagi sistem"
+
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/org.gnome.Logs.desktop.in:7
+#: data/org.gnome.Logs.desktop.in:6
 msgid "log;journal;debug;error;"
 msgstr "log;jurnal;awakutu;galat;"
 
@@ -402,8 +383,8 @@ msgstr "Abaikan peringatan"
 
 #: data/org.gnome.Logs.gschema.xml:6
 msgid ""
-"Whether to ignore the warning that says you don’t have sufficient permission "
-"to view logs. If ignored, the warning won’t show up again."
+"Whether to ignore the warning that says you don’t have sufficient "
+"permission to view logs. If ignored, the warning won’t show up again."
 msgstr ""
 "Apakah mengabaikan peringatan yang mengatakan bahwa Anda tidak memiliki "
 "cukup izin untuk melihat log. Jika diabaikan, peringatan tidak akan muncul "
@@ -416,6 +397,32 @@ msgstr "Bagaimana mengurut baris daftar dalam daftar tilikan kejadian"
 #: data/org.gnome.Logs.gschema.xml:11
 msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr "Urutkan baris daftar arah naik atau turun bagi tipe yang dipilih"
+
+#: data/org.gnome.Logs.metainfo.xml.in:10
+msgid ""
+"Logs shows events from the systemd journal, and sorts them into categories, "
+"such as hardware and applications."
+msgstr ""
+"Log menampilkan peristiwa dari jurnal systemd, dan memilah mereka ke dalam "
+"kategori-kategori, seperti perangkat keras dan aplikasi."
+
+#: data/org.gnome.Logs.metainfo.xml.in:12
+msgid ""
+"Using Logs you can search your logs by typing a search term, and view "
+"detailed information about each event by clicking on it."
+msgstr ""
+"Memakai Log Anda dapat mencari catatan log Anda dengan mengetikkan istilah "
+"yang ingin dicari, dan melihat informasi terrinci tentang setiap kejadian "
+"dengan mengkliknya."
+
+#: data/org.gnome.Logs.metainfo.xml.in:18
+msgid "Main Window"
+msgstr "Jendela Utama"
+
+#: data/org.gnome.Logs.metainfo.xml.in:73
+#: data/org.gnome.Logs.metainfo.xml.in:75 src/gl-application.c:141
+msgid "The GNOME Project"
+msgstr "Proyek GNOME"
 
 #: src/gl-application.c:82 src/gl-window.c:285
 msgid "Failed To Open Help"
@@ -430,13 +437,13 @@ msgstr "Gagal membuka URI bantuan yang diberikan: %s"
 msgid "_Close"
 msgstr "_Tutup"
 
-#: src/gl-application.c:137
+#: src/gl-application.c:144
 msgid "translator-credits"
 msgstr ""
 "Andika Triwidada <andika@gmail.com>, 2013, 2014, 2016, 2021.\n"
 "Kukuh Syafaat <kukuhsyafaat@gnome.org>, 2017-2020, 2023."
 
-#: src/gl-application.c:270
+#: src/gl-application.c:277
 msgid "Print version information and exit"
 msgstr "Cetak informasi versi dan keluar"
 
@@ -447,7 +454,7 @@ msgstr "Boot"
 
 #. Translators: Shown when there are no (zero) results in the current
 #. * view.
-#: src/gl-eventviewlist.c:431
+#: src/gl-eventviewlist.c:444
 msgid "No Results"
 msgstr "Tidak Ada Hasil"
 
@@ -627,15 +634,15 @@ msgstr "Tidak bisa mengekspor pesan log ke berkas"
 msgid "log messages"
 msgstr "pesan log"
 
-#: src/gl-window.c:471 src/gl-window.c:488
+#: src/gl-window.c:476 src/gl-window.c:493
 msgid "Unable to read system logs"
 msgstr "Tidak bisa membaca log sistem"
 
-#: src/gl-window.c:478
+#: src/gl-window.c:483
 msgid "Unable to read user logs"
 msgstr "Tidak bisa membaca log pengguna"
 
-#: src/gl-window.c:496
+#: src/gl-window.c:501
 msgid "No logs available"
 msgstr "Tidak ada log yang tersedia"
 
