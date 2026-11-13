@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: gnome-disk-utility main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-logs/issues/\n"
 "POT-Creation-Date: 2026-03-18 19:15+0000\n"
-"PO-Revision-Date: 2026-11-13 12:20+0400\n"
+"PO-Revision-Date: 2026-11-13 13:57+0400\n"
 "Last-Translator: \n"
 "Language-Team: Azerbaijani <Azerbaijani>\n"
 "Language: az\n"
@@ -84,7 +84,7 @@ msgstr "Jurnal qeydlərini fayla ixrac et"
 
 #: data/gl-eventtoolbar.ui:49
 msgid "Choose the boot from which to view logs"
-msgstr ""
+msgstr "Jurnal qeydlərinin göstəriləcəyi önyükləməni seçin"
 
 #: data/gl-eventtoolbar.ui:59
 msgid "Search all the logs of the current category"
@@ -136,11 +136,11 @@ msgstr "Jurnal qeydi axtar"
 
 #: data/gl-eventviewlist.ui:35
 msgid "Select journal field and timestamp range filtering options"
-msgstr ""
+msgstr "Jurnal sahəsi və vaxt möhürü aralığının süzgəcləmə seçimlərini seç"
 
 #: data/gl-searchpopover.ui:27
 msgid "Select a Journal Field to filter the Logs according to it"
-msgstr ""
+msgstr "Jurnal qeydlərini ona uyğun süzgəcləmək üçün Jurnal Sahəsini seçin"
 
 #: data/gl-searchpopover.ui:34 data/gl-searchpopover.ui:843
 msgid "All Available Fields"
@@ -183,7 +183,7 @@ msgstr "Axtarış növü"
 
 #: data/gl-searchpopover.ui:266
 msgid "Substring"
-msgstr ""
+msgstr "Alt sətir"
 
 #: data/gl-searchpopover.ui:268
 msgid "Match in any part of the string"
@@ -263,15 +263,15 @@ msgstr "Başlama tarixini seçin…"
 
 #: data/gl-searchpopover.ui:852
 msgid "PID"
-msgstr ""
+msgstr "PID"
 
 #: data/gl-searchpopover.ui:857
 msgid "UID"
-msgstr ""
+msgstr "UID"
 
 #: data/gl-searchpopover.ui:862
 msgid "GID"
-msgstr ""
+msgstr "GID"
 
 #: data/gl-searchpopover.ui:872
 msgid "Process Name"
@@ -368,7 +368,7 @@ msgstr "Jurnal qeydi göstəricisi"
 
 #: data/org.gnome.Logs.desktop.in:4 data/org.gnome.Logs.metainfo.xml.in:8
 msgid "View detailed event logs for the system"
-msgstr ""
+msgstr "Sistemin detallı hadisə qeydlərinə bax"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.Logs.desktop.in:6
@@ -384,26 +384,35 @@ msgid ""
 "Whether to ignore the warning that says you don’t have sufficient permission "
 "to view logs. If ignored, the warning won’t show up again."
 msgstr ""
+"Jurnal qeydlərinə baxmaq üçün kifayət qədər icazəniz olmadığını bildirən "
+"xəbərdarlığa məhəl qoyulub-qoyulmayacağı. Nəzərə alınmasa, xəbərdarlıq bir "
+"daha göstərilməyəcək."
 
 #: data/org.gnome.Logs.gschema.xml:10
 msgid "How to sort list rows in the event view list"
-msgstr ""
+msgstr "Hadisə görünüşü siyahısında siyahı sətirlərinin necə çeşidlənəcəyi"
 
 #: data/org.gnome.Logs.gschema.xml:11
 msgid "Sort list rows in ascending or descending order for the selected type"
 msgstr ""
+"Seçilmiş növ üçün siyahı sıralarını artan və ya azalan sıra ilə çeşidlə"
 
 #: data/org.gnome.Logs.metainfo.xml.in:10
 msgid ""
 "Logs shows events from the systemd journal, and sorts them into categories, "
 "such as hardware and applications."
 msgstr ""
+"Jurnal qeydləri sistem jurnalındakı hadisələri göstərir və onları avadanlıq "
+"və tətbiqlər kimi kateqoriyalara ayırır."
 
 #: data/org.gnome.Logs.metainfo.xml.in:12
 msgid ""
 "Using Logs you can search your logs by typing a search term, and view "
 "detailed information about each event by clicking on it."
 msgstr ""
+"Jurnal qeydlərini istifadə edərək axtarış sözünü yazmaqla qeydlərinizi "
+"axtara və üzərinə klikləməklə hər bir hadisə haqqında ətraflı məlumata baxa "
+"bilərsiniz."
 
 #: data/org.gnome.Logs.metainfo.xml.in:18
 msgid "Main Window"
@@ -421,7 +430,7 @@ msgstr "\"Yardım\" açıla bilmədi"
 #: src/gl-application.c:85 src/gl-window.c:288
 #, c-format
 msgid "Failed to open the given help URI: %s"
-msgstr ""
+msgstr "Verilmiş yardım URI-ı açıla bilmədi: %s"
 
 #: src/gl-application.c:88 src/gl-window.c:175 src/gl-window.c:291
 msgid "_Close"
